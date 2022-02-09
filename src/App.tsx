@@ -1,11 +1,19 @@
+import { BrowserRouter, Route, Routes } from 'react-router-dom';
 import './App.css';
+import Home from './components/Home/Home';
+import Navigation from './components/Navigation/Navigation';
 
 function App() {
   return (
     <div className="App">
-      <h2>We are Remote Coder Unity</h2>
-      <p>United we stand, divided we fall.</p>
-      <p>We all pull and merge code from development branch.</p>
+
+      <BrowserRouter>
+        <Navigation></Navigation>
+        <Routes>
+          <Route path="/" element={<Home />} />
+
+        </Routes>
+      </BrowserRouter>
     </div>
   );
 }
