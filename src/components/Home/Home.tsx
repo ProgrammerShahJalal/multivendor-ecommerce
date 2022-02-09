@@ -4,7 +4,7 @@ import HomeProducts from '../HomeProducts/HomeProducts'
 export default function Home() {
     return (
         <div>
-            <HomeProducts/>
+            <HomeProducts />
         </div>
     )
 }
