@@ -28,13 +28,13 @@ const navigation = {
                 {
                     name: 'New Arrivals',
                     href: '#',
-                    imageSrc: 'https://tailwindui.com/img/ecommerce-images/mega-menu-category-01.jpg',
+                    imageSrc: 'https://img.freepik.com/free-photo/cute-woman-bright-hat-purple-blouse-is-leaning-stand-with-dresses-posing-with-package-isolated-background_197531-17610.jpg',
                     imageAlt: 'Models sitting back to back, wearing Basic Tee in black and bone.',
                 },
                 {
                     name: 'Basic Tees',
                     href: '#',
-                    imageSrc: 'https://tailwindui.com/img/ecommerce-images/mega-menu-category-02.jpg',
+                    imageSrc: 'https://img.freepik.com/free-photo/smiling-student-woman-with-backpack-camera-going-vacation_149155-4472.jpg',
                     imageAlt: 'Close up of Basic Tee fall bundle with off-white, ochre, olive, and black tees.',
                 },
             ],
@@ -86,13 +86,13 @@ const navigation = {
                 {
                     name: 'New Arrivals',
                     href: '#',
-                    imageSrc: 'https://tailwindui.com/img/ecommerce-images/product-page-04-detail-product-shot-01.jpg',
+                    imageSrc: 'https://img.freepik.com/free-photo/full-length-portrait-handsome-serious-man_171337-17388.jpg',
                     imageAlt: 'Drawstring top with elastic loop closure and textured interior padding.',
                 },
                 {
                     name: 'Artwork Tees',
                     href: '#',
-                    imageSrc: 'https://tailwindui.com/img/ecommerce-images/category-page-02-image-card-06.jpg',
+                    imageSrc: 'https://img.freepik.com/free-photo/elegant-young-handsome-man_1301-5870.jpg',
                     imageAlt:
                         'Three shirts in gray, white, and blue arranged on table with same line drawing of hands and shapes overlapping on front of shirt.',
                 },
@@ -138,7 +138,7 @@ const navigation = {
     ],
     pages: [
         { name: 'Company', href: '#' },
-        { name: 'Stores', href: '#' },
+        { name: 'Shop', href: '#' },
     ],
 }
 
