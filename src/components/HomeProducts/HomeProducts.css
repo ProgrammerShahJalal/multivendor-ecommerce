@@ -1,0 +1,117 @@
+.image{
+    height: 330px;
+    width: 440px;
+	overflow: hidden;
+}
+.single-banner:hover img{
+    transform: scale(1.1)
+}
+.midium-banner{
+	padding:0;
+}
+.poster-card{
+	height: 250px;
+	margin: 10px;
+}
+.single-banner{
+	overflow: hidden;
+	transition: transform .2s;
+	background-color: #f7f7f7;
+	margin-left: 20px;
+	margin-right: 20px;
+}
+.midium-banner .single-banner{
+	position:relative;
+}
+.midium-banner .single-banner img{
+	padding-right: -50px;
+	height:50%;
+	width:50%;
+	-webkit-transition:all 0.4s ease;
+	-moz-transition:all 0.4s ease;
+	transition:all 0.4s ease;
+	margin-left: 150px;
+}
+.midium-banner .single-banner .content {
+	padding-left:50px;
+	position: absolute;
+	left: 0;
+	top: 50%;
+	transform:translateY(-50%);
+}
+.midium-banner .single-banner h3 {
+	font-size: 27px;
+	font-weight: 700;
+	text-transform: uppercase;
+	color: #333;
+	line-height: 30px;
+}
+.shop-services .single-service {
+	position: relative;
+	padding-left: 65px;
+}
+.shop-services .single-service svg {
+	text-align: center;
+	color: #333;
+	margin-left: 30px;
+	font-size: 32px;
+	position: absolute;
+	left: 0;
+	top: 0;
+}
+.shop-services .single-service h4 {
+	font-size: 14px;
+	font-weight: 600;
+	text-transform: uppercase;
+	line-height: 22px;
+	color: #333;
+}
+.shop-services .single-service p {
+	color: #898989;
+	line-height: 28px;
+	font-size:14px;
+}
+.per-service{
+	height: 100px;
+	padding-top: 20px;
+}
+.span{
+	color:#F7941D;
+}
+.small-banner{
+	overflow: hidden;
+	transition: transform .2s;
+	background-color: #f7f7f7;
+	margin-left: 20px;
+	margin-right: 20px;
+}
+
+.midium-banner .single-banner h4 {
+	font-size: 13px;
+	color: #F7941D;
+	font-weight: 500;
+	margin-bottom: 5px;
+	text-transform: uppercase;
+}
+.midium-banner .single-banner a {
+	display: inline-block;
+	font-weight: 600;
+	text-align: center;
+	-webkit-user-select: none;
+	-moz-user-select: none;
+	-ms-user-select: none;
+	user-select: none;
+	padding: .375rem .75rem;
+	font-size: 13px;
+	border-radius: .25rem;
+	background: #333;
+	color: #fff !important;
+	padding: 10px 27px;
+	border-radius: 30px;
+	margin-top: 25px;
+	text-transform: uppercase;
+}
+.midium-banner .single-banner a:hover{
+	background:#F7941D;
+	color:#fff;
+}
