@@ -12,7 +12,7 @@ export default class HomeProducts extends PureComponent<Props> {
   render() {
     return (
       <div>
-    <section className="midium-banner">
+    <section className="midium-banner z-0">
 		<div className="p-5">
 			<div className="grid lg:grid-cols-3">
 				<div className="">
