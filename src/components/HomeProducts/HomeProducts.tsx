@@ -1,11 +1,53 @@
 import React, { PureComponent } from 'react';
 import './HomeProducts.css';
+import ps5 from './../../images/products/others/ps5-removebg-preview.png';
+import xbox from './../../images/products/others/xbox-removebg-preview.png';
+import bag from './../../images/products/others/images-removebg-preview.png';
+import shoes from './../../images/products/others/nike-removebg-preview.png';
+import { Link } from 'react-router-dom';
 type Props = {}
+
 
 export default class HomeProducts extends PureComponent<Props> {
   render() {
     return (
       <div>
+    <section className="midium-banner">
+		<div className="p-5">
+			<div className="grid lg:grid-cols-3">
+				<div className="">
+					<div className="single-banner poster-card">
+						<img style={{height:'225px',width:'200px'}} src={shoes} alt="/"></img>
+						<div className="content">
+							<h4><b>Nike Shoes</b></h4>
+							<h3>Premium<span className="span"> Black</span><br/>Up to<span className='span'> 30%</span> <span className='text-red-600'>Off</span></h3>
+							<Link to="/">Shop Now</Link>
+						</div>
+					</div>
+				</div>
+				<div className="">
+					<div className="single-banner poster-card">
+						<img style={{height:'225px',width:'200px'}} src={ps5} alt="/"></img>
+						<div className="content">
+							<h4><b>Sony Ps5</b></h4>
+							<h3>Premium <span className='span'>edition</span> <br/> up to <span className='span'> 10%</span> <span className='text-red-600'>Off</span></h3>
+							<Link to="/">Shop Now</Link>
+						</div>
+					</div>
+				</div>
+        <div className="">
+					<div className="single-banner poster-card">
+						<img style={{height:'225px',width:'200px'}} src={bag} alt="/"></img>
+						<div className="content">
+							<h4><b>Stylish Backpack</b></h4>
+							<h3>Super <span className='span'>Comfort</span> <br/> up to <span className='span'> 10%</span> <span className='text-red-600'>Off</span></h3>
+							<Link to="/">Shop Now</Link>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</section>
           <div className=''>
     <div className="my-20 container mx-auto px-5">
       <div className="flex flex-row justify-between my-5">
@@ -379,7 +421,7 @@ export default class HomeProducts extends PureComponent<Props> {
 			<div className="grid lg:grid-cols-2">
 				<div className="col">
 					<div className="single-banner">
-						<img src="https://o.remove.bg/downloads/9b532b09-8ac9-4ade-aa0d-5ff6dfbc7e46/xbox-removebg-preview.png" alt="/"></img>
+						<img src={xbox} alt="/"></img>
 						<div className="content">
 							<h5>Xbox Microsoft Edition</h5>
 							<h3>Color: <span className="span">White</span><br/>Up to<span className='span'> 30%</span></h3>
@@ -389,12 +431,12 @@ export default class HomeProducts extends PureComponent<Props> {
 				</div>
 				<div className="col">
 					<div className="single-banner">
+						<img style={{height:'50%',width:'50%'}} src={ps5} alt="/"></img>
 						<div className="content">
 							<h5>Sony Ps5</h5>
 							<h3>Premium <span className='span'>edition</span> <br/> up to <span className='span'> 10%</span></h3>
 							<a href="/" className="btn">Shop Now</a>
 						</div>
-						<img style={{height:'50%',width:'50%'}} src="https://o.remove.bg/downloads/e5872902-c9da-4c86-94d6-df25e8fd5e21/PS5-console-front-removebg-preview.png" alt="/"></img>
 					</div>
 				</div>
 			</div>
@@ -406,48 +448,48 @@ export default class HomeProducts extends PureComponent<Props> {
   <div className="max-w-md mx-auto bg-white rounded-xl shadow-md overflow-hidden md:max-w-2xl  my-5">
   <div className="md:flex">
     <div className="md:shrink-0">
-      <img className="h-48 w-full object-cover md:h-full md:w-48" src="https://o.remove.bg/downloads/e5872902-c9da-4c86-94d6-df25e8fd5e21/PS5-console-front-removebg-preview.png" alt="Man looking at item at a store"></img>
+      <img className="h-48 w-full object-cover md:h-full md:w-48" src="https://blog.ipleaders.in/wp-content/uploads/2019/10/trademarkregistered-598a056768e1a200116dc33a.jpg" alt="Man looking at item at a store"></img>
     </div>
     <div className="p-8">
-      <div className="uppercase tracking-wide text-sm text-indigo-500 font-semibold">Case study</div>
-      <a href="/" className="block mt-1 text-lg leading-tight font-medium text-black hover:underline">Finding customers for your new business</a>
-      <p className="mt-2 text-slate-500">Getting a new business off the ground is a lot of hard work. Here are five ideas you can use to find your first customers.</p>
+      <div className="uppercase tracking-wide text-sm text-indigo-500 font-semibold">Check my products</div>
+      <a href="/" className="block mt-1 text-lg leading-tight font-medium text-black hover:underline">How to confirm the products (For seller)</a>
+      <p className="mt-2 text-slate-500">Confirm that the product you have bought are from unityMart. Tilt the carton check the sticker on the carton and scan the QR code using our app.</p>
     </div>
   </div>
 </div>
 <div className="max-w-md mx-auto bg-white rounded-xl shadow-md overflow-hidden md:max-w-2xl my-5">
   <div className="md:flex">
     <div className="md:shrink-0">
-      <img className="h-48 w-full object-cover md:h-full md:w-48" src="https://o.remove.bg/downloads/9b532b09-8ac9-4ade-aa0d-5ff6dfbc7e46/xbox-removebg-preview.png" alt="Man looking at item at a store"></img>
+      <img className="h-48 w-full object-cover md:h-full md:w-48" src="https://www.flycart.org/media/k2/items/cache/938a195f8810cb9b31c6503221891897_XL.jpg" alt="Man looking at item at a store"></img>
     </div>
     <div className="p-8">
-      <div className="uppercase tracking-wide text-sm text-indigo-500 font-semibold">Case study</div>
-      <a href="/" className="block mt-1 text-lg leading-tight font-medium text-black hover:underline">Finding customers for your new business</a>
-      <p className="mt-2 text-slate-500">Getting a new business off the ground is a lot of hard work. Here are five ideas you can use to find your first customers.</p>
+      <div className="uppercase tracking-wide text-sm text-indigo-500 font-semibold">How to get coupons</div>
+      <a href="/" className="block mt-1 text-lg leading-tight font-medium text-black hover:underline">Get coupon codes</a>
+      <p className="mt-2 text-slate-500">Get coupon code and apply on you purchase for discount. Just go to coupons section than play games and collect coupons.</p>
     </div>
   </div>
 </div>
 <div className="max-w-md mx-auto bg-white rounded-xl shadow-md overflow-hidden md:max-w-2xl  my-5">
   <div className="md:flex">
     <div className="md:shrink-0">
-      <img className="h-48 w-full object-cover md:h-full md:w-48" src="https://o.remove.bg/downloads/9b532b09-8ac9-4ade-aa0d-5ff6dfbc7e46/xbox-removebg-preview.png" alt="Man looking at item at a store"></img>
+      <img className="h-48 w-full object-cover md:h-full md:w-48" src="https://www.mydesignation.com/wp-content/uploads/2020/08/delivery-banner.jpg" alt="Man looking at item at a store"></img>
     </div>
     <div className="p-8">
-      <div className="uppercase tracking-wide text-sm text-indigo-500 font-semibold">Case study</div>
-      <a href="/" className="block mt-1 text-lg leading-tight font-medium text-black hover:underline">Finding customers for your new business</a>
-      <p className="mt-2 text-slate-500">Getting a new business off the ground is a lot of hard work. Here are five ideas you can use to find your first customers.</p>
+      <div className="uppercase tracking-wide text-sm text-indigo-500 font-semibold">How to track my orders</div>
+      <a href="/" className="block mt-1 text-lg leading-tight font-medium text-black hover:underline">Track your order status</a>
+      <p className="mt-2 text-slate-500">Worried about your orders? Nothing to get worried just go to my orders section then just check the status. If still having confusion contact us.</p>
     </div>
   </div>
 </div>
 <div className="max-w-md mx-auto bg-white rounded-xl shadow-md overflow-hidden md:max-w-2xl  my-5">
   <div className="md:flex">
     <div className="md:shrink-0">
-      <img className="h-48 w-full object-cover md:h-full md:w-48" src="https://o.remove.bg/downloads/e5872902-c9da-4c86-94d6-df25e8fd5e21/PS5-console-front-removebg-preview.png" alt="Man looking at item at a store"></img>
+      <img className="h-48 w-full object-cover md:h-full md:w-48" src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQivUFHJ8M6iyFxI1x5DDg62VbweGyITJ9bkQ&usqp=CAU" alt="Man looking at item at a store"></img>
     </div>
     <div className="p-8">
-      <div className="uppercase tracking-wide text-sm text-indigo-500 font-semibold">Case study</div>
-      <a href="/" className="block mt-1 text-lg leading-tight font-medium text-black hover:underline">Finding customers for your new business</a>
-      <p className="mt-2 text-slate-500">Getting a new business off the ground is a lot of hard work. Here are five ideas you can use to find your first customers.</p>
+      <div className="uppercase tracking-wide text-sm text-indigo-500 font-semibold">How to request for refund</div>
+      <a href="/" className="block mt-1 text-lg leading-tight font-medium text-black hover:underline">Product problem? get refund</a>
+      <p className="mt-2 text-slate-500">Didn't got the perfect products, you may return it we will refund you. If you just received your order just apply from my order section for refund.</p>
     </div>
   </div>
 </div>

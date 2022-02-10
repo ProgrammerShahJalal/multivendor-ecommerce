@@ -9,6 +9,10 @@
 .midium-banner{
 	padding:0;
 }
+.poster-card{
+	height: 250px;
+	margin: 10px;
+}
 .single-banner{
 	overflow: hidden;
 	transition: transform .2s;
@@ -20,6 +24,7 @@
 	position:relative;
 }
 .midium-banner .single-banner img{
+	padding-right: -50px;
 	height:50%;
 	width:50%;
 	-webkit-transition:all 0.4s ease;
@@ -73,7 +78,15 @@
 .span{
 	color:#F7941D;
 }
-.midium-banner .single-banner h5 {
+.small-banner{
+	overflow: hidden;
+	transition: transform .2s;
+	background-color: #f7f7f7;
+	margin-left: 20px;
+	margin-right: 20px;
+}
+
+.midium-banner .single-banner h4 {
 	font-size: 13px;
 	color: #F7941D;
 	font-weight: 500;
