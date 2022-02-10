@@ -5,7 +5,7 @@ import './Home.css';
 export default function Home() {
     return (
         <div>
-            <HomeProducts/>
+            <HomeProducts />
         </div>
     )
 }
