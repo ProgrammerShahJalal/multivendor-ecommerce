@@ -27,13 +27,13 @@ const navigation = {
             featured: [
                 {
                     name: 'New Arrivals',
-                    href: '#',
+                    to: '#',
                     imageSrc: 'https://img.freepik.com/free-photo/three-young-beautiful-smiling-girls-trendy-summer-casual-jeans-clothes-sexy-carefree-women-posing-positive-models-sunglasses_158538-4730.jpg',
                     imageAlt: 'Models sitting back to back, wearing Basic Tee in black and bone.',
                 },
                 {
                     name: 'Basic Tees',
-                    href: '#',
+                    to: '#',
                     imageSrc: 'https://img.freepik.com/free-photo/fashion-portrait-two-elegant-women-best-friends-posing-indoor-grey-wall-wearing-winter-fluffy-coat-black-casual-hat-fashionable-clothes-sisters-walking_273443-4074.jpg',
                     imageAlt: 'Close up of Basic Tee fall bundle with off-white, ochre, olive, and black tees.',
                 },
@@ -43,38 +43,38 @@ const navigation = {
                     id: 'clothing',
                     name: 'Clothing',
                     items: [
-                        { name: 'Tops', href: '#' },
-                        { name: 'Dresses', href: '#' },
-                        { name: 'Pants', href: '#' },
-                        { name: 'Denim', href: '#' },
-                        { name: 'Sweaters', href: '#' },
-                        { name: 'T-Shirts', href: '#' },
-                        { name: 'Jackets', href: '#' },
-                        { name: 'Activewear', href: '#' },
-                        { name: 'Browse All', href: '#' },
+                        { name: 'Tops', to: '/' },
+                        { name: 'Dresses', to: '/' },
+                        { name: 'Pants', to: '/' },
+                        { name: 'Denim', to: '/' },
+                        { name: 'Sweaters', to: '/' },
+                        { name: 'T-Shirts', to: '/' },
+                        { name: 'Jackets', to: '/' },
+                        { name: 'Activewear', to: '/' },
+                        { name: 'Browse All', to: '/' },
                     ],
                 },
                 {
                     id: 'accessories',
                     name: 'Accessories',
                     items: [
-                        { name: 'Watches', href: '#' },
-                        { name: 'Wallets', href: '#' },
-                        { name: 'Bags', href: '#' },
-                        { name: 'Sunglasses', href: '#' },
-                        { name: 'Hats', href: '#' },
-                        { name: 'Belts', href: '#' },
+                        { name: 'Watches', to: '/' },
+                        { name: 'Wallets', to: '/' },
+                        { name: 'Bags', to: '/' },
+                        { name: 'Sunglasses', to: '/' },
+                        { name: 'Hats', to: '/' },
+                        { name: 'Belts', to: '/' },
                     ],
                 },
                 {
                     id: 'brands',
                     name: 'Brands',
                     items: [
-                        { name: 'Full Nelson', href: '#' },
-                        { name: 'My Way', href: '#' },
-                        { name: 'Re-Arranged', href: '#' },
-                        { name: 'Counterfeit', href: '#' },
-                        { name: 'Significant Other', href: '#' },
+                        { name: 'Full Nelson', to: '/' },
+                        { name: 'My Way', to: '/' },
+                        { name: 'Re-Arranged', to: '/' },
+                        { name: 'Counterfeit', to: '/' },
+                        { name: 'Significant Other', to: '/' },
                     ],
                 },
             ],
@@ -85,13 +85,13 @@ const navigation = {
             featured: [
                 {
                     name: 'New Arrivals',
-                    href: '#',
+                    to: '#',
                     imageSrc: 'https://img.freepik.com/free-photo/full-length-portrait-handsome-serious-man_171337-17388.jpg',
                     imageAlt: 'Drawstring top with elastic loop closure and textured interior padding.',
                 },
                 {
                     name: 'Artwork Tees',
-                    href: '#',
+                    to: '#',
                     imageSrc: 'https://img.freepik.com/free-photo/elegant-young-handsome-man_1301-5870.jpg',
                     imageAlt:
                         'Three shirts in gray, white, and blue arranged on table with same line drawing of hands and shapes overlapping on front of shirt.',
@@ -102,43 +102,44 @@ const navigation = {
                     id: 'clothing',
                     name: 'Clothing',
                     items: [
-                        { name: 'Tops', href: '#' },
-                        { name: 'Pants', href: '#' },
-                        { name: 'Sweaters', href: '#' },
-                        { name: 'T-Shirts', href: '#' },
-                        { name: 'Jackets', href: '#' },
-                        { name: 'Activewear', href: '#' },
-                        { name: 'Browse All', href: '#' },
+                        { name: 'Tops', to: '/' },
+                        { name: 'Pants', to: '/' },
+                        { name: 'Sweaters', to: '/' },
+                        { name: 'T-Shirts', to: '/' },
+                        { name: 'Jackets', to: '/' },
+                        { name: 'Activewear', to: '/' },
+                        { name: 'Browse All', to: '/' },
                     ],
                 },
                 {
                     id: 'accessories',
                     name: 'Accessories',
                     items: [
-                        { name: 'Watches', href: '#' },
-                        { name: 'Wallets', href: '#' },
-                        { name: 'Bags', href: '#' },
-                        { name: 'Sunglasses', href: '#' },
-                        { name: 'Hats', href: '#' },
-                        { name: 'Belts', href: '#' },
+                        { name: 'Watches', to: '/' },
+                        { name: 'Wallets', to: '/' },
+                        { name: 'Bags', to: '/' },
+                        { name: 'Sunglasses', to: '/' },
+                        { name: 'Hats', to: '/' },
+                        { name: 'Belts', to: '/' },
                     ],
                 },
                 {
                     id: 'brands',
                     name: 'Brands',
                     items: [
-                        { name: 'Re-Arranged', href: '#' },
-                        { name: 'Counterfeit', href: '#' },
-                        { name: 'Full Nelson', href: '#' },
-                        { name: 'My Way', href: '#' },
+                        { name: 'Re-Arranged', to: '/' },
+                        { name: 'Counterfeit', to: '/' },
+                        { name: 'Full Nelson', to: '/' },
+                        { name: 'My Way', to: '/' },
                     ],
                 },
             ],
         },
     ],
     pages: [
-        { name: 'Company', href: '#' },
-        { name: 'Shop', href: '#' },
+        { name: 'Shop', to: '/shop' },
+        { name: 'About', to: '/about' },
+        { name: 'Contact', to: '/contact' },
     ],
 }
 
@@ -215,10 +216,10 @@ export default function Header() {
                                                         <div className="aspect-w-1 aspect-h-1 rounded-lg bg-gray-100 overflow-hidden group-hover:opacity-75">
                                                             <img src={item.imageSrc} alt={item.imageAlt} className="object-center object-cover" />
                                                         </div>
-                                                        <a href={item.href} className="mt-6 block font-medium text-gray-900">
+                                                        <Link to={item.to} className="mt-6 block font-medium text-gray-900">
                                                             <span className="absolute z-10 inset-0" aria-hidden="true" />
                                                             {item.name}
-                                                        </a>
+                                                        </Link>
                                                         <p aria-hidden="true" className="mt-1">
                                                             Shop now
                                                         </p>
@@ -237,9 +238,9 @@ export default function Header() {
                                                     >
                                                         {section.items.map((item) => (
                                                             <li key={item.name} className="flow-root">
-                                                                <a href={item.href} className="-m-2 p-2 block text-gray-500">
+                                                                <Link to={item.to} className="-m-2 p-2 block text-gray-500">
                                                                     {item.name}
-                                                                </a>
+                                                                </Link>
                                                             </li>
                                                         ))}
                                                     </ul>
@@ -253,28 +254,28 @@ export default function Header() {
                             <div className="border-t border-gray-200 py-6 px-4 space-y-6">
                                 {navigation.pages.map((page) => (
                                     <div key={page.name} className="flow-root">
-                                        <a href={page.href} className="-m-2 p-2 block font-medium text-gray-900">
+                                        <Link to={page.to} className="-m-2 p-2 block font-medium text-gray-900">
                                             {page.name}
-                                        </a>
+                                        </Link>
                                     </div>
                                 ))}
                             </div>
 
                             <div className="border-t border-gray-200 py-6 px-4 space-y-6">
                                 <div className="flow-root">
-                                    <a href="#login" className="-m-2 p-2 block font-medium text-gray-900">
+                                    <Link to="/login" className="-m-2 p-2 block font-medium text-gray-900">
                                         Login
-                                    </a>
+                                    </Link>
                                 </div>
                                 <div className="flow-root">
-                                    <a href="#register" className="-m-2 p-2 block font-medium text-gray-900">
+                                    <Link to="/register" className="-m-2 p-2 block font-medium text-gray-900">
                                         Create account
-                                    </a>
+                                    </Link>
                                 </div>
                             </div>
 
                             <div className="border-t border-gray-200 py-6 px-4">
-                                <a href="#cad" className="-m-2 p-2 flex items-center">
+                                <Link to="/cad" className="-m-2 p-2 flex items-center">
                                     <img
                                         src="https://tailwindui.com/img/flags/flag-canada.svg"
                                         alt=""
@@ -282,7 +283,7 @@ export default function Header() {
                                     />
                                     <span className="ml-3 block text-base font-medium text-gray-900">CAD</span>
                                     <span className="sr-only">, change currency</span>
-                                </a>
+                                </Link>
                             </div>
                         </div>
                     </Transition.Child>
@@ -357,10 +358,10 @@ export default function Header() {
                                                                                             className="object-center object-cover"
                                                                                         />
                                                                                     </div>
-                                                                                    <a href={item.href} className="mt-6 block font-medium text-gray-900">
+                                                                                    <Link to={item.to} className="mt-6 block font-medium text-gray-900">
                                                                                         <span className="absolute z-10 inset-0" aria-hidden="true" />
                                                                                         {item.name}
-                                                                                    </a>
+                                                                                    </Link>
                                                                                     <p aria-hidden="true" className="mt-1">
                                                                                         Shop now
                                                                                     </p>
@@ -380,9 +381,9 @@ export default function Header() {
                                                                                     >
                                                                                         {section.items.map((item) => (
                                                                                             <li key={item.name} className="flex">
-                                                                                                <a href={item.href} className="hover:text-gray-800">
+                                                                                                <Link to={item.to} className="hover:text-gray-800">
                                                                                                     {item.name}
-                                                                                                </a>
+                                                                                                </Link>
                                                                                             </li>
                                                                                         ))}
                                                                                     </ul>
@@ -400,30 +401,30 @@ export default function Header() {
                                     ))}
 
                                     {navigation.pages.map((page) => (
-                                        <a
+                                        <Link
                                             key={page.name}
-                                            href={page.href}
+                                            to={page.to}
                                             className="flex items-center text-sm font-medium text-gray-700 hover:text-gray-800"
                                         >
                                             {page.name}
-                                        </a>
+                                        </Link>
                                     ))}
                                 </div>
                             </Popover.Group>
 
                             <div className="ml-auto flex items-center">
                                 <div className="hidden lg:flex lg:flex-1 lg:items-center lg:justify-end lg:space-x-6">
-                                    <a href="#login" className="text-sm font-medium text-gray-700 hover:text-gray-800">
+                                    <Link to="/login" className="text-sm font-medium text-gray-700 hover:text-gray-800">
                                         Login
-                                    </a>
+                                    </Link>
                                     <span className="h-6 w-px bg-gray-200" aria-hidden="true" />
-                                    <a href="#register" className="text-sm font-medium text-gray-700 hover:text-gray-800">
+                                    <Link to="/register" className="text-sm font-medium text-gray-700 hover:text-gray-800">
                                         Create account
-                                    </a>
+                                    </Link>
                                 </div>
 
                                 <div className="hidden lg:ml-8 lg:flex">
-                                    <a href="#cad" className="text-gray-700 hover:text-gray-800 flex items-center">
+                                    <Link to="/cad" className="text-gray-700 hover:text-gray-800 flex items-center">
                                         <img
                                             src="https://tailwindui.com/img/flags/flag-canada.svg"
                                             alt=""
@@ -431,27 +432,27 @@ export default function Header() {
                                         />
                                         <span className="ml-3 block text-sm font-medium">CAD</span>
                                         <span className="sr-only">, change currency</span>
-                                    </a>
+                                    </Link>
                                 </div>
 
                                 {/* Search */}
                                 <div className="flex lg:ml-6">
-                                    <a href="#search" className="p-2 text-gray-400 hover:text-gray-500">
+                                    <Link to="/search" className="p-2 text-gray-400 hover:text-gray-500">
                                         <span className="sr-only">Search</span>
                                         <SearchIcon className="w-6 h-6" aria-hidden="true" />
-                                    </a>
+                                    </Link>
                                 </div>
 
                                 {/* Cart */}
                                 <div className="ml-4 flow-root lg:ml-6">
-                                    <a href="#shoppingIcon" className="group -m-2 p-2 flex items-center">
+                                    <Link to="/shoppingIcon" className="group -m-2 p-2 flex items-center">
                                         <ShoppingBagIcon
                                             className="flex-shrink-0 h-6 w-6 text-gray-400 group-hover:text-gray-500"
                                             aria-hidden="true"
                                         />
                                         <span className="ml-2 text-sm font-medium text-gray-700 group-hover:text-gray-800">0</span>
                                         <span className="sr-only">items in cart, view bag</span>
-                                    </a>
+                                    </Link>
                                 </div>
                             </div>
                         </div>
