@@ -3,7 +3,7 @@ import React from 'react';
 const About = () => {
     return (
         <div className='container mx-auto'>
-            <h1 className='text-4xl font-bold py-3 bg-gray-600  hover:bg-sky-700 '>About Us</h1>
+            <h1 className='text-4xl font-bold py-3 bg-gray-600  hover:bg-sky-700 justify-center'>About Us</h1>
             <img src='https://template.annimexweb.com/diva/assets/images/about/about-us-image3.jpg' className="w-full mx-auto" alt='' />
 
             <div className='container pt-3'>
@@ -11,7 +11,7 @@ const About = () => {
                     <div className='w-50'>
                         <img src="https://template.annimexweb.com/diva/assets/images/about/about-us-image1.jpg" className="w-full" alt='' />
                     </div>
-                    <div className='w-50 px-5'>
+                    <div className='w-50 px-5 justify-center'>
                         <h2 className='text-2xl font-medium text-gray-800 uppercase mb-6'>What is Unity Mart</h2>
                         <p>Unity Mart comes with easy-to-use interface and outstanding support. You can implement your own design. You can easily change the store's appearance as per your requirements using our ready sections and options available.
                             Our support teams are ready to help you on any stage of your store setup</p>
