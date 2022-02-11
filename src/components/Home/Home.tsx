@@ -6,7 +6,6 @@ import Promo from '../Promo/Promo';
 export default function Home() {
     return (
         <div>
-
             <HomeProducts />
             <Promo />
         </div>
