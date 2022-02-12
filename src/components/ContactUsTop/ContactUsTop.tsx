@@ -19,7 +19,8 @@ export default class App extends React.PureComponent<IAppProps> {
                 <span className="block text-indigo-600 xl:inline">  by Unity Mart</span>
               </h4>
               <p className="mt-3 text-base text-gray-500 sm:mt-5 sm:text-lg sm:max-w-xl sm:mx-auto md:mt-5 md:text-xl lg:mx-0">
-              The Mutivendor E-commerce platform Unity Mart provides With the change of time people mainly customers/buyers are also motivating themselves in online shopping that’s how the e-commerce platforms have started their business by ensuring all the customer's needs online. Before how the customer bought products in the shop, we are also ensuring that experience on our website so that customers can enjoy their shopping
+              The Mutivendor E-commerce platform Unity Mart, Our main object is to give user the feel of online shopping as like as shopping from market.Our goal is to provide the best user interface and best user experience.
+
               </p>
               <div className="mt-5 sm:mt-8 sm:flex sm:justify-center lg:justify-start">
                 <div className="rounded-md shadow">
