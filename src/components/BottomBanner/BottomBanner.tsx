@@ -11,7 +11,7 @@ export default class BottomBanner extends PureComponent<Props> {
         <>
         <section style={{backgroundColor:'/f7f7f7',	margin: '20px'}} className="shop-services section home">
 		<div className="container">
-			<div className="grid lg:grid-cols-4">
+			<div className="grid md:grid-cols-4 lg:grid-cols-4">
 				<div className="per-service">
 					<div className="single-service">
           <svg xmlns="http://www.w3.org/2000/svg" className="h-6 w-6 " fill="none" viewBox="0 0 24 24" stroke="currentColor">
@@ -54,10 +54,12 @@ export default class BottomBanner extends PureComponent<Props> {
 	</section>
     <section className="midium-banner">
 		<div className="container mx-auto">
-			<div className="grid lg:grid-cols-2">
+			<div className="grid md:grid-cols-2 lg:grid-cols-2">
 				<div className="col">
 					<div className="single-banner">
+						<div className='lg:pl-40'>
 						<img src={xbox} alt="/"></img>
+						</div>
 						<div className="content">
 							<h5>Xbox Microsoft Edition</h5>
 							<h3>Color: <span className="span">White</span><br/>Up to<span className='span'> 30%</span></h3>
@@ -67,7 +69,9 @@ export default class BottomBanner extends PureComponent<Props> {
 				</div>
 				<div className="col">
 					<div className="single-banner">
-						<img style={{height:'50%',width:'50%'}} src={ps5} alt="/"></img>
+					<div className='lg:pl-40'>
+						<img src={ps5} alt="/"></img>
+						</div>
 						<div className="content">
 							<h5>Sony Ps5</h5>
 							<h3>Premium <span className='span'>edition</span> <br/> up to <span className='span'> 10%</span></h3>
