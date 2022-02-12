@@ -3,10 +3,10 @@ import React from 'react';
 const About = () => {
     return (
         <div className='container mx-auto'>
-            <h1 className='text-4xl font-bold py-3 bg-gray-600  hover:bg-sky-700 justify-center'>About Us</h1>
+            <h1 className='text-white text-4xl font-bold py-3 bg-purple-600  hover:bg-sky-700 justify-center'>About Us</h1>
             <img src='https://template.annimexweb.com/diva/assets/images/about/about-us-image3.jpg' className="w-full mx-auto" alt='' />
 
-            <div className='container pt-3'>
+            <div className='container'>
                 <div className='grid grid-cols-2 gap-0 items-center justify-center'>
                     <div className='w-50'>
                         <img src="https://template.annimexweb.com/diva/assets/images/about/about-us-image1.jpg" className="w-full" alt='' />
