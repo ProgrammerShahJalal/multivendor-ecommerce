@@ -31,7 +31,7 @@ export default class App extends React.PureComponent<IAppProps> {
                             
                         <i className="fa-solid fa-location-check text-teal-300 text-xl"></i>
                         <i className="fa-solid fa-envelope text-teal-300 text-xl"></i>
-                            <span>24/7 Mohammadpur, Dhaka</span>
+                            <span>24/7 Mohammadpur,house-12,block-c Dhaka</span>
 
                         </div>
                     </div>
