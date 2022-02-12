@@ -1,0 +1,307 @@
+header {
+    box-shadow: rgb(33 35 38 / 10%) 0px 10px 10px -10px;
+}
+
+.top-bar {
+    display: flex;
+    flex-direction: row;
+    background: #545bc4;
+    gap: 20px;
+    color: #fff;
+    padding: 0 300px;
+    justify-content: flex-end;
+    height: 30px;
+    align-items: center;
+   
+}
+.top-bar p {
+    font-size: 14px;
+}
+
+/* ================== Middle Bar ======================= */
+.middle-bar {
+    display: flex;
+    padding: 0 300px;
+    flex-direction: row;
+    align-content: center;
+    justify-content: space-between;
+    margin-top: 20px;
+}
+
+.search {
+    width: 70%;
+    position: relative;
+}
+
+.container .open-search {
+    border-radius: 3px;
+    flex: auto;
+    margin: 0 15px;
+    overflow: hidden;
+    position: relative;
+}
+@media (max-width: 991px) {
+    .container .open-search {
+        margin: 0;
+        position: static;
+        text-align: right;
+   }
+}
+.container .open-search .fa-search {
+    display: none;
+}
+@media (max-width: 991px) {
+    .container .open-search .fa-search {
+        display: block;
+   }
+}
+.container .open-search .input-open-search {
+    display: none;
+}
+.container .open-search .input-open-search:checked ~ .search {
+    display: block;
+}
+@media (max-width: 991px) {
+    .container .search {
+        display: none;
+        position: absolute;
+        left: 0;
+        top: 70px;
+        width: 100%;
+        z-index: 999;
+   }
+}
+.container .search .input-search {
+    border-radius: 3px;
+    border: 1px solid #e1e1e1;
+    height: 40px;
+    padding: 0 70px 0 15px;
+    width: 100%;
+    background: white no-repeat;
+    transition: 100ms all linear 0s;
+    background-image: linear-gradient(to bottom, rgba(77, 97, 252, 0.63) 0%, rgba(77, 97, 252, 1) 90%), linear-gradient(to bottom, #e1e1e1, #e1e1e1);
+    background-size: 0 2px, 100% 1px;
+    background-position: 50% 100%, 50% 100%;
+    transition: background-size 0.3s cubic-bezier(0.64, 0.09, 0.08, 1);
+}
+.container .search .input-search:focus {
+    background-size: 100% 2px, 100% 1px;
+    outline: none;
+}
+.container .search .button-search {
+    background: #545bc4;
+    border: 0;
+    color: #fff;
+    cursor: pointer;
+    padding: 13px 20px;
+    position: absolute;
+    right: 0px;
+    top: 0px;
+}
+.container .search .button-search .fa-search {
+    display: block;
+}
+
+/* Create AC */
+.user {
+    display: flex;
+    gap: 10px;
+    align-items: center;
+}
+i.fas.fa-user-circle {
+    font-size: 20px;
+    color: gray;
+}
+.user div p {
+    line-height: 0.1;
+    font-size: 13px;
+    text-align: right;
+}
+
+.create-account{
+    font-weight: bold;
+}
+
+/* Wishlist */
+.wishlist, .cart {
+    display: flex;
+    align-items: center;
+}
+.wishlist i, .cart {
+    color: grey;
+    font-size: 24px;
+}
+
+/*==================== BOTTOM NAVIGATION======================= */
+
+.bottom-bar {
+    display: flex;
+    padding: 0 300px;
+    margin-top: 16px;
+}
+.categories {
+    display: flex;
+    align-items: center;
+    position: relative;
+    background: #545BC4;
+    color: #fff;
+    justify-content: space-around;
+}
+.pages {
+    display: flex;
+    /* align-items: center; */
+}
+.pages ul {
+    display: flex;
+    align-items: center;
+}
+.pages ul li {
+    list-style: none;
+    padding: 11px 25px;
+    font-weight: bold;
+    font-size: 16px;
+    color: grey;
+}
+
+.categories p {
+    text-align: left;
+    padding: 2px 60px 0 15px;
+}
+
+.pages ul li:hover {
+    background: #ccc;
+    cursor: pointer;
+}
+
+/* ================Category dropdown=============================== */
+
+/* .nav{
+    position: absolute;
+    top: 30%;
+    left: 50%;
+    transform: ;
+} */
+
+.nav .wrapper{  
+    width: 300px;
+    overflow: hidden;
+    background-color: #f1f1f1;
+    border-radius: 5px;
+    display: none;
+    transition: all 0.3s ease;
+}
+
+.show{
+    transition: all 0.3s ease;
+    position: absolute;
+    top: 106%;
+    display: flex  !important;
+    
+    /* display: block !important; */
+}
+
+.nav .wrapper .setting-drop,
+.nav .wrapper .help-drop{
+    display: none;
+}
+
+
+
+.nav .drop-btn{
+
+    width: 300px;
+    background: #545BC4;
+    color: #ffffff;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0 20px;
+    font-weight: 500;
+    cursor: pointer;
+    
+}
+.nav .drop-btn span{
+/* line-height: 50px ; */
+float: right;
+font-size: 28px;
+cursor: pointer;
+}
+.nav .wrapper ul{
+    list-style: none;
+    width: 300px;
+    padding: 10px;
+    transition: all 0.3s ease;
+}
+.nav .wrapper ul li{
+    line-height: 45px;
+
+}
+
+.nav .wrapper ul li a{
+    position: relative;
+    text-decoration: none;
+    color: #342d2d;
+    display: flex;
+    font-size: 16px;
+    padding: 0 10px;
+    align-items: center;
+    border-radius: 8px;
+
+}
+
+.nav .wrapper ul li:hover a{
+    background-color: #dddddd;
+}
+.wrapper ul li a i{
+    position: absolute;
+    right: 10px;
+    font-size: 20px;
+    pointer-events: none;
+}
+
+.wrapper ul li a .icon{
+    height: 30px;
+    width: 30px;
+    font-size: 14px;
+    margin-right: 13px;
+    background-color: #4949491a;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    border-radius: 50%;
+}
+.wrapper ul .arrow{
+    padding-left: 10px;
+    font-size: 18px;
+    color: #0d0d0e;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+.wrapper ul .arrow span{
+    margin-right: 15px;
+}
+
+/* =================Responsive=========== */
+
+@media screen and (max-width: 1600px) {
+    .top-bar, .middle-bar, .bottom-bar {
+        padding: 0 100px;
+      }
+
+}
+
+@media screen and (max-width: 1200px) {
+    .top-bar, .middle-bar, .bottom-bar {
+        padding: 0 30px;
+      }
+
+}
+
+@media screen and (max-width: 992px) {
+    .top-bar, .middle-bar, .bottom-bar {
+        display: none;
+      }
+
+}

@@ -151,7 +151,7 @@ export default function Header() {
     const [open, setOpen] = useState(false)
 
     return (
-        <div className="bg-white z-50">
+        <div className="bg-white">
             {/* Mobile menu */}
             <Transition.Root show={open} as={Fragment}>
                 <Dialog as="div" className="fixed inset-0 flex z-40 lg:hidden" onClose={setOpen}>
@@ -313,7 +313,7 @@ export default function Header() {
                             </div>
 
                             {/* Flyout menus */}
-                            <Popover.Group className="hidden lg:ml-8 lg:block lg:self-stretch">
+                            <Popover.Group className="z-50 hidden lg:ml-8 lg:block lg:self-stretch">
                                 <div className="h-full flex space-x-8">
                                     {navigation.categories.map((category) => (
                                         <Popover key={category.name} className="flex">
