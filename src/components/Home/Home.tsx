@@ -12,6 +12,7 @@ export default function Home() {
             <HomeProducts />
             <BottomBanner/>
             <Promo />
+            
         </div>
     )
 }

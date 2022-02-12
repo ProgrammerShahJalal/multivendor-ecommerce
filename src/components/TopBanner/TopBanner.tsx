@@ -11,10 +11,12 @@ export default class TopBanner extends PureComponent<Props> {
     return (
         <section className="midium-banner z-0">
 		<div className="p-5">
-			<div className="grid lg:grid-cols-3">
+			<div className="grid md:grid-cols-2 xs:grid-cols-1 lg:grid-cols-3">
 				<div className="">
 					<div className="single-banner poster-card">
+						<div className='lg:pl-28'>
 						<img style={{height:'225px',width:'200px'}} src={shoes} alt="/"></img>
+						</div>
 						<div className="content">
 							<h4><b>Nike Shoes</b></h4>
 							<h3>Premium<span className="span"> Black</span><br/>Up to<span className='span'> 30%</span> <span className='text-red-600'>Off</span></h3>
@@ -24,7 +26,9 @@ export default class TopBanner extends PureComponent<Props> {
 				</div>
 				<div className="">
 					<div className="single-banner poster-card">
+					<div className='lg:pl-28'>
 						<img style={{height:'225px',width:'200px'}} src={ps5} alt="/"></img>
+						</div>
 						<div className="content">
 							<h4><b>Sony Ps5</b></h4>
 							<h3>Premium <span className='span'>edition</span> <br/> up to <span className='span'> 10%</span> <span className='text-red-600'>Off</span></h3>
@@ -34,7 +38,9 @@ export default class TopBanner extends PureComponent<Props> {
 				</div>
         <div className="">
 					<div className="single-banner poster-card">
+					<div className='lg:pl-28'>
 						<img style={{height:'225px',width:'200px'}} src={bag} alt="/"></img>
+						</div>
 						<div className="content">
 							<h4><b>Stylish Backpack</b></h4>
 							<h3>Super <span className='span'>Comfort</span> <br/> up to <span className='span'> 10%</span> <span className='text-red-600'>Off</span></h3>
