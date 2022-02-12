@@ -14,7 +14,7 @@ export default class TopBanner extends PureComponent<Props> {
 			<div className="grid md:grid-cols-2 xs:grid-cols-1 lg:grid-cols-3">
 				<div className="">
 					<div className="single-banner poster-card">
-						<div className='lg:pl-28'>
+						<div className='lg:pl-16'>
 						<img style={{height:'225px',width:'200px'}} src={shoes} alt="/"></img>
 						</div>
 						<div className="content">
@@ -26,7 +26,7 @@ export default class TopBanner extends PureComponent<Props> {
 				</div>
 				<div className="">
 					<div className="single-banner poster-card">
-					<div className='lg:pl-28'>
+					<div className='lg:pl-20'>
 						<img style={{height:'225px',width:'200px'}} src={ps5} alt="/"></img>
 						</div>
 						<div className="content">
@@ -38,7 +38,7 @@ export default class TopBanner extends PureComponent<Props> {
 				</div>
         <div className="">
 					<div className="single-banner poster-card">
-					<div className='lg:pl-28'>
+					<div className='lg:pl-20'>
 						<img style={{height:'225px',width:'200px'}} src={bag} alt="/"></img>
 						</div>
 						<div className="content">
