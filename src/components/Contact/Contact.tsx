@@ -1,5 +1,6 @@
 import * as React from 'react';
 import { Link } from 'react-router-dom';
+import ContactUsTop from '../ContactUsTop/ContactUsTop';
 
 export interface IAppProps {
 }
@@ -7,7 +8,9 @@ export interface IAppProps {
 export default class App extends React.PureComponent<IAppProps> {
   public render() {
     return (
-        <div className="antialiased bg-gray-100 text-left bg-red-200 w-full h-full">
+        <div>
+            <ContactUsTop/>
+            <div className="antialiased bg-gray-100 text-left bg-red-200 w-full h-full">
         <div className='flex w-full min-h-screen justify-center items-center mb-8'>
             <div className='flex flex-col md:flex-row md:space-x-6 md:space-y-0 space-y-6 bg-cyan-700 w-full max-w-4xl p-8 sm:p-12  rounded-xl shadow-lg text-white overflow-hidden'>
                 <div className='flex flex-col space-y-8 justify-between'>
@@ -72,6 +75,8 @@ export default class App extends React.PureComponent<IAppProps> {
 
 
         </div>
+        </div>
+        
         </div>
     
 );
