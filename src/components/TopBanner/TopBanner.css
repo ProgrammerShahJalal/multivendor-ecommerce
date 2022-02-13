@@ -1,15 +1,27 @@
-.sngle-banner:hover img{
-    transform: scale(1.1)
+.hover-img{
+    display: none;
 }
+.sngle-banner:hover .hover-img{
+    display: block;
+}
+.sngle-banner:hover .main-img{
+    display: none;
+}
+
 .small-banner{
 	padding:0;
 }
-.poster-card{
-	height: 250px;
-	margin: 10px;
+.small-banner img{
+	justify-content: left;
 }
 .small-banner .sngle-banner{
 	position:relative;
+}
+.content .top-span{
+	color: #DC2626;
+}
+.poster-card{
+	background-color: white;
 }
 .small-banner .sngle-banner img{
 	padding-right: -50px;
@@ -31,11 +43,11 @@
 	font-size: 27px;
 	font-weight: 700;
 	text-transform: uppercase;
-	color: #333;
+	color: #000	;
 	line-height: 30px;
 }
 .span{
-	color:#F7941D;
+	color:#1df7da;
 }
 .small-banner{
 	overflow: hidden;
@@ -46,7 +58,7 @@
 
 .small-banner .sngle-banner h4 {
 	font-size: 13px;
-	color: #F7941D;
+	color: #ff0000;
 	font-weight: 500;
 	margin-bottom: 5px;
 	text-transform: uppercase;
