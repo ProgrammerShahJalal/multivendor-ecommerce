@@ -51,6 +51,7 @@ export default class TopBanner extends PureComponent<Props> {
 			</div>
 		</div>
 	</section>
+	
     )
   }
 }
