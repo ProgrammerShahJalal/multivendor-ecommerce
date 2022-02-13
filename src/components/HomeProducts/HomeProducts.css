@@ -8,10 +8,8 @@
     height: 330px;
     width: 440px;
 	overflow: hidden;
-    visibility: hidden;
 }
 .card-main:hover .image-hover{
-    visibility: visible;
     display: block;
 }
 .card-main:hover .image{

@@ -20,14 +20,15 @@ export default class HomeProducts extends PureComponent<Props> {
         </a>
       </div>
     <div className="grid grid-flow-row grid-cols-1 md:grid-cols-3 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-10">
-
-      
       <div className="shadow-lg card-main rounded-lg">
+        <div>
         <a href="/">
           <img alt='' src='https://i.ebayimg.com/images/g/qPoAAOSw1fZdYQ7w/s-l1600.jpg' className="image rounded-tl-lg rounded-tr-lg" />
           <img alt='' src='https://image.made-in-china.com/202f0j00gMQYbsEBqzcU/New-Design-Loose-Jeans-Denim-Dresses-Women-Denim-Dress-Jeans-Dress-Women-with-High-Quality-Dress.jpg' className="image-hover rounded-tl-lg rounded-tr-lg" />
         </a>
-        <div className="p-5">
+        </div>
+        
+        <div className="p-5 description bg-white">
           <h3><a href="/">Mens T-Shirt</a></h3>
           <div className="flex flex-row my-3">
             <div className="bg-black rounded-full h-5 w-5 shadow-md mr-2"></div>
@@ -45,13 +46,14 @@ export default class HomeProducts extends PureComponent<Props> {
           </div>
         </div>
       </div>
-
       <div className="shadow-lg card-main rounded-lg">
+        <div>
         <a href="/">
         <img alt='' src='https://i.ebayimg.com/images/g/qPoAAOSw1fZdYQ7w/s-l1600.jpg' className="image-hover rounded-tl-lg rounded-tr-lg" />
           <img alt='' src='https://image.made-in-china.com/202f0j00gMQYbsEBqzcU/New-Design-Loose-Jeans-Denim-Dresses-Women-Denim-Dress-Jeans-Dress-Women-with-High-Quality-Dress.jpg' className="image rounded-tl-lg rounded-tr-lg"/>
         </a>
-        <div className="p-5">
+        </div>
+        <div className="p-5 description bg-white">
           <h3><a href="/">Blue Denim Dress</a></h3>
           <div className="flex flex-row my-3">
             <div className="bg-black rounded-full h-5 w-5 shadow-md mr-2"></div>
@@ -67,11 +69,13 @@ export default class HomeProducts extends PureComponent<Props> {
             <a className="border-gray-300 border-2 text-gray-400 rounded-md px-2 py-1 mr-2 text-xs" href="/">M</a>
             <a className="border-gray-300 border-2 text-gray-400 rounded-md px-2 py-1 mr-2 text-xs" href="/">S</a>
           </div>
+          
         </div>
       </div>
     </div>
   </div>
 </div>
+
       </div>
     )
   }
