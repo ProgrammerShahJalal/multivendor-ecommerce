@@ -1,19 +1,19 @@
 import React, { PureComponent } from 'react';
-import { Link } from 'react-router-dom';
 import './TopBanner.css'
 import ps5 from './../../images/products/others/ps5-removebg-preview.png';
 import bag from './../../images/products/others/images-removebg-preview.png';
 import shoes from './../../images/products/others/nike-removebg-preview.png';
+import { Link } from 'react-router-dom';
 type Props = {}
 
 export default class TopBanner extends PureComponent<Props> {
   render() {
     return (
-        <section className="midium-banner z-0">
+		<section className="small-banner z-0">
 		<div className="p-5">
 			<div className="grid md:grid-cols-2 xs:grid-cols-1 lg:grid-cols-3">
 				<div className="">
-					<div className="single-banner poster-card">
+					<div className="sngle-banner poster-card">
 						<div className='lg:pl-16'>
 						<img style={{height:'225px',width:'200px'}} src={shoes} alt="/"></img>
 						</div>
@@ -25,8 +25,8 @@ export default class TopBanner extends PureComponent<Props> {
 					</div>
 				</div>
 				<div className="">
-					<div className="single-banner poster-card">
-					<div className='lg:pl-20'>
+					<div className="sngle-banner poster-card">
+					<div className='lg:pl-16'>
 						<img style={{height:'225px',width:'200px'}} src={ps5} alt="/"></img>
 						</div>
 						<div className="content">
@@ -37,8 +37,8 @@ export default class TopBanner extends PureComponent<Props> {
 					</div>
 				</div>
         <div className="">
-					<div className="single-banner poster-card">
-					<div className='lg:pl-20'>
+					<div className="sngle-banner poster-card">
+					<div className='lg:pl-16'>
 						<img style={{height:'225px',width:'200px'}} src={bag} alt="/"></img>
 						</div>
 						<div className="content">
