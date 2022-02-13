@@ -60,7 +60,7 @@ export const UseFirebase = (
                     displayName: name,
                     email: email,
                     emailVerified: false,
-                    photoURL: ''
+                    photoURL: '' || 'https://i.ibb.co/dDS0Jq5/user.png'
                 };
 
                 setUser(newUser);
@@ -117,7 +117,7 @@ export const UseFirebase = (
                     displayName: user.displayName || '',
                     email: user.email || '',
                     emailVerified: user.emailVerified || false,
-                    photoURL: user.photoURL || ''
+                    photoURL: user.photoURL || 'https://i.ibb.co/dDS0Jq5/user.png'
                 }
                 setUser(userDetails)
             } else {
@@ -125,7 +125,7 @@ export const UseFirebase = (
                     displayName: '',
                     email: '',
                     emailVerified: false,
-                    photoURL: ''
+                    photoURL: 'https://i.ibb.co/dDS0Jq5/user.png'
                 })
             }
             setIsLoading(false)
