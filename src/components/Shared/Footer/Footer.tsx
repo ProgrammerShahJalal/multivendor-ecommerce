@@ -22,10 +22,10 @@ export default class App extends React.PureComponent<IAppProps> {
                                 <h4 className='text-2xl pb-4'>Information</h4>
                                 <hr className='mb-4 w-1/3' />
                                 <p className='text-gray-500' >
-                                    <p className="footer-link hover:text-blue-200  pb-4"> <i className='fa fa-chevron-right text-blue-200'></i>Home</p>
-                                    <p className="footer-link hover:text-blue-200  pb-4"> <i className='fa fa-chevron-right text-blue-200'></i>About Us</p>
-                                    <p className="footer-link hover:text-blue-200  pb-4"> <i className='fa fa-chevron-right text-blue-200'></i>Delivery Information</p>
-                                    <p className="footer-link hover:text-blue-200  pb-4"> <i className='fa fa-chevron-right text-blue-200'></i>Contact Us</p>
+                                    <p className="footer-link hover:text-blue-200  pb-4"> <i className='fa fa-chevron-right text-blue-200'></i> Home</p>
+                                    <p className="footer-link hover:text-blue-200  pb-4"> <i className='fa fa-chevron-right text-blue-200'></i> About Us</p>
+                                    <p className="footer-link hover:text-blue-200  pb-4"> <i className='fa fa-chevron-right text-blue-200'></i> Delivery Information</p>
+                                    <p className="footer-link hover:text-blue-200  pb-4"> <i className='fa fa-chevron-right text-blue-200'></i> Contact Us</p>
                                 </p>
 
 
@@ -35,10 +35,10 @@ export default class App extends React.PureComponent<IAppProps> {
                                 <h4 className='text-2xl pb-4'> Our Services</h4>
                                 <hr className='mb-4 w-1/3' />
                                 <p className='text-gray-500'>
-                                    <p className="footer-link pb-4 hover:text-blue-200"> <i className='fa fa-chevron-right text-blue-200'></i>Discount Returns</p>
-                                    <p className="footer-link hover:text-blue-200  pb-4"> <i className='fa fa-chevron-right text-blue-200'></i>Private & Policy</p>
-                                    <p className="footer-link hover:text-blue-200  pb-4"> <i className='fa fa-chevron-right text-blue-200'></i>Customer Service</p>
-                                    <p className="footer-link hover:text-blue-200  pb-4">  <i className='fa fa-chevron-right text-blue-200'></i>Terms & Conditions</p>
+                                    <p className="footer-link pb-4 hover:text-blue-200"> <i className='fa fa-chevron-right text-blue-200'></i> Discount Returns</p>
+                                    <p className="footer-link hover:text-blue-200  pb-4"> <i className='fa fa-chevron-right text-blue-200'></i> Private & Policy</p>
+                                    <p className="footer-link hover:text-blue-200  pb-4"> <i className='fa fa-chevron-right text-blue-200'></i> Customer Service</p>
+                                    <p className="footer-link hover:text-blue-200  pb-4">  <i className='fa fa-chevron-right text-blue-200'></i> Terms & Conditions</p>
                                 </p>
                             </div>
                             <div className="mb-5">
