@@ -9,7 +9,7 @@ export default class BottomBanner extends PureComponent<Props> {
   render() {
     return (
         <>
-        <section style={{backgroundColor:'/f7f7f7',	margin: '20px'}} className="shop-services section home">
+        <section style={{backgroundColor:'#f7f7f7',	margin: '10px'}} className="shop-services section home">
 		<div className="container">
 			<div className="grid md:grid-cols-4 lg:grid-cols-4">
 				<div className="per-service">
