@@ -47,7 +47,7 @@ export default class TopBanner extends PureComponent<Props> {
         <div className="main-div">
 					<div className="sngle-banner grid grid-cols-1 poster-card">
 					<div className='lg:pl-24'>
-						<img className='main-img' style={{height:'260px',width:'150px'}} src={bag} alt="/"></img>
+						<img className='main-img' style={{height:'250px',width:'150px'}} src={bag} alt="/"></img>
 						<img className='hover-img' style={{height:'250px',width:'150px'}} src={bagBack} alt="/"></img>
 						</div>
 						<div className="content">
