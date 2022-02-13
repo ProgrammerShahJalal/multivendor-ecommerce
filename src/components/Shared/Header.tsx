@@ -20,6 +20,7 @@ import { MenuIcon, SearchIcon, ShoppingBagIcon, XIcon } from '@heroicons/react/o
 import { Link } from 'react-router-dom'
 
 const navigation = {
+
     categories: [
         {
             id: 'women',
@@ -149,6 +150,7 @@ function classNames(...classes: any[]) {
 
 export default function Header() {
     const [open, setOpen] = useState(false)
+
 
     return (
         <div className="bg-white">
