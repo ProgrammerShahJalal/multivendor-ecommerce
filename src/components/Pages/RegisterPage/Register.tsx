@@ -17,7 +17,7 @@ const Register = () => {
         password: ''
     })
 
-    const { RegisterUser, user, error, } = UseAuth()
+    const { RegisterUser, user, error, handleGoogleSignIn, handleFacebookSIgnIn } = UseAuth()
     const navigate = useNavigate()
     const location = useLocation()
     console.log('user', user);
@@ -39,7 +39,7 @@ const Register = () => {
     }
 
     return (
-        <div className="relative min-h-screen bg-purple-100 backdrop-blur flex justify-center items-center bg-texture bg-cover py-28 sm:py-0">
+        <div className="relative min-h-screen bg-purple-100 backdrop-blur flex justify-center items-center bg-texture bg-cover py-28 sm:py-0 login-reg">
             <div className="p-4 sm:p-8 flex-1 ">
                 <div className="max-w-[420px] min-w-[320px] bg-white rounded-b-3xl mx-auto">
                     <div className="relative h-auto">
@@ -55,25 +55,16 @@ const Register = () => {
                         </div>
                         <div className="flex items-center justify-around mt-6">
                             <div className="w-14 h-14 text-center rounded-full bg-blue-500 text-white saturate-200 transition-all hover:bg-blue-600">
-                                <a href="#" className="block mt-4">
+                                <div onClick={() => handleFacebookSIgnIn()} className="block mt-4 social-login">
                                     <i className="fab fa-facebook-f fa-lg "></i>
-                                </a>
+                                </div>
                             </div>
                             <div className="w-14 h-14 text-center rounded-full bg-red-500 text-white saturate-100 transition-all hover:bg-red-600">
-                                <a href="#" className="block mt-4">
+                                <div onClick={() => handleGoogleSignIn()} className="block mt-4 social-login">
                                     <i className="fab fa-google fa-lg"></i>
-                                </a>
+                                </div>
                             </div>
-                            <div className="w-14 h-14 text-center rounded-full bg-indigo-500 text-white saturate-100 transition-all hover:bg-indigo-600">
-                                <a href="#" className="block mt-4">
-                                    <i className="fab fa-twitch fa-lg"></i>
-                                </a>
-                            </div>
-                            <div className="w-14 h-14 text-center rounded-full bg-green-500 text-white saturate-100 transition-all hover:bg-green-600">
-                                <a href="#" className="block mt-4">
-                                    <i className="fab fa-line fa-lg"></i>
-                                </a>
-                            </div>
+
                         </div>
                         <div className="flex items-center my-6">
                             <hr className="flex-1" />
@@ -98,7 +89,7 @@ const Register = () => {
                             <div className="mt-10">
                                 <label className="inline-flex items-center">
                                     <input type="checkbox" className="rounded border-gray-300 text-purple-600 focus:border-purple-300 focus:ring focus:ring-offset-0 focus:ring-purple-200/50" defaultChecked />
-                                    <span className="ml-2 text-sm">Check here that you have agree to <a href="#" className="font-semibold text-purple-600 hover:underline">the terms.</a></span>
+                                    <span className="ml-2 text-sm">Check here that you have agree to <Link to="#" className="font-semibold text-purple-600 hover:underline">the terms.</Link></span>
                                 </label>
                             </div>
 

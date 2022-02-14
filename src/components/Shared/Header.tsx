@@ -152,6 +152,8 @@ export default function Header() {
     const [open, setOpen] = useState(false)
 
 
+
+
     return (
         <div className="bg-white z-50">
             {/* Mobile menu */}
@@ -263,7 +265,10 @@ export default function Header() {
                                 ))}
                             </div>
 
+
+
                             <div className="border-t border-gray-200 py-6 px-4 space-y-6">
+
                                 <div className="flow-root">
                                     <Link to="/login" className="-m-2 p-2 block font-medium text-gray-900">
                                         Login
@@ -415,6 +420,7 @@ export default function Header() {
                             </Popover.Group>
 
                             <div className="ml-auto flex items-center">
+
                                 <div className="hidden lg:flex lg:flex-1 lg:items-center lg:justify-end lg:space-x-6">
                                     <Link to="/login" className="text-sm font-medium text-gray-700 hover:text-gray-800">
                                         Login

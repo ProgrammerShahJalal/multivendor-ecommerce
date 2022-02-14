@@ -10,6 +10,7 @@ import AuthProvider from "./context/AuthProvider";
 
 
 
+
 function App() {
 
   return (
@@ -22,6 +23,7 @@ function App() {
             <Route path='/home' element={<Home />} />
             <Route path='/contact' element={<Contact />} />
             <Route path='/about' element={<About />} />
+
 
           </Routes>
           <Footer />
