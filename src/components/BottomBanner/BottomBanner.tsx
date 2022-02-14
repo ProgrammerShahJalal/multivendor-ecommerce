@@ -13,22 +13,22 @@ export default class BottomBanner extends PureComponent<Props> {
 		<div className="container">
 			<div className="grid md:grid-cols-4 lg:grid-cols-4 ">
 				<div className="bg-red-500 per-service mx-5">
-				<span className='fal fa-truck'></span>
+				<i className="fa-regular fa-truck-fast"></i>
 						<h4>Free shipping</h4>
 						<p>Orders over $100</p>
 				</div>
 				<div className="bg-green-500 per-service mx-5">
-				<i className="fal fa-sync-alt"></i>
+				<i className="fa-regular fa-sync-alt"></i>
 						<h4>Free Return</h4>
 						<p>Within 30 days returns</p>
 				</div>
 				<div className="bg-blue-500 per-service mx-5">
-					<i className="fal fa-lock"></i>
+					<i className="fa-regular fa-lock"></i>
 						<h4>Secure Payment</h4>
 						<p>100% secure payment</p>
 				</div>
 				<div className="bg-orange-500 per-service mx-5">
-				<i className="fal fa-tag"></i>
+				<i className="fa-regular fa-tag"></i>
 						<h4>Best Price</h4>
 						<p>Guaranteed price</p>
 					</div>
