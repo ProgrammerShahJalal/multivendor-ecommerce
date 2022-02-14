@@ -18,7 +18,7 @@
 	position:relative;
 }
 .content .top-span{
-	color: #DC2626;
+	color: #DC1010;
 }
 .poster-card{
 	background-color: white;
@@ -45,9 +45,6 @@
 	text-transform: uppercase;
 	color: #000	;
 	line-height: 30px;
-}
-.span{
-	color:#1df7da;
 }
 .small-banner{
 	overflow: hidden;
