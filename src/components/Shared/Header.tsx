@@ -126,6 +126,7 @@ const navigation = {
         { name: 'Shop', to: '/shop' },
         { name: 'About', to: '/about' },
         { name: 'Contact', to: '/contact' },
+        { name: 'Our Team', to: '/team' },
     ],
 }
 
