@@ -1,3 +1,7 @@
-/* .bg-texture{
-    background-image: url('https://images.unsplash.com/photo-1605184861733-be9f5814095e?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=995&q=80');
-  }  */
+.social-login:hover {
+  cursor: pointer;
+}
+
+.login-reg {
+  padding: 70px 0;
+}

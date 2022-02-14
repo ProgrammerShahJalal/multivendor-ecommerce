@@ -139,6 +139,8 @@ export default function Header() {
 
     const { user, logout } = UseAuth();
 
+
+
     return (
         <div className="bg-white">
             {/* Mobile menu */}
@@ -249,6 +251,8 @@ export default function Header() {
                                     </div>
                                 ))}
                             </div>
+
+
 
                             <div className="border-t border-gray-200 py-6 px-4 space-y-6">
                                 {

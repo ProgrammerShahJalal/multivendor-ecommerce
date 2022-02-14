@@ -13,7 +13,6 @@ import Team from './components/Pages/Team/Team';
 
 
 
-
 function App() {
 
   return (

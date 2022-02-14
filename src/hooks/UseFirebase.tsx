@@ -1,8 +1,12 @@
-import { getAuth, createUserWithEmailAndPassword, signOut, onAuthStateChanged, signInWithEmailAndPassword, updateProfile } from "firebase/auth";
+import { getAuth, createUserWithEmailAndPassword, signOut, onAuthStateChanged, signInWithEmailAndPassword, signInWithPopup, updateProfile, GoogleAuthProvider, FacebookAuthProvider } from "firebase/auth";
 import { useEffect, useState } from "react";
 import FirebaseInitialization from "../Firebase/Firebase.init";
 
 FirebaseInitialization()
+const googleProvider = new GoogleAuthProvider();
+const facebookProvider = new FacebookAuthProvider();
+
+
 
 
 // type for the RegisterUserFunction
@@ -79,34 +83,6 @@ export const UseFirebase = (
             }).finally(() => setIsLoading(false));
     }
 
-    // REGISTER WITH EMAIL AND PASSWORD
-    // const RegisterUser: RegisterUserFunction = async (
-    //     email: string,
-    //     password: string,
-    //     name: string,
-    // ) => {
-    //     setIsLoading(true)
-    //     const userCredential = await createUserWithEmailAndPassword(auth, email, password)
-    //     const newUser = {
-
-    //         displayName: name,
-    //         email: email,
-    //         emailVerified: false,
-    //         photoURL: ''
-    //     };
-
-    //     setUser(newUser);
-    //     setError('')
-
-    //     // Pass userCredential.user instead of auth.currentUser
-    //     updateProfile(userCredential.user, {
-    //         displayName: name
-    //     }).then(() => { }).catch((error) => { setError(error) });
-    //     // history.replace('/');
-    // };
-
-    console.log(error);
-
 
     // OBSERVE A USER
     useEffect(() => {
@@ -156,6 +132,32 @@ export const UseFirebase = (
                 setError(errorMessage)
             }).finally(() => setIsLoading(false));
     }
+    // GOOGLE SIGN
+    const handleGoogleSignIn = async () => {
+        await signInWithPopup(auth, googleProvider)
+            .then((result: any) => {
+                const user = result.user;
+                setUser(user)
+                // ...
+            }).catch((error: any) => {
+                const errorMessage = error.message;
+                setError(errorMessage)
+            });
+    }
+    // Facebook sign in
+    const handleFacebookSIgnIn = () => {
+        signInWithPopup(auth, facebookProvider)
+            .then((result: any) => {
+                // The signed-in user info.
+                const user = result.user;
+                setUser(user)
+
+            })
+            .catch((error: any) => {
+                const errorMessage = error.message;
+                setError(errorMessage)
+            });
+    }
 
 
 
@@ -174,5 +176,5 @@ export const UseFirebase = (
     }
 
 
-    return { RegisterUser, SignIn, user, logout, error, isLoading };
+    return { RegisterUser, SignIn, user, logout, error, isLoading, handleGoogleSignIn, handleFacebookSIgnIn };
 };
