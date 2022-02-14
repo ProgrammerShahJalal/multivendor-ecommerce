@@ -21,12 +21,12 @@ export default class App extends React.PureComponent<IAppProps> {
                                 <div className='flex flex-col space-y-6'>
                                     <div className='inline-flex space-x-2 items-center'>
 
-                                        <i className="fa-solid fa-phone text-teal-300 text-xl"></i>
+                                        <i className="fal fa-phone text-teal-300 text-xl"></i>
                                         <span>+(880) 1763849023</span>
 
                                     </div>
                                     <div className='inline-flex space-x-2 items-center'>
-                                        <i className="fa-solid fa-envelope text-teal-300 text-xl"></i><span>info@unityMart.com</span>
+                                        <i className="fal fa-envelope text-teal-300 text-xl"></i><span>info@unityMart.com</span>
 
                                     </div>
                                     <div className='inline-flex space-x-2 items-center'>
