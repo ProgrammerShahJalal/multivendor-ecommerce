@@ -52,10 +52,11 @@ const Reviews = () => {
     return (
         <div>
             <div className='container mx-auto rounded-md py-7'>
-                <h2 className='text-white text-3xl font-bold py-3 bg-rose-600 hover:bg-purple-600'>Users Reviews Here</h2>
+
                 <Swiper
                     spaceBetween={30}
                     effect={"coverflow"}
+                    loop={true}
                     grabCursor={true}
                     centeredSlides={true}
                     slidesPerView={"auto"}
@@ -76,11 +77,11 @@ const Reviews = () => {
                             spaceBetween: 20,
                         },
                         768: {
-                            slidesPerView: 4,
+                            slidesPerView: 3,
                             spaceBetween: 40,
                         },
                         1024: {
-                            slidesPerView: 5,
+                            slidesPerView: 3,
                             spaceBetween: 50,
                         },
                     }}
@@ -97,7 +98,7 @@ const Reviews = () => {
                             <SwiperSlide key={review.name}>
                                 <div className='p-7 bg-blue-300 justify-center'>
                                     <div>
-                                        <img src={review.url} className="w-50 rounded-full p-7" alt="" />
+                                        <img src={review.url} className="w-36 rounded-full p-7" alt="" />
                                     </div>
                                     <div>
                                         {review.name}
