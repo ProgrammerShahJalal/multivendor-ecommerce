@@ -10,6 +10,8 @@ import Login from "./components/Pages/LoginPage/Login";
 import NotFound from './components/NotFound/NotFound';
 import Team from './components/Pages/Team/Team';
 import Shop from "./components/Shop/Shop";
+import PrivateRoute from "./components/Route/PrivateRoute/PrivateRoute";
+import BlogDetails from "./components/Blogs/BlogDetails/BlogDetails";
 
 
 
@@ -30,6 +32,7 @@ function App() {
             <Route path='/login' element={<Login />} />
             <Route path='/register' element={<Register />} />
             <Route path='/shop' element={<Shop />} />
+            <Route path='/blogs/details/:id' element={<PrivateRoute><BlogDetails /></PrivateRoute>} />
             <Route path='*' element={<NotFound />} />
           </Routes>
           <Footer />

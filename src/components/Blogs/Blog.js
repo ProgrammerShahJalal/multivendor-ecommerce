@@ -6,7 +6,7 @@ const Blog = ({ blog }) => {
     const { title, img, description, _id, author, category, date } = blog;
     return (
         <div>
-            <Link to={`/details/${_id}`}>
+            <Link to={`/blogs/details/${_id}`}>
                 <div className="max-w-md mx-auto bg-white rounded-xl shadow-md overflow-hidden md:max-w-2xl">
                     <div className="md:flex">
                         <div className="md:shrink-0">
@@ -14,7 +14,7 @@ const Blog = ({ blog }) => {
                         </div>
                         <div className="p-8">
                             <div className="uppercase tracking-wide text-sm text-indigo-500 font-semibold">Category: {category}</div>
-                            <Link to="#" class="block mt-1 text-lg leading-tight font-medium text-black hover:underline truncate w-64">{title}</Link>
+                            <Link to={`/blogs/details/${_id}`} class="block mt-1 text-lg leading-tight font-medium text-black hover:underline truncate w-64">{title}</Link>
                             <p className="mt-2 text-slate-500 truncate w-96 h-12">{description}</p>
                             <div className="flex gap-5">
                                 <h3 className='text-sm'>Posted by {author}</h3>
