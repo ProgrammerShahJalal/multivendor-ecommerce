@@ -5,7 +5,8 @@ import TopBanner from '../TopBanner/TopBanner';
 import BottomBanner from '../BottomBanner/BottomBanner';
 import HomeProducts from '../../components/HomeProducts/HomeProducts';
 import Stats from '../Stats/Stats';
-import { Blog } from '../Blogs/Blogs';
+import Reviews from '../Pages/Reviews/Reviews';
+import Blogs from '../Blogs/Blogs';
 
 export default function Home() {
     return (
@@ -15,7 +16,8 @@ export default function Home() {
             <BottomBanner />
             <Promo />
             <Stats />
-            <Blog />
+            <Reviews />
+            <Blogs />
         </div>
     )
 }
