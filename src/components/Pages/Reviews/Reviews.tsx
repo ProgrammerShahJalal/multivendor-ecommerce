@@ -114,7 +114,10 @@ const Reviews = () => {
                             </SwiperSlide>
                         ))}
                 </Swiper>
-                <button type="button" className="text-white bg-pink-600 my-3 px-4 py-2 rounded-md hover:bg-purple-800">Give Your Review</button>
+                <div className="text-center">
+                    <button type="button" className="text-white bg-gradient-to-r from-green-400 to-blue-500 hover:from-pink-500 hover:to-yellow-500 my-3 px-4 py-2 rounded-md">Give Your Review
+                    </button>
+                </div>
 
             </div>
         </div>
