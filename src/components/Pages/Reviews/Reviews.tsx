@@ -83,7 +83,7 @@ const Reviews = () => {
                                     <div>
                                         <h2>{review.name}</h2>
                                     </div>
-                                    <div><p>{review.description}</p> </div>
+                                    <div className='my-4'><p className='text-sm'>{review.description}</p> </div>
                                     <div className="flex justify-center gap-4">
                                         <p>{review.ratings} start rating</p>
                                         <Rating name="half-rating-read" defaultValue={review.ratings} precision={0.5} readOnly />
