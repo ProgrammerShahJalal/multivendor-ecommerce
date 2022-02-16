@@ -9,7 +9,9 @@ import Reviews from '../Pages/Reviews/Reviews';
 import Blogs from '../Blogs/Blogs';
 import Banners from '../Pages/Banner/Banner';
 import Brands from '../Pages/Brands/Brands';
+import Sidebar from '../Sidebar/Sidebar';
 import { Faq } from '../FAQ/FAQ';
+
 
 export default function Home() {
     return (
@@ -20,6 +22,7 @@ export default function Home() {
             <BottomBanner />
             <Promo />
             <Stats />
+            <Sidebar />
             <Reviews />
             <Brands />
             <Blogs />

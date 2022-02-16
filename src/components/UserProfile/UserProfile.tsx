@@ -2,7 +2,7 @@ import React from 'react'
 import UseAuth from '../../hooks/UseAuth';
 
 export default function UserProfile() {
-  const { user, logout } = UseAuth();
+  const { logout } = UseAuth();
     return (
       <div>
         <link rel="stylesheet" href="https://unpkg.com/boxicons@2.0.7/css/boxicons.min.css" />
