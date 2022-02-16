@@ -25,8 +25,16 @@
 }
 
 .per-service{
+	color: #fff;
+	padding: 10px;
 	height: 100px;
-	padding-top: 20px;
+	border-radius: 10px;
+	text-align: center;
+}
+.per-service svg{
+	display: flex;
+	align-items: center;
+	justify-content: center;
 }
 
 .single-banner:hover img{

@@ -1,25 +1,11 @@
-/*
-  This example requires Tailwind CSS v2.0+ 
-  
-  This example requires some changes to your config:
-  
-  ```
-  // tailwind.config.js
-  module.exports = {
-    // ...
-    plugins: [
-      // ...
-      require('@tailwindcss/aspect-ratio'),
-    ],
-  }
-  ```
-*/
-import { Fragment, useState } from 'react'
-import { Dialog, Popover, Tab, Transition } from '@headlessui/react'
-import { MenuIcon, SearchIcon, ShoppingBagIcon, XIcon } from '@heroicons/react/outline'
-import { Link } from 'react-router-dom'
+import { Fragment, useState } from 'react';
+import { Dialog, Menu, Popover, Tab, Transition } from '@headlessui/react';
+import { MenuIcon, SearchIcon, ShoppingBagIcon, XIcon } from '@heroicons/react/outline';
+import { Link } from 'react-router-dom';
+import UseAuth from '../../hooks/UseAuth';
 
 const navigation = {
+
     categories: [
         {
             id: 'women',
@@ -140,6 +126,7 @@ const navigation = {
         { name: 'Shop', to: '/shop' },
         { name: 'About', to: '/about' },
         { name: 'Contact', to: '/contact' },
+        { name: 'Our Team', to: '/team' },
     ],
 }
 
@@ -149,6 +136,8 @@ function classNames(...classes: any[]) {
 
 export default function Header() {
     const [open, setOpen] = useState(false)
+
+    const { user, logout } = UseAuth();
 
     return (
         <div className="bg-white">
@@ -262,16 +251,26 @@ export default function Header() {
                             </div>
 
                             <div className="border-t border-gray-200 py-6 px-4 space-y-6">
-                                <div className="flow-root">
-                                    <Link to="/login" className="-m-2 p-2 block font-medium text-gray-900">
-                                        Login
-                                    </Link>
-                                </div>
-                                <div className="flow-root">
-                                    <Link to="/register" className="-m-2 p-2 block font-medium text-gray-900">
-                                        Create account
-                                    </Link>
-                                </div>
+                                {
+                                    user.email ? <div className="flow-root">
+                                        <p onClick={logout} className="-m-2 p-2 block font-medium text-gray-900">
+                                            Logout
+                                        </p>
+                                    </div> :
+                                        <div>
+                                            <div className="flow-root">
+                                                <Link to="/login" className="-m-2 p-2 block font-medium text-gray-900">
+                                                    Login
+                                                </Link>
+                                            </div>
+                                            <div className="flow-root">
+                                                <Link to="/register" className="-m-2 p-2 block font-medium text-gray-900">
+                                                    Create account
+                                                </Link>
+                                            </div>
+                                        </div>
+                                }
+
                             </div>
 
                             <div className="border-t border-gray-200 py-6 px-4">
@@ -413,15 +412,76 @@ export default function Header() {
                             </Popover.Group>
 
                             <div className="ml-auto flex items-center">
-                                <div className="hidden lg:flex lg:flex-1 lg:items-center lg:justify-end lg:space-x-6">
-                                    <Link to="/login" className="text-sm font-medium text-gray-700 hover:text-gray-800">
-                                        Login
-                                    </Link>
-                                    <span className="h-6 w-px bg-gray-200" aria-hidden="true" />
-                                    <Link to="/register" className="text-sm font-medium text-gray-700 hover:text-gray-800">
-                                        Create account
-                                    </Link>
-                                </div>
+                                {/* Profile dropdown */}
+                                {
+                                    user.email ? <Menu as="div" className="ml-3 relative">
+                                        <div>
+                                            <Menu.Button className="bg-gray-800 flex text-sm rounded-full focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-offset-gray-800 focus:ring-white">
+                                                <span className="sr-only">Open user menu</span>
+                                                <img
+                                                    className="inline-block h-12 w-12 rounded-full ring-2 ring-white"
+                                                    src={user.photoURL}
+                                                    alt=""
+                                                />
+                                            </Menu.Button>
+                                        </div>
+                                        <Transition
+                                            as={Fragment}
+                                            enter="transition ease-out duration-100"
+                                            enterFrom="transform opacity-0 scale-95"
+                                            enterTo="transform opacity-100 scale-100"
+                                            leave="transition ease-in duration-75"
+                                            leaveFrom="transform opacity-100 scale-100"
+                                            leaveTo="transform opacity-0 scale-95"
+                                        >
+                                            <Menu.Items className="z-10 origin-top-right absolute right-0 mt-2 w-48 rounded-md shadow-lg py-1 bg-white ring-1 ring-black ring-opacity-5 focus:outline-none">
+                                                <Menu.Item>
+                                                    {({ active }) => (
+                                                        <a
+                                                            href="#profile"
+                                                            className={classNames(active ? 'bg-gray-100' : '', 'block px-4 py-2 text-sm text-gray-700')}
+                                                        >
+                                                            Your Profile
+                                                        </a>
+                                                    )}
+                                                </Menu.Item>
+                                                <Menu.Item>
+                                                    {({ active }) => (
+                                                        <a
+                                                            href="#settings"
+                                                            className={classNames(active ? 'bg-gray-100' : '', 'block px-4 py-2 text-sm text-gray-700')}
+                                                        >
+                                                            Settings
+                                                        </a>
+                                                    )}
+                                                </Menu.Item>
+                                                <Menu.Item>
+                                                    {({ active }) => (
+                                                        <p
+                                                            onClick={logout}
+                                                            className={classNames(active ? 'bg-gray-100' : '', 'block px-4 py-2 text-sm text-gray-700 cursor-pointer')}
+                                                        >
+                                                            Sign out
+                                                        </p>
+                                                    )}
+                                                </Menu.Item>
+                                            </Menu.Items>
+                                        </Transition>
+                                    </Menu> :
+                                        <div className='flex items-center gap-5 text-sm font-medium text-gray-700 hover:text-gray-800'>
+                                            <div className="flow-root">
+                                                <Link to="/login" className="-m-2 p-2 block font-medium text-gray-900">
+                                                    Login
+                                                </Link>
+                                            </div>
+                                            <div className='flow-root'>
+                                                <Link to="/register" className="-m-2 p-2 block font-medium text-gray-900">
+                                                    Create Account
+                                                </Link>
+                                            </div>
+                                        </div>
+
+                                }
 
                                 <div className="hidden lg:ml-8 lg:flex">
                                     <Link to="/cad" className="text-gray-700 hover:text-gray-800 flex items-center">
