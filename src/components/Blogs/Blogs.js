@@ -8,7 +8,7 @@ const Blogs = () => {
 
     useEffect(() => {
         setIsLoading(true);
-        fetch("http://localhost:5000/blogs")
+        fetch("https://morning-inlet-49130.herokuapp.com/blogs")
             .then(res => res.json())
             .then(data => {
                 setIsLoading(false);
