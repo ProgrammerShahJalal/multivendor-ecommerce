@@ -23,7 +23,7 @@ const Reviews = () => {
     useEffect(() => {
         if (reviews) {
 
-            fetch('http://localhost:5000/reviews')
+            fetch('https://morning-inlet-49130.herokuapp.com/reviews')
                 .then(res => res.json())
                 .then(data => setReviews(data))
         }
