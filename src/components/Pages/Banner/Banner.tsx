@@ -1,5 +1,6 @@
 import React from "react";
 import { Swiper, SwiperSlide } from "swiper/react";
+import SwiperCore, { Autoplay } from 'swiper';
 import nike from './../../../images/Brands/nike-banner.png'
 // Import Swiper styles
 import "swiper/css";
@@ -9,47 +10,50 @@ import "swiper/css/pagination";
 import "swiper/css/thumbs";
 
 import { NavLink } from "react-router-dom";
-
+SwiperCore.use([Autoplay])
 export default function Banners() {
 
     return (
         <>
-        <div className="w-full">
+        <div className="w-full xs:h-96">
           <Swiper
-            pagination={{
-              dynamicBullets: false,
-            }}
-            className="mySwiper"
-          >
+          autoplay={{ delay: 3000 }} 
+          className="mySwiper">
             <SwiperSlide
               className="md:flex justify-between"
-              style={{ height: "27rem" }}
-            >
-              <div className="flex flex-col items-center md:items-start justify-center md:pl-15 lg:pl-32 p-10 text-center md:text-left">
-                <h1 className="text-xl md:text-4xl">Nike sports shoes <span className="text-blue-500">(sizes available)</span></h1>
+              style={{ height: "30rem" }}>
+              <div className="grid md:grid-cols-2 xs:grid-cols-1">
+              <div className="flex flex-col items-center md:items-start justify-center md:pl-15 lg:pl-32 p-12 text-center md:text-left">
+              <h1 className="text-4xl">
+                  T-shirts For men<span className="text-blue-500">(cotton)</span>
+                </h1>
                 <p className="text-2xl">
-                  Nike sports shoes for all sizes.
+                  Cotton t-shirt available for all size
                 </p>
                 <p className="text-3xl">
-                  $<span className="text-red-600">120</span>
+                  $<span className="text-red-600">35</span>
                 </p>
                 <NavLink
-                  to="/blogs"
-                  className="bg-green-400 hover:bg-green-500 transition-all rounded px-6 py-2 mt-3 text-white"
+                  style={{borderRadius:'35px'}}
+                  to="/shop"
+                  className="bg-gray-700 hover:bg-gray-800 transition-all px-6 py-2 mt-3 text-white"
                 >
-                  Explore
+                  Buy Now <i className="fa-light fa-cart-circle-plus"></i>
                 </NavLink>
               </div>
-              <img src={nike} alt="Image1" className="hidden md:block h-full" />
+              <div className="md:-mt-0 -mt-12">
+              <img src='https://media.gq-magazine.co.uk/photos/60af7335924d56e34d909e18/master/w_1920,h_1280,c_limit/Graphic%20tees_0002_New%20balance.jpg' alt="Image1" className="md:block" />
+              </div>
+              </div>
+              
             </SwiperSlide>
             <SwiperSlide
               className="md:flex justify-between"
-              style={{ height: "27rem" }}
-            >
-              <img src='https://5.imimg.com/data5/NM/SX/EJ/SELLER-94403929/adidas-mens-sports-shoes-500x500.jpg' alt="Image1" className="hidden md:block h-full" />
-              <div className="flex flex-col items-center md:items-end justify-center md:pr-15 lg:pr-32 p-10 text-center md:text-right">
-                <h1 className="text-xl md:text-4xl">
-                  Perfect fit for you <span className="text-blue-500">(sizes available)</span>
+              style={{ height: "30rem" }}>
+              <div className="grid md:grid-cols-2 xs:grid-cols-1">
+              <div className="flex flex-col items-center md:items-start justify-center md:pl-15 lg:pl-32 p-10 text-center md:text-left">
+              <h1 className="text-4xl">
+                  Perfect fit for you
                 </h1>
                 <p className="text-2xl">
                   Adidas Jogging shoes for all feet size. For you.
@@ -58,12 +62,44 @@ export default function Banners() {
                   $<span className="text-red-600">113</span>
                 </p>
                 <NavLink
-                  to="/blogs"
-                  className="bg-green-400 hover:bg-green-500 transition-all rounded px-6 py-2 mt-3 text-white"
+                  style={{borderRadius:'35px'}}
+                  to="/shop"
+                  className="bg-gray-700 hover:bg-gray-800 transition-all px-6 py-2 mt-3 text-white"
                 >
-                  Explore
+                  Buy Now <i className="fa-light fa-cart-circle-plus"></i>
                 </NavLink>
               </div>
+              <div className="md:-mt-0 -mt-40">
+              <img src={nike} alt="Image1" className="md:block" />
+              </div>
+              </div>
+              
+            </SwiperSlide>
+            <SwiperSlide
+              className="md:flex justify-between"
+              style={{ height: "30rem" }}>
+              <div className="grid md:grid-cols-2 xs:grid-cols-1">
+              <div className="flex flex-col items-center md:items-start justify-center md:pl-15 lg:pl-32 p-10 text-center md:text-left">
+                <h1 className="text-4xl">Sony Ps5 <span className="text-blue-500">(with controller)</span></h1>
+                <p className="text-2xl">
+                Sony playstation version 5 with controller
+                </p>
+                <p className="text-3xl">
+                  $<span className="text-red-600">987</span>
+                </p>
+                <NavLink
+                  style={{borderRadius:'35px'}}
+                  to="/shop"
+                  className="bg-gray-700 hover:bg-gray-800 transition-all px-6 py-2 mt-3 text-white"
+                >
+                  Buy Now <i className="fa-light fa-cart-circle-plus"></i>
+                </NavLink>
+              </div>
+              <div className="md:-mt-0 -mt-20">
+              <img src='https://cdn.vox-cdn.com/thumbor/avQXnY3_y3EE2SbGO_UwMnpZJyM=/0x0:2400x1566/1200x800/filters:focal(1008x591:1392x975)/cdn.vox-cdn.com/uploads/chorus_image/image/67708941/ps5_hardware_render.0.jpg' alt="Image1" className="md:block" />
+              </div>
+              </div>
+              
             </SwiperSlide>
           </Swiper>
         </div>

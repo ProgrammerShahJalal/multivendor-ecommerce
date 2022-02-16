@@ -11,16 +11,13 @@ const Brands = () => {
         <div className='container mx-auto py-5'>
             <h2 className='text-2xl font-bold text-gray-700 uppercase pb-6 text-center'>Our Top Sponsors</h2>
 
-            <div className='grid lg:grid-cols-6 md:grid-cols-4 sm:grid-cols-2 text-black gap-4'>
-
-                <div className='p-1 brand-logo'>
-                    <img src={phero} className='w-full' alt='' />
-                </div>
-
+            <div className='grid lg:grid-cols-6 md:grid-cols-3 sm:grid-cols-2 text-black gap-4'>
                 <div className='p-1 brand-logo'>
                     <img src={daraz} className='w-full' alt='' />
                 </div>
-
+                <div className='p-1 brand-logo'>
+                    <img src={phero} className='w-full' alt='' />
+                </div>
                 <div className='p-1 brand-logo'>
                     <img src={adidas} className='w-full' alt='' />
                 </div>

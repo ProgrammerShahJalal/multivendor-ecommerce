@@ -22,7 +22,7 @@ const HomeProducts = () => {
                                 
                             </div>
                             <div className="p-5 description">
-          <h3><a href="/">Mens T-Shirt</a></h3>
+          <h3><a href="/">Nike sports shoes</a></h3>
           <div className="flex flex-row my-3">
             <div className="bg-black rounded-full h-5 w-5 shadow-md mr-2"></div>
             <div className="bg-blue-800 rounded-full h-5 w-5 shadow-md mr-2"></div>
