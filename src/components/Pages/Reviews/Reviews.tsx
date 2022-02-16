@@ -31,7 +31,7 @@ const Reviews = () => {
 
     return (
         <div className='my-7'>
-            <div className='container mx-auto rounded-md py-7 bg-gradient-to-r from-blue-500 to-blue-900'>
+            <div className='container mx-auto rounded-md py-7 bg-gradient-to-r from-blue-900 to-black'>
 
                 <Swiper
                     spaceBetween={30}
