@@ -5,9 +5,12 @@
   "dependencies": {
     "@craco/craco": "^6.4.3",
     "@emotion/core": "^11.0.0",
+    "@emotion/react": "^11.7.1",
+    "@emotion/styled": "^11.6.0",
     "@headlessui/react": "^1.4.3",
     "@heroicons/react": "^1.0.5",
     "@icon/heroicons-outline": "^0.4.2-alpha.0",
+    "@mui/material": "^5.4.2",
     "@react-yuki/ui": "0.0.43",
     "@tailwindcss/aspect-ratio": "^0.4.0",
     "@tailwindcss/forms": "^0.4.0",
@@ -23,6 +26,7 @@
     "heroicons-react": "^1.4.1",
     "react": "^17.0.2",
     "react-dom": "^17.0.2",
+    "react-paginate": "^8.1.0",
     "react-router-dom": "^6.2.1",
     "react-scripts": "5.0.0",
     "react-slick": "^0.28.1",
@@ -57,6 +61,7 @@
   },
   "devDependencies": {
     "@types/react-slick": "^0.23.8",
+    "@types/react-star-ratings": "^2.3.0",
     "autoprefixer": "^10.4.2",
     "postcss": "^8.4.6",
     "tailwindcss": "^3.0.19"

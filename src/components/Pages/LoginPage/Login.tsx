@@ -13,7 +13,7 @@ const LoginForm = () => {
         password: ''
     })
 
-    const { SignIn, user, error } = UseAuth()
+    const { SignIn, error, handleFacebookSIgnIn, handleGoogleSignIn } = UseAuth()
     const navigate = useNavigate()
     const location = useLocation()
 
@@ -40,13 +40,6 @@ const LoginForm = () => {
                         <svg className="absolute -top-20 " xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 320">
                             <path fill="#fff" fillOpacity="1" d="M0,64L48,80C96,96,192,128,288,128C384,128,480,96,576,85.3C672,75,768,85,864,122.7C960,160,1056,224,1152,245.3C1248,267,1344,245,1392,234.7L1440,224L1440,320L1392,320C1344,320,1248,320,1152,320C1056,320,960,320,864,320C768,320,672,320,576,320C480,320,384,320,288,320C192,320,96,320,48,320L0,320Z"></path>
                         </svg>
-                        <div className="absolute bottom-5 right-2">
-                            <a href="#" className="block transition hover:rotate-180">
-                                <svg xmlns="http://www.w3.org/2000/svg" className="h-8 w-8 stroke-current text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="1" d="M6 18L18 6M6 6l12 12" />
-                                </svg>
-                            </a>
-                        </div>
                     </div>
                     <div className="px-10 pt-4 pb-8 rounded-3xl shadow-xl">
                         <div className="mx-auto text-center">
@@ -55,25 +48,16 @@ const LoginForm = () => {
                         </div>
                         <div className="flex items-center justify-around mt-6">
                             <div className="w-14 h-14 text-center rounded-full bg-blue-500 text-white saturate-200 transition-all hover:bg-blue-600">
-                                <a href="#" className="block mt-4">
+                                <div onClick={() => handleFacebookSIgnIn()} className="block mt-4 social-login">
                                     <i className="fab fa-facebook-f fa-lg "></i>
-                                </a>
+                                </div>
                             </div>
                             <div className="w-14 h-14 text-center rounded-full bg-red-500 text-white saturate-100 transition-all hover:bg-red-600">
-                                <a href="#" className="block mt-4">
+                                <div onClick={() => handleGoogleSignIn()} className="block mt-4 social-login">
                                     <i className="fab fa-google fa-lg"></i>
-                                </a>
+                                </div>
                             </div>
-                            <div className="w-14 h-14 text-center rounded-full bg-indigo-500 text-white saturate-100 transition-all hover:bg-indigo-600">
-                                <a href="#" className="block mt-4">
-                                    <i className="fab fa-twitch fa-lg"></i>
-                                </a>
-                            </div>
-                            <div className="w-14 h-14 text-center rounded-full bg-green-500 text-white saturate-100 transition-all hover:bg-green-600">
-                                <a href="#" className="block mt-4">
-                                    <i className="fab fa-line fa-lg"></i>
-                                </a>
-                            </div>
+
                         </div>
                         <div className="flex items-center my-6">
                             <hr className="flex-1" />

@@ -1,4 +1,4 @@
-import React, { createContext } from 'react';
+import React from 'react';
 import { UseFirebase } from '../hooks/UseFirebase';
 
 type userState = {
@@ -14,7 +14,9 @@ export interface IAuth {
     user: userState
     logout: () => void,
     error: string,
-    isLoading: boolean
+    isLoading: boolean,
+    handleGoogleSignIn: () => void
+    handleFacebookSIgnIn: () => void
 
 }
 
@@ -31,7 +33,9 @@ export const AuthContext = React.createContext<IAuth>({
 
     },
     error: '',
-    isLoading: false
+    isLoading: false,
+    handleGoogleSignIn() { },
+    handleFacebookSIgnIn() { }
 
 });
 
