@@ -1,105 +1,72 @@
 import React from "react";
 import { Swiper, SwiperSlide } from "swiper/react";
-
+import nike from './../../../images/Brands/nike-banner.png'
 // Import Swiper styles
 import "swiper/css";
 import "swiper/css/free-mode";
 import "swiper/css/navigation";
 import "swiper/css/pagination";
 import "swiper/css/thumbs";
-// import './Banners.css';
 
-
-// import required modules
-import { Autoplay, Pagination, FreeMode, Navigation } from "swiper";
+import { NavLink } from "react-router-dom";
 
 export default function Banners() {
 
     return (
         <>
-            <Swiper
-                spaceBetween={30}
-                centeredSlides={true}
-                loop={true}
-                autoplay={{
-                    delay: 2500,
-                    disableOnInteraction: false,
-                }}
-                pagination={{
-                    clickable: true,
-                }}
-                navigation={true}
-                modules={[Autoplay, FreeMode, Pagination, Navigation]}
+        <div className="w-full">
+          <Swiper
+            pagination={{
+              dynamicBullets: false,
+            }}
+            className="mySwiper"
+          >
+            <SwiperSlide
+              className="md:flex justify-between"
+              style={{ height: "27rem" }}
             >
-                <div className="mx-auto">
-                    <SwiperSlide>
-                        <div className="relative">
-                            <img className="w-full" src="https://template.annimexweb.com/diva/assets/images/slideshow-banners/diva-banner2.jpg" alt="" />
-                            <div className='absolute inset-0 bg-black bg-opacity-40 items-center py-7 justify-center'>
-
-                                <h1 className='text-white text-4xl p-2 items-center justify-center transition'>Unity Mart</h1>
-                                <h2 className='text-white text-5xl p-2 items-center justify-center transition'>Happy Coustomer</h2>
-
-                                <button className='text-white btn text-2xl  py-2 px-3 rounded items-center bg-gray-600 justify-center hover:bg-gray-200 hover:text-black transition'>Buy Now</button>
-
-                            </div>
-                        </div>
-                    </SwiperSlide>
-                    <SwiperSlide>
-                        <div className="relative">
-                            <img className="w-full" src="https://template.annimexweb.com/diva/assets/images/slideshow-banners/diva-banner1.jpg" alt="" />
-                            <div className='absolute inset-0 bg-black bg-opacity-50 items-center py-7 justify-center'>
-
-                                <h1 className='text-white text-4xl p-2 items-center justify-center transition'>Unity Mart</h1>
-                                <h2 className='text-white text-5xl p-2 items-center justify-center transition'>Happy Coustomer</h2>
-
-                                <button className='text-white btn text-2xl  py-2 px-3 rounded items-center bg-gray-600 justify-center hover:bg-gray-200 hover:text-black transition'>Buy Now</button>
-
-                            </div>
-                        </div>
-                    </SwiperSlide>
-                    <SwiperSlide>
-                        <div className="relative">
-                            <img className="w-full" src="https://template.annimexweb.com/diva/assets/images/slideshow-banners/home3-banner1.jpg" alt="" />
-                            <div className='absolute inset-0 bg-black bg-opacity-50 items-center py-7 justify-center'>
-
-                                <h1 className='text-white text-4xl p-2 items-center justify-center transition'>Unity Mart</h1>
-                                <h2 className='text-white text-5xl p-2 items-center justify-center transition'>Happy Coustomer</h2>
-
-                                <button className='text-white btn text-2xl py-2 px-3 rounded items-center bg-gray-600 justify-center hover:bg-gray-200 hover:text-black transition'>Buy Now</button>
-
-                            </div>
-                        </div>
-                    </SwiperSlide>
-                    <SwiperSlide>
-                        <div className="relative">
-                            <img className="w-full" src="https://template.annimexweb.com/diva/assets/images/slideshow-banners/home4-banner1.jpg" alt="" />
-                            <div className='absolute inset-0 bg-black bg-opacity-50 items-center py-7 justify-center'>
-
-                                <h1 className='text-white text-4xl p-2 items-center justify-center transition'>Unity Mart</h1>
-                                <h2 className='text-white text-5xl p-2 items-center justify-center transition'>Happy Coustomer</h2>
-
-                                <button className='text-white btn text-2xl  py-2 px-3 rounded items-center bg-gray-600 justify-center hover:bg-gray-200 hover:text-black transition'>Buy Now</button>
-
-                            </div>
-                        </div>
-                    </SwiperSlide>
-                    <SwiperSlide>
-                        <div className="relative">
-                            <img className="w-full" src=" https://template.annimexweb.com/diva/assets/images/slideshow-banners/home4-banner2.jpg" alt="" />
-                            <div className='absolute inset-0 bg-black bg-opacity-50 items-center py-7 justify-center'>
-
-                                <h1 className='text-white text-4xl p-2 items-center justify-center transition'>Unity Mart</h1>
-                                <h2 className='text-white text-5xl p-2 items-center justify-center transition'>Happy Coustomer</h2>
-
-                                <button className='text-white btn text-2xl py-2 px-3 rounded items-center bg-gray-600 justify-center hover:bg-gray-200 hover:text-black transition'>Buy Now</button>
-
-                            </div>
-                        </div>
-                    </SwiperSlide>
-
-                </div>
-            </Swiper>
-        </>
+              <div className="flex flex-col items-center md:items-start justify-center md:pl-15 lg:pl-32 p-10 text-center md:text-left">
+                <h1 className="text-xl md:text-4xl">Nike sports shoes <span className="text-blue-500">(sizes available)</span></h1>
+                <p className="text-2xl">
+                  Nike sports shoes for all sizes.
+                </p>
+                <p className="text-3xl">
+                  $<span className="text-red-600">120</span>
+                </p>
+                <NavLink
+                  to="/blogs"
+                  className="bg-green-400 hover:bg-green-500 transition-all rounded px-6 py-2 mt-3 text-white"
+                >
+                  Explore
+                </NavLink>
+              </div>
+              <img src={nike} alt="Image1" className="hidden md:block h-full" />
+            </SwiperSlide>
+            <SwiperSlide
+              className="md:flex justify-between"
+              style={{ height: "27rem" }}
+            >
+              <img src='https://5.imimg.com/data5/NM/SX/EJ/SELLER-94403929/adidas-mens-sports-shoes-500x500.jpg' alt="Image1" className="hidden md:block h-full" />
+              <div className="flex flex-col items-center md:items-end justify-center md:pr-15 lg:pr-32 p-10 text-center md:text-right">
+                <h1 className="text-xl md:text-4xl">
+                  Perfect fit for you <span className="text-blue-500">(sizes available)</span>
+                </h1>
+                <p className="text-2xl">
+                  Adidas Jogging shoes for all feet size. For you.
+                </p>
+                <p className="text-3xl">
+                  $<span className="text-red-600">113</span>
+                </p>
+                <NavLink
+                  to="/blogs"
+                  className="bg-green-400 hover:bg-green-500 transition-all rounded px-6 py-2 mt-3 text-white"
+                >
+                  Explore
+                </NavLink>
+              </div>
+            </SwiperSlide>
+          </Swiper>
+        </div>
+      </>
     );
 }
