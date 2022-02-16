@@ -4,7 +4,7 @@ import { Swiper, SwiperSlide } from 'swiper/react';
 import "swiper/css";
 import "swiper/css/effect-coverflow";
 import "swiper/css/pagination";
-import { Rating } from '@mui/material';
+// import { Rating } from '@mui/material';
 import { Autoplay, EffectCoverflow, Pagination } from "swiper";
 
 interface ReviewState {
@@ -86,7 +86,7 @@ const Reviews = () => {
                                     <div className='my-4'><p className='text-sm'>{review.description}</p> </div>
                                     <div className="flex justify-center gap-4">
                                         <p>{review.ratings} start rating</p>
-                                        <Rating name="half-rating-read" defaultValue={review.ratings} precision={0.5} readOnly />
+                                        {/* <Rating name="half-rating-read" defaultValue={review.ratings} precision={0.5} readOnly /> */}
                                     </div>
                                 </div>
                             </SwiperSlide>
