@@ -2,6 +2,7 @@ import { initializeApp } from "firebase/app";
 
 const FirebaseInitialization = () => {
     const firebaseConfig = {
+
         apiKey: "AIzaSyDIOzENohxiYXJHnI6SFauseoUTI2Fu6eg",
         authDomain: "multi-vendor-888c3.firebaseapp.com",
         projectId: "multi-vendor-888c3",

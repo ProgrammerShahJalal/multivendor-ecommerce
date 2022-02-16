@@ -20,6 +20,7 @@ export default function Banners() {
             <Swiper
                 spaceBetween={30}
                 centeredSlides={true}
+                loop={true}
                 autoplay={{
                     delay: 2500,
                     disableOnInteraction: false,
@@ -33,7 +34,7 @@ export default function Banners() {
                 <div className="mx-auto">
                     <SwiperSlide>
                         <div className="relative">
-                            <img className="w-full" src="https://template.annimexweb.com/diva/assets/images/slideshow-banners/diva-banner2.jpg" />
+                            <img className="w-full" src="https://template.annimexweb.com/diva/assets/images/slideshow-banners/diva-banner2.jpg" alt="" />
                             <div className='absolute inset-0 bg-black bg-opacity-40 items-center py-7 justify-center'>
 
                                 <h1 className='text-white text-4xl p-2 items-center justify-center transition'>Unity Mart</h1>
@@ -46,7 +47,7 @@ export default function Banners() {
                     </SwiperSlide>
                     <SwiperSlide>
                         <div className="relative">
-                            <img className="w-full" src="https://template.annimexweb.com/diva/assets/images/slideshow-banners/diva-banner1.jpg" />
+                            <img className="w-full" src="https://template.annimexweb.com/diva/assets/images/slideshow-banners/diva-banner1.jpg" alt="" />
                             <div className='absolute inset-0 bg-black bg-opacity-50 items-center py-7 justify-center'>
 
                                 <h1 className='text-white text-4xl p-2 items-center justify-center transition'>Unity Mart</h1>
@@ -59,7 +60,7 @@ export default function Banners() {
                     </SwiperSlide>
                     <SwiperSlide>
                         <div className="relative">
-                            <img className="w-full" src="https://template.annimexweb.com/diva/assets/images/slideshow-banners/home3-banner1.jpg" />
+                            <img className="w-full" src="https://template.annimexweb.com/diva/assets/images/slideshow-banners/home3-banner1.jpg" alt="" />
                             <div className='absolute inset-0 bg-black bg-opacity-50 items-center py-7 justify-center'>
 
                                 <h1 className='text-white text-4xl p-2 items-center justify-center transition'>Unity Mart</h1>
@@ -72,7 +73,7 @@ export default function Banners() {
                     </SwiperSlide>
                     <SwiperSlide>
                         <div className="relative">
-                            <img className="w-full" src="https://template.annimexweb.com/diva/assets/images/slideshow-banners/home4-banner1.jpg" />
+                            <img className="w-full" src="https://template.annimexweb.com/diva/assets/images/slideshow-banners/home4-banner1.jpg" alt="" />
                             <div className='absolute inset-0 bg-black bg-opacity-50 items-center py-7 justify-center'>
 
                                 <h1 className='text-white text-4xl p-2 items-center justify-center transition'>Unity Mart</h1>
@@ -85,7 +86,7 @@ export default function Banners() {
                     </SwiperSlide>
                     <SwiperSlide>
                         <div className="relative">
-                            <img className="w-full" src=" https://template.annimexweb.com/diva/assets/images/slideshow-banners/home4-banner2.jpg" />
+                            <img className="w-full" src=" https://template.annimexweb.com/diva/assets/images/slideshow-banners/home4-banner2.jpg" alt="" />
                             <div className='absolute inset-0 bg-black bg-opacity-50 items-center py-7 justify-center'>
 
                                 <h1 className='text-white text-4xl p-2 items-center justify-center transition'>Unity Mart</h1>

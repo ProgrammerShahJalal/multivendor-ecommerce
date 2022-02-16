@@ -126,6 +126,7 @@ const navigation = {
         { name: 'Shop', to: '/shop' },
         { name: 'About', to: '/about' },
         { name: 'Contact', to: '/contact' },
+        { name: 'Our Team', to: '/team' },
     ],
 }
 
@@ -137,6 +138,8 @@ export default function Header() {
     const [open, setOpen] = useState(false)
 
     const { user, logout } = UseAuth();
+
+
 
     return (
         <div className="bg-white">
@@ -248,6 +251,8 @@ export default function Header() {
                                     </div>
                                 ))}
                             </div>
+
+
 
                             <div className="border-t border-gray-200 py-6 px-4 space-y-6">
                                 {

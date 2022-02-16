@@ -19,8 +19,8 @@ export default class TopBanner extends PureComponent<Props> {
 					
 					<div className="sngle-banner grid grid-cols-1 poster-card">
 					<div className='lg:pl-24'>
-						<img className='main-img' style={{height:'205px',width:'180px'}} src={nike} alt="/"></img>
-						<img className='hover-img' style={{height:'205px',width:'180px'}} src={nikeSide} alt="/"></img>
+						<img className='main-img' style={{height:'205px',width:'180px',marginTop:'50px',paddingRight:'20px'}} src={nike} alt="/"></img>
+						<img className='hover-img' style={{height:'205px',width:'180px',marginTop:'50px',paddingRight:'20px'}} src={nikeSide} alt="/"></img>
 						</div>
 						<div className="content">
 							<h4><b>Nike Shoes</b></h4>
@@ -33,7 +33,7 @@ export default class TopBanner extends PureComponent<Props> {
 				<div className="main-div">
 					<div className="sngle-banner grid grid-cols-1 poster-card">
 					<div className='lg:pl-20'>
-						<img className='main-img' style={{height:'225px',width:'200px'}} src={ps5} alt="/"></img>
+						<img className='main-img' style={{height:'225px',width:'200px',paddingRight:'20px'}} src={ps5} alt="/"></img>
 						<img className='hover-img' style={{height:'205px',width:'170px'}} src={ps5Side} alt="/"></img>
 						</div>
 						<div className="content">
