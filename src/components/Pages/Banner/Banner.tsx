@@ -17,7 +17,12 @@ export default function Banners() {
         <>
         <div className="w-full xs:h-96">
           <Swiper
-          autoplay={{ delay: 3000 }} 
+          loop={true}
+          slidesPerView={"auto"}
+          autoplay= {{
+            delay: 3000,
+            disableOnInteraction: true
+          }}
           className="mySwiper">
             <SwiperSlide
               className="md:flex justify-between"
