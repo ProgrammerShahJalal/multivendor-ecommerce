@@ -16,7 +16,7 @@ const Blogs = () => {
             })
     }, [])
     if (isLoading) {
-        return <div className='my-5 bg-gradient-to-r from-indigo-500 via-purple-500 to-pink-500'>
+        return <div className='my-5'>
             <h2 className='text-4xl font font-extrabold tracking-tight text-white sm:text-6xl text-center my-5'>Our Blogs</h2>
             <div className='md:grid grid-cols-2  max-w-md overflow-hidden md:max-w-2xl gap-3 mx-auto'>
                 <div className="border border-blue-300 shadow rounded-md p-4 max-w-sm w-full mx-auto">
@@ -113,7 +113,7 @@ const Blogs = () => {
         </div>
     }
     return (<>
-        <div className='py-5 bg-gradient-to-r from-indigo-500 via-purple-500 to-pink-500 w-full scroll-smooth'>
+        <div className='py-5 w-full scroll-smooth'>
             <h2 className='text-4xl font font-extrabold tracking-tight text-white sm:text-6xl text-center my-5'>Our Blogs</h2>
             <div className='md:grid grid-cols-2 max-w-md overflow-hidden md:max-w-7xl gap-5 mx-auto py-7'>
                 {
