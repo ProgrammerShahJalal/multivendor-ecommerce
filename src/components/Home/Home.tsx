@@ -6,7 +6,7 @@ import BottomBanner from '../BottomBanner/BottomBanner';
 import HomeProducts from '../../components/HomeProducts/HomeProducts';
 import Stats from '../Stats/Stats';
 import Reviews from '../Pages/Reviews/Reviews';
-import Blogs from '../Blogs/Blogs';
+import Blogs from '../../components/Blogs/Blogs';
 
 export default function Home() {
     return (
