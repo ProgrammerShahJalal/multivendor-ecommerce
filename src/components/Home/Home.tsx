@@ -10,6 +10,7 @@ import Blogs from '../Blogs/Blogs';
 import Banners from '../Pages/Banner/Banner';
 import Brands from '../Pages/Brands/Brands';
 
+
 export default function Home() {
     return (
         <div>
