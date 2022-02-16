@@ -21,7 +21,7 @@ export default function Banners() {
           className="mySwiper">
             <SwiperSlide
               className="md:flex justify-between"
-              style={{ height: "30rem" }}>
+              style={{ height: "34rem" }}>
               <div className="grid md:grid-cols-2 xs:grid-cols-1">
               <div className="flex flex-col items-center md:items-start justify-center md:pl-15 lg:pl-32 p-12 text-center md:text-left">
               <h1 className="text-4xl">
@@ -41,7 +41,7 @@ export default function Banners() {
                   Buy Now <i className="fa-light fa-cart-circle-plus"></i>
                 </NavLink>
               </div>
-              <div className="md:-mt-0 -mt-12">
+              <div className="md:-mt-0 lg:-mt-0 -mt-12">
               <img src='https://media.gq-magazine.co.uk/photos/60af7335924d56e34d909e18/master/w_1920,h_1280,c_limit/Graphic%20tees_0002_New%20balance.jpg' alt="Image1" className="md:block" />
               </div>
               </div>

@@ -41,11 +41,12 @@ export default function UserProfile() {
         </a>
       </li>
       <li>
-        <a href="/profile" className="flex flex-row items-center h-12 transform hover:translate-x-2 transition-transform ease-in duration-200 text-gray-500 hover:text-gray-800">
+        <a href="/login" className="flex flex-row items-center h-12 transform hover:translate-x-2 transition-transform ease-in duration-200 text-gray-500 hover:text-gray-800">
           <span className="inline-flex items-center justify-center h-12 w-12 text-lg text-gray-400"><i className="bx bx-log-out"></i></span>
-          <span className="text-sm font-medium">Logout</span>
+          <button onClick={logout}>Logout</button>
         </a>
       </li>
+      
     </ul>
   </div>
 </div>
