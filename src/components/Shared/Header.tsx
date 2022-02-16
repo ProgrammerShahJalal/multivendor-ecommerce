@@ -501,7 +501,7 @@ export default function Header() {
 
                                 {/* Search */}
                                 <div className="flex lg:ml-6">
-                                    <Link to="/search" className="p-2 text-gray-400 hover:text-gray-500">
+                                    <Link to="/" className="p-2 text-gray-400 hover:text-gray-500">
                                         <span className="sr-only">Search</span>
                                         <SearchIcon className="w-6 h-6" aria-hidden="true" />
                                     </Link>
@@ -509,7 +509,7 @@ export default function Header() {
 
                                 {/* Cart */}
                                 <div className="ml-4 flow-root lg:ml-6">
-                                    <Link to="/shoppingIcon" className="group -m-2 p-2 flex items-center">
+                                    <Link to="/" className="group -m-2 p-2 flex items-center">
                                         <ShoppingBagIcon
                                             className="flex-shrink-0 h-6 w-6 text-gray-400 group-hover:text-gray-500"
                                             aria-hidden="true"
