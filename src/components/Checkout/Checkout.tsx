@@ -1,18 +1,18 @@
 import * as React from 'react';
 
 export interface IAppProps {
-    email: string,
-    id: number,
+    // email: string,
+    // id: number,
 }
-type NewUser = {
-    name: string,
-    email: string,
-    card: number,
-    selected: string,
+// type NewUser = {
+//     name: string,
+//     email: string,
+//     card: number,
+//     selected: string,
 
-}
+// }
 
-export default class App extends React.PureComponent<NewUser> {
+export default class App extends React.PureComponent<IAppProps> {
     public render() {
         return (
             <div className="h-screen grid grid-cols-3">
@@ -164,3 +164,5 @@ export default class App extends React.PureComponent<NewUser> {
         );
     }
 }
+
+
