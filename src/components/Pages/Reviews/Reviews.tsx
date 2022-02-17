@@ -1,10 +1,9 @@
-
 import React, { useState, useEffect } from 'react';
 import { Swiper, SwiperSlide } from 'swiper/react';
 import "swiper/css";
 import "swiper/css/effect-coverflow";
+import { Rating } from "@mui/material";
 import "swiper/css/pagination";
-import { Rating } from '@mui/material';
 import { Autoplay, EffectCoverflow, Pagination } from "swiper";
 
 interface ReviewState {

@@ -1,12 +1,8 @@
-.image{
-    /* height: 300px;
-    width: 440px; */
+/* .image{
 	overflow: hidden;
 }
 .image-hover{
     display: none;
-    /* height: 300px;
-    width: 440px; */
 	overflow: hidden;
 }
 .card-main:hover .image-hover{
@@ -14,7 +10,7 @@
 }
 .card-main:hover .image{
     display: none;
-}
+} */
 
 .card-main:hover .description{
     visibility: hidden;
