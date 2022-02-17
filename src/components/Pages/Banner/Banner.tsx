@@ -21,7 +21,7 @@ export default function Banners() {
           slidesPerView={"auto"}
           autoplay= {{
             delay: 3000,
-            disableOnInteraction: true
+            disableOnInteraction: false
           }}
           className="mySwiper">
             <SwiperSlide
