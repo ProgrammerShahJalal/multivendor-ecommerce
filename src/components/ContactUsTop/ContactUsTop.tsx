@@ -1,6 +1,6 @@
 import React from "react";
 import { Link } from 'react-router-dom';
-import "@lottiefiles/lottie-player";
+import LottieContact from '../Lottie/LottieContact';
 
 export interface IAppProps {
 }
@@ -42,7 +42,7 @@ export default class App extends React.PureComponent<IAppProps> {
         </div>
         <div className="lg:absolute lg:inset-y-0 lg:right-0 lg:w-1/2">
           <div>
-            <lottie-player className='w-full' src="https://assets5.lottiefiles.com/packages/lf20_xrrp4bkp.json" background="transparent" speed="1" loop autoplay></lottie-player>
+            <LottieContact />
           </div>
         </div>
       </div>
