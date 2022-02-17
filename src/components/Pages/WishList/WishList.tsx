@@ -14,7 +14,7 @@ const WishList = () => {
                     <h3>Title</h3>
                     <h3>Price</h3>
                     <h3>Add To Cart</h3>
-                    <h3>Delete</h3>
+                    <h3>Remove</h3>
                 </div>
                 <div className='grid md:grid-cols-5 sm:grid-cols-1 gap-2 items-center justify-center  sm:text-green-600'>
                     <img src='https://template.annimexweb.com/diva/assets/images/product-images/product-image3-1.jpg' className='w-full p-7 rounded' alt='' />
