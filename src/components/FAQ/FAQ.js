@@ -1,4 +1,5 @@
 import { useState } from "react";
+import LottieFaq from "../Lottie/LottieFaq";
 
 
 const Item = ({ title, children }) => {
@@ -51,7 +52,7 @@ export const Faq = () => {
       <br />
       <div className="text-center grid lg:grid-cols-2 xs:grid-cols-1">
         <div>
-          <lottie-player src="https://assets10.lottiefiles.com/packages/lf20_ssIwdK.json" background="transparent" speed="1" style={{ width: '320px', height: '320px' }} loop autoplay></lottie-player>
+          <LottieFaq />
         </div>
         <div class="space-y-4">
           <Item title={<b>How can I check my products?</b>}>
