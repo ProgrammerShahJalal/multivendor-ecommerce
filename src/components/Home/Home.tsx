@@ -1,6 +1,5 @@
 import React from 'react'
 import './Home.css';
-import Promo from '../Promo/Promo';
 import TopBanner from '../TopBanner/TopBanner';
 import BottomBanner from '../BottomBanner/BottomBanner';
 import Reviews from '../Pages/Reviews/Reviews';
@@ -18,7 +17,6 @@ export default function Home() {
             <TopBanner />
             <HomeProducts />
             <BottomBanner />
-            <Promo />
             <Reviews />
             <Brands />
             <BannerPro />
