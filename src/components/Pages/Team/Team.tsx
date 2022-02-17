@@ -48,7 +48,7 @@ export default class App extends React.PureComponent<IAppProps> {
 
         <div className="grid gap-10 sm:grid-cols-2 lg:grid-cols-3">
           <div>
-            <div className="relative overflow-hidden transition duration-300 transform rounded hover:shadow-orange-500 hover:shadow-2xl shadow-lg shadow-cyan-500/50">
+            <div className="relative overflow-hidden transition duration-300 transform rounded hover:shadow-orange-500 hover:shadow-2xl shadow-lg shadow-cyan-500/50" data-aos="fade-right" data-aos-duration="1500">
               <img
                 className="object-cover w-full h-56 md:h-64 xl:h-80"
                 src="https://scontent.fdac5-2.fna.fbcdn.net/v/t1.6435-9/81774568_2374148269367028_4897027122834440192_n.jpg?stp=c44.0.206.206a_dst-jpg_p206x206&_nc_cat=107&ccb=1-5&_nc_sid=da31f3&_nc_eui2=AeGm6zpY2ydibKsi6MDGd6T-mba4gP6KgauZtriA_oqBq1oszSEp3OWsMpU3C53d_wi_E2TJkvHBqB8uFJT7XgVB&_nc_ohc=nh1cr7snIuoAX_S3jdx&_nc_ht=scontent.fdac5-2.fna&oh=00_AT_wfv-5enepPXOqLllZ0HAOtBNGA9WyFIWOhLXj2pISlA&oe=6231189E&amp;cs=tinysrgb&amp;dpr=3&amp;h=750&amp;w=1260"
@@ -81,7 +81,7 @@ export default class App extends React.PureComponent<IAppProps> {
             </div>
           </div>
           <div>
-            <div className="relative overflow-hidden transition duration-300 transform rounded hover:shadow-2xl shadow-lg shadow-cyan-500/50 hover:shadow-orange-500">
+            <div className="relative overflow-hidden transition duration-300 transform rounded hover:shadow-2xl shadow-lg shadow-cyan-500/50 hover:shadow-orange-500" data-aos="fade-up" data-aos-duration="1500">
               <img
                 className="object-cover w-full h-56 md:h-64 xl:h-80"
                 src="https://scontent.fdac5-2.fna.fbcdn.net/v/t39.30808-6/272684305_699123697742751_7676321117895740436_n.jpg?_nc_cat=103&ccb=1-5&_nc_sid=09cbfe&_nc_eui2=AeFj56WGqL9MF2cavnhQEqwHULDJyVKePSlQsMnJUp49Kevq-a25-BWlYN2z9j7d2-qJAAmi7TEDqgM_A8oNoJjs&_nc_ohc=iYVZ1HVqvP4AX-yPZUR&tn=j2GnWNnH2ZMiVTPa&_nc_ht=scontent.fdac5-2.fna&oh=00_AT9l7vthIHf3K-XqGeJr3iy9sDPIjsFsomb7y6oJBgPlfQ&oe=620F7A8F&amp;cs=tinysrgb&amp;dpr=2&amp;h=750&amp;w=1260"
@@ -113,7 +113,7 @@ export default class App extends React.PureComponent<IAppProps> {
             </div>
           </div>
           <div>
-            <div className="relative overflow-hidden transition duration-300 transform rounded hover:shadow-2xl shadow-lg shadow-cyan-500/50 hover:shadow-orange-500">
+            <div className="relative overflow-hidden transition duration-300 transform rounded hover:shadow-2xl shadow-lg shadow-cyan-500/50 hover:shadow-orange-500" data-aos="fade-right" data-aos-duration="1500">
               <img
                 className="object-cover w-full h-56 md:h-64 xl:h-80"
                 src="https://scontent.fjsr8-1.fna.fbcdn.net/v/t1.6435-1/89676678_1058195187894147_6201235113821339648_n.jpg?stp=dst-jpg_p100x100&_nc_cat=110&ccb=1-5&_nc_sid=7206a8&_nc_eui2=AeGSspR5LVbEWcY8ybB98A7lbJia4PoAmYtsmJrg-gCZi09_zOYKeKTC1xyfYpOrGPSE7iCNgDPkJR3RgfzDlC-m&_nc_ohc=E7jP6FAH-sIAX-D0JcK&_nc_ht=scontent.fjsr8-1.fna&oh=00_AT_qBMQpRgWL9iFZE8WytNDCe7fwWA9SQVwsxJLRrp9f6g&oe=6235DA8B"
@@ -145,7 +145,7 @@ export default class App extends React.PureComponent<IAppProps> {
             </div>
           </div>
           <div>
-            <div className="relative overflow-hidden transition duration-300 transform rounded hover:shadow-2xl shadow-lg shadow-cyan-500/50 hover:shadow-orange-500">
+            <div className="relative overflow-hidden transition duration-300 transform rounded hover:shadow-2xl shadow-lg shadow-cyan-500/50 hover:shadow-orange-500" data-aos="fade-right" data-aos-duration="1500">
               <img
                 className="object-cover w-full h-56 md:h-64 xl:h-80"
                 src="https://scontent.fdac5-1.fna.fbcdn.net/v/t39.30808-6/272165249_649116166134108_6382011702662200284_n.jpg?_nc_cat=109&ccb=1-5&_nc_sid=09cbfe&_nc_eui2=AeGO4G3m257A7Olb9ilyuIgpm_iZLBJqM3yb-JksEmozfFNs_1evPZ4rtrt4Up4GLph2lzj3GyKygqT5fRVrlqsS&_nc_ohc=EGbKuhdyowUAX-kMUrc&_nc_ht=scontent.fdac5-1.fna&oh=00_AT-MNvQmlgnSjDujinZZl7evxIq3Sgh8od38hWmZpXLH_A&oe=620FFF89&amp;cs=tinysrgb&amp;dpr=3&amp;h=750&amp;w=1260"
@@ -177,7 +177,7 @@ export default class App extends React.PureComponent<IAppProps> {
             </div>
           </div>
           <div>
-            <div className="relative overflow-hidden transition duration-300 transform rounded hover:shadow-2xl shadow-lg shadow-cyan-500/50 hover:shadow-orange-500">
+            <div className="relative overflow-hidden transition duration-300 transform rounded hover:shadow-2xl shadow-lg shadow-cyan-500/50 hover:shadow-orange-500" data-aos="fade-up" data-aos-duration="1500">
               <img
                 className="object-cover w-full h-56 md:h-64 xl:h-80"
                 src="https://scontent.fdac5-2.fna.fbcdn.net/v/t1.6435-9/47389856_2098362933810267_3537401941921366016_n.jpg?_nc_cat=108&ccb=1-5&_nc_sid=174925&_nc_eui2=AeE6KLBEVXD0C01fWHLJGz9jh0v71pUv1tmHS_vWlS_W2a2XrCUz4ClOgMR4prh1GPNjwCcEtCWF2WLYESU7ubdR&_nc_ohc=xWrbDkeq7_QAX_m-Vge&_nc_ht=scontent.fdac5-2.fna&oh=00_AT_3gAG93dFHf2V_tvaStvmSL8kA1UnYKOaforx_XZE9xQ&oe=622E6D12&amp;cs=tinysrgb&amp;dpr=2&amp;h=750&amp;w=1260"
@@ -209,7 +209,7 @@ export default class App extends React.PureComponent<IAppProps> {
             </div>
           </div>
           <div>
-            <div className="relative overflow-hidden transition duration-300 transform rounded hover:shadow-2xl shadow-lg shadow-cyan-500/50 hover:shadow-orange-500">
+            <div className="relative overflow-hidden transition duration-300 transform rounded hover:shadow-2xl shadow-lg shadow-cyan-500/50 hover:shadow-orange-500" data-aos="fade-up" data-aos-duration="1500">
               <img
                 className="object-cover w-full h-56 md:h-64 xl:h-80"
                 src="https://i.ibb.co/wQMDcnn/Junaidul-Kader-Tanzim.jpg&amp;dpr=2&amp;h=750&amp;w=1260"
@@ -241,7 +241,7 @@ export default class App extends React.PureComponent<IAppProps> {
             </div>
           </div>
           <div>
-            <div className="relative overflow-hidden transition duration-300 transform rounded hover:shadow-2xl shadow-lg shadow-cyan-500/50 hover:shadow-orange-500">
+            <div className="relative overflow-hidden transition duration-300 transform rounded hover:shadow-2xl shadow-lg shadow-cyan-500/50 hover:shadow-orange-500" data-aos="fade-right" data-aos-duration="1500">
               <img
                 className="object-cover w-full h-56 md:h-64 xl:h-80"
                 src="https://scontent.fdac24-1.fna.fbcdn.net/v/t39.30808-6/266505808_127512469774728_2050182720154645040_n.jpg?_nc_cat=105&ccb=1-5&_nc_sid=09cbfe&_nc_eui2=AeGRKIbkgT-EjDDTwl2Aiy5QBgy1S2Y_MTgGDLVLZj8xOA9HKFu6xQAWprit675MCKyyMHtAruZLMsK37kjHysbj&_nc_ohc=qD7LkksrWBgAX_CuEUg&_nc_ht=scontent.fdac24-1.fna&oh=00_AT8TBfHm8LeCeXdLGNMBHxDpkxLOh-IxnS92mJqjOPRkIw&oe=620F6F99&amp;cs=tinysrgb&amp;dpr=2&amp;h=750&amp;w=1260"
@@ -273,7 +273,7 @@ export default class App extends React.PureComponent<IAppProps> {
             </div>
           </div>
           <div>
-            <div className="relative overflow-hidden transition duration-300 transform rounded hover:shadow-2xl shadow-lg shadow-cyan-500/50 hover:shadow-orange-500">
+            <div className="relative overflow-hidden transition duration-300 transform rounded hover:shadow-2xl shadow-lg shadow-cyan-500/50 hover:shadow-orange-500" data-aos="fade-up" data-aos-duration="1500">
               <img
                 className="object-cover w-full h-56 md:h-64 xl:h-80"
                 src="https://media-exp1.licdn.com/dms/image/C4E03AQGWpcYbkDeROg/profile-displayphoto-shrink_200_200/0/1638090973136?e=1650499200&v=beta&t=JZVshilFo6YTnSQz-TEiLOctvKuqo99hvpA3nuF5OyY&amp;cs=tinysrgb&amp;dpr=2&amp;w=500"
@@ -305,7 +305,7 @@ export default class App extends React.PureComponent<IAppProps> {
             </div>
           </div>
           <div>
-            <div className="relative overflow-hidden transition duration-300 transform rounded hover:shadow-2xl shadow-lg shadow-cyan-500/50 hover:shadow-orange-500">
+            <div className="relative overflow-hidden transition duration-300 transform rounded hover:shadow-2xl shadow-lg shadow-cyan-500/50 hover:shadow-orange-500" data-aos="fade-right" data-aos-duration="1500">
               <img
                 className="object-cover w-full h-56 md:h-64 xl:h-80"
                 src="https://scontent.xx.fbcdn.net/v/t1.15752-9/s206x206/262402659_1735915976601927_4074890799033005079_n.jpg?_nc_cat=111&ccb=1-5&_nc_sid=aee45a&_nc_eui2=AeGDA2ilotiM8Y4uutqHqh9xfdg2QrckHk592DZCtyQeTpYvvtOpfs5gHR5jm-pOl1CedWuPeTB-aJg7Tj5Zh4H5&_nc_ohc=0HuAQFhiGxYAX-fBIAD&_nc_ad=z-m&_nc_cid=0&_nc_ht=scontent.xx&oh=03_AVJAJrzofj81rdFWnfZskWG1UKgPHxLuwLNQFKwXg8Qrag&oe=62307A64&amp;cs=tinysrgb&amp;dpr=2&amp;h=750&amp;w=1260"

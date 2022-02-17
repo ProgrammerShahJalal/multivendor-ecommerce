@@ -11,7 +11,8 @@ const BannerPro = () => {
                     <button className='bg-blue-600 rounded-full py-2 px-4'>BUY NOW</button>
                     <button className=' bg-gray-500 mx-3 rounded px-3 py-1'>ReadMore</button>
                 </div>
-                <div className='mt-7'>
+                <div className='mt-7' data-aos="fade-up"
+                    data-aos-duration="3000">
                     <img src='https://e-commerce.myproyash.com/wp-content/uploads/2021/05/dualshok.png' className='w-full -mb-20 pt-7' alt='' />
                 </div>
             </div>
