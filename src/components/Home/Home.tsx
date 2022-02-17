@@ -9,17 +9,19 @@ import Blogs from '../Blogs/Blogs';
 import Banners from '../Pages/Banner/Banner';
 import { Faq } from '../FAQ/FAQ';
 import HomeProducts from '../HomeProducts/HomeProducts';
+import Brands from '../Pages/Brands/Brands';
 
 export default function Home() {
     return (
         <div>
             <Banners />
             <TopBanner />
-            <HomeProducts/>
+            <HomeProducts />
             <BottomBanner />
             <Promo />
             <Stats />
             <Reviews />
+            <Brands />
             <Blogs />
             <Faq />
         </div>
