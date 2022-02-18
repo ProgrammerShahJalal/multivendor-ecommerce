@@ -110,7 +110,7 @@ export const UseFirebase = (
         });
 
     }, [auth])
-    console.log('firebase', user);
+    // console.log('firebase', user);
 
     // SIGN IN WITH USER AND EMAIL
     const SignIn: SignInUserFunction = async (

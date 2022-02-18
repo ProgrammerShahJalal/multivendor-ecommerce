@@ -52,7 +52,10 @@ export const Faq = () => {
       <br />
       <div className="text-center grid lg:grid-cols-2 xs:grid-cols-1">
         <div>
-          <LottieFaq />
+          <div data-aos="fade-left"
+            data-aos-duration="1500">
+            <LottieFaq />
+          </div>
         </div>
         <div class="space-y-4">
           <Item title={<b>How can I check my products?</b>}>

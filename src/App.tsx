@@ -33,7 +33,7 @@ function App() {
             <Route path='/login' element={<Login />} />
             <Route path='/register' element={<Register />} />
             <Route path='/shop' element={<Shop />} />
-            <Route path='/profile' element={<UserProfile />} />
+            <Route path='/profile' element={<PrivateRoute><UserProfile /></PrivateRoute>} />
             <Route path='/blogs/details/:id' element={<PrivateRoute><BlogDetails /></PrivateRoute>} />
             <Route path='*' element={<NotFound />} />
           </Routes>

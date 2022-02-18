@@ -1,11 +1,15 @@
-import React from 'react';
-// import './MensCollection.css'
-const Shop = () => {
-return (
-    <div>
-        
-    </div>
-    );
-};
+import React, { PureComponent } from 'react'
+// import Navigation from '../Navigation/Navigation';
+import Products from './Products/Products';
 
-export default Shop;
+type Props = {}
+
+export default class Shop extends PureComponent<Props> {
+    render() {
+        return (
+            <div>
+                <Products></Products>
+            </div >
+        )
+    }
+}

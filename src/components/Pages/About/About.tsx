@@ -1,12 +1,15 @@
 import React from 'react';
+import BannerMax from '../BannerPro/BannerMax';
 
 const About = () => {
     return (
         <div>
-            <h1 className='text-white text-4xl font-bold py-3 bg-purple-600  hover:bg-sky-700 '>About Unity Mart</h1>
+            <div className='bg-purple-600'>
+                <h1 className='text-white text-center text-4xl font-bold py-3 hover:skew-y-6'>About Unity Mart</h1>
+            </div>
             <div className='container mx-auto'>
                 <img src='https://template.annimexweb.com/diva/assets/images/about/about-us-image3.jpg' className="w-full mx-auto" alt='' />
-
+                <BannerMax />
                 <div className='container'>
                     <div className='grid grid-cols-2 gap-0 items-center justify-center'>
                         <div className='w-50'>

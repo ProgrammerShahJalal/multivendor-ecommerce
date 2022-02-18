@@ -10,14 +10,14 @@ interface ProductState {
     }[]
 }
 
-const WomensCollection = () => {
+const Men = () => {
     const [products, setProducts] = useState<ProductState["products"]>
         ([]);
 
     useEffect(() => {
         if (products) {
 
-            fetch('https://morning-inlet-49130.herokuapp.com/womens')
+            fetch('https://morning-inlet-49130.herokuapp.com/mens')
                 .then(res => res.json())
                 .then(data => setProducts(data))
         }
@@ -26,7 +26,7 @@ const WomensCollection = () => {
 return (
     <div className="container px-10 pb-16">
     <h2 className="text-2xl font-medium text-gray-800 uppercase mb-6">Top new Arrival</h2>
-    <div className="grid lg:grid-cols-4 md:grid-cols-3 xs:grid-cols-1 gap-6">
+    <div className="grid lg:grid-cols-3 md:grid-cols-2 xs:grid-cols-1 gap-6">
         {
             products.map((product) => (
                 <div className="bg-white shadow-inner overflow-hidden group">
@@ -64,4 +64,4 @@ return (
     );
 };
 
-export default WomensCollection;
+export default Men;
