@@ -1,7 +1,7 @@
 import React from 'react';
-import Kids from './Kids';
-import Men from './Men';
-import Women from './Women';
+import Kids from './Kids/Kids';
+import Men from './Men/Men';
+import Women from './Women/Women';
 
 const Products = () => {
     return (
