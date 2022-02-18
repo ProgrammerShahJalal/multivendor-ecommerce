@@ -8,8 +8,9 @@ import "swiper/css/free-mode";
 import "swiper/css/navigation";
 import "swiper/css/pagination";
 import "swiper/css/thumbs";
-
 import { NavLink } from "react-router-dom";
+
+
 SwiperCore.use([Autoplay])
 export default function Banners() {
 
@@ -23,6 +24,8 @@ export default function Banners() {
             delay: 3000,
             disableOnInteraction: false
           }}
+          modules={[Autoplay]}
+
           className="mySwiper">
           <SwiperSlide
             className="md:flex justify-between"
