@@ -42,9 +42,9 @@ const Item = ({ title, children }) => {
 };
 export const Faq = () => {
   return (
-    <div class="px-4 py-16 mx-auto sm:max-w-xl md:max-w-full lg:max-w-screen-xl md:px-24 lg:px-8 lg:py-20">
-      <div class="max-w-xl sm:mx-auto lg:max-w-2xl">
-        <div class=" sm:text-center">
+    <div class="px-4 py-16 mx-auto sm:max-w-xl md:max-w-full lg:max-w-screen-xl md:px-24 lg:px-8 lg:py-20 overflow-x-hidden">
+      <div className="max-w-xl sm:mx-auto lg:max-w-2xl">
+        <div className=" sm:text-center">
           <h2 className="text-4xl">Frequently Asked Question</h2>
         </div>
       </div>
@@ -57,7 +57,7 @@ export const Faq = () => {
             <LottieFaq />
           </div>
         </div>
-        <div class="space-y-4">
+        <div className="space-y-4">
           <Item title={<b>How can I check my products?</b>}>
             Confirm that the product you have bought are from unityMart. Tilt the carton check the sticker on the carton and scan the QR code using our app.
           </Item>
