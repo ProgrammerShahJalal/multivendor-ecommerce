@@ -32,12 +32,12 @@ return (
                 <div className="grid lg:grid-cols-4 sm:grid-cols-2 grid-cols-1 lg:gap-y-12 lg:gap-x-8 sm:gap-y-10 sm:gap-x-6 gap-y-6 lg:mt-12 mt-10">
         {
             products.map((product) => (
-                <div className='card-main'>
-                        <div className="relative group">
-                            <div className="flex justify-center items-center absolute top-0 left-0 h-full w-full"></div>
+                <div className='card-main items-center justify-center'>
+                        <div className="relative  justify-center items-center group">
+                            <div className="flex absolute top-0 left-0 h-full w-full"></div>
                             <div>
                             <a href="/">
-                            <img alt='' src={product.img} className="image rounded-tl-lg rounded-tr-lg" />
+                            <img alt='' src={product.img} className="image items-center justify-center flex rounded-tl-lg rounded-tr-lg" />
                             </a>
                             </div>
                             <div className="absolute bottom-0 p-8 w-full opacity-0 group-hover:opacity-100 buttons">
@@ -47,7 +47,7 @@ return (
                             </div>
                             <div className="p-5 description">
           <h3><a href="/">{product.title}</a></h3>
-          <h3>{product.vendorName}</h3>
+          <h4>from: <b>{product.vendorName}</b></h4>
           <div className="flex flex-row my-3">
             <div className="bg-black rounded-full h-5 w-5 shadow-md mr-2"></div>
             <div className="bg-blue-800 rounded-full h-5 w-5 shadow-md mr-2"></div>

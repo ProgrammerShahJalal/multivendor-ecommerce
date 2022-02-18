@@ -47,7 +47,7 @@ return (
                             </div>
                             <div className="p-5 description">
           <h3><a href="/">{product.title}</a></h3>
-          <h3>{product.vendorName}</h3>
+          <h4>from: <b>{product.vendorName}</b></h4>
           <div className="flex flex-row my-3">
             <div className="bg-black rounded-full h-5 w-5 shadow-md mr-2"></div>
             <div className="bg-blue-800 rounded-full h-5 w-5 shadow-md mr-2"></div>

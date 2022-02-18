@@ -1,6 +1,13 @@
-/* .image{
+.image{
 	overflow: hidden;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    /* height: 300px;
+    width: 250px; */
+
 }
+/*
 .image-hover{
     display: none;
 	overflow: hidden;
