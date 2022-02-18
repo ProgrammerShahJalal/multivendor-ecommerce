@@ -1,27 +1,14 @@
-.image{
-	overflow: hidden;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    /* height: 300px;
-    width: 250px; */
-
+.img{
+    overflow: hidden;
 }
-/*
-.image-hover{
+.hoverImg{
+    height: 250px;
     display: none;
-	overflow: hidden;
+    overflow: hidden;
 }
-.card-main:hover .image-hover{
-    display: block;
-}
-.card-main:hover .image{
+.single-card:hover .img{
     display: none;
-} */
-
-.card-main:hover .description{
-    visibility: hidden;
 }
-.card-main:hover .buttons{
+.single-card:hover .hoverImg{
     display: block;
 }

@@ -7,6 +7,8 @@ interface ProductState {
         size: string
         vendorName: string
         rating: number
+        price: number
+        salePrice: number
     }[]
 }
 
@@ -48,8 +50,8 @@ return (
                             <h5 className="font-bold text-sm mb-2 text-grey-800 hover:text-red-600 transition">from {product.vendorName}</h5>
                         </a>
                         <div className="flex items-baseline mb-1 space-x-2">
-                            <p className="text-xl text-red-600 font-semibold">$120</p>
-                            <p className="text-sm text-gray-400 line-through">$120</p>
+                        <p className="text-xl text-red-600 font-semibold">{product.salePrice}</p>
+                            <p className="text-sm text-gray-400 line-through">{product.price}</p>
                         </div>
                         <div className="flex items-center">
                         <Rating name="half-rating-read" defaultValue={product.rating} precision={0.5} readOnly />
