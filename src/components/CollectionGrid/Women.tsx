@@ -1,11 +1,9 @@
 import React, { useState, useEffect } from 'react';
 import { Rating } from "@mui/material";
-import './WomensCollection.css'
 interface ProductState {
     products: {
         title: string
         img: string
-        hoverImg:string
         size: string
         vendorName: string
         rating: number
@@ -14,7 +12,7 @@ interface ProductState {
     }[]
 }
 
-const WomensCollection = () => {
+const Women = () => {
     const [products, setProducts] = useState<ProductState["products"]>
         ([]);
 
@@ -29,13 +27,13 @@ const WomensCollection = () => {
 
 return (
     <div className="container px-10 pb-16">
-    <div className="grid lg:grid-cols-4 md:grid-cols-3 xs:grid-cols-1 gap-6">
+    <h2 className="text-2xl font-medium text-gray-800 uppercase mb-6">Top new Arrival</h2>
+    <div className="grid lg:grid-cols-3 md:grid-cols-2 xs:grid-cols-1 gap-6">
         {
             products.map((product) => (
-                <div className="bg-white shadow-inner single-card overflow-hidden group">
+                <div className="bg-white shadow-inner overflow-hidden group">
                 <div className="relative">
-                <img style={{height:'250px'}}  src={product.img} className='w-full img' alt="" />
-                    <img style={{height:'250px'}}  src={product.hoverImg} className='w-full hoverImg' alt="" />
+                    <img style={{height:'300px'}}  src={product.img} className='w-full' alt="" />
                     <div className="absolute inset-0 bg-black bg-opacity-40 flex items-center justify-center gap-2 opacity-0 group-hover:opacity-100 transition">
                         <a className='text-white text-lg w-9 h-8 rounded-full bg-red-600 flex items-center justify-center hover:bg-gray-800 transition' href="/">
                         <i className="fa-regular fa-magnifying-glass"></i>
@@ -68,4 +66,4 @@ return (
     );
 };
 
-export default WomensCollection;
+export default Women;

@@ -1,7 +1,7 @@
 import React, { PureComponent } from 'react'
 import KidsCollection from '../KidsCollection/KidsCollection'
-import MensCollection from '../MensCollection/MensCollection'
-import WomensCollection from '../WomensCollection/WomensCollection'
+import MensCollection from '../MensCollection/MensCollection';
+import WomensCollection from '../WomensCollection/WomensCollection';
 
 type Props = {}
 

@@ -1,20 +1,14 @@
-/* .image{
-	overflow: hidden;
+.img{
+    overflow: hidden;
 }
-.image-hover{
+.hoverImg{
+    height: 250px;
     display: none;
-	overflow: hidden;
+    overflow: hidden;
 }
-.card-main:hover .image-hover{
-    display: block;
-}
-.card-main:hover .image{
+.single-card:hover .img{
     display: none;
-} */
-
-.card-main:hover .description{
-    visibility: hidden;
 }
-.card-main:hover .buttons{
+.single-card:hover .hoverImg{
     display: block;
 }
