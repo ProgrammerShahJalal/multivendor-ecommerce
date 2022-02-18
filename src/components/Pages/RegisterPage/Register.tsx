@@ -60,7 +60,7 @@ const Register = () => {
                                 </div>
                             </div>
                             <div className="w-14 h-14 text-center rounded-full bg-red-500 text-white saturate-100 transition-all hover:bg-red-600">
-                                <div onClick={() => handleGoogleSignIn()} className="block mt-4 social-login">
+                                <div onClick={() => handleGoogleSignIn(navigate, location)} className="block mt-4 social-login">
                                     <i className="fab fa-google fa-lg"></i>
                                 </div>
                             </div>
