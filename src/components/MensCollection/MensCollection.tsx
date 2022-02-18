@@ -16,7 +16,7 @@ interface ProductState {
 
 const KidsCollection = () => {
     const [products, setProducts] = useState<ProductState["products"]>
-        ([]);
+    ([]);
 
     useEffect(() => {
         if (products) {
