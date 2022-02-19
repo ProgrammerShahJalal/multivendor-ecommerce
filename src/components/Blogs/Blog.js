@@ -14,7 +14,7 @@ const Blog = ({ blog }) => {
                         </div>
                         <div className="p-8">
                             <div className="uppercase tracking-wide text-sm text-indigo-500 font-semibold">Category: {category}</div>
-                            <Link to={`/blogs/details/${_id}`} class="block mt-1 text-lg leading-tight font-medium text-black hover:underline truncate w-96">{title}</Link>
+                            <Link to={`/blogs/details/${_id}`} className="block mt-1 text-lg leading-tight font-medium text-black hover:underline truncate w-96">{title}</Link>
                             <p className="mt-2 py-3 text-slate-500 w-96 h-18">{description.slice(0, 80)}...</p>
                             <div className="flex gap-4">
                                 <h3 className='text-sm text-purple-700 font-semibold'>Posted by {author}</h3>

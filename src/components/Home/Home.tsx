@@ -9,12 +9,14 @@ import { Faq } from '../FAQ/FAQ';
 import HomeProducts from '../HomeProducts/HomeProducts';
 import Brands from '../Pages/Brands/Brands';
 import BannerPro from '../Pages/BannerPro/BannerPro';
+import SpecialDeal from '../SpecialDeal/SpecialDeal';
 
 export default function Home() {
     return (
         <div>
             <Banners />
             <TopBanner />
+            <SpecialDeal />
             <HomeProducts />
             <BottomBanner />
             <Reviews />
