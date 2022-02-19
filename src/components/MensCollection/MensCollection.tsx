@@ -29,7 +29,7 @@ const KidsCollection = () => {
 
 return (
     <div className="container px-10 pb-16">
-    <div className="grid lg:grid-cols-4 md:grid-cols-3 xs:grid-cols-1 gap-6">
+    <div className="grid lg:grid-cols-4 md:grid-cols-3 grid-cols-1 gap-6">
         {
             products.map((product) => (
                 <div className="bg-white shadow-inner overflow-hidden single-card group">
@@ -48,7 +48,7 @@ return (
                     </div>
                    
                 </div>
-                <div className="pt-4 gb-3 px-4">
+                <div style={{height:'200px'}} className="pt-4 gb-3 px-4">
                         <a href="/">
                             <h4 className="font-medium text-xl mb-2 text-grey-800 hover:text-red-600 transition">{product.title}</h4>
                             <h5 className="font-bold text-sm mb-2 text-grey-800 hover:text-red-600 transition">from {product.vendorName}</h5>
