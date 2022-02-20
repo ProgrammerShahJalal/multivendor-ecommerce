@@ -21,9 +21,7 @@ export default function Home() {
             <BannerGadget />
             <HomeProducts />
             <BottomBanner />
-            <div className='md:block lg:block hidden'>
-                <Reviews />
-            </div>
+            {/* <Reviews /> */}
             <Brands />
             <BannerPro />
             <Blogs />
