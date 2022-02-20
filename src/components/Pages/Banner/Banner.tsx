@@ -33,7 +33,7 @@ export default function Banners() {
             <div className="grid md:grid-cols-2 xs:grid-cols-1">
               <div className="flex flex-col items-center md:items-start justify-center md:pl-15 lg:pl-32 p-12 text-center md:text-left">
                 <h1 className="text-4xl">
-                  Monster Beats Headphone<span className="text-blue-500">(Special)</span>
+                  Monster Beats Headphone
                 </h1>
                 <p className="text-2xl">
                   Best accessories just for you!

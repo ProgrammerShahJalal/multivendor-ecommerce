@@ -86,11 +86,11 @@ export default function SpecialDeal() {
                         </div>
                     </div>
                 </div>
-                <div className="grid grid-cols-3 gap-5">
+                <div className="grid lg:grid-cols-3 md:grid-cols-2 sm:grid-cols-1 gap-5">
                     {
                         specials.map((special) => (
                             <div className="text-center">
-                                <img className="w-64" src={special.img} alt="" />
+                                <img className="w-64 mx-auto" src={special.img} alt="" />
                                 <h2 className="font-bold">{special.title}</h2>
                                 <p className="text-slate-400">{special.processor}</p>
                                 <div className="flex justify-center items-center gap-3">
