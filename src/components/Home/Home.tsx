@@ -10,6 +10,7 @@ import HomeProducts from '../HomeProducts/HomeProducts';
 import Brands from '../Pages/Brands/Brands';
 import BannerPro from '../Pages/BannerPro/BannerPro';
 import SpecialDeal from '../SpecialDeal/SpecialDeal';
+import BannerGadget from '../Pages/BannerGadget/BannerGadget';
 
 export default function Home() {
     return (
@@ -17,9 +18,12 @@ export default function Home() {
             <Banners />
             <TopBanner />
             <SpecialDeal />
+            <BannerGadget />
             <HomeProducts />
             <BottomBanner />
-            <Reviews />
+            <div className='md:block lg:block hidden'>
+                <Reviews />
+            </div>
             <Brands />
             <BannerPro />
             <Blogs />
