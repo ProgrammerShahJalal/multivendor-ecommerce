@@ -12,7 +12,7 @@ export default class BottomBanner extends PureComponent<Props> {
 			<>
 				<section style={{ margin: '50px' }} className="shop-services section home">
 					<div className="container">
-						<div className="grid md:grid-cols-3 grid-cols-2 lg:grid-cols-4 ">
+						<div className="grid md:grid-cols-2 grid-cols-1 lg:grid-cols-4 ">
 							<div className="bg-white per-service mx-3">
 								<i className="fa-regular fa-truck-fast"></i>
 								<h4><b>Free shipping</b></h4>
