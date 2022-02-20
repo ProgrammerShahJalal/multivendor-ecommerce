@@ -34,6 +34,23 @@
   <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
   <script>
     AOS.init();
+
+    /* disable context menu on webpage */
+    // document.addEventListener("contextmenu", function (shahjalal) {
+    //   shahjalal.preventDefault()
+    // })
+
+    if (document.addEventListener) {
+      document.addEventListener('contextmenu', function (e) {
+        alert("No No! It shouldn't be do again. We know you are good guy 😁😎. You've tried to open context menu"); //here you draw your own menu
+        e.preventDefault();
+      }, false);
+    } else {
+      document.attachEvent('oncontextmenu', function () {
+        alert("You've tried to open context menu");
+        window.event.returnValue = false;
+      });
+    }
   </script>
 </body>
 
