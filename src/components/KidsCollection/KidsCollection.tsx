@@ -32,8 +32,8 @@ return (
     <div className="grid lg:grid-cols-4 md:grid-cols-3 xs:grid-cols-1 gap-6">
         {
             products.map((product) => (
-                <div className="bg-white shadow-inner overflow-hidden single-card group">
-                <div className="relative">
+                <div className="bg-white shadow-inner overflow-hidden single-card ">
+                <div className="relative group">
                 <div style={{height:'250px'}} className='z-100 overflow-hidden'>
                                 <img src={product.hoverImg} className='w-full img z-0 transition object-cover' alt="" />
                                 <img src={product.img} className='w-full hoverImg transition object-cover' alt="" />
