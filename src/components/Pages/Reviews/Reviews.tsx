@@ -4,7 +4,8 @@ import "swiper/css";
 import "swiper/css/effect-coverflow";
 import { Rating } from "@mui/material";
 import "swiper/css/pagination";
-import { Autoplay, EffectCoverflow, Pagination } from "swiper";
+import { Autoplay, EffectCoverflow, Pagination } from 'swiper';
+// import { Autoplay, EffectCoverflow, Pagination } from "swiper";
 
 interface ReviewState {
     reviews: {
