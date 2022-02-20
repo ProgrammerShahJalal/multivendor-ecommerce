@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { Rating } from "@mui/material";
-import './Women.css';
+// import './Women.css';
 interface ProductState {
     products: {
         title: string

@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { Rating } from "@mui/material";
-import './MensCollection.css'
+import './MensCollection.css';
 interface ProductState {
     products: {
         title: string
@@ -28,13 +28,13 @@ const KidsCollection = () => {
     }, [products])
 
 return (
-    <div className="container px-10 pb-16">
+    <div className="container px-10 pb-16  items-center justify-center">
     <div className="grid lg:grid-cols-4 md:grid-cols-3 grid-cols-1 gap-6">
         {
             products.map((product) => (
                 <div className="bg-white shadow-inner overflow-hidden single-card group">
                 <div className="relative">
-                <div style={{height:'250px'}} className='z-100 overflow-hidden'>
+                <div style={{height:'260px'}} className='z-100 overflow-hidden'>
                                 <img src={product.hoverImg} className='w-full img z-0 transition object-cover' alt="" />
                                 <img src={product.img} className='w-full hoverImg transition object-cover' alt="" />
                                 </div>
