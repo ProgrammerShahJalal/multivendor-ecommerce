@@ -28,7 +28,7 @@ const KidsCollection = () => {
     }, [products])
 
 return (
-    <div className="container px-10 pb-16">
+    <div className="container lg:px-0 md:px-10 px-10 pb-16">
     <div className="grid place-content-center lg:grid-cols-4 md:grid-cols-3 grid-cols-1 gap-6">
         {
             products.map((product) => (

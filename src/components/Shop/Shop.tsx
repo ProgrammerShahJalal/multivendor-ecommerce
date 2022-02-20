@@ -1,5 +1,4 @@
 import React, { PureComponent } from 'react'
-// import Navigation from '../Navigation/Navigation';
 import Products from './Products/Products';
 
 type Props = {}

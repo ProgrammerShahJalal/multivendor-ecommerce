@@ -5,7 +5,7 @@ import Women from './Women/Women';
 
 const Products = () => {
     return (
-        <div>
+        <div className='max-w-md md:max-w-7xl mx-auto'>
             <Men/>
             <Women/>
             <Kids/>
