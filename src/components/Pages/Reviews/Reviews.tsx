@@ -38,6 +38,27 @@ const Reviews = () => {
         }
     }, [reviews])
 
+    if (isLoading) {
+        return (
+            <div className="border border-blue-300 shadow rounded-md p-8 max-w-sm w-full mx-auto">
+                <div className="rounded-full bg-slate-700 h-10 w-10 mx-auto mb-2"></div>
+                <div className="animate-pulse flex space-x-4 text-center">
+                    <div className="flex-1 space-y-6 py-1">
+                        <div className="h-2 bg-slate-700 rounded"></div>
+                        <div className="space-y-3">
+                            <div className="grid grid-cols-3 gap-4">
+                                <div className="h-2 bg-slate-700 rounded col-span-2"></div>
+                                <div className="h-2 bg-slate-700 rounded col-span-1"></div>
+                            </div>
+                            <div className="h-2 bg-slate-700 rounded"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        )
+
+    }
+
     return (
         <div className='my-7'>
             <div className='container mx-auto rounded-md py-7 bg-gradient-to-r from-blue-900 to-black'>
