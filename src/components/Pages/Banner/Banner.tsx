@@ -36,7 +36,7 @@ export default function Banners() {
                   Monster Beats Headphone
                 </h1>
                 <p className="text-2xl">
-                  Best accessories just for you!
+                  Best accessories for you!
                 </p>
                 <p className="text-3xl">
                   $<span className="text-red-600">35</span>

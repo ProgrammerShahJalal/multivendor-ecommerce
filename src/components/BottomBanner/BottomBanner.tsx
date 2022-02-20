@@ -1,6 +1,6 @@
 /* eslint-disable react-hooks/rules-of-hooks */
 import React, { PureComponent } from 'react';
-import './BottomBanner.css'
+import './BottomBanner.css';
 import xbox from './../../images/products/others/xbox-removebg-preview.png';
 import ps5 from './../../images/products/others/ps5-removebg-preview.png';
 
@@ -12,25 +12,25 @@ export default class BottomBanner extends PureComponent<Props> {
 			<>
 				<section style={{ margin: '50px' }} className="shop-services section home">
 					<div className="container">
-						<div className="grid md:grid-cols-4 lg:grid-cols-4 ">
-							<div className="bg-red-500 py-5 per-service mx-5">
+						<div className="grid md:grid-cols-3 grid-cols-2 lg:grid-cols-4 ">
+							<div className="bg-white per-service mx-3">
 								<i className="fa-regular fa-truck-fast"></i>
-								<h4>Free shipping</h4>
+								<h4><b>Free shipping</b></h4>
 								<p>Orders over $100</p>
 							</div>
-							<div className="bg-green-500 per-service mx-5">
+							<div className="bg-white per-service mx-3">
 								<i className="fa-regular fa-sync-alt"></i>
-								<h4>Free Return</h4>
+								<h4><b>Free Return</b></h4>
 								<p>Within 30 days returns</p>
 							</div>
-							<div className="bg-blue-500 per-service mx-5">
+							<div className="bg-white per-service mx-3">
 								<i className="fa-regular fa-lock"></i>
-								<h4>Secure Payment</h4>
+								<h4><b>Secure Payment</b></h4>
 								<p>100% secure payment</p>
 							</div>
-							<div className="bg-orange-500 per-service mx-5">
+							<div className="bg-white lg:mt-2 per-service mx-3">
 								<i className="fa-regular fa-tag"></i>
-								<h4>Best Price</h4>
+								<h4><b>Best Price</b></h4>
 								<p>Guaranteed price</p>
 							</div>
 						</div>

@@ -2,15 +2,6 @@
 	position: relative;
 	padding-left: 65px;
 }
-.shop-services .single-service svg {
-	text-align: center;
-	color: #333;
-	margin-left: 30px;
-	font-size: 32px;
-	position: absolute;
-	left: 0;
-	top: 0;
-}
 .shop-services .single-service h4 {
 	font-size: 14px;
 	font-weight: 600;
@@ -25,19 +16,29 @@
 }
 
 .per-service{
-	color: #fff;
-	padding: 10px;
-	height: 100px;
-	border-radius: 10px;
+	padding-top: 15px;
+	border-left: 1px solid black;
+	border-right: 1px solid black;
+	padding: 5px;
+	margin: 10px;
+	height: 130px;
 	text-align: center;
 }
-.per-service svg{
-	display: flex;
-	align-items: center;
-	justify-content: center;
+.per-service:hover{
+	border-right: none;
+	border-left: none;
+	border-left: none;
+	padding-top: 15px;
+	border-top: 1px solid black;
+	border-bottom: 1px solid black;
+	padding: 5px;
+	margin: 10px;
+	height: 130px;
+	text-align: center;
 }
 
 .single-banner:hover img{
+	rotate: 45deg;
     transform: scale(1.1)
 }
 .midium-banner{
@@ -51,6 +52,8 @@
 	overflow: hidden;
 	transition: transform .2s;
 	background-color: #f7f7f7;
+	margin-top:10px;
+	margin-bottom: 10px;
 	margin-left: 20px;
 	margin-right: 20px;
 }
