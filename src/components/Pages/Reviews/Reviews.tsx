@@ -8,23 +8,33 @@ import { Autoplay, EffectCoverflow, Pagination } from "swiper";
 
 interface ReviewState {
     reviews: {
+        img: string
         name: string
         description: string
-        img: string
         ratings: number
-    }[]
+    }[],
 }
 
 const Reviews = () => {
     const [reviews, setReviews] = useState<ReviewState["reviews"]>
         ([]);
+    const [isLoading, setIsLoading] = useState(true);
 
     useEffect(() => {
         if (reviews) {
-
+            let isUnMount = false;
+            setIsLoading(true);
             fetch('https://morning-inlet-49130.herokuapp.com/reviews')
                 .then(res => res.json())
-                .then(data => setReviews(data))
+                .then(data => {
+                    if (!isUnMount) {
+                        setReviews(data);
+                        setIsLoading(false);
+                    }
+                })
+            return () => {
+                isUnMount = true;
+            }
         }
     }, [reviews])
 
@@ -69,6 +79,7 @@ const Reviews = () => {
                         clickable: true,
                     }}
                     modules={[EffectCoverflow, Autoplay, Pagination]}
+
                 // className="mySwiper"
 
                 >
@@ -84,7 +95,7 @@ const Reviews = () => {
                                     </div>
                                     <div className='my-4'><p className='text-sm'>{review.description}</p> </div>
                                     <div className="flex justify-center gap-4">
-                                        <p>{review.ratings} start rating</p>
+                                        <p>{review.ratings} </p>
                                         <Rating name="half-rating-read" defaultValue={review.ratings} precision={0.5} readOnly />
                                     </div>
                                 </div>
