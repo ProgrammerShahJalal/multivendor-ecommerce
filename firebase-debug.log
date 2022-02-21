@@ -1,0 +1,43 @@
+[debug] [2022-02-21T11:57:51.225Z] ----------------------------------------------------------------------
+[debug] [2022-02-21T11:57:51.227Z] Command:       C:\Program Files\nodejs\node.exe C:\Users\Ifaz\AppData\Roaming\npm\node_modules\firebase-tools\lib\bin\firebase.js init
+[debug] [2022-02-21T11:57:51.227Z] CLI Version:   10.2.1
+[debug] [2022-02-21T11:57:51.228Z] Platform:      win32
+[debug] [2022-02-21T11:57:51.228Z] Node Version:  v16.13.2
+[debug] [2022-02-21T11:57:51.228Z] Time:          Mon Feb 21 2022 17:57:51 GMT+0600 (Bangladesh Standard Time)
+[debug] [2022-02-21T11:57:51.229Z] ----------------------------------------------------------------------
+[debug] 
+[debug] [2022-02-21T11:57:51.290Z] > command requires scopes: ["email","openid","https://www.googleapis.com/auth/cloudplatformprojects.readonly","https://www.googleapis.com/auth/firebase","https://www.googleapis.com/auth/cloud-platform"]
+[debug] [2022-02-21T11:57:51.291Z] > authorizing via signed-in user (studentifaz@gmail.com)
+[info] 
+     ######## #### ########  ######## ########     ###     ######  ########
+     ##        ##  ##     ## ##       ##     ##  ##   ##  ##       ##
+     ######    ##  ########  ######   ########  #########  ######  ######
+     ##        ##  ##    ##  ##       ##     ## ##     ##       ## ##
+     ##       #### ##     ## ######## ########  ##     ##  ######  ########
+
+You're about to initialize a Firebase project in this directory:
+
+  D:\Projects\multivendor-ecommerce
+
+Before we get started, keep in mind:
+
+  * You are initializing within an existing Firebase project directory
+
+[info] 
+=== Project Setup
+[info] 
+[info] First, let's associate this project directory with a Firebase project.
+[info] You can create multiple project aliases by running firebase use --add, 
+[info] but for now we'll just set up a default project.
+[info] 
+[debug] [2022-02-21T11:57:57.251Z] Using project from CLI flag: unitymart-c522a
+[debug] [2022-02-21T11:57:57.253Z] >>> [apiv2][query] GET https://firebase.googleapis.com/v1beta1/projects/unitymart-c522a [none]
+[debug] [2022-02-21T11:57:58.076Z] <<< [apiv2][status] GET https://firebase.googleapis.com/v1beta1/projects/unitymart-c522a 403
+[debug] [2022-02-21T11:57:58.077Z] <<< [apiv2][body] GET https://firebase.googleapis.com/v1beta1/projects/unitymart-c522a {"error":{"code":403,"message":"The caller does not have permission","status":"PERMISSION_DENIED"}}
+[debug] [2022-02-21T11:57:58.077Z] HTTP Error: 403, The caller does not have permission
+[debug] [2022-02-21T11:57:58.307Z] FirebaseError: HTTP Error: 403, The caller does not have permission
+    at module.exports (C:\Users\Ifaz\AppData\Roaming\npm\node_modules\firebase-tools\lib\responseToError.js:47:12)
+    at RetryOperation._fn (C:\Users\Ifaz\AppData\Roaming\npm\node_modules\firebase-tools\lib\apiv2.js:286:39)
+    at processTicksAndRejections (node:internal/process/task_queues:96:5)
+[error] 
+[error] Error: Failed to get Firebase project unitymart-c522a. Please make sure the project exists and your account has permission to access it.

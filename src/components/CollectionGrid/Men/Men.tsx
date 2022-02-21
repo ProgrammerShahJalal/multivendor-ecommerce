@@ -28,7 +28,7 @@ const Men = () => {
     }, [products])
 
     return (
-        <div className="container lg:px-0 md:px-10 px-10 pb-16">
+        <div className="container lg:px-12 md:px-10 px-10 pb-16">
             <div className="grid lg:grid-cols-3 md:grid-cols-2 xs:grid-cols-1 gap-6">
                 {
                     products.map((product) => (
