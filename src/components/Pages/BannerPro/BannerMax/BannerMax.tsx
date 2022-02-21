@@ -4,6 +4,21 @@ const BannerMax = () => {
     
     return (
         <div className='container mx-auto py-4'>
+            <div className='bg-black grid md:grid-cols-2 sm:grid-cols-1  p-7 my-3 items-center justify-center'>
+                <div className='text-white text-center font-bold'>
+                    <h4 className="text-gray-400">GAMING COLLECTION</h4>
+                    <h1 className="text-4xl hover:text-blue-300 py-2">Sony Playstation 4</h1>
+                    <h1 className="text-4xl hover:text-blue-300 pb-3">Dualshok Controller</h1>
+                    <button className='bg-blue-600 rounded-full py-2 px-4'>BUY NOW</button>
+                    <button className=' bg-gray-500 mx-3 rounded px-3 py-1'>ReadMore</button>
+                </div>
+                <div className='mt-7'>
+                    <img src='https://e-commerce.myproyash.com/wp-content/uploads/2021/05/dualshok.png' className='w-full -mb-20 pt-7' alt='' />
+                </div>
+            </div>
+
+            {/*Another -1 */}
+
             <div className='my-20'>
                 <div className='grid md:grid-cols-3 sm:grid-cols-1 overflow-hidden'>
                     <div className="relative hover:scale-110 duration-700">
@@ -51,6 +66,31 @@ const BannerMax = () => {
                 </div>
             </div>
 
+            {/* Another-2 */}
+
+            <div className='container mx-auto py-3'>
+                <div className='grid md:grid-cols-2 sm:grid-cols-1 '>
+                    <div className='relative'>
+                        <img src='https://e-commerce.myproyash.com/wp-content/uploads/2021/05/electro-banner10.jpg' className="w-full" alt='' />
+                        <div className='absolute inset-y-8 left-5 w-72 py-2'>
+                            <h3 className='text-blue-500 font-medium'>NEW TECHNOLOGIES</h3>
+                            <h1 className="text-4xl text-black font-bold hover:text-pink-600 py-3">WEBCAMS 2021</h1>
+                            <p className='text-gray-600 font-medium hover:text-pink-800 p-2'>Auctor litora ultrices suscipit malesuada nunc a netus</p>
+                            <button className='bg-blue-600 text-white px-3 py-2 rounded-full hover:bg-pink-500 font-bold'>SHOPE MORE</button>
+                        </div>
+                    </div>
+
+                    <div className='relative'>
+                        <img src='https://e-commerce.myproyash.com/wp-content/uploads/2021/05/electro-banner11.jpg' className="w-full" alt='' />
+                        <div className='absolute inset-y-8 left-5 w-72 py-1'>
+                            <h3 className='text-blue-200 font-medium'>APPLE ACCESSORIES</h3>
+                            <h1 className="text-4xl text-white font-bold hover:text-black py-3">LEATHER CASES</h1>
+                            <p className='text-blue-200 font-medium hover:text-gray-800 p-2'>Condimentum curabitur vestibulum dapibus porttitor adipiscing</p>
+                            <button className='bg-white text-black px-3 py-2 rounded-full hover:bg-pink-500 font-bold'>SHOPE MORE</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
         </div>
     );
 };

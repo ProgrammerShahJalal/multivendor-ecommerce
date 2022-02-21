@@ -88,7 +88,7 @@ export default function Banners() {
             style={{ height: "30rem" }}>
             <div className="grid md:grid-cols-2 xs:grid-cols-1">
               <div className="flex flex-col items-center md:items-start justify-center md:pl-15 lg:pl-32 p-10 text-center md:text-left">
-                <h1 className="text-4xl">Sony Ps5 <span className="text-blue-500">(with controller)</span></h1>
+                <h1 className="text-4xl">Sony Ps5 <span className="text-red-500">+</span> <span className="text-blue-500">(controller)</span></h1>
                 <p className="text-2xl">
                   Sony playstation version 5 with controller
                 </p>
@@ -103,7 +103,7 @@ export default function Banners() {
                   Buy Now <i className="fa-light fa-cart-circle-plus"></i>
                 </NavLink>
               </div>
-              <div className="md:-mt-0 -mt-20">
+              <div className="md:-mt-0 -mt-10">
                 <img src='https://cdn.vox-cdn.com/thumbor/avQXnY3_y3EE2SbGO_UwMnpZJyM=/0x0:2400x1566/1200x800/filters:focal(1008x591:1392x975)/cdn.vox-cdn.com/uploads/chorus_image/image/67708941/ps5_hardware_render.0.jpg' alt="Image1" className="md:block" />
               </div>
             </div>
