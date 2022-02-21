@@ -27,68 +27,47 @@
 
 <body>
   <noscript>You need to enable JavaScript to run this app.</noscript>
-  <div id="contextMenu" class="context-menu" style="display: none">
-      <div style="width: 200px;" class="bg-indigo-500 border broder-gray-800 shadow rounded p-5">
-        <h1 class="text-xl text-center text-white">UnityMart</h1>
-        <hr>
-        <div class="text-white">
-          <a href="/">
-            <h1>Home ㅤㅤㅤㅤㅤ<i class="fa-light fa-house-chimney"></i></h1>
-          </a>
-          <hr>
-          <a href="/profile">
-            <h1>Profile ㅤㅤㅤㅤㅤ<i class="fa-light fa-address-card"></i></h1>
-          </a>
-          <hr>
-          <a href="/shop">
-          <h1>Shopㅤㅤㅤㅤㅤㅤ<i class="fa-light fa-bag-shopping pr-1"></i></h1>
-          </a>
-          <hr>
-          <a href="#">
-          <h1>Cartㅤㅤㅤㅤㅤㅤ<i class="fa-light fa-cart-shopping"></i></h1>
-          </a>
-          <hr>
-          <a href="/contact">
-            <h1>Contact ㅤㅤㅤㅤ<i class="fa-light fa-message-text"></i></h1>
-          </a>
-        </div>
-      </div>
-  </div>
+  <!-- <div id="contextMenu" class="context-menu" style="display: none">
+    <lottie-player src="https://assets5.lottiefiles.com/packages/lf20_jh9gfdye.json" background="transparent" speed="1"
+      style="width: 300px; height: 300px;" loop autoplay></lottie-player>
+    <h1 style="font-size: 1.3rem; font-weight: bold; color: red; background-color: aliceblue;">Focus on your work and
+      code.</h1>
+  </div> -->
   <div id="root">
 
   </div>
 
   <!-- aos animation -->
   <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
-  <!-- <script>
+  <script>
     AOS.init();
 
     /* disable context menu on webpage */
     // document.addEventListener("contextmenu", function (shahjalal) {
     //   shahjalal.preventDefault()
     // })
+    /* --------------------------------------------------- */
+    // document.onclick = hideMenu;
+    // document.oncontextmenu = rightClick;
 
-    document.onclick = hideMenu;
-    document.oncontextmenu = rightClick;
+    // function hideMenu() {
+    //   document.getElementById("contextMenu")
+    //     .style.display = "none"
+    // }
 
-    function hideMenu() {
-      document.getElementById("contextMenu")
-        .style.display = "none"
-    }
+    // function rightClick(e) {
+    //   e.preventDefault();
 
-    function rightClick(e) {
-      e.preventDefault();
-
-      if (document.getElementById("contextMenu").style.display == "block") {
-        hideMenu();
-      } else {
-        var menu = document.getElementById("contextMenu")
-        menu.style.display = 'block';
-        menu.style.left = e.pageX + "px";
-        menu.style.top = e.pageY + "px";
-      }
-    } 
-  </script> -->
+    //   if (document.getElementById("contextMenu").style.display == "block") {
+    //     hideMenu();
+    //   } else {
+    //     var menu = document.getElementById("contextMenu")
+    //     menu.style.display = 'block';
+    //     menu.style.left = e.pageX + "px";
+    //     menu.style.top = e.pageY + "px";
+    //   }
+    // } 
+  </script>
 </body>
 
 </html>
