@@ -41,6 +41,7 @@ function App() {
             <Route path='/shop' element={<Shop />} />
             <Route path='/profile' element={<PrivateRoute><UserProfile /></PrivateRoute>} />
             <Route path='/blogs/details/:id' element={<PrivateRoute><BlogDetails /></PrivateRoute>} />
+            {/* <Route path='/product/details/:id' element={<PrivateRoute><BlogDetails /></PrivateRoute>} /> */}
             <Route path='*' element={<NotFound />} />
           </Routes>
           <Footer />

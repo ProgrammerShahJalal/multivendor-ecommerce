@@ -34,9 +34,9 @@ return (
             products.map((product) => (
                 <div className="bg-white shadow-inner overflow-hidden single-card ">
                 <div className="relative group">
-                <div style={{height:'250px'}} className='z-100 overflow-hidden'>
-                                <img src={product.hoverImg} className='w-full img z-0 transition object-cover' alt="" />
-                                <img src={product.img} className='w-full hoverImg transition object-cover' alt="" />
+                <div style={{height:'250px'}} className='z-100 overflow-hidden '>
+                                <img style={{marginLeft:'20px'}} src={product.hoverImg} className='w-full img z-0 transition object-cover' alt="" />
+                                <img style={{marginLeft:'23px'}} src={product.img} className='w-full hoverImg transition object-cover' alt="" />
                                 </div>
                     <div className="absolute inset-0 bg-black bg-opacity-40 flex items-center justify-center gap-2 opacity-0 group-hover:opacity-100 transition">
                         <a className='text-white text-lg w-9 h-8 rounded-full bg-indigo-500 flex items-center justify-center hover:bg-gray-800 transition' href="/">

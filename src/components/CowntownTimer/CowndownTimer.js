@@ -11,7 +11,7 @@ const CowndownTimer = ({ offerTill }) => {
     let interval;
 
     const startTimer = () => {
-        const countDownDate = new Date("2022, 04, 28 ").getTime();
+        const countDownDate = new Date(offerTill).getTime();
 
         interval = setInterval(() => {
             const now = new Date().getTime();
