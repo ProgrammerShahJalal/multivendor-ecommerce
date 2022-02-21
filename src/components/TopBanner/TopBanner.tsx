@@ -17,7 +17,7 @@ export default class TopBanner extends PureComponent<Props> {
 					<div className="grid md:grid-cols-2 xs:grid-cols-1 lg:grid-cols-3">
 						<div className="main-div">
 
-							<div className="sngle-banner grid grid-cols-1 poster-card" data-aos="fade-right"
+							<div className="sngle-banner grid grid-cols-1 poster-card"
 								data-aos-anchor="#example-anchor"
 								data-aos-offset="500"
 								data-aos-duration="3000">
@@ -34,7 +34,7 @@ export default class TopBanner extends PureComponent<Props> {
 							</div>
 						</div>
 						<div className="main-div">
-							<div className="sngle-banner grid grid-cols-1 poster-card" data-aos="fade-up"
+							<div className="sngle-banner grid grid-cols-1 poster-card"
 								data-aos-anchor="#example-anchor"
 								data-aos-offset="500"
 								data-aos-duration="3000">
@@ -51,7 +51,7 @@ export default class TopBanner extends PureComponent<Props> {
 							</div>
 						</div>
 						<div className="main-div">
-							<div className="sngle-banner grid grid-cols-1 poster-card" data-aos="fade-left"
+							<div className="sngle-banner grid grid-cols-1 poster-card"
 								data-aos-anchor="#example-anchor"
 								data-aos-offset="500"
 								data-aos-duration="3000">
