@@ -6,6 +6,7 @@ import Modal from '@mui/material/Modal';
 import Fade from '@mui/material/Fade';
 import ProductViewSm from '../ProductView/ProductViewSm';
 import ProductView from '../ProductView/ProductView';
+import { Link } from 'react-router-dom';
 interface ProductState {
     products: {
         title: string
@@ -48,11 +49,11 @@ return (
                                 <img style={{marginLeft:'23px'}} src={product.img} className='w-full hoverImg transition object-center' alt="" />
                                 </div>
                     <div className="absolute inset-0 bg-black bg-opacity-40 flex items-center justify-center gap-2 opacity-0 group-hover:opacity-100 transition">
-                    {/* <Link to={`/product/details/${product._id}`}> */}
+                    <Link to={`/product/buy/${product._id}`}>
                         <button className='text-white text-lg w-9 h-8 rounded-full bg-indigo-500 flex items-center justify-center hover:bg-gray-800 transition' onClick={handleOpen}>
                         <i className="fa-regular fa-magnifying-glass"></i>
                         </button>
-                        {/* </Link> */}
+                        </Link>
                         <a className='text-white text-lg w-9 h-8 rounded-full bg-indigo-500 flex items-center justify-center hover:bg-gray-800 transition' href="/">
                         <i className="fa-regular fa-heart"></i>
                         </a>
