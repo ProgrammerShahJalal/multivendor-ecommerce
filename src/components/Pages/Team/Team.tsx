@@ -1,4 +1,5 @@
 import * as React from 'react';
+import { Typewriter } from 'react-simple-typewriter';
 
 export interface IAppProps {
 }
@@ -10,7 +11,19 @@ export default class App extends React.PureComponent<IAppProps> {
         <div className="max-w-xl mb-10 md:mx-auto sm:text-center lg:max-w-2xl md:mb-12">
           <div>
             <h1 className="inline-block px-3 py-px mb-4 text-2xl font-semibold tracking-wider text-orange-900 uppercase rounded-full bg-teal-accent-400">
-              Our Team
+              Remote Coders Unity-
+              <span style={{ color: 'rgb(79, 70, 229)', fontWeight: 'bold' }}>
+                {/* Style will be inherited from the parent element */}
+                <Typewriter
+                  words={['Unite We stand!✊', 'Divide we fall!!']}
+                  loop={5}
+                  cursor
+                  cursorStyle='_'
+                  typeSpeed={70}
+                  deleteSpeed={50}
+                  delaySpeed={1000}
+                />
+              </span>
             </h1>
           </div>
           <h2 className="max-w-lg mb-6 font-sans text-3xl font-bold leading-none tracking-tight text-gray-900 sm:text-4xl md:mx-auto">
@@ -37,9 +50,9 @@ export default class App extends React.PureComponent<IAppProps> {
                   height="24"
                 />
               </svg>
-              <span className="relative">Welcome</span>
+              <span className="relative">Welcome To</span>
             </span>{' '}
-            our Unity Mart team of professionals
+            our Unity Mart team of Professionals
           </h2>
           <p className="text-base text-gray-700 md:text-lg">
             An Unity Mart team members work cooperatively alongside other  workers to select, pack, and promptly ship customer orders.Our Team Leader  assignes every works perfectly to ours, and take responsibilities specific to the different Fulfillment Center areas.
