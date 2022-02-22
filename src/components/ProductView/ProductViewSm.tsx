@@ -3,7 +3,7 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 const ProductViewSm = () => {
 return (
-    <div style={{backgroundColor:'white'}} className='mx-auto w-full container place-content-center px-12 py-8 justify-center items-center grid lg:grid-cols-2 md:grid-cols-2 grid-cols-1 gap-6 sm:flex-1'>
+    <div style={{backgroundColor:'white'}} className='w-full container place-content-center -mt-32 px-8 justify-center items-center grid lg:grid-cols-2 md:grid-cols-2 grid-cols-1 gap-6'>
         <div>
             <img src="https://i.ibb.co/ZX9c3hS/nike.png" alt="" />
             <div className="grid grid-cols-5 gap-4 mt-4">
@@ -111,15 +111,15 @@ return (
                                 </div>
                         </div>
                     </div>
-                        <div className="flex gap-3 border-b border-gray-200 pb-5 mt-6">
+                        <div className="border-b border-gray-200 pb-5 mt-6">
                             <Link to = "/">
                             <button className='text-center top-5 text-white  p-2 bg-indigo-500 border border-indigo-500 hover:bg-transparent hover:text-indigo-500 transition'>
                             <i className="fa-regular fa-bag-shopping"></i> Add to cart
                             </button>
                             </Link>
                             <Link to = "/">
-                            <button className='text-center top-5 hover:text-white  p-2 hover:bg-indigo-500 border border-indigo-500 bg-transparent text-indigo-500 transition'>
-                            <i className="fa-regular fa-heart"></i> Add to Wishlist
+                            <button className='text-center top-5 hover:text-white my-2 p-2 hover:bg-indigo-500 border border-indigo-500 bg-transparent text-indigo-500 transition'>
+                            <i className="fa-regular fa-heart"> </i>Add to wish
                             </button>
                             </Link>
                         </div>
