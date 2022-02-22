@@ -2,7 +2,7 @@ import React from 'react'
 
 const Success = () => {
     return (
-        <div>
+        <div className='w-full px-5 mx-auto'>
             <h1>Payment Successful. Confirm order.</h1>
         </div>
     )
