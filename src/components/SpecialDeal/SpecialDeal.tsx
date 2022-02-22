@@ -1,6 +1,7 @@
 import { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
 import CowndownTimer from "../CowntownTimer/CowndownTimer";
+import './SpecialDeal.css';
 
 interface DealState {
     deals: {
@@ -13,6 +14,7 @@ interface DealState {
 interface SpecialState {
     specials: {
         img: string
+        hoverImg: string
         title: string
         price: string
         salePrice: string
@@ -89,8 +91,11 @@ export default function SpecialDeal() {
                 <div className="grid lg:grid-cols-3 md:grid-cols-2 sm:grid-cols-1 gap-5">
                     {
                         specials.map((special) => (
-                            <div className="text-center">
-                                <img className="w-64 mx-auto" src={special.img} alt="" />
+                            <div className="text-center single-card">
+                                <div className="hover:w-auto hover:h-auto">
+                                    <img className="mx-auto img" src={special.img} alt="" />
+                                    <img className="mx-auto hoverImg" src={special.hoverImg} alt="" />
+                                </div>
                                 <h2 className="font-bold">{special.title}</h2>
                                 <p className="text-slate-400">{special.processor}</p>
                                 <div className="flex justify-center items-center gap-3">

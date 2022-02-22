@@ -1,0 +1,17 @@
+.img{
+    overflow: hidden;
+    width: 16rem;
+    height: auto;
+}
+.hoverImg{
+    display: none;
+    overflow: hidden;
+    width: 16rem;
+    height: auto;
+}
+.single-card:hover .img{
+    display: none;
+}
+.single-card:hover .hoverImg{
+    display: block;
+}
