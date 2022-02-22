@@ -16,6 +16,7 @@ import UserProfile from './components/UserProfile/UserProfile';
 import OrderTracking from './components/OrderTracking/OrderTracking';
 import Checkout from './components/Checkout/Checkout';
 import SpecialDeal from "./components/SpecialDeal/SpecialDeal";
+import Success from "./components/Success";
 
 
 
@@ -40,6 +41,7 @@ function App() {
             <Route path='/checkout' element={<Checkout />} />
             <Route path='/shop' element={<Shop />} />
             <Route path='/profile' element={<PrivateRoute><UserProfile /></PrivateRoute>} />
+            <Route path='/success' element={<PrivateRoute><Success /></PrivateRoute>} />
             <Route path='/blogs/details/:id' element={<PrivateRoute><BlogDetails /></PrivateRoute>} />
             <Route path='*' element={<NotFound />} />
           </Routes>
