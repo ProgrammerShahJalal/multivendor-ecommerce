@@ -48,6 +48,7 @@ return (
                             <p className="text-xl text-indigo-500 font-semibold">$450</p>
                             <p className="text-sm text-gray-400 line-through">$500</p>
     </div>
+                                    <div className="grid grid-cols-2">
                                     <div className="">
                                     <h3 className="text-xl text-gray-800 mb-3 uppercase font-medium ">Color</h3>
                                     <div className="flex gap-2">
@@ -122,6 +123,7 @@ return (
                             </button>
                             </Link>
                         </div>
+                                    </div>
                 </div>
             </div>
     );
