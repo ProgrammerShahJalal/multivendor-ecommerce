@@ -4,8 +4,8 @@ import './MensCollection.css';
 import Box from '@mui/material/Box';
 import Modal from '@mui/material/Modal';
 import Fade from '@mui/material/Fade';
-import ProductView from '../ProductView/ProductView';
 import ProductViewSm from '../ProductView/ProductViewSm';
+import ProductView from '../ProductView/ProductView';
 interface ProductState {
     products: {
         title: string
@@ -43,9 +43,9 @@ return (
             products.map((product) => (
                 <div className="bg-white shadow-inner overflow-hidden single-card">
                 <div className="relative group">
-                <div style={{height:'250px'}} className='z-100 overflow-hidden '>
-                                <img style={{marginLeft:'20px'}} src={product.hoverImg} className='w-full img z-0 transition object-cover' alt="" />
-                                <img style={{marginLeft:'23px'}} src={product.img} className='w-full hoverImg transition object-cover' alt="" />
+                <div style={{height:'250px'}} className='z-100 overflow-hidden'>
+                                <img style={{marginLeft:'20px'}} src={product.hoverImg} className='w-full img z-0 transition object-center' alt="" />
+                                <img style={{marginLeft:'23px'}} src={product.img} className='w-full hoverImg transition object-center' alt="" />
                                 </div>
                     <div className="absolute inset-0 bg-black bg-opacity-40 flex items-center justify-center gap-2 opacity-0 group-hover:opacity-100 transition">
                     {/* <Link to={`/product/details/${product._id}`}> */}
@@ -85,7 +85,7 @@ return (
           <Box>
               <button className='justify-end text-white select-none bg-red-500 rounded-full w-8 h-8' onClick={handleClose}>X</button>
             <div className='md:block lg:block hidden'>
-            <ProductView  />
+            <ProductView />
             </div>
             <div className='md:hidden lg:hidden block'>
             <ProductViewSm />

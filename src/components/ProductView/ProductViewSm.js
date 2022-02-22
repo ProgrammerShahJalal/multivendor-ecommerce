@@ -1,18 +1,70 @@
 import { Rating } from '@mui/material';
-import React from 'react';
+import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
-const ProductView = () => {
+import { Swiper, SwiperSlide } from "swiper/react";
+import { FreeMode, Navigation, Thumbs } from "swiper";
+
+// Import Swiper styles
+import "swiper/css";
+import "swiper/css/free-mode";
+import "swiper/css/navigation";
+import "swiper/css/thumbs";
+const ProductViewSm = () => {
+    const [thumbsSwiper, setThumbsSwiper] = useState(null);
 return (
-    <div style={{backgroundColor:'white',width:'800px',height:'600px'}} className='mx-auto container place-content-center px-12 py-8 justify-center items-center grid lg:grid-cols-2 md:grid-cols-2 grid-cols-1 gap-6 sm:flex-1'>
+    <div style={{backgroundColor:'white'}} className='w-full py-12 container place-content-center -mt-36 px-8 justify-center items-center grid lg:grid-cols-2 md:grid-cols-2 grid-cols-1 gap-6'>
         <div>
-            <img src="https://i.ibb.co/ZX9c3hS/nike.png" alt="" />
-            <div className="grid grid-cols-5 gap-4 mt-4">
-                <img className='w-full cursor-pointer border border-indigo-500' src="https://i.ibb.co/ZX9c3hS/nike.png" alt="" />
-                <img className='w-full cursor-pointer' src="https://i.ibb.co/ZX9c3hS/nike.png" alt="" />
-                <img className='w-full cursor-pointer' src="https://i.ibb.co/ZX9c3hS/nike.png" alt="" />
-                <img className='w-full cursor-pointer' src="https://i.ibb.co/ZX9c3hS/nike.png" alt="" />
-                <img className='w-full cursor-pointer' src="https://i.ibb.co/ZX9c3hS/nike.png" alt="" />
-            </div>
+        <Swiper
+        style={{
+          
+        }}
+        spaceBetween={10}
+        // navigation={true}
+        thumbs={{ swiper: thumbsSwiper }}
+        modules={[FreeMode, Navigation, Thumbs]}
+        className="mySwiper2"
+      >
+        <SwiperSlide>
+          <img alt="" src="https://i.ibb.co/ZX9c3hS/nike.png" />
+        </SwiperSlide>
+        <SwiperSlide>
+          <img alt="" src="https://cdn.flightclub.com/750/TEMPLATE/292220/1.jpg" />
+        </SwiperSlide>
+        <SwiperSlide>
+          <img alt="" src="https://i.pinimg.com/originals/84/37/94/8437943c087d24e4d09c3142f778dbd7.png" />
+        </SwiperSlide>
+        <SwiperSlide>
+          <img alt="" src="https://cdn.flightclub.com/750/TEMPLATE/292220/4.jpg" />
+        </SwiperSlide>
+        <SwiperSlide>
+          <img alt="" src="https://image.goat.com/transform/v1/attachments/product_template_additional_pictures/images/065/107/182/original/859919_03.jpg.jpeg?action=crop&width=1250" />
+        </SwiperSlide>
+      </Swiper>
+      <Swiper
+        onSwiper={setThumbsSwiper}
+        spaceBetween={10}
+        slidesPerView={4}
+        freeMode={true}
+        watchSlidesProgress={true}
+        modules={[FreeMode, Navigation, Thumbs]}
+        className="mySwiper"
+      >
+        <SwiperSlide>
+          <img className='select-none' alt="" src="https://i.ibb.co/ZX9c3hS/nike.png" />
+        </SwiperSlide>
+        <SwiperSlide>
+          <img alt="" src="https://cdn.flightclub.com/750/TEMPLATE/292220/1.jpg" />
+        </SwiperSlide>
+        <SwiperSlide>
+          <img alt="" src="https://i.pinimg.com/originals/84/37/94/8437943c087d24e4d09c3142f778dbd7.png" />
+        </SwiperSlide>
+        <SwiperSlide>
+          <img alt="" src="https://cdn.flightclub.com/750/TEMPLATE/292220/4.jpg" />
+        </SwiperSlide>
+        <SwiperSlide>
+          <img alt="" src="https://image.goat.com/transform/v1/attachments/product_template_additional_pictures/images/065/107/182/original/859919_03.jpg.jpeg?action=crop&width=1250" />
+        </SwiperSlide>
+      </Swiper>
         </div>
         
         <div>
@@ -48,6 +100,7 @@ return (
                             <p className="text-xl text-indigo-500 font-semibold">$450</p>
                             <p className="text-sm text-gray-400 line-through">$500</p>
     </div>
+                                    <div className="grid grid-cols-2">
                                     <div className="">
                                     <h3 className="text-xl text-gray-800 mb-3 uppercase font-medium ">Color</h3>
                                     <div className="flex gap-2">
@@ -66,7 +119,7 @@ return (
                                         </div>
                                     </div>
                                 </div>
-                        <div className="pt-4 block">
+                        <div className="pt-4 -mt-32 block">
                             <h3 className="text-xl text-gray-800 mb-3 uppercase font-medium">Size</h3>
                             <div className="flex item-center gap-2">
                                 {/* single size selector starts */}
@@ -110,21 +163,22 @@ return (
                                 </div>
                         </div>
                     </div>
-                        <div className="flex gap-3 border-b border-gray-200 pb-5 mt-6">
+                        <div className="border-b -mt-20 border-gray-200 pb-5">
                             <Link to = "/">
-                            <button className='text-center top-5 text-white  p-2 bg-indigo-500 border border-indigo-500 hover:bg-transparent hover:text-indigo-500 transition'>
+                            <button className='w-40 text-center top-5 text-white  p-2 bg-indigo-500 border border-indigo-500 hover:bg-transparent hover:text-indigo-500 transition'>
                             <i className="fa-regular fa-bag-shopping"></i> Add to cart
                             </button>
                             </Link>
                             <Link to = "/">
-                            <button className='text-center top-5 hover:text-white  p-2 hover:bg-indigo-500 border border-indigo-500 bg-transparent text-indigo-500 transition'>
-                            <i className="fa-regular fa-heart"></i> Add to Wishlist
+                            <button className='w-40 text-center top-5 hover:text-white my-2 p-2 hover:bg-indigo-500 border border-indigo-500 bg-transparent text-indigo-500 transition'>
+                            <i className="fa-regular fa-heart"> </i> Add to wishlist
                             </button>
                             </Link>
+                        </div>
                         </div>
                 </div>
             </div>
     );
 };
 
-export default ProductView;
+export default ProductViewSm;

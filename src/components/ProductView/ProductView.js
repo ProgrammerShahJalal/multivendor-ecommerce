@@ -1,25 +1,100 @@
-import { Rating } from '@mui/material';
-import React from 'react';
-import { Link } from 'react-router-dom';
-const ProductViewSm = () => {
+import React, { useEffect, useState } from "react";
+// Import Swiper React components
+import { Swiper, SwiperSlide } from "swiper/react";
+import { FreeMode, Navigation, Thumbs } from "swiper";
+
+// Import Swiper styles
+import "swiper/css";
+import "swiper/css/free-mode";
+import "swiper/css/navigation";
+import "swiper/css/thumbs";
+import { Link, useParams } from 'react-router-dom';
+import { Rating } from "@mui/material";
+const ProductView = () => {
+  let { id } = useParams();
+
+  const [productDetail, setProductDetail] = useState([])
+  useEffect(() => {
+      fetch('https://morning-inlet-49130.herokuapp.com/mens')
+          .then(res => res.json())
+          .then((data) => {
+              const foundData = data.filter(detail => detail._id === id)
+              console.log(foundData);
+              setProductDetail(foundData);
+          })
+  }, [id])
+
+  const { title, hoverImg, img, price, salePrice ,vendorName, rating} = productDetail[0] || {};
+    const [thumbsSwiper, setThumbsSwiper] = useState(null);
+
 return (
-    <div style={{backgroundColor:'white'}} className='w-full container place-content-center -mt-32 px-8 justify-center items-center grid lg:grid-cols-2 md:grid-cols-2 grid-cols-1 gap-6'>
+    <div style={{backgroundColor:'white',width:'800px',height:'600px'}} className='mx-auto container place-content-center px-12 py-8 justify-center items-center grid lg:grid-cols-2 md:grid-cols-2 grid-cols-1 gap-6 sm:flex-1'>
         <div>
-            <img src="https://i.ibb.co/ZX9c3hS/nike.png" alt="" />
-            <div className="grid grid-cols-5 gap-4 mt-4">
-                <img className='w-full cursor-pointer border border-indigo-500' src="https://i.ibb.co/ZX9c3hS/nike.png" alt="" />
-                <img className='w-full cursor-pointer' src="https://i.ibb.co/ZX9c3hS/nike.png" alt="" />
-                <img className='w-full cursor-pointer' src="https://i.ibb.co/ZX9c3hS/nike.png" alt="" />
-                <img className='w-full cursor-pointer' src="https://i.ibb.co/ZX9c3hS/nike.png" alt="" />
-                <img className='w-full cursor-pointer' src="https://i.ibb.co/ZX9c3hS/nike.png" alt="" />
-            </div>
+            <Swiper
+        style={{
+          "--swiper-navigation-color": "#fff",
+          "--swiper-pagination-color": "#fff",
+        }}
+        spaceBetween={10}
+        // navigation={true}
+        thumbs={{ swiper: thumbsSwiper }}
+        modules={[FreeMode, Navigation, Thumbs]}
+        className="mySwiper2"
+      >
+        <SwiperSlide>
+          <img alt="" src={img} />
+        </SwiperSlide>
+        <SwiperSlide>
+          <img alt="" src={hoverImg} />
+        </SwiperSlide>
+        <SwiperSlide>
+          <img alt="" src={img} />
+        </SwiperSlide>
+        <SwiperSlide>
+          <img alt="" src={hoverImg} />
+        </SwiperSlide>
+        <SwiperSlide>
+          <img alt="" src={img} />
+        </SwiperSlide>
+        <SwiperSlide>
+          <img alt="" src={hoverImg} />
+        </SwiperSlide>
+      </Swiper>
+      <Swiper
+        onSwiper={setThumbsSwiper}
+        spaceBetween={10}
+        slidesPerView={4}
+        freeMode={true}
+        watchSlidesProgress={true}
+        modules={[FreeMode, Navigation, Thumbs]}
+        className="mySwiper"
+      >
+        <SwiperSlide>
+          <img alt="" src={img} />
+        </SwiperSlide>
+        <SwiperSlide>
+          <img alt="" src={hoverImg} />
+        </SwiperSlide>
+        <SwiperSlide>
+          <img alt="" src={img} />
+        </SwiperSlide>
+        <SwiperSlide>
+          <img alt="" src={hoverImg} />
+        </SwiperSlide>
+        <SwiperSlide>
+          <img alt="" src={img} />
+        </SwiperSlide>
+        <SwiperSlide>
+          <img alt="" src={hoverImg} />
+        </SwiperSlide>
+      </Swiper>
         </div>
         
         <div>
-            <h2 className='text-3xl mb-2 font-medium'>Nike sports shoe</h2>
+            <h2 className='text-3xl mb-2 font-medium'>{title}</h2>
             <div className='flex items-center mb-4'>
         <div>
-        <Rating name="half-rating-read" defaultValue={6} precision={0.5} readOnly />
+        <Rating name="half-rating-read" defaultValue={rating} precision={0.5} readOnly />
         </div>
         <div className="text-xs text-gray-500 ml-3">
             (1 Reviews)
@@ -31,8 +106,8 @@ return (
         <span className='text-green-600'>In stock</span>
     </p>
     <p className="space-x-2">
-        <span className='text-gray-800 font-semibold'>Brand:</span>
-        <span className='text-gray-600'>Nike</span>
+        <span className='text-gray-800 font-semibold'>Vendor:</span>
+        <span className='text-gray-600'>{vendorName}</span>
     </p>
     <p className="space-x-2">
         <span className='text-gray-800 font-semibold'>Category:</span>
@@ -40,15 +115,14 @@ return (
     </p>
     <p className="space-x-2">
         <span className='text-gray-800 font-semibold'>SKU:</span>
-        <span className='text-gray-600 uppercase'>udhff45gr</span>
+        {/* <span className='text-gray-600 uppercase'>{_id.slice(4,12)}</span> */}
     </p>
     </div>
     
     <div className="flex items-baseline mb-1 mt-2 space-x-2">
-                            <p className="text-xl text-indigo-500 font-semibold">$450</p>
-                            <p className="text-sm text-gray-400 line-through">$500</p>
+                            <p className="text-xl text-indigo-500 font-semibold">{salePrice}</p>
+                            <p className="text-sm text-gray-400 line-through">{price}</p>
     </div>
-                                    <div className="grid grid-cols-2">
                                     <div className="">
                                     <h3 className="text-xl text-gray-800 mb-3 uppercase font-medium ">Color</h3>
                                     <div className="flex gap-2">
@@ -111,22 +185,21 @@ return (
                                 </div>
                         </div>
                     </div>
-                        <div className="border-b border-gray-200 pb-5 mt-6">
+                        <div className="flex gap-3 border-b border-gray-200 pb-5 mt-6">
                             <Link to = "/">
                             <button className='text-center top-5 text-white  p-2 bg-indigo-500 border border-indigo-500 hover:bg-transparent hover:text-indigo-500 transition'>
                             <i className="fa-regular fa-bag-shopping"></i> Add to cart
                             </button>
                             </Link>
                             <Link to = "/">
-                            <button className='text-center top-5 hover:text-white my-2 p-2 hover:bg-indigo-500 border border-indigo-500 bg-transparent text-indigo-500 transition'>
-                            <i className="fa-regular fa-heart"> </i>Add to wish
+                            <button className='text-center top-5 hover:text-white  p-2 hover:bg-indigo-500 border border-indigo-500 bg-transparent text-indigo-500 transition'>
+                            <i className="fa-regular fa-heart"></i> Add to Wishlist
                             </button>
                             </Link>
                         </div>
-                                    </div>
                 </div>
             </div>
     );
 };
 
-export default ProductViewSm;
+export default ProductView;
