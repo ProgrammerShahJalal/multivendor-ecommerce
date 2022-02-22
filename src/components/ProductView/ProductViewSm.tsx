@@ -1,9 +1,9 @@
 import { Rating } from '@mui/material';
 import React from 'react';
 import { Link } from 'react-router-dom';
-const ProductView = () => {
+const ProductViewSm = () => {
 return (
-    <div style={{backgroundColor:'white',width:'800px',height:'600px'}} className='mx-auto container place-content-center px-12 py-8 justify-center items-center grid lg:grid-cols-2 md:grid-cols-2 grid-cols-1 gap-6 sm:flex-1'>
+    <div style={{backgroundColor:'white'}} className='mx-auto w-full container place-content-center px-12 py-8 justify-center items-center grid lg:grid-cols-2 md:grid-cols-2 grid-cols-1 gap-6 sm:flex-1'>
         <div>
             <img src="https://i.ibb.co/ZX9c3hS/nike.png" alt="" />
             <div className="grid grid-cols-5 gap-4 mt-4">
@@ -127,4 +127,4 @@ return (
     );
 };
 
-export default ProductView;
+export default ProductViewSm;

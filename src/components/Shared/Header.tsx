@@ -222,9 +222,7 @@ export default function Header() {
                                                     <p id={`${category.id}-${section.id}-heading-mobile`} className="font-medium text-gray-900">
                                                         {section.name}
                                                     </p>
-                                                    <ul
-                                                        role="list"
-                                                        aria-labelledby={`${category.id}-${section.id}-heading-mobile`}
+                                                    <ul role="list" aria-labelledby={`${category.id}-${section.id}-heading-mobile`}
                                                         className="mt-6 flex flex-col space-y-6"
                                                     >
                                                         {section.items.map((item) => (

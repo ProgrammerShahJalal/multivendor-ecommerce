@@ -16,7 +16,7 @@ import UserProfile from './components/UserProfile/UserProfile';
 import OrderTracking from './components/OrderTracking/OrderTracking';
 import Checkout from './components/Checkout/Checkout';
 import SpecialDeal from "./components/SpecialDeal/SpecialDeal";
-import ProductView from './components/ProductView/ProductView';
+// import ProductView from './components/ProductView/ProductViewModal';
 
 
 
@@ -36,7 +36,7 @@ function App() {
             <Route path='/specialDeal' element={<SpecialDeal />} />
             <Route path='/team' element={<Team />} />
             <Route path='/login' element={<Login />} />
-            <Route path='/view' element={<ProductView />} />
+            {/* <Route path='/view' element={<ProductView />} /> */}
             <Route path='/register' element={<Register />} />
             <Route path='/orderTrack' element={<OrderTracking />} />
             <Route path='/checkout' element={<Checkout />} />
