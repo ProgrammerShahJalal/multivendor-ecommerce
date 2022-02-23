@@ -1,6 +1,5 @@
 import React, { useState, useEffect } from 'react';
 import { Rating } from "@mui/material";
-// import './Women.css';
 interface ProductState {
     products: {
         title: string
@@ -34,10 +33,10 @@ return (
                     products.map((product) => (
                         <div className="bg-white shadow-inner overflow-hidden single-card ">
                 <div className="relative group">
-                <div style={{height:'250px',width:'400px'}} className='z-100 overflow-hidden'>
-                                <img style={{marginLeft:'24px'}} src={product.hoverImg} className='w-full img flex items-center justify-center z-0 transition object-cover' alt="" />
-                                <img style={{marginLeft:'24px'}} src={product.img} className='w-full hoverImg transition object-cover' alt="" />
-                                </div>
+                <div style={{height:'250px'}} className='z-100  overflow-hidden'>
+                                <img style={{marginLeft:'20px'}} src={product.hoverImg} className='w-full block group-hover:hidden z-0 transition object-center' alt="" />
+                                <img style={{marginLeft:'23px'}} src={product.img} className='w-full hidden group-hover:block transition object-center' alt="" />
+                </div>
                     <div className="absolute inset-0 bg-black bg-opacity-20 flex items-center justify-center gap-2 opacity-0 group-hover:opacity-100 transition">
                         <a className='text-white text-lg w-9 h-8 rounded-full bg-indigo-500 flex items-center justify-center hover:bg-gray-800 transition' href="/">
                         <i className="fa-regular fa-magnifying-glass"></i>

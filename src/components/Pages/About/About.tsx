@@ -32,7 +32,6 @@ const About = () => {
                         <div className='w-50'>
                             <img src="https://images.pexels.com/photos/135620/pexels-photo-135620.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940" alt='' />
                         </div>
-
                     </div>
                 </div>
             </div>

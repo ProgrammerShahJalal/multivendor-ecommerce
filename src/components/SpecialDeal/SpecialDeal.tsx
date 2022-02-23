@@ -30,6 +30,7 @@ export default function SpecialDeal() {
     const [specials, setSpecials] = useState<SpecialState["specials"]>
         ([]);
 
+
     useEffect(() => {
         if (deals) {
             fetch('https://morning-inlet-49130.herokuapp.com/features')
@@ -46,6 +47,7 @@ export default function SpecialDeal() {
                 .then(data => setSpecials(data))
         }
     }, [specials])
+
 
     return (
         <div className="bg-gray-50">

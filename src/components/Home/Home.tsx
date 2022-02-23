@@ -2,7 +2,6 @@ import React from 'react'
 import './Home.css';
 import TopBanner from '../TopBanner/TopBanner';
 import BottomBanner from '../BottomBanner/BottomBanner';
-// import Reviews from '../Pages/Reviews/Reviews';
 import Blogs from '../Blogs/Blogs';
 import Banners from '../Pages/Banner/Banner';
 import { Faq } from '../FAQ/FAQ';
@@ -14,9 +13,11 @@ import BannerGadget from '../Pages/BannerGadget/BannerGadget';
 import Brands from '../Pages/Brands/Brands';
 
 
+
 export default function Home() {
     return (
         <div>
+            {/* <DataChart/> */}
             <Banners />
             <TopBanner />
             <SpecialDeal />
