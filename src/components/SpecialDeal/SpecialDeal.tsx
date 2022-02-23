@@ -93,10 +93,10 @@ export default function SpecialDeal() {
                 <div className="grid lg:grid-cols-3 md:grid-cols-2 sm:grid-cols-1 gap-5">
                     {
                         specials.map((special) => (
-                            <div className="text-center single-card">
+                            <div className="text-center group">
                                 <div className="hover:w-auto hover:h-auto">
-                                    <img className="mx-auto img" src={special.img} alt="" />
-                                    <img className="mx-auto hoverImg" src={special.hoverImg} alt="" />
+                                    <img className="mx-auto group-hover:hidden block img" src={special.img} alt="" />
+                                    <img className="mx-auto group-hover:block hidden hoverImg" src={special.hoverImg} alt="" />
                                 </div>
                                 <h2 className="font-bold">{special.title}</h2>
                                 <p className="text-slate-400">{special.processor}</p>
