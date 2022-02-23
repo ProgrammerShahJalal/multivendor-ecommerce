@@ -1,8 +1,6 @@
 import { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
 import CowndownTimer from "../CowntownTimer/CowndownTimer";
-import './SpecialDeal.css';
-
 interface DealState {
     deals: {
         img: string

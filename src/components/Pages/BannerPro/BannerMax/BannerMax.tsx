@@ -1,5 +1,4 @@
 import React from 'react';
-import './BannerMax.css';
 const BannerMax = () => {
     
     return (
