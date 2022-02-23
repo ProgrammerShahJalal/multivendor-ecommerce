@@ -11,7 +11,7 @@ const BannerGadget = () => {
                             <h3 className='text-blue-500 font-medium'>NEW TECHNOLOGIES</h3>
                             <h1 className="lg:text-4xl text-black font-bold hover:text-pink-600 py-3 sm:text-sm">WEBCAMS 2022</h1>
                             <p className='text-gray-600 font-medium hover:text-pink-800 p-2 lg:block md:block hidden'>The webcam is an essential computer accessories.</p>
-                            <button className='bg-blue-600 text-white px-3 py-2 pb-1 rounded-full hover:bg-pink-500 font-bold lg:block hidden'>SHOPE MORE</button>
+                            <button className='bg-blue-600 text-white px-3 py-2 pb-1 rounded-full hover:bg-pink-500 font-bold lg:block hidden'>SHOP MORE</button>
                         </div>
                     </div>
 
@@ -21,7 +21,7 @@ const BannerGadget = () => {
                             <h3 className='text-blue-200 font-medium'>APPLE ACCESSORIES</h3>
                             <h1 className="lg:text-4xl text-white font-bold hover:text-black py-3 sm:text-sm">LEATHER CASES</h1>
                             <p className='text-blue-200 font-medium hover:text-gray-800 p-2 lg:block md:block hidden'>Black Unity Braided Solo Loop functionality.</p>
-                            <button className='bg-white text-black px-3 py-2 pb-1 rounded-full hover:bg-pink-500 font-bold lg:block hidden'>SHOPE MORE</button>
+                            <button className='bg-white text-black px-3 py-2 pb-1 rounded-full hover:bg-pink-500 font-bold lg:block hidden'>SHOP MORE</button>
                         </div>
                     </div>
                 </div>

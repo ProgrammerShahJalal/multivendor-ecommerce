@@ -1,8 +1,6 @@
 /* eslint-disable react-hooks/rules-of-hooks */
 import React, { PureComponent } from 'react';
 import './BottomBanner.css';
-import xbox from './../../images/products/others/xbox-removebg-preview.png';
-import ps5 from './../../images/products/others/ps5-removebg-preview.png';
 
 type Props = {}
 
@@ -42,7 +40,7 @@ export default class BottomBanner extends PureComponent<Props> {
 							<div className="col">
 								<div className="single-banner">
 									<div className='lg:pl-40'>
-										<img src={xbox} alt="/"></img>
+										<img src='https://i.ibb.co/6yJR81F/xbox.png' alt="/"></img>
 									</div>
 									<div className="content">
 										<h5>Xbox Microsoft Edition</h5>
@@ -54,7 +52,7 @@ export default class BottomBanner extends PureComponent<Props> {
 							<div className="col">
 								<div className="single-banner">
 									<div className='lg:pl-40'>
-										<img src={ps5} alt="/"></img>
+										<img src='https://i.ibb.co/Dp4BGfc/ps5.png' alt="/"></img>
 									</div>
 									<div className="content">
 										<h5>Sony Ps5</h5>

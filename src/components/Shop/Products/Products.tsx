@@ -1,6 +1,5 @@
 import React from 'react';
 import GridView from '../../CollectionGrid/GridView';
-import './Products.css';
 
 const Products = () => {
     return (
