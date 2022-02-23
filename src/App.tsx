@@ -43,6 +43,7 @@ function App() {
             <Route path='/profile' element={<PrivateRoute><UserProfile /></PrivateRoute>} />
             <Route path='/success' element={<PrivateRoute><Success /></PrivateRoute>} />
             <Route path='/blogs/details/:id' element={<PrivateRoute><BlogDetails /></PrivateRoute>} />
+            {/* <Route path='/product/buy/:id' element={<PrivateRoute><ProductView /></PrivateRoute>} /> */}
             <Route path='*' element={<NotFound />} />
           </Routes>
           <Footer />

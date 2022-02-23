@@ -1,5 +1,5 @@
 import React from 'react';
-import BannerMax from '../BannerPro/BannerMax';
+import BannerMax from '../BannerPro/BannerMax/BannerMax';
 
 const About = () => {
     return (
