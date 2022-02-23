@@ -9,6 +9,7 @@ import { Faq } from '../FAQ/FAQ';
 import HomeProducts from '../HomeProducts/HomeProducts';
 import BannerPro from '../Pages/BannerPro/BannerPro';
 import SpecialDeal from '../SpecialDeal/SpecialDeal';
+import ScrollToTop from "react-scroll-to-top";
 import BannerGadget from '../Pages/BannerGadget/BannerGadget';
 import Brands from '../Pages/Brands/Brands';
 
@@ -27,6 +28,7 @@ export default function Home() {
             <BannerPro />
             <Blogs/>
             <Faq />
+            <ScrollToTop style={{display:'flex',alignItems:'center',justifyContent:'center'}} smooth color='#6f00ff' top={20} height="28" viewBox="0 0 256 256" />
         </div>
     )
 }

@@ -54,10 +54,7 @@ return (
           <img alt="" src={hoverImg} />
         </SwiperSlide>
         <SwiperSlide>
-          <img alt="" src={img} />
-        </SwiperSlide>
-        <SwiperSlide>
-          <img alt="" src={hoverImg} />
+          <img alt="" src="https://image.goat.com/transform/v1/attachments/product_template_additional_pictures/images/065/107/182/original/859919_03.jpg.jpeg?action=crop&width=1250" />
         </SwiperSlide>
       </Swiper>
       <Swiper
@@ -70,22 +67,19 @@ return (
         className="mySwiper"
       >
         <SwiperSlide>
-          <img alt="" src={img} />
+          <img alt="" src="https://i.ibb.co/ZX9c3hS/nike.png" />
         </SwiperSlide>
         <SwiperSlide>
-          <img alt="" src={hoverImg} />
+          <img alt="" src="https://cdn.flightclub.com/750/TEMPLATE/292220/1.jpg" />
         </SwiperSlide>
         <SwiperSlide>
-          <img alt="" src={img} />
+          <img alt="" src="https://i.pinimg.com/originals/84/37/94/8437943c087d24e4d09c3142f778dbd7.png" />
         </SwiperSlide>
         <SwiperSlide>
-          <img alt="" src={hoverImg} />
+          <img alt="" src="https://cdn.flightclub.com/750/TEMPLATE/292220/4.jpg" />
         </SwiperSlide>
         <SwiperSlide>
-          <img alt="" src={img} />
-        </SwiperSlide>
-        <SwiperSlide>
-          <img alt="" src={hoverImg} />
+          <img alt="" src="https://image.goat.com/transform/v1/attachments/product_template_additional_pictures/images/065/107/182/original/859919_03.jpg.jpeg?action=crop&width=1250" />
         </SwiperSlide>
       </Swiper>
         </div>
