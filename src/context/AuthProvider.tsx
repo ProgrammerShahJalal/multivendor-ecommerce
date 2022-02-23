@@ -15,7 +15,7 @@ export interface IAuth {
     logout: () => void,
     error: string,
     isLoading: boolean,
-    handleGoogleSignIn: () => void
+    handleGoogleSignIn: (navigate: any, location: any) => void
     handleFacebookSIgnIn: () => void
 
 }

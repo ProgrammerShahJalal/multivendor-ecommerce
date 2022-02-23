@@ -41,7 +41,7 @@ export default class App extends React.PureComponent<IAppProps> {
           </main>
         </div>
         <div className="lg:absolute lg:inset-y-0 lg:right-0 lg:w-1/2">
-          <div>
+          <div data-aos="fade-down" data-aos-duration="1500">
             <LottieContact />
           </div>
         </div>
