@@ -20,7 +20,6 @@ interface ProductState {
     }[]
 }
 const KidsCollection = () => {
-    
     const [products, setProducts] = useState <ProductState["products"]>
     ([]);
 
@@ -83,9 +82,9 @@ return (
       >
         <Fade in={open}>
           <Box>
-              <button className='justify-end text-white select-none bg-red-500 rounded-full w-8 h-8' onClick={handleClose}>X</button>
+              <button className='justify-end text-white select-none bg-red-500 rounded-full w-8 h-8' onClick={handleClose}>x</button>
             <div className='md:block lg:block hidden'>
-            <ProductView />
+            {products.map((product) => (<ProductView key={product._id}/>))}
             </div>
             <div className='md:hidden lg:hidden block'>
             <ProductViewSm />

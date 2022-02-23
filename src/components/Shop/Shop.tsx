@@ -9,7 +9,7 @@ export default class Shop extends PureComponent<Props> {
     render() {
         return (
             <div>
-                <ScrollToTop smooth color='#6f00ff' top={20} />
+                <ScrollToTop style={{display:'flex',alignItems:'center',justifyContent:'center'}} smooth color='#6f00ff' top={20} />
                 <Products></Products>
                 <div style={{ display: 'flex', justifyContent: 'center', padding: 30 }}>
                     <Pagination count={10} color="primary" />
