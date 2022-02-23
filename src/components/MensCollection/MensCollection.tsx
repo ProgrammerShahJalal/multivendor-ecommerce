@@ -18,7 +18,7 @@ interface ProductState {
         _id: string
     }[]
 }
-const MensCollection = () => {
+const KidsCollection = () => {
     const [products, setProducts] = useState <ProductState["products"]>
     ([]);
 
@@ -41,10 +41,10 @@ return (
             products.map((product) => (
                 <div className="bg-white shadow-inner overflow-hidden single-card">
                 <div className="relative group">
-                <div style={{height:'250px'}} className='z-100  overflow-hidden'>
-                                <img style={{marginLeft:'20px'}} src={product.hoverImg} className='w-full block group-hover:hidden z-0 transition object-center' alt="" />
-                                <img style={{marginLeft:'23px'}} src={product.img} className='w-full hidden group-hover:block transition object-center' alt="" />
-                </div>
+                <div style={{height:'250px'}} className='z-100 overflow-hidden'>
+                                <img src={product.hoverImg} className='w-full img z-0 group-hover:hidden block transition object-center' alt="" />
+                                <img src={product.img} className='w-full hoverImg group-hover:block hidden transition object-center' alt="" />
+                                </div>
                     <div className="absolute inset-0 bg-black bg-opacity-40 flex items-center justify-center gap-2 opacity-0 group-hover:opacity-100 transition">
                     {/* <Link to={`/product/details/${product._id}`}> */}
                         <button className='text-white text-lg w-9 h-8 rounded-full bg-indigo-500 flex items-center justify-center hover:bg-gray-800 transition' onClick={handleOpen}>
@@ -74,8 +74,8 @@ return (
                     <button className='block w-full py-1 text-center top-5 text-white bg-indigo-500 border border-indigo-500 rounded-b hover:bg-transparent hover:text-indigo-500 transition'>Add to Cart</button>
             </div>
         ))}
-            </div>
-            <div className='px-3 mx-auto text-center'>
+        </div>
+        <div className='px-3 mx-auto text-center'>
       <Modal
         open={open}
       >
@@ -83,7 +83,10 @@ return (
           <Box>
               <button className='justify-end text-white select-none bg-red-500 rounded-full w-8 h-8' onClick={handleClose}>x</button>
             <div className='md:block lg:block hidden'>
-            {products.map((product) => (<ProductView key={product._id}/>))}
+            {
+            products.map((product) => (
+                <ProductView key={product._id} product={product}/>
+            ))}
             </div>
             <div className='md:hidden lg:hidden block'>
             <ProductViewSm />
@@ -96,4 +99,4 @@ return (
     );
 };
 
-export default MensCollection;
+export default KidsCollection;

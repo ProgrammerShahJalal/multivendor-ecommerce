@@ -36,7 +36,6 @@ function App() {
             <Route path='/specialDeal' element={<SpecialDeal />} />
             <Route path='/team' element={<Team />} />
             <Route path='/login' element={<Login />} />
-            {/* <Route path='/view' element={<ProductView />} /> */}
             <Route path='/register' element={<Register />} />
             <Route path='/orderTrack' element={<OrderTracking />} />
             <Route path='/checkout' element={<Checkout />} />
@@ -44,6 +43,7 @@ function App() {
             <Route path='/profile' element={<PrivateRoute><UserProfile /></PrivateRoute>} />
             <Route path='/success' element={<PrivateRoute><Success /></PrivateRoute>} />
             <Route path='/blogs/details/:id' element={<PrivateRoute><BlogDetails /></PrivateRoute>} />
+            {/* <Route path='/product/buy/:id' element={<PrivateRoute><ProductView /></PrivateRoute>} /> */}
             <Route path='*' element={<NotFound />} />
           </Routes>
           <Footer />

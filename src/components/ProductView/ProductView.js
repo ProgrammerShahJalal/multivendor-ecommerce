@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from "react";
+import React, {  useState } from "react";
 // Import Swiper React components
 import { Swiper, SwiperSlide } from "swiper/react";
 import { FreeMode, Navigation, Thumbs } from "swiper";
@@ -8,27 +8,14 @@ import "swiper/css";
 import "swiper/css/free-mode";
 import "swiper/css/navigation";
 import "swiper/css/thumbs";
-import { Link, useParams } from 'react-router-dom';
+import { Link } from 'react-router-dom';
 import { Rating } from "@mui/material";
-const ProductView = () => {
-  let { id } = useParams();
-
-  const [productDetail, setProductDetail] = useState([])
-  useEffect(() => {
-      fetch('https://morning-inlet-49130.herokuapp.com/mens')
-          .then(res => res.json())
-          .then((data) => {
-              const foundData = data.filter(detail => detail._id === id)
-              console.log(foundData);
-              setProductDetail(foundData);
-          })
-  }, [id])
-
-  const { title, hoverImg, img, price, salePrice ,vendorName, rating} = productDetail[0] || {};
+const ProductView = ({product}) => {
+    const { title, hoverImg, img, price, rating,vendorName, salePrice } = product;
     const [thumbsSwiper, setThumbsSwiper] = useState(null);
 
 return (
-    <div style={{backgroundColor:'white',width:'800px',height:'600px'}} className='mx-auto container place-content-center px-12 py-8 justify-center items-center grid lg:grid-cols-2 md:grid-cols-2 grid-cols-1 gap-6 sm:flex-1'>
+    <div style={{backgroundColor:'white',width:'800px',height:'600px',overflow:'scroll'}} className='mx-auto container place-content-center px-12 py-8 justify-center items-center grid lg:grid-cols-2 md:grid-cols-2 grid-cols-1 gap-6 sm:flex-1'>
         <div>
             <Swiper
         style={{
@@ -54,7 +41,7 @@ return (
           <img alt="" src={hoverImg} />
         </SwiperSlide>
         <SwiperSlide>
-          <img alt="" src="https://image.goat.com/transform/v1/attachments/product_template_additional_pictures/images/065/107/182/original/859919_03.jpg.jpeg?action=crop&width=1250" />
+          <img alt="" src={img} />
         </SwiperSlide>
       </Swiper>
       <Swiper
@@ -67,19 +54,19 @@ return (
         className="mySwiper"
       >
         <SwiperSlide>
-          <img alt="" src="https://i.ibb.co/ZX9c3hS/nike.png" />
+          <img alt="" src={img} />
         </SwiperSlide>
         <SwiperSlide>
-          <img alt="" src="https://cdn.flightclub.com/750/TEMPLATE/292220/1.jpg" />
+          <img alt="" src={hoverImg} />
         </SwiperSlide>
         <SwiperSlide>
-          <img alt="" src="https://i.pinimg.com/originals/84/37/94/8437943c087d24e4d09c3142f778dbd7.png" />
+          <img alt="" src={img} />
         </SwiperSlide>
         <SwiperSlide>
-          <img alt="" src="https://cdn.flightclub.com/750/TEMPLATE/292220/4.jpg" />
+          <img alt="" src={hoverImg} />
         </SwiperSlide>
         <SwiperSlide>
-          <img alt="" src="https://image.goat.com/transform/v1/attachments/product_template_additional_pictures/images/065/107/182/original/859919_03.jpg.jpeg?action=crop&width=1250" />
+          <img alt="" src={img} />
         </SwiperSlide>
       </Swiper>
         </div>
