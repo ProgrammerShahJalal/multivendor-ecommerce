@@ -27,6 +27,7 @@ const Women = () => {
     }, [products])
 
 return (
+    <div className='md:block lg:block hidden'>
     <div className="container lg:px-12 md:px-10 px-10 pb-16">
             <div className="grid lg:grid-cols-3 md:grid-cols-2 xs:grid-cols-1 gap-6">
                 {
@@ -65,6 +66,7 @@ return (
             </div>
                     ))}
             </div>
+        </div>
         </div>
     );
 };

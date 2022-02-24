@@ -4,6 +4,7 @@
   "private": true,
   "dependencies": {
     "@craco/craco": "^6.4.3",
+    "@emailjs/browser": "^3.4.0",
     "@emotion/core": "^11.0.0",
     "@emotion/react": "^11.8.1",
     "@emotion/styled": "^11.8.1",
@@ -30,6 +31,7 @@
     "aos": "^2.3.4",
     "axios": "^0.21.1",
     "chart.js": "^3.5.0",
+    "emailjs-com": "^3.2.0",
     "firebase": "^9.6.6",
     "heroicons-react": "^1.4.1",
     "react": "^17.0.2",

@@ -2,7 +2,7 @@ import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import Home from "./components/Home/Home";
 import Header from './components/Shared/Header';
 import Footer from './components/Shared/Footer/Footer';
-import Contact from './components/Contact/Contact';
+import Contact from './components/Contact/Contact.js';
 import About from "./components/Pages/About/About";
 import AuthProvider from "./context/AuthProvider";
 import Register from "./components/Pages/RegisterPage/Register";
@@ -43,7 +43,6 @@ function App() {
             <Route path='/profile' element={<PrivateRoute><UserProfile /></PrivateRoute>} />
             <Route path='/success' element={<PrivateRoute><Success /></PrivateRoute>} />
             <Route path='/blogs/details/:id' element={<PrivateRoute><BlogDetails /></PrivateRoute>} />
-            {/* <Route path='/product/buy/:id' element={<PrivateRoute><ProductView /></PrivateRoute>} /> */}
             <Route path='*' element={<NotFound />} />
           </Routes>
           <Footer />
