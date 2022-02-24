@@ -10,7 +10,7 @@ const Success = () => {
     const [orders, setOrders] = useState([]);
 
     useEffect(() => {
-        fetch(`http://localhost:5000/orders/${id}`)
+        fetch(`https://morning-inlet-49130.herokuapp.com/orders/${id}`)
             .then(res => res.json())
             .then(data => {
                 console.log(data);
@@ -23,7 +23,7 @@ const Success = () => {
             tran_id: id,
             val_id: orders?.val_id
         }
-        axios.post(`http://localhost:5000/validate`, data)
+        axios.post(`https://morning-inlet-49130.herokuapp.com/validate`, data)
             .then(res => {
                 if (res.data) {
                     alert("Order placed successfully")
