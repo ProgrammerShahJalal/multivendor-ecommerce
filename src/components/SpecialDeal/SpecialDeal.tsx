@@ -1,6 +1,9 @@
 import { useEffect, useState } from "react";
+import { useParams } from 'react-router-dom';
 import { Link } from "react-router-dom";
 import CowndownTimer from "../CowntownTimer/CowndownTimer";
+import useAuth from '../../hooks/UseAuth';
+
 interface DealState {
     deals: {
         img: string
@@ -11,6 +14,7 @@ interface DealState {
 }
 interface SpecialState {
     specials: {
+        _id: string
         img: string
         hoverImg: string
         title: string
@@ -22,12 +26,33 @@ interface SpecialState {
     }[],
 }
 
+interface OrderState {
+    orders: {
+        _id: string
+        img: string
+        hoverImg: string
+        title: string
+        details: string
+        price: string
+        salePrice: string
+        rating: number
+        processor: string
+        offerTill: string
+    }[],
+}
+
 export default function SpecialDeal() {
+
+    let { id } = useParams();
+
     const [deals, setDeals] = useState<DealState["deals"]>
         ([]);
     const [specials, setSpecials] = useState<SpecialState["specials"]>
         ([]);
+    const [orders, setOrders] = useState<OrderState["orders"]>
+        ([]);
 
+    const { user } = useAuth();
 
     useEffect(() => {
         if (deals) {
@@ -46,7 +71,39 @@ export default function SpecialDeal() {
         }
     }, [specials])
 
+    /* ========================Purchase SSL Commerce======================= */
+    useEffect(() => {
+        if (orders) {
+            fetch('https://morning-inlet-49130.herokuapp.com/specials')
+                .then(res => res.json())
+                .then(data => {
+                    setOrders(data)
+                })
+        }
+    }, [orders, id])
+    const { title, img, details, price } = orders[0] || {};
 
+    const purchase = () => {
+        const order = {
+            cus_name: user?.displayName,
+            cus_email: user?.email,
+            product_name: title,
+            product_profile: details,
+            product_image: img,
+            total_amount: price
+        }
+        fetch(`http://localhost:5000/init`, {
+            method: 'POST',
+            headers: {
+                "content-type": "application/json"
+            },
+            body: JSON.stringify(order)
+        })
+            .then(res => res.json())
+            .then(data => {
+                window.location.replace(data);
+            })
+    }
     return (
         <div className="bg-gray-50">
             <h2 className="text-3xl text-center font-extrabold text-gray-900 sm:text-4xl">
@@ -93,8 +150,8 @@ export default function SpecialDeal() {
                         specials.map((special) => (
                             <div className="text-center group">
                                 <div className="hover:w-auto hover:h-auto">
-                                    <img style={{width:'250px',height:'300px'}} className="mx-auto group-hover:hidden block img" src={special.hoverImg} alt="" />
-                                    <img style={{width:'250px',height:'300px'}} className="mx-auto group-hover:block hidden hoverImg" src={special.img} alt="" />
+                                    <img style={{ width: '250px', height: '300px' }} className="mx-auto group-hover:hidden block img" src={special.hoverImg} alt="" />
+                                    <img style={{ width: '250px', height: '300px' }} className="mx-auto group-hover:block hidden hoverImg" src={special.img} alt="" />
                                 </div>
                                 <h2 className="font-bold">{special.title}</h2>
                                 <p className="text-slate-400">{special.processor}</p>
@@ -105,6 +162,7 @@ export default function SpecialDeal() {
                                 <div className="bg-violet-200 rounded-lg py-1">
                                     <CowndownTimer offerTill={special.offerTill} />
                                 </div>
+                                <button onClick={purchase} className='bg-indigo-500 text-white rounded-2xl px-4 py-2 mt-2'>Buy Now</button>
                             </div>
                         ))
                     }

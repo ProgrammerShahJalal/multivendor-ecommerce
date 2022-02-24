@@ -28,7 +28,7 @@ const BlogDetails = () => {
             product_image: img,
             total_amount: price
         }
-        fetch(`https://morning-inlet-49130.herokuapp.com/init`, {
+        fetch(`http://localhost:5000/init`, {
             method: 'POST',
             headers: {
                 "content-type": "application/json"

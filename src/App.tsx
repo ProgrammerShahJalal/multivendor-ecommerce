@@ -15,8 +15,10 @@ import BlogDetails from "./components/Blogs/BlogDetails/BlogDetails";
 import UserProfile from './components/UserProfile/UserProfile';
 import OrderTracking from './components/OrderTracking/OrderTracking';
 import Checkout from './components/Checkout/Checkout';
-import SpecialDeal from "./components/SpecialDeal/SpecialDeal";
 import Success from "./components/Success";
+import VendorShopPage from "./components/VenderShopPage/VenderShopPage";
+import VendorSidebar from "./components/VendorSidebar/VendorSidebar";
+import SpecialDeal from "./components/SpecialDeal/SpecialDeal";
 
 
 
@@ -40,8 +42,10 @@ function App() {
             <Route path='/orderTrack' element={<OrderTracking />} />
             <Route path='/checkout' element={<Checkout />} />
             <Route path='/shop' element={<Shop />} />
+            <Route path='/vendorShop' element={<VendorShopPage />} />
+            <Route path='/vendorSidebar' element={<VendorSidebar />} />
             <Route path='/profile' element={<PrivateRoute><UserProfile /></PrivateRoute>} />
-            <Route path='/success' element={<PrivateRoute><Success /></PrivateRoute>} />
+            <Route path='/success/:id' element={<PrivateRoute><Success /></PrivateRoute>} />
             <Route path='/blogs/details/:id' element={<PrivateRoute><BlogDetails /></PrivateRoute>} />
             {/* <Route path='/product/buy/:id' element={<PrivateRoute><ProductView /></PrivateRoute>} /> */}
             <Route path='*' element={<NotFound />} />
