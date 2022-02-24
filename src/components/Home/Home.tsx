@@ -11,14 +11,12 @@ import SpecialDeal from '../SpecialDeal/SpecialDeal';
 import ScrollToTop from "react-scroll-to-top";
 import BannerGadget from '../Pages/BannerGadget/BannerGadget';
 import Brands from '../Pages/Brands/Brands';
-import DataChart from '../DataChart/DataChart';
 
 
 
 export default function Home() {
     return (
         <div>
-            <DataChart/>
             <Banners />
             <TopBanner />
             <SpecialDeal />

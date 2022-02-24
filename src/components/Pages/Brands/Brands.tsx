@@ -1,36 +1,37 @@
 import React from 'react';
+import { Swiper, SwiperSlide } from 'swiper/react';
 
 const Brands = () => {
     return (
-        <div className='container mx-auto py-5'>
-            <h2 className='text-2xl font-bold text-pink-800 uppercase pb-6 text-center'>Our Top New Brands</h2>
-
-            <div className='grid lg:grid-cols-6 md:grid-cols-4 xs:grid-cols-2 text-black gap-4'>
-
-                <div className='p-2 transition hover:-translate-y-2 hover:scale-110 hover:shadow duration-300'>
-                    <img src="https://template.annimexweb.com/diva/assets/images/logo/brandlogo1.png" className='w-full' alt='' />
-                </div>
-
-                <div className='p-2 transition hover:-translate-y-2 hover:scale-110 hover:shadow duration-300'>
-                    <img src="https://template.annimexweb.com/diva/assets/images/logo/brandlogo2.png" className='w-full' alt='' />
-                </div>
-
-                <div className='p-2 transition hover:-translate-y-2 hover:scale-110 hover:shadow duration-300'>
-                    <img src="https://template.annimexweb.com/diva/assets/images/logo/brandlogo3.png" className='w-full' alt='' />
-                </div>
-
-                <div className='p-2 transition hover:-translate-y-2 hover:scale-110 hover:shadow duration-300'>
-                    <img src="https://template.annimexweb.com/diva/assets/images/logo/brandlogo4.png" className='w-full' alt='' />
-                </div>
-
-                <div className='p-2 transition hover:-translate-y-2 hover:scale-110 hover:shadow duration-300'>
-                    <img src="https://template.annimexweb.com/diva/assets/images/logo/brandlogo5.png" className='w-full p-2' alt='' />
-                </div>
-
-                <div className='p-2 transition hover:-translate-y-2 hover:scale-110 hover:shadow duration-300'>
-                    <img src="https://template.annimexweb.com/diva/assets/images/logo/brandlogo6.png" className='w-full p-2' alt='' />
-                </div>
-            </div>
+        <div className='py-10'>
+            <h1 className='text-center text-3xl mb-4'>Our top sponsors</h1>
+            <hr />
+            <Swiper
+        spaceBetween={3}
+        slidesPerView={5}
+        freeMode={true}
+        watchSlidesProgress={true}
+        className="mySwiper"
+      >
+        <SwiperSlide>
+          <img style={{height:'80px',width:'250px'}} alt="" src="https://i.ibb.co/Bs18fdf/adidas-logo.png" />
+        </SwiperSlide>
+        <SwiperSlide>
+          <img style={{height:'80px',width:'250px'}} alt="" src="https://i.ibb.co/QDGHqYF/rolex-logo.png" />
+        </SwiperSlide>
+        <SwiperSlide>
+          <img style={{height:'80px',width:'250px'}} alt="" src="https://i.ibb.co/BBbLntS/nike-logo.png" />
+        </SwiperSlide>
+        
+        <SwiperSlide>
+          <img style={{height:'80px',width:'250px'}} alt="" src="https://i.ibb.co/56bSrc9/underarmour-logo.png" />
+        </SwiperSlide>
+        <SwiperSlide>
+          <img style={{height:'80px',width:'250px'}} alt="" src="https://i.ibb.co/f8wzVkM/phero-logo.png" />
+        </SwiperSlide>
+        
+      </Swiper>
+      <hr />
         </div>
     );
 };
