@@ -28,7 +28,7 @@ export const options = {
     },
     title: {
       display: true,
-      text: 'Our this year sales',
+      text: 'Our 2021 year sales',
     },
   },
 };
