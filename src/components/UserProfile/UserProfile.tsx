@@ -52,9 +52,9 @@ export default function UserProfile() {
           </ul>
         </div>
         <div style={{
-          width:'700px',
-          height:'700px',
-          marginLeft:'70px'
+          width:'600px',
+          height:'600px',
+          // marginLeft:'70px'
         }} className='items-center right-50 justify-center'>
       <DataChart />
     </div>
