@@ -18,8 +18,6 @@
 .per-service{
 	font-family: 'Roboto', sans-serif;
 	padding-top: 15px;
-	border-left: 1px solid black;
-	border-right: 1px solid black;
 	padding: 5px;
 	margin: 10px;
 	height: 130px;
@@ -30,8 +28,6 @@
 	border-left: none;
 	border-left: none;
 	padding-top: 15px;
-	border-top: 1px solid black;
-	border-bottom: 1px solid black;
 	padding: 5px;
 	margin: 10px;
 	height: 130px;

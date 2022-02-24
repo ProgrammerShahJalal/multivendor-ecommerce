@@ -1,21 +1,26 @@
 import React, { useState, useEffect } from 'react';
 import { Rating } from "@mui/material";
+import Box from '@mui/material/Box';
+import Modal from '@mui/material/Modal';
+import Fade from '@mui/material/Fade';
+import ProductViewSm from '../ProductView/ProductViewSm';
+import ProductView from '../ProductView/ProductView';
 interface ProductState {
     products: {
         title: string
         img: string
         hoverImg:string
+        price: number
+        salePrice: number
         size: string
         vendorName: string
         rating: number
-        price: number
-        salePrice: number
+        _id: string
     }[]
 }
-
-const MensCollection = () => {
-    const [products, setProducts] = useState<ProductState["products"]>
-        ([]);
+const KidsCollection = () => {
+    const [products, setProducts] = useState <ProductState["products"]>
+    ([]);
 
     useEffect(() => {
         if (products) {
@@ -25,22 +30,27 @@ const MensCollection = () => {
                 .then(data => setProducts(data))
         }
     }, [products])
-
+      
+        const [open, setOpen] = React.useState(false);
+        const handleOpen = () => setOpen(true);
+        const handleClose = () => setOpen(false);
 return (
     <div className="container lg:px-0 md:px-10 px-10 pb-16">
-    <div className="grid lg:grid-cols-4 md:grid-cols-3 xs:grid-cols-1 gap-6">
+    <div className="grid place-content-center lg:grid-cols-4 md:grid-cols-3 grid-cols-1 gap-6">
         {
             products.map((product) => (
-                <div className="bg-white shadow-inner overflow-hidden single-card ">
+                <div className="bg-white shadow-inner overflow-hidden single-card">
                 <div className="relative group">
-                <div style={{height:'250px'}} className='z-100  overflow-hidden'>
-                                <img src={product.hoverImg} className='w-full select-none block group-hover:hidden z-0 transition object-center' alt="" />
-                                <img src={product.img} className='w-full select-none hidden group-hover:block transition object-center' alt="" />
-                </div>
+                <div style={{height:'250px'}} className='z-100 overflow-hidden'>
+                                <img src={product.hoverImg} className='w-full select-none img z-0 group-hover:hidden block transition object-center' alt="" />
+                                <img src={product.img} className='w-full select-none hoverImg group-hover:block hidden transition object-center' alt="" />
+                                </div>
                     <div className="absolute inset-0 bg-black bg-opacity-40 flex items-center justify-center gap-2 opacity-0 group-hover:opacity-100 transition">
-                        <a className='text-white text-lg w-9 h-8 rounded-full bg-indigo-500 flex items-center justify-center hover:bg-gray-800 transition' href="/">
+                    {/* <Link to={`/product/details/${product._id}`}> */}
+                        <button className='text-white text-lg w-9 h-8 rounded-full bg-indigo-500 flex items-center justify-center hover:bg-gray-800 transition' onClick={handleOpen}>
                         <i className="fa-regular fa-magnifying-glass"></i>
-                        </a>
+                        </button>
+                        {/* </Link> */}
                         <a className='text-white text-lg w-9 h-8 rounded-full bg-indigo-500 flex items-center justify-center hover:bg-gray-800 transition' href="/">
                         <i className="fa-regular fa-heart"></i>
                         </a>
@@ -64,9 +74,29 @@ return (
                     <button className='block w-full py-1 text-center top-5 text-white bg-indigo-500 border border-indigo-500 rounded-b hover:bg-transparent hover:text-indigo-500 transition'>Add to Cart</button>
             </div>
         ))}
+        </div>
+        <div className='px-3 mx-auto text-center'>
+      <Modal
+        open={open}
+      >
+        <Fade in={open}>
+          <Box>
+              <button className='justify-end text-white select-none bg-red-500 rounded-full w-8 h-8' onClick={handleClose}>x</button>
+            <div className='md:block lg:block hidden'>
+            {
+            products.map((product) => (
+                <ProductView key={product._id} product={product}/>
+            ))}
             </div>
+            <div className='md:hidden lg:hidden block'>
+            <ProductViewSm />
+            </div>
+          </Box>
+        </Fade>
+      </Modal>
+    </div>
         </div>
     );
 };
 
-export default MensCollection;
+export default KidsCollection;
