@@ -354,8 +354,3 @@ export default class App extends React.PureComponent<IAppProps> {
     );
   }
 }
-
-
-// npm install --save typescript @types/node @types/react @types/react-dom @types/jest
-
-// http://preview.themeforest.net/item/team-multisport-esport-wordpress-theme/full_screen_preview/19713558?_ga=2.237784768.1960273582.1644902476-1742640196.1635468369
