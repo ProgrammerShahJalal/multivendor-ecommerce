@@ -7,7 +7,6 @@ interface IProps {
     setReview: React.Dispatch<React.SetStateAction<Props["user"]>>
 }
 
-
 const AddReview: React.FC<IProps> = ({ users, setReview }) => {
 
     const [input, setInput] = useState({
@@ -23,7 +22,6 @@ const AddReview: React.FC<IProps> = ({ users, setReview }) => {
         })
         // console.log(e.target.value)
     }
-
 
     const handleClick = (): void => {
         if (
