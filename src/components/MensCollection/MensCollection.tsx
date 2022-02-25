@@ -18,7 +18,7 @@ interface ProductState {
         _id: string
     }[]
 }
-const KidsCollection = () => {
+const MensCollection = () => {
     const [products, setProducts] = useState <ProductState["products"]>
     ([]);
 
@@ -84,7 +84,7 @@ return (
               <button className='justify-end text-white select-none bg-red-500 rounded-full w-8 h-8' onClick={handleClose}>x</button>
             <div className='md:block lg:block hidden'>
             {
-            products.map((product) => (
+            products.slice(0,1).map((product) => (
                 <ProductView key={product._id} product={product}/>
             ))}
             </div>
@@ -99,4 +99,4 @@ return (
     );
 };
 
-export default KidsCollection;
+export default MensCollection;
