@@ -20,13 +20,13 @@ const Dashboard = () => {
                 </div>
                 <ul className="nav_list">
 
-                    <li>
+                    {/* <li>
                         <Link to={`/dashboard/media`}>
                             <i className="fa-solid fa-users"></i>
                             <span className="links_name">Media</span>
                         </Link>
                         <span className="tooltip">Media</span>
-                    </li>
+                    </li> */}
                     <li>
                         <Link to={`/dashboard/my-blog`}>
                             <i className="fa-solid fa-users"></i>
@@ -71,7 +71,7 @@ const Dashboard = () => {
                         </Link>
                         <span className="tooltip">Products</span>
                     </li>
-                    <li>
+                    {/* <li>
                         <Link to={`/dashboard/categories`}>
                             <i className="fa-solid fa-plus"></i>
                             <span className="links_name">Categories </span>
@@ -84,7 +84,7 @@ const Dashboard = () => {
                             <span className="links_name">Attributes </span>
                         </Link>
                         <span className="tooltip">Attributes </span>
-                    </li>
+                    </li> */}
                     <li>
                         <Link to={`/dashboard/addProduct`}>
                             <i className="fa-solid fa-plus"></i>

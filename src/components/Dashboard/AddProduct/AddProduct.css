@@ -5,6 +5,10 @@
 .react-datetime-picker__wrapper {
   border: none !important;
 }
+input#react-select-5-input {
+  outline: none !important;
+  width: auto !important;
+}
 
 .public-DraftStyleDefault-block.public-DraftStyleDefault-ltr {
   height: 270px;
