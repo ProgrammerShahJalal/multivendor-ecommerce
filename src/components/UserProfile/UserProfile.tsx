@@ -1,6 +1,7 @@
 import React from 'react'
 import { Link } from 'react-router-dom';
 import UseAuth from '../../hooks/UseAuth';
+import { DataChart } from '../DataChart/DataChart';
 
 export default function UserProfile() {
   const { logout } = UseAuth();
@@ -50,8 +51,15 @@ export default function UserProfile() {
 
           </ul>
         </div>
+        <div style={{
+          width:'600px',
+          height:'600px',
+          // marginLeft:'70px'
+        }} className='items-center right-50 justify-center'>
+      <DataChart />
+    </div>
       </div>
-
+    
     </div>
   )
 }

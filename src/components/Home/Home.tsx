@@ -10,7 +10,6 @@ import BannerPro from '../Pages/BannerPro/BannerPro';
 import ScrollToTop from "react-scroll-to-top";
 import BannerGadget from '../Pages/BannerGadget/BannerGadget';
 import Brands from '../Pages/Brands/Brands';
-import DataChart from '../DataChart/DataChart';
 import SpecialDeal from '../SpecialDeal/SpecialDeal';
 
 
@@ -18,7 +17,6 @@ import SpecialDeal from '../SpecialDeal/SpecialDeal';
 export default function Home() {
     return (
         <div>
-            <DataChart />
             <Banners />
             <TopBanner />
             <SpecialDeal />
