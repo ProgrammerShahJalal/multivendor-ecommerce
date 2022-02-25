@@ -11,7 +11,7 @@ export default class App extends React.PureComponent<IAppProps> {
         <div className="max-w-xl mb-10 md:mx-auto sm:text-center lg:max-w-2xl md:mb-12">
           <div>
             <h1 className="inline-block px-3 py-px mb-4 text-2xl font-semibold tracking-wider text-orange-900 uppercase rounded-full bg-teal-accent-400">
-              Remote Coders Unity-
+              Remote Coder Unity-
               <span style={{ color: 'rgb(79, 70, 229)', fontWeight: 'bold' }}>
                 {/* Style will be inherited from the parent element */}
                 <Typewriter
@@ -354,8 +354,3 @@ export default class App extends React.PureComponent<IAppProps> {
     );
   }
 }
-
-
-// npm install --save typescript @types/node @types/react @types/react-dom @types/jest
-
-// http://preview.themeforest.net/item/team-multisport-esport-wordpress-theme/full_screen_preview/19713558?_ga=2.237784768.1960273582.1644902476-1742640196.1635468369
