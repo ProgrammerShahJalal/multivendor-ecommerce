@@ -29,7 +29,7 @@ export default function Home() {
             <BannerPro />
             <Blogs />
             <Faq />
-            <ScrollToTop style={{ display: 'flex', alignItems: 'center', justifyContent: 'center', left: 10 }} smooth color='#6f00ff' top={20} height="28" viewBox="0 0 256 256" />
+            <ScrollToTop style={{ display: 'flex', alignItems: 'center', justifyContent: 'center', left: 15, backgroundColor: '#7209b7' }} smooth color='#ffffff' top={20} height="28" viewBox="0 0 256 256" />
             <MessengerCustomerChat
                 pageId="104774475481224"
                 appId=" 1107053396762800"
