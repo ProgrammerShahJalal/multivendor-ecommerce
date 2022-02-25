@@ -12,6 +12,12 @@ import Team from './components/Pages/Team/Team';
 import Shop from "./components/Shop/Shop";
 import PrivateRoute from "./components/Route/PrivateRoute/PrivateRoute";
 import BlogDetails from "./components/Blogs/BlogDetails/BlogDetails";
+import Dashboard from "./components/Dashboard/Dashboard/Dashboard";
+import Media from "./components/Dashboard/Media/Media";
+import AddProduct from "./components/Dashboard/AddProduct/AddProduct";
+import DetailedOrder from "./components/Dashboard/DetailedOrder/DetailedOrder";
+import Categories from "./components/Dashboard/AddProduct/Sub/Categories/Categories";
+import Attributes from "./components/Dashboard/AddProduct/Sub/Attributes/Attributes";
 
 
 
@@ -34,6 +40,15 @@ function App() {
             <Route path='/shop' element={<Shop />} />
             <Route path='/blogs/details/:id' element={<PrivateRoute><BlogDetails /></PrivateRoute>} />
             <Route path='*' element={<NotFound />} />
+
+            {/* DASHBOARD ROUTES */}
+            <Route path="/dashboard" element={<Dashboard />} >
+              <Route path="media" element={<Media />}></Route>
+              <Route path="addProduct" element={<AddProduct />}></Route>
+              <Route path="order-details" element={<DetailedOrder />}></Route>
+              <Route path="categories" element={<Categories />}></Route>
+              <Route path="attributes" element={<Attributes />}></Route>
+            </Route>
           </Routes>
           <Footer />
         </Router>

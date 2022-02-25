@@ -1,0 +1,12 @@
+.media-img{
+   
+    width: 100%;
+    height: 70%;
+    object-fit: cover;
+    
+}
+.product-thumb{
+    width: 100%;
+    object-fit: cover;
+    height: 50%;
+}
