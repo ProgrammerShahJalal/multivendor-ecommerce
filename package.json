@@ -38,7 +38,6 @@
     "react-chartjs-2": "^4.0.1",
     "react-dom": "^16.13.0",
     "react-icons": "^4.3.1",
-    "react-messenger-chat-plugin": "^2.0.2",
     "react-messenger-customer-chat": "^0.8.0",
     "react-paginate": "^8.1.1",
     "react-router-dom": "^6.2.1",

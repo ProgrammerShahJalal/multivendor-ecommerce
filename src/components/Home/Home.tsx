@@ -35,6 +35,5 @@ export default function Home() {
                 appId=" 1107053396762800"
             />
         </div>
-        //add-comment-for-merging
     )
 }
