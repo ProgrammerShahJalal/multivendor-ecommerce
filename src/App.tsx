@@ -25,6 +25,7 @@ import AddProduct from "./components/Dashboard/AddProduct/AddProduct";
 import DetailedOrder from "./components/Dashboard/DetailedOrder/DetailedOrder";
 import Categories from "./components/Dashboard/AddProduct/Sub/Categories/Categories";
 import Attributes from "./components/Dashboard/AddProduct/Sub/Attributes/Attributes";
+import DealDetails from "./components/SpecialDeal/DealDetails";
 
 
 
@@ -53,6 +54,7 @@ function App() {
             <Route path='/profile' element={<PrivateRoute><UserProfile /></PrivateRoute>} />
             <Route path='/success/:id' element={<PrivateRoute><Success /></PrivateRoute>} />
             <Route path='/blogs/details/:id' element={<PrivateRoute><BlogDetails /></PrivateRoute>} />
+            <Route path='/specials/details/:id' element={<PrivateRoute><DealDetails /></PrivateRoute>} />
             <Route path='*' element={<NotFound />} />
 
             {/* DASHBOARD ROUTES */}

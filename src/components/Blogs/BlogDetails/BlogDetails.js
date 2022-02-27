@@ -4,7 +4,7 @@ import { useParams } from 'react-router-dom';
 
 const BlogDetails = () => {
     let { id } = useParams();
-
+    // console.log(id)
     const [blogDetails, setBlogDetails] = useState([])
     useEffect(() => {
         fetch('https://morning-inlet-49130.herokuapp.com/blogs')
