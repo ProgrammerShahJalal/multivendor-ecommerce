@@ -19,6 +19,12 @@ import Success from "./components/Success";
 import VendorShopPage from "./components/VenderShopPage/VenderShopPage";
 import VendorSidebar from "./components/VendorSidebar/VendorSidebar";
 import SpecialDeal from "./components/SpecialDeal/SpecialDeal";
+import Dashboard from "./components/Dashboard/Dashboard/Dashboard";
+import Media from "./components/Dashboard/Media/Media";
+import AddProduct from "./components/Dashboard/AddProduct/AddProduct";
+import DetailedOrder from "./components/Dashboard/DetailedOrder/DetailedOrder";
+import Categories from "./components/Dashboard/AddProduct/Sub/Categories/Categories";
+import Attributes from "./components/Dashboard/AddProduct/Sub/Attributes/Attributes";
 
 
 
@@ -48,6 +54,15 @@ function App() {
             <Route path='/success/:id' element={<PrivateRoute><Success /></PrivateRoute>} />
             <Route path='/blogs/details/:id' element={<PrivateRoute><BlogDetails /></PrivateRoute>} />
             <Route path='*' element={<NotFound />} />
+
+            {/* DASHBOARD ROUTES */}
+            <Route path="/dashboard" element={<Dashboard />} >
+              <Route path="media" element={<Media />}></Route>
+              <Route path="addProduct" element={<AddProduct />}></Route>
+              <Route path="order-details" element={<DetailedOrder />}></Route>
+              <Route path="categories" element={<Categories />}></Route>
+              <Route path="attributes" element={<Attributes />}></Route>
+            </Route>
           </Routes>
           <Footer />
         </Router>
