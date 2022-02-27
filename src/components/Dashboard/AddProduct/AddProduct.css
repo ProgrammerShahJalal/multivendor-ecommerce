@@ -1,112 +1,112 @@
 .css-1s2u09g-control {
-    border: none !important;
-    padding: 4px 0;
+  border: none !important;
+  padding: 4px 0;
 }
 .react-datetime-picker__wrapper {
-  border: none !important;
+border: none !important;
 }
 input#react-select-5-input {
-  outline: none !important;
-  width: auto !important;
+outline: none !important;
+width: auto !important;
 }
 
 .public-DraftStyleDefault-block.public-DraftStyleDefault-ltr {
-  height: 270px;
+height: 270px;
 }
 
 section {
-    padding: 2rem 0;
-  }
-  
-  .image-upload-label{
-    margin: 0 auto;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    border: 1px dotted black;
-    border-radius: 20px;
-    width: 10rem;
-    height: 10rem;
-    cursor: pointer;
-    font-size: large;
-  }
-  
-  .image-upload-label span {
-    font-weight: lighter;
-    font-size: small;
-    padding-top: 0.5rem;
-  }
-  
-  .image-upload input {
-    display: none;
-  }
-  
-  .image-upload img {
-    padding: 0;
-    margin: 0;
-  }
-  
-  .image-upload .images {
-    display: flex;
-    flex-direction: row;
-    flex-wrap: wrap;
-    justify-content: center;
-    align-items: center;
-  }
-  
-  .image-upload .image {
-    margin: 1rem 0.5rem;
-    position: relative;
-    box-shadow: rgba(0, 0, 0, 0.05) 0px 1px 2px 0px;
-  }
-  
-  .image-upload .image button {
-    position: absolute;
-    top: 10px;
-    right: -10px;
-    cursor: pointer;
-    border: none;
-    color: white;
-    background-color: lightcoral;
-  }
-  
-  .image-upload .image button:hover {
-    background-color: red;
-  }
-  
-  .image-upload .image p {
-    padding: 0 0.5rem;
-    margin: 0;
-  }
-  
-  .image-upload .upload-btn {
-    cursor: pointer;
-    display: block;
-    margin: 0 auto;
-    border: none;
-    border-radius: 20px;
-    width: 10rem;
-    height: 3rem;
-    color: white;
-    background-color: green;
-  }
-  
-  .image-upload label:hover,
-  .upload-btn:hover {
-    box-shadow: rgba(0, 0, 0, 0.1) 0px 10px 15px -3px,
-      rgba(0, 0, 0, 0.05) 0px 4px 6px -2px;
-  }
-  
-  .image-upload .error {
-    text-align: center;
-  }
-  
-  .image-upload .error span {
-    color: red;
-  }
+  padding: 2rem 0;
+}
 
-  .image button {
-    padding: 1px 9px;
-    border-radius: 15px;
+.image-upload-label{
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  border: 1px dotted black;
+  border-radius: 20px;
+  width: 10rem;
+  height: 10rem;
+  cursor: pointer;
+  font-size: large;
+}
+
+.image-upload-label span {
+  font-weight: lighter;
+  font-size: small;
+  padding-top: 0.5rem;
+}
+
+.image-upload input {
+  display: none;
+}
+
+.image-upload img {
+  padding: 0;
+  margin: 0;
+}
+
+.image-upload .images {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+}
+
+.image-upload .image {
+  margin: 1rem 0.5rem;
+  position: relative;
+  box-shadow: rgba(0, 0, 0, 0.05) 0px 1px 2px 0px;
+}
+
+.image-upload .image button {
+  position: absolute;
+  top: 10px;
+  right: -10px;
+  cursor: pointer;
+  border: none;
+  color: white;
+  background-color: lightcoral;
+}
+
+.image-upload .image button:hover {
+  background-color: red;
+}
+
+.image-upload .image p {
+  padding: 0 0.5rem;
+  margin: 0;
+}
+
+.image-upload .upload-btn {
+  cursor: pointer;
+  display: block;
+  margin: 0 auto;
+  border: none;
+  border-radius: 20px;
+  width: 10rem;
+  height: 3rem;
+  color: white;
+  background-color: green;
+}
+
+.image-upload label:hover,
+.upload-btn:hover {
+  box-shadow: rgba(0, 0, 0, 0.1) 0px 10px 15px -3px,
+    rgba(0, 0, 0, 0.05) 0px 4px 6px -2px;
+}
+
+.image-upload .error {
+  text-align: center;
+}
+
+.image-upload .error span {
+  color: red;
+}
+
+.image button {
+  padding: 1px 9px;
+  border-radius: 15px;
 }
