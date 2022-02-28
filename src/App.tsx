@@ -31,7 +31,6 @@ import DetailBlogPage from "./components/Blogs/DetailBlogPage";
 
 
 function App() {
-
   return (
     <div>
       <AuthProvider>
