@@ -109,7 +109,7 @@ export default function SpecialDeal() {
                                     <CowndownTimer offerTill={special.offerTill} />
                                 </div>
                                 <Link to={`/specials/details/${special._id}`}>
-                                    <button className='bg-indigo-500 text-white rounded-2xl px-4 py-2 mt-2'>Details</button>
+                                    <button className='rounded-md hover:text-white hover:bg-indigo-500 border border-indigo-500 bg-transparent text-indigo-500 transition px-4 py-2 mt-2'>Details <i className="fa-light fa-file-circle-info"></i></button>
                                 </Link>
                             </div>
                         ))

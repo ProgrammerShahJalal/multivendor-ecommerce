@@ -6,7 +6,7 @@ const BannerGadget = () => {
             <div className='container mx-auto py-3'>
                 <div className='grid md:grid-cols-2 sm:grid-cols-1 '>
                     <div className='relative'>
-                        <img src='https://e-commerce.myproyash.com/wp-content/uploads/2021/05/electro-banner10.jpg' className="w-full" alt='' />
+                        <img src='https://i.ibb.co/1qGvwJf/electro-banner10.jpg' className="w-full" alt='' />
                         <div className='absolute inset-y-8 left-5 w-72 py-2'>
                             <h3 className='text-blue-500 font-medium'>NEW TECHNOLOGIES</h3>
                             <h1 className="lg:text-4xl text-black font-bold hover:text-pink-600 py-3 sm:text-sm">WEBCAMS 2022</h1>
@@ -16,7 +16,7 @@ const BannerGadget = () => {
                     </div>
 
                     <div className='relative'>
-                        <img src='https://e-commerce.myproyash.com/wp-content/uploads/2021/05/electro-banner11.jpg' className="w-full" alt='' />
+                        <img src='https://i.ibb.co/Smx4Fc1/electro-banner11.jpg' className="w-full" alt='' />
                         <div className='absolute inset-y-8 left-5 w-72 py-1'>
                             <h3 className='text-blue-200 font-medium'>APPLE ACCESSORIES</h3>
                             <h1 className="lg:text-4xl text-white font-bold hover:text-black py-3 sm:text-sm">LEATHER CASES</h1>

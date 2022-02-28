@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import { useParams } from 'react-router-dom';
+import { SwiperSlide, Swiper } from 'swiper/react';
 import UseAuth from '../../hooks/UseAuth';
 import { SwiperSlide, Swiper } from 'swiper/react';
 import { FreeMode, Navigation, Thumbs } from "swiper";
@@ -32,7 +33,8 @@ const DealDetails = () => {
             cus_email: user?.email,
             product_name: title,
             product_profile: details,
-            product_image: hoverImg,
+            product_image: img,
+            product_image2: hoverImg,
             total_amount: salePrice
         }
         fetch(`https://morning-inlet-49130.herokuapp.com/init`, {
