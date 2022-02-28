@@ -55,7 +55,7 @@ const DealDetails = () => {
             style={{
                 "--swiper-navigation-color": "#000"
             }}
-            loop={true}
+            loop
                     spaceBetween={10}
                     navigation={true}
                     modules={[FreeMode, Navigation, Thumbs]}

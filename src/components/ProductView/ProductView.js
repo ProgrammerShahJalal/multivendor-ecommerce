@@ -26,19 +26,19 @@ const ProductView = ({ selectedProduct, handleClose }) => {
                     className="mySwiper2"
                 >
                     <SwiperSlide style={{height:'300px',width:'300px'}}>
-                    <Magnifier mgShape='square' src={selectedProduct.hoverImg} className='bg-cover select-none'/>
+                    <Magnifier src={selectedProduct.hoverImg} className='bg-cover select-none'/>
                     </SwiperSlide>
                     <SwiperSlide style={{height:'300px',width:'300px'}} >
-                    <Magnifier mgShape='square' src={selectedProduct.img} className='bg-cover select-none'/>
+                    <Magnifier  src={selectedProduct.img} className='bg-cover select-none'/>
                     </SwiperSlide>
                     <SwiperSlide style={{height:'300px',width:'300px'}}>
-                    <Magnifier mgShape='square' src="https://i.pinimg.com/originals/84/37/94/8437943c087d24e4d09c3142f778dbd7.png" className='bg-cover select-none'/>
+                    <Magnifier  src="https://i.pinimg.com/originals/84/37/94/8437943c087d24e4d09c3142f778dbd7.png" className='bg-cover select-none'/>
                     </SwiperSlide>
                     <SwiperSlide style={{height:'300px',width:'300px'}} >
-                    <Magnifier mgShape='square' src="https://cdn.flightclub.com/750/TEMPLATE/292220/4.jpg" className='bg-cover select-none'/>
+                    <Magnifier  src="https://cdn.flightclub.com/750/TEMPLATE/292220/4.jpg" className='bg-cover select-none'/>
                     </SwiperSlide>
                     <SwiperSlide style={{height:'300px',width:'300px'}} >
-                        <Magnifier mgShape='square' src="https://image.goat.com/transform/v1/attachments/product_template_additional_pictures/images/065/107/182/original/859919_03.jpg.jpeg?action=crop&width=1250" className='bg-cover select-none' />
+                        <Magnifier  src="https://image.goat.com/transform/v1/attachments/product_template_additional_pictures/images/065/107/182/original/859919_03.jpg.jpeg?action=crop&width=1250" className='bg-cover select-none' />
                     </SwiperSlide>
                 </Swiper>
                 <div className='mt-5'>
