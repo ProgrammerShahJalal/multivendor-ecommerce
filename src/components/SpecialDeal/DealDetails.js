@@ -17,7 +17,7 @@ const DealDetails = () => {
             })
     }, [id])
 
-    const { title, img, details, salePrice, processor } = dealDetails[0] || {};
+    const { title, hoverImg, details, salePrice, processor } = dealDetails[0] || {};
 
     const purchase = () => {
         const order = {
@@ -25,7 +25,7 @@ const DealDetails = () => {
             cus_email: user?.email,
             product_name: title,
             product_profile: details,
-            product_image: img,
+            product_image: hoverImg,
             total_amount: salePrice
         }
         fetch(`https://morning-inlet-49130.herokuapp.com/init`, {
@@ -44,7 +44,7 @@ const DealDetails = () => {
     return (
         <div className='max-w-md overflow-hidden md:max-w-2xl mx-auto my-5'>
             <div className="md:shrink-0 rounded-xl shadow-lg p-5 bg-white">
-                <img className="h-auto w-full object-cover md:h-full md:w-full rounded-md" src={img} alt='' />
+                <img className="h-auto w-full object-cover md:h-full md:w-full rounded-md" src={hoverImg} alt='' />
                 <h2 className='text-2xl font font-bold tracking-tight text-gray-900 sm:text-2xl text-center my-5'>{title}</h2>
                 <div className='flex justify-around items-center'>
                     <p className="font-bold mt-2 text-cyan-900">Price: {salePrice}</p>

@@ -42,7 +42,6 @@
     "react-dom": "^16.14.0",
     "react-draft-wysiwyg": "^1.14.7",
     "react-icons": "^4.3.1",
-    "react-messenger-chat-plugin": "^2.0.2",
     "react-messenger-customer-chat": "^0.8.0",
     "react-paginate": "^8.1.1",
     "react-router-dom": "^6.2.1",
