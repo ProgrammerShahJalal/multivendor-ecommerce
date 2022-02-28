@@ -1,7 +1,13 @@
 import React, { useEffect, useState } from 'react';
 import { useParams } from 'react-router-dom';
+import { SwiperSlide, Swiper } from 'swiper/react';
 import UseAuth from '../../hooks/UseAuth';
-
+import Magnifier from "react-magnifier";
+import { FreeMode, Navigation, Thumbs } from "swiper";
+import "swiper/css";
+import "swiper/css/free-mode";
+import "swiper/css/navigation";
+import "swiper/css/thumbs";
 
 const DealDetails = () => {
     let { id } = useParams();
@@ -17,7 +23,7 @@ const DealDetails = () => {
             })
     }, [id])
 
-    const { title, hoverImg, details, salePrice, processor } = dealDetails[0] || {};
+    const { title, img, details, salePrice, processor, hoverImg } = dealDetails[0] || {};
 
     const purchase = () => {
         const order = {
@@ -25,7 +31,8 @@ const DealDetails = () => {
             cus_email: user?.email,
             product_name: title,
             product_profile: details,
-            product_image: hoverImg,
+            product_image: img,
+            product_image2: hoverImg,
             total_amount: salePrice
         }
         fetch(`https://morning-inlet-49130.herokuapp.com/init`, {
@@ -44,7 +51,24 @@ const DealDetails = () => {
     return (
         <div className='max-w-md overflow-hidden md:max-w-2xl mx-auto my-5'>
             <div className="md:shrink-0 rounded-xl shadow-lg p-5 bg-white">
-                <img className="h-auto w-full object-cover md:h-full md:w-full rounded-md" src={hoverImg} alt='' />
+            <Swiper
+            style={{
+                "--swiper-navigation-color": "#000"
+            }}
+            loop={true}
+                    spaceBetween={10}
+                    navigation={true}
+                    modules={[FreeMode, Navigation, Thumbs]}
+                    className="mySwiper2"
+                >
+                    <SwiperSlide>
+                    <Magnifier mgShape='square' src={hoverImg} className='bg-cover select-none'/>
+                    </SwiperSlide>
+                    <SwiperSlide>
+                    <Magnifier mgShape='square' src={img} className='bg-cover select-none'/>
+                    </SwiperSlide>
+                </Swiper>
+                {/* <img className="h-auto w-full object-cover md:h-full md:w-full rounded-md" src={img} alt='' /> */}
                 <h2 className='text-2xl font font-bold tracking-tight text-gray-900 sm:text-2xl text-center my-5'>{title}</h2>
                 <div className='flex justify-around items-center'>
                     <p className="font-bold mt-2 text-cyan-900">Price: {salePrice}</p>

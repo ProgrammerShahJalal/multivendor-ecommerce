@@ -13,7 +13,7 @@ const BannerPro = () => {
                 </div>
                 <div className='mt-7' data-aos="fade-up"
                     data-aos-duration="3000">
-                    <img src='https://i.ibb.co/9n1JH8h/dualshok.png' className='w-full -mb-20 pt-7 hover:-translate-y-3 transition duration-700 ease-in-out' alt='' />
+                    <img src='https://i.ibb.co/9n1JH8h/dualshok.png' className='w-full -mb-28 pt-7 hover:-translate-y-3 transition duration-700 ease-in-out' alt='' />
                 </div>
             </div>
         </div>
