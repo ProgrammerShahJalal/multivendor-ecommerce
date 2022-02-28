@@ -1,6 +1,7 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
-// import Sidebar from '../Sidebar/Sidebar';
+import VendorSidebar from '../VendorSidebar/VendorSidebar';
+
 
 const VendorShopPage = () => {
     return (
@@ -44,7 +45,7 @@ const VendorShopPage = () => {
                     <div className='bg-slate-200 py-14 md:h-2/4'>
                             <h2 className='uppercase font-bold text-lg text-left px-11 py-3'>Search</h2>
                             <input type="text" className=' bg-slate-100 text-slate-400 py-3 px-4 border border-slate-30 hover:border-indigo-300' placeholder='Search Products'/>
-                            {/* <Sidebar/> */}
+                           <VendorSidebar/>
                     </div>
                     {/* sidebar end  */}
 
