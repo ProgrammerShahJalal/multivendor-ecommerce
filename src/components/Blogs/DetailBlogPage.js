@@ -1,4 +1,6 @@
 import { useEffect, useState } from "react";
+import LoadingLottie from "../Lottie/LoadingLottie";
+import LottieBlog from "../Lottie/LottieBlog";
 import BlogDetails from "./BlogDetails/BlogDetails"
 import RelatedBlog from "./RelatedBlog";
 
@@ -19,24 +21,21 @@ export default function DetailBlogPage() {
     }, [])
 
     if (isLoading) {
-        return <div className="text-center text-white my-32">
-            <button type="button" className="bg-indigo-500 rounded-lg" disabled>
-                <svg className="animate-spin h-5 w-5 mr-3" viewBox="0 0 24 24">
-                </svg>
-                Blog details is loading...
-            </button>
+        return <div className="w-96 px-5 mx-auto my-32">
+            <LoadingLottie />
         </div>
     }
 
     return (
         <div className="bg-gray-50">
-            <div className="max-w-7xl mx-auto py-12 px-4 sm:px-6 lg:py-16 lg:px-8 lg:flex lg:items-center lg:justify-between">
+            <div className="max-w-7xl mx-auto py-12 px-4 sm:px-6 lg:py-16 lg:px-8 lg:flex lg:items-start lg:justify-between">
                 <div className="lg:w-3/4">
                     <BlogDetails />
                 </div>
                 <div className="lg:w-1/4">
+                    <LottieBlog />
                     <h2 className="text-xl font-bold">Related Blogs</h2>
-                    <div className="grid grid-cols-1 gap-4">
+                    <div className="grid lg:grid-cols-1 md:grid-cols-2 gap-4">
                         {
                             blogs.slice(6, 10).map(blog => <RelatedBlog key={blog._id} blog={blog}></RelatedBlog>)
                         }
