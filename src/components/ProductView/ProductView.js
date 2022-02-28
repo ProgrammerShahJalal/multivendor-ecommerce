@@ -1,5 +1,6 @@
-import React, {  useState } from "react";
-// Import Swiper React components
+import { Rating } from '@mui/material';
+import React, { useState } from 'react';
+import { Link } from 'react-router-dom';
 import { Swiper, SwiperSlide } from "swiper/react";
 import { FreeMode, Navigation, Thumbs } from "swiper";
 
@@ -8,19 +9,14 @@ import "swiper/css";
 import "swiper/css/free-mode";
 import "swiper/css/navigation";
 import "swiper/css/thumbs";
-import { Link } from 'react-router-dom';
-import { Rating } from "@mui/material";
-const ProductView = ({product}) => {
-    const { title, hoverImg, img, price, rating,vendorName, salePrice } = product;
+const ProductView = () => {
     const [thumbsSwiper, setThumbsSwiper] = useState(null);
-
 return (
-    <div style={{backgroundColor:'white',width:'800px',height:'600px',overflow:'scroll'}} className='mx-auto container place-content-center px-12 py-8 justify-center items-center grid lg:grid-cols-2 md:grid-cols-2 grid-cols-1 gap-6 sm:flex-1'>
+    <div style={{backgroundColor:'white',width:'800px',height:'600px',overflow:'scroll'}} className='py-12 container place-content-center px-8 justify-center items-center mx-auto mt-8 grid lg:grid-cols-2 md:grid-cols-2 grid-cols-1 gap-6'>
         <div>
-            <Swiper
+        <Swiper
         style={{
-          "--swiper-navigation-color": "#fff",
-          "--swiper-pagination-color": "#fff",
+          
         }}
         spaceBetween={10}
         // navigation={true}
@@ -29,19 +25,19 @@ return (
         className="mySwiper2"
       >
         <SwiperSlide>
-          <img alt="" src={img} />
+          <img alt="" src="https://i.ibb.co/ZX9c3hS/nike.png" />
         </SwiperSlide>
         <SwiperSlide>
-          <img alt="" src={hoverImg} />
+          <img alt="" src="https://cdn.flightclub.com/750/TEMPLATE/292220/1.jpg" />
         </SwiperSlide>
         <SwiperSlide>
-          <img alt="" src={img} />
+          <img alt="" src="https://i.pinimg.com/originals/84/37/94/8437943c087d24e4d09c3142f778dbd7.png" />
         </SwiperSlide>
         <SwiperSlide>
-          <img alt="" src={hoverImg} />
+          <img alt="" src="https://cdn.flightclub.com/750/TEMPLATE/292220/4.jpg" />
         </SwiperSlide>
         <SwiperSlide>
-          <img alt="" src={img} />
+          <img alt="" src="https://image.goat.com/transform/v1/attachments/product_template_additional_pictures/images/065/107/182/original/859919_03.jpg.jpeg?action=crop&width=1250" />
         </SwiperSlide>
       </Swiper>
       <Swiper
@@ -54,28 +50,28 @@ return (
         className="mySwiper"
       >
         <SwiperSlide>
-          <img alt="" src={img} />
+          <img className='select-none' alt="" src="https://i.ibb.co/ZX9c3hS/nike.png" />
         </SwiperSlide>
         <SwiperSlide>
-          <img alt="" src={hoverImg} />
+          <img alt="" src="https://cdn.flightclub.com/750/TEMPLATE/292220/1.jpg" />
         </SwiperSlide>
         <SwiperSlide>
-          <img alt="" src={img} />
+          <img alt="" src="https://i.pinimg.com/originals/84/37/94/8437943c087d24e4d09c3142f778dbd7.png" />
         </SwiperSlide>
         <SwiperSlide>
-          <img alt="" src={hoverImg} />
+          <img alt="" src="https://cdn.flightclub.com/750/TEMPLATE/292220/4.jpg" />
         </SwiperSlide>
         <SwiperSlide>
-          <img alt="" src={img} />
+          <img alt="" src="https://image.goat.com/transform/v1/attachments/product_template_additional_pictures/images/065/107/182/original/859919_03.jpg.jpeg?action=crop&width=1250" />
         </SwiperSlide>
       </Swiper>
         </div>
         
         <div>
-            <h2 className='text-3xl mb-2 font-medium'>{title}</h2>
+            <h2 className='text-3xl mb-2 font-medium'>Nike sports shoe</h2>
             <div className='flex items-center mb-4'>
         <div>
-        <Rating name="half-rating-read" defaultValue={rating} precision={0.5} readOnly />
+        <Rating name="half-rating-read" defaultValue={6} precision={0.5} readOnly />
         </div>
         <div className="text-xs text-gray-500 ml-3">
             (1 Reviews)
@@ -87,8 +83,8 @@ return (
         <span className='text-green-600'>In stock</span>
     </p>
     <p className="space-x-2">
-        <span className='text-gray-800 font-semibold'>Vendor:</span>
-        <span className='text-gray-600'>{vendorName}</span>
+        <span className='text-gray-800 font-semibold'>Brand:</span>
+        <span className='text-gray-600'>Nike</span>
     </p>
     <p className="space-x-2">
         <span className='text-gray-800 font-semibold'>Category:</span>
@@ -96,14 +92,15 @@ return (
     </p>
     <p className="space-x-2">
         <span className='text-gray-800 font-semibold'>SKU:</span>
-        {/* <span className='text-gray-600 uppercase'>{_id.slice(4,12)}</span> */}
+        <span className='text-gray-600 uppercase'>udhff45gr</span>
     </p>
     </div>
     
     <div className="flex items-baseline mb-1 mt-2 space-x-2">
-                            <p className="text-xl text-indigo-500 font-semibold">{salePrice}</p>
-                            <p className="text-sm text-gray-400 line-through">{price}</p>
+                            <p className="text-xl text-indigo-500 font-semibold">$450</p>
+                            <p className="text-sm text-gray-400 line-through">$500</p>
     </div>
+                                    <div className="grid grid-cols-2">
                                     <div className="">
                                     <h3 className="text-xl text-gray-800 mb-3 uppercase font-medium ">Color</h3>
                                     <div className="flex gap-2">
@@ -122,7 +119,7 @@ return (
                                         </div>
                                     </div>
                                 </div>
-                        <div className="pt-4 block">
+                        <div className="pt-4 -mt-32 block">
                             <h3 className="text-xl text-gray-800 mb-3 uppercase font-medium">Size</h3>
                             <div className="flex item-center gap-2">
                                 {/* single size selector starts */}
@@ -166,17 +163,18 @@ return (
                                 </div>
                         </div>
                     </div>
-                        <div className="flex gap-3 border-b border-gray-200 pb-5 mt-6">
+                        <div className="border-b -mt-20 border-gray-200 pb-5">
                             <Link to = "/">
-                            <button className='text-center top-5 text-white  p-2 bg-indigo-500 border border-indigo-500 hover:bg-transparent hover:text-indigo-500 transition'>
+                            <button className='w-40 text-center top-5 text-white  p-2 bg-indigo-500 border border-indigo-500 hover:bg-transparent hover:text-indigo-500 transition'>
                             <i className="fa-regular fa-bag-shopping"></i> Add to cart
                             </button>
                             </Link>
                             <Link to = "/">
-                            <button className='text-center top-5 hover:text-white  p-2 hover:bg-indigo-500 border border-indigo-500 bg-transparent text-indigo-500 transition'>
-                            <i className="fa-regular fa-heart"></i> Add to Wishlist
+                            <button className='w-40 text-center top-5 hover:text-white my-2 p-2 hover:bg-indigo-500 border border-indigo-500 bg-transparent text-indigo-500 transition'>
+                            <i className="fa-regular fa-heart"> </i> Add to wishlist
                             </button>
                             </Link>
+                        </div>
                         </div>
                 </div>
             </div>

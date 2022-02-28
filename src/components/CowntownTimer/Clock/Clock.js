@@ -3,31 +3,31 @@ import React, { Fragment } from 'react'
 const Clock = ({ timerDays, timerHours, timerMinutes, timerSeconds, offerTill }) => {
     return (
         <Fragment>
-            <section className="timer-container">
-                <section className="timer">
-                    <div className="clock flex justify-center items-center gap-2">
-                        <section>
+            <div>
+                <div>
+                    <div className="flex justify-center items-center gap-2">
+                        <div>
                             <p>{timerDays}</p>
                             <small>Days</small>
-                        </section>
+                        </div>
                         <span>:</span>
-                        <section>
+                        <div>
                             <p>{timerHours}</p>
                             <small>Hours</small>
-                        </section>
+                        </div>
                         <span>:</span>
-                        <section>
+                        <div>
                             <p>{timerMinutes}</p>
                             <small>Minutes</small>
-                        </section>
+                        </div>
                         <span>:</span>
-                        <section>
+                        <div>
                             <p>{timerSeconds}</p>
                             <small>Seconds</small>
-                        </section>
+                        </div>
                     </div>
-                </section>
-            </section>
+                </div>
+            </div>
         </Fragment>
     )
 }
