@@ -13,7 +13,7 @@ export default function Shop() {
     }
     return (
         <div>
-            <ScrollToTop style={{ display: 'flex', alignItems: 'center', justifyContent: 'center', backgroundColor: '#7209b7' }} smooth color='#ffffff' top={20} />
+            <ScrollToTop style={{ display: 'flex', alignItems: 'center', justifyContent: 'center', left: 15, backgroundColor: '#7209b7' }} smooth color='#ffffff' top={20} />
             <Products></Products>
             <div style={{ display: 'flex', justifyContent: 'center', padding: 30 }}>
                 <Pagination count={10} color="primary" />
