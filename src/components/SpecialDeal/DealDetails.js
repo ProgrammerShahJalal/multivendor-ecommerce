@@ -1,6 +1,13 @@
 import React, { useEffect, useState } from 'react';
 import { useParams } from 'react-router-dom';
 import UseAuth from '../../hooks/UseAuth';
+import { SwiperSlide, Swiper } from 'swiper/react';
+import { FreeMode, Navigation, Thumbs } from "swiper";
+import "swiper/css";
+import "swiper/css/free-mode";
+import "swiper/css/navigation";
+import "swiper/css/thumbs";
+import Magnifier from "react-magnifier";
 
 
 const DealDetails = () => {
@@ -17,7 +24,7 @@ const DealDetails = () => {
             })
     }, [id])
 
-    const { title, hoverImg, details, salePrice, processor, vendorName, category, display, RAM, brands } = dealDetails[0] || {};
+    const { title, hoverImg, img, details, salePrice, processor, vendorName, category, display, RAM, brands, rating } = dealDetails[0] || {};
 
     const purchase = () => {
         const order = {
@@ -42,35 +49,80 @@ const DealDetails = () => {
     }
 
     return (
-        <div className="bg-gray-50">
-            <div className="max-w-7xl mx-auto py-12 px-4 sm:px-6 lg:py-16 lg:px-8 lg:flex lg:items-center lg:justify-between">
+        <div className="bg-gray-50 py-5">
+            <h2 className='text-xl font-bold text-center'>{title}</h2>
+            <div className="grid lg:grid-cols-2 md:grid-cols-2 sm:grid-cols-1 xm:grid-cols-1 gap-3 justify-center items-center">
                 <div>
-                    <img src={hoverImg} alt="" />
+                    <Swiper
+                        style={{
+                            "--swiper-navigation-color": "#ff7b00",
+                            "--swiper-navigation-size": "30px"
+                        }}
+                        loop
+                        spaceBetween={10}
+                        navigation={true}
+                        modules={[FreeMode, Navigation, Thumbs]}
+                        className="mySwiper2"
+                    >
+                        <SwiperSlide>
+                            <div className="w-80 mx-auto">
+                                <Magnifier mgShape='circle' src={hoverImg} className='bg-cover select-none' />
+                            </div>
+                        </SwiperSlide>
+                        <SwiperSlide>
+                            <div className="w-80 mx-auto">
+                                <Magnifier mgShape='circle' src={img} className='bg-cover select-none' />
+                            </div>
+                        </SwiperSlide>
+                    </Swiper>
                 </div>
-                <div className="mt-8 flex lg:mt-0 lg:flex-shrink-0">
-                    <table className="border-collapse border border-slate-400 ...">
+                <div>
+                    <table class="table-auto border border-separate border-purple-500">
                         <thead>
                             <tr>
-                                <th className="border border-slate-300 ...">State</th>
-                                <th className="border border-slate-300 ...">City</th>
+                                <th className='border border-purple-400'>Properties</th>
+                                <th className='border border-purple-400'>Details</th>
                             </tr>
                         </thead>
                         <tbody>
                             <tr>
-                                <td className="border border-slate-300 ...">Indiana</td>
-                                <td className="border border-slate-300 ...">Indianapolis</td>
+                                <td className='border border-purple-400'>Vendor Name</td>
+                                <td className='border border-purple-400'>{vendorName}</td>
                             </tr>
                             <tr>
-                                <td className="border border-slate-300 ...">Ohio</td>
-                                <td className="border border-slate-300 ...">Columbus</td>
+                                <td className='border border-purple-400'>Category</td>
+                                <td className='border border-purple-400'>{category}</td>
                             </tr>
                             <tr>
-                                <td className="border border-slate-300 ...">Michigan</td>
-                                <td className="border border-slate-300 ...">Detroit</td>
+                                <td className='border border-purple-400'>Brands</td>
+                                <td className='border border-purple-400'>{brands}</td>
+                            </tr>
+                            <tr>
+                                <td className='border border-purple-400'>Processor</td>
+                                <td className='border border-purple-400'>{processor}</td>
+                            </tr>
+                            <tr>
+                                <td className='border border-purple-400'>Display</td>
+                                <td className='border border-purple-400'>{display}</td>
+                            </tr>
+                            <tr>
+                                <td className='border border-purple-400'>RAM</td>
+                                <td className='border border-purple-400'>{RAM}</td>
+                            </tr>
+                            <tr>
+                                <td className='border border-purple-400'>Rating</td>
+                                <td className='border border-purple-400'>{rating}</td>
+                            </tr>
+                            <tr>
+                                <td className='border border-purple-400'>Comment</td>
+                                <td className='border border-purple-400'>{details}</td>
                             </tr>
                         </tbody>
                     </table>
                 </div>
+            </div>
+            <div className='w-96 px-16 mx-auto'>
+                <button onClick={purchase} className='bg-indigo-500 text-white rounded-2xl px-4 py-2 mt-2'>Buy Now</button>
             </div>
         </div>
     )
