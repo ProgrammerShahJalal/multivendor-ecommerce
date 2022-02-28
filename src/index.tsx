@@ -4,6 +4,7 @@ import './index.css';
 import App from './App';
 import reportWebVitals from './reportWebVitals';
 import "swiper/css/bundle";
+import "@lottiefiles/lottie-player";
 
 ReactDOM.render(
   <React.StrictMode>

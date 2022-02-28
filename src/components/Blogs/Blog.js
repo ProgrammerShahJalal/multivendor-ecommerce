@@ -14,11 +14,11 @@ const Blog = ({ blog }) => {
                         </div>
                         <div className="p-8">
                             <div className="uppercase tracking-wide text-sm text-indigo-500 font-semibold">Category: {category}</div>
-                            <Link to={`/blogs/details/${_id}`} class="block mt-1 text-lg leading-tight font-medium text-black hover:underline truncate w-64">{title}</Link>
-                            <p className="mt-2 text-slate-500 truncate w-96 h-12">{description}</p>
+                            <Link to={`/blogs/details/${_id}`} className="block mt-1 text-lg leading-tight font-medium text-black hover:underline truncate w-96">{title}</Link>
+                            <p className="mt-2 py-3 text-slate-500 w-96 h-18">{description.slice(0, 80)}...</p>
                             <div className="flex gap-4">
-                                <h3 className='text-sm'>Posted by {author}</h3>
-                                <h3 className='text-sm'>Date: {date}</h3>
+                                <h3 className='text-sm text-purple-700 font-semibold'>Posted by {author}</h3>
+                                <h3 className='text-sm text-fuchsia-600 font-semibold'>Date: {date}</h3>
                             </div>
                         </div>
                     </div>

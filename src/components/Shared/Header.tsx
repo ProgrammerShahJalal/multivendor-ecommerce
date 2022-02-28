@@ -1,7 +1,7 @@
 import { Fragment, useState } from 'react';
 import { Dialog, Menu, Popover, Tab, Transition } from '@headlessui/react';
 import { MenuIcon, SearchIcon, ShoppingBagIcon, XIcon } from '@heroicons/react/outline';
-import { Link } from 'react-router-dom';
+import { Link, NavLink } from 'react-router-dom';
 import UseAuth from '../../hooks/UseAuth';
 
 const navigation = {
@@ -222,9 +222,7 @@ export default function Header() {
                                                     <p id={`${category.id}-${section.id}-heading-mobile`} className="font-medium text-gray-900">
                                                         {section.name}
                                                     </p>
-                                                    <ul
-                                                        role="list"
-                                                        aria-labelledby={`${category.id}-${section.id}-heading-mobile`}
+                                                    <ul role="list" aria-labelledby={`${category.id}-${section.id}-heading-mobile`}
                                                         className="mt-6 flex flex-col space-y-6"
                                                     >
                                                         {section.items.map((item) => (
@@ -441,12 +439,12 @@ export default function Header() {
                                             <Menu.Items className="z-10 origin-top-right absolute right-0 mt-2 w-48 rounded-md shadow-lg py-1 bg-white ring-1 ring-black ring-opacity-5 focus:outline-none">
                                                 <Menu.Item>
                                                     {({ active }) => (
-                                                        <a
-                                                            href="#profile"
+                                                        <NavLink
+                                                            to='/profile'
                                                             className={classNames(active ? 'bg-gray-100' : '', 'block px-4 py-2 text-sm text-gray-700')}
                                                         >
                                                             Your Profile
-                                                        </a>
+                                                        </NavLink>
                                                     )}
                                                 </Menu.Item>
                                                 <Menu.Item>
@@ -488,20 +486,20 @@ export default function Header() {
                                 }
 
                                 <div className="hidden lg:ml-8 lg:flex">
-                                    <Link to="/cad" className="text-gray-700 hover:text-gray-800 flex items-center">
+                                    <Link to="/" className="text-gray-700 hover:text-gray-800 flex items-center">
                                         <img
-                                            src="https://tailwindui.com/img/flags/flag-canada.svg"
+                                            src="https://upload.wikimedia.org/wikipedia/commons/thumb/7/75/Flag_of_Bangladesh_%283-2%29.svg/1200px-Flag_of_Bangladesh_%283-2%29.svg.png?20190306092954"
                                             alt=""
                                             className="w-5 h-auto block flex-shrink-0"
                                         />
-                                        <span className="ml-3 block text-sm font-medium">CAD</span>
+                                        <span className="ml-3 block text-sm font-medium">BAN</span>
                                         <span className="sr-only">, change currency</span>
                                     </Link>
                                 </div>
 
                                 {/* Search */}
                                 <div className="flex lg:ml-6">
-                                    <Link to="/search" className="p-2 text-gray-400 hover:text-gray-500">
+                                    <Link to="/" className="p-2 text-gray-400 hover:text-gray-500">
                                         <span className="sr-only">Search</span>
                                         <SearchIcon className="w-6 h-6" aria-hidden="true" />
                                     </Link>
@@ -509,7 +507,7 @@ export default function Header() {
 
                                 {/* Cart */}
                                 <div className="ml-4 flow-root lg:ml-6">
-                                    <Link to="/shoppingIcon" className="group -m-2 p-2 flex items-center">
+                                    <Link to="/" className="group -m-2 p-2 flex items-center">
                                         <ShoppingBagIcon
                                             className="flex-shrink-0 h-6 w-6 text-gray-400 group-hover:text-gray-500"
                                             aria-hidden="true"

@@ -110,7 +110,7 @@ export const UseFirebase = (
         });
 
     }, [auth])
-    console.log('firebase', user);
+    // console.log('firebase', user);
 
     // SIGN IN WITH USER AND EMAIL
     const SignIn: SignInUserFunction = async (
@@ -133,11 +133,15 @@ export const UseFirebase = (
             }).finally(() => setIsLoading(false));
     }
     // GOOGLE SIGN
-    const handleGoogleSignIn = async () => {
+    const handleGoogleSignIn = async (
+        navigate: (destination: string) => void,
+        location: any) => {
         await signInWithPopup(auth, googleProvider)
             .then((result: any) => {
+                navigate(location?.state?.from || '/')
                 const user = result.user;
                 setUser(user)
+
                 // ...
             }).catch((error: any) => {
                 const errorMessage = error.message;

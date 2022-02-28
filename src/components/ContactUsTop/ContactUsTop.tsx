@@ -1,5 +1,6 @@
-import * as React from 'react';
+import React from "react";
 import { Link } from 'react-router-dom';
+import LottieContact from '../Lottie/LottieContact';
 
 export interface IAppProps {
 }
@@ -9,7 +10,7 @@ export default class App extends React.PureComponent<IAppProps> {
     return (
       <div className='relative bg-white overflow-hidden '>
 
-        <div className='relative z-10 pb-8 sm:pb-16 md:pb-20 lg:max-w-2xl lg:w-full lg:pb-28 xl:pb-32 bg-orange-100'>
+        <div className='relative z-10 pb-8 sm:pb-16 md:pb-20 lg:max-w-2xl lg:w-full lg:pb-28 xl:pb-32'>
 
 
           <main className="mx-auto max-w-7xl px-8 pt-10 ">
@@ -40,12 +41,9 @@ export default class App extends React.PureComponent<IAppProps> {
           </main>
         </div>
         <div className="lg:absolute lg:inset-y-0 lg:right-0 lg:w-1/2">
-
-          <img
-            className="h-56 w-full object-cover sm:h-72 md:h-96 lg:w-full lg:h-full"
-            src="https://images.unsplash.com/photo-1630672790237-38eeb57cb60b?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=871&q=80"
-            alt=""
-          />
+          <div data-aos="fade-down" data-aos-duration="1500">
+            <LottieContact />
+          </div>
         </div>
       </div>
     );

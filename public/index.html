@@ -15,15 +15,58 @@
     rel="stylesheet">
   <link rel="manifest" href="%PUBLIC_URL%/manifest.json" />
   <link rel="stylesheet" href="https://site-assets.fontawesome.com/releases/v6.0.0/css/all.css">
+
   <!-- font awesome kits -->
   <script src="https://kit.fontawesome.com/9e5641412a.js" crossorigin="anonymous"></script>
+  <!-- aos animation -->
+  <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
   <title>Unity Mart :: A Multi-vendor E-commerce Website</title>
 </head>
 
 <body>
   <noscript>You need to enable JavaScript to run this app.</noscript>
+  <!-- <div id="contextMenu" class="context-menu" style="display: none">
+    <lottie-player src="https://assets5.lottiefiles.com/packages/lf20_jh9gfdye.json" background="transparent" speed="1"
+      style="width: 300px; height: 300px;" loop autoplay></lottie-player>
+    <h1 style="font-size: 1.3rem; font-weight: bold; color: red; background-color: aliceblue;">Focus on your work and
+      code.</h1>
+  </div> -->
   <div id="root">
+
   </div>
+
+  <!-- aos animation -->
+  <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
+
+  <script>
+    AOS.init();
+
+    /* disable context menu on webpage */
+    // document.addEventListener("contextmenu", function (shahjalal) {
+    //   shahjalal.preventDefault()
+    // })
+    /* --------------------------------------------------- */
+    // document.onclick = hideMenu;
+    // document.oncontextmenu = rightClick;
+
+    // function hideMenu() {
+    //   document.getElementById("contextMenu")
+    //     .style.display = "none"
+    // }
+
+    // function rightClick(e) {
+    //   e.preventDefault();
+
+    //   if (document.getElementById("contextMenu").style.display == "block") {
+    //     hideMenu();
+    //   } else {
+    //     var menu = document.getElementById("contextMenu")
+    //     menu.style.display = 'block';
+    //     menu.style.left = e.pageX + "px";
+    //     menu.style.top = e.pageY + "px";
+    //   }
+    // } 
+  </script>
 </body>
 
 </html>
