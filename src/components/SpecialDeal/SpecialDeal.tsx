@@ -88,7 +88,7 @@ export default function SpecialDeal() {
 
 
     return (
-        <div className="bg-gray-50">
+        <div className="bg-gray-100">
             <h2 className="text-3xl text-center font-extrabold text-gray-900 sm:text-4xl">
                 <span className="text-5xl pr-3" >Special</span>
                 <span className=" text-indigo-600 text-5xl">Deal</span>

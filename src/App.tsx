@@ -11,7 +11,6 @@ import NotFound from './components/NotFound/NotFound';
 import Team from './components/Pages/Team/Team';
 import Shop from "./components/Shop/Shop";
 import PrivateRoute from "./components/Route/PrivateRoute/PrivateRoute";
-import BlogDetails from "./components/Blogs/BlogDetails/BlogDetails";
 import UserProfile from './components/UserProfile/UserProfile';
 import OrderTracking from './components/OrderTracking/OrderTracking';
 import Checkout from './components/Checkout/Checkout';
@@ -26,6 +25,7 @@ import DetailedOrder from "./components/Dashboard/DetailedOrder/DetailedOrder";
 import Categories from "./components/Dashboard/AddProduct/Sub/Categories/Categories";
 import Attributes from "./components/Dashboard/AddProduct/Sub/Attributes/Attributes";
 import DealDetails from "./components/SpecialDeal/DealDetails";
+import DetailBlogPage from "./components/Blogs/DetailBlogPage";
 
 
 
@@ -53,7 +53,7 @@ function App() {
             <Route path='/vendorSidebar' element={<VendorSidebar />} />
             <Route path='/profile' element={<PrivateRoute><UserProfile /></PrivateRoute>} />
             <Route path='/success/:id' element={<PrivateRoute><Success /></PrivateRoute>} />
-            <Route path='/blogs/details/:id' element={<PrivateRoute><BlogDetails /></PrivateRoute>} />
+            <Route path='/blogs/details/:id' element={<PrivateRoute><DetailBlogPage /></PrivateRoute>} />
             <Route path='/specials/details/:id' element={<PrivateRoute><DealDetails /></PrivateRoute>} />
             <Route path='*' element={<NotFound />} />
 
