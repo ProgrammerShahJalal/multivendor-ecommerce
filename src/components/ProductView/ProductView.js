@@ -1,47 +1,47 @@
 import { Rating } from '@mui/material';
-import React, { useState } from 'react';
+import { useState } from 'react';
 import { Link } from 'react-router-dom';
 import { Swiper, SwiperSlide } from "swiper/react";
 import { FreeMode, Navigation, Thumbs } from "swiper";
-
+import Magnifier from "react-magnifier";
 // Import Swiper styles
 import "swiper/css";
 import "swiper/css/free-mode";
 import "swiper/css/navigation";
 import "swiper/css/thumbs";
-const ProductView = ({ selectedProduct }) => {
-    console.log(selectedProduct, ' selectedProduct');
-
+const ProductView = ({ selectedProduct, handleClose }) => {
+    console.log(selectedProduct, 'selectedProduct');
     const [thumbsSwiper, setThumbsSwiper] = useState(null);
     return (
+        <div onDoubleClick={handleClose} className='mx-auto'>
         <div style={{ backgroundColor: 'white', width: '800px', height: '600px', overflow: 'scroll' }} className='py-12 container place-content-center px-8 justify-center items-center mx-auto mt-8 grid lg:grid-cols-2 md:grid-cols-2 grid-cols-1 gap-6'>
+            
             <div>
                 <Swiper
-                    style={{
-
-                    }}
+                
                     spaceBetween={10}
                     // navigation={true}
                     thumbs={{ swiper: thumbsSwiper }}
                     modules={[FreeMode, Navigation, Thumbs]}
                     className="mySwiper2"
                 >
-                    <SwiperSlide>
-                        <img alt="" src={selectedProduct.img} />
+                    <SwiperSlide style={{height:'300px',width:'300px'}}>
+                    <Magnifier src={selectedProduct.hoverImg} className='bg-cover select-none'/>
                     </SwiperSlide>
-                    <SwiperSlide>
-                        <img alt="" src={selectedProduct.hoverImg} />
+                    <SwiperSlide style={{height:'300px',width:'300px'}} >
+                    <Magnifier  src={selectedProduct.img} className='bg-cover select-none'/>
                     </SwiperSlide>
-                    <SwiperSlide>
-                        <img alt="" src="https://i.pinimg.com/originals/84/37/94/8437943c087d24e4d09c3142f778dbd7.png" />
+                    <SwiperSlide style={{height:'300px',width:'300px'}}>
+                    <Magnifier  src="https://i.pinimg.com/originals/84/37/94/8437943c087d24e4d09c3142f778dbd7.png" className='bg-cover select-none'/>
                     </SwiperSlide>
-                    <SwiperSlide>
-                        <img alt="" src="https://cdn.flightclub.com/750/TEMPLATE/292220/4.jpg" />
+                    <SwiperSlide style={{height:'300px',width:'300px'}} >
+                    <Magnifier  src="https://cdn.flightclub.com/750/TEMPLATE/292220/4.jpg" className='bg-cover select-none'/>
                     </SwiperSlide>
-                    <SwiperSlide>
-                        <img alt="" src="https://image.goat.com/transform/v1/attachments/product_template_additional_pictures/images/065/107/182/original/859919_03.jpg.jpeg?action=crop&width=1250" />
+                    <SwiperSlide style={{height:'300px',width:'300px'}} >
+                        <Magnifier  src="https://image.goat.com/transform/v1/attachments/product_template_additional_pictures/images/065/107/182/original/859919_03.jpg.jpeg?action=crop&width=1250" className='bg-cover select-none' />
                     </SwiperSlide>
                 </Swiper>
+                <div className='mt-5'>
                 <Swiper
                     onSwiper={setThumbsSwiper}
                     spaceBetween={10}
@@ -51,22 +51,23 @@ const ProductView = ({ selectedProduct }) => {
                     modules={[FreeMode, Navigation, Thumbs]}
                     className="mySwiper"
                 >
-                    <SwiperSlide>
-                        <img className='select-none' alt="" src={selectedProduct.img} />
+                    <SwiperSlide style={{height:'100px',width:'100px'}}>
+                        <img alt="" src={selectedProduct.hoverImg} className='bg-cover select-none cursor-pointer' />
                     </SwiperSlide>
-                    <SwiperSlide>
-                        <img alt="" src={selectedProduct.hoverImg} />
+                    <SwiperSlide style={{height:'100px',width:'100px'}} >
+                        <img alt="" src={selectedProduct.img} className='bg-cover select-none cursor-pointer' />
                     </SwiperSlide>
-                    <SwiperSlide>
-                        <img alt="" src="https://i.pinimg.com/originals/84/37/94/8437943c087d24e4d09c3142f778dbd7.png" />
+                    <SwiperSlide style={{height:'100px',width:'100px'}}>
+                        <img alt="" src="https://i.pinimg.com/originals/84/37/94/8437943c087d24e4d09c3142f778dbd7.png" className='bg-cover select-none cursor-pointer' />
                     </SwiperSlide>
-                    <SwiperSlide>
-                        <img alt="" src="https://cdn.flightclub.com/750/TEMPLATE/292220/4.jpg" />
+                    <SwiperSlide style={{height:'100px',width:'100px'}}>
+                        <img alt="" src="https://cdn.flightclub.com/750/TEMPLATE/292220/4.jpg" className='bg-cover select-none cursor-pointer' />
                     </SwiperSlide>
-                    <SwiperSlide>
-                        <img alt="" src="https://image.goat.com/transform/v1/attachments/product_template_additional_pictures/images/065/107/182/original/859919_03.jpg.jpeg?action=crop&width=1250" />
+                    <SwiperSlide style={{height:'100px',width:'100px'}} >
+                        <img alt="" src="https://image.goat.com/transform/v1/attachments/product_template_additional_pictures/images/065/107/182/original/859919_03.jpg.jpeg?action=crop&width=1250" className='bg-cover select-none cursor-pointer' />
                     </SwiperSlide>
                 </Swiper>
+                </div>
             </div>
 
             <div>
@@ -94,13 +95,13 @@ const ProductView = ({ selectedProduct }) => {
                     </p>
                     <p className="space-x-2">
                         <span className='text-gray-800 font-semibold'>SKU:</span>
-                        <span className='text-gray-600 uppercase'>udhff45gr</span>
+                        <span className='text-gray-600 uppercase'>{selectedProduct._id.slice(15,25)}</span>
                     </p>
                 </div>
 
                 <div className="flex items-baseline mb-1 mt-2 space-x-2">
-                    <p className="text-xl text-indigo-500 font-semibold">${selectedProduct.salePrice}</p>
-                    <p className="text-sm text-gray-400 line-through">${selectedProduct.price}</p>
+                    <p className="text-xl text-indigo-500 font-semibold">{selectedProduct.salePrice}</p>
+                    <p className="text-sm text-gray-400 line-through">{selectedProduct.price}</p>
                 </div>
                 <div className="grid grid-cols-2">
                     <div className="">
@@ -124,13 +125,6 @@ const ProductView = ({ selectedProduct }) => {
                     <div className="pt-4 -mt-32 block">
                         <h3 className="text-xl text-gray-800 mb-3 uppercase font-medium">Size</h3>
                         <div className="flex item-center gap-2">
-                            {/* single size selector starts */}
-                            {/* <div className="size-selector">
-                                <input type="radio" name='size' className='hidden' id='xs' />
-                                <label htmlFor="size-xs" className='text-xs border border-gray-200 rounded-sm h-6 w-6 flex items-center justify-center cursor-pointer shadow-sm text-gray-600'>
-                                    {selectedProduct.size}
-                                </label>
-                            </div> */}
                             <div className="size-selector">
                                 <input type="radio" name='size' className='hidden' id='xs' />
                                 <label htmlFor="size-xs" className='text-xs border border-gray-200 rounded-sm h-6 w-6 flex items-center justify-center cursor-pointer shadow-sm text-gray-600'>
@@ -179,6 +173,7 @@ const ProductView = ({ selectedProduct }) => {
                     </div>
                 </div>
             </div>
+        </div>
         </div>
     );
 };

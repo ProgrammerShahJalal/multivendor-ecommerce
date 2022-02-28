@@ -40,7 +40,7 @@ const MensCollection = () => {
     };
     const handleClose = () => setOpen(false);
     return (
-        <div className="container lg:px-0 md:px-10 px-10 pb-16">
+        <div className="container lg:px-0 md:px-10 px-5 pb-16">
             <div className="grid place-content-center lg:grid-cols-4 md:grid-cols-3 grid-cols-1 gap-6">
                 {
                     products.map((product) => (
@@ -87,9 +87,9 @@ const MensCollection = () => {
                 >
                     <Fade in={open}>
                         <Box>
-                            <button className='justify-end text-white select-none bg-red-500 rounded-full w-8 h-8' onClick={handleClose}>x</button>
+                            {/* <button className='justify-end text-white select-none bg-red-500 rounded-full w-8 h-8' onClick={handleClose}>x</button> */}
                             <div className='md:block mx-auto px-1 lg:block hidden'>
-                                <ProductView selectedProduct={selectedProduct} />
+                                <ProductView handleClose={handleClose} selectedProduct={selectedProduct} />
                             </div>
                             <div className='md:hidden lg:hidden block'>
                                 <ProductViewSm selectedProduct={selectedProduct} />
