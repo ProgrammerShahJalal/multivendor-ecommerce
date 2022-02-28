@@ -17,7 +17,7 @@ const DealDetails = () => {
             })
     }, [id])
 
-    const { title, hoverImg, details, salePrice, processor } = dealDetails[0] || {};
+    const { title, hoverImg, details, salePrice, processor, vendorName, category, display, RAM, brands } = dealDetails[0] || {};
 
     const purchase = () => {
         const order = {
@@ -42,23 +42,38 @@ const DealDetails = () => {
     }
 
     return (
-        <div className='max-w-md overflow-hidden md:max-w-2xl mx-auto my-5'>
-            <div className="md:shrink-0 rounded-xl shadow-lg p-5 bg-white">
-                <img className="h-auto w-full object-cover md:h-full md:w-full rounded-md" src={hoverImg} alt='' />
-                <h2 className='text-2xl font font-bold tracking-tight text-gray-900 sm:text-2xl text-center my-5'>{title}</h2>
-                <div className='flex justify-around items-center'>
-                    <p className="font-bold mt-2 text-cyan-900">Price: {salePrice}</p>
-                    <p className="font-bold mt-2 text-purple-900">Processor: {processor}</p>
-                </div>
+        <div className="bg-gray-50">
+            <div className="max-w-7xl mx-auto py-12 px-4 sm:px-6 lg:py-16 lg:px-8 lg:flex lg:items-center lg:justify-between">
                 <div>
-                    <p className='text-justify'>
-                        {details}
-                    </p>
-                    <button onClick={purchase} className='bg-indigo-500 text-white rounded-2xl px-4 py-2 mt-2'>Buy Now</button>
+                    <img src={hoverImg} alt="" />
+                </div>
+                <div className="mt-8 flex lg:mt-0 lg:flex-shrink-0">
+                    <table className="border-collapse border border-slate-400 ...">
+                        <thead>
+                            <tr>
+                                <th className="border border-slate-300 ...">State</th>
+                                <th className="border border-slate-300 ...">City</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td className="border border-slate-300 ...">Indiana</td>
+                                <td className="border border-slate-300 ...">Indianapolis</td>
+                            </tr>
+                            <tr>
+                                <td className="border border-slate-300 ...">Ohio</td>
+                                <td className="border border-slate-300 ...">Columbus</td>
+                            </tr>
+                            <tr>
+                                <td className="border border-slate-300 ...">Michigan</td>
+                                <td className="border border-slate-300 ...">Detroit</td>
+                            </tr>
+                        </tbody>
+                    </table>
                 </div>
             </div>
         </div>
-    );
+    )
 };
 
 export default DealDetails;
