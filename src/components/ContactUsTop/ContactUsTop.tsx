@@ -19,9 +19,8 @@ export default class App extends React.PureComponent<IAppProps> {
                 <span className="block xl:inline">Enrich Your online business </span>{' '}
                 <span className="block text-indigo-600 xl:inline">  by Unity Mart</span>
               </h4>
-              <p className="mt-3 text-base text-gray-500 sm:mt-5 sm:text-lg sm:max-w-xl sm:mx-auto md:mt-5 md:text-xl lg:mx-0">
+              <p className="mt-3 text-base text-gray-500 sm:mt-5 sm:text-lg sm:max-w-xl sm:mx-auto md:mt-5 md:text-xl lg:mx-0 select-none">
                 The Mutivendor E-commerce platform Unity Mart, Our main object is to give user the feel of online shopping as like as shopping from market.Our goal is to provide the best user interface and best user experience.
-
               </p>
               <div className="mt-5 sm:mt-8 sm:flex sm:justify-center lg:justify-start">
                 <div className="rounded-md shadow">

@@ -75,10 +75,18 @@ const DealDetails = () => {
                                 <Magnifier mgShape='circle' src={img} className='bg-cover select-none' />
                             </div>
                         </SwiperSlide>
+                        <div className='lg:hidden md:hidden sm:block mx-auto px-8 w-80'>
+                            <p>Vendor Name: {vendorName}</p>
+                            <p>Brands: {brands}</p>
+                            <p>Category: {category}</p>
+                            <p>Display: {display}</p>
+                            <p>RAM: {RAM}</p>
+                            <p>Comments: {details}</p>
+                        </div>
                     </Swiper>
                 </div>
                 <div>
-                    <table class="table-auto border border-separate border-purple-500">
+                    <table className="table-auto border border-separate border-purple-500">
                         <thead>
                             <tr>
                                 <th className='border border-purple-400'>Properties</th>
@@ -122,7 +130,7 @@ const DealDetails = () => {
                     </table>
                 </div>
             </div>
-            <div className='w-96 px-16 mx-auto'>
+            <div className='w-80 px-16 mx-auto'>
                 <button onClick={purchase} className='bg-indigo-500 text-white rounded-2xl px-4 py-2 mt-2'>Buy Now</button>
             </div>
         </div>

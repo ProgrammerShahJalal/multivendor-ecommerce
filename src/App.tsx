@@ -26,6 +26,7 @@ import Categories from "./components/Dashboard/AddProduct/Sub/Categories/Categor
 import Attributes from "./components/Dashboard/AddProduct/Sub/Attributes/Attributes";
 import DealDetails from "./components/SpecialDeal/DealDetails";
 import DetailBlogPage from "./components/Blogs/DetailBlogPage";
+import ProductDetail from "./components/ProductDetail";
 
 
 
@@ -43,6 +44,7 @@ function App() {
             <Route path='/contact' element={<Contact />} />
             <Route path='/about' element={<About />} />
             <Route path='/specialDeal' element={<SpecialDeal />} />
+            <Route path='/productDetails/:id' element={<ProductDetail />} />
             <Route path='/team' element={<Team />} />
             <Route path='/login' element={<Login />} />
             <Route path='/register' element={<Register />} />

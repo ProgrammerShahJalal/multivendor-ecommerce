@@ -54,7 +54,7 @@ export default class App extends React.PureComponent<IAppProps> {
             </span>{' '}
             our Unity Mart team of Professionals
           </h2>
-          <p className="text-base text-gray-700 md:text-lg">
+          <p className="text-base text-gray-700 md:text-lg select-none">
             An Unity Mart team members work cooperatively alongside other  workers to select, pack, and promptly ship customer orders.Our Team Leader  assignes every works perfectly to ours, and take responsibilities specific to the different Fulfillment Center areas.
           </p>
         </div>

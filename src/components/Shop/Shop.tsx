@@ -2,6 +2,7 @@ import React, { useState } from 'react'
 import Products from './Products/Products';
 import ScrollToTop from "react-scroll-to-top";
 import Pagination from '@material-ui/lab/Pagination';
+import ProductSearchBar from '../Pages/ProductSearchBar/ProductSearchBar';
 
 
 export default function Shop() {
@@ -14,7 +15,8 @@ export default function Shop() {
     return (
         <div>
             <ScrollToTop style={{ display: 'flex', alignItems: 'center', justifyContent: 'center', left: 15, backgroundColor: '#7209b7' }} smooth color='#ffffff' top={20} />
-            <Products></Products>
+            <ProductSearchBar />
+            <Products />
             <div style={{ display: 'flex', justifyContent: 'center', padding: 30 }}>
                 <Pagination count={10} color="primary" />
             </div>
