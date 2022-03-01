@@ -1,17 +1,5 @@
 import { Box, CircularProgress, Rating } from "@mui/material";
 
-// interface ProductState {
-//     products: {
-//         title: string
-//         img: string
-//         hoverImg: string
-//         price: number
-//         salePrice: number
-//         size: string
-//         vendorName: string
-//         rating: number
-//     }[]
-// }
 
 const PaginatedProducts = ({ product, isLoading }: any) => {
 
