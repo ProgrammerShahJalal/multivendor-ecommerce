@@ -12,13 +12,14 @@ import ScrollToTop from "react-scroll-to-top";
 import BannerGadget from '../Pages/BannerGadget/BannerGadget';
 import Brands from '../Pages/Brands/Brands';
 import DataChart from '../DataChart/DataChart';
+import MessengerCustomerChat from 'react-messenger-customer-chat';
 
 
 
 export default function Home() {
     return (
         <div>
-            <DataChart/>
+            <DataChart />
             <Banners />
             <TopBanner />
             <SpecialDeal />
@@ -28,9 +29,14 @@ export default function Home() {
             {/* <Reviews /> */}
             <Brands />
             <BannerPro />
-            <Blogs/>
+            <Blogs />
             <Faq />
-            <ScrollToTop style={{display:'flex',alignItems:'center',justifyContent:'center'}} smooth color='#6f00ff' top={20} height="28" viewBox="0 0 256 256" />
+            <ScrollToTop style={{ display: 'flex', alignItems: 'center', justifyContent: 'center' }} smooth color='#6f00ff' top={20} height="28" viewBox="0 0 256 256" />
+            <MessengerCustomerChat
+                pageId="104774475481224"
+                appId=" 1107053396762800"
+            />
+            {/* do not merge this. delete this branch */}
         </div>
     )
 }
