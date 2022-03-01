@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useState } from 'react'
 import './Home.css';
 import TopBanner from '../TopBanner/TopBanner';
 import BottomBanner from '../BottomBanner/BottomBanner';
@@ -12,12 +12,22 @@ import ScrollToTop from "react-scroll-to-top";
 import BannerGadget from '../Pages/BannerGadget/BannerGadget';
 import Brands from '../Pages/Brands/Brands';
 import MessengerCustomerChat from 'react-messenger-customer-chat';
+// import Reviews from '../Pages/Reviews/Reviews';
 
 
 
 export default function Home() {
+    
+    const [loading, setLoading] = useState(true);
+    setTimeout(() => setLoading(false), 3000);
+    if (loading) {
+        return <img
+            src='http://rafcart.rslahmed.com/assets/images/preloader.gif' className="mx-auto" alt=""></img>
+    }
+
     return (
         <div>
+            
             <Banners />
             <TopBanner />
             <SpecialDeal />

@@ -1,7 +1,10 @@
 import React from 'react';
 import GridView from '../../CollectionGrid/GridView';
+import {useState} from 'react';
+import ListView from '../../ListView/ListView';
 
 const Products = () => {
+    const [gridShow,setGridShow] = useState(true);
     return (
         <div>
         <div>
@@ -140,15 +143,23 @@ const Products = () => {
                     </div>
                     
                 </div>
-                <div className="col-span-3">
-                <select className='w-44 text-sm text-gray-600 px-4 py-3 border-gray-300 shadow-sm rounded focus:ring-red-500'>
+                <div className="col-span-3 mb-4">
+                <select className='w-44 text-sm text-gray-600 px-4 border-gray-300 shadow-sm rounded focus:ring-red-500'>
                     <option>Default Sorting</option>
                     <option>Price low to high</option>
                     <option>Price high to low</option>
                     <option>Latest product</option>
                 </select>
-                <GridView/>
-            </div>
+                <div className='flex justify-end -mt-8 gap-3 mr-6'>
+                <button className={gridShow === true ? 'bg-indigo-500 rounded-sm text-white p-2' : 'text-indigo-500 border-indigo-500 rounded-sm border p-2'} onClick={()=> setGridShow(true) }><i className="fa-thin h-7 w-7 fa-grid text-2xl"></i></button>
+                <br />
+                <button className={gridShow === false ? 'bg-indigo-500 rounded-sm text-white p-2' : 'text-indigo-500 border border-indigo-500 p-2 rounded-sm'} onClick={()=> setGridShow(false) }><i className="fa-thin fa-list h-7 w-7 text-2xl"></i></button>
+                </div>
+                <br />
+                {
+                gridShow? <GridView/> : <ListView/>
+                }
+                </div>
         </div>
             </div>
             

@@ -1,8 +1,6 @@
 import { useEffect, useState } from "react";
-// import { useParams } from 'react-router-dom';
 import { Link } from "react-router-dom";
 import CowndownTimer from "../CowntownTimer/CowndownTimer";
-// import useAuth from '../../hooks/UseAuth';
 
 interface DealState {
     deals: {
@@ -26,33 +24,13 @@ interface SpecialState {
     }[],
 }
 
-// interface OrderState {
-//     orders: {
-//         _id: string
-//         img: string
-//         hoverImg: string
-//         title: string
-//         details: string
-//         price: string
-//         salePrice: string
-//         rating: number
-//         processor: string
-//         offerTill: string
-//     }[],
-// }
 
 export default function SpecialDeal() {
-
-    // let { id } = useParams();
-    // console.log(id);
 
     const [deals, setDeals] = useState<DealState["deals"]>
         ([]);
     const [specials, setSpecials] = useState<SpecialState["specials"]>
         ([]);
-    // const [orders, setOrders] = useState<OrderState["orders"]>
-    //     ([]);
-
 
 
     useEffect(() => {
@@ -72,23 +50,8 @@ export default function SpecialDeal() {
         }
     }, [specials])
 
-    /* ========================Purchase SSL Commerce======================= */
-    // useEffect(() => {
-    //     if (orders) {
-    //         fetch('https://morning-inlet-49130.herokuapp.com/specials')
-    //             .then(res => res.json())
-    //             .then(data => {
-    //                 const result = data.filter(order => order._id === id)
-    //                 setOrders(result)
-    //                 console.log(result);
-    //             })
-    //     }
-    // }, [orders, id])
-    // const { title, img, details, salePrice } = orders[0] || {};
-
-
     return (
-        <div className="bg-gray-100">
+        <div className="bg-gray-50">
             <h2 className="text-3xl text-center font-extrabold text-gray-900 sm:text-4xl">
                 <span className="text-5xl pr-3" >Special</span>
                 <span className=" text-indigo-600 text-5xl">Deal</span>
