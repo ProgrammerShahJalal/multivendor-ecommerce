@@ -22,7 +22,7 @@ const ProductSearchBar: React.FunctionComponent = () => {
     useLayoutEffect(() => {
 
 
-        fetch('https://morning-inlet-49130.herokuapp.com/mens')
+        fetch('https://morning-inlet-49130.herokuapp.com/products')
             .then(res => res.json())
             .then(data => setProducts(data))
 
@@ -54,7 +54,7 @@ const ProductSearchBar: React.FunctionComponent = () => {
             <div className="text-xl text-center">
                 {
                     productList && productList?.length === 0 && (
-                        <div className="text-xl text-center text-red-800"> No Product Found </div>
+                        <div className="text-xl text-center font-bold text-red-600"> This Type Of Product Is Not Available Now</div>
                     )
                 }
 
