@@ -1,6 +1,6 @@
 import React from 'react';
 
-const LottieFaq = () => {
+const LottieContact = () => {
     return (
         <div>
             <lottie-player src="https://assets4.lottiefiles.com/packages/lf20_xrrp4bkp.json" background="transparent" speed="1" loop autoplay></lottie-player>
@@ -8,4 +8,4 @@ const LottieFaq = () => {
     );
 };
 
-export default LottieFaq;
+export default LottieContact;

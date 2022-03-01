@@ -52,7 +52,7 @@ const DealDetails = () => {
     return (
         <div className="bg-gray-50 py-5">
             <h2 className='text-xl font-bold text-center'>{title}</h2>
-            <div className="grid lg:grid-cols-2 md:grid-cols-2 sm:grid-cols-1 xm:grid-cols-1 gap-3 justify-center items-center">
+            <div className="grid lg:grid-cols-2 md:grid-cols-2 sm:grid-cols-1 xm:grid-cols-1 gap-3 sm:gap-0 justify-center items-center">
                 <div>
                     <Swiper
                         style={{
@@ -75,7 +75,7 @@ const DealDetails = () => {
                                 <Magnifier mgShape='circle' src={img} className='bg-cover select-none' />
                             </div>
                         </SwiperSlide>
-                        <div className='lg:hidden md:hidden sm:block mx-auto px-8 w-80'>
+                        <div className='lg:hidden md:hidden sm:block mx-auto px-8 w-80 sm:py-0'>
                             <p>Vendor Name: {vendorName}</p>
                             <p>Brands: {brands}</p>
                             <p>Category: {category}</p>
