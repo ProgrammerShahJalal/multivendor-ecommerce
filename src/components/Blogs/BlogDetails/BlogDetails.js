@@ -29,7 +29,7 @@ const BlogDetails = () => {
                     <p className="font-bold mt-2 text-purple-900">Date: {date}</p>
                 </div>
                 <div>
-                    <p className='text-justify'>
+                    <p className='text-justify select-none'>
                         {description}
                     </p>
                 </div>

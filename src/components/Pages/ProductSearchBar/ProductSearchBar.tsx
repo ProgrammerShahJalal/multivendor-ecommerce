@@ -30,7 +30,7 @@ const ProductSearchBar: React.FunctionComponent = () => {
 
     // console.log(products);
     const [productList, setProductList] = useState<any>();
-    const [text, setText] = useState<string>('');
+    // const [text, setText] = useState<string>('');
 
     const handleOnChange = (event: any) => {
         // setText(event.target.value);

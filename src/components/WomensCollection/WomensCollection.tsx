@@ -5,6 +5,7 @@ import Modal from '@mui/material/Modal';
 import Fade from '@mui/material/Fade';
 import ProductViewSm from '../ProductView/ProductViewSm';
 import ProductView from '../ProductView/ProductView';
+import { Link } from 'react-router-dom';
 interface ProductState {
     products: {
         title: string
@@ -76,13 +77,15 @@ const WomensCollection = () => {
                                     <div className="text-xs text-gray-500 ml-3">(1)</div>
                                 </div>
                             </div>
-                            <button className='block w-full py-1 text-center top-5 text-white bg-indigo-500 border border-indigo-500 rounded-b hover:bg-transparent hover:text-indigo-500 transition'>Add to Cart</button>
+                            <Link to={`/productDetails/${product._id}`}>
+                                <button className='block w-full py-1 text-center top-5 text-white bg-indigo-500 border border-indigo-500 rounded-b hover:bg-transparent hover:text-indigo-500 transition'>Add to Cart</button>
+                            </Link>
                         </div>
                     ))}
             </div>
 
             <div className='px-3 mx-auto text-center'>
-            <Modal
+                <Modal
                     open={open}
                 >
                     <Fade in={open}>

@@ -102,8 +102,8 @@ export default function SpecialDeal() {
                                 <h2 className="font-bold">{special.title}</h2>
                                 <p className="text-slate-400">{special.processor}</p>
                                 <div className="flex justify-center items-center gap-3">
-                                    <p className="text-slate-400 line-through decoration-pink-500">{special.price}</p>
-                                    <p className="font-bold text-indigo-500">{special.salePrice}</p>
+                                    <p className="text-slate-400 line-through decoration-pink-500">${special.price}</p>
+                                    <p className="font-bold text-indigo-500">${special.salePrice}</p>
                                 </div>
                                 <div className="bg-violet-200 rounded-lg py-1">
                                     <CowndownTimer offerTill={special.offerTill} />
