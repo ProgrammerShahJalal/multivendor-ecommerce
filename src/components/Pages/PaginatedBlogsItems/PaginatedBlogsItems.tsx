@@ -1,9 +1,8 @@
 import React, { useLayoutEffect, useEffect, useState } from 'react';
 import ReactPaginate from 'react-paginate';
-import PaginatedProducts from './PaginatedProducts';
+import PaginatedBlogs from './PaginatedBlogs';
 
-
-const PaginatedItems = ({ itemsPerPage }: any) => {
+const PaginatedBlogsItems = ({ itemsPerPage }: any) => {
     // We start with an empty list of items.
     const [currentItems, setCurrentItems] = useState(null);
     const [pageCount, setPageCount] = useState(0);
@@ -11,36 +10,36 @@ const PaginatedItems = ({ itemsPerPage }: any) => {
     // following the API or data you're working with.
     const [itemOffset, setItemOffset] = useState(0);
 
-    const [products, setproducts] = useState<any>([])
+    const [blogs, setBlogs] = useState<any>([])
     const [isLoading, setIsLoading] = useState(false)
 
 
     useLayoutEffect(() => {
         setIsLoading(true)
-        fetch(`https://morning-inlet-49130.herokuapp.com/products`)
+        fetch(`https://morning-inlet-49130.herokuapp.com/blogs`)
             .then(res => res.json())
             .then(data => {
-                console.log(data, 'products');
-                // const approvedBlogs = data.filter(products => products.approval === 'Approved')
-                setproducts(data)
+                console.log(data, 'blogs');
+
+                setBlogs(data)
 
             })
             .finally(() => setIsLoading(false))
     }, [])
 
-    console.log(products, "products")
+    console.log(blogs, "blogs")
 
     useEffect(() => {
         // Fetch items from another resources.
         const endOffset = itemOffset + itemsPerPage;
         console.log(`Loading items from ${itemOffset} to ${endOffset}`);
-        setCurrentItems(products.slice(itemOffset, endOffset));
-        setPageCount(Math.ceil(products.length / itemsPerPage));
-    }, [itemOffset, itemsPerPage, products]);
+        setCurrentItems(blogs.slice(itemOffset, endOffset));
+        setPageCount(Math.ceil(blogs.length / itemsPerPage));
+    }, [itemOffset, itemsPerPage, blogs]);
 
     // Invoke when user click to request another page.
     const handlePageClick = (event: any) => {
-        const newOffset = (event.selected * itemsPerPage) % products.length;
+        const newOffset = (event.selected * itemsPerPage) % blogs.length;
         console.log(
             `User requested page number ${event.selected}, which is offset ${newOffset}`
         );
@@ -50,7 +49,7 @@ const PaginatedItems = ({ itemsPerPage }: any) => {
     return (
         <>
             <div className='container mx-auto pb-7'>
-                <PaginatedProducts product={currentItems} isLoading={isLoading} />
+                <PaginatedBlogs blogs={currentItems} isLoading={isLoading} />
 
                 <div className=''>
                     <ReactPaginate className='flex flex-row bg-pink-500 justify-evenly rounded-full w-96 py-5 mx-auto text-white'
@@ -71,5 +70,4 @@ const PaginatedItems = ({ itemsPerPage }: any) => {
         </>
     );
 }
-
-export default PaginatedItems;
+export default PaginatedBlogsItems;
