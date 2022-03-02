@@ -1,6 +1,7 @@
 import axios from 'axios';
 import React, { useEffect, useState } from 'react'
 import { useParams, useNavigate } from 'react-router-dom'
+import { affiliateCommission } from '../Services/AffiliateCommssion/AffiliateCommission';
 import PaymentLottie from './Lottie/PaymentLottie';
 
 const Success = () => {
@@ -13,20 +14,26 @@ const Success = () => {
         fetch(`https://morning-inlet-49130.herokuapp.com/orders/${id}`)
             .then(res => res.json())
             .then(data => {
-                console.log(data);
+                // console.log(data, 'fetch');
                 setOrders(data);
             })
     }, [id])
+
 
     const validatePayment = () => {
         const data = {
             tran_id: id,
             val_id: orders?.val_id
         }
+
         axios.post(`https://morning-inlet-49130.herokuapp.com/validate`, data)
             .then(res => {
                 if (res.data) {
+                    console.log(res.data, 'data', '-', data, 'orders');
+                    const ref = localStorage.getItem("affiliate_Link")
+                    const affiliateLink = JSON.parse(ref)
                     alert("Order placed successfully")
+                    affiliateCommission(affiliateLink, 500)
                     navigate(`/home`)
                 }
             })

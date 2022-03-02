@@ -5,18 +5,18 @@ import './media.css'
 type Props = {}
 
 export default function Media({ }: Props) {
-    const [images, setImages] = useState<any>()
+    const [images, setImages] = useState<any>([])
     const [data, setData] = useState<any>()
     const [isTrue, setIsTrue] = useState<boolean>()
 
-    // console.log(images.target.files);
+    console.log(images, 'images');
 
     const handleUploadImages = (e: any) => {
         e.preventDefault()
-
-
         const formData = new FormData();
-        const files = images.target.files;
+        const files = images
+
+
         for (let i = 0; i < files.length; i += 1) {
             formData.append('images[]', files[i]);
         }
@@ -104,7 +104,7 @@ export default function Media({ }: Props) {
                                 <input
                                     type="file"
                                     name="images"
-                                    onChange={setImages}
+                                    onChange={(e) => setImages(e.target.files)}
                                     multiple
                                     accept="image/png , image/jpeg, image/webp"
                                 />
@@ -125,7 +125,7 @@ export default function Media({ }: Props) {
                             ([key, value]: any) => {
                                 if (key === 'urls') {
                                     return value.map((url: any, idx: number) => {
-                                        console.log(url)
+
                                         return (
                                             <div className={`w-full  `}>
                                                 <img className={`media-img shadow rounded ${selectedItems.includes(url.asset_id) ? 'border-4 border-indigo-600' : ''}`} onClick={eventBubbling} key={url.asset_id} id={url.asset_id} src={url.secure_url} alt="" />
