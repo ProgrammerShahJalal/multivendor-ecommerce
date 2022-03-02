@@ -25,8 +25,6 @@ function Notify() {
             });
             toast('Visit Our Special Deal', { delay: 6000 },
                 { toastId: customId });
-            toast('View More Latest Product!', { delay: 7000 },
-                { toastId: customId });
         }
         setCNotify(notify);
 

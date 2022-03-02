@@ -21,12 +21,12 @@ export default class App extends React.PureComponent<IAppProps> {
                             <div className='mb-5'>
                                 <h4 className='text-2xl pb-4'>Information</h4>
                                 <hr className='mb-4 w-1/3' />
-                                <p className='text-gray-500' >
+                                <div className='text-gray-500' >
                                     <p className="footer-link hover:text-blue-200  pb-4"> <i className='fa fa-chevron-right text-blue-200'></i> Home</p>
                                     <p className="footer-link hover:text-blue-200  pb-4"> <i className='fa fa-chevron-right text-blue-200'></i> About Us</p>
                                     <p className="footer-link hover:text-blue-200  pb-4"> <i className='fa fa-chevron-right text-blue-200'></i> Delivery Information</p>
                                     <p className="footer-link hover:text-blue-200  pb-4"> <i className='fa fa-chevron-right text-blue-200'></i> Contact Us</p>
-                                </p>
+                                </div>
 
 
 
@@ -42,15 +42,7 @@ export default class App extends React.PureComponent<IAppProps> {
                                 </p>
                             </div>
                             <div className="mb-5">
-                                <h4 className='text-2xl pb-4'>Join Our Newsletter</h4>
-                                <hr className='mb-4 w-2/3' />
-                                <p className='text-gray-500 pb-4'>Get instant about our new <br /> products and special promos!</p>
-                                <form className='flex flex-row flex-wrap'>
-                                    <input className='text-gray-500 w-2/3 p-2 focus:border-yellow-500' type="text" placeholder='Enter your email' />
-                                    <button className='p-2 w-1/3 bg-blue-700 text-white hover:bg-indigo-500'>Send</button>
-
-                                </form>
-
+                                <img src="https://i.ibb.co/m9vtPBZ/ssl-commerce-1d268dce.png" alt="" />
                             </div>
 
                         </div>

@@ -1,6 +1,6 @@
 import { useState } from 'react';
 import { Link, Outlet } from 'react-router-dom';
-import './Dashboard.css'
+// import './Dashboard.css'
 
 const Dashboard = () => {
     const [isActive, setActive] = useState(true);
@@ -41,7 +41,21 @@ const Dashboard = () => {
                         </Link>
                         <span className="tooltip">Vendors</span>
                     </li>
-                
+                    <li>
+                        <Link to={`/dashboard/affiliate-dashboard`}>
+                            <i className="fa-solid fa-store"></i>
+                            <span className="links_name">Affiliate Dashboard</span>
+                        </Link>
+                        <span className="tooltip">Affiliate Dashboard</span>
+                    </li>
+                    <li>
+                        <Link to={`/dashboard/affiliate-links`}>
+                            <i className="fa-solid fa-store"></i>
+                            <span className="links_name">Affiliate Links</span>
+                        </Link>
+                        <span className="tooltip">Affiliate Links</span>
+                    </li>
+
                     <li>
                         <Link to={`/dashboard/order-details`}>
                             <i className="fa-brands fa-blogger"></i>
