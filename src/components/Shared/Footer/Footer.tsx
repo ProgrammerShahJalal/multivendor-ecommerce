@@ -1,4 +1,6 @@
 import * as React from 'react';
+import { HashLink } from 'react-router-hash-link';
+
 
 export interface IAppProps {
 }
@@ -7,7 +9,7 @@ export default class App extends React.PureComponent<IAppProps> {
     public render() {
         return (
             <footer className=' text-white '>
-                <div className='bg-blue-700 text-white text-center'>Win a contest! Get this limited-edition <strong className="underline">view details</strong></div>
+                <div className='bg-blue-700 text-white text-center'>Be Clever! Get more info from our blog. <strong className="underline"><HashLink smooth to="/#blog">view details</HashLink></strong></div>
                 <div className='p-10 bg-gray-900 text-gray-200 text-left'>
                     <div className='max-w-7xl mx-auto'>
                         <div className='grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-2'>
@@ -28,8 +30,6 @@ export default class App extends React.PureComponent<IAppProps> {
                                     <p className="footer-link hover:text-blue-200  pb-4"> <i className='fa fa-chevron-right text-blue-200'></i> Contact Us</p>
                                 </div>
 
-
-
                             </div>
                             <div className="mb-5">
                                 <h4 className='text-2xl pb-4'> Our Services</h4>
@@ -42,7 +42,7 @@ export default class App extends React.PureComponent<IAppProps> {
                                 </p>
                             </div>
                             <div className="mb-5">
-                                <img src="https://i.ibb.co/m9vtPBZ/ssl-commerce-1d268dce.png" alt="" />
+                                <img className='select-none' src="https://i.ibb.co/m9vtPBZ/ssl-commerce-1d268dce.png" alt="" />
                             </div>
 
                         </div>
@@ -68,10 +68,6 @@ export default class App extends React.PureComponent<IAppProps> {
 
                     </div>
                 </div>
-
-
-
-
             </footer>
         );
     }
