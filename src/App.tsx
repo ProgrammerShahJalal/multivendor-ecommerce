@@ -29,10 +29,7 @@ import DetailBlogPage from "./components/Blogs/DetailBlogPage";
 import ProductDetail from "./components/ProductDetail";
 
 
-
-
 function App() {
-
   return (
     <div>
       <AuthProvider>
@@ -71,7 +68,6 @@ function App() {
           <Footer />
         </Router>
       </AuthProvider>
-
     </div>
 
   );
