@@ -117,7 +117,7 @@ const Blogs = () => {
             <h2 className='text-4xl font font-extrabold tracking-tight sm:text-6xl text-center my-5'>Our Blogs</h2>
             <div className='md:grid grid-cols-2 max-w-md overflow-hidden md:max-w-7xl gap-5 mx-auto py-7'>
                 {
-                    blogs.slice(0, 6).map(blog => <Blog key={blog._id} blog={blog}></Blog>)
+                    blogs.map(blog => <Blog key={blog._id} blog={blog}></Blog>)
                 }
             </div>
         </div>

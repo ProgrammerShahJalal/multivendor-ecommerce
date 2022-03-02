@@ -13,6 +13,7 @@ import BannerGadget from '../Pages/BannerGadget/BannerGadget';
 import Brands from '../Pages/Brands/Brands';
 import MessengerCustomerChat from 'react-messenger-customer-chat';
 import Notify from '../Notify/Notify';
+import PaginatedHome from '../Pages/PaginatedItems/PginatedHome';
 // import Reviews from '../Pages/Reviews/Reviews';
 
 
@@ -29,11 +30,12 @@ export default function Home() {
     return (
         <div>
             <Banners />
-            <Notify />
+            {/* <Notify /> */}
             <TopBanner />
             <SpecialDeal />
             <BannerGadget />
-            <HomeProducts />
+            <PaginatedHome />
+            {/* <HomeProducts /> */}
             <BottomBanner />
             {/* <Reviews /> */}
             <Brands />
