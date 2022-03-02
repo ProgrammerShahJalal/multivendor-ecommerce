@@ -30,7 +30,7 @@ export default function Home() {
     return (
         <div>
             <Banners />
-            {/* <Notify /> */}
+            <Notify />
             <TopBanner />
             <SpecialDeal />
             <BannerGadget />
