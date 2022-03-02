@@ -1,6 +1,8 @@
 import { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
 import CowndownTimer from "../CowntownTimer/CowndownTimer";
+import { HashLink } from 'react-router-hash-link';
+
 
 interface DealState {
     deals: {
@@ -68,7 +70,9 @@ export default function SpecialDeal() {
                             <div className="w-60">
                                 <h2 className="text-md italic font-light">High Tech Products</h2>
                                 <h2 className="font-bold text-3xl tracking-wide leading-relaxed">Google Smart Home 2022</h2>
-                                <button className="text-black px-2 py-1 rounded-2xl bg-slate-100">Read More</button>
+                                <HashLink smooth to="/#blog">
+                                    <button className="text-black px-2 py-1 rounded-2xl bg-slate-100">Read More</button>
+                                </HashLink>
                             </div>
                         </Link>
                     </div>

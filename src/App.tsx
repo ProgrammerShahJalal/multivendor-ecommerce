@@ -90,7 +90,7 @@ function App() {
             <Route path='*' element={<NotFound />} />
 
             {/* DASHBOARD ROUTES */}
-            <Route path="/dashboard" element={<Dashboard />} >
+            <Route path="/dashboard" element={<PrivateRoute><Dashboard /></PrivateRoute>} >
               <Route path="media" element={<Media />}></Route>
 
 
