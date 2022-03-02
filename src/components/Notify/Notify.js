@@ -37,7 +37,7 @@ function Notify() {
                 pauseOnFocusLoss: false
             }, {
                 toastId: customId
-            }, {
+            }, { delay: 10000 }, {
                 theme: "dark"
             });
             toast('Visit Our Special Deal', {

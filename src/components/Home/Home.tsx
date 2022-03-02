@@ -13,6 +13,7 @@ import Brands from '../Pages/Brands/Brands';
 import MessengerCustomerChat from 'react-messenger-customer-chat';
 import Notify from '../Notify/Notify';
 import PaginatedBlogsHome from '../Pages/PaginatedBlogsItems/PaginatedBlogsHome';
+import Celebrating from './Celebrating';
 // import Reviews from '../Pages/Reviews/Reviews';
 
 
@@ -28,6 +29,7 @@ export default function Home() {
 
     return (
         <div>
+            <Celebrating />
             <Banners />
             <Notify />
             <TopBanner />
