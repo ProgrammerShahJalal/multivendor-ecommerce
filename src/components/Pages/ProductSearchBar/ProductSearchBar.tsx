@@ -1,6 +1,10 @@
 import React, { useState, useLayoutEffect } from 'react';
 import { Rating } from "@mui/material";
-
+import Box from '@mui/material/Box';
+import Modal from '@mui/material/Modal';
+import Fade from '@mui/material/Fade';
+import ProductView from '../../ProductView/ProductView';
+import ProductViewSm from '../../ProductView/ProductViewSm';
 interface ProductState {
     products: {
         title: string
@@ -18,7 +22,14 @@ interface ProductState {
 const ProductSearchBar: React.FunctionComponent = () => {
     const [products, setProducts] = useState<ProductState["products"]>
         ([]);
+        const [selectedProduct, setSelectedProduct] = useState<any>()
+        const [open, setOpen] = React.useState(false);
+    const handleOpen = (products) => {
+        setSelectedProduct(products)
+        setOpen(true)
 
+    };
+    const handleClose = () => setOpen(false);
     useLayoutEffect(() => {
 
 
@@ -69,9 +80,9 @@ const ProductSearchBar: React.FunctionComponent = () => {
                                 <img src={product.img} className='w-full hoverImg transition object-cover' alt="" />
                             </div>
                             <div className="absolute inset-0 bg-black bg-opacity-40 flex items-center justify-center gap-2 opacity-0 group-hover:opacity-100 transition">
-                                <a className='text-white text-lg w-9 h-8 rounded-full bg-indigo-500 flex items-center justify-center hover:bg-gray-800 transition' href="/">
+                                <button onClick={() => handleOpen(product)} className='text-white text-lg w-9 h-8 rounded-full bg-indigo-500 flex items-center justify-center hover:bg-gray-800 transition'>
                                     <i className="fa-regular fa-magnifying-glass"></i>
-                                </a>
+                                </button>
                                 <a className='text-white text-lg w-9 h-8 rounded-full bg-indigo-500 flex items-center justify-center hover:bg-gray-800 transition' href="/">
                                     <i className="fa-regular fa-heart"></i>
                                 </a>
@@ -98,6 +109,23 @@ const ProductSearchBar: React.FunctionComponent = () => {
                 </div>
 
 
+            </div>
+            <div className='px-3 mx-auto text-center'>
+                <Modal
+                    open={open}
+                >
+                    <Fade in={open}>
+                        <Box>
+                            {/* <button className='justify-end text-white select-none bg-red-500 rounded-full w-8 h-8' onClick={handleClose}>x</button> */}
+                            <div className='md:block mx-auto px-1 lg:block hidden'>
+                                <ProductView handleClose={handleClose} selectedProduct={selectedProduct} />
+                            </div>
+                            <div className='md:hidden lg:hidden block'>
+                                <ProductViewSm selectedProduct={selectedProduct} />
+                            </div>
+                        </Box>
+                    </Fade>
+                </Modal>
             </div>
         </div>
     );
