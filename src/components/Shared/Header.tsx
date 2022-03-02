@@ -1,8 +1,10 @@
+/* eslint-disable jsx-a11y/no-redundant-roles */
 import { Fragment, useState } from 'react';
 import { Dialog, Menu, Popover, Tab, Transition } from '@headlessui/react';
 import { MenuIcon, SearchIcon, ShoppingBagIcon, XIcon } from '@heroicons/react/outline';
 import { Link, NavLink } from 'react-router-dom';
 import UseAuth from '../../hooks/UseAuth';
+import Watch from '../Watch/Watch';
 
 const navigation = {
 
@@ -292,10 +294,12 @@ export default function Header() {
             </Transition.Root>
 
             <header className="relative bg-white">
-                <p className="bg-indigo-600 h-10 flex items-center justify-center text-sm font-medium text-white px-4 sm:px-6 lg:px-8">
-                    Get free delivery on orders over $100
-                </p>
-
+                <div className="bg-indigo-600 h-10 flex items-center justify-around text-sm font-medium text-white px-4 sm:px-6 lg:px-8">
+                    <p>
+                        Let's know current time
+                    </p>
+                    <Watch />
+                </div>
                 <nav aria-label="Top" className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
                     <div className="border-b border-gray-200">
                         <div className="h-16 flex items-center">

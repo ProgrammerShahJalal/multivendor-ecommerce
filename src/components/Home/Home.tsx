@@ -22,7 +22,7 @@ export default function Home() {
     setTimeout(() => setLoading(false), 3000);
     if (loading) {
         return <img
-            src='http://rafcart.rslahmed.com/assets/images/preloader.gif' className="mx-auto" alt=""></img>
+            src='http://rafcart.rslahmed.com/assets/images/preloader.gif' className="mx-auto select-none" alt=""></img>
     }
 
     return (
