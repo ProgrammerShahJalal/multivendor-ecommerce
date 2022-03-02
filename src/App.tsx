@@ -51,7 +51,7 @@ function App() {
   const affiliateLink = window.location.search.split('=')[1]
   useLayoutEffect(() => {
     if (affiliateLink) {
-      fetch(`http://localhost:5000/findUrl/${affiliateLink}`)
+      fetch(`https://guarded-ocean-73313.herokuapp.com/findUrl/${affiliateLink}`)
         .then(res => res.json())
         .then(data => {
           if (data.isUrlTrue) {

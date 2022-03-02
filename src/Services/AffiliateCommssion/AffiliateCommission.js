@@ -3,7 +3,7 @@ export const affiliateCommission = (affiliateShortURL, price) => {
     // SET COMMISSION
     const earned = ((2 / 100) * (price / 100)).toFixed(2)
 
-    fetch(`http://localhost:5000/ref/`, {
+    fetch(`https://guarded-ocean-73313.herokuapp.com/ref/`, {
         method: 'PUT',
         headers: {
             'content-type': 'application/json'
