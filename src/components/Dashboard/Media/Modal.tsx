@@ -7,9 +7,6 @@ export default function Modal({ eventBubbling, handleUploadImages, showModal, se
 
     // console.log(images.target.files);
 
-
-
-
     useEffect(() => {
         fetch('https://guarded-ocean-73313.herokuapp.com/media')
             .then(res => res.json())
@@ -44,7 +41,7 @@ export default function Modal({ eventBubbling, handleUploadImages, showModal, se
                                 <div className=''>
                                     <div>
                                         <h1 className='text-2xl	font-bold mb-2'>Media Gallery</h1>
-                                        <div className='image-upload mb-5'>
+                                        {/* <div className='image-upload mb-5'>
                                             <form onSubmit={handleUploadImages}>
                                                 <label className='mt-1 flex justify-center px-6 pt-5 pb-6 border-2 border-gray-300 border-dashed rounded-md flex-col items-center bg-white'>
                                                     <div>
@@ -69,10 +66,10 @@ export default function Modal({ eventBubbling, handleUploadImages, showModal, se
                                                 </div>
                                             </form>
 
-                                        </div>
+                                        </div> */}
 
                                     </div>
-                                    <div className=" grid grid-cols-5 gap-2 mx-auto"  >
+                                    <div className=" grid grid-cols-5 gap-2 mx-auto gallery-images"  >
                                         {
                                             data?.map((order: any, idx: number) =>
                                                 Object.entries(order).map(

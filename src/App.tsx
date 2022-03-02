@@ -18,19 +18,44 @@ import Success from "./components/Success";
 import VendorShopPage from "./components/VenderShopPage/VenderShopPage";
 import VendorSidebar from "./components/VendorSidebar/VendorSidebar";
 import SpecialDeal from "./components/SpecialDeal/SpecialDeal";
-import Dashboard from "./components/Dashboard/Dashboard/Dashboard";
+
 import Media from "./components/Dashboard/Media/Media";
 import AddProduct from "./components/Dashboard/AddProduct/AddProduct";
-import DetailedOrder from "./components/Dashboard/DetailedOrder/DetailedOrder";
+import DetailedOrder from "./components/Dashboard/Order/DetailedOrder";
 import Categories from "./components/Dashboard/AddProduct/Sub/Categories/Categories";
 import Attributes from "./components/Dashboard/AddProduct/Sub/Attributes/Attributes";
 import DealDetails from "./components/SpecialDeal/DealDetails";
 import DetailBlogPage from "./components/Blogs/DetailBlogPage";
+import Affiliate from "./components/Dashboard/AffiliateDashboard/AffiliateDashboard/Affliate";
+import AffiliateLinks from "./components/Dashboard/AffiliateDashboard/AffiliateLinks/AffiliateLinks";
+import Dashboard from "./components/Dashboard/Dashboard/Dashboard";
+import { useLayoutEffect } from "react";
+import AllOrders from "./components/Dashboard/Order/allOrder";
+import Vendors from "./components/Dashboard/Vendors/Vendors";
+import VendorProfileDetails from "./components/Dashboard/Vendors/VendorsProfileDetails";
+import { SummaryBoxSpecial } from "./components/Dashboard/DashboardHome/DashboardHome";
+import Products from "./components/Dashboard/AddProduct/Sub/Products/Products";
+import Users from "./components/Dashboard/Users/Users";
+
+
+
 
 
 
 
 function App() {
+  const affiliateLink = window.location.search.split('=')[1]
+  useLayoutEffect(() => {
+    if (affiliateLink) {
+      fetch(`http://localhost:5000/findUrl/${affiliateLink}`)
+        .then(res => res.json())
+        .then(data => {
+          if (data.isUrlTrue) {
+            localStorage.setItem('affiliate_Link', JSON.stringify(affiliateLink));
+          }
+        })
+    }
+  })
 
   return (
     <div>
@@ -60,10 +85,20 @@ function App() {
             {/* DASHBOARD ROUTES */}
             <Route path="/dashboard" element={<Dashboard />} >
               <Route path="media" element={<Media />}></Route>
+
+
+              <Route path="affiliate-dashboard" element={<Affiliate />}></Route>
+              <Route path="affiliate-links" element={<AffiliateLinks />}></Route>
               <Route path="addProduct" element={<AddProduct />}></Route>
+              <Route path="orders" element={<AllOrders />}></Route>
               <Route path="order-details" element={<DetailedOrder />}></Route>
               <Route path="categories" element={<Categories />}></Route>
               <Route path="attributes" element={<Attributes />}></Route>
+              <Route path="products" element={<Products />}></Route>
+              <Route path="users" element={<Users />}></Route>
+
+              <Route path="vendors" element={<Vendors />}></Route>
+              <Route path="vendor-profile" element={<VendorProfileDetails />}></Route>
             </Route>
           </Routes>
           <Footer />
