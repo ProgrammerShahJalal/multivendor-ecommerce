@@ -26,14 +26,6 @@ import Categories from "./components/Dashboard/AddProduct/Sub/Categories/Categor
 import Attributes from "./components/Dashboard/AddProduct/Sub/Attributes/Attributes";
 import DealDetails from "./components/SpecialDeal/DealDetails";
 import DetailBlogPage from "./components/Blogs/DetailBlogPage";
-<<<<<<< HEAD
-import MenProductsDetail from "./components/MenProductDetail";
-import WomenProductDetail from "./components/WomenProductDetail";
-import KidsProductDetails from "./components/KidsProductDetails";
-
-
-function App() {
-=======
 import Affiliate from "./components/Dashboard/AffiliateDashboard/AffiliateDashboard/Affliate";
 import AffiliateLinks from "./components/Dashboard/AffiliateDashboard/AffiliateLinks/AffiliateLinks";
 import Dashboard from "./components/Dashboard/Dashboard/Dashboard";
@@ -44,6 +36,10 @@ import VendorProfileDetails from "./components/Dashboard/Vendors/VendorsProfileD
 import { SummaryBoxSpecial } from "./components/Dashboard/DashboardHome/DashboardHome";
 import Products from "./components/Dashboard/AddProduct/Sub/Products/Products";
 import Users from "./components/Dashboard/Users/Users";
+import MenProductsDetail from './components/MenProductDetail';
+import WomenProductDetail from './components/WomenProductDetail';
+import KidsProductDetails from './components/KidsProductDetails';
+
 
 
 
@@ -65,7 +61,6 @@ function App() {
     }
   })
 
->>>>>>> 57640481e83930698ff7295f31083cdec32f6cdb
   return (
     <div>
       <AuthProvider>
