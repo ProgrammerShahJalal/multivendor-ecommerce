@@ -3,7 +3,7 @@ import { ToastContainer, toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 
 function Notify() {
-    let customId = "custom-id-yes";
+    let customId = "success1";
 
     let notify = () => {
         toast("What's Up!", {

@@ -35,8 +35,8 @@ export default function Home() {
             <TopBanner />
             <SpecialDeal />
             <BannerGadget />
-            <PaginatedHome />
-            {/* <HomeProducts /> */}
+            {/* <PaginatedHome /> */}
+            <HomeProducts />
             <BottomBanner />
             {/* <Reviews /> */}
             <Brands />

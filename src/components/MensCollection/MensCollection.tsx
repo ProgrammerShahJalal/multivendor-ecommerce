@@ -77,7 +77,7 @@ const MensCollection = () => {
                                     <div className="text-xs text-gray-500 ml-3">(1)</div>
                                 </div>
                             </div>
-                            <Link to={`/productDetails/${product._id}`}>
+                            <Link to={`/productDetails/men/${product._id}`}>
                                 <button className='block w-full py-1 text-center top-5 text-white bg-indigo-500 border border-indigo-500 rounded-b hover:bg-transparent hover:text-indigo-500 transition'>Add to Cart</button>
                             </Link>
                         </div>
