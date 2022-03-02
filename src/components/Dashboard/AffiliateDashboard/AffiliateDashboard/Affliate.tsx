@@ -28,7 +28,7 @@ const Affiliate = () => {
     const [data, setData] = useState()
 
     useEffect(() => {
-        fetch('http://localhost:5000/ref/updates')
+        fetch('https://guarded-ocean-73313.herokuapp.com/ref/updates')
             .then(res => res.json())
             .then(data => {
                 const filter = data.filter(link => link.affiliateUser === user.email)
@@ -42,7 +42,7 @@ const Affiliate = () => {
 
     useEffect(() => {
 
-        fetch(`http://localhost:5000/shortUrls`)
+        fetch(`https://guarded-ocean-73313.herokuapp.com/shortUrls`)
             .then(res => res.json())
             .then(data => {
                 const userAffiliate = data.filter(link => link.affiliateUser === user.email)
@@ -56,7 +56,7 @@ const Affiliate = () => {
     useEffect(() => {
         if (loadings) {
             setLoadings(true)
-            fetch(`http://localhost:5000/shortUrls`)
+            fetch(`https://guarded-ocean-73313.herokuapp.com/shortUrls`)
                 .then(res => res.json())
                 .then(data => {
                     const userAffiliate = data.filter(link => link.affiliateUser === user.email)
