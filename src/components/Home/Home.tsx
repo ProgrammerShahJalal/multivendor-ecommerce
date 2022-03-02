@@ -13,13 +13,12 @@ import BannerGadget from '../Pages/BannerGadget/BannerGadget';
 import Brands from '../Pages/Brands/Brands';
 import MessengerCustomerChat from 'react-messenger-customer-chat';
 import Notify from '../Notify/Notify';
-import PaginatedHome from '../Pages/PaginatedItems/PginatedHome';
 // import Reviews from '../Pages/Reviews/Reviews';
 
 
 
 export default function Home() {
-    
+
     const [loading, setLoading] = useState(true);
     setTimeout(() => setLoading(false), 3000);
     if (loading) {
@@ -29,7 +28,7 @@ export default function Home() {
 
     return (
         <div>
-            
+
             <Banners />
             <Notify />
             <TopBanner />
