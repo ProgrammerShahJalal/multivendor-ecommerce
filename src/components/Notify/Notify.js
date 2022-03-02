@@ -32,7 +32,7 @@ function Notify() {
 
     }
 
-    setInterval(Updating, 17000);
+    setInterval(Updating, 25000);
 
     return (
         <div>
