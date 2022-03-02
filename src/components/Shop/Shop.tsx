@@ -6,6 +6,7 @@ import ProductSearchBar from '../Pages/ProductSearchBar/ProductSearchBar';
 
 
 export default function Shop() {
+
     const [loading, setLoading] = useState(true);
     setTimeout(() => setLoading(false), 3000);
     if (loading) {

@@ -28,11 +28,13 @@ export default function Home() {
 
     return (
         <div>
+
             <Banners />
             <Notify />
             <TopBanner />
             <SpecialDeal />
             <BannerGadget />
+            {/* <PaginatedHome /> */}
             <HomeProducts />
             <BottomBanner />
             {/* <Reviews /> */}

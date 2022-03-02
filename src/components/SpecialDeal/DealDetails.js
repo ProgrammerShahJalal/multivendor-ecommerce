@@ -1,13 +1,14 @@
 import React, { useEffect, useState } from 'react';
 import { useParams } from 'react-router-dom';
-import { SwiperSlide, Swiper } from 'swiper/react';
+
 import UseAuth from '../../hooks/UseAuth';
-import { FreeMode, Navigation, Thumbs } from "swiper";
+import  { FreeMode, Navigation, Thumbs } from "swiper";
 import "swiper/css";
 import "swiper/css/free-mode";
 import "swiper/css/navigation";
 import "swiper/css/thumbs";
 import Magnifier from "react-magnifier";
+import { SwiperSlide, Swiper } from 'swiper/react';
 
 
 const DealDetails = () => {

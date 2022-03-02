@@ -47,7 +47,7 @@ const Success = () => {
                         <div className='w-96 mx-auto'>
                             <div className='grid grid-cols-1'>
                                 <PaymentLottie />
-                                <img className='w-72 lg:w-80' src={orders.product_image} alt="" />
+                                <img className='w-72 lg:w-80' src={orders.product_image2} alt="" />
                             </div>
                             <div className="mt-2 text-base">
                                 <p className="w-72 text-lg leading-6 font-medium text-gray-900"><span className='text-indigo-600 font-semi-bold'>Product Name:</span> {orders.product_name}</p>

@@ -1,18 +1,25 @@
-import { Box, CircularProgress, Rating } from "@mui/material";
+import { Box, CircularProgress, Fade, Modal, Rating } from "@mui/material";
+import ProductView from "../../ProductView/ProductView";
+import ProductViewSm from "../../ProductView/ProductViewSm";
+import {useState} from 'react';
 
 
 const PaginatedProducts = ({ product, isLoading }: any) => {
 
+    const [selectedProduct, setSelectedProduct] = useState<any>()
+    const [open, setOpen] = useState(false);
+    const handleOpen = (products) => {
+        setSelectedProduct(products)
+        setOpen(true)
 
+    };
+    const handleClose = () => setOpen(false);
     return (
         <div className="container px-10 pb-16 pt-5">
             <div className="grid place-content-center lg:grid-cols-4 md:grid-cols-3 grid-cols-1 gap-6 ">
                 {
                     isLoading ?
-                        // <Box sx={{ display: 'flex', mx: 'auto', color: 'secondary' }}>
-                        //     <CircularProgress  />
-                        // </Box>
-                        <CircularProgress color="success" />
+                        <CircularProgress className="mx-auto" color="success" />
                         : product?.map((pd: any) => (
                             <div className="bg-white shadow-inner overflow-hidden single-card group">
                                 <div className="relative">
@@ -21,9 +28,9 @@ const PaginatedProducts = ({ product, isLoading }: any) => {
                                         <img src={pd.img} className='w-full hoverImg transition object-cover' alt="" />
                                     </div>
                                     <div className="absolute inset-0 bg-black bg-opacity-40 flex items-center justify-center gap-2 opacity-0 group-hover:opacity-100 transition">
-                                        <a className='text-white text-lg w-9 h-8 rounded-full bg-indigo-500 flex items-center justify-center hover:bg-gray-800 transition' href="/">
+                                        <button onClick={() => handleOpen(product)} className='text-white text-lg w-9 h-8 rounded-full bg-indigo-500 flex items-center justify-center hover:bg-gray-800 transition'>
                                             <i className="fa-regular fa-magnifying-glass"></i>
-                                        </a>
+                                        </button>
                                         <a className='text-white text-lg w-9 h-8 rounded-full bg-indigo-500 flex items-center justify-center hover:bg-gray-800 transition' href="/">
                                             <i className="fa-regular fa-heart"></i>
                                         </a>
@@ -48,6 +55,22 @@ const PaginatedProducts = ({ product, isLoading }: any) => {
                             </div>
                         ))}
             </div>
+            <div className='px-3 mx-auto text-center'>
+                <Modal
+                    open={open}
+                >
+                    <Fade in={open}>
+                        <Box>
+                            <div className='md:block mx-auto px-1 lg:block hidden'>
+                                <ProductView handleClose={handleClose} selectedProduct={selectedProduct} />
+                            </div>
+                            <div className='md:hidden lg:hidden block'>
+                                <ProductViewSm selectedProduct={selectedProduct} />
+                            </div>
+                        </Box>
+                    </Fade>
+                </Modal>
+                </div>
         </div>
     );
 };
