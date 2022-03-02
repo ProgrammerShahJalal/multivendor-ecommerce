@@ -149,7 +149,7 @@ function Dashboard() {
                             <span className="link_name">Logout</span>
                         </Link>
                         <ul onClick={() => logout()} className="sub-menu blank">
-                            <li><Link className="link_name" to="/">Users</Link></li>
+                            <li><Link className="link_name" to="/">Logout</Link></li>
                         </ul>
                     </li>
 
