@@ -2,7 +2,6 @@ import React, { useState } from 'react'
 import './Home.css';
 import TopBanner from '../TopBanner/TopBanner';
 import BottomBanner from '../BottomBanner/BottomBanner';
-import Blogs from '../Blogs/Blogs';
 import Banners from '../Pages/Banner/Banner';
 import { Faq } from '../FAQ/FAQ';
 import HomeProducts from '../HomeProducts/HomeProducts';
@@ -13,6 +12,7 @@ import BannerGadget from '../Pages/BannerGadget/BannerGadget';
 import Brands from '../Pages/Brands/Brands';
 import MessengerCustomerChat from 'react-messenger-customer-chat';
 import Notify from '../Notify/Notify';
+import PaginatedBlogsHome from '../Pages/PaginatedBlogsItems/PaginatedBlogsHome';
 // import Reviews from '../Pages/Reviews/Reviews';
 
 
@@ -28,7 +28,6 @@ export default function Home() {
 
     return (
         <div>
-
             <Banners />
             <Notify />
             <TopBanner />
@@ -40,7 +39,7 @@ export default function Home() {
             {/* <Reviews /> */}
             <Brands />
             <BannerPro />
-            <Blogs />
+            <PaginatedBlogsHome />
             <Faq />
             <ScrollToTop style={{ display: 'flex', alignItems: 'center', justifyContent: 'center', left: 15, bottom: 110, backgroundColor: '#7209b7' }} smooth color='#ffffff' top={20} height="28" viewBox="0 0 256 256" />
             <MessengerCustomerChat

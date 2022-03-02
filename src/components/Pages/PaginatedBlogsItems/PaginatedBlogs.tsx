@@ -1,5 +1,4 @@
 import React from 'react';
-// import Blog from './Blog';
 import { Link } from 'react-router-dom'
 
 const PaginatedBlogs = ({ blogs, isLoading }: any) => {
@@ -111,24 +110,24 @@ const PaginatedBlogs = ({ blogs, isLoading }: any) => {
                 {
                     isLoading ? "Loading..." : blogs?.map((blog: any) => (
                         <div>
-                            {/* <Link to={`/blogs/details/${blog._id}`}> */}
-                            <div className="max-w-md mx-auto bg-white rounded-xl shadow-md overflow-hidden md:max-w-2xl">
-                                <div className="md:flex">
-                                    <div className="md:shrink-0">
-                                        <img className="h-48 w-full object-cover md:h-full md:w-48" src={blog.img} alt="Man looking at item at a store" />
-                                    </div>
-                                    <div className="p-8">
-                                        <div className="uppercase tracking-wide text-sm text-indigo-500 font-semibold">Category: {blog.category}</div>
-                                        {/* <Link to={`/blogs/details/${blog._id}`} className="block mt-1 text-lg leading-tight font-medium text-black hover:underline truncate w-96">{blog.title}</Link> */}
-                                        <p className="mt-2 py-3 text-slate-500 w-96 h-18">{blog.description?.slice(0, 80)}...</p>
-                                        <div className="flex gap-4">
-                                            <h3 className='text-sm text-purple-700 font-semibold'>Posted by {blog.author}</h3>
-                                            <h3 className='text-sm text-fuchsia-600 font-semibold'>Date: {blog.date}</h3>
+                            <Link to={`/blogs/details/${blog._id}`}>
+                                <div className="max-w-md mx-auto bg-white rounded-xl shadow-md overflow-hidden md:max-w-2xl">
+                                    <div className="md:flex">
+                                        <div className="md:shrink-0">
+                                            <img className="h-48 w-full object-cover md:h-full md:w-48" src={blog.img} alt="Man looking at item at a store" />
+                                        </div>
+                                        <div className="p-8">
+                                            <div className="uppercase tracking-wide text-sm text-indigo-500 font-semibold">Category: {blog.category}</div>
+                                            <Link to={`/blogs/details/${blog._id}`} className="block mt-1 text-lg leading-tight font-medium text-black hover:underline truncate w-96">{blog.title}</Link>
+                                            <p className="mt-2 py-3 text-slate-500 w-96 h-18">{blog.description?.slice(0, 80)}...</p>
+                                            <div className="flex gap-4">
+                                                <h3 className='text-sm text-purple-700 font-semibold'>Posted by {blog.author}</h3>
+                                                <h3 className='text-sm text-fuchsia-600 font-semibold'>Date: {blog.date}</h3>
+                                            </div>
                                         </div>
                                     </div>
                                 </div>
-                            </div>
-                            {/* </Link> */}
+                            </Link>
                         </div>
                     ))
                 }
@@ -138,5 +137,4 @@ const PaginatedBlogs = ({ blogs, isLoading }: any) => {
 
     );
 };
-{/* <Blog key={blog._id} blog={blog}></Blog> */ }
 export default PaginatedBlogs;
