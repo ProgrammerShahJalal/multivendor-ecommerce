@@ -12,6 +12,8 @@ import ScrollToTop from "react-scroll-to-top";
 import BannerGadget from '../Pages/BannerGadget/BannerGadget';
 import Brands from '../Pages/Brands/Brands';
 import MessengerCustomerChat from 'react-messenger-customer-chat';
+import Notify from '../Notify/Notify';
+import PaginatedHome from '../Pages/PaginatedItems/PginatedHome';
 // import Reviews from '../Pages/Reviews/Reviews';
 
 
@@ -29,17 +31,19 @@ export default function Home() {
         <div>
             
             <Banners />
+            <Notify />
             <TopBanner />
             <SpecialDeal />
             <BannerGadget />
-            <HomeProducts />
+            <PaginatedHome />
+            {/* <HomeProducts /> */}
             <BottomBanner />
             {/* <Reviews /> */}
             <Brands />
             <BannerPro />
             <Blogs />
             <Faq />
-            <ScrollToTop style={{ display: 'flex', alignItems: 'center', justifyContent: 'center', left: 15, backgroundColor: '#7209b7' }} smooth color='#ffffff' top={20} height="28" viewBox="0 0 256 256" />
+            <ScrollToTop style={{ display: 'flex', alignItems: 'center', justifyContent: 'center', left: 15, bottom: 110, backgroundColor: '#7209b7' }} smooth color='#ffffff' top={20} height="28" viewBox="0 0 256 256" />
             <MessengerCustomerChat
                 pageId="104774475481224"
                 appId=" 1107053396762800"

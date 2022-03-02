@@ -9,7 +9,7 @@ export interface IAppProps {
 export default class App extends React.PureComponent<IAppProps> {
   public render() {
     return (
-      <div className='min-h-screen pb-3 text-center'>
+      <div className='min-h-screen pb-3 text-center bg-slate-100'>
         <div className='lg:inset-y-0 lg:w-1/2 mx-auto'>
           <NotFoundLottie />
         </div>
