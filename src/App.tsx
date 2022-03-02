@@ -39,6 +39,7 @@ import Users from "./components/Dashboard/Users/Users";
 import MenProductsDetail from './components/MenProductDetail';
 import WomenProductDetail from './components/WomenProductDetail';
 import KidsProductDetails from './components/KidsProductDetails';
+import Promo from './components/Promo/Promo';
 
 
 
@@ -71,6 +72,7 @@ function App() {
             <Route path='/home' element={<Home />} />
             <Route path='/contact' element={<Contact />} />
             <Route path='/about' element={<About />} />
+            <Route path='/offer' element={<Promo />} />
             <Route path='/specialDeal' element={<SpecialDeal />} />
             <Route path='/productDetails/men/:id' element={<MenProductsDetail />} />
             <Route path='/productDetails/women/:id' element={<WomenProductDetail />} />
