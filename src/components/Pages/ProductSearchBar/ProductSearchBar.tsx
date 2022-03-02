@@ -30,14 +30,15 @@ const ProductSearchBar: React.FunctionComponent = () => {
 
     // console.log(products);
     const [productList, setProductList] = useState<any>();
-    const [text, setText] = useState<string>('');
 
     const handleOnChange = (event: any) => {
-        // setText(event.target.value);
         const searchText = event.target.value.toLowerCase();
         const findProduct: any = products && products.length > 0 ? products?.filter(p => p?.title.toLowerCase().includes(searchText)) : undefined;
         setProductList(findProduct);
-        console.log(findProduct, "Product");
+        // console.log(findProduct, "Product");
+        if (searchText === "") {
+            setProductList("");
+        }
     }
 
     return (
