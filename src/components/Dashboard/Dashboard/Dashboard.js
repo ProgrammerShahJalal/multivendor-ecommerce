@@ -50,7 +50,7 @@ function Dashboard() {
                     </li>
                     <li>
                         <Link to={`/dashboard/media`}>
-                            <i className='bx bx-grid-alt'></i>
+                        <i className="fa-regular fa-folder-image"></i>
                             <span className="link_name">Media</span>
                         </Link>
                         <ul className="sub-menu blank">
@@ -74,9 +74,11 @@ function Dashboard() {
 
                     </li> */}
                     <li onClick={subMenuToggle} className="">
+                    
                         <div className="iocn-link">
                             <Link to={`/dashboard/affiliate-dashboard`}>
-                                <i className='bx bx-collection'></i>
+                            <i className="fa-regular fa-link"></i>
+                                {/* <i className='bx bx-collection'></i> */}
                                 <span className="link_name">Affiliate</span>
                             </Link>
                             <i className='bx bxs-chevron-down arrow'></i>
@@ -101,7 +103,7 @@ function Dashboard() {
                     <li onClick={subMenuToggle} className="">
                         <div className="iocn-link">
                             <Link to={`/dashboard/products`}>
-                                <i className='bx bx-collection'></i>
+                            <i className="fa-regular fa-shirt"></i>
                                 <span className="link_name">Products</span>
                             </Link>
                             <i className='bx bxs-chevron-down arrow'></i>
@@ -118,7 +120,7 @@ function Dashboard() {
                     </li>
                     <li >
                         <Link to={`/dashboard/orders`}>
-                            <i className='bx bx-pie-chart-alt-2'></i>
+                        <i className="fa-regular fa-arrow-up-square-triangle"></i>
                             <span className="link_name">Orders</span>
                         </Link>
                         <ul className="sub-menu blank">
@@ -127,7 +129,7 @@ function Dashboard() {
                     </li>
                     <li >
                         <Link to={`/dashboard/vendors`}>
-                            <i className='bx bx-pie-chart-alt-2'></i>
+                        <i className="fa-light fa-screen-users"></i>
                             <span className="link_name">Vendors</span>
                         </Link>
                         <ul className="sub-menu blank">
@@ -136,7 +138,7 @@ function Dashboard() {
                     </li>
                     <li >
                         <Link to={`/dashboard/users`}>
-                            <i className='bx bx-pie-chart-alt-2'></i>
+                        <i className="fa-light fa-users"></i>
                             <span className="link_name">Users</span>
                         </Link>
                         <ul className="sub-menu blank">
@@ -149,7 +151,7 @@ function Dashboard() {
                             <span className="link_name">Logout</span>
                         </Link>
                         <ul onClick={() => logout()} className="sub-menu blank">
-                            <li><Link className="link_name" to="/">Users</Link></li>
+                            <li><Link className="link_name" to="/">Logout</Link></li>
                         </ul>
                     </li>
 

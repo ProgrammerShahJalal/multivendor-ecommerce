@@ -39,6 +39,7 @@ import Users from "./components/Dashboard/Users/Users";
 import MenProductsDetail from './components/MenProductDetail';
 import WomenProductDetail from './components/WomenProductDetail';
 import KidsProductDetails from './components/KidsProductDetails';
+import Promo from './components/Promo/Promo';
 
 
 
@@ -51,7 +52,7 @@ function App() {
   const affiliateLink = window.location.search.split('=')[1]
   useLayoutEffect(() => {
     if (affiliateLink) {
-      fetch(`http://localhost:5000/findUrl/${affiliateLink}`)
+      fetch(`https://guarded-ocean-73313.herokuapp.com/findUrl/${affiliateLink}`)
         .then(res => res.json())
         .then(data => {
           if (data.isUrlTrue) {
@@ -71,6 +72,7 @@ function App() {
             <Route path='/home' element={<Home />} />
             <Route path='/contact' element={<Contact />} />
             <Route path='/about' element={<About />} />
+            <Route path='/offer' element={<Promo />} />
             <Route path='/specialDeal' element={<SpecialDeal />} />
             <Route path='/productDetails/men/:id' element={<MenProductsDetail />} />
             <Route path='/productDetails/women/:id' element={<WomenProductDetail />} />
@@ -90,7 +92,7 @@ function App() {
             <Route path='*' element={<NotFound />} />
 
             {/* DASHBOARD ROUTES */}
-            <Route path="/dashboard" element={<Dashboard />} >
+            <Route path="/dashboard" element={<PrivateRoute><Dashboard /></PrivateRoute>} >
               <Route path="media" element={<Media />}></Route>
 
 
