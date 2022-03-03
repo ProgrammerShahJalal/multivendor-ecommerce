@@ -6,6 +6,8 @@ import Fade from '@mui/material/Fade';
 import ProductViewSm from '../ProductView/ProductViewSm';
 import ProductView from '../ProductView/ProductView';
 import { Link } from 'react-router-dom';
+
+
 interface ProductState {
     products: {
         title: string

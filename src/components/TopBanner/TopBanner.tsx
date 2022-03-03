@@ -1,9 +1,9 @@
 import './TopBanner.css';
 import React, { PureComponent } from 'react';
 import { Link } from 'react-router-dom';
-// type Props = {}
+type Props = {}
 
-export default class TopBanner extends PureComponent {
+export default class TopBanner extends PureComponent<Props> {
 	render() {
 		return (
 			<section className="small-banner z-0">

@@ -1,5 +1,4 @@
 import React, { useState } from 'react'
-// import './Home.css';
 import TopBanner from '../TopBanner/TopBanner';
 import BottomBanner from '../BottomBanner/BottomBanner';
 import Banners from '../Pages/Banner/Banner';
@@ -41,12 +40,8 @@ export default function Home() {
             <BannerPro />
             <PaginatedBlogsHome />
             <Faq />
-<<<<<<< HEAD
-            <ScrollToTop style={{ display: 'flex', alignItems: 'center', justifyContent: 'center', left: 15, bottom: 210, backgroundColor: '#7209b7' }} smooth color='#ffffff' top={20} height="28" viewBox="0 0 256 256" />
-=======
             <Alan />
             <ScrollToTop style={{ display: 'flex', alignItems: 'center', justifyContent: 'center', left: 15, backgroundColor: '#7209b7' }} smooth color='#ffffff' top={20} height="28" viewBox="0 0 256 256" />
->>>>>>> 622b0a3d786aed235b15abd4ee5d866daa49eb34
             <MessengerCustomerChat
                 pageId="104774475481224"
                 appId=" 1107053396762800"
