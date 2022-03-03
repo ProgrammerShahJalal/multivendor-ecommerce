@@ -6,14 +6,7 @@ import { FreeMode, Navigation, Thumbs } from "swiper";
 import Magnifier from "react-magnifier";
 
 const SingleProduct = () => {
-<<<<<<< HEAD
-    const { kidsId } = useParams();
-
-
-    //    kids 
-=======
     const { id } = useParams();
->>>>>>> 714468f76eaa65acd53adbf2934679ab207a711e
     const [productsDetails, setProductsDetails] = useState<any>([])
     const [isLoading, setIsLoading] = useState<boolean>(false)
 

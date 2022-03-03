@@ -63,7 +63,7 @@ function Notify() {
                 pauseOnFocusLoss
                 draggable
                 pauseOnHover
-                limit={2}
+                limit={1}
             />
         </div>
     );
