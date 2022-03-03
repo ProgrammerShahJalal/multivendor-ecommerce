@@ -12,6 +12,8 @@ import Brands from '../Pages/Brands/Brands';
 import MessengerCustomerChat from 'react-messenger-customer-chat';
 import Notify from '../Notify/Notify';
 import PaginatedBlogsHome from '../Pages/PaginatedBlogsItems/PaginatedBlogsHome';
+import Products from '../Products/Products';
+
 // import Reviews from '../Pages/Reviews/Reviews';
 import Alan from './Alan-AI/Alan';
 
@@ -28,12 +30,14 @@ export default function Home() {
 
     return (
         <div>
+
             <Banners />
             <Notify />
             <TopBanner />
             <SpecialDeal />
             <BannerGadget />
-            <HomeProducts />
+            {/* <HomeProducts /> */}
+            <Products />
             <BottomBanner />
             {/* <Reviews /> */}
             <Brands />
