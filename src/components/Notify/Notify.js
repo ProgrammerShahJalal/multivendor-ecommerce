@@ -27,7 +27,7 @@ function Notify() {
                 pauseOnFocusLoss: false
             }, {
                 toastId: customId
-            },
+            }, { delay: 10000 },
                 {
                     theme: "dark"
                 });
@@ -35,12 +35,12 @@ function Notify() {
                 pauseOnFocusLoss: false
             }, {
                 toastId: customId
-            }, { delay: 10000 }, {
+            }, { delay: 32000 }, {
                 theme: "dark"
             });
             toast('Visit Our Special Deal', {
                 pauseOnFocusLoss: false
-            }, { delay: 6000 },
+            }, { delay: 56000 },
                 { toastId: customId }, {
                 theme: "dark"
             });

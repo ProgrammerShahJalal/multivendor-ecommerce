@@ -122,7 +122,7 @@ const PaginatedBlogs = ({ blogs, isLoading }: any) => {
                                             <p className="mt-2 py-3 text-slate-500 w-96 h-18">{blog.description?.slice(0, 80)}...</p>
                                             <div className="flex gap-4">
                                                 <h3 className='text-sm text-purple-700 font-semibold'>Posted by {blog.author}</h3>
-                                                <h3 className='text-sm text-fuchsia-600 font-semibold'>Date: {blog.date}</h3>
+                                                <h3 className='text-sm text-fuchsia-600 font-semibold'>Last Updated: {new Date().toLocaleDateString()}</h3>
                                             </div>
                                         </div>
                                     </div>

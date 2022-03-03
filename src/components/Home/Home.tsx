@@ -1,5 +1,5 @@
 import React, { useState } from 'react'
-import './Home.css';
+// import './Home.css';
 import TopBanner from '../TopBanner/TopBanner';
 import BottomBanner from '../BottomBanner/BottomBanner';
 import Banners from '../Pages/Banner/Banner';

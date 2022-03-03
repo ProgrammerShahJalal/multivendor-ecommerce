@@ -7,8 +7,6 @@ const SingleProduct = () => {
     const { kidsId } = useParams();
 
 
-
-
     //    kids 
     const [productsDetails, setProductsDetails] = useState<any>([])
     useEffect(() => {

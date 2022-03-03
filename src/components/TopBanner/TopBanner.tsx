@@ -1,9 +1,9 @@
+import './TopBanner.css';
 import React, { PureComponent } from 'react';
-import './TopBanner.css'
 import { Link } from 'react-router-dom';
-type Props = {}
+// type Props = {}
 
-export default class TopBanner extends PureComponent<Props> {
+export default class TopBanner extends PureComponent {
 	render() {
 		return (
 			<section className="small-banner z-0">
@@ -17,7 +17,7 @@ export default class TopBanner extends PureComponent<Props> {
 								data-aos-duration="3000">
 								<div className='lg:pl-24'>
 									<img className='main-img' style={{ height: '205px', width: '180px', marginTop: '50px', paddingRight: '20px' }} src='https://i.ibb.co/zmwwmbz/nike.png' alt="/"></img>
-									<img className='hover-img' style={{ height: '205px', width: '180px', marginTop: '50px', paddingRight: '20px' }} src='https://i.ibb.co/By6d11S/nike.png' alt="/"></img>
+									<img className='hovering-img' style={{ height: '205px', width: '180px', marginTop: '50px', paddingRight: '20px' }} src='https://i.ibb.co/By6d11S/nike.png' alt="/"></img>
 								</div>
 								<div className="content">
 									<h4><b>Nike Shoes</b></h4>
@@ -34,7 +34,7 @@ export default class TopBanner extends PureComponent<Props> {
 								data-aos-duration="3000">
 								<div className='lg:pl-20'>
 									<img className='main-img' style={{ height: '225px', width: '200px', paddingRight: '20px' }} src='https://i.ibb.co/Dp4BGfc/ps5.png' alt="/"></img>
-									<img className='hover-img' style={{ height: '205px', width: '170px' }} src='https://i.ibb.co/2NsD1XC/ps5-side.png' alt="/"></img>
+									<img className='hovering-img' style={{ height: '205px', width: '170px' }} src='https://i.ibb.co/2NsD1XC/ps5-side.png' alt="/"></img>
 								</div>
 								<div className="content">
 									<h4><b>Sony Ps5</b></h4>
@@ -51,7 +51,7 @@ export default class TopBanner extends PureComponent<Props> {
 								data-aos-duration="3000">
 								<div className='lg:pl-24'>
 									<img className='main-img' style={{ height: '250px', width: '150px' }} src='https://i.ibb.co/4Mcdtv4/bag.webp' alt="/"></img>
-									<img className='hover-img' style={{ height: '250px', width: '150px' }} src='https://i.ibb.co/KrpcY8B/bag-back.webp' alt="/"></img>
+									<img className='hovering-img' style={{ height: '250px', width: '150px' }} src='https://i.ibb.co/KrpcY8B/bag-back.webp' alt="/"></img>
 								</div>
 								<div className="content">
 									<h4><b>Stylish Backpack</b></h4>

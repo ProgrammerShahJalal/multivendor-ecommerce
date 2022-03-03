@@ -15,7 +15,7 @@ const BlogDetails = () => {
             })
     }, [id])
 
-    const { title, img, description, date, author } = blogDetails[0] || {};
+    const { title, img, description, author } = blogDetails[0] || {};
 
 
 
@@ -24,9 +24,9 @@ const BlogDetails = () => {
             <div className="md:shrink-0 rounded-xl shadow-lg p-5 bg-white">
                 <img className="h-auto w-full object-cover md:h-full md:w-full rounded-md" src={img} alt='' />
                 <h2 className='text-2xl font font-bold tracking-tight text-gray-900 sm:text-2xl text-center my-5'>{title}</h2>
-                <div className='flex justify-around items-center'>
-                    <p className="font-bold mt-2 text-cyan-900">Posted by: {author}</p>
-                    <p className="font-bold mt-2 text-purple-900">Date: {date}</p>
+                <div className='flex justify-around items-center mb-5'>
+                    <p className="font-semi-bold mt-2 text-cyan-900">Posted by: {author}</p>
+                    <p className="font-semi-bold mt-2 text-purple-900">Last Updated: {new Date().toLocaleDateString()}</p>
                 </div>
                 <div>
                     <p className='text-justify select-none'>

@@ -1,7 +1,7 @@
-.hover-img{
+.hovering-img{
     display: none;
 }
-.sngle-banner:hover .hover-img{
+.sngle-banner:hover .hovering-img{
     display: block;
 }
 .sngle-banner:hover .main-img{
