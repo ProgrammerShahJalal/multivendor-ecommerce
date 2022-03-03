@@ -4,10 +4,7 @@ import RelatedProducts from '../RelatedProducts/RelatedProducts';
 import { Swiper, SwiperSlide } from "swiper/react";
 import { FreeMode, Navigation, Thumbs } from "swiper";
 import Magnifier from "react-magnifier";
-import "swiper/css";
-import "swiper/css/free-mode";
-import "swiper/css/navigation";
-import "swiper/css/thumbs";
+
 const SingleProduct = () => {
     const { id } = useParams();
     const [productsDetails, setProductsDetails] = useState<any>([])
@@ -48,14 +45,13 @@ const SingleProduct = () => {
 
                                             loop={true}
                                             spaceBetween={10}
-
-                                            thumbs={{ swiper: thumbsSwiper }}
+                                            // thumbs={{ swiper: thumbsSwiper }}
                                             modules={[FreeMode, Navigation, Thumbs]}
                                             className="mySwiper2"
                                         >
-                                            {product.images.map(({ src }: { src: string }) => {
+                                            {product?.images.map(({ src }: { src: string }) => {
                                                 return <SwiperSlide style={{ height: '500px', width: '300px' }}>
-                                                    <img src={src} alt={product.title} />
+                                                    <img src={src} alt={product?.title} />
                                                 </SwiperSlide>
 
                                             })}
@@ -70,9 +66,9 @@ const SingleProduct = () => {
                                             modules={[FreeMode, Navigation, Thumbs]}
                                             className="mySwiper mt-4"
                                         >
-                                            {product.images.map(({ src }: { src: string }) => {
+                                            {product?.images.map(({ src }: { src: string }) => {
                                                 return <SwiperSlide style={{ height: '100px', width: '100px' }} >
-                                                    <img src={src} alt={product.title} />
+                                                    <img src={src} alt={product?.title} />
                                                 </SwiperSlide>
 
                                             })}
