@@ -22,7 +22,7 @@ export default class TopBanner extends PureComponent<Props> {
 								<div className="content">
 									<h4><b>Nike Shoes</b></h4>
 									<h3>Premium<span className="top-span"> Black</span><br />Up to<span className='top-span'> 30%</span> <span className='text-red-700'>Off</span></h3>
-									<Link to="/">Shop Now</Link>
+									<Link to="/shop">Shop Now</Link>
 								</div>
 
 							</div>
@@ -39,7 +39,7 @@ export default class TopBanner extends PureComponent<Props> {
 								<div className="content">
 									<h4><b>Sony Ps5</b></h4>
 									<h3>Premium <span className='top-span'>edition</span> <br /> up to <span className='top-span'> 10%</span> <span className='text-red-700'>Off</span></h3>
-									<Link to="/">Shop Now</Link>
+									<Link to="/shop">Shop Now</Link>
 								</div>
 
 							</div>
@@ -56,7 +56,7 @@ export default class TopBanner extends PureComponent<Props> {
 								<div className="content">
 									<h4><b>Stylish Backpack</b></h4>
 									<h3>Super <span className='top-span'>Comfort</span> <br /> up to <span className='top-span'> 10%</span> <span className='text-red-700'>Off</span></h3>
-									<Link to="/">Shop Now</Link>
+									<Link to="/shop">Shop Now</Link>
 								</div>
 
 							</div>

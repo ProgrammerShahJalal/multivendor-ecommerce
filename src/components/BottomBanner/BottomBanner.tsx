@@ -1,5 +1,6 @@
 /* eslint-disable react-hooks/rules-of-hooks */
 import React, { PureComponent } from 'react';
+import { Link } from 'react-router-dom';
 import './BottomBanner.css';
 
 type Props = {}
@@ -45,7 +46,7 @@ export default class BottomBanner extends PureComponent<Props> {
 									<div className="content">
 										<h5>Xbox Microsoft Edition</h5>
 										<h3>Color: <span className="span">White</span><br />Up to<span className='span'> 30%</span></h3>
-										<a href="/">Shop Now</a>
+										<Link to="/shop">Shop Now</Link>
 									</div>
 								</div>
 							</div>
@@ -57,7 +58,7 @@ export default class BottomBanner extends PureComponent<Props> {
 									<div className="content">
 										<h5>Sony Ps5</h5>
 										<h3>Premium <span className='span'>edition</span> <br /> up to <span className='span'> 10%</span></h3>
-										<a href="/" className="btn">Shop Now</a>
+										<Link to="/shop" className="btn">Shop Now</Link>
 									</div>
 								</div>
 							</div>

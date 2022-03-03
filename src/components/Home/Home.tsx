@@ -33,7 +33,6 @@ export default function Home() {
             <TopBanner />
             <SpecialDeal />
             <BannerGadget />
-            {/* <PaginatedHome /> */}
             <HomeProducts />
             <BottomBanner />
             {/* <Reviews /> */}
@@ -41,7 +40,7 @@ export default function Home() {
             <BannerPro />
             <PaginatedBlogsHome />
             <Faq />
-            <ScrollToTop style={{ display: 'flex', alignItems: 'center', justifyContent: 'center', left: 15, bottom: 110, backgroundColor: '#7209b7' }} smooth color='#ffffff' top={20} height="28" viewBox="0 0 256 256" />
+            <ScrollToTop style={{ display: 'flex', alignItems: 'center', justifyContent: 'center', left: 15, bottom: 210, backgroundColor: '#7209b7' }} smooth color='#ffffff' top={20} height="28" viewBox="0 0 256 256" />
             <MessengerCustomerChat
                 pageId="104774475481224"
                 appId=" 1107053396762800"

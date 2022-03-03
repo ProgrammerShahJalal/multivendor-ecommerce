@@ -3,7 +3,7 @@ import PaginatedBlogsItems from './PaginatedBlogsItems';
 
 const PaginatedBlogsHome = () => {
     return (
-        <div>
+        <div id='blog'>
             <PaginatedBlogsItems itemsPerPage={4} />
         </div>
     );
