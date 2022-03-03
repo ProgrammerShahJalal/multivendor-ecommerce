@@ -46,9 +46,9 @@ export default function Home() {
             <Alan />
             <ScrollToTop style={{ display: 'flex', bottom: 110, alignItems: 'center', justifyContent: 'center', left: 15, backgroundColor: '#7209b7' }} smooth color='#ffffff' top={20} height="28" viewBox="0 0 256 256" />
             <MessengerCustomerChat
-                style={{ display: 'flex', bottom: 110, alignItems: 'center', justifyContent: 'center', right: 15 }}
                 pageId="104774475481224"
                 appId=" 1107053396762800"
+                style={{ bottom: 10, left: 15 }}
             />
         </div>
     )
