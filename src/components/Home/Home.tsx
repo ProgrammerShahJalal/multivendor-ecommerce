@@ -13,6 +13,7 @@ import BannerGadget from '../Pages/BannerGadget/BannerGadget';
 import Brands from '../Pages/Brands/Brands';
 import MessengerCustomerChat from 'react-messenger-customer-chat';
 // import Reviews from '../Pages/Reviews/Reviews';
+import Alan from './Alan-AI/Alan';
 
 
 
@@ -38,6 +39,7 @@ export default function Home() {
             <BannerPro />
             <Blogs />
             <Faq />
+            <Alan />
             <ScrollToTop style={{ display: 'flex', alignItems: 'center', justifyContent: 'center', left: 15, backgroundColor: '#7209b7' }} smooth color='#ffffff' top={20} height="28" viewBox="0 0 256 256" />
             <MessengerCustomerChat
                 pageId="104774475481224"
