@@ -2,10 +2,11 @@ import axios from 'axios';
 import React, { useEffect, useState } from 'react'
 import { useParams, useNavigate } from 'react-router-dom'
 import { affiliateCommission } from '../Services/AffiliateCommssion/AffiliateCommission';
-import PaymentLottie from './Lottie/PaymentLottie';
-import Celebrating from './Home/Celebrating'
+import Celebrating from './Home/Celebrating';
+
 
 const Success = () => {
+
     const { id } = useParams();
     const navigate = useNavigate();
 
@@ -57,8 +58,7 @@ const Success = () => {
                         <div className="space-y-5 md:space-y-0 md:grid md:grid-cols-1 md:gap-x-1 md:gap-y-5">
                             <div className='w-96 mx-auto'>
                                 <div className='grid grid-cols-1'>
-                                    <PaymentLottie />
-                                    <img className='w-72 lg:w-80' src={orders.product_image2} alt="" />
+                                    <img className='w-72 lg:w-80' src={orders.product_image} alt="" />
                                 </div>
                                 <div className="mt-2 text-base">
                                     <p className="w-72 text-lg leading-6 font-medium text-gray-900"><span className='text-indigo-600 font-semi-bold'>Product Name:</span> {orders.product_name}</p>
