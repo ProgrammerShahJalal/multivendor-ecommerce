@@ -52,7 +52,7 @@ const PaginatedBlogsItems = ({ itemsPerPage }: any) => {
                 <PaginatedBlogs blogs={currentItems} isLoading={isLoading} />
 
                 <div className=''>
-                    <ReactPaginate className='flex flex-row bg-pink-500 justify-evenly rounded-full w-96 py-5 mx-auto text-white'
+                    <ReactPaginate className='flex flex-row bg-transparent border border-indigo-500 justify-evenly rounded-full w-96 py-5 mx-auto text-indigo-500'
                         breakLabel="..."
                         nextLabel="Next >"
                         onPageChange={handlePageClick}
