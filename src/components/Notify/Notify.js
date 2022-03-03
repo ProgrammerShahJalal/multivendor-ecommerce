@@ -31,8 +31,6 @@ function Notify() {
                 {
                     theme: "dark"
                 });
-        }
-        notify = () => {
             toast.success("Cool! You are now right place!", {
                 pauseOnFocusLoss: false
             }, {
@@ -57,7 +55,7 @@ function Notify() {
         <div>
             <ToastContainer
                 position='bottom-left'
-                autoClose={2000}
+                autoClose={3000}
                 hideProgressBar={false}
                 newestOnTop={false}
                 closeOnClick
