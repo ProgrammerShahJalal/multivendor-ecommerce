@@ -12,12 +12,14 @@ import ScrollToTop from "react-scroll-to-top";
 import BannerGadget from '../Pages/BannerGadget/BannerGadget';
 import Brands from '../Pages/Brands/Brands';
 import MessengerCustomerChat from 'react-messenger-customer-chat';
+import Products from '../Products/Products';
+
 // import Reviews from '../Pages/Reviews/Reviews';
 
 
 
 export default function Home() {
-    
+
     const [loading, setLoading] = useState(true);
     setTimeout(() => setLoading(false), 3000);
     if (loading) {
@@ -27,12 +29,13 @@ export default function Home() {
 
     return (
         <div>
-            
+
             <Banners />
             <TopBanner />
             <SpecialDeal />
             <BannerGadget />
-            <HomeProducts />
+            {/* <HomeProducts /> */}
+            <Products />
             <BottomBanner />
             {/* <Reviews /> */}
             <Brands />

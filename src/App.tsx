@@ -26,6 +26,8 @@ import Categories from "./components/Dashboard/AddProduct/Sub/Categories/Categor
 import Attributes from "./components/Dashboard/AddProduct/Sub/Attributes/Attributes";
 import DealDetails from "./components/SpecialDeal/DealDetails";
 import DetailBlogPage from "./components/Blogs/DetailBlogPage";
+import SingleProduct from "./components/SingleProduct/SingleProduct";
+import SliderSwiper from "./components/SliderSwiper/SliderSwiper";
 
 
 
@@ -45,6 +47,7 @@ function App() {
             <Route path='/specialDeal' element={<SpecialDeal />} />
             <Route path='/team' element={<Team />} />
             <Route path='/login' element={<Login />} />
+            <Route path='/sliderSwiper' element={<SliderSwiper />} />
             <Route path='/register' element={<Register />} />
             <Route path='/orderTrack' element={<OrderTracking />} />
             <Route path='/checkout' element={<Checkout />} />
@@ -55,6 +58,7 @@ function App() {
             <Route path='/success/:id' element={<PrivateRoute><Success /></PrivateRoute>} />
             <Route path='/blogs/details/:id' element={<PrivateRoute><DetailBlogPage /></PrivateRoute>} />
             <Route path='/specials/details/:id' element={<PrivateRoute><DealDetails /></PrivateRoute>} />
+            <Route path='/product/:id' element={<SingleProduct />} />
             <Route path='*' element={<NotFound />} />
 
             {/* DASHBOARD ROUTES */}
