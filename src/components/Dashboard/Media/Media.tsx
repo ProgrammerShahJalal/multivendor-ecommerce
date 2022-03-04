@@ -2,9 +2,7 @@ import React, { useEffect, useState } from 'react'
 import './media.css'
 
 
-type Props = {}
-
-export default function Media({ }: Props) {
+export default function Media() {
     const [images, setImages] = useState<any>([])
     const [data, setData] = useState<any>()
     const [isTrue, setIsTrue] = useState<boolean>()
@@ -71,21 +69,21 @@ export default function Media({ }: Props) {
     const [isClassTrue, setIsClassTrue] = useState(false)
 
     const eventBubbling = (e: any) => {
+        const isExist = selectedItems.findIndex((img: any) => img.id === e.target.id)
+        console.log(isExist);
+        if (isExist === -1) {
+            setSelectedItems((prevItem: any) => [...prevItem, { id: e.target.id, src: e.target.src }])
 
-        console.log(e.target);
+        } else {
+            const arr = selectedItems.filter((item) => {
+                return item.id !== e.target.id
+            })
+            setSelectedItems(arr)
 
-        if (!selectedItems.includes(e.target.id)) {
-            setSelectedItems((prevItem: any) => [...prevItem, e.target.id])
-            setIsClassTrue(true)
-        } else if (selectedItems.includes(e.target.id)) {
-            var removeElement = selectedItems.indexOf(e.target.id);
-            selectedItems.splice(removeElement, 1);
-            setSelectedItems((prevItem: any) => [...prevItem])
-            setIsClassTrue(false)
         }
 
     }
-    console.log(selectedItems);
+
     return (
         <div className=''>
             <div>
