@@ -1,12 +1,42 @@
 import React, { useEffect, useState } from 'react';
-
+import Categories from '../Categories/Categories';
+type IProduct = {
+    _id: string,
+    title: string,
+    offerDate: string
+    product_des: string
+    reg_price: string
+    sale_price: string
+    stock: string
+    attributes: [{
+        label: string
+        value: string
+    }]
+    brand: string
+    categories: [{
+        label: string,
+        selected: [{
+            label: string,
+            value: string
+        }]
+    }]
+    images: [
+        {
+            id: string
+            src: string
+        }
+    ]
+}
 const Products = () => {
-    const [products, setProducts] = useState([])
+    const [products, setProducts] = useState<any[]>([])
     useEffect(() => {
         fetch('https://guarded-ocean-73313.herokuapp.com/products')
             .then(res => res.json())
             .then(data => setProducts(data))
     }, [])
+
+    console.log(products);
+
     return (
 
         <div className='container mx-auto px-4 sm:px-8'>
@@ -70,52 +100,53 @@ const Products = () => {
                             </thead>
                             <tbody>
                                 {/* first order start */}
-                                <tr>
-                                    <td className="px-5 py-5 border-b border-gray-200 bg-white text-sm">
-                                        <div className="flex items-center">
-                                            <div className="flex-shrink-0 w-10 h-10">
-                                                <img className="w-full h-full rounded-full"
-                                                    src="https://images.unsplash.com/photo-1494790108377-be9c29b29330?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=facearea&facepad=2.2&w=160&h=160&q=80"
-                                                    alt="" />
-                                            </div>
-                                            <div className="ml-3">
-                                                <p className="text-gray-900 whitespace-no-wrap">
-                                                    Vera Carpenter
-                                                </p>
-                                            </div>
-                                        </div>
-                                    </td>
-                                    <td className="px-5 py-5 border-b border-gray-200 bg-white text-sm">
-                                        <p className="text-gray-900 whitespace-no-wrap text-left">Mobile iPhone</p>
-                                    </td>
-                                    <td className="px-5 py-5 border-b border-gray-200 bg-white text-sm">
-                                        <p className="text-gray-900 whitespace-no-wrap text-left">300.00tk</p>
-                                    </td>
-                                    <td className="px-5 py-5 border-b border-gray-200 bg-white text-sm">
-                                        <p className="text-gray-900 whitespace-no-wrap text-left">
-                                            Feb 21, 2022
-                                        </p>
-                                    </td>
-                                    <td className="px-5 py-5 border-b border-gray-200 bg-white text-sm text-left">
-                                        <span
-                                            className="relative inline-block px-3 py-1  font-semibold text-green-900 leading-tight">
-                                            <span aria-hidden
-                                                className="absolute inset-0 bg-green-200 opacity-50 rounded-full"></span>
-                                            <span className="relative text-left">Delivered</span>
-                                        </span>
-                                    </td>
-                                    <td className="px-5 py-5 border-b border-gray-200 bg-white text-sm">
+                                {
+                                    products.map(product => {
+                                        return <tr>
+                                            <td className="px-5 py-5 border-b border-gray-200 bg-white text-sm">
+                                                <div className="flex items-center">
+                                                    <div className="flex-shrink-0 w-10 h-10">
 
-                                    </td>
-                                    <td className="px-5 py-5 border-b border-gray-200 bg-white text-sm flex">
-                                        <p className="text-gray-900 rounded whitespace-no-wrap mr-2 text-left bg-green-200 p-2 w-10">
-                                            Edit
-                                        </p>
-                                        <p className="text-white rounded whitespace-no-wrap text-left bg-red-500 p-2 w-16">
-                                            Delete
-                                        </p>
-                                    </td>
-                                </tr>
+                                                        <img className="w-full h-full rounded-full" src={product.images[0]?.src ?? 'https://healthpointplus.com/wp-content/uploads/woocommerce-placeholder-300x300.png'} alt="" />
+                                                    </div>
+
+                                                </div>
+                                            </td>
+                                            <td className="px-1 py-5 border-b border-gray-200 bg-white text-sm">
+                                                <p className="text-gray-900 whitespace-no-wrap text-left">{product.title}</p>
+                                            </td>
+                                            <td className="px-5 py-5 border-b border-gray-200 bg-white text-sm">
+                                                <p className="text-gray-900 whitespace-no-wrap text-left">${product.sale_price | product.reg_price}</p>
+                                            </td>
+                                            <td className="px-5 py-5 border-b border-gray-200 bg-white text-sm">
+                                                <p className="text-gray-900 whitespace-no-wrap text-left">
+                                                    {product.stock}
+                                                </p>
+                                            </td>
+                                            <td className="px-5 py-5 border-b border-gray-200 bg-white text-sm text-left">
+                                                <span
+                                                    className="relative inline-block px-3 py-1  font-semibold text-green-900 leading-tight">
+                                                    {/* {product.categories.map(({ label }) => label)} */}
+                                                    {product.categories[0].label}
+                                                    {/* <span aria-hidden
+                                                        className="absolute inset-0 bg-green-200 opacity-50 rounded-full"></span>
+                                                    <span className="relative text-left">Delivered</span> */}
+                                                </span>
+                                            </td>
+                                            <td className="px-5 py-5 border-b border-gray-200 bg-white text-sm">
+                                                Admin
+                                            </td>
+                                            <td className="px-5 py-5 border-b border-gray-200 bg-white text-sm flex">
+                                                <button className="text-white rounded whitespace-no-wrap mr-2 text-left bg-indigo-500 p-2 mb-1 w-10">
+                                                    Edit
+                                                </button>
+                                                <p className="bg-red-500 text-white rounded whitespace-no-wrap mr-2 p-2 mb-1 w-16">
+                                                    Delete
+                                                </p>
+                                            </td>
+                                        </tr>
+                                    })
+                                }
                                 {/* first order end  */}
 
                             </tbody>

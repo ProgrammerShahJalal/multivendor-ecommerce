@@ -1,4 +1,4 @@
-import { useEffect, useState } from 'react';
+import { useState } from 'react';
 import { Link, Outlet } from 'react-router-dom';
 import UseAuth from '../../../hooks/UseAuth';
 import './Dashboard.css'
