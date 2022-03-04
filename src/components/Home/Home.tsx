@@ -1,4 +1,4 @@
-// import React, { useState } from 'react'
+import React, { useState } from 'react'
 import TopBanner from '../TopBanner/TopBanner';
 import BottomBanner from '../BottomBanner/BottomBanner';
 import Banners from '../Pages/Banner/Banner';
@@ -21,12 +21,12 @@ import Alan from './Alan-AI/Alan';
 
 export default function Home() {
 
-    // const [loading, setLoading] = useState(true);
-    // setTimeout(() => setLoading(false), 3000);
-    // if (loading) {
-    //     return <img
-    //         src='https://i.ibb.co/0Gpm5Rp/preloader.gif' className="mx-auto select-none" alt=""></img>
-    // }
+    const [loading, setLoading] = useState(true);
+    setTimeout(() => setLoading(false), 3000);
+    if (loading) {
+        return <img
+            src='https://i.ibb.co/0Gpm5Rp/preloader.gif' className="mx-auto select-none" alt=""></img>
+    }
 
     return (
         <div>
@@ -39,7 +39,7 @@ export default function Home() {
             <BannerPro />
             <HomeProducts />
             <BottomBanner />
-            <Reviews />
+            {/* <Reviews /> */}
             <Brands />
             <PaginatedBlogsHome />
             <Faq />
