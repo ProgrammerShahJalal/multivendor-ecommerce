@@ -15,7 +15,7 @@ export interface IAppProps {
 export default class App extends React.PureComponent<IAppProps> {
     public render() {
         return (
-            <div className="h-screen grid grid-cols-3">
+            <div className="grid grid-cols-3 my-7">
                 <div className="lg:col-span-2 col-span-3 bg-indigo-50 space-y-8 px-12">
                     <div className="mt-8 p-4 relative flex flex-col sm:flex-row sm:items-center bg-white shadow rounded-md ">
                         <div className="flex flex-row items-center border-b sm:border-b-0 w-full sm:w-auto pb-4 sm:pb-0">
@@ -33,7 +33,7 @@ export default class App extends React.PureComponent<IAppProps> {
                     </div>
                     <div className="rounded-md">
                         <form id="payment-form" method="POST" action="">
-                            <section>
+                            <div>
                                 <h2 className="uppercase tracking-wide text-lg font-semibold text-gray-700 my-2">Shipping & Billing Information</h2>
                                 <fieldset className="mb-3 bg-white shadow-lg rounded text-gray-600">
                                     <label className="flex border-b border-gray-200 h-12 py-3 items-center">
@@ -93,11 +93,11 @@ export default class App extends React.PureComponent<IAppProps> {
                                         </div>
                                     </label>
                                 </fieldset>
-                            </section>
+                            </div>
                         </form>
                     </div>
                     <div className="rounded-md">
-                        <section>
+                        <div>
                             <h2 className="uppercase tracking-wide text-lg font-semibold text-gray-700 my-2">Payment Information</h2>
                             <fieldset className="mb-3 bg-white shadow-lg rounded text-gray-600">
                                 <label className="flex border-b border-gray-200 h-12 py-3 items-center">
@@ -105,7 +105,7 @@ export default class App extends React.PureComponent<IAppProps> {
                                     <input name="card" className="focus:outline-none px-3 w-full" placeholder="Card number MM/YY CVC" />
                                 </label>
                             </fieldset>
-                        </section>
+                        </div>
                     </div>
                     <button className="submit-button px-4 py-3 rounded-full bg-pink-400 text-white focus:ring focus:outline-none w-full text-xl font-semibold transition-colors">
                         Pay €846.98

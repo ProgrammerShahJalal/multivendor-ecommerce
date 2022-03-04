@@ -46,6 +46,7 @@ import Promo from './components/Promo/Promo';
 
 import SingleProduct from "./components/SingleProduct/SingleProduct";
 import SliderSwiper from "./components/SliderSwiper/SliderSwiper";
+import UnitTesting from "./components/Pages/UnitTesting/UnitTesting";
 
 
 
@@ -75,6 +76,7 @@ function App() {
             <Route path='/contact' element={<Contact />} />
             <Route path='/about' element={<About />} />
             <Route path='/offer' element={<Promo />} />
+            <Route path='/unitTesting' element={<UnitTesting />} />
             <Route path='/specialDeal' element={<SpecialDeal />} />
             <Route path='/productDetails/men/:id' element={<MenProductsDetail />} />
             <Route path='/productDetails/women/:id' element={<WomenProductDetail />} />
