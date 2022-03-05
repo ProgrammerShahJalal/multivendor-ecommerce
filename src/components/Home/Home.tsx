@@ -1,4 +1,4 @@
-import React, { useState } from 'react'
+import React, { useState } from 'react';
 import TopBanner from '../TopBanner/TopBanner';
 import BottomBanner from '../BottomBanner/BottomBanner';
 import Banners from '../Pages/Banner/Banner';

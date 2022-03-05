@@ -426,7 +426,7 @@ export default function Header() {
 
                                 <Menu as="div" className="ml-3 relative">
                                     <div>
-                                        <Menu.Button className="flex text-base focus:outline-none">
+                                        <Menu.Button className="flex text-sm focus:outline-none">
                                             <span className="sr-only">Open user menu</span>
                                             <p className='font-semi-bold'>Explore </p>
                                             <ChevronDownIcon className="w-6 h-6" aria-hidden="true" />
