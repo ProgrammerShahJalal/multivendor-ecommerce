@@ -4,7 +4,7 @@ import { Link } from 'react-router-dom'
 const PaginatedBlogs = ({ blogs, isLoading }: any) => {
 
 
-    console.log(blogs);
+    // console.log(blogs);
 
     if (isLoading) {
         return <div className='my-5'>

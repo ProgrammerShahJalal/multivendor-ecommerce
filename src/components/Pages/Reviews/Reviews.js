@@ -6,18 +6,21 @@ import { Rating } from "@mui/material";
 import "swiper/css/pagination";
 import { Autoplay, EffectCoverflow, Pagination } from 'swiper';
 
-interface ReviewState {
-    reviews: {
-        img: string
-        name: string
-        description: string
-        ratings: number
-    }[],
-}
+// interface ReviewState {
+//     reviews: {
+//         img: string
+//         name: string
+//         description: string
+//         ratings: number
+//     }[],
+// }
 
 const Reviews = () => {
-    const [reviews, setReviews] = useState<ReviewState["reviews"]>
-        ([]);
+    // const [reviews, setReviews] = useState<ReviewState["reviews"]>
+
+    // ([]);
+
+    const [reviews, setReviews] = useState([]);
 
     useEffect(() => {
         if (reviews) {

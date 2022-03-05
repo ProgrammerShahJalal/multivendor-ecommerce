@@ -14,8 +14,8 @@ import Notify from '../Notify/Notify';
 import PaginatedBlogsHome from '../Pages/PaginatedBlogsItems/PaginatedBlogsHome';
 import Products from '../Products/Products';
 
-import Reviews from '../Pages/Reviews/Reviews';
 import Alan from './Alan-AI/Alan';
+// import Reviews from '../Pages/Reviews/Reviews';
 
 
 
