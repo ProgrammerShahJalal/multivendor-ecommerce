@@ -34,7 +34,7 @@ const MensCollection = () => {
     }, [])
 
     const [open, setOpen] = React.useState(false);
-    const handleOpen = (products) => {
+    const handleOpen = (products: { title: string; img: string; hoverImg: string; price: number; salePrice: number; size: string; vendorName: string; rating: number; _id: string; }) => {
         setSelectedProduct(products)
         setOpen(true)
 
@@ -57,9 +57,9 @@ const MensCollection = () => {
                                         <i className="fa-regular fa-magnifying-glass"></i>
                                     </button>
                                     {/* </Link> */}
-                                    <a className='text-white text-lg w-9 h-8 rounded-full bg-indigo-500 flex items-center justify-center hover:bg-gray-800 transition' href="/">
+                                    <Link className='text-white text-lg w-9 h-8 rounded-full bg-indigo-500 flex items-center justify-center hover:bg-gray-800 transition' to="/wishlist">
                                         <i className="fa-regular fa-heart"></i>
-                                    </a>
+                                    </Link>
                                 </div>
 
                             </div>

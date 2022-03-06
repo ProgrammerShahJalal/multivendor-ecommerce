@@ -8,6 +8,13 @@ import Watch from '../Watch/Watch';
 
 const navigation = {
 
+    pages: [
+        { name: 'Shop', to: '/shop' },
+        { name: 'About', to: '/about' },
+        { name: 'Contact', to: '/contact' },
+        { name: 'Dashboard', to: '/dashboard' },
+    ],
+
     categories: [
         {
             id: 'women',
@@ -124,12 +131,6 @@ const navigation = {
             ],
         },
     ],
-    pages: [
-        { name: 'Shop', to: '/shop' },
-        { name: 'About', to: '/about' },
-        { name: 'Contact', to: '/contact' },
-        { name: 'Dashboard', to: '/dashboard' },
-    ],
 }
 
 function classNames(...classes: any[]) {
@@ -182,6 +183,18 @@ export default function Header() {
                             </div>
 
                             {/* Links */}
+
+
+                            <div className="border-t border-gray-200 py-6 px-4 space-y-6">
+                                {navigation.pages.map((page) => (
+                                    <div key={page.name} className="flow-root">
+                                        <Link to={page.to} className="-m-2 p-2 block font-medium text-gray-900">
+                                            {page.name}
+                                        </Link>
+                                    </div>
+                                ))}
+                            </div>
+
                             <Tab.Group as="div" className="mt-2">
                                 <div className="border-b border-gray-200">
                                     <Tab.List className="-mb-px flex px-4 space-x-8">
@@ -241,18 +254,6 @@ export default function Header() {
                                     ))}
                                 </Tab.Panels>
                             </Tab.Group>
-
-                            <div className="border-t border-gray-200 py-6 px-4 space-y-6">
-                                {navigation.pages.map((page) => (
-                                    <div key={page.name} className="flow-root">
-                                        <Link to={page.to} className="-m-2 p-2 block font-medium text-gray-900">
-                                            {page.name}
-                                        </Link>
-                                    </div>
-                                ))}
-                            </div>
-
-
 
                             <div className="border-t border-gray-200 py-6 px-4 space-y-6">
                                 {

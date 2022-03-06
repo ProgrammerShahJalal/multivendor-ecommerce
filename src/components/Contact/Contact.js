@@ -89,13 +89,13 @@ const Contact = () => {
                             <div className='flex flex-col space-y-8 justify-between'>
                                 <div>
                                     <h2 className='font-bold text-4xl tracking-wide'>Contact Us</h2>
-                                    <p className='pt-2 text-cyan-100 text-sm'>Thank you for your interest in contacting Unity Mart. Before proceeding, some important disclaimers. </p>
+                                    <p className='pt-2 text-cyan-100 text-sm'>Thank you for your interest in contacting Unity Mart. You can call us by clicking the phone number. </p>
                                 </div>
                                 <div className='flex flex-col space-y-6'>
                                     <div className='inline-flex space-x-2 items-center'>
 
                                         <i className="fa-regular fa-phone text-teal-300 text-xl"></i>
-                                        <span>+(880) 1763849023</span>
+                                        <a href="tel:+8801303856860">+8801303 856 860</a>
 
                                     </div>
                                     <div className='inline-flex space-x-2 items-center'>

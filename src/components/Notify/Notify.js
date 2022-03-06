@@ -10,7 +10,7 @@ function Notify() {
     let customId = "success1";
 
     let notify = () => {
-        toast.success("Hey! How can we help you?", {
+        toast.success("Welcome to Unity Mart!", {
             pauseOnFocusLoss: false
         }, {
             toastId: customId
@@ -23,7 +23,13 @@ function Notify() {
 
     const Updating = () => {
         notify = () => {
-            toast.info("Welcome to Unity Mart!", {
+            toast(<div className='flex justify-center items-center'>
+                <img className='w-24' src="https://i.ibb.co/1TdmzMg/apple-watch-1.png" alt="" />
+                <div>
+                    <p>Someone buy this product</p>
+                    <small>a few minutes ago</small>
+                </div>
+            </div>, {
                 pauseOnFocusLoss: false
             }, {
                 toastId: customId
@@ -31,14 +37,26 @@ function Notify() {
                 {
                     theme: "dark"
                 });
-            toast.success("Cool! You are now right place!", {
+            toast(<div className='flex justify-center items-center'>
+                <img className='w-24' src="https://i.ibb.co/JtB5FWQ/google-pixel-blue.jpg" alt="" />
+                <div>
+                    <p>Someone buy this product</p>
+                    <small>a few minutes ago</small>
+                </div>
+            </div>, {
                 pauseOnFocusLoss: false
             }, {
                 toastId: customId
             }, { delay: 32000 }, {
                 theme: "dark"
             });
-            toast('Visit Our Special Deal', {
+            toast(<div className='flex justify-center items-center'>
+                <img className='w-24' src="https://i.ibb.co/0Xfks40/headphone-2.png" alt="" />
+                <div>
+                    <p>Someone buy this product</p>
+                    <small>a few minutes ago</small>
+                </div>
+            </div>, {
                 pauseOnFocusLoss: false
             }, { delay: 56000 },
                 { toastId: customId }, {
@@ -50,12 +68,13 @@ function Notify() {
     }
 
     setInterval(Updating, 25000);
+    setInterval(clearWaitingQueue, 60000)
 
     return (
         <div>
             <ToastContainer
                 position='bottom-left'
-                autoClose={3000}
+                autoClose={5000}
                 hideProgressBar={false}
                 newestOnTop={false}
                 closeOnClick

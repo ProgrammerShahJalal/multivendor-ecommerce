@@ -40,14 +40,9 @@ import MenProductsDetail from './components/MenProductDetail';
 import WomenProductDetail from './components/WomenProductDetail';
 import KidsProductDetails from './components/KidsProductDetails';
 import Promo from './components/Promo/Promo';
-
-
-
-
 import SingleProduct from "./components/SingleProduct/SingleProduct";
-import SliderSwiper from "./components/SliderSwiper/SliderSwiper";
 import UnitTesting from "./components/Pages/UnitTesting/UnitTesting";
-
+import WishList from "./components/Pages/WishList/WishList";
 
 
 
@@ -83,10 +78,10 @@ function App() {
             <Route path='/productDetails/kid/:id' element={<KidsProductDetails />} />
             <Route path='/team' element={<Team />} />
             <Route path='/login' element={<Login />} />
-            <Route path='/sliderSwiper' element={<SliderSwiper />} />
             <Route path='/register' element={<Register />} />
             <Route path='/orderTrack' element={<OrderTracking />} />
             <Route path='/checkout' element={<Checkout />} />
+            <Route path='/wishlist' element={<WishList />} />
             <Route path='/shop' element={<Shop />} />
             <Route path='/vendorShop' element={<VendorShopPage />} />
             <Route path='/vendorSidebar' element={<VendorSidebar />} />
