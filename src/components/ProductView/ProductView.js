@@ -10,7 +10,7 @@ import "swiper/css/free-mode";
 import "swiper/css/navigation";
 import "swiper/css/thumbs";
 const ProductView = ({ selectedProduct, handleClose }) => {
-    console.log(selectedProduct, 'selectedProduct');
+    // console.log(selectedProduct, 'selectedProduct');
     const [thumbsSwiper, setThumbsSwiper] = useState(null);
     const [counter, setCounter] = useState(1);
 
@@ -42,13 +42,10 @@ const ProductView = ({ selectedProduct, handleClose }) => {
                             <Magnifier src={selectedProduct.img} className='bg-cover select-none' />
                         </SwiperSlide>
                         <SwiperSlide style={{ height: '300px', width: '300px' }}>
-                            <Magnifier src="https://i.pinimg.com/originals/84/37/94/8437943c087d24e4d09c3142f778dbd7.png" className='bg-cover select-none' />
+                            <Magnifier src={selectedProduct.img3} className='bg-cover select-none' />
                         </SwiperSlide>
                         <SwiperSlide style={{ height: '300px', width: '300px' }} >
-                            <Magnifier src="https://cdn.flightclub.com/750/TEMPLATE/292220/4.jpg" className='bg-cover select-none' />
-                        </SwiperSlide>
-                        <SwiperSlide style={{ height: '300px', width: '300px' }} >
-                            <Magnifier src="https://image.goat.com/transform/v1/attachments/product_template_additional_pictures/images/065/107/182/original/859919_03.jpg.jpeg?action=crop&width=1250" className='bg-cover select-none' />
+                            <Magnifier src={selectedProduct.img4} className='bg-cover select-none' />
                         </SwiperSlide>
                     </Swiper>
                     <div className='mt-5'>
@@ -68,13 +65,10 @@ const ProductView = ({ selectedProduct, handleClose }) => {
                                 <img alt="" src={selectedProduct.img} className='bg-cover select-none cursor-pointer' />
                             </SwiperSlide>
                             <SwiperSlide style={{ height: '100px', width: '100px' }}>
-                                <img alt="" src="https://i.pinimg.com/originals/84/37/94/8437943c087d24e4d09c3142f778dbd7.png" className='bg-cover select-none cursor-pointer' />
+                                <img alt="" src={selectedProduct.img3} className='bg-cover select-none cursor-pointer' />
                             </SwiperSlide>
                             <SwiperSlide style={{ height: '100px', width: '100px' }}>
-                                <img alt="" src="https://cdn.flightclub.com/750/TEMPLATE/292220/4.jpg" className='bg-cover select-none cursor-pointer' />
-                            </SwiperSlide>
-                            <SwiperSlide style={{ height: '100px', width: '100px' }} >
-                                <img alt="" src="https://image.goat.com/transform/v1/attachments/product_template_additional_pictures/images/065/107/182/original/859919_03.jpg.jpeg?action=crop&width=1250" className='bg-cover select-none cursor-pointer' />
+                                <img alt="" src={selectedProduct.img4} className='bg-cover select-none cursor-pointer' />
                             </SwiperSlide>
                         </Swiper>
                     </div>

@@ -11,6 +11,8 @@ interface ProductState {
         title: string
         img: string
         hoverImg: string
+        img3: string
+        img4: string
         price: number
         salePrice: number
         size: string
@@ -34,7 +36,7 @@ const MensCollection = () => {
     }, [])
 
     const [open, setOpen] = React.useState(false);
-    const handleOpen = (products: { title: string; img: string; hoverImg: string; price: number; salePrice: number; size: string; vendorName: string; rating: number; _id: string; }) => {
+    const handleOpen = (products: { title: string; img: string; hoverImg: string; img3: string; img4: string; price: number; salePrice: number; size: string; vendorName: string; rating: number; _id: string; }) => {
         setSelectedProduct(products)
         setOpen(true)
 

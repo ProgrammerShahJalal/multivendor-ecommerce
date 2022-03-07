@@ -43,6 +43,7 @@ import Promo from './components/Promo/Promo';
 import SingleProduct from "./components/SingleProduct/SingleProduct";
 import UnitTesting from "./components/Pages/UnitTesting/UnitTesting";
 import WishList from "./components/Pages/WishList/WishList";
+import VendorHomePage from "./components/Pages/VendorPages/VendorHomePage";
 
 
 
@@ -85,6 +86,7 @@ function App() {
             <Route path='/shop' element={<Shop />} />
             <Route path='/vendorShop' element={<VendorShopPage />} />
             <Route path='/vendorSidebar' element={<VendorSidebar />} />
+            <Route path='/vendorLogin' element={<VendorHomePage />} />
             <Route path='/profile' element={<PrivateRoute><UserProfile /></PrivateRoute>} />
             <Route path='/success/:id' element={<PrivateRoute><Success /></PrivateRoute>} />
             <Route path='/blogs/details/:id' element={<PrivateRoute><DetailBlogPage /></PrivateRoute>} />
