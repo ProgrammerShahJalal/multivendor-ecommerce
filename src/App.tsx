@@ -3,7 +3,6 @@ import Home from "./components/Home/Home";
 import Header from './components/Shared/Header';
 import Footer from './components/Shared/Footer/Footer';
 import Contact from './components/Contact/Contact.js';
-import About from "./components/Pages/About/About";
 import AuthProvider from "./context/AuthProvider";
 import Register from "./components/Pages/RegisterPage/Register";
 import Login from "./components/Pages/LoginPage/Login";
@@ -44,6 +43,7 @@ import SingleProduct from "./components/SingleProduct/SingleProduct";
 import UnitTesting from "./components/Pages/UnitTesting/UnitTesting";
 import WishList from "./components/Pages/WishList/WishList";
 import VendorHomePage from "./components/Pages/VendorPages/VendorHomePage";
+import AboutUs from "./components/Pages/About/About";
 
 
 
@@ -70,7 +70,7 @@ function App() {
             <Route path='/' element={<Home />} />
             <Route path='/home' element={<Home />} />
             <Route path='/contact' element={<Contact />} />
-            <Route path='/about' element={<About />} />
+            <Route path='/about' element={<AboutUs />} />
             <Route path='/offer' element={<Promo />} />
             <Route path='/unitTesting' element={<UnitTesting />} />
             <Route path='/specialDeal' element={<SpecialDeal />} />
