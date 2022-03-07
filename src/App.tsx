@@ -33,18 +33,17 @@ import { useLayoutEffect } from "react";
 import AllOrders from "./components/Dashboard/Order/allOrder";
 import Vendors from "./components/Dashboard/Vendors/Vendors";
 import VendorProfileDetails from "./components/Dashboard/Vendors/VendorsProfileDetails";
-import { SummaryBoxSpecial } from "./components/Dashboard/DashboardHome/DashboardHome";
+// import { SummaryBoxSpecial } from "./components/Dashboard/DashboardHome/DashboardHome";
 import Products from "./components/Dashboard/AddProduct/Sub/Products/Products";
 import Users from "./components/Dashboard/Users/Users";
 import MenProductsDetail from './components/MenProductDetail';
 import WomenProductDetail from './components/WomenProductDetail';
 import KidsProductDetails from './components/KidsProductDetails';
 import Promo from './components/Promo/Promo';
-
-
-
-
-
+import SingleProduct from "./components/SingleProduct/SingleProduct";
+import UnitTesting from "./components/Pages/UnitTesting/UnitTesting";
+import WishList from "./components/Pages/WishList/WishList";
+import Invoice from "./components/Invoice/Invoice";
 
 
 
@@ -73,6 +72,7 @@ function App() {
             <Route path='/contact' element={<Contact />} />
             <Route path='/about' element={<About />} />
             <Route path='/offer' element={<Promo />} />
+            <Route path='/unitTesting' element={<UnitTesting />} />
             <Route path='/specialDeal' element={<SpecialDeal />} />
             <Route path='/productDetails/men/:id' element={<MenProductsDetail />} />
             <Route path='/productDetails/women/:id' element={<WomenProductDetail />} />
@@ -82,6 +82,8 @@ function App() {
             <Route path='/register' element={<Register />} />
             <Route path='/orderTrack' element={<OrderTracking />} />
             <Route path='/checkout' element={<Checkout />} />
+            <Route path='/wishlist' element={<WishList />} />
+            <Route path='/invoice' element={<Invoice />} />
             <Route path='/shop' element={<Shop />} />
             <Route path='/vendorShop' element={<VendorShopPage />} />
             <Route path='/vendorSidebar' element={<VendorSidebar />} />
@@ -89,6 +91,7 @@ function App() {
             <Route path='/success/:id' element={<PrivateRoute><Success /></PrivateRoute>} />
             <Route path='/blogs/details/:id' element={<PrivateRoute><DetailBlogPage /></PrivateRoute>} />
             <Route path='/specials/details/:id' element={<PrivateRoute><DealDetails /></PrivateRoute>} />
+            <Route path='/product/:id' element={<SingleProduct />} />
             <Route path='*' element={<NotFound />} />
 
             {/* DASHBOARD ROUTES */}

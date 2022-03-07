@@ -27,6 +27,16 @@ const WomenProductDetail = () => {
 
   const { title, hoverImg, img, price, salePrice, vendorName, rating } = productDetail[0] || {};
   const [thumbsSwiper, setThumbsSwiper] = useState(null);
+  const [counter, setCounter] = useState(1);
+
+  const decrement = () => {
+    if (counter === 1) {
+      setCounter(counter)
+    }
+    else (
+      setCounter(counter - 1)
+    )
+  }
 
   return (
     <>
@@ -176,15 +186,15 @@ const WomenProductDetail = () => {
           <div>
             <h3 className='text-xl text-gray-800 mb-1'>Quantity</h3>
             <div className="flex border border-gray-500 divide-gray-500 text-gray-600 divide-x w-max">
-              <div className='h-8 w-8 flex items-center justify-center cursor-pointer select-none'>
+              <button onClick={decrement} className='h-8 w-8 flex items-center justify-center cursor-pointer select-none'>
                 -
-              </div>
+              </button>
               <div className='h-8 w-8 flex items-center justify-center'>
-                <input style={{ width: '34px', height: '34px' }} type="text" />
+                {counter}
               </div>
-              <div className='h-8 w-8 flex items-center justify-center cursor-pointer select-none'>
+              <button onClick={() => setCounter(counter + 1)} className='h-8 w-8 flex items-center justify-center cursor-pointer select-none'>
                 +
-              </div>
+              </button>
             </div>
           </div>
           <div className="flex gap-3 border-b border-gray-200 pb-5 mt-6">

@@ -17,6 +17,7 @@ interface ReviewState {
 
 const Reviews = () => {
     const [reviews, setReviews] = useState<ReviewState["reviews"]>
+
         ([]);
 
     useEffect(() => {

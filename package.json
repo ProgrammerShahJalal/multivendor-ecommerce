@@ -3,9 +3,9 @@
   "version": "0.1.0",
   "private": true,
   "dependencies": {
+    "@alan-ai/alan-sdk-web": "^1.8.30",
     "@babel/preset-env": "^7.16.11",
     "@babel/preset-react": "^7.16.7",
-    "@alan-ai/alan-sdk-web": "^1.8.30",
     "@craco/craco": "^6.4.3",
     "@emotion/core": "^11.0.0",
     "@emotion/react": "^11.8.1",
@@ -49,18 +49,20 @@
     "react-datetime-picker": "^3.5.0",
     "react-dom": "^16.14.0",
     "react-draft-wysiwyg": "^1.14.7",
+    "react-helmet-async": "^1.2.3",
     "react-icons": "^4.3.1",
     "react-magnifier": "^3.0.4",
     "react-messenger-customer-chat": "^0.8.0",
     "react-paginate": "^8.1.1",
     "react-router-dom": "^6.2.1",
     "react-router-hash-link": "^2.4.3",
-    "react-scripts": "5.0.0",
+    "react-scripts": "^5.0.0",
     "react-scroll-to-top": "^1.0.8",
     "react-select": "^5.2.2",
     "react-simple-typewriter": "^3.0.1",
     "react-slick": "^0.28.1",
     "react-test-renderer": "^17.0.2",
+    "react-to-pdf": "^0.0.14",
     "react-toast-notifications": "^2.5.1",
     "react-toastify": "^8.2.0",
     "react-use-window-size": "^1.0.1",
@@ -77,7 +79,7 @@
   "scripts": {
     "start": "react-scripts start",
     "build": "react-scripts build",
-    "test": "jest",
+    "test": "react-scripts test",
     "eject": "react-scripts eject"
   },
   "eslintConfig": {
@@ -107,7 +109,11 @@
     "@types/react-slick": "^0.23.8",
     "@types/react-star-ratings": "^2.3.0",
     "autoprefixer": "^10.4.2",
+    "enzyme": "^3.11.0",
+    "enzyme-adapter-react-16": "^1.15.6",
     "jest": "^27.5.1",
+    "jest-css": "^1.0.1",
+    "jest-file": "^1.0.0",
     "postcss": "^8.4.6",
     "tailwindcss": "^3.0.19"
   }

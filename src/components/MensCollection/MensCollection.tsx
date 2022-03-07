@@ -17,6 +17,7 @@ interface ProductState {
         vendorName: string
         rating: number
         _id: string
+        img3: string
     }[]
 }
 const MensCollection = () => {
@@ -34,7 +35,7 @@ const MensCollection = () => {
     }, [])
 
     const [open, setOpen] = React.useState(false);
-    const handleOpen = (products) => {
+    const handleOpen = (products: { title: string; img: string; hoverImg: string; price: number; salePrice: number; size: string; vendorName: string; rating: number; _id: string; }) => {
         setSelectedProduct(products)
         setOpen(true)
 
@@ -49,7 +50,7 @@ const MensCollection = () => {
                             <div className="relative group">
                                 <div style={{ height: '250px' }} className='z-100 overflow-hidden'>
                                     <img src={product.hoverImg} className='select-none img z-0 group-hover:hidden block transition' alt="" />
-                                    <img src={product.img} className='select-none img z-0 group-hover:block hidden transition' alt="" />
+                                    <img src={product.img3} className='select-none img z-0 group-hover:block hidden transition' alt="" />
                                 </div>
                                 <div className="absolute inset-0 bg-black bg-opacity-40 flex items-center justify-center gap-2 opacity-0 group-hover:opacity-100 transition">
                                     {/* <Link to={`/product/details/${product._id}`}> */}
@@ -57,9 +58,9 @@ const MensCollection = () => {
                                         <i className="fa-regular fa-magnifying-glass"></i>
                                     </button>
                                     {/* </Link> */}
-                                    <a className='text-white text-lg w-9 h-8 rounded-full bg-indigo-500 flex items-center justify-center hover:bg-gray-800 transition' href="/">
+                                    <Link className='text-white text-lg w-9 h-8 rounded-full bg-indigo-500 flex items-center justify-center hover:bg-gray-800 transition' to="/wishlist">
                                         <i className="fa-regular fa-heart"></i>
-                                    </a>
+                                    </Link>
                                 </div>
 
                             </div>

@@ -1,12 +1,19 @@
 /* eslint-disable jsx-a11y/no-redundant-roles */
 import { Fragment, useState } from 'react';
 import { Dialog, Menu, Popover, Tab, Transition } from '@headlessui/react';
-import { MenuIcon, SearchIcon, ShoppingBagIcon, XIcon } from '@heroicons/react/outline';
+import { ChevronDownIcon, MenuIcon, SearchIcon, ShoppingBagIcon, XIcon } from '@heroicons/react/outline';
 import { Link, NavLink } from 'react-router-dom';
 import UseAuth from '../../hooks/UseAuth';
 import Watch from '../Watch/Watch';
 
 const navigation = {
+
+    pages: [
+        { name: 'Shop', to: '/shop' },
+        { name: 'About', to: '/about' },
+        { name: 'Contact', to: '/contact' },
+        { name: 'Dashboard', to: '/dashboard' },
+    ],
 
     categories: [
         {
@@ -124,14 +131,6 @@ const navigation = {
             ],
         },
     ],
-    pages: [
-        { name: 'Shop', to: '/shop' },
-        { name: 'About', to: '/about' },
-        { name: 'Contact', to: '/contact' },
-        { name: 'Our Team', to: '/team' },
-        { name: 'Offer', to: '/offer' },
-        { name: 'Dashboard', to: '/dashboard' },
-    ],
 }
 
 function classNames(...classes: any[]) {
@@ -184,6 +183,18 @@ export default function Header() {
                             </div>
 
                             {/* Links */}
+
+
+                            <div className="border-t border-gray-200 py-6 px-4 space-y-6">
+                                {navigation.pages.map((page) => (
+                                    <div key={page.name} className="flow-root">
+                                        <Link to={page.to} className="-m-2 p-2 block font-medium text-gray-900">
+                                            {page.name}
+                                        </Link>
+                                    </div>
+                                ))}
+                            </div>
+
                             <Tab.Group as="div" className="mt-2">
                                 <div className="border-b border-gray-200">
                                     <Tab.List className="-mb-px flex px-4 space-x-8">
@@ -245,18 +256,6 @@ export default function Header() {
                             </Tab.Group>
 
                             <div className="border-t border-gray-200 py-6 px-4 space-y-6">
-                                {navigation.pages.map((page) => (
-                                    <div key={page.name} className="flow-root">
-                                        <Link to={page.to} className="-m-2 p-2 block font-medium text-gray-900">
-                                            {page.name}
-                                        </Link>
-                                    </div>
-                                ))}
-                            </div>
-
-
-
-                            <div className="border-t border-gray-200 py-6 px-4 space-y-6">
                                 {
                                     user.email ? <div className="flow-root">
                                         <p onClick={logout} className="-m-2 p-2 block font-medium text-gray-900">
@@ -294,6 +293,8 @@ export default function Header() {
                     </Transition.Child>
                 </Dialog>
             </Transition.Root>
+
+
 
             <header className="relative bg-white">
                 <div className="bg-indigo-600 h-10 flex items-center justify-around text-sm font-medium text-white px-4 sm:px-6 lg:px-8">
@@ -419,8 +420,119 @@ export default function Header() {
                                 </div>
                             </Popover.Group>
 
+
+
                             <div className="ml-auto flex items-center">
-                                {/* Profile dropdown */}
+                                {/* simple dropdown */}
+
+                                <Menu as="div" className="ml-3 relative">
+                                    <div>
+                                        <Menu.Button className="flex text-sm focus:outline-none">
+                                            <span className="sr-only">Open user menu</span>
+                                            <p className='font-semi-bold'>Explore </p>
+                                            <ChevronDownIcon className="w-6 h-6" aria-hidden="true" />
+                                        </Menu.Button>
+                                    </div>
+                                    <Transition
+                                        as={Fragment}
+                                        enter="transition ease-out duration-100"
+                                        enterFrom="transform opacity-0 scale-95"
+                                        enterTo="transform opacity-100 scale-100"
+                                        leave="transition ease-in duration-75"
+                                        leaveFrom="transform opacity-100 scale-100"
+                                        leaveTo="transform opacity-0 scale-95"
+                                    >
+                                        <Menu.Items className="z-10 origin-top-right absolute right-0 mt-2 w-48 rounded-md shadow-lg py-1 bg-white ring-1 ring-black ring-opacity-5 focus:outline-none">
+                                            <Menu.Item>
+                                                {({ active }) => (
+                                                    <NavLink
+                                                        to='/offer'
+                                                        className={classNames(active ? 'bg-gray-100' : '', 'block px-4 py-2 text-sm text-gray-700')}
+                                                    >
+                                                        Offer
+                                                    </NavLink>
+                                                )}
+                                            </Menu.Item>
+                                            <Menu.Item>
+                                                {({ active }) => (
+                                                    <NavLink
+                                                        to='/orderTrack'
+                                                        className={classNames(active ? 'bg-gray-100' : '', 'block px-4 py-2 text-sm text-gray-700')}
+                                                    >
+                                                        Order Tracking
+                                                    </NavLink>
+                                                )}
+                                            </Menu.Item>
+                                            <Menu.Item>
+                                                {({ active }) => (
+                                                    <NavLink
+                                                        to='/checkout'
+                                                        className={classNames(active ? 'bg-gray-100' : '', 'block px-4 py-2 text-sm text-gray-700')}
+                                                    >
+                                                        Checkout
+                                                    </NavLink>
+                                                )}
+                                            </Menu.Item>
+                                            <Menu.Item>
+                                                {({ active }) => (
+                                                    <Link
+                                                        to="/team"
+                                                        className={classNames(active ? 'bg-gray-100' : '', 'block px-4 py-2 text-sm text-gray-700')}
+                                                    >
+                                                        Our Team
+                                                    </Link>
+                                                )}
+                                            </Menu.Item>
+                                            <Menu.Item>
+                                                {({ active }) => (
+                                                    <Link
+                                                        to="/unitTesting"
+                                                        className={classNames(active ? 'bg-gray-100' : '', 'block px-4 py-2 text-sm text-gray-700 cursor-pointer')}
+                                                    >
+                                                        Unit Testing
+                                                    </Link>
+                                                )}
+                                            </Menu.Item>
+                                        </Menu.Items>
+                                    </Transition>
+                                </Menu>
+
+
+
+                                <div className="hidden lg:ml-8 lg:flex">
+                                    <Link to="/" className="text-gray-700 hover:text-gray-800 flex items-center">
+                                        <img
+                                            src="https://upload.wikimedia.org/wikipedia/commons/thumb/7/75/Flag_of_Bangladesh_%283-2%29.svg/1200px-Flag_of_Bangladesh_%283-2%29.svg.png?20190306092954"
+                                            alt=""
+                                            className="w-5 h-auto block flex-shrink-0"
+                                        />
+                                        <span className="ml-3 block text-sm font-medium">BAN</span>
+                                        <span className="sr-only">, change currency</span>
+                                    </Link>
+                                </div>
+
+                                {/* Search */}
+                                <div className="flex lg:ml-6">
+                                    <Link to="/" className="p-2 text-gray-400 hover:text-gray-500">
+                                        <span className="sr-only">Search</span>
+                                        <SearchIcon className="w-6 h-6" aria-hidden="true" />
+                                    </Link>
+                                </div>
+
+                                {/* Cart */}
+                                <div className="ml-4 flow-root lg:ml-6">
+                                    <Link to="/" className="group -m-2 p-2 flex items-center">
+                                        <ShoppingBagIcon
+                                            className="flex-shrink-0 h-6 w-6 text-gray-400 group-hover:text-gray-500"
+                                            aria-hidden="true"
+                                        />
+                                        <span className="ml-2 text-sm font-medium text-gray-700 group-hover:text-gray-800">0</span>
+                                        <span className="sr-only">items in cart, view bag</span>
+                                    </Link>
+                                </div>
+                            </div>
+                            <div className="ml-auto flex items-center">
+                                {/* profile dropdown */}
                                 {
                                     user.email ? <Menu as="div" className="ml-3 relative">
                                         <div>
@@ -491,37 +603,7 @@ export default function Header() {
 
                                 }
 
-                                <div className="hidden lg:ml-8 lg:flex">
-                                    <Link to="/" className="text-gray-700 hover:text-gray-800 flex items-center">
-                                        <img
-                                            src="https://upload.wikimedia.org/wikipedia/commons/thumb/7/75/Flag_of_Bangladesh_%283-2%29.svg/1200px-Flag_of_Bangladesh_%283-2%29.svg.png?20190306092954"
-                                            alt=""
-                                            className="w-5 h-auto block flex-shrink-0"
-                                        />
-                                        <span className="ml-3 block text-sm font-medium">BAN</span>
-                                        <span className="sr-only">, change currency</span>
-                                    </Link>
-                                </div>
 
-                                {/* Search */}
-                                <div className="flex lg:ml-6">
-                                    <Link to="/" className="p-2 text-gray-400 hover:text-gray-500">
-                                        <span className="sr-only">Search</span>
-                                        <SearchIcon className="w-6 h-6" aria-hidden="true" />
-                                    </Link>
-                                </div>
-
-                                {/* Cart */}
-                                <div className="ml-4 flow-root lg:ml-6">
-                                    <Link to="/" className="group -m-2 p-2 flex items-center">
-                                        <ShoppingBagIcon
-                                            className="flex-shrink-0 h-6 w-6 text-gray-400 group-hover:text-gray-500"
-                                            aria-hidden="true"
-                                        />
-                                        <span className="ml-2 text-sm font-medium text-gray-700 group-hover:text-gray-800">0</span>
-                                        <span className="sr-only">items in cart, view bag</span>
-                                    </Link>
-                                </div>
                             </div>
                         </div>
                     </div>
