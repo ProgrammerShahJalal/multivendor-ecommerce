@@ -11,17 +11,16 @@ interface DealState {
     }[],
 }
 interface SpecialState {
-    specials: {
-        _id: string
-        img: string
-        hoverImg: string
-        title: string
-        price: string
-        salePrice: string
-        rating: number
-        processor: string
-        offerTill: string
-    }[],
+    _id: string
+    img: string
+    hoverImg: string
+    title: string
+    price: string
+    salePrice: string
+    rating: number
+    processor: string
+    offerTill: string
+
 }
 
 
@@ -29,26 +28,23 @@ export default function SpecialDeal() {
 
     const [deals, setDeals] = useState<DealState["deals"]>
         ([]);
-    const [specials, setSpecials] = useState<SpecialState["specials"]>
-        ([]);
+    const [specials, setSpecials] = useState<SpecialState[]>([]);
 
 
     useEffect(() => {
-        if (deals) {
-            fetch('https://morning-inlet-49130.herokuapp.com/features')
-                .then(res => res.json())
-                .then(data => setDeals(data))
-        }
-    }, [deals])
+        fetch('https://morning-inlet-49130.herokuapp.com/features')
+            .then(res => res.json())
+            .then(data => setDeals(data))
+
+    }, [])
 
     /* ----------special product fetch----------- */
     useEffect(() => {
-        if (specials) {
-            fetch('https://morning-inlet-49130.herokuapp.com/specials')
-                .then(res => res.json())
-                .then(data => setSpecials(data))
-        }
-    }, [specials])
+        fetch('https://morning-inlet-49130.herokuapp.com/specials')
+            .then(res => res.json())
+            .then(data => setSpecials(data))
+
+    }, [])
 
     return (
         <div className="bg-gray-50">

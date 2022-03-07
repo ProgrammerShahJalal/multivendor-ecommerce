@@ -5,6 +5,8 @@ import Modal from '@mui/material/Modal';
 import Fade from '@mui/material/Fade';
 import ProductViewSm from '../ProductView/ProductViewSm';
 import ProductView from '../ProductView/ProductView';
+import { useDispatch } from 'react-redux';
+import { addToCart } from '../../redux/cartSlice';
 interface ProductState {
     products: {
         title: string
@@ -22,6 +24,11 @@ const WomensCollection = () => {
     const [products, setProducts] = useState<ProductState["products"]>
         ([]);
     const [selectedProduct, setSelectedProduct] = useState<any>()
+    const dispatch = useDispatch()
+    const handleAddToCart = (id) => {
+        dispatch(addToCart(id))
+        // navigate('/cart')
+    }
 
     useEffect(() => {
         // if (products) {
@@ -76,13 +83,13 @@ const WomensCollection = () => {
                                     <div className="text-xs text-gray-500 ml-3">(1)</div>
                                 </div>
                             </div>
-                            <button className='block w-full py-1 text-center top-5 text-white bg-indigo-500 border border-indigo-500 rounded-b hover:bg-transparent hover:text-indigo-500 transition'>Add to Cart</button>
+                            <button onClick={() => handleAddToCart(product)} className='block w-full py-1 text-center top-5 text-white bg-indigo-500 border border-indigo-500 rounded-b hover:bg-transparent hover:text-indigo-500 transition'>Add to Cart</button>
                         </div>
                     ))}
             </div>
 
             <div className='px-3 mx-auto text-center'>
-            <Modal
+                <Modal
                     open={open}
                 >
                     <Fade in={open}>

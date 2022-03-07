@@ -13,7 +13,6 @@ import Shop from "./components/Shop/Shop";
 import PrivateRoute from "./components/Route/PrivateRoute/PrivateRoute";
 import UserProfile from './components/UserProfile/UserProfile';
 import OrderTracking from './components/OrderTracking/OrderTracking';
-import Checkout from './components/Checkout/Checkout';
 import Success from "./components/Success";
 import VendorShopPage from "./components/VenderShopPage/VenderShopPage";
 import VendorSidebar from "./components/VendorSidebar/VendorSidebar";
@@ -26,6 +25,9 @@ import Categories from "./components/Dashboard/AddProduct/Sub/Categories/Categor
 import Attributes from "./components/Dashboard/AddProduct/Sub/Attributes/Attributes";
 import DealDetails from "./components/SpecialDeal/DealDetails";
 import DetailBlogPage from "./components/Blogs/DetailBlogPage";
+import SingleProduct from "./components/AllProducts/SingleProduct";
+import Cart from "./components/Pages/CartPage/Cart";
+import Checkout from "./components/Checkout/Checkout";
 
 
 
@@ -49,12 +51,14 @@ function App() {
             <Route path='/orderTrack' element={<OrderTracking />} />
             <Route path='/checkout' element={<Checkout />} />
             <Route path='/shop' element={<Shop />} />
+            <Route path='/cart' element={<Cart />} />
             <Route path='/vendorShop' element={<VendorShopPage />} />
             <Route path='/vendorSidebar' element={<VendorSidebar />} />
             <Route path='/profile' element={<PrivateRoute><UserProfile /></PrivateRoute>} />
             <Route path='/success/:id' element={<PrivateRoute><Success /></PrivateRoute>} />
             <Route path='/blogs/details/:id' element={<PrivateRoute><DetailBlogPage /></PrivateRoute>} />
             <Route path='/specials/details/:id' element={<PrivateRoute><DealDetails /></PrivateRoute>} />
+            <Route path='/product/:id' element={<SingleProduct />} />
             <Route path='*' element={<NotFound />} />
 
             {/* DASHBOARD ROUTES */}
