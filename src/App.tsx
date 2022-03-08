@@ -43,7 +43,7 @@ import SingleProduct from "./components/SingleProduct/SingleProduct";
 import UnitTesting from "./components/Pages/UnitTesting/UnitTesting";
 import WishList from "./components/Pages/WishList/WishList";
 import VendorHomePage from "./components/Pages/VendorPages/VendorHomePage";
-import AboutUs from "./components/Pages/About/About";
+import About from "./components/Pages/About/About";
 
 
 
@@ -70,7 +70,7 @@ function App() {
             <Route path='/' element={<Home />} />
             <Route path='/home' element={<Home />} />
             <Route path='/contact' element={<Contact />} />
-            <Route path='/about' element={<AboutUs />} />
+            <Route path='/about' element={<About />} />
             <Route path='/offer' element={<Promo />} />
             <Route path='/unitTesting' element={<UnitTesting />} />
             <Route path='/specialDeal' element={<SpecialDeal />} />

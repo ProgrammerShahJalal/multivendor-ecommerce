@@ -1,9 +1,8 @@
 import React from 'react';
 import { Helmet } from 'react-helmet-async';
-import { Link } from 'react-router-dom';
 import HomePopUp from '../HomePopUp/HomePopUp';
 
-const AboutUs = () => {
+const About = () => {
 
     return (
         <>
@@ -58,4 +57,4 @@ const AboutUs = () => {
     );
 };
 
-export default AboutUs;
+export default About;

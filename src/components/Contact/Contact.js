@@ -6,6 +6,7 @@ import Box from '@mui/material/Box';
 import Typography from '@mui/material/Typography';
 import Modal from '@mui/material/Modal';
 import { Helmet } from 'react-helmet-async';
+import OurLocation from '../Pages/OurLocation/OurLocation';
 const style = {
     position: 'absolute',
     top: '50%',
@@ -147,7 +148,7 @@ const Contact = () => {
 
                     </div>
                 </div>
-
+                <OurLocation />
             </div>
         </>
 
