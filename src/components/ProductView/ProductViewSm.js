@@ -28,16 +28,13 @@ const ProductViewSm = ({ selectedProduct }) => {
                         <img alt="" src={selectedProduct.img} />
                     </SwiperSlide>
                     <SwiperSlide>
+                        <img alt="" src={selectedProduct.img4} />
+                    </SwiperSlide>
+                    <SwiperSlide>
+                        <img alt="" src={selectedProduct.img3} />
+                    </SwiperSlide>
+                    <SwiperSlide>
                         <img alt="" src={selectedProduct.hoverImg} />
-                    </SwiperSlide>
-                    <SwiperSlide>
-                        <img alt="" src="https://i.pinimg.com/originals/84/37/94/8437943c087d24e4d09c3142f778dbd7.png" />
-                    </SwiperSlide>
-                    <SwiperSlide>
-                        <img alt="" src="https://cdn.flightclub.com/750/TEMPLATE/292220/4.jpg" />
-                    </SwiperSlide>
-                    <SwiperSlide>
-                        <img alt="" src="https://image.goat.com/transform/v1/attachments/product_template_additional_pictures/images/065/107/182/original/859919_03.jpg.jpeg?action=crop&width=1250" />
                     </SwiperSlide>
                 </Swiper>
                 <Swiper
@@ -53,16 +50,13 @@ const ProductViewSm = ({ selectedProduct }) => {
                         <img alt="" src={selectedProduct.img} />
                     </SwiperSlide>
                     <SwiperSlide>
+                        <img alt="" src={selectedProduct.img3} />
+                    </SwiperSlide>
+                    <SwiperSlide>
+                        <img alt="" src={selectedProduct.img4} />
+                    </SwiperSlide>
+                    <SwiperSlide>
                         <img alt="" src={selectedProduct.hoverImg} />
-                    </SwiperSlide>
-                    <SwiperSlide>
-                        <img alt="" src="https://i.pinimg.com/originals/84/37/94/8437943c087d24e4d09c3142f778dbd7.png" />
-                    </SwiperSlide>
-                    <SwiperSlide>
-                        <img alt="" src="https://cdn.flightclub.com/750/TEMPLATE/292220/4.jpg" />
-                    </SwiperSlide>
-                    <SwiperSlide>
-                        <img alt="" src="https://image.goat.com/transform/v1/attachments/product_template_additional_pictures/images/065/107/182/original/859919_03.jpg.jpeg?action=crop&width=1250" />
                     </SwiperSlide>
                 </Swiper>
             </div>

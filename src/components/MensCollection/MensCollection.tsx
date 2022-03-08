@@ -49,7 +49,7 @@ const MensCollection = () => {
                     products.map((product) => (
                         <div className="bg-white dark:bg-slate-800 shadow-inner overflow-hidden single-card">
                             <div className="relative group">
-                                <div style={{ height: '250px' }} className='z-100 overflow-hidden'>
+                                <div style={{ height: '250px' }} className='z-100 bg-white overflow-hidden'>
                                     <img src={product.hoverImg} className='select-none img z-0 group-hover:hidden block transition' alt="" />
                                     <img src={product.img3} className='select-none img z-0 group-hover:block hidden transition' alt="" />
                                 </div>
@@ -93,10 +93,10 @@ const MensCollection = () => {
                     <Fade in={open}>
                         <Box>
                             {/* <button className='justify-end text-white select-none bg-red-500 rounded-full w-8 h-8' onClick={handleClose}>x</button> */}
-                            <div className='md:block mx-auto px-1 lg:block hidden'>
+                            <div className='md:block mx-auto bg-white dark:bg-gray-800 px-1 lg:block hidden'>
                                 <ProductView handleClose={handleClose} selectedProduct={selectedProduct} />
                             </div>
-                            <div className='md:hidden lg:hidden block'>
+                            <div className='md:hidden lg:hidden bg-white dark:bg-gray-800 block'>
                                 <ProductViewSm selectedProduct={selectedProduct} />
                             </div>
                         </Box>

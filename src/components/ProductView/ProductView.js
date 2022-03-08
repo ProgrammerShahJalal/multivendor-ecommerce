@@ -29,7 +29,7 @@ const ProductView = ({ selectedProduct, handleClose }) => {
 
     return (
         <div onDoubleClick={handleClose} className='mx-auto'>
-            <div style={{ backgroundColor: 'white', width: '800px', height: '600px', overflow: 'scroll' }} className='py-12 container place-content-center px-8 justify-center items-center mx-auto mt-8 grid lg:grid-cols-2 md:grid-cols-2 grid-cols-1 gap-6'>
+            <div style={{width: '800px', height: '600px'}} className='py-12 border border-white container place-content-center px-8 justify-center items-center mx-auto mt-8 grid lg:grid-cols-2 md:grid-cols-2 grid-cols-1 gap-6'>
 
                 <div>
                     <Swiper

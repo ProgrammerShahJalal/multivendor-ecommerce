@@ -50,7 +50,7 @@ const KidsCollection = () => {
                     products.map((product) => (
                         <div className="bg-white dark:bg-slate-800 shadow-inner overflow-hidden single-card">
                             <div className="relative group">
-                                <div style={{ height: '250px' }} className='z-100 overflow-hidden'>
+                                <div style={{ height: '250px' }} className='bg-white z-100 overflow-hidden'>
                                     <img src={product.hoverImg} className='w-full select-none img z-0 group-hover:hidden block transition object-center' alt="" />
                                     <img src={product.img3} className='w-full select-none hoverImg group-hover:block hidden transition object-center' alt="" />
                                 </div>
