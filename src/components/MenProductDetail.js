@@ -25,7 +25,7 @@ const ProductView = () => {
       })
   }, [id])
 
-  const { title, hoverImg, img, price, salePrice, vendorName, rating } = productDetail[0] || {};
+  const { title, hoverImg, img, img3, img4, price, salePrice, vendorName, rating } = productDetail[0] || {};
   const [thumbsSwiper, setThumbsSwiper] = useState(null);
   const [counter, setCounter] = useState(1);
 
@@ -59,16 +59,10 @@ const ProductView = () => {
               <img alt="" src={hoverImg} />
             </SwiperSlide>
             <SwiperSlide>
-              <img alt="" src={img} />
+              <img alt="" src={img3} />
             </SwiperSlide>
             <SwiperSlide>
-              <img alt="" src={hoverImg} />
-            </SwiperSlide>
-            <SwiperSlide>
-              <img alt="" src={img} />
-            </SwiperSlide>
-            <SwiperSlide>
-              <img alt="" src={hoverImg} />
+              <img alt="" src={img4} />
             </SwiperSlide>
           </Swiper>
           <Swiper
@@ -80,6 +74,7 @@ const ProductView = () => {
             modules={[FreeMode, Navigation, Thumbs]}
             className="mySwiper"
           >
+
             <SwiperSlide>
               <img alt="" src={img} />
             </SwiperSlide>
@@ -87,16 +82,10 @@ const ProductView = () => {
               <img alt="" src={hoverImg} />
             </SwiperSlide>
             <SwiperSlide>
-              <img alt="" src={img} />
+              <img alt="" src={img3} />
             </SwiperSlide>
             <SwiperSlide>
-              <img alt="" src={hoverImg} />
-            </SwiperSlide>
-            <SwiperSlide>
-              <img alt="" src={img} />
-            </SwiperSlide>
-            <SwiperSlide>
-              <img alt="" src={hoverImg} />
+              <img alt="" src={img4} />
             </SwiperSlide>
           </Swiper>
         </div>

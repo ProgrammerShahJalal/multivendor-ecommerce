@@ -33,7 +33,7 @@ function Notify() {
                 pauseOnFocusLoss: false
             }, {
                 toastId: customId
-            }, { delay: 10000 },
+            },
                 {
                     theme: "dark"
                 });
@@ -47,7 +47,7 @@ function Notify() {
                 pauseOnFocusLoss: false
             }, {
                 toastId: customId
-            }, { delay: 32000 }, {
+            }, {
                 theme: "dark"
             });
             toast(<div className='flex justify-center items-center'>
@@ -58,18 +58,15 @@ function Notify() {
                 </div>
             </div>, {
                 pauseOnFocusLoss: false
-            }, { delay: 56000 },
+            },
                 { toastId: customId }, {
                 theme: "dark"
             });
         }
         setCNotify(notify);
-
     }
 
-    setInterval(Updating, 25000);
-    setInterval(clearWaitingQueue, 60000)
-
+    setTimeout(Updating, 15000)
     return (
         <div>
             <ToastContainer
@@ -83,6 +80,7 @@ function Notify() {
                 draggable
                 pauseOnHover
                 limit={1}
+                dismissAll={25000}
             />
         </div>
     );

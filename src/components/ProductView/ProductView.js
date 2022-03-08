@@ -4,13 +4,12 @@ import { Link } from 'react-router-dom';
 import { Swiper, SwiperSlide } from "swiper/react";
 import { FreeMode, Navigation, Thumbs } from "swiper";
 import Magnifier from "react-magnifier";
-// Import Swiper styles
 import "swiper/css";
 import "swiper/css/free-mode";
 import "swiper/css/navigation";
 import "swiper/css/thumbs";
 const ProductView = ({ selectedProduct, handleClose }) => {
-    console.log(selectedProduct, 'selectedProduct');
+    // console.log(selectedProduct, 'selectedProduct');
     const [thumbsSwiper, setThumbsSwiper] = useState(null);
     const [counter, setCounter] = useState(1);
 
@@ -41,11 +40,11 @@ const ProductView = ({ selectedProduct, handleClose }) => {
                         <SwiperSlide style={{ height: '300px', width: '300px' }} >
                             <Magnifier src={selectedProduct.img} className='bg-cover select-none' />
                         </SwiperSlide>
-                        <SwiperSlide style={{ height: '300px', width: '300px' }} >
-                            <Magnifier src={selectedProduct.img4} className='bg-cover select-none' />
+                        <SwiperSlide style={{ height: '300px', width: '300px' }}>
+                            <Magnifier src={selectedProduct.img3} className='bg-cover select-none' />
                         </SwiperSlide>
                         <SwiperSlide style={{ height: '300px', width: '300px' }} >
-                            <Magnifier src={selectedProduct.hoverImg} className='bg-cover select-none' />
+                            <Magnifier src={selectedProduct.img4} className='bg-cover select-none' />
                         </SwiperSlide>
                     </Swiper>
                     <div className='mt-5'>
@@ -65,15 +64,15 @@ const ProductView = ({ selectedProduct, handleClose }) => {
                                 <img alt="" src={selectedProduct.img} className='bg-cover select-none cursor-pointer' />
                             </SwiperSlide>
                             <SwiperSlide style={{ height: '100px', width: '100px' }}>
-                                <img alt="" src={selectedProduct.img4} className='bg-cover select-none cursor-pointer' />
+                                <img alt="" src={selectedProduct.img3} className='bg-cover select-none cursor-pointer' />
                             </SwiperSlide>
-                            <SwiperSlide style={{ height: '100px', width: '100px' }} >
-                                <img alt="" src={selectedProduct.hoverImg} className='bg-cover select-none cursor-pointer' />
+                            <SwiperSlide style={{ height: '100px', width: '100px' }}>
+                                <img alt="" src={selectedProduct.img4} className='bg-cover select-none cursor-pointer' />
                             </SwiperSlide>
                         </Swiper>
                     </div>
                 </div>
-
+                
                 <div>
                     <h2 className='text-3xl mb-2 font-medium'>{selectedProduct.title}</h2>
                     <div className='flex items-center mb-4'>
@@ -176,6 +175,7 @@ const ProductView = ({ selectedProduct, handleClose }) => {
                             </Link>
                         </div>
                     </div>
+                    
                 </div>
             </div>
         </div>
