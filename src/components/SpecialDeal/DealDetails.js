@@ -124,7 +124,7 @@ const DealDetails = () => {
                                 <td className='border border-purple-400'>{rating}</td>
                             </tr>
                             <tr>
-                                <td className='border border-purple-400'>Comment</td>
+                                <td className='border border-purple-400'>Details:</td>
                                 <td className='border border-purple-400'>{details}</td>
                             </tr>
                         </tbody>

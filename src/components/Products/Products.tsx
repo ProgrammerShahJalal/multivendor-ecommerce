@@ -18,6 +18,7 @@ interface ProductState {
         vendorName: string
         rating: number
         _id: string
+        brands:string
     }[]
 }
 const Products = () => {
@@ -74,6 +75,7 @@ const Products = () => {
                                 <Link to={`/product/${product._id}`}>
                                     <h4 className="font-medium text-xl mb-2 text-grey-800  transition">{product.title}</h4>
                                     <h5 className="font-bold text-sm mb-2 text-grey-800 transition">Category: {product.categories[0]?.label}</h5>
+                                    <h5 className="font-bold text-sm mb-2 text-grey-800 transition">from {product.brand}</h5>
                                 </Link>
                                 <div className="flex items-baseline mb-1 space-x-2">
                                     <p className="text-xl text-indigo-500 font-semibold">{product.sale_price}</p>

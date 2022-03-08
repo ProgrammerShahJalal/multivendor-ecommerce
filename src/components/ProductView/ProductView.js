@@ -4,7 +4,6 @@ import { Link } from 'react-router-dom';
 import { Swiper, SwiperSlide } from "swiper/react";
 import { FreeMode, Navigation, Thumbs } from "swiper";
 import Magnifier from "react-magnifier";
-// Import Swiper styles
 import "swiper/css";
 import "swiper/css/free-mode";
 import "swiper/css/navigation";
@@ -36,7 +35,7 @@ const ProductView = ({ selectedProduct, handleClose }) => {
                         className="mySwiper2"
                     >
                         <SwiperSlide style={{ height: '300px', width: '300px' }}>
-                            <Magnifier src={selectedProduct.hoverImg} className='bg-cover select-none' />
+                            <Magnifier src={selectedProduct.img3} className='bg-cover select-none' />
                         </SwiperSlide>
                         <SwiperSlide style={{ height: '300px', width: '300px' }} >
                             <Magnifier src={selectedProduct.img} className='bg-cover select-none' />
@@ -59,7 +58,7 @@ const ProductView = ({ selectedProduct, handleClose }) => {
                             className="mySwiper"
                         >
                             <SwiperSlide style={{ height: '100px', width: '100px' }}>
-                                <img alt="" src={selectedProduct.hoverImg} className='bg-cover select-none cursor-pointer' />
+                                <img alt="" src={selectedProduct.img3} className='bg-cover select-none cursor-pointer' />
                             </SwiperSlide>
                             <SwiperSlide style={{ height: '100px', width: '100px' }} >
                                 <img alt="" src={selectedProduct.img} className='bg-cover select-none cursor-pointer' />
@@ -73,7 +72,7 @@ const ProductView = ({ selectedProduct, handleClose }) => {
                         </Swiper>
                     </div>
                 </div>
-
+                
                 <div>
                     <h2 className='text-3xl mb-2 font-medium'>{selectedProduct.title}</h2>
                     <div className='flex items-center mb-4'>
@@ -176,6 +175,7 @@ const ProductView = ({ selectedProduct, handleClose }) => {
                             </Link>
                         </div>
                     </div>
+                    
                 </div>
             </div>
         </div>
