@@ -15,28 +15,28 @@ const Brands = () => {
         className="mySwiper"
       >
         <SwiperSlide>
-          <img style={{height:'70px',width:'240px'}} alt="" src="https://i.ibb.co/Bs18fdf/adidas-logo.png" />
+          <img style={{height:'70px',width:'240px',backgroundColor:'white',padding:'5px'}} alt="" src="https://i.ibb.co/Bs18fdf/adidas-logo.png" />
         </SwiperSlide>
         <SwiperSlide>
-          <img style={{height:'70px',width:'240px'}} alt="" src="https://i.ibb.co/QDGHqYF/rolex-logo.png" />
+          <img style={{height:'70px',width:'240px',backgroundColor:'white',padding:'5px'}} alt="" src="https://i.ibb.co/QDGHqYF/rolex-logo.png" />
         </SwiperSlide>
         <SwiperSlide>
-          <img style={{height:'70px',width:'240px'}} alt="" src="https://i.ibb.co/BBbLntS/nike-logo.png" />
+          <img style={{height:'70px',width:'240px',backgroundColor:'white',padding:'5px'}} alt="" src="https://i.ibb.co/BBbLntS/nike-logo.png" />
         </SwiperSlide>
         <SwiperSlide>
-          <img style={{height:'70px',width:'240px'}} alt="" src="https://i.ibb.co/56bSrc9/underarmour-logo.png" />
+          <img style={{height:'70px',width:'240px',backgroundColor:'white',padding:'5px'}} alt="" src="https://i.ibb.co/56bSrc9/underarmour-logo.png" />
         </SwiperSlide>
         <SwiperSlide>
-          <img style={{height:'70px',width:'240px'}} alt="" src="https://i.ibb.co/B6g48Pz/apple-logo.png" />
+          <img style={{height:'70px',width:'240px',backgroundColor:'white',padding:'5px'}} alt="" src="https://i.ibb.co/B6g48Pz/apple-logo.png" />
         </SwiperSlide>
         <SwiperSlide>
-          <img style={{height:'70px',width:'240px'}} alt="" src="https://i.ibb.co/f8wzVkM/phero-logo.png" />
+          <img style={{height:'70px',width:'240px',backgroundColor:'white',padding:'5px'}} alt="" src="https://i.ibb.co/f8wzVkM/phero-logo.png" />
         </SwiperSlide>
         <SwiperSlide>
-          <img style={{height:'70px',width:'240px'}} alt="" src="https://i.ibb.co/d6JH723/daraz-logo.png" />
+          <img style={{height:'70px',width:'240px',backgroundColor:'white',padding:'5px'}} alt="" src="https://i.ibb.co/d6JH723/daraz-logo.png" />
         </SwiperSlide>
         <SwiperSlide>
-          <img style={{height:'70px',width:'240px'}} alt="" src="https://i.ibb.co/ZN5Dw2P/microsoft-logo.png" />
+          <img style={{height:'70px',width:'240px',backgroundColor:'white',padding:'5px'}} alt="" src="https://i.ibb.co/ZN5Dw2P/microsoft-logo.png" />
         </SwiperSlide>
       </Swiper>
             </div>
@@ -50,28 +50,28 @@ const Brands = () => {
         className="mySwiper"
       >
         <SwiperSlide>
-          <img style={{height:'70px',width:'240px'}} alt="" src="https://i.ibb.co/Bs18fdf/adidas-logo.png" />
+          <img style={{height:'70px',width:'240px',backgroundColor:'white',padding:'5px'}} alt="" src="https://i.ibb.co/Bs18fdf/adidas-logo.png" />
         </SwiperSlide>
         <SwiperSlide>
-          <img style={{height:'70px',width:'240px'}} alt="" src="https://i.ibb.co/QDGHqYF/rolex-logo.png" />
+          <img style={{height:'70px',width:'240px',backgroundColor:'white',padding:'5px'}} alt="" src="https://i.ibb.co/QDGHqYF/rolex-logo.png" />
         </SwiperSlide>
         <SwiperSlide>
-          <img style={{height:'70px',width:'240px'}} alt="" src="https://i.ibb.co/BBbLntS/nike-logo.png" />
+          <img style={{height:'70px',width:'240px',backgroundColor:'white',padding:'5px'}} alt="" src="https://i.ibb.co/BBbLntS/nike-logo.png" />
         </SwiperSlide>
         <SwiperSlide>
-          <img style={{height:'70px',width:'240px'}} alt="" src="https://i.ibb.co/56bSrc9/underarmour-logo.png" />
+          <img style={{height:'70px',width:'240px',backgroundColor:'white',padding:'5px'}} alt="" src="https://i.ibb.co/56bSrc9/underarmour-logo.png" />
         </SwiperSlide>
         <SwiperSlide>
-          <img style={{height:'70px',width:'240px'}} alt="" src="https://i.ibb.co/B6g48Pz/apple-logo.png" />
+          <img style={{height:'70px',width:'240px',backgroundColor:'white',padding:'5px'}} alt="" src="https://i.ibb.co/B6g48Pz/apple-logo.png" />
         </SwiperSlide>
         <SwiperSlide>
-          <img style={{height:'70px',width:'240px'}} alt="" src="https://i.ibb.co/f8wzVkM/phero-logo.png" />
+          <img style={{height:'70px',width:'240px',backgroundColor:'white',padding:'5px'}} alt="" src="https://i.ibb.co/f8wzVkM/phero-logo.png" />
         </SwiperSlide>
         <SwiperSlide>
-          <img style={{height:'70px',width:'240px'}} alt="" src="https://i.ibb.co/d6JH723/daraz-logo.png" />
+          <img style={{height:'70px',width:'240px',backgroundColor:'white',padding:'5px'}} alt="" src="https://i.ibb.co/d6JH723/daraz-logo.png" />
         </SwiperSlide>
         <SwiperSlide>
-          <img style={{height:'70px',width:'240px'}} alt="" src="https://i.ibb.co/ZN5Dw2P/microsoft-logo.png" />
+          <img style={{height:'70px',width:'240px',backgroundColor:'white',padding:'5px'}} alt="" src="https://i.ibb.co/ZN5Dw2P/microsoft-logo.png" />
         </SwiperSlide>
       </Swiper>
             </div>

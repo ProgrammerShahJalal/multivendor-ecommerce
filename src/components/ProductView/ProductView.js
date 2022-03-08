@@ -21,6 +21,12 @@ const ProductView = ({ selectedProduct, handleClose }) => {
             setCounter(counter - 1)
         )
     }
+
+
+    const death = "peace & bye world";
+    console.log(death)
+
+
     return (
         <div onDoubleClick={handleClose} className='mx-auto'>
             <div style={{ backgroundColor: 'white', width: '800px', height: '600px', overflow: 'scroll' }} className='py-12 container place-content-center px-8 justify-center items-center mx-auto mt-8 grid lg:grid-cols-2 md:grid-cols-2 grid-cols-1 gap-6'>
@@ -84,20 +90,20 @@ const ProductView = ({ selectedProduct, handleClose }) => {
                         </div>
                     </div>
                     <div className='space-y-2'>
-                        <p className="p text-gray-800 font-semibold space-x-2">
+                        <p className="p text-gray-800 dark:text-white font-semibold space-x-2">
                             <span>Availability:</span>
                             <span className='text-green-600'>In stock</span>
                         </p>
                         <p className="space-x-2">
-                            <span className='text-gray-800 font-semibold'>Brand:</span>
+                            <span className='text-gray-800 dark:text-white font-semibold'>Brand:</span>
                             <span className='text-gray-600'>Nike</span>
                         </p>
                         <p className="space-x-2">
-                            <span className='text-gray-800 font-semibold'>Category:</span>
+                            <span className='text-gray-800 dark:text-white font-semibold'>Category:</span>
                             <span className='text-gray-600'>Men</span>
                         </p>
                         <p className="space-x-2">
-                            <span className='text-gray-800 font-semibold'>SKU:</span>
+                            <span className='text-gray-800 dark:text-white font-semibold'>SKU:</span>
                             <span className='text-gray-600 uppercase'>{selectedProduct._id.slice(15, 25)}</span>
                         </p>
                     </div>
@@ -108,7 +114,7 @@ const ProductView = ({ selectedProduct, handleClose }) => {
                     </div>
                     <div className="grid grid-cols-2">
                         <div className="">
-                            <h3 className="text-xl text-gray-800 mb-3 uppercase font-medium ">Color</h3>
+                            <h3 className="text-xl text-gray-800 dark:text-white mb-3 uppercase font-medium ">Color</h3>
                             <div className="flex gap-2">
                                 {/* Single Color Starts */}
                                 <div className="color-selctor">
@@ -126,7 +132,7 @@ const ProductView = ({ selectedProduct, handleClose }) => {
                             </div>
                         </div>
                         <div className="pt-4 -mt-32 block">
-                            <h3 className="text-xl text-gray-800 mb-3 uppercase font-medium">Size</h3>
+                            <h3 className="text-xl text-gray-800 dark:text-white mb-3 uppercase font-medium">Size</h3>
                             <div className="flex item-center gap-2">
                                 <div className="size-selector">
                                     <input type="radio" name='size' className='hidden' id='xs' />
@@ -149,7 +155,7 @@ const ProductView = ({ selectedProduct, handleClose }) => {
                             </div>
                         </div>
                         <div>
-                            <h3 className='text-xl text-gray-800 mb-1'>Quantity</h3>
+                            <h3 className='text-xl text-gray-800 dark:text-white mb-1'>Quantity</h3>
                             <div className="flex border border-gray-500 divide-gray-500 text-gray-600 divide-x w-max">
                                 <button onClick={decrement} className='h-8 w-8 flex items-center justify-center cursor-pointer select-none'>
                                     -

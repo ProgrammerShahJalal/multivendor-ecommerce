@@ -49,11 +49,11 @@ const Success = () => {
                 <div className='overflow-x-auto mx-auto w-full h-full'>
                     <Celebrating />
                 </div>
-                <div className="py-12 bg-white">
+                <div className="py-12 bg-white dark:bg-slate-800">
                     <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
                         <div className="lg:text-center">
                             <h2 className="text-base text-indigo-600 font-semibold tracking-wide uppercase">Transactions</h2>
-                            <p className="mt-2 text-3xl leading-8 font-extrabold tracking-tight text-gray-900 sm:text-4xl">
+                            <p className="mt-2 text-3xl leading-8 font-extrabold tracking-tight text-gray-900 dark:text-white sm:text-4xl">
                                 Your Payment Successfully Completed!
                             </p>
                         </div>
@@ -65,14 +65,14 @@ const Success = () => {
                                         <img className='w-72 lg:w-80' src={orders.product_image} alt="" />
                                     </div>
                                     <div className="mt-2 text-base">
-                                        <p className="w-72 text-lg leading-6 font-medium text-gray-900"><span className='text-indigo-600 font-semi-bold'>Product Name:</span> {orders.product_name}</p>
+                                        <p className="w-72 text-lg leading-6 font-medium text-gray-900 dark:text-white"><span className='text-indigo-600 font-semi-bold'>Product Name:</span> {orders.product_name}</p>
                                         <p><span className='text-indigo-600'>Total Amount:</span> $ {orders.total_amount}</p></div>
                                 </div>
                                 <div className='gap-3 mx-auto flex'>
-                                    <button onClick={validatePayment} className="mx-auto flex items-center justify-center my-6 border border-indigo-500 bg-white text-indigo-500 p-2 rounded-sm hover:bg-indigo-500 hover:text-white">Confirm Order</button>
+                                    <button onClick={validatePayment} className="mx-auto flex items-center justify-center my-6 border border-indigo-500 bg-white dark:bg-slate-800 text-indigo-500 p-2 rounded-sm hover:bg-indigo-500 hover:text-white">Confirm Order</button>
                                     <Pdf style={{ height: '600px', width: '800px' }} targetRef={ref} filename="invoice.pdf">
                                         {({ toPdf }) => (
-                                            <button className="mx-auto flex items-center justify-center my-6 border border-indigo-500 bg-white text-indigo-500 p-2 rounded-sm hover:bg-indigo-500 hover:text-white" onClick={toPdf}><i className="fa-light fa-file-arrow-down pe-2"></i>ㅤDownload invoice</button>
+                                            <button className="mx-auto flex items-center justify-center my-6 border border-indigo-500 bg-white dark:bg-slate-800 text-indigo-500 p-2 rounded-sm hover:bg-indigo-500 hover:text-white" onClick={toPdf}><i className="fa-light fa-file-arrow-down pe-2"></i>ㅤDownload invoice</button>
                                         )}
                                     </Pdf>
                                 </div>

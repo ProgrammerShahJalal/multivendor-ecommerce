@@ -49,7 +49,7 @@ export default function Banners() {
                 </NavLink>
               </div>
               <div className="md:-mt-0 lg:-mt-0 -mt-12">
-                <img src='https://i.ibb.co/V95BWTm/headphone.jpg' alt="Image1" className="md:block" />
+                <img src='https://i.ibb.co/880G2zr/headphone.png' alt="Image1" className="md:block" />
               </div>
             </div>
 
@@ -103,7 +103,7 @@ export default function Banners() {
                 </NavLink>
               </div>
               <div className="md:-mt-0 -mt-10">
-                <img src='https://i.ibb.co/mynSZHf/ps5.jpg' alt="Image1" className="md:block" />
+                <img src='https://i.ibb.co/2d1cqfq/ps5.png' alt="Image1" className="md:block" />
               </div>
             </div>
 

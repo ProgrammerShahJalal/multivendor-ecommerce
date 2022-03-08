@@ -53,8 +53,8 @@ export default function SpecialDeal() {
     }, [specials])
 
     return (
-        <div className="bg-gray-50">
-            <h2 className="text-3xl text-center font-extrabold text-gray-900 sm:text-4xl">
+        <div className="bg-gray-50 dark:bg-gray-800">
+            <h2 className="text-3xl text-center font-extrabold text-gray-900 dark:text-white sm:text-4xl">
                 <span className="text-5xl pr-3" >Special</span>
                 <span className=" text-indigo-600 text-5xl">Deal</span>
             </h2>
@@ -71,7 +71,7 @@ export default function SpecialDeal() {
                                 <h2 className="text-md italic font-light">High Tech Products</h2>
                                 <h2 className="font-bold text-3xl tracking-wide leading-relaxed">Google Smart Home 2022</h2>
                                 <HashLink smooth to="/#blog">
-                                    <button className="text-black px-2 py-1 rounded-2xl bg-slate-100">Read More</button>
+                                    <button className="text-gray-800 dark:text-white px-2 py-1 rounded-2xl bg-slate-100">Read More</button>
                                 </HashLink>
                             </div>
                         </Link>
@@ -87,8 +87,8 @@ export default function SpecialDeal() {
                                 deals.map((deal) => (
                                     <div className="w-64 flex justify-center items-center gap-2 cursor-pointer">
                                         <img className="w-20" src={deal.img} alt="" />
-                                        <h3>{deal.title}</h3>
-                                        <p>{deal.price}</p>
+                                        <h3 className="text-black dark:text-white">{deal.title}</h3>
+                                        <p className="text-black dark:text-white">{deal.price}</p>
                                     </div>
                                 ))
                             }
@@ -103,7 +103,8 @@ export default function SpecialDeal() {
                                     <img style={{ width: '250px', height: '300px' }} className="mx-auto group-hover:hidden block img" src={special.hoverImg} alt="" />
                                     <img style={{ width: '250px', height: '300px' }} className="mx-auto group-hover:block hidden hoverImg" src={special.img} alt="" />
                                 </div>
-                                <h2 className="font-bold">{special.title}</h2>
+                                
+                                <h2 className="font-bold text-black dark:text-white">{special.title}</h2>
                                 <p className="text-slate-400">{special.processor}</p>
                                 <div className="flex justify-center items-center gap-3">
                                     <p className="text-slate-400 line-through decoration-pink-500">${special.price}</p>

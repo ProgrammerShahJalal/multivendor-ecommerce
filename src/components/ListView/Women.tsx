@@ -44,7 +44,7 @@ const Women = () => {
             <div className="grid grid-cols-1 gap-6">
                 {
                     products.map((product) => (
-                        <div className="bg-white shadow-inner flex overflow-hidden single-card ">
+                        <div className="bg-white dark:bg-slate-800 shadow-inner flex overflow-hidden single-card ">
                 <div className="relative group">
                 <div style={{height:'300px',width:'300px'}} className='z-100  overflow-hidden'>
                                 <img src={product.hoverImg} className='w-full select-none block group-hover:hidden z-0 transition object-center' alt="" />
@@ -62,8 +62,8 @@ const Women = () => {
                 </div>
                 <div style={{height:'200px'}} className="pt-4 gb-3 px-4">
                         <a href="/">
-                            <h4 className="font-medium text-xl mb-2 text-grey-800  transition">{product.title}</h4>
-                            <h5 className="font-bold text-sm mb-2 text-grey-800 transition">from {product.vendorName}</h5>
+                            <h4 className="font-medium text-xl mb-2 text-gray-800 dark:text-white  transition">{product.title}</h4>
+                            <h5 className="font-bold text-sm mb-2 text-gray-800 dark:text-white transition">from {product.vendorName}</h5>
                         </a>
                         <div className="flex items-baseline mb-1 space-x-2">
                             <p className="text-xl text-indigo-500 font-semibold">{product.salePrice}</p>
@@ -74,7 +74,7 @@ const Women = () => {
                             <div className="text-xs text-gray-500 ml-3">(1)</div>
                         </div>
                         <div className="">
-                        <h3 className="text-xl text-gray-800 mb-3 uppercase font-medium ">Color</h3>
+                        <h3 className="text-xl text-gray-800 dark:text-white mb-3 uppercase font-medium ">Color</h3>
                         <div className="flex gap-2">
                             {/* Single Color Starts */}
                             <div className="color-selctor">
@@ -108,7 +108,7 @@ const Women = () => {
                     <div className="grid grid-cols-3">
                     
                     <div className="pt-4 -mt-32 block">
-                        <h3 className="text-xl text-gray-800 mb-3 uppercase font-medium">Size</h3>
+                        <h3 className="text-xl text-gray-800 dark:text-white mb-3 uppercase font-medium">Size</h3>
                         <div className="flex item-center gap-2">
                             <div className="size-selector">
                                 <input type="radio" name='size' className='hidden' id='xs' />

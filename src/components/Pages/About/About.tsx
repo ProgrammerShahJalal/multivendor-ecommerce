@@ -25,7 +25,7 @@ const About = () => {
                                 <img src="https://template.annimexweb.com/diva/assets/images/about/about-us-image5.jpg" className="w-full" alt='' />
                             </div>
                             <div className='w-50 px-5 text-center'>
-                                <h2 className='text-2xl font-medium text-gray-800 uppercase mb-6'>What is Unity Mart</h2>
+                                <h2 className='text-2xl font-medium text-gray-800 dark:text-white uppercase mb-6'>What is Unity Mart</h2>
                                 <p>Unity Mart comes with easy-to-use interface and outstanding support. You can implement your own design. You can easily change the store's appearance as per your requirements using our ready sections and options available.
                                     Our support teams are ready to help you on any stage of your store setup</p>
                                 <button className="mt-2 text-white bg-purple-600 justify-center px-3 py-1 rounded-md hover:bg-purple-800 transition"><HomePopUp /></button>
@@ -35,14 +35,14 @@ const About = () => {
                     <div className='container mx-auto'>
                         <div className='grid md:grid-cols-2 sm:grid-cols-1 gap-0 items-center justify-center'>
                             <div className='w-50  px-7 text-center'>
-                                <h2 className='text-2xl font-medium text-gray-800 uppercase mb-6'>Our Mission</h2>
+                                <h2 className='text-2xl font-medium text-gray-800 dark:text-white uppercase mb-6'>Our Mission</h2>
                                 <p>Our mission is to create top-quality shopify theme which is unique, clean, easy to use, bug less, easy to load and have all the features that merchant need to run their online eCommerce business successfully.</p>
                             </div>
                         </div>
                         <div className='container mx-auto'>
                             <div className='grid grid-cols-2 gap-0 items-center justify-center'>
                                 <div className='w-50  px-7 text-center'>
-                                    <h2 className='text-2xl font-medium text-gray-800 uppercase mb-6'>Our Mission</h2>
+                                    <h2 className='text-2xl font-medium text-gray-800 dark:text-white uppercase mb-6'>Our Mission</h2>
                                     <p>Our mission is to create top-quality shopify theme which is unique, clean, easy to use, bug less, easy to load and have all the features that merchant need to run their online eCommerce business successfully.</p>
                                 </div>
                                 <div className='w-50'>

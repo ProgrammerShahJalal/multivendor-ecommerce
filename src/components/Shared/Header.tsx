@@ -1,10 +1,11 @@
 /* eslint-disable jsx-a11y/no-redundant-roles */
-import { Fragment, useState } from 'react';
+import { Fragment, useEffect, useState } from 'react';
 import { Dialog, Menu, Popover, Tab, Transition } from '@headlessui/react';
 import { ChevronDownIcon, MenuIcon, SearchIcon, ShoppingBagIcon, XIcon } from '@heroicons/react/outline';
 import { Link, NavLink } from 'react-router-dom';
 import UseAuth from '../../hooks/UseAuth';
 import Watch from '../Watch/Watch';
+// import UseDarkMode from '../../hooks/UseDarkMode';
 
 const navigation = {
 
@@ -138,14 +139,20 @@ function classNames(...classes: any[]) {
 }
 
 export default function Header() {
+    const [theme, setTheme] = useState('dark');
+    const colorTheme = theme === 'dark'? 'light' : 'dark';
+
+    useEffect(()=>{
+        const root = window.document.documentElement;
+        root.classList.add(theme)
+        root.classList.remove(colorTheme)
+    },[theme, colorTheme])
     const [open, setOpen] = useState(false)
 
     const { user, logout } = UseAuth();
-
-
-
+    // const [colorTheme, setTheme] = UseDarkMode();
     return (
-        <div className="bg-white">
+        <div className="bg-white dark:bg-slate-800">
             {/* Mobile menu */}
             <Transition.Root show={open} as={Fragment}>
                 <Dialog as="div" className="fixed inset-0 flex z-40 lg:hidden" onClose={setOpen}>
@@ -170,7 +177,7 @@ export default function Header() {
                         leaveFrom="translate-x-0"
                         leaveTo="-translate-x-full"
                     >
-                        <div className="relative max-w-xs w-full bg-white shadow-xl pb-12 flex flex-col overflow-y-auto">
+                        <div className="relative max-w-xs w-full bg-white dark:bg-slate-800 shadow-xl pb-12 flex flex-col overflow-y-auto">
                             <div className="px-4 pt-5 pb-2 flex">
                                 <button
                                     type="button"
@@ -188,7 +195,7 @@ export default function Header() {
                             <div className="border-t border-gray-200 py-6 px-4 space-y-6">
                                 {navigation.pages.map((page) => (
                                     <div key={page.name} className="flow-root">
-                                        <Link to={page.to} className="-m-2 p-2 block font-medium text-gray-900">
+                                        <Link to={page.to} className="-m-2 p-2 block font-medium text-gray-900 dark:text-white">
                                             {page.name}
                                         </Link>
                                     </div>
@@ -203,7 +210,7 @@ export default function Header() {
                                                 key={category.name}
                                                 className={({ selected }) =>
                                                     classNames(
-                                                        selected ? 'text-indigo-600 border-indigo-600' : 'text-gray-900 border-transparent',
+                                                        selected ? 'text-indigo-600 border-indigo-600' : 'text-gray-900 dark:text-white border-transparent',
                                                         'flex-1 whitespace-nowrap py-4 px-1 border-b-2 text-base font-medium'
                                                     )
                                                 }
@@ -222,7 +229,7 @@ export default function Header() {
                                                         <div className="aspect-w-1 aspect-h-1 rounded-lg bg-gray-100 overflow-hidden group-hover:opacity-75">
                                                             <img src={item.imageSrc} alt={item.imageAlt} className="object-center object-cover" />
                                                         </div>
-                                                        <Link to={item.to} className="mt-6 block font-medium text-gray-900">
+                                                        <Link to={item.to} className="mt-6 block font-medium text-gray-900 dark:text-white">
                                                             <span className="absolute z-10 inset-0" aria-hidden="true" />
                                                             {item.name}
                                                         </Link>
@@ -234,7 +241,7 @@ export default function Header() {
                                             </div>
                                             {category.sections.map((section) => (
                                                 <div key={section.name}>
-                                                    <p id={`${category.id}-${section.id}-heading-mobile`} className="font-medium text-gray-900">
+                                                    <p id={`${category.id}-${section.id}-heading-mobile`} className="font-medium text-gray-900 dark:text-white">
                                                         {section.name}
                                                     </p>
                                                     <ul role="list" aria-labelledby={`${category.id}-${section.id}-heading-mobile`}
@@ -258,18 +265,18 @@ export default function Header() {
                             <div className="border-t border-gray-200 py-6 px-4 space-y-6">
                                 {
                                     user.email ? <div className="flow-root">
-                                        <p onClick={logout} className="-m-2 p-2 block font-medium text-gray-900">
+                                        <p onClick={logout} className="-m-2 p-2 block font-medium text-gray-900 dark:text-white">
                                             Logout
                                         </p>
                                     </div> :
                                         <div>
                                             <div className="flow-root">
-                                                <Link to="/login" className="-m-2 p-2 block font-medium text-gray-900">
+                                                <Link to="/login" className="-m-2 p-2 block font-medium text-gray-900 dark:text-white">
                                                     Login
                                                 </Link>
                                             </div>
                                             <div className="flow-root">
-                                                <Link to="/register" className="-m-2 p-2 block font-medium text-gray-900">
+                                                <Link to="/register" className="-m-2 p-2 block font-medium text-gray-900 dark:text-white">
                                                     Create account
                                                 </Link>
                                             </div>
@@ -285,7 +292,7 @@ export default function Header() {
                                         alt=""
                                         className="w-5 h-auto block flex-shrink-0"
                                     />
-                                    <span className="ml-3 block text-base font-medium text-gray-900">CAD</span>
+                                    <span className="ml-3 block text-base font-medium text-gray-900 dark:text-white">CAD</span>
                                     <span className="sr-only">, change currency</span>
                                 </Link>
                             </div>
@@ -296,7 +303,7 @@ export default function Header() {
 
 
 
-            <header className="relative bg-white">
+            <header className="relative bg-white dark:bg-slate-800">
                 <div className="bg-indigo-600 h-10 flex items-center justify-around text-sm font-medium text-white px-4 sm:px-6 lg:px-8">
                     <p>
                         Let's know current time
@@ -308,7 +315,7 @@ export default function Header() {
                         <div className="h-16 flex items-center">
                             <button
                                 type="button"
-                                className="bg-white p-2 rounded-md text-gray-400 lg:hidden"
+                                className="bg-white dark:bg-slate-800 p-2 rounded-md text-gray-400 lg:hidden"
                                 onClick={() => setOpen(true)}
                             >
                                 <span className="sr-only">Open menu</span>
@@ -332,7 +339,7 @@ export default function Header() {
                                                             className={classNames(
                                                                 open
                                                                     ? 'border-indigo-600 text-indigo-600'
-                                                                    : 'border-transparent text-gray-700 hover:text-gray-800',
+                                                                    : 'border-transparent text-gray-700 hover:text-gray-800 dark:text-white',
                                                                 'relative z-10 flex items-center transition-colors ease-out duration-200 text-sm font-medium border-b-2 -mb-px pt-px'
                                                             )}
                                                         >
@@ -351,9 +358,9 @@ export default function Header() {
                                                     >
                                                         <Popover.Panel className="absolute top-full inset-x-0 text-sm text-gray-500">
                                                             {/* Presentational element used to render the bottom shadow, if we put the shadow on the actual panel it pokes out the top, so we use this shorter element to hide the top of the shadow */}
-                                                            <div className="absolute inset-0 top-1/2 bg-white shadow" aria-hidden="true" />
+                                                            <div className="absolute inset-0 top-1/2 bg-white dark:bg-slate-800 shadow" aria-hidden="true" />
 
-                                                            <div className="relative bg-white">
+                                                            <div className="relative bg-white dark:bg-slate-800">
                                                                 <div className="max-w-7xl mx-auto px-8">
                                                                     <div className="grid grid-cols-2 gap-y-10 gap-x-8 py-16">
                                                                         <div className="col-start-2 grid grid-cols-2 gap-x-8">
@@ -366,7 +373,7 @@ export default function Header() {
                                                                                             className="object-center object-cover"
                                                                                         />
                                                                                     </div>
-                                                                                    <Link to={item.to} className="mt-6 block font-medium text-gray-900">
+                                                                                    <Link to={item.to} className="mt-6 block font-medium text-gray-900 dark:text-white">
                                                                                         <span className="absolute z-10 inset-0" aria-hidden="true" />
                                                                                         {item.name}
                                                                                     </Link>
@@ -379,7 +386,7 @@ export default function Header() {
                                                                         <div className="row-start-1 grid grid-cols-3 gap-y-10 gap-x-8 text-sm">
                                                                             {category.sections.map((section) => (
                                                                                 <div key={section.name}>
-                                                                                    <p id={`${section.name}-heading`} className="font-medium text-gray-900">
+                                                                                    <p id={`${section.name}-heading`} className="font-medium text-gray-900 dark:text-white">
                                                                                         {section.name}
                                                                                     </p>
                                                                                     <ul
@@ -389,7 +396,7 @@ export default function Header() {
                                                                                     >
                                                                                         {section.items.map((item) => (
                                                                                             <li key={item.name} className="flex">
-                                                                                                <Link to={item.to} className="hover:text-gray-800">
+                                                                                                <Link to={item.to} className="hover:text-gray-800 dark:text-white">
                                                                                                     {item.name}
                                                                                                 </Link>
                                                                                             </li>
@@ -412,7 +419,7 @@ export default function Header() {
                                         <Link
                                             key={page.name}
                                             to={page.to}
-                                            className="flex items-center text-sm font-medium text-gray-700 hover:text-gray-800"
+                                            className="flex items-center text-sm font-medium text-gray-700 hover:text-gray-800 dark:text-white"
                                         >
                                             {page.name}
                                         </Link>
@@ -442,7 +449,7 @@ export default function Header() {
                                         leaveFrom="transform opacity-100 scale-100"
                                         leaveTo="transform opacity-0 scale-95"
                                     >
-                                        <Menu.Items className="z-10 origin-top-right absolute right-0 mt-2 w-48 rounded-md shadow-lg py-1 bg-white ring-1 ring-black ring-opacity-5 focus:outline-none">
+                                        <Menu.Items className="z-10 origin-top-right absolute right-0 mt-2 w-48 rounded-md shadow-lg py-1 bg-white dark:bg-slate-800 ring-1 ring-black ring-opacity-5 focus:outline-none">
                                             <Menu.Item>
                                                 {({ active }) => (
                                                     <NavLink
@@ -510,7 +517,7 @@ export default function Header() {
 
 
                                 <div className="hidden lg:ml-8 lg:flex">
-                                    <Link to="/" className="text-gray-700 hover:text-gray-800 flex items-center">
+                                    <Link to="/" className="text-gray-700 hover:text-gray-800 dark:text-white flex items-center">
                                         <img
                                             src="https://upload.wikimedia.org/wikipedia/commons/thumb/7/75/Flag_of_Bangladesh_%283-2%29.svg/1200px-Flag_of_Bangladesh_%283-2%29.svg.png?20190306092954"
                                             alt=""
@@ -536,11 +543,19 @@ export default function Header() {
                                             className="flex-shrink-0 h-6 w-6 text-gray-400 group-hover:text-gray-500"
                                             aria-hidden="true"
                                         />
-                                        <span className="ml-2 text-sm font-medium text-gray-700 group-hover:text-gray-800">0</span>
+                                        <span className="ml-2 text-sm font-medium text-gray-700 group-hover:text-gray-800 dark:text-white">0</span>
                                         <span className="sr-only">items in cart, view bag</span>
                                     </Link>
                                 </div>
                             </div>
+                            <button onClick={()=> setTheme(colorTheme) } className='h-10 w-10 bg-indigo-500 text-white flex items-center justify-center rounded-full m-2 cursor-pointer'>
+                            {
+                                colorTheme==='light'?(<i className="fa-light fa-lightbulb"></i>):(<i className="fa-solid fa-moon"></i>)
+                            }
+                            </button>
+                            
+                            
+                            {/* <Toggle/> */}
                             <div className="ml-auto flex items-center">
                                 {/* profile dropdown */}
                                 {
@@ -564,7 +579,7 @@ export default function Header() {
                                             leaveFrom="transform opacity-100 scale-100"
                                             leaveTo="transform opacity-0 scale-95"
                                         >
-                                            <Menu.Items className="z-10 origin-top-right absolute right-0 mt-2 w-48 rounded-md shadow-lg py-1 bg-white ring-1 ring-black ring-opacity-5 focus:outline-none">
+                                            <Menu.Items className="z-10 origin-top-right absolute right-0 mt-2 w-48 rounded-md shadow-lg py-1 bg-white dark:bg-slate-800 ring-1 ring-black ring-opacity-5 focus:outline-none">
                                                 <Menu.Item>
                                                     {({ active }) => (
                                                         <NavLink
@@ -598,14 +613,14 @@ export default function Header() {
                                             </Menu.Items>
                                         </Transition>
                                     </Menu> :
-                                        <div className='flex items-center gap-5 text-sm font-medium text-gray-700 hover:text-gray-800'>
+                                        <div className='flex items-center gap-5 text-sm font-medium text-gray-700 hover:text-gray-800 dark:text-white'>
                                             <div className="flow-root">
-                                                <Link to="/login" className="-m-2 p-2 block font-medium text-gray-900">
+                                                <Link to="/login" className="-m-2 p-2 block font-medium text-gray-900 dark:text-white">
                                                     Login
                                                 </Link>
                                             </div>
                                             <div className='flow-root'>
-                                                <Link to="/register" className="-m-2 p-2 block font-medium text-gray-900">
+                                                <Link to="/register" className="-m-2 p-2 block font-medium text-gray-900 dark:text-white">
                                                     Create Account
                                                 </Link>
                                             </div>

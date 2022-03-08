@@ -11,11 +11,11 @@ const Products = () => {
             {/* sidebar starts */}
             <div className="container grid lg:grid-cols-4 md:grid-cols-2 grid-cols-1 gap-6 pt-4 pb-16 item-start">
                 {/* Sidebar */}
-                <div className="col-span-1 bg-white px-4 pb-6 shadow rounded overflow-hidden">
+                <div className="col-span-1 bg-white dark:bg-slate-800 px-4 pb-6 shadow rounded overflow-hidden">
                     <div className="divide-y divide-gray-200 space-y-5">
                         {/* Category Filter */}
                         <div>
-                            <h3 className="text-xl text-gray-800 mb-3 uppercase font-medium">Categories</h3>
+                            <h3 className="text-xl text-gray-800 dark:text-white mb-3 uppercase font-medium">Categories</h3>
                             <div className='space-y-2'>
                                 <div className='flex item-center'>
                                     <input type="checkbox" id='cat-1' className='text-primary focus:ring-0 rounded-sm cursor-pointer' />
@@ -40,7 +40,7 @@ const Products = () => {
                             </div>
                         </div>
                         <div className='pt-4'>
-                            <h3 className="text-xl text-gray-800 mb-3 uppercase font-medium">Vendors</h3>
+                            <h3 className="text-xl text-gray-800 dark:text-white mb-3 uppercase font-medium">Vendors</h3>
                             <div className='space-y-2'>
                                 <div className='flex item-center'>
                                     <input type="checkbox" id='cat-1' className='text-primary focus:ring-0 rounded-sm cursor-pointer' />
@@ -82,7 +82,7 @@ const Products = () => {
 
                         {/* Pricing Section Start */}
                         <div className="pt-4">
-                            <h3 className="text-xl text-gray-800 mb-3 uppercase font-medium">Price</h3>
+                            <h3 className="text-xl text-gray-800 dark:text-white mb-3 uppercase font-medium">Price</h3>
                             <div className="mt-4 flex items-center">
                                 <input type="text" className='w-full border-gray-300 focus:border-primary focus:ring-0 px-3 py-1 text-gray-600 text-sm shadow-sm rounded' placeholder='min' />
                                 <span className='mx-3 text-gray-500'>-</span>
@@ -91,7 +91,7 @@ const Products = () => {
                         </div>
                         {/* Size Filter Section */}
                         <div className="pt-4 block">
-                            <h3 className="text-xl text-gray-800 mb-3 uppercase font-medium">Size</h3>
+                            <h3 className="text-xl text-gray-800 dark:text-white mb-3 uppercase font-medium">Size</h3>
                             <div className="flex item-center gap-2">
                                 {/* single size selector starts */}
                                 <div className="size-selector">
@@ -120,7 +120,7 @@ const Products = () => {
                                 </div>
 
                                 <div className="pt-4 flex justify-center">
-                                    <h3 className="text-xl text-gray-800 mb-3 uppercase font-medium ">Color</h3>
+                                    <h3 className="text-xl text-gray-800 dark:text-white mb-3 uppercase font-medium ">Color</h3>
                                     <div className="flex item-center gap-2">
                                         {/* Single Color Starts */}
                                         <div className="color-selctor">
