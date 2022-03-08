@@ -32,22 +32,15 @@ const About = () => {
                             </div>
                         </div>
                     </div>
+
                     <div className='container mx-auto'>
-                        <div className='grid md:grid-cols-2 sm:grid-cols-1 gap-0 items-center justify-center'>
+                        <div className='grid grid-cols-2 gap-0 items-center justify-center'>
                             <div className='w-50  px-7 text-center'>
                                 <h2 className='text-2xl font-medium text-gray-800 uppercase mb-6'>Our Mission</h2>
                                 <p>Our mission is to create top-quality shopify theme which is unique, clean, easy to use, bug less, easy to load and have all the features that merchant need to run their online eCommerce business successfully.</p>
                             </div>
-                        </div>
-                        <div className='container mx-auto'>
-                            <div className='grid grid-cols-2 gap-0 items-center justify-center'>
-                                <div className='w-50  px-7 text-center'>
-                                    <h2 className='text-2xl font-medium text-gray-800 uppercase mb-6'>Our Mission</h2>
-                                    <p>Our mission is to create top-quality shopify theme which is unique, clean, easy to use, bug less, easy to load and have all the features that merchant need to run their online eCommerce business successfully.</p>
-                                </div>
-                                <div className='w-50'>
-                                    <img src="https://images.pexels.com/photos/135620/pexels-photo-135620.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940" alt='' />
-                                </div>
+                            <div className='w-50'>
+                                <img src="https://images.pexels.com/photos/135620/pexels-photo-135620.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940" alt='' />
                             </div>
                         </div>
                     </div>

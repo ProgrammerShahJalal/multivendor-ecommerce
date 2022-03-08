@@ -4,7 +4,6 @@ import { useParams, useNavigate } from 'react-router-dom'
 import { affiliateCommission } from '../Services/AffiliateCommssion/AffiliateCommission';
 import Celebrating from './Home/Celebrating';
 import Pdf from "react-to-pdf";
-import Invoice from './Invoice/Invoice';
 const ref = createRef();
 
 const Success = () => {
@@ -130,7 +129,6 @@ const Success = () => {
                 </div>
 
             </div>
-            <Invoice />
         </>
     )
 }
