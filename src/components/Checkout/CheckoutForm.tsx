@@ -279,16 +279,16 @@ const CheckoutForm = () => {
                         cart.map(item => {
                             return <li className="grid grid-cols-6 gap-2 border-b-1">
                                 <div className="col-span-1 self-center">
-                                    <img src={item.images[0]?.src} alt="Product" className="rounded w-full" />
+                                    <img src={item.image} alt="Product" className="rounded w-full" />
                                 </div>
                                 <div className="flex flex-col col-span-3 pt-2">
                                     <span className="text-gray-600 text-md font-semi-bold">{item.title}</span>
-                                    <span className="text-gray-400 text-sm inline-block pt-2">{item.categories[0]?.label}</span>
+                                    <span className="text-gray-400 text-sm inline-block pt-2">{item.category}</span>
                                 </div>
                                 <div className="col-span-2 pt-3">
                                     <div className="flex items-center space-x-2 text-sm justify-between">
-                                        <span className="text-gray-400">{item.cartQuantity} x ${item.sale_price ? item.sale_price : item.reg_price}</span>
-                                        <span className="text-indigo-600 font-semibold inline-block">${item.sale_price ? item.sale_price * item.cartQuantity : item.reg_price * item.cartQuantity}</span>
+                                        <span className="text-gray-400">{item.cartQuantity} x ${item.price}</span>
+                                        <span className="text-indigo-600 font-semibold inline-block">${item.price * item.cartQuantity}</span>
                                     </div>
                                 </div>
                             </li>

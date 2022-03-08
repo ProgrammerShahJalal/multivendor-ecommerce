@@ -10,7 +10,9 @@ import { addToCart } from '../../redux/cartSlice';
 const SingleProduct = () => {
     const { id } = useParams();
     const [productsDetails, setProductsDetails] = useState<any>([])
+    const [quantity, setQuantity] = useState<string>("1")
     const [isLoading, setIsLoading] = useState<boolean>(false)
+    const [attributes, setAttributes] = useState<any>([]);
 
     useEffect(() => {
         setIsLoading(true)
@@ -32,15 +34,28 @@ const SingleProduct = () => {
 
     const dispatch = useDispatch()
     const handleAddToCart = (product) => {
+        if (attributes.length === 0) {
+            return alert('Please select any attributes')
+        }
         dispatch(addToCart(product))
+
     }
+    console.log(attributes, 'attributes');
+
 
     const [thumbsSwiper, setThumbsSwiper] = useState<any>(null);
 
-    const handleAttribute = (e) => {
-        console.log(e, 'attr');
 
+    const handleAttribute = (e) => {
+        const name = e.target.name
+        const value = e.target.value
+
+        const findIndex = attributes?.findIndex(find => find.name === name)
+        if (findIndex === -1) {
+            setAttributes((prevState) => [...prevState, { name, value }])
+        }
     }
+
     return (
         <div>
 
@@ -50,6 +65,17 @@ const SingleProduct = () => {
                     <div className="lg:w-4/5 mx-auto flex ">
                         {isLoading ? "Loading" :
                             productsDetails.map(product => {
+                                const detailProduct = {
+                                    _id: product._id,
+                                    title: product.title,
+                                    image: product.images[0]?.src,
+                                    category: product.categories[0].label,
+                                    price: parseInt(product.sale_price ? product.sale_price : product.reg_price),
+                                    attributes: attributes,
+                                    cartQuantity: parseInt(quantity),
+                                    vendor: 'fathekarim3@gmail.com'
+                                }
+
                                 return <>
                                     <div key={product._id} className='lg:w-1/2'>
                                         {
@@ -143,22 +169,22 @@ const SingleProduct = () => {
                                                 </div> */}
                                                 <div className="relative mr-4 mt-3">
                                                     <div className="text-center left-0 pt-2 right-0 absolute block text-xs uppercase text-gray-400 tracking-wide font-semibold">Qty</div>
-                                                    <select className="cursor-pointer appearance-none rounded-xl border border-gray-200 pl-4 pr-8 h-14 flex items-end pb-1">
-                                                        <option>1</option>
-                                                        <option>2</option>
-                                                        <option>3</option>
-                                                        <option>4</option>
-                                                        <option>5</option>
+                                                    <select onBlur={(e: any) => setQuantity(e.target.value)} className="cursor-pointer appearance-none rounded-xl border border-gray-200 pl-4 pr-8 h-14 flex items-end pb-1">
+                                                        <option value={1}>1</option>
+                                                        <option value={2}>2</option>
+                                                        <option value={3}>3</option>
+                                                        <option value={4}>4</option>
+                                                        <option value={5}>5</option>
                                                     </select>
                                                 </div>
 
-                                                {product?.attributes.map(attr => {
-                                                    return <div onClick={e => handleAttribute(e.target)} className=" mr-6 items-center">
+                                                {product?.attributes.map((attr) => {
+                                                    return <div className=" mr-6 items-center">
                                                         <span className="mr-3"><b>{attr.label}</b></span><br />
                                                         <div className="relative">
-                                                            <select className="rounded appearance-none border border-gray-200 py-2 focus:outline-none focus:border-indigo-500 text-base pl-3 pr-10">
+                                                            <select onClick={(e) => handleAttribute(e)} name={attr.label} className="rounded appearance-none border border-gray-200 py-2 focus:outline-none focus:border-indigo-500 text-base pl-3 pr-10">
                                                                 {attr?.selected.map(select => {
-                                                                    return <option>{select.label}</option>
+                                                                    return <option value={select.value}>{select.label}</option>
                                                                 })}
 
                                                             </select>
@@ -187,7 +213,7 @@ const SingleProduct = () => {
                                                 </div>
                                                 {/* <span className="title-font font-medium text-2xl text-gray-900">${product.price | 0}        <span className='line-through text-gray-500'>{product?.sale_price}</span>
                                                 </span> */}
-                                                <button onClick={() => handleAddToCart(product)} className="flex ml-auto text-white bg-indigo-500 border-0 py-2 px-6 focus:outline-none hover:bg-indigo-600 rounded items-center">Add to cart</button>
+                                                <button onClick={() => handleAddToCart(detailProduct)} className="flex ml-auto text-white bg-indigo-500 border-0 py-2 px-6 focus:outline-none hover:bg-indigo-600 rounded items-center">Add to cart</button>
                                                 <button className="rounded-full w-10 h-10 bg-gray-200 p-0 border-0 inline-flex items-center justify-center text-gray-500 ml-4">
                                                     <svg fill="currentColor" stroke-linecap="round" stroke-linejoin="round" strokeWidth="2" className="w-5 h-5" viewBox="0 0 24 24">
                                                         <path d="M20.84 4.61a5.5 5.5 0 00-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 00-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 000-7.78z"></path>

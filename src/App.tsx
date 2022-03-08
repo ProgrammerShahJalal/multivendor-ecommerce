@@ -49,7 +49,7 @@ function App() {
             <Route path='/login' element={<Login />} />
             <Route path='/register' element={<Register />} />
             <Route path='/orderTrack' element={<OrderTracking />} />
-            <Route path='/checkout' element={<Checkout />} />
+            <Route path='/checkout' element={<PrivateRoute><Checkout /></PrivateRoute>} />
             <Route path='/shop' element={<Shop />} />
             <Route path='/cart' element={<Cart />} />
             <Route path='/vendorShop' element={<VendorShopPage />} />

@@ -37,7 +37,7 @@ export const cartSlice = createSlice({
                     position: 'bottom-left'
                 })
             } else {
-                const newCart = { ...payload, cartQuantity: 1 }
+                const newCart = { ...payload }
                 state.cart.push(newCart)
                 toast.success(`${payload.title}  added to cart`, {
                     position: 'bottom-left'
@@ -68,8 +68,8 @@ export const cartSlice = createSlice({
         getTotal: (state: any) => {
             let { total, quantity } = state.cart.reduce((cartTotal, cart) => {
 
-                const { sale_price, reg_price, cartQuantity } = cart
-                const itemTotal = sale_price ? sale_price * cartQuantity : reg_price * cartQuantity
+                const { price, cartQuantity } = cart
+                const itemTotal = price * cartQuantity
                 console.log(itemTotal, 'redux itemTotal total');
                 cartTotal.total += itemTotal
                 cartTotal.quantity += cartQuantity

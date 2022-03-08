@@ -41,7 +41,19 @@ const AllProducts = () => {
             <div className="grid place-content-center lg:grid-cols-4 md:grid-cols-3 grid-cols-1 gap-6">
                 {
                     products.length === 0 ? <h2>No Products Found</h2> :
-                        products.map((product: IProduct) => {
+                        products.map((product: any) => {
+                            const detailProduct = {
+                                _id: product._id,
+                                title: product.title,
+                                image: product.images[0]?.src,
+                                category: product.categories[0].label,
+                                price: parseInt(product.sale_price ? product.sale_price : product.reg_price),
+                                // attributes: attributes,
+                                cartQuantity: 1,
+                                vendor: 'fathekarim3@gmail.com'
+                            }
+                            console.log(product);
+
                             return <div className="bg-white shadow-inner overflow-hidden single-card">
 
                                 <div className="relative group">
@@ -75,7 +87,7 @@ const AllProducts = () => {
                                         {/* <div className="text-xs text-gray-500 ml-3">(1)</div> */}
                                     </div>
                                 </div>
-                                <button onClick={() => handleAddToCart(product)} className='block w-full py-1 text-center top-5 text-white bg-indigo-500 border border-indigo-500 rounded-b hover:bg-transparent hover:text-indigo-500 transition'>Add to Cart</button>
+                                {product.attributes.length === 0 ? <button onClick={() => handleAddToCart(detailProduct)} className='block w-full py-1 text-center top-5 text-white bg-indigo-500 border border-indigo-500 rounded-b hover:bg-transparent hover:text-indigo-500 transition'>Add to Cart</button> : <Link to={`/product/${product._id}`}> <button className='block w-full py-1 text-center top-5 text-white bg-indigo-500 border border-indigo-500 rounded-b hover:bg-transparent hover:text-indigo-500 transition'>View Product</button></Link>}
                             </div>
                         })}
 
