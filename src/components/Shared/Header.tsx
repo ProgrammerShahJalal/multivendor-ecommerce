@@ -146,8 +146,9 @@ export default function Header() {
         const root = window.document.documentElement;
         root.classList.add(theme)
         root.classList.remove(colorTheme)
-    },[theme, colorTheme])
-    const [open, setOpen] = useState(false)
+    },[theme, colorTheme]);
+
+    const [open, setOpen] = useState(false);
 
     const { user, logout } = UseAuth();
     // const [colorTheme, setTheme] = UseDarkMode();
