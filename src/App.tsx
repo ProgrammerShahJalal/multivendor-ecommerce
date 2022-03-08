@@ -44,6 +44,7 @@ import UnitTesting from "./components/Pages/UnitTesting/UnitTesting";
 import WishList from "./components/Pages/WishList/WishList";
 import VendorHomePage from "./components/Pages/VendorPages/VendorHomePage";
 import About from "./components/Pages/About/About";
+import Invoice from "./components/Invoice/Invoice";
 
 
 
@@ -83,6 +84,7 @@ function App() {
             <Route path='/orderTrack' element={<OrderTracking />} />
             <Route path='/checkout' element={<Checkout />} />
             <Route path='/wishlist' element={<WishList />} />
+            <Route path='/invoice' element={<Invoice />} />
             <Route path='/shop' element={<Shop />} />
             <Route path='/vendorShop' element={<VendorShopPage />} />
             <Route path='/vendorSidebar' element={<VendorSidebar />} />

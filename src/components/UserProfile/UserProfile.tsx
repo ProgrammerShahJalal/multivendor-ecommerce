@@ -1,7 +1,8 @@
 import React from 'react'
 import { Link } from 'react-router-dom';
 import UseAuth from '../../hooks/UseAuth';
-import { DataChart } from '../DataChart/DataChart';
+import { DataChart } from '../DataChart/HorizontalChart';
+import LineChart from '../DataChart/LineChart';
 
 
 export default function UserProfile() {
@@ -61,6 +62,15 @@ export default function UserProfile() {
           // marginLeft:'70px'
         }} className='items-center right-50 justify-center'>
           <DataChart />
+          
+        </div>
+        <div style={{
+          width: '600px',
+          height: '600px',
+          // marginLeft:'70px'
+        }} className='items-center right-50 justify-center'>
+          {/* <LineChart/> */}
+
         </div>
       </div>
 
