@@ -122,7 +122,7 @@ const CheckoutForm = () => {
                     'content-type': 'application/json'
                 },
                 body: JSON.stringify({
-                    ...cart, paymentDetails: {
+                    products: [...cart], paymentDetails: {
                         createdId: paymentIntent.created,
                         date,
                         amount: paymentIntent.amount,
