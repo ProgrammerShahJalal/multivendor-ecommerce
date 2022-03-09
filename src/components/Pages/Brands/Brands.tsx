@@ -40,7 +40,7 @@ const Brands = () => {
           <img className='bg-white dark:bg-gray-500' style={{height:'70px',width:'240px', padding:'5px'}} alt="" src="https://i.ibb.co/d6JH723/daraz-logo.png" />
         </SwiperSlide>
         <SwiperSlide>
-          <img className='bg-white dark:bg-gray-500' style={{height:'70px',width:'240px', padding:'5px'}} alt="" src="https://i.ibb.co/ZN5Dw2P/microsoft-logo.png" />
+          <img className='bg-white dark:bg-gray-500' style={{height:'70px',width:'240px', padding:'5px'}} alt="" src="https://i.ibb.co/FzFYZBL/microsoft-logo.png" />
         </SwiperSlide>
       </Swiper>
             </div>

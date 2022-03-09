@@ -53,7 +53,7 @@ export default function SpecialDeal() {
     }, [specials])
 
     return (
-        <div className="bg-gray-50 dark:bg-gray-800">
+        <div className="bg-gray-100 dark:bg-gray-800">
             <h2 className="text-3xl text-center font-extrabold text-gray-900 dark:text-white sm:text-4xl">
                 <span className="text-5xl pr-3" >Special</span>
                 <span className=" text-indigo-600 text-5xl">Deal</span>
@@ -71,7 +71,7 @@ export default function SpecialDeal() {
                                 <h2 className="text-md italic font-light">High Tech Products</h2>
                                 <h2 className="font-bold text-3xl tracking-wide leading-relaxed">Google Smart Home 2022</h2>
                                 <HashLink smooth to="/#blog">
-                                    <button className="text-gray-800 dark:text-white px-2 py-1 rounded-2xl bg-slate-100">Read More</button>
+                                    <button className="text-gray-800 px-2 py-1 rounded-2xl bg-slate-100">Read More</button>
                                 </HashLink>
                             </div>
                         </Link>

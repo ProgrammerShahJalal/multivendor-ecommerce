@@ -25,7 +25,7 @@ export default function Home() {
     setTimeout(() => setLoading(false), 3000);
     if (loading) {
         return <img
-            src='https://i.ibb.co/0Gpm5Rp/preloader.gif' className="mx-auto select-none" alt=""></img>
+            src='https://i.ibb.co/G0hxjqk/animation-500-l0if05al.gif' className="mx-auto select-none" alt=""></img>
     }
 
     return (
