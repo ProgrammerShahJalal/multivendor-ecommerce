@@ -13,8 +13,7 @@ import MessengerCustomerChat from 'react-messenger-customer-chat';
 import Notify from '../Notify/Notify';
 import PaginatedBlogsHome from '../Pages/PaginatedBlogsItems/PaginatedBlogsHome';
 import Products from '../Products/Products';
-import Alan from './Alan-AI/Alan';
-// import Invoice from '../Invoice/Invoice';
+// import Alan from './Alan-AI/Alan';
 // import Reviews from '../Pages/Reviews/Reviews';
 
 
@@ -44,8 +43,8 @@ export default function Home() {
             <PaginatedBlogsHome />
             <Faq />
             {/* <Invoice/> */}
-            <Alan />
-            <ScrollToTop style={{ display: 'flex', bottom: 110, alignItems: 'center', justifyContent: 'center', left: 15, backgroundColor: '#7209b7' }} smooth color='#ffffff' top={20} height="28" viewBox="0 0 256 256" />
+            {/* <Alan /> */}
+            <ScrollToTop style={{ display: 'flex', bottom: 150, alignItems: 'center', justifyContent: 'center', left: 15, backgroundColor: '#7209b7' }} smooth color='#ffffff' top={20} height="28" viewBox="0 0 256 256" />
             <MessengerCustomerChat
                 pageId="104774475481224"
                 appId=" 1107053396762800"

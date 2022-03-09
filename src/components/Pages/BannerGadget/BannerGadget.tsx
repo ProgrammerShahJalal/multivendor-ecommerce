@@ -1,7 +1,20 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
+import '../VedioModal/VedioModal.css';
 
 const BannerGadget = () => {
+
+    const [modal, setModal] = useState(false);
+
+    const toggleModal = () => {
+        setModal(!modal);
+    };
+
+    if (modal) {
+        document.body.classList.add('active-modal')
+    } else {
+        document.body.classList.remove('active-modal')
+    }
     return (
         <div className='container bg-white dark:bg-gray-800 mx-auto py-4 my-3'>
             <div className='container bg-white dark:bg-gray-800 mx-auto py-3'>
@@ -12,9 +25,28 @@ const BannerGadget = () => {
                             <h3 className='text-blue-500 font-medium'>NEW TECHNOLOGIES</h3>
                             <h1 className="lg:text-4xl text-gray-800 dark:text-gray-800 font-bold hover:text-pink-600 py-3 sm:text-sm">WEBCAMS 2022</h1>
                             <p className='text-gray-600 font-medium hover:text-pink-800 p-2 lg:block md:block hidden'>The webcam is an essential computer accessories.</p>
-                            <Link to="/shop">
-                                <button className='bg-blue-600 text-white px-3 py-2 pb-1 rounded-full hover:bg-pink-500 font-bold lg:block hidden'>SHOP MORE</button>
-                            </Link>
+
+                            <img onClick={toggleModal} className='w-20 cursor-pointer' src="https://i.ibb.co/k5KPQ3S/video-player.gif" alt="" />
+
+
+
+                            <div className=''>
+
+                                {modal && (
+                                    <div className="modal">
+                                        <div onClick={toggleModal} className="overlay"></div>
+                                        <div className="modal-content">
+                                            <iframe width="560" height="315" src="https://www.youtube.com/embed/szuet3Yrbwc" title="YouTube video player" frameBorder={0} allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowFullScreen></iframe>
+
+                                            <button className="close-modal" onClick={toggleModal}>
+                                                CLOSE
+                                            </button>
+                                        </div>
+                                    </div>
+                                )}
+                            </div>
+
+
                         </div>
                     </div>
 

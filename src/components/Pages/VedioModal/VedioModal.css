@@ -7,7 +7,9 @@ body.active-modal {
     margin: 100px auto 0;
     font-size: 18px;
 }
-
+.modal{
+    z-index: 9999;
+}
 .modal,.overlay {
     width: 100vw;
     height: 100vh;
@@ -16,13 +18,10 @@ body.active-modal {
     right: 0;
     bottom: 0;
     position: fixed;
-   
-   
-
 }
 
 .overlay {
-    background: black;
+    background: rgba(55, 79, 126, 0.418);
 }
 /* rgba(49,49,49,0.8) */
 .modal-content {
@@ -31,7 +30,7 @@ body.active-modal {
     left: 50%;
     transform: translate(-50%, -50%);
     line-height: 1.4;
-    /* background: #f1f1f1; */
+    background: #f1f1f1;
     padding: 14px 28px;
     border-radius: 3px;
     max-width: 100%;
