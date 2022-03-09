@@ -9,7 +9,7 @@ import {
     Area
 } from "recharts";
 import UseAuth from "../../../../hooks/UseAuth";
-import './affiliate.css'
+// import './affiliate.css';
 
 export type affiliateLinks = {
     _id: string,

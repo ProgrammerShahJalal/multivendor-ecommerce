@@ -69,7 +69,7 @@ export default function UserProfile() {
           height: '600px',
           // marginLeft:'70px'
         }} className='items-center right-50 justify-center'>
-          {/* <LineChart/> */}
+          <LineChart/>
 
         </div>
       </div>
