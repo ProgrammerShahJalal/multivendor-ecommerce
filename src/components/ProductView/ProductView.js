@@ -47,7 +47,7 @@ const ProductView = ({ selectedProduct, handleClose }) => {
                             <Magnifier src={selectedProduct.img} className='bg-cover select-none' />
                         </SwiperSlide>
                         <SwiperSlide style={{ height: '300px', width: '300px' }}>
-                            <Magnifier src={selectedProduct.img3} className='bg-cover select-none' />
+                            <Magnifier src={selectedProduct.hoverImg} className='bg-cover select-none' />
                         </SwiperSlide>
                         <SwiperSlide style={{ height: '300px', width: '300px' }} >
                             <Magnifier src={selectedProduct.img4} className='bg-cover select-none' />
@@ -70,7 +70,7 @@ const ProductView = ({ selectedProduct, handleClose }) => {
                                 <img alt="" src={selectedProduct.img} className='bg-cover select-none cursor-pointer' />
                             </SwiperSlide>
                             <SwiperSlide style={{ height: '100px', width: '100px' }}>
-                                <img alt="" src={selectedProduct.img3} className='bg-cover select-none cursor-pointer' />
+                                <img alt="" src={selectedProduct.hoverImg} className='bg-cover select-none cursor-pointer' />
                             </SwiperSlide>
                             <SwiperSlide style={{ height: '100px', width: '100px' }}>
                                 <img alt="" src={selectedProduct.img4} className='bg-cover select-none cursor-pointer' />

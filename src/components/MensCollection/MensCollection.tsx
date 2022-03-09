@@ -93,7 +93,7 @@ const MensCollection = () => {
                     <Fade in={open}>
                         <Box>
                             {/* <button className='justify-end text-white select-none bg-red-500 rounded-full w-8 h-8' onClick={handleClose}>x</button> */}
-                            <div className='md:block mx-auto bg-white dark:bg-gray-800 px-1 lg:block hidden'>
+                            <div style={{width: '805px', height: '600px'}} className='md:block mx-auto bg-white dark:bg-gray-800 px-1 lg:block hidden'>
                                 <ProductView handleClose={handleClose} selectedProduct={selectedProduct} />
                             </div>
                             <div className='md:hidden lg:hidden bg-white dark:bg-gray-800 block'>
