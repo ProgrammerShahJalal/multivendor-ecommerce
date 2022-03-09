@@ -7,12 +7,13 @@ import About from "./components/Pages/About/About";
 import AuthProvider from "./context/AuthProvider";
 import Register from "./components/Pages/RegisterPage/Register";
 import Login from "./components/Pages/LoginPage/Login";
-
-
-
+import { useContext } from "react";
+import { LangContext } from "./components/Pages/MultiLanguage/languagecontext/lang";
 
 
 function App() {
+  const { dispatch: { translate } } = useContext(LangContext);
+
 
   return (
     <div>
@@ -20,8 +21,8 @@ function App() {
         <Router>
           <Header />
           <Routes>
-            <Route path='/' element={<Home />} />
-            <Route path='/home' element={<Home />} />
+            <Route path='/' element={<Home translate={translate} />} />
+            <Route path='/home' element={<Home translate={translate} />} />
             <Route path='/contact' element={<Contact />} />
             <Route path='/about' element={<About />} />
             <Route path='/login' element={<Login />} />

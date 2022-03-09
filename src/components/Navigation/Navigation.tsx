@@ -2,8 +2,8 @@ import MobileNavigation from '../MobileNavigation/MobileNavigation';
 import './Navigation.css'
 
 
-const Navigation = () => {
 
+const Navigation = () => {
 
 
 
@@ -45,8 +45,6 @@ const Navigation = () => {
         menuBar.style.marginLeft = '0px'
         helpDrop.style.display = "none"
     }
-
-
 
 
     return (
@@ -134,6 +132,17 @@ const Navigation = () => {
                                 <li>About us</li>
                                 <li>Contact Us</li>
                             </ul>
+                        </div>
+
+                        {/* Multi-Language */}
+                        <div className="px-2">
+                            <p className="selected" onClick={() => setShowDropdown(!showDropdown)}>{language}</p>
+                            {showDropdown && <ul className="" ref={dropdownEl}>
+                                <li onClick={() => chooseLanguageHandler('EN')}>English</li>
+                                <li onClick={() => chooseLanguageHandler('BN')}>Bangla</li>
+                                <li onClick={() => chooseLanguageHandler('FR')}>French</li>
+                            </ul>
+                            }
                         </div>
                     </div>
                 </header>

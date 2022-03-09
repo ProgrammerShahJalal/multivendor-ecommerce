@@ -4,9 +4,13 @@ import './index.css';
 import App from './App';
 import reportWebVitals from './reportWebVitals';
 
+import LangState from './components/Pages/MultiLanguage/languagecontext/lang';
+
 ReactDOM.render(
   <React.StrictMode>
-    <App />
+    <LangState>
+      <App />
+    </LangState>
   </React.StrictMode>,
   document.getElementById('root')
 );
