@@ -16,6 +16,7 @@ import Products from '../Products/Products';
 // import Alan from './Alan-AI/Alan';
 // import Reviews from '../Pages/Reviews/Reviews';
 import SpecialDeal from './../SpecialDeal/SpecialDeal';
+import CompareProducts from '../CompareProducts/CompareProducts';
 
 {/* <p>{translate('aboutUsText')}</p>
 interface AboutProps {
@@ -34,6 +35,7 @@ export default function Home() {
 
     return (
         <div>
+            <CompareProducts />
             <Banners />
             <Notify />
             <TopBanner />
