@@ -130,7 +130,7 @@ export default function Categories() {
 
     return (
         <div className='grid grid-cols-3 gap-4'>
-            <div className=' px-4 py-5 bg-white space-y-6 sm:p-6 shadow sm:rounded-md sm:overflow-hidden'>
+            <div className=' px-4 py-5 bg-white dark:bg-slate-800 space-y-6 sm:p-6 shadow sm:rounded-md sm:overflow-hidden'>
                 <form onSubmit={handleAddCategory}>
                     <div>
                         <label className="block text-sm font-medium text-gray-700 mb-3" htmlFor="category"> Category Name </label>
@@ -142,7 +142,7 @@ export default function Categories() {
                 </form>
             </div>
 
-            <div className=' col-span-2 px-4 py-5 bg-white space-y-6 sm:p-6 shadow sm:rounded-md sm:overflow-hidden'>
+            <div className=' col-span-2 px-4 py-5 bg-white dark:bg-slate-800 space-y-6 sm:p-6 shadow sm:rounded-md sm:overflow-hidden'>
                 <div className="mx-auto">
                     <div className="">
                         <table className="text-left w-full border-collapse">

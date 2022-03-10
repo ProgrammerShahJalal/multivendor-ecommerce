@@ -122,7 +122,7 @@ const Contact = () => {
                             <div className='relative'>
                                 <div className='absolute z-0 w-40 h-40 bg-teal-400 rounded-full -right-20 -top-20 '></div>
                                 <div className='absolute z-0 w-40 h-40 bg-teal-400 rounded-full -left-28 -bottom-28 '></div>
-                                <div className=' relative z-10 bg-white rounded-xl shadow-lg p-8 text-gray-600 md:w-100'>
+                                <div className=' relative z-10 bg-white dark:bg-slate-800 rounded-xl shadow-lg p-8 text-gray-600 md:w-100'>
                                     <form onSubmit={sendEmail} className='flex flex-col space-y-4'>
                                         <div>
                                             <label htmlFor="" className='text-sm'>Your Name</label>

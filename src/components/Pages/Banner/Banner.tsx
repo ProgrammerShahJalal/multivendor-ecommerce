@@ -31,13 +31,13 @@ export default function Banners() {
             style={{ height: "34rem" }}>
             <div className="grid md:grid-cols-2 xs:grid-cols-1">
               <div className="flex flex-col items-center md:items-start justify-center md:pl-15 lg:pl-32 p-12 text-center md:text-left">
-                <h1 className="text-4xl">
+                <h1 className="text-4xl text-black dark:text-white">
                   Monster Beats Headphone
                 </h1>
-                <p className="text-2xl">
+                <p className="text-2xl text-black dark:text-white">
                   Best accessories for you!
                 </p>
-                <p className="text-3xl">
+                <p className="text-3xl text-black dark:text-white">
                   $<span className="text-red-600">35</span>
                 </p>
                 <NavLink
@@ -49,7 +49,7 @@ export default function Banners() {
                 </NavLink>
               </div>
               <div className="md:-mt-0 lg:-mt-0 -mt-12">
-                <img src='https://i.ibb.co/V95BWTm/headphone.jpg' alt="Image1" className="md:block" />
+                <img src='https://i.ibb.co/880G2zr/headphone.png' alt="Image1" className="md:block" />
               </div>
             </div>
 
@@ -59,13 +59,13 @@ export default function Banners() {
             style={{ height: "30rem" }}>
             <div className="grid md:grid-cols-2 xs:grid-cols-1">
               <div className="flex flex-col items-center md:items-start justify-center md:pl-15 lg:pl-32 p-10 text-center md:text-left">
-                <h1 className="text-4xl">
+                <h1 className="text-4xl text-black dark:text-white">
                   Perfect fit for you
                 </h1>
-                <p className="text-2xl">
+                <p className="text-2xl text-black dark:text-white">
                   Nike sports shoes for all feet size. For you.
                 </p>
-                <p className="text-3xl">
+                <p className="text-3xl text-black dark:text-white">
                   $<span className="text-red-600">113</span>
                 </p>
                 <NavLink
@@ -87,11 +87,11 @@ export default function Banners() {
             style={{ height: "30rem" }}>
             <div className="grid md:grid-cols-2 xs:grid-cols-1">
               <div className="flex flex-col items-center md:items-start justify-center md:pl-15 lg:pl-32 p-10 text-center md:text-left">
-                <h1 className="text-4xl">Sony Ps5 <span className="text-red-500">+</span> <span className="text-blue-500">(controller)</span></h1>
-                <p className="text-2xl">
+                <h1 className="text-4xl text-black dark:text-white">Sony Ps5 <span className="text-red-500">+</span> <span className="text-blue-500">(controller)</span></h1>
+                <p className="text-2xl text-black dark:text-white">
                   Sony playstation version 5 with controller
                 </p>
-                <p className="text-3xl">
+                <p className="text-3xl text-black dark:text-white">
                   $<span className="text-red-600">987</span>
                 </p>
                 <NavLink
@@ -103,7 +103,7 @@ export default function Banners() {
                 </NavLink>
               </div>
               <div className="md:-mt-0 -mt-10">
-                <img src='https://i.ibb.co/mynSZHf/ps5.jpg' alt="Image1" className="md:block" />
+                <img src='https://i.ibb.co/2d1cqfq/ps5.png' alt="Image1" className="md:block" />
               </div>
             </div>
 

@@ -47,7 +47,7 @@ const RelatedProducts = () => {
             <div className="grid place-content-center lg:grid-cols-4 md:grid-cols-3 grid-cols-1 gap-6">
                 {
                     products.map((product) => {
-                        return <div className="bg-white shadow-inner overflow-hidden single-card">
+                        return <div className="bg-white dark:bg-slate-800 shadow-inner overflow-hidden single-card">
 
                             <div className="relative group">
                                 <div style={{ height: '250px' }} className='z-100 overflow-hidden'>
@@ -68,8 +68,8 @@ const RelatedProducts = () => {
                             </div>
                             <div style={{ height: '200px' }} className="pt-4 gb-3 px-4">
                                 <Link to={`/product/${product._id}`}>
-                                    <h4 className="font-medium text-xl mb-2 text-grey-800  transition">{product.title}</h4>
-                                    <h5 className="font-bold text-sm mb-2 text-grey-800 transition">Category: {product.categories[0]?.label}</h5>
+                                    <h4 className="font-medium text-xl mb-2 text-gray-800 dark:text-white  transition">{product.title}</h4>
+                                    <h5 className="font-bold text-sm mb-2 text-gray-800 dark:text-white transition">Category: {product.categories[0]?.label}</h5>
                                 </Link>
                                 <div className="flex items-baseline mb-1 space-x-2">
                                     <p className="text-xl text-indigo-500 font-semibold">{product.sale_price}</p>

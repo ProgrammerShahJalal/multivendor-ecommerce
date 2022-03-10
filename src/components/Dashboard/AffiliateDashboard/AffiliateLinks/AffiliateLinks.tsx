@@ -84,7 +84,7 @@ export default function AffiliateLinks() {
 
 
     return (
-        <div>  <h1 className='font-semibold text-gray-800'>Create Affiliate Link </h1>
+        <div>  <h1 className='font-semibold text-gray-800 dark:text-white'>Create Affiliate Link </h1>
             <form onSubmit={handleSubmit} className="my-4 d-flex">
                 {/* <!-- <label for="fullURL" class="sr-only d-flex-none">URL</label> --> */}
                 {/* <input placeholder="URL" className="form-control  w-100" required type="url" onBlur={(e) => setUrl(e.target.value)} name="fulURL" id='fullURL' /> */}
@@ -97,14 +97,14 @@ export default function AffiliateLinks() {
             <section className="antialiased  text-gray-600 ">
                 <div className="flex flex-col justify-center h-full">
 
-                    <div className="w-full  mx-auto bg-white shadow-lg rounded-sm border border-gray-200">
+                    <div className="w-full  mx-auto bg-white dark:bg-slate-800 shadow-lg rounded-sm border border-gray-200">
                         <header className="px-5 py-4 border-b border-gray-100">
-                            <h2 className="font-semibold text-gray-800">Affiliate links</h2>
+                            <h2 className="font-semibold text-gray-800 dark:text-white">Affiliate links</h2>
                         </header>
                         <div className="p-3">
                             <div className="overflow-x-auto">
                                 <table className="table-auto w-full">
-                                    <thead className="text-xs font-semibold uppercase text-gray-400 bg-gray-50">
+                                    <thead className="text-xs font-semibold uppercase text-gray-400 bg-gray-50 dark:bg-gray-800">
                                         <tr>
                                             <th className="p-2 whitespace-nowrap">
                                                 <div className="font-semibold text-left">Date</div>

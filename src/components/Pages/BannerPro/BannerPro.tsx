@@ -15,7 +15,7 @@ const BannerPro = () => {
                         <button className='bg-blue-600 rounded-full py-2 px-4'>BUY NOW</button>
                     </Link>
                     <HashLink smooth to="#blog">
-                        <button className=' bg-gray-500 mx-3 rounded px-3 py-1'>ReadMore</button>
+                        <button className=' bg-gray-500 dark:bg-gray-800 dark:text-black mx-3 rounded px-3 py-1'>ReadMore</button>
                     </HashLink>
                 </div>
                 <div className='mt-7' data-aos="fade-up"
