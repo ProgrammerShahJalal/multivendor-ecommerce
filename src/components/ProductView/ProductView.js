@@ -8,6 +8,7 @@ import "swiper/css";
 import "swiper/css/free-mode";
 import "swiper/css/navigation";
 import "swiper/css/thumbs";
+import { ShareButton } from "react-custom-share";
 const ProductView = ({ selectedProduct, handleClose }) => {
     // console.log(selectedProduct, 'selectedProduct');
     const [thumbsSwiper, setThumbsSwiper] = useState(null);
@@ -22,9 +23,27 @@ const ProductView = ({ selectedProduct, handleClose }) => {
         )
     }
 
-
-    const death = "peace & bye world";
-    console.log(death)
+    const shareFBButtonProps = {
+        url: "https://unitymart-c522a.web.app",
+        network: "Facebook",
+        text: "Share unity mart to your facebook. Let your friends know about us",
+        longtext:
+          " "
+      };
+    const shareLNButtonProps = {
+        url: "https://unitymart-c522a.web.app",
+        network: "Linkedin",
+        text: "Share unity mart to your linkedin network. Let your connection know about us",
+        longtext:
+          " "
+      };
+    const sharePNButtonProps = {
+        url: "https://unitymart-c522a.web.app",
+        network: "Pinterest",
+        text: "Share unity mart to your facebook. Let your friends know about us",
+        longtext:
+          " "
+      };
 
 
     return (
@@ -100,7 +119,7 @@ const ProductView = ({ selectedProduct, handleClose }) => {
                         </p>
                         <p className="space-x-2">
                             <span className='text-gray-800 dark:text-white font-semibold'>Category:</span>
-                            <span className='text-gray-600'>Men</span>
+                            {/* <span className='text-gray-600'>{category}</span> */}
                         </p>
                         <p className="space-x-2">
                             <span className='text-gray-800 dark:text-white font-semibold'>SKU:</span>
@@ -168,6 +187,7 @@ const ProductView = ({ selectedProduct, handleClose }) => {
                                 </button>
                             </div>
                         </div>
+                        
                         <div className="border-b -mt-20 border-gray-200 pb-5">
                             <Link to="/">
                                 <button className='w-40 text-center top-5 text-white  p-2 bg-indigo-500 border border-indigo-500 hover:bg-transparent hover:text-indigo-500 transition'>
@@ -181,7 +201,11 @@ const ProductView = ({ selectedProduct, handleClose }) => {
                             </Link>
                         </div>
                     </div>
-                    
+            <div className='mt-2 flex gap-2'>
+            <ShareButton {...shareFBButtonProps}><i class="fa-brands fa-facebook text-blue-600 text-2xl"></i></ShareButton>
+            <ShareButton {...shareLNButtonProps}><i class="fa-brands fa-linkedin text-blue-500 text-2xl"></i></ShareButton>
+            <ShareButton {...sharePNButtonProps}><i class="fa-brands fa-pinterest text-red-600 text-2xl"></i></ShareButton>
+            </div>
                 </div>
             </div>
         </div>
