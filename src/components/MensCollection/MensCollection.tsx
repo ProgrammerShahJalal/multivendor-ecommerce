@@ -41,6 +41,7 @@ const MensCollection = () => {
         setOpen(true)
 
     };
+    // const category = 'men';
     const handleClose = () => setOpen(false);
     return (
         <div className="container lg:px-0 md:px-10 px-5 pb-16">

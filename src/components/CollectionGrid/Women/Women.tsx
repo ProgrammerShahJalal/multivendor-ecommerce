@@ -84,10 +84,10 @@ const Women = () => {
                     <Fade in={open}>
                         <Box>
                             {/* <button className='justify-end text-white select-none bg-red-500 rounded-full w-8 h-8' onClick={handleClose}>x</button> */}
-                            <div className='md:block mx-auto px-1 lg:block hidden'>
+                            <div style={{width: '805px', height: '600px'}} className='md:block bg-white dark:bg-gray-800 mx-auto px-1 lg:block hidden'>
                                 <ProductView handleClose={handleClose} selectedProduct={selectedProduct} />
                             </div>
-                            <div className='md:hidden lg:hidden block'>
+                            <div className='md:hidden bg-white dark:bg-gray-800 lg:hidden block'>
                                 <ProductViewSm selectedProduct={selectedProduct} />
                             </div>
                         </Box>

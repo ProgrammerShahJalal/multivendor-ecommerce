@@ -1,11 +1,28 @@
-import GridView from '../../CollectionGrid/GridView';
+// import GridView from '../../CollectionGrid/GridView';
 import { useState } from 'react';
-import ListView from '../../ListView/ListView';
+import Kids from '../../CollectionGrid/Kids/Kids';
+import Men from '../../CollectionGrid/Men/Men';
+import Women from '../../CollectionGrid/Women/Women';
+// import ListView from '../../ListView/ListView';
+import Mens from '../../ListView/Men';
+import Womens from '../../ListView/Women';
+import Kid from '../../ListView/Kids';
 
 
 const Products = () => {
     const [gridShow, setGridShow] = useState(true);
-
+    const [menChecked, setMenChecked] = useState(true);
+    const [womenChecked, setWomenChecked] = useState(true);
+    const [kidChecked, setKidChecked] = useState(true);
+    const handleMenChange = () => {
+        setMenChecked(!menChecked);
+      };
+    const handleWomenChange = () => {
+        setWomenChecked(!womenChecked);
+      };
+    const handleKidChange = () => {
+        setKidChecked(!kidChecked);
+      };
     return (
         <div>
             <div>
@@ -19,22 +36,25 @@ const Products = () => {
                                 <h3 className="text-xl text-gray-800 mb-3 uppercase font-medium">Categories</h3>
                                 <div className='space-y-2'>
                                     <div className='flex item-center'>
-                                        <input type="checkbox" id='cat-1' className='text-primary focus:ring-0 rounded-sm cursor-pointer' />
+                                        <input checked={menChecked}
+                                        onChange={handleMenChange} type="checkbox" id='cat-1' className='text-primary focus:ring-0 rounded-sm cursor-pointer' />
                                         <label htmlFor="cat-1" className='text-gray-600 ml-3 cursor-pointer'>Mens</label>
                                         <div className='ml-auto text-gray-600 text-sm'>(10)</div>
                                     </div>
                                     <div className='flex item-center'>
-                                        <input type="checkbox" id='cat-1' className='text-primary focus:ring-0 rounded-sm cursor-pointer' />
+                                        <input checked={womenChecked}
+                                        onChange={handleWomenChange} type="checkbox" id='cat-2' className='text-primary focus:ring-0 rounded-sm cursor-pointer' />
                                         <label htmlFor="cat-1" className='text-gray-600 ml-3 cursor-pointer'>Womens</label>
                                         <div className='ml-auto text-gray-600 text-sm'>(15)</div>
                                     </div>
                                     <div className='flex item-center'>
-                                        <input type="checkbox" id='cat-1' className='text-primary focus:ring-0 rounded-sm cursor-pointer' />
+                                        <input checked={kidChecked}
+                                        onChange={handleKidChange} type="checkbox" id='cat-3' className='text-primary focus:ring-0 rounded-sm cursor-pointer' />
                                         <label htmlFor="cat-1" className='text-gray-600 ml-3 cursor-pointer'>Kids</label>
                                         <div className='ml-auto text-gray-600 text-sm'>(18)</div>
                                     </div>
                                     <div className='flex item-center'>
-                                        <input type="checkbox" id='cat-1' className='text-primary focus:ring-0 rounded-sm cursor-pointer' />
+                                        <input type="checkbox" id='cat-3' className='text-primary focus:ring-0 rounded-sm cursor-pointer' />
                                         <label htmlFor="cat-1" className='text-gray-600 ml-3 cursor-pointer'>Gadgets</label>
                                         <div className='ml-auto text-gray-600 text-sm'>(9)</div>
                                     </div>
@@ -158,7 +178,50 @@ const Products = () => {
                         </div>
                         <br />
                         {
-                            gridShow ? <GridView /> : <ListView />
+                            gridShow ?
+                            <div className='max-w-md md:max-w-7xl mx-auto'>
+                                {
+                                    menChecked && <Men />
+                                }
+                                {
+                                    womenChecked && <Women />
+                                }
+                                {
+                                    kidChecked && <Kids />
+                                }
+                                
+                                {
+                                    kidChecked === false && menChecked === false && kidChecked===false &&
+                                    <div>
+                                    <Men/>
+                                    <Women/>
+                                    <Kids/>
+                                    </div>
+                                }
+                            </div>      
+                            // <GridView />
+                            :
+                            <div className='max-w-md md:max-w-7xl mx-auto'>
+                            {
+                                    menChecked && <Mens />
+                                }
+                                {
+                                    womenChecked && <Womens />
+                                }
+                                {
+                                    kidChecked && <Kid />
+                                }
+                                
+                                {
+                                    kidChecked === false && menChecked === false && kidChecked===false &&
+                                    <div>
+                                    <Mens/>
+                                    <Womens/>
+                                    <Kid/>
+                                    </div>
+                                }
+                            </div>
+                            // <ListView />
                         }
                     </div>
                 </div>
