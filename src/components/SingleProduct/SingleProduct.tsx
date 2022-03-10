@@ -33,7 +33,7 @@ const SingleProduct = () => {
     return (
         <div>
 
-            <section className="text-gray-700 body-font overflow-hidden bg-white">
+            <section className="text-gray-700 body-font overflow-hidden bg-white dark:bg-slate-800">
                 <div className="container px-5 py-10 mx-auto">
 
                     <div className="lg:w-4/5 mx-auto flex ">
@@ -77,7 +77,7 @@ const SingleProduct = () => {
                                     <div className="lg:w-1/2 w-full lg:pl-10 lg:py-6 mt-6 lg:mt-0">
                                         <div>
                                             <h2 className="text-sm title-font text-gray-500 tracking-widest">Brand: <b>{product.brand}</b></h2>
-                                            <h1 className="text-gray-900 text-3xl title-font font-medium mb-1">{product.title}</h1>
+                                            <h1 className="text-gray-900 dark:text-white text-3xl title-font font-medium mb-1">{product.title}</h1>
                                             <div className="flex mb-4">
                                                 <span className="flex items-center">
                                                     <svg fill="currentColor" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" strokeWidth="2" className="w-4 h-4 text-red-500" viewBox="0 0 24 24">
@@ -160,7 +160,7 @@ const SingleProduct = () => {
 
 
                                             </div>
-                                            <span className="title-font font-sm  text-gray-900">Category: <b>{product.categories[0].label}</b></span>
+                                            <span className="title-font font-sm  text-gray-900 dark:text-white">Category: <b>{product.categories[0].label}</b></span>
                                             <div className="flex mt-4">
                                                 <div className="inline-block align-bottom mr-5">
                                                     <span className="text-2xl leading-none align-baseline">$</span>
@@ -172,7 +172,7 @@ const SingleProduct = () => {
                                                     <span className="font-bold text-2xl leading-none align-baseline">{product.sale_price ? product.reg_price : ''} </span>
                                                     <span className="text-2xl leading-none align-baseline">.00</span>
                                                 </div>
-                                                {/* <span className="title-font font-medium text-2xl text-gray-900">${product.price | 0}        <span className='line-through text-gray-500'>{product?.sale_price}</span>
+                                                {/* <span className="title-font font-medium text-2xl text-gray-900 dark:text-white">${product.price | 0}        <span className='line-through text-gray-500'>{product?.sale_price}</span>
                                                 </span> */}
                                                 <button className="flex ml-auto text-white bg-indigo-500 border-0 py-2 px-6 focus:outline-none hover:bg-indigo-600 rounded items-center">Add to cart</button>
                                                 <button className="rounded-full w-10 h-10 bg-gray-200 p-0 border-0 inline-flex items-center justify-center text-gray-500 ml-4">

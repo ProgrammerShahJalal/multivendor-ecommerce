@@ -47,9 +47,9 @@ const MensCollection = () => {
             <div className="grid place-content-center lg:grid-cols-4 md:grid-cols-3 grid-cols-1 gap-6">
                 {
                     products.map((product) => (
-                        <div className="bg-white shadow-inner overflow-hidden single-card">
+                        <div className="bg-white dark:bg-slate-800 shadow-inner overflow-hidden single-card">
                             <div className="relative group">
-                                <div style={{ height: '250px' }} className='z-100 overflow-hidden'>
+                                <div style={{ height: '250px' }} className='z-100 bg-white overflow-hidden'>
                                     <img src={product.hoverImg} className='select-none img z-0 group-hover:hidden block transition' alt="" />
                                     <img src={product.img3} className='select-none img z-0 group-hover:block hidden transition' alt="" />
                                 </div>
@@ -67,8 +67,8 @@ const MensCollection = () => {
                             </div>
                             <div style={{ height: '200px' }} className="pt-4 gb-3 px-4">
                                 <a href="/">
-                                    <h4 className="font-medium text-xl mb-2 text-grey-800  transition">{product.title}</h4>
-                                    <h5 className="font-bold text-sm mb-2 text-grey-800 transition">from {product.vendorName}</h5>
+                                    <h4 className="font-medium text-xl mb-2 text-gray-800 dark:text-white  transition">{product.title}</h4>
+                                    <h5 className="font-bold text-sm mb-2 text-gray-800 dark:text-white transition">from {product.vendorName}</h5>
                                 </a>
                                 <div className="flex items-baseline mb-1 space-x-2">
                                     <p className="text-xl text-indigo-500 font-semibold">{product.salePrice}</p>
@@ -93,10 +93,10 @@ const MensCollection = () => {
                     <Fade in={open}>
                         <Box>
                             {/* <button className='justify-end text-white select-none bg-red-500 rounded-full w-8 h-8' onClick={handleClose}>x</button> */}
-                            <div className='md:block mx-auto px-1 lg:block hidden'>
+                            <div style={{width: '805px', height: '600px'}} className='md:block mx-auto bg-white dark:bg-gray-800 px-1 lg:block hidden'>
                                 <ProductView handleClose={handleClose} selectedProduct={selectedProduct} />
                             </div>
-                            <div className='md:hidden lg:hidden block'>
+                            <div className='md:hidden lg:hidden bg-white dark:bg-gray-800 block'>
                                 <ProductViewSm selectedProduct={selectedProduct} />
                             </div>
                         </Box>

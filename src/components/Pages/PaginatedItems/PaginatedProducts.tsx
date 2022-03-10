@@ -21,7 +21,7 @@ const PaginatedProducts = ({ product, isLoading }: any) => {
                     isLoading ?
                         <CircularProgress className="mx-auto" color="success" />
                         : product?.map((pd: any) => (
-                            <div className="bg-white shadow-inner overflow-hidden single-card group">
+                            <div className="bg-white dark:bg-slate-800 shadow-inner overflow-hidden single-card group">
                                 <div className="relative">
                                     <div style={{ height: '250px' }} className='z-100 overflow-hidden'>
                                         <img src={pd.hoverImg} className='w-full img z-0 transition object-cover' alt="" />
@@ -39,8 +39,8 @@ const PaginatedProducts = ({ product, isLoading }: any) => {
                                 </div>
                                 <div style={{ height: '200px' }} className="pt-4 gb-3 px-4">
                                     <a href="/">
-                                        <h4 className="font-medium text-xl mb-2 text-grey-800  transition">{pd.title}</h4>
-                                        <h5 className="font-bold text-sm mb-2 text-grey-800 transition">from {pd.vendorName}</h5>
+                                        <h4 className="font-medium text-xl mb-2 text-gray-800 dark:text-white  transition">{pd.title}</h4>
+                                        <h5 className="font-bold text-sm mb-2 text-gray-800 dark:text-white transition">from {pd.vendorName}</h5>
                                     </a>
                                     <div className="flex items-baseline mb-1 space-x-2">
                                         <p className="text-xl text-indigo-500 font-semibold">{pd.salePrice}</p>

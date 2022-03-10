@@ -8,14 +8,14 @@ export interface IAppProps {
 export default class App extends React.PureComponent<IAppProps> {
   public render() {
     return (
-      <div className='relative bg-white overflow-hidden '>
+      <div className='relative bg-white dark:bg-slate-800 overflow-hidden '>
 
         <div className='relative z-10 pb-8 sm:pb-16 md:pb-20 lg:max-w-2xl lg:w-full lg:pb-28 xl:pb-32'>
 
 
           <main className="mx-auto max-w-7xl px-8 pt-10 ">
             <div className="sm:text-center lg:text-left pr-8">
-              <h4 className="text-4xl tracking-tight font-extrabold text-gray-900 sm:text-5xl md:text-6xl ">
+              <h4 className="text-4xl tracking-tight font-extrabold text-gray-900 dark:text-white sm:text-5xl md:text-6xl ">
                 <span className="block xl:inline">Enrich Your online business </span>{' '}
                 <span className="block text-indigo-600 xl:inline">  by Unity Mart</span>
               </h4>

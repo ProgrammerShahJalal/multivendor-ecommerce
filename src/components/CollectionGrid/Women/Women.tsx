@@ -43,7 +43,7 @@ const Women = () => {
             <div className="grid lg:grid-cols-3 md:grid-cols-2 xs:grid-cols-1 gap-6">
                 {
                     products.map((product) => (
-                        <div className="bg-white shadow-inner overflow-hidden single-card ">
+                        <div className="bg-white dark:bg-slate-800 shadow-inner overflow-hidden single-card ">
                 <div className="relative group">
                 <div style={{height:'250px'}} className='z-100  overflow-hidden'>
                                 <img src={product.hoverImg} className='w-full select-none block group-hover:hidden z-0 transition object-center' alt="" />
@@ -61,8 +61,8 @@ const Women = () => {
                 </div>
                 <div style={{height:'200px'}} className="pt-4 gb-3 px-4">
                         <a href="/">
-                            <h4 className="font-medium text-xl mb-2 text-grey-800  transition">{product.title}</h4>
-                            <h5 className="font-bold text-sm mb-2 text-grey-800 transition">from {product.vendorName}</h5>
+                            <h4 className="font-medium text-xl mb-2 text-gray-800 dark:text-white  transition">{product.title}</h4>
+                            <h5 className="font-bold text-sm mb-2 text-gray-800 dark:text-white transition">from {product.vendorName}</h5>
                         </a>
                         <div className="flex items-baseline mb-1 space-x-2">
                             <p className="text-xl text-indigo-500 font-semibold">{product.salePrice}</p>

@@ -56,7 +56,7 @@ const Products = () => {
                             </svg>
                         </span>
                         <input placeholder="Search"
-                            className="appearance-none rounded-r rounded-l sm:rounded-l-none border border-gray-400 border-b block pl-8 pr-6 py-2 w-full bg-white text-sm placeholder-gray-400 text-gray-700 focus:bg-white focus:placeholder-gray-600 focus:text-gray-700 focus:outline-none" />
+                            className="appearance-none rounded-r rounded-l sm:rounded-l-none border border-gray-400 border-b block pl-8 pr-6 py-2 w-full bg-white dark:bg-slate-800 text-sm placeholder-gray-400 text-gray-700 focus:bg-white dark:bg-slate-800 focus:placeholder-gray-600 focus:text-gray-700 focus:outline-none" />
                     </div>
                 </div>
 
@@ -103,7 +103,7 @@ const Products = () => {
                                 {
                                     products.map(product => {
                                         return <tr>
-                                            <td className="px-5 py-5 border-b border-gray-200 bg-white text-sm">
+                                            <td className="px-5 py-5 border-b border-gray-200 bg-white dark:bg-slate-800 text-sm">
                                                 <div className="flex items-center">
                                                     <div className="flex-shrink-0 w-10 h-10">
 
@@ -112,18 +112,18 @@ const Products = () => {
 
                                                 </div>
                                             </td>
-                                            <td className="px-1 py-5 border-b border-gray-200 bg-white text-sm">
-                                                <p className="text-gray-900 whitespace-no-wrap text-left">{product.title}</p>
+                                            <td className="px-1 py-5 border-b border-gray-200 bg-white dark:bg-slate-800 text-sm">
+                                                <p className="text-gray-900 dark:text-white whitespace-no-wrap text-left">{product.title}</p>
                                             </td>
-                                            <td className="px-5 py-5 border-b border-gray-200 bg-white text-sm">
-                                                <p className="text-gray-900 whitespace-no-wrap text-left">${product.sale_price | product.reg_price}</p>
+                                            <td className="px-5 py-5 border-b border-gray-200 bg-white dark:bg-slate-800 text-sm">
+                                                <p className="text-gray-900 dark:text-white whitespace-no-wrap text-left">${product.sale_price | product.reg_price}</p>
                                             </td>
-                                            <td className="px-5 py-5 border-b border-gray-200 bg-white text-sm">
-                                                <p className="text-gray-900 whitespace-no-wrap text-left">
+                                            <td className="px-5 py-5 border-b border-gray-200 bg-white dark:bg-slate-800 text-sm">
+                                                <p className="text-gray-900 dark:text-white whitespace-no-wrap text-left">
                                                     {product.stock}
                                                 </p>
                                             </td>
-                                            <td className="px-5 py-5 border-b border-gray-200 bg-white text-sm text-left">
+                                            <td className="px-5 py-5 border-b border-gray-200 bg-white dark:bg-slate-800 text-sm text-left">
                                                 <span
                                                     className="relative inline-block px-3 py-1  font-semibold text-green-900 leading-tight">
                                                     {/* {product.categories.map(({ label }) => label)} */}
@@ -133,10 +133,10 @@ const Products = () => {
                                                     <span className="relative text-left">Delivered</span> */}
                                                 </span>
                                             </td>
-                                            <td className="px-5 py-5 border-b border-gray-200 bg-white text-sm">
+                                            <td className="px-5 py-5 border-b border-gray-200 bg-white dark:bg-slate-800 text-sm">
                                                 Admin
                                             </td>
-                                            <td className="px-5 py-5 border-b border-gray-200 bg-white text-sm flex">
+                                            <td className="px-5 py-5 border-b border-gray-200 bg-white dark:bg-slate-800 text-sm flex">
                                                 <button className="text-white rounded whitespace-no-wrap mr-2 text-left bg-indigo-500 p-2 mb-1 w-10">
                                                     Edit
                                                 </button>
@@ -152,17 +152,17 @@ const Products = () => {
                             </tbody>
                         </table>
                         <div
-                            className="px-5 py-5 bg-white border-t flex flex-col xs:flex-row items-center xs:justify-between          ">
-                            <span className="text-xs xs:text-sm text-gray-900">
+                            className="px-5 py-5 bg-white dark:bg-slate-800 border-t flex flex-col xs:flex-row items-center xs:justify-between          ">
+                            <span className="text-xs xs:text-sm text-gray-900 dark:text-white">
                                 Showing 1 to 10 of 50 Entries
                             </span>
                             <div className="inline-flex mt-2 xs:mt-0">
                                 <button
-                                    className="text-sm bg-gray-300 hover:bg-gray-400 text-gray-800 font-semibold py-2 px-4 rounded-l">
+                                    className="text-sm bg-gray-300 hover:bg-gray-400 text-gray-800 dark:text-white font-semibold py-2 px-4 rounded-l">
                                     Prev
                                 </button>
                                 <button
-                                    className="text-sm bg-gray-300 hover:bg-gray-400 text-gray-800 font-semibold py-2 px-4 rounded-r">
+                                    className="text-sm bg-gray-300 hover:bg-gray-400 text-gray-800 dark:text-white font-semibold py-2 px-4 rounded-r">
                                     Next
                                 </button>
                             </div>

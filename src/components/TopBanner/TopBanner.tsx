@@ -11,7 +11,7 @@ export default class TopBanner extends PureComponent<Props> {
 					<div className="grid md:grid-cols-2 xs:grid-cols-1 lg:grid-cols-3">
 						<div className="main-div">
 
-							<div className="sngle-banner grid grid-cols-1 poster-card" data-aos="fade-right"
+							<div className="sngle-banner text-black dark:text-white grid grid-cols-1 bg-white dark:bg-slate-800 poster-card" data-aos="fade-right"
 								data-aos-anchor="#example-anchor"
 								data-aos-offset="500"
 								data-aos-duration="3000">
@@ -22,13 +22,13 @@ export default class TopBanner extends PureComponent<Props> {
 								<div className="content">
 									<h4><b>Nike Shoes</b></h4>
 									<h3>Premium<span className="top-span"> Black</span><br />Up to<span className='top-span'> 30%</span> <span className='text-red-700'>Off</span></h3>
-									<Link to="/shop">Shop Now</Link>
+									<Link className='text-orange-200 hover:text-orange-400' to="/shop">Shop Now</Link>
 								</div>
 
 							</div>
 						</div>
 						<div className="main-div">
-							<div className="sngle-banner grid grid-cols-1 poster-card" data-aos="fade-up"
+							<div className="sngle-banner text-black dark:text-white grid grid-cols-1 bg-white dark:bg-slate-800 poster-card" data-aos="fade-up"
 								data-aos-anchor="#example-anchor"
 								data-aos-offset="500"
 								data-aos-duration="3000">
@@ -45,13 +45,13 @@ export default class TopBanner extends PureComponent<Props> {
 							</div>
 						</div>
 						<div className="main-div">
-							<div className="sngle-banner grid grid-cols-1 poster-card" data-aos="fade-left"
+							<div className="sngle-banner text-black dark:text-white grid grid-cols-1 bg-white dark:bg-slate-800 poster-card" data-aos="fade-left"
 								data-aos-anchor="#example-anchor"
 								data-aos-offset="500"
 								data-aos-duration="3000">
 								<div className='lg:pl-24'>
-									<img className='main-img' style={{ height: '250px', width: '150px' }} src='https://i.ibb.co/4Mcdtv4/bag.webp' alt="/"></img>
-									<img className='hovering-img' style={{ height: '250px', width: '150px' }} src='https://i.ibb.co/KrpcY8B/bag-back.webp' alt="/"></img>
+									<img className='main-img' style={{ height: '250px', width: '150px' }} src='https://i.ibb.co/phB4crn/bag-front.png' alt="/"></img>
+									<img className='hovering-img' style={{ height: '250px', width: '180px' }} src='https://i.ibb.co/Lg5nH7r/bag-back.png' alt="/"></img>
 								</div>
 								<div className="content">
 									<h4><b>Stylish Backpack</b></h4>

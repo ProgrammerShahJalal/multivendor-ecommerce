@@ -45,14 +45,14 @@ const Products = () => {
     const handleClose = () => setOpen(false);
     return (
         <div className="container lg:px-0 md:px-10 px-5 pb-16 mx-auto">
-            <h2 className="text-3xl text-center font-extrabold text-gray-900 sm:text-4xl mb-10">
+            <h2 className="text-3xl text-center font-extrabold text-gray-900 dark:text-white sm:text-4xl mb-10">
                 <span className="text-5xl pr-3" >Latest</span>
                 <span className=" text-indigo-600 text-5xl">Products</span>
             </h2>
             <div className="grid place-content-center lg:grid-cols-4 md:grid-cols-3 grid-cols-1 gap-6">
                 {
                     products.map((product) => {
-                        return <div className="bg-white shadow-inner overflow-hidden single-card">
+                        return <div className="bg-white dark:bg-slate-800 shadow-inner overflow-hidden single-card">
 
                             <div className="relative group">
                                 <div style={{ height: '250px' }} className='z-100 overflow-hidden'>
@@ -73,9 +73,9 @@ const Products = () => {
                             </div>
                             <div style={{ height: '200px' }} className="pt-4 gb-3 px-4">
                                 <Link to={`/product/${product._id}`}>
-                                    <h4 className="font-medium text-xl mb-2 text-grey-800  transition">{product.title}</h4>
-                                    <h5 className="font-bold text-sm mb-2 text-grey-800 transition">Category: {product.categories[0]?.label}</h5>
-                                    <h5 className="font-bold text-sm mb-2 text-grey-800 transition">from {product.brand}</h5>
+                                    <h4 className="font-medium text-xl mb-2 text-gray-800 dark:text-white  transition">{product.title}</h4>
+                                    <h5 className="font-bold text-sm mb-2 text-gray-800 dark:text-white transition">Category: {product.categories[0]?.label}</h5>
+                                    <h5 className="font-bold text-sm mb-2 text-gray-800 dark:text-white transition">from {product.brand}</h5>
                                 </Link>
                                 <div className="flex items-baseline mb-1 space-x-2">
                                     <p className="text-xl text-indigo-500 font-semibold">{product.sale_price}</p>

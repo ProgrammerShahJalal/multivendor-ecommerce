@@ -8,7 +8,7 @@ import VendorTop from './VendorTop';
 /* This example requires Tailwind CSS v2.0+ */
 export default function Example() {
     return (
-        <div className="bg-gray-50">
+        <div className="bg-gray-50 dark:bg-gray-800">
             <VendorTop />
             <div className="max-w-7xl mx-auto py-12 px-4 sm:px-6 lg:py-16 lg:px-8 lg:flex lg:items-center lg:justify-between">
                 <VendorSidebar />
@@ -27,7 +27,7 @@ export default function Example() {
 
                 <div className='grid lg:grid-cols-3 gap-4 w-full px-10 py-20'>
                     {/* card 1 Start  */}
-                    <div className='bg-white text-gray-700 shadow-lg rounded-md h-3/5 border overflow-hidden'>
+                    <div className='bg-white dark:bg-slate-800 text-gray-700 shadow-lg rounded-md h-3/5 border overflow-hidden'>
                         <div>
                             <img className='w-full h-full object-cover' src="https://images.unsplash.com/photo-1556905055-8f358a7a47b2?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxzZWFyY2h8M3x8Y2xvdGhlc3xlbnwwfHwwfHw%3D&auto=format&fit=crop&w=500&q=60" alt="clothes" />
                         </div>
@@ -131,7 +131,7 @@ export default function Example() {
                         </div>
 
                     </div>
-                    <div className='bg-white text-gray-700 shadow-lg rounded-md h-3/5 border overflow-hidden'>
+                    <div className='bg-white dark:bg-slate-800 text-gray-700 shadow-lg rounded-md h-3/5 border overflow-hidden'>
                         <div>
                             <img className='w-full h-full object-cover' src="https://images.unsplash.com/photo-1556905055-8f358a7a47b2?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxzZWFyY2h8M3x8Y2xvdGhlc3xlbnwwfHwwfHw%3D&auto=format&fit=crop&w=500&q=60" alt="clothes" />
                         </div>

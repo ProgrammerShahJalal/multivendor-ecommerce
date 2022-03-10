@@ -14,7 +14,7 @@ const AllOrders = () => {
 
                         <div className="relative">
                             <select
-                                className="appearance-none h-full rounded-r border-t sm:rounded-r-none sm:border-r-0 border-r border-b block appearance-none w-full bg-white border-gray-400 text-gray-700 py-2 px-4 pr-8 leading-tight focus:outline-none focus:border-l focus:border-r focus:bg-white focus:border-gray-500">
+                                className="appearance-none h-full rounded-r border-t sm:rounded-r-none sm:border-r-0 border-r border-b block appearance-none w-full bg-white dark:bg-slate-800 border-gray-400 text-gray-700 py-2 px-4 pr-8 leading-tight focus:outline-none focus:border-l focus:border-r focus:bg-white dark:bg-slate-800 focus:border-gray-500">
                                 <option>All</option>
                                 <option>Delivered</option>
                                 <option>Shipped</option>
@@ -34,13 +34,13 @@ const AllOrders = () => {
                             </svg>
                         </span>
                         <input placeholder="Search"
-                            className="appearance-none rounded-r rounded-l sm:rounded-l-none border border-gray-400 border-b block pl-8 pr-6 py-2 w-full bg-white text-sm placeholder-gray-400 text-gray-700 focus:bg-white focus:placeholder-gray-600 focus:text-gray-700 focus:outline-none" />
+                            className="appearance-none rounded-r rounded-l sm:rounded-l-none border border-gray-400 border-b block pl-8 pr-6 py-2 w-full bg-white dark:bg-slate-800 text-sm placeholder-gray-400 text-gray-700 focus:bg-white dark:bg-slate-800 focus:placeholder-gray-600 focus:text-gray-700 focus:outline-none" />
                     </div>
                 </div>
                 {/* user part end  */}
                 {/* total part start  */}
                 {/* <div className="lg:flex space-x-4 py-12">
-                    <div className="flex items-center justify-around p-6 bg-white w-64 rounded-xl space-x-2 mt-10 shadow-lg">
+                    <div className="flex items-center justify-around p-6 bg-white dark:bg-slate-800 w-64 rounded-xl space-x-2 mt-10 shadow-lg">
                         <div>
                             <span className="text-sm font-semibold text-gray-400">Total Orders</span>
                             <h1 className="text-2xl font-bold">$682.5</h1>
@@ -51,7 +51,7 @@ const AllOrders = () => {
                             </svg>
                         </div>
                     </div>
-                    <div className="flex items-center justify-around p-6 bg-white w-64 rounded-xl space-x-2 mt-10 shadow-lg">
+                    <div className="flex items-center justify-around p-6 bg-white dark:bg-slate-800 w-64 rounded-xl space-x-2 mt-10 shadow-lg">
                         <div>
                             <span className="text-sm font-semibold text-gray-400">Total Earned</span>
                             <h1 className="text-2xl font-bold">$20679.00</h1>
@@ -62,7 +62,7 @@ const AllOrders = () => {
                             </svg>
                         </div>
                     </div>
-                    <div className="flex items-center justify-around p-6 bg-white w-64 rounded-xl space-x-2 mt-10 shadow-lg">
+                    <div className="flex items-center justify-around p-6 bg-white dark:bg-slate-800 w-64 rounded-xl space-x-2 mt-10 shadow-lg">
                         <div>
                             <span className="text-sm font-semibold text-gray-400">Total Products</span>
                             <h1 className="text-2xl font-bold">79</h1>
@@ -73,7 +73,7 @@ const AllOrders = () => {
                             </svg>
                         </div>
                     </div>
-                    <div className="flex items-center justify-around p-6 bg-white w-64 rounded-xl space-x-2 mt-10 shadow-lg">
+                    <div className="flex items-center justify-around p-6 bg-white dark:bg-slate-800 w-64 rounded-xl space-x-2 mt-10 shadow-lg">
                         <div>
                             <span className="text-sm font-semibold text-gray-400">Ratings</span>
                             <p className="text-xl font-bold">5 star</p>
@@ -127,7 +127,7 @@ const AllOrders = () => {
                             <tbody>
                                 {/* first order start */}
                                 <tr>
-                                    <td className="px-5 py-5 border-b border-gray-200 bg-white text-sm">
+                                    <td className="px-5 py-5 border-b border-gray-200 bg-white dark:bg-slate-800 text-sm">
                                         <div className="flex items-center">
                                             <div className="flex-shrink-0 w-10 h-10">
                                                 <img className="w-full h-full rounded-full"
@@ -135,24 +135,24 @@ const AllOrders = () => {
                                                     alt="" />
                                             </div>
                                             <div className="ml-3">
-                                                <p className="text-gray-900 whitespace-no-wrap">
+                                                <p className="text-gray-900 dark:text-white whitespace-no-wrap">
                                                     Vera Carpenter
                                                 </p>
                                             </div>
                                         </div>
                                     </td>
-                                    <td className="px-5 py-5 border-b border-gray-200 bg-white text-sm">
-                                        <p className="text-gray-900 whitespace-no-wrap text-left">Mobile iPhone</p>
+                                    <td className="px-5 py-5 border-b border-gray-200 bg-white dark:bg-slate-800 text-sm">
+                                        <p className="text-gray-900 dark:text-white whitespace-no-wrap text-left">Mobile iPhone</p>
                                     </td>
-                                    <td className="px-5 py-5 border-b border-gray-200 bg-white text-sm">
-                                        <p className="text-gray-900 whitespace-no-wrap text-left">300.00tk</p>
+                                    <td className="px-5 py-5 border-b border-gray-200 bg-white dark:bg-slate-800 text-sm">
+                                        <p className="text-gray-900 dark:text-white whitespace-no-wrap text-left">300.00tk</p>
                                     </td>
-                                    <td className="px-5 py-5 border-b border-gray-200 bg-white text-sm">
-                                        <p className="text-gray-900 whitespace-no-wrap text-left">
+                                    <td className="px-5 py-5 border-b border-gray-200 bg-white dark:bg-slate-800 text-sm">
+                                        <p className="text-gray-900 dark:text-white whitespace-no-wrap text-left">
                                             Feb 21, 2022
                                         </p>
                                     </td>
-                                    <td className="px-5 py-5 border-b border-gray-200 bg-white text-sm text-left">
+                                    <td className="px-5 py-5 border-b border-gray-200 bg-white dark:bg-slate-800 text-sm text-left">
                                         <span
                                             className="relative inline-block px-3 py-1  font-semibold text-green-900 leading-tight">
                                             <span aria-hidden
@@ -160,12 +160,12 @@ const AllOrders = () => {
                                             <span className="relative text-left">Delivered</span>
                                         </span>
                                     </td>
-                                    <td className="px-5 py-5 border-b border-gray-200 bg-white text-sm">
-                                        <p className="text-gray-900 rounded whitespace-no-wrap text-left bg-green-200 p-2 w-10">
+                                    <td className="px-5 py-5 border-b border-gray-200 bg-white dark:bg-slate-800 text-sm">
+                                        <p className="text-gray-900 dark:text-white rounded whitespace-no-wrap text-left bg-green-200 p-2 w-10">
                                             Edit
                                         </p>
                                     </td>
-                                    <td className="px-5 py-5 border-b border-gray-200 bg-white text-sm">
+                                    <td className="px-5 py-5 border-b border-gray-200 bg-white dark:bg-slate-800 text-sm">
                                         <p className="text-white rounded whitespace-no-wrap text-left bg-red-500 p-2 w-16">
                                             Delete
                                         </p>
@@ -173,7 +173,7 @@ const AllOrders = () => {
                                 </tr>
                                 {/* first order end  */}
                                 <tr>
-                                    <td className="px-5 py-5 border-b border-gray-200 bg-white text-sm">
+                                    <td className="px-5 py-5 border-b border-gray-200 bg-white dark:bg-slate-800 text-sm">
                                         <div className="flex items-center">
                                             <div className="flex-shrink-0 w-10 h-10">
                                                 <img className="w-full h-full rounded-full"
@@ -181,24 +181,24 @@ const AllOrders = () => {
                                                     alt="" />
                                             </div>
                                             <div className="ml-3">
-                                                <p className="text-gray-900 whitespace-no-wrap text-left">
+                                                <p className="text-gray-900 dark:text-white whitespace-no-wrap text-left">
                                                     Dana Moore
                                                 </p>
                                             </div>
                                         </div>
                                     </td>
-                                    <td className="px-5 py-5 border-b border-gray-200 bg-white text-sm">
-                                        <p className="text-gray-900 whitespace-no-wrap text-left">T-shirt</p>
+                                    <td className="px-5 py-5 border-b border-gray-200 bg-white dark:bg-slate-800 text-sm">
+                                        <p className="text-gray-900 dark:text-white whitespace-no-wrap text-left">T-shirt</p>
                                     </td>
-                                    <td className="px-5 py-5 border-b border-gray-200 bg-white text-sm">
-                                        <p className="text-gray-900 whitespace-no-wrap text-left">300.00tk</p>
+                                    <td className="px-5 py-5 border-b border-gray-200 bg-white dark:bg-slate-800 text-sm">
+                                        <p className="text-gray-900 dark:text-white whitespace-no-wrap text-left">300.00tk</p>
                                     </td>
-                                    <td className="px-5 py-5 border-b border-gray-200 bg-white text-sm">
-                                        <p className="text-gray-900 whitespace-no-wrap text-left">
+                                    <td className="px-5 py-5 border-b border-gray-200 bg-white dark:bg-slate-800 text-sm">
+                                        <p className="text-gray-900 dark:text-white whitespace-no-wrap text-left">
                                             Jan 10, 2022
                                         </p>
                                     </td>
-                                    <td className="px-5 py-5 border-b border-gray-200 bg-white text-sm text-left">
+                                    <td className="px-5 py-5 border-b border-gray-200 bg-white dark:bg-slate-800 text-sm text-left">
                                         <span
                                             className="relative inline-block px-3 py-1 font-semibold text-orange-900 leading-tight">
                                             <span aria-hidden
@@ -206,12 +206,12 @@ const AllOrders = () => {
                                             <span className="relative text-left">Suspended</span>
                                         </span>
                                     </td>
-                                    <td className="px-5 py-5 border-b border-gray-200 bg-white text-sm">
-                                        <p className="text-gray-900 rounded whitespace-no-wrap text-left bg-green-200 p-2 w-10">
+                                    <td className="px-5 py-5 border-b border-gray-200 bg-white dark:bg-slate-800 text-sm">
+                                        <p className="text-gray-900 dark:text-white rounded whitespace-no-wrap text-left bg-green-200 p-2 w-10">
                                             Edit
                                         </p>
                                     </td>
-                                    <td className="px-5 py-5 border-b border-gray-200 bg-white text-sm">
+                                    <td className="px-5 py-5 border-b border-gray-200 bg-white dark:bg-slate-800 text-sm">
                                         <p className="text-white rounded whitespace-no-wrap text-left bg-red-500 p-2 w-16">
                                             Delete
                                         </p>
@@ -220,7 +220,7 @@ const AllOrders = () => {
 
 
                                 <tr>
-                                    <td className="px-5 py-5 bg-white text-sm">
+                                    <td className="px-5 py-5 bg-white dark:bg-slate-800 text-sm">
                                         <div className="flex items-center">
                                             <div className="flex-shrink-0 w-10 h-10">
                                                 <img className="w-full h-full rounded-full"
@@ -228,22 +228,22 @@ const AllOrders = () => {
                                                     alt="" />
                                             </div>
                                             <div className="ml-3">
-                                                <p className="text-gray-900 whitespace-no-wrap text-left">
+                                                <p className="text-gray-900 dark:text-white whitespace-no-wrap text-left">
                                                     Alonzo Cox
                                                 </p>
                                             </div>
                                         </div>
                                     </td>
-                                    <td className="px-5 py-5 bg-white text-sm">
-                                        <p className="text-gray-900 whitespace-no-wrap text-left">Camera</p>
+                                    <td className="px-5 py-5 bg-white dark:bg-slate-800 text-sm">
+                                        <p className="text-gray-900 dark:text-white whitespace-no-wrap text-left">Camera</p>
                                     </td>
-                                    <td className="px-5 py-5 border-b border-gray-200 bg-white text-sm">
-                                        <p className="text-gray-900 whitespace-no-wrap text-left">300.00tk</p>
+                                    <td className="px-5 py-5 border-b border-gray-200 bg-white dark:bg-slate-800 text-sm">
+                                        <p className="text-gray-900 dark:text-white whitespace-no-wrap text-left">300.00tk</p>
                                     </td>
-                                    <td className="px-5 py-5 bg-white text-sm">
-                                        <p className="text-gray-900 whitespace-no-wrap text-left">March 18, 2022</p>
+                                    <td className="px-5 py-5 bg-white dark:bg-slate-800 text-sm">
+                                        <p className="text-gray-900 dark:text-white whitespace-no-wrap text-left">March 18, 2022</p>
                                     </td>
-                                    <td className="px-5 py-5 bg-white text-sm text-left">
+                                    <td className="px-5 py-5 bg-white dark:bg-slate-800 text-sm text-left">
                                         <span
                                             className="relative inline-block px-3 py-1 font-semibold text-red-900 leading-tight">
                                             <span aria-hidden
@@ -251,19 +251,19 @@ const AllOrders = () => {
                                             <span className="relative text-left">Shipped</span>
                                         </span>
                                     </td>
-                                    <td className="px-5 py-5 border-b border-gray-200 bg-white text-sm">
-                                        <p className="text-gray-900 rounded whitespace-no-wrap text-left bg-green-200 p-2 w-10">
+                                    <td className="px-5 py-5 border-b border-gray-200 bg-white dark:bg-slate-800 text-sm">
+                                        <p className="text-gray-900 dark:text-white rounded whitespace-no-wrap text-left bg-green-200 p-2 w-10">
                                             Edit
                                         </p>
                                     </td>
-                                    <td className="px-5 py-5 border-b border-gray-200 bg-white text-sm">
+                                    <td className="px-5 py-5 border-b border-gray-200 bg-white dark:bg-slate-800 text-sm">
                                         <p className="text-white rounded whitespace-no-wrap text-left bg-red-500 p-2 w-16">
                                             Delete
                                         </p>
                                     </td>
                                 </tr>
                                 <tr>
-                                    <td className="px-5 py-5 bg-white text-sm">
+                                    <td className="px-5 py-5 bg-white dark:bg-slate-800 text-sm">
                                         <div className="flex items-center">
                                             <div className="flex-shrink-0 w-10 h-10">
                                                 <img className="w-full h-full rounded-full"
@@ -271,22 +271,22 @@ const AllOrders = () => {
                                                     alt="" />
                                             </div>
                                             <div className="ml-3">
-                                                <p className="text-gray-900 whitespace-no-wrap text-left">
+                                                <p className="text-gray-900 dark:text-white whitespace-no-wrap text-left">
                                                     Alonzo Cox
                                                 </p>
                                             </div>
                                         </div>
                                     </td>
-                                    <td className="px-5 py-5 bg-white text-sm">
-                                        <p className="text-gray-900 whitespace-no-wrap text-left">Camera</p>
+                                    <td className="px-5 py-5 bg-white dark:bg-slate-800 text-sm">
+                                        <p className="text-gray-900 dark:text-white whitespace-no-wrap text-left">Camera</p>
                                     </td>
-                                    <td className="px-5 py-5 border-b border-gray-200 bg-white text-sm">
-                                        <p className="text-gray-900 whitespace-no-wrap text-left">300.00tk</p>
+                                    <td className="px-5 py-5 border-b border-gray-200 bg-white dark:bg-slate-800 text-sm">
+                                        <p className="text-gray-900 dark:text-white whitespace-no-wrap text-left">300.00tk</p>
                                     </td>
-                                    <td className="px-5 py-5 bg-white text-sm">
-                                        <p className="text-gray-900 whitespace-no-wrap text-left">March 18, 2022</p>
+                                    <td className="px-5 py-5 bg-white dark:bg-slate-800 text-sm">
+                                        <p className="text-gray-900 dark:text-white whitespace-no-wrap text-left">March 18, 2022</p>
                                     </td>
-                                    <td className="px-5 py-5 bg-white text-sm text-left">
+                                    <td className="px-5 py-5 bg-white dark:bg-slate-800 text-sm text-left">
                                         <span
                                             className="relative inline-block px-3 py-1 font-semibold text-red-900 leading-tight">
                                             <span aria-hidden
@@ -294,19 +294,19 @@ const AllOrders = () => {
                                             <span className="relative text-left">Shipped</span>
                                         </span>
                                     </td>
-                                    <td className="px-5 py-5 border-b border-gray-200 bg-white text-sm">
-                                        <p className="text-gray-900 rounded whitespace-no-wrap text-left bg-green-200 p-2 w-10">
+                                    <td className="px-5 py-5 border-b border-gray-200 bg-white dark:bg-slate-800 text-sm">
+                                        <p className="text-gray-900 dark:text-white rounded whitespace-no-wrap text-left bg-green-200 p-2 w-10">
                                             Edit
                                         </p>
                                     </td>
-                                    <td className="px-5 py-5 border-b border-gray-200 bg-white text-sm">
+                                    <td className="px-5 py-5 border-b border-gray-200 bg-white dark:bg-slate-800 text-sm">
                                         <p className="text-white rounded whitespace-no-wrap text-left bg-red-500 p-2 w-16">
                                             Delete
                                         </p>
                                     </td>
                                 </tr>
                                 <tr>
-                                    <td className="px-5 py-5 bg-white text-sm">
+                                    <td className="px-5 py-5 bg-white dark:bg-slate-800 text-sm">
                                         <div className="flex items-center">
                                             <div className="flex-shrink-0 w-10 h-10">
                                                 <img className="w-full h-full rounded-full"
@@ -314,22 +314,22 @@ const AllOrders = () => {
                                                     alt="" />
                                             </div>
                                             <div className="ml-3">
-                                                <p className="text-gray-900 whitespace-no-wrap text-left">
+                                                <p className="text-gray-900 dark:text-white whitespace-no-wrap text-left">
                                                     Alonzo Cox
                                                 </p>
                                             </div>
                                         </div>
                                     </td>
-                                    <td className="px-5 py-5 bg-white text-sm">
-                                        <p className="text-gray-900 whitespace-no-wrap text-left">Camera</p>
+                                    <td className="px-5 py-5 bg-white dark:bg-slate-800 text-sm">
+                                        <p className="text-gray-900 dark:text-white whitespace-no-wrap text-left">Camera</p>
                                     </td>
-                                    <td className="px-5 py-5 border-b border-gray-200 bg-white text-sm">
-                                        <p className="text-gray-900 whitespace-no-wrap text-left">300.00tk</p>
+                                    <td className="px-5 py-5 border-b border-gray-200 bg-white dark:bg-slate-800 text-sm">
+                                        <p className="text-gray-900 dark:text-white whitespace-no-wrap text-left">300.00tk</p>
                                     </td>
-                                    <td className="px-5 py-5 bg-white text-sm">
-                                        <p className="text-gray-900 whitespace-no-wrap text-left">March 18, 2022</p>
+                                    <td className="px-5 py-5 bg-white dark:bg-slate-800 text-sm">
+                                        <p className="text-gray-900 dark:text-white whitespace-no-wrap text-left">March 18, 2022</p>
                                     </td>
-                                    <td className="px-5 py-5 bg-white text-sm text-left">
+                                    <td className="px-5 py-5 bg-white dark:bg-slate-800 text-sm text-left">
                                         <span
                                             className="relative inline-block px-3 py-1 font-semibold text-red-900 leading-tight">
                                             <span aria-hidden
@@ -337,19 +337,19 @@ const AllOrders = () => {
                                             <span className="relative text-left">Shipped</span>
                                         </span>
                                     </td>
-                                    <td className="px-5 py-5 border-b border-gray-200 bg-white text-sm">
-                                        <p className="text-gray-900 rounded whitespace-no-wrap text-left bg-green-200 p-2 w-10">
+                                    <td className="px-5 py-5 border-b border-gray-200 bg-white dark:bg-slate-800 text-sm">
+                                        <p className="text-gray-900 dark:text-white rounded whitespace-no-wrap text-left bg-green-200 p-2 w-10">
                                             Edit
                                         </p>
                                     </td>
-                                    <td className="px-5 py-5 border-b border-gray-200 bg-white text-sm">
+                                    <td className="px-5 py-5 border-b border-gray-200 bg-white dark:bg-slate-800 text-sm">
                                         <p className="text-white rounded whitespace-no-wrap text-left bg-red-500 p-2 w-16">
                                             Delete
                                         </p>
                                     </td>
                                 </tr>
                                 <tr>
-                                    <td className="px-5 py-5 bg-white text-sm">
+                                    <td className="px-5 py-5 bg-white dark:bg-slate-800 text-sm">
                                         <div className="flex items-center">
                                             <div className="flex-shrink-0 w-10 h-10">
                                                 <img className="w-full h-full rounded-full"
@@ -357,22 +357,22 @@ const AllOrders = () => {
                                                     alt="" />
                                             </div>
                                             <div className="ml-3">
-                                                <p className="text-gray-900 whitespace-no-wrap text-left">
+                                                <p className="text-gray-900 dark:text-white whitespace-no-wrap text-left">
                                                     Alonzo Cox
                                                 </p>
                                             </div>
                                         </div>
                                     </td>
-                                    <td className="px-5 py-5 bg-white text-sm">
-                                        <p className="text-gray-900 whitespace-no-wrap text-left">Camera</p>
+                                    <td className="px-5 py-5 bg-white dark:bg-slate-800 text-sm">
+                                        <p className="text-gray-900 dark:text-white whitespace-no-wrap text-left">Camera</p>
                                     </td>
-                                    <td className="px-5 py-5 border-b border-gray-200 bg-white text-sm">
-                                        <p className="text-gray-900 whitespace-no-wrap text-left">300.00tk</p>
+                                    <td className="px-5 py-5 border-b border-gray-200 bg-white dark:bg-slate-800 text-sm">
+                                        <p className="text-gray-900 dark:text-white whitespace-no-wrap text-left">300.00tk</p>
                                     </td>
-                                    <td className="px-5 py-5 bg-white text-sm">
-                                        <p className="text-gray-900 whitespace-no-wrap text-left">March 18, 2022</p>
+                                    <td className="px-5 py-5 bg-white dark:bg-slate-800 text-sm">
+                                        <p className="text-gray-900 dark:text-white whitespace-no-wrap text-left">March 18, 2022</p>
                                     </td>
-                                    <td className="px-5 py-5 bg-white text-sm text-left">
+                                    <td className="px-5 py-5 bg-white dark:bg-slate-800 text-sm text-left">
                                         <span
                                             className="relative inline-block px-3 py-1 font-semibold text-red-900 leading-tight">
                                             <span aria-hidden
@@ -380,19 +380,19 @@ const AllOrders = () => {
                                             <span className="relative text-left">Shipped</span>
                                         </span>
                                     </td>
-                                    <td className="px-5 py-5 border-b border-gray-200 bg-white text-sm">
-                                        <p className="text-gray-900 rounded whitespace-no-wrap text-left bg-green-200 p-2 w-10">
+                                    <td className="px-5 py-5 border-b border-gray-200 bg-white dark:bg-slate-800 text-sm">
+                                        <p className="text-gray-900 dark:text-white rounded whitespace-no-wrap text-left bg-green-200 p-2 w-10">
                                             Edit
                                         </p>
                                     </td>
-                                    <td className="px-5 py-5 border-b border-gray-200 bg-white text-sm">
+                                    <td className="px-5 py-5 border-b border-gray-200 bg-white dark:bg-slate-800 text-sm">
                                         <p className="text-white rounded whitespace-no-wrap text-left bg-red-500 p-2 w-16">
                                             Delete
                                         </p>
                                     </td>
                                 </tr>
                                 <tr>
-                                    <td className="px-5 py-5 bg-white text-sm">
+                                    <td className="px-5 py-5 bg-white dark:bg-slate-800 text-sm">
                                         <div className="flex items-center">
                                             <div className="flex-shrink-0 w-10 h-10">
                                                 <img className="w-full h-full rounded-full"
@@ -400,22 +400,22 @@ const AllOrders = () => {
                                                     alt="" />
                                             </div>
                                             <div className="ml-3">
-                                                <p className="text-gray-900 whitespace-no-wrap text-left">
+                                                <p className="text-gray-900 dark:text-white whitespace-no-wrap text-left">
                                                     Alonzo Cox
                                                 </p>
                                             </div>
                                         </div>
                                     </td>
-                                    <td className="px-5 py-5 bg-white text-sm">
-                                        <p className="text-gray-900 whitespace-no-wrap text-left">Camera</p>
+                                    <td className="px-5 py-5 bg-white dark:bg-slate-800 text-sm">
+                                        <p className="text-gray-900 dark:text-white whitespace-no-wrap text-left">Camera</p>
                                     </td>
-                                    <td className="px-5 py-5 border-b border-gray-200 bg-white text-sm">
-                                        <p className="text-gray-900 whitespace-no-wrap text-left">300.00tk</p>
+                                    <td className="px-5 py-5 border-b border-gray-200 bg-white dark:bg-slate-800 text-sm">
+                                        <p className="text-gray-900 dark:text-white whitespace-no-wrap text-left">300.00tk</p>
                                     </td>
-                                    <td className="px-5 py-5 bg-white text-sm">
-                                        <p className="text-gray-900 whitespace-no-wrap text-left">March 18, 2022</p>
+                                    <td className="px-5 py-5 bg-white dark:bg-slate-800 text-sm">
+                                        <p className="text-gray-900 dark:text-white whitespace-no-wrap text-left">March 18, 2022</p>
                                     </td>
-                                    <td className="px-5 py-5 bg-white text-sm text-left">
+                                    <td className="px-5 py-5 bg-white dark:bg-slate-800 text-sm text-left">
                                         <span
                                             className="relative inline-block px-3 py-1 font-semibold text-red-900 leading-tight">
                                             <span aria-hidden
@@ -423,19 +423,19 @@ const AllOrders = () => {
                                             <span className="relative text-left">Shipped</span>
                                         </span>
                                     </td>
-                                    <td className="px-5 py-5 border-b border-gray-200 bg-white text-sm">
-                                        <p className="text-gray-900 rounded whitespace-no-wrap text-left bg-green-200 p-2 w-10">
+                                    <td className="px-5 py-5 border-b border-gray-200 bg-white dark:bg-slate-800 text-sm">
+                                        <p className="text-gray-900 dark:text-white rounded whitespace-no-wrap text-left bg-green-200 p-2 w-10">
                                             Edit
                                         </p>
                                     </td>
-                                    <td className="px-5 py-5 border-b border-gray-200 bg-white text-sm">
+                                    <td className="px-5 py-5 border-b border-gray-200 bg-white dark:bg-slate-800 text-sm">
                                         <p className="text-white rounded whitespace-no-wrap text-left bg-red-500 p-2 w-16">
                                             Delete
                                         </p>
                                     </td>
                                 </tr>
                                 <tr>
-                                    <td className="px-5 py-5 bg-white text-sm">
+                                    <td className="px-5 py-5 bg-white dark:bg-slate-800 text-sm">
                                         <div className="flex items-center">
                                             <div className="flex-shrink-0 w-10 h-10">
                                                 <img className="w-full h-full rounded-full"
@@ -443,22 +443,22 @@ const AllOrders = () => {
                                                     alt="" />
                                             </div>
                                             <div className="ml-3">
-                                                <p className="text-gray-900 whitespace-no-wrap text-left">
+                                                <p className="text-gray-900 dark:text-white whitespace-no-wrap text-left">
                                                     Alonzo Cox
                                                 </p>
                                             </div>
                                         </div>
                                     </td>
-                                    <td className="px-5 py-5 bg-white text-sm">
-                                        <p className="text-gray-900 whitespace-no-wrap text-left">Camera</p>
+                                    <td className="px-5 py-5 bg-white dark:bg-slate-800 text-sm">
+                                        <p className="text-gray-900 dark:text-white whitespace-no-wrap text-left">Camera</p>
                                     </td>
-                                    <td className="px-5 py-5 border-b border-gray-200 bg-white text-sm">
-                                        <p className="text-gray-900 whitespace-no-wrap text-left">300.00tk</p>
+                                    <td className="px-5 py-5 border-b border-gray-200 bg-white dark:bg-slate-800 text-sm">
+                                        <p className="text-gray-900 dark:text-white whitespace-no-wrap text-left">300.00tk</p>
                                     </td>
-                                    <td className="px-5 py-5 bg-white text-sm">
-                                        <p className="text-gray-900 whitespace-no-wrap text-left">March 18, 2022</p>
+                                    <td className="px-5 py-5 bg-white dark:bg-slate-800 text-sm">
+                                        <p className="text-gray-900 dark:text-white whitespace-no-wrap text-left">March 18, 2022</p>
                                     </td>
-                                    <td className="px-5 py-5 bg-white text-sm text-left">
+                                    <td className="px-5 py-5 bg-white dark:bg-slate-800 text-sm text-left">
                                         <span
                                             className="relative inline-block px-3 py-1 font-semibold text-red-900 leading-tight">
                                             <span aria-hidden
@@ -466,19 +466,19 @@ const AllOrders = () => {
                                             <span className="relative text-left">Shipped</span>
                                         </span>
                                     </td>
-                                    <td className="px-5 py-5 border-b border-gray-200 bg-white text-sm">
-                                        <p className="text-gray-900 rounded whitespace-no-wrap text-left bg-green-200 p-2 w-10">
+                                    <td className="px-5 py-5 border-b border-gray-200 bg-white dark:bg-slate-800 text-sm">
+                                        <p className="text-gray-900 dark:text-white rounded whitespace-no-wrap text-left bg-green-200 p-2 w-10">
                                             Edit
                                         </p>
                                     </td>
-                                    <td className="px-5 py-5 border-b border-gray-200 bg-white text-sm">
+                                    <td className="px-5 py-5 border-b border-gray-200 bg-white dark:bg-slate-800 text-sm">
                                         <p className="text-white rounded whitespace-no-wrap text-left bg-red-500 p-2 w-16">
                                             Delete
                                         </p>
                                     </td>
                                 </tr>
                                 <tr>
-                                    <td className="px-5 py-5 bg-white text-sm">
+                                    <td className="px-5 py-5 bg-white dark:bg-slate-800 text-sm">
                                         <div className="flex items-center">
                                             <div className="flex-shrink-0 w-10 h-10">
                                                 <img className="w-full h-full rounded-full"
@@ -486,22 +486,22 @@ const AllOrders = () => {
                                                     alt="" />
                                             </div>
                                             <div className="ml-3">
-                                                <p className="text-gray-900 whitespace-no-wrap text-left">
+                                                <p className="text-gray-900 dark:text-white whitespace-no-wrap text-left">
                                                     Alonzo Cox
                                                 </p>
                                             </div>
                                         </div>
                                     </td>
-                                    <td className="px-5 py-5 bg-white text-sm">
-                                        <p className="text-gray-900 whitespace-no-wrap text-left">Camera</p>
+                                    <td className="px-5 py-5 bg-white dark:bg-slate-800 text-sm">
+                                        <p className="text-gray-900 dark:text-white whitespace-no-wrap text-left">Camera</p>
                                     </td>
-                                    <td className="px-5 py-5 border-b border-gray-200 bg-white text-sm">
-                                        <p className="text-gray-900 whitespace-no-wrap text-left">300.00tk</p>
+                                    <td className="px-5 py-5 border-b border-gray-200 bg-white dark:bg-slate-800 text-sm">
+                                        <p className="text-gray-900 dark:text-white whitespace-no-wrap text-left">300.00tk</p>
                                     </td>
-                                    <td className="px-5 py-5 bg-white text-sm">
-                                        <p className="text-gray-900 whitespace-no-wrap text-left">March 18, 2022</p>
+                                    <td className="px-5 py-5 bg-white dark:bg-slate-800 text-sm">
+                                        <p className="text-gray-900 dark:text-white whitespace-no-wrap text-left">March 18, 2022</p>
                                     </td>
-                                    <td className="px-5 py-5 bg-white text-sm text-left">
+                                    <td className="px-5 py-5 bg-white dark:bg-slate-800 text-sm text-left">
                                         <span
                                             className="relative inline-block px-3 py-1 font-semibold text-red-900 leading-tight">
                                             <span aria-hidden
@@ -509,19 +509,19 @@ const AllOrders = () => {
                                             <span className="relative text-left">Shipped</span>
                                         </span>
                                     </td>
-                                    <td className="px-5 py-5 border-b border-gray-200 bg-white text-sm">
-                                        <p className="text-gray-900 rounded whitespace-no-wrap text-left bg-green-200 p-2 w-10">
+                                    <td className="px-5 py-5 border-b border-gray-200 bg-white dark:bg-slate-800 text-sm">
+                                        <p className="text-gray-900 dark:text-white rounded whitespace-no-wrap text-left bg-green-200 p-2 w-10">
                                             Edit
                                         </p>
                                     </td>
-                                    <td className="px-5 py-5 border-b border-gray-200 bg-white text-sm">
+                                    <td className="px-5 py-5 border-b border-gray-200 bg-white dark:bg-slate-800 text-sm">
                                         <p className="text-white rounded whitespace-no-wrap text-left bg-red-500 p-2 w-16">
                                             Delete
                                         </p>
                                     </td>
                                 </tr>
                                 <tr>
-                                    <td className="px-5 py-5 bg-white text-sm">
+                                    <td className="px-5 py-5 bg-white dark:bg-slate-800 text-sm">
                                         <div className="flex items-center">
                                             <div className="flex-shrink-0 w-10 h-10">
                                                 <img className="w-full h-full rounded-full"
@@ -529,22 +529,22 @@ const AllOrders = () => {
                                                     alt="" />
                                             </div>
                                             <div className="ml-3">
-                                                <p className="text-gray-900 whitespace-no-wrap text-left">
+                                                <p className="text-gray-900 dark:text-white whitespace-no-wrap text-left">
                                                     Alonzo Cox
                                                 </p>
                                             </div>
                                         </div>
                                     </td>
-                                    <td className="px-5 py-5 bg-white text-sm">
-                                        <p className="text-gray-900 whitespace-no-wrap text-left">Camera</p>
+                                    <td className="px-5 py-5 bg-white dark:bg-slate-800 text-sm">
+                                        <p className="text-gray-900 dark:text-white whitespace-no-wrap text-left">Camera</p>
                                     </td>
-                                    <td className="px-5 py-5 border-b border-gray-200 bg-white text-sm">
-                                        <p className="text-gray-900 whitespace-no-wrap text-left">300.00tk</p>
+                                    <td className="px-5 py-5 border-b border-gray-200 bg-white dark:bg-slate-800 text-sm">
+                                        <p className="text-gray-900 dark:text-white whitespace-no-wrap text-left">300.00tk</p>
                                     </td>
-                                    <td className="px-5 py-5 bg-white text-sm">
-                                        <p className="text-gray-900 whitespace-no-wrap text-left">March 18, 2022</p>
+                                    <td className="px-5 py-5 bg-white dark:bg-slate-800 text-sm">
+                                        <p className="text-gray-900 dark:text-white whitespace-no-wrap text-left">March 18, 2022</p>
                                     </td>
-                                    <td className="px-5 py-5 bg-white text-sm text-left">
+                                    <td className="px-5 py-5 bg-white dark:bg-slate-800 text-sm text-left">
                                         <span
                                             className="relative inline-block px-3 py-1 font-semibold text-red-900 leading-tight">
                                             <span aria-hidden
@@ -552,19 +552,19 @@ const AllOrders = () => {
                                             <span className="relative text-left">Shipped</span>
                                         </span>
                                     </td>
-                                    <td className="px-5 py-5 border-b border-gray-200 bg-white text-sm">
-                                        <p className="text-gray-900 rounded whitespace-no-wrap text-left bg-green-200 p-2 w-10">
+                                    <td className="px-5 py-5 border-b border-gray-200 bg-white dark:bg-slate-800 text-sm">
+                                        <p className="text-gray-900 dark:text-white rounded whitespace-no-wrap text-left bg-green-200 p-2 w-10">
                                             Edit
                                         </p>
                                     </td>
-                                    <td className="px-5 py-5 border-b border-gray-200 bg-white text-sm">
+                                    <td className="px-5 py-5 border-b border-gray-200 bg-white dark:bg-slate-800 text-sm">
                                         <p className="text-white rounded whitespace-no-wrap text-left bg-red-500 p-2 w-16">
                                             Delete
                                         </p>
                                     </td>
                                 </tr>
                                 <tr>
-                                    <td className="px-5 py-5 bg-white text-sm">
+                                    <td className="px-5 py-5 bg-white dark:bg-slate-800 text-sm">
                                         <div className="flex items-center">
                                             <div className="flex-shrink-0 w-10 h-10">
                                                 <img className="w-full h-full rounded-full"
@@ -572,22 +572,22 @@ const AllOrders = () => {
                                                     alt="" />
                                             </div>
                                             <div className="ml-3">
-                                                <p className="text-gray-900 whitespace-no-wrap text-left">
+                                                <p className="text-gray-900 dark:text-white whitespace-no-wrap text-left">
                                                     Alonzo Cox
                                                 </p>
                                             </div>
                                         </div>
                                     </td>
-                                    <td className="px-5 py-5 bg-white text-sm">
-                                        <p className="text-gray-900 whitespace-no-wrap text-left">Camera</p>
+                                    <td className="px-5 py-5 bg-white dark:bg-slate-800 text-sm">
+                                        <p className="text-gray-900 dark:text-white whitespace-no-wrap text-left">Camera</p>
                                     </td>
-                                    <td className="px-5 py-5 border-b border-gray-200 bg-white text-sm">
-                                        <p className="text-gray-900 whitespace-no-wrap text-left">300.00tk</p>
+                                    <td className="px-5 py-5 border-b border-gray-200 bg-white dark:bg-slate-800 text-sm">
+                                        <p className="text-gray-900 dark:text-white whitespace-no-wrap text-left">300.00tk</p>
                                     </td>
-                                    <td className="px-5 py-5 bg-white text-sm">
-                                        <p className="text-gray-900 whitespace-no-wrap text-left">March 18, 2022</p>
+                                    <td className="px-5 py-5 bg-white dark:bg-slate-800 text-sm">
+                                        <p className="text-gray-900 dark:text-white whitespace-no-wrap text-left">March 18, 2022</p>
                                     </td>
-                                    <td className="px-5 py-5 bg-white text-sm text-left">
+                                    <td className="px-5 py-5 bg-white dark:bg-slate-800 text-sm text-left">
                                         <span
                                             className="relative inline-block px-3 py-1 font-semibold text-red-900 leading-tight">
                                             <span aria-hidden
@@ -595,12 +595,12 @@ const AllOrders = () => {
                                             <span className="relative text-left">Shipped</span>
                                         </span>
                                     </td>
-                                    <td className="px-5 py-5 border-b border-gray-200 bg-white text-sm">
-                                        <p className="text-gray-900 rounded whitespace-no-wrap text-left bg-green-200 p-2 w-10">
+                                    <td className="px-5 py-5 border-b border-gray-200 bg-white dark:bg-slate-800 text-sm">
+                                        <p className="text-gray-900 dark:text-white rounded whitespace-no-wrap text-left bg-green-200 p-2 w-10">
                                             Edit
                                         </p>
                                     </td>
-                                    <td className="px-5 py-5 border-b border-gray-200 bg-white text-sm">
+                                    <td className="px-5 py-5 border-b border-gray-200 bg-white dark:bg-slate-800 text-sm">
                                         <p className="text-white rounded whitespace-no-wrap text-left bg-red-500 p-2 w-16">
                                             Delete
                                         </p>
@@ -609,17 +609,17 @@ const AllOrders = () => {
                             </tbody>
                         </table>
                         <div
-                            className="px-5 py-5 bg-white border-t flex flex-col xs:flex-row items-center xs:justify-between          ">
-                            <span className="text-xs xs:text-sm text-gray-900">
+                            className="px-5 py-5 bg-white dark:bg-slate-800 border-t flex flex-col xs:flex-row items-center xs:justify-between          ">
+                            <span className="text-xs xs:text-sm text-gray-900 dark:text-white">
                                 Showing 1 to 10 of 50 Entries
                             </span>
                             <div className="inline-flex mt-2 xs:mt-0">
                                 <button
-                                    className="text-sm bg-gray-300 hover:bg-gray-400 text-gray-800 font-semibold py-2 px-4 rounded-l">
+                                    className="text-sm bg-gray-300 hover:bg-gray-400 text-gray-800 dark:text-white font-semibold py-2 px-4 rounded-l">
                                     Prev
                                 </button>
                                 <button
-                                    className="text-sm bg-gray-300 hover:bg-gray-400 text-gray-800 font-semibold py-2 px-4 rounded-r">
+                                    className="text-sm bg-gray-300 hover:bg-gray-400 text-gray-800 dark:text-white font-semibold py-2 px-4 rounded-r">
                                     Next
                                 </button>
                             </div>

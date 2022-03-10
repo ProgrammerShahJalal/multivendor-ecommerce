@@ -75,7 +75,7 @@ export default function Popup({ attr, setIfShouldUpdate }: any) {
                         <div className="absolute inset-0 bg-gray-900 opacity-75" />
                     </div>
                     <span className="hidden sm:inline-block sm:align-middle sm:h-screen">&#8203;</span>
-                    <div className="inline-block align-center bg-white rounded-lg text-left overflow-hidden shadow-xl transform transition-all sm:my-8 sm:align-middle sm:max-w-lg sm:w-full" role="dialog" aria-modal="true" aria-labelledby="modal-headline">
+                    <div className="inline-block align-center bg-white dark:bg-slate-800 rounded-lg text-left overflow-hidden shadow-xl transform transition-all sm:my-8 sm:align-middle sm:max-w-lg sm:w-full" role="dialog" aria-modal="true" aria-labelledby="modal-headline">
 
                         <form className='p-3 ' onSubmit={addAttributeValues}>
                             <label className="text-sm font-medium text-gray-700 my-6"> {attr.label} </label>
