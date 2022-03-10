@@ -6,13 +6,15 @@ import reportWebVitals from './reportWebVitals';
 import "swiper/css/bundle";
 import "@lottiefiles/lottie-player";
 import { HelmetProvider } from "react-helmet-async";
+import LangState from './components/Pages/MultiLanguage/languagecontext/lang';
 
 ReactDOM.render(
   <React.StrictMode>
     <HelmetProvider>
-      <App />
+      <LangState>
+        <App />
+      </LangState>
     </HelmetProvider>
-
   </React.StrictMode>,
   document.getElementById('root')
 );

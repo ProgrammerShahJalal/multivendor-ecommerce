@@ -27,12 +27,12 @@ const Products = () => {
     useEffect(() => {
         if (dataCategory) {
 
-            fetch('https://morning-inlet-49130.herokuapp.com/mens')
+            fetch('https://morning-inlet-49130.herokuapp.com/products')
                 .then(res => res.json())
                 .then(data => setDataCategory(data))
         }
     }, [dataCategory])
-    const filterResult = (catItem) => {
+    const filterResult = (catItem: string) => {
         const result = dataCategory.filter(curData => {
             return curData.category === catItem
         });
