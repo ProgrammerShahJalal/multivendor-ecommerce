@@ -48,7 +48,7 @@ const ProductView = ({ selectedProduct }) => {
 
     return (
         <div className='mx-auto'>
-            <div className='py-12 border border-white container place-content-center px-8 justify-center items-center mt-8 grid lg:grid-cols-2 md:grid-cols-2 grid-cols-1 gap-6'>
+            <div className='py-12 border border-white container place-content-center px-8 justify-center items-centermt-8 grid lg:grid-cols-2 md:grid-cols-2 grid-cols-1 gap-6'>
                 <div>
                     <Swiper
 
@@ -136,16 +136,19 @@ const ProductView = ({ selectedProduct }) => {
                             <div className="flex gap-2">
                                 {/* Single Color Starts */}
                                 <div className="color-selctor">
-                                    <input type="radio" name='color' className='hidden' color='red' id='color-red' />
-                                    <label htmlFor="color" className='border border-gray-200 rounded-sm h-5 w-5 cursor-pointer shadow-sm block' style={{ backgroundColor: "red" }}></label>
+                                    <button className='w-5 h-5 bg-red-600 focus:ring-offset-2 focus:ring-1 focus:ring-indigo-800 focus:outline-none active:bg-red-700 focus:ring-opacity-50'></button>
+                                    {/* <input type="radio" name='color' className='hidden' color='' id='color-red' />
+                                    <label htmlFor="color" className='border border-gray-200 rounded-sm h-5 w-5 cursor-pointer shadow-sm block bg-red-600'></label> */}
                                 </div>
                                 <div className="color-selctor">
-                                    <input type="radio" name='color' className='hidden' color='red' id='color-red' />
-                                    <label htmlFor="color" className='border border-gray-200 rounded-sm h-5 w-5 cursor-pointer shadow-sm block' style={{ backgroundColor: "green" }}></label>
+                                    {/* <input type="radio" name='color' className='hidden' color='red focus:ring-offset-2 focus:ring-1 focus:ring-sky-500  focus:outline-none focus:ring-opacity-50' id='color-red' />
+                                    <label htmlFor="color" className='border border-gray-200 rounded-sm h-5 w-5 cursor-pointer shadow-sm block bg-green-600'></label> */}
+                                    <button className='w-5 h-5 bg-green-600 focus:ring-offset-2 focus:ring-1 focus:ring-indigo-800 focus:outline-none active:bg-green-700 focus:ring-opacity-50'></button>
                                 </div>
                                 <div className="color-selctor">
-                                    <input type="radio" name='color' className='hidden' color='red' id='color-red' />
-                                    <label htmlFor="color" className='border border-gray-200 rounded-sm h-5 w-5 cursor-pointer shadow-sm block' style={{ backgroundColor: "blue" }}></label>
+                                    {/* <input type="radio" name='color' className='hidden' color='red focus:ring-offset-2 focus:ring-1 focus:ring-sky-500  focus:outline-none focus:ring-opacity-50' id='color-red' />
+                                    <label htmlFor="color" className='border border-gray-200 rounded-sm h-5 w-5 cursor-pointer shadow-sm block bg-blue-500'></label> */}
+                                    <button className='w-5 h-5 bg-blue-600 focus:ring-offset-2 focus:ring-1 focus:ring-indigo-800 focus:outline-none active:bg-blue-700 focus:ring-opacity-50'></button>
                                 </div>
                             </div>
                         </div>
