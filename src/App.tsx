@@ -1,5 +1,6 @@
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import Home from "./components/Home/Home";
+import Header from './components/Shared/Header';
 import Footer from './components/Shared/Footer/Footer';
 import Contact from './components/Contact/Contact.js';
 import AuthProvider from "./context/AuthProvider";
@@ -27,7 +28,7 @@ import DetailBlogPage from "./components/Blogs/DetailBlogPage";
 import Affiliate from "./components/Dashboard/AffiliateDashboard/AffiliateDashboard/Affliate";
 import AffiliateLinks from "./components/Dashboard/AffiliateDashboard/AffiliateLinks/AffiliateLinks";
 import Dashboard from "./components/Dashboard/Dashboard/Dashboard";
-import { useContext, useLayoutEffect } from "react";
+import { useLayoutEffect } from "react";
 import AllOrders from "./components/Dashboard/Order/allOrder";
 import Vendors from "./components/Dashboard/Vendors/Vendors";
 import VendorProfileDetails from "./components/Dashboard/Vendors/VendorsProfileDetails";
@@ -44,9 +45,8 @@ import WishList from "./components/Pages/WishList/WishList";
 import VendorHomePage from "./components/Pages/VendorPages/VendorHomePage";
 import About from "./components/Pages/About/About";
 import Invoice from "./components/Invoice/Invoice";
-// import Language from "./components/Pages/MultiLanguage/Language";
+import { useContext } from "react";
 import { LangContext } from "./components/Pages/MultiLanguage/languagecontext/lang";
-import Header from "./components/Shared/Header";
 
 
 function App() {
@@ -65,6 +65,7 @@ function App() {
 
   const { dispatch: { translate } } = useContext(LangContext);
 
+  // translate={translate}
   return (
     <div className="dark:bg-slate-800" >
       <AuthProvider>
@@ -77,7 +78,7 @@ function App() {
             <Route path='/about' element={<About />} />
             <Route path='/offer' element={<Promo />} />
             <Route path='/unitTesting' element={<UnitTesting />} />
-            <Route path='/specialDeal' element={<SpecialDeal translate={translate} />} />
+            <Route path='/specialDeal' element={<SpecialDeal />} />
             <Route path='/productDetails/men/:id' element={<MenProductsDetail />} />
             <Route path='/productDetails/women/:id' element={<WomenProductDetail />} />
             <Route path='/productDetails/kid/:id' element={<KidsProductDetails />} />

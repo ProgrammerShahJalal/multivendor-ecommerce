@@ -4,7 +4,7 @@ import Header from '../../Shared/Header'
 const Language = () => {
     return (
         <div>
-            <Header fixed transparent />
+            {/* <Header fixed transparent /> */}
         </div>
     )
 }
