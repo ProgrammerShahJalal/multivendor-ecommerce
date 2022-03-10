@@ -6,9 +6,9 @@ import Women from './Women/Women';
 const GridView = () => {
     return (
         <div className='max-w-md md:max-w-7xl mx-auto'>
-            <Men/>
-            <Women/>
-            <Kids/>
+            <Men />
+            <Women />
+            <Kids />
         </div>
     );
 };

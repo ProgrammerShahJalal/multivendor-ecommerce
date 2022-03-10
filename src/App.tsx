@@ -45,7 +45,8 @@ import WishList from "./components/Pages/WishList/WishList";
 import VendorHomePage from "./components/Pages/VendorPages/VendorHomePage";
 import About from "./components/Pages/About/About";
 import Invoice from "./components/Invoice/Invoice";
-
+import { useContext } from "react";
+import { LangContext } from "./components/Pages/MultiLanguage/languagecontext/lang";
 
 
 function App() {
@@ -62,6 +63,9 @@ function App() {
     }
   })
 
+  const { dispatch: { translate } } = useContext(LangContext);
+
+  // translate={translate}
   return (
     <div>
       <AuthProvider>
@@ -122,5 +126,4 @@ function App() {
 
   );
 }
-
 export default App;

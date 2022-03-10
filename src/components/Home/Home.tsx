@@ -16,7 +16,10 @@ import Products from '../Products/Products';
 // import Alan from './Alan-AI/Alan';
 // import Reviews from '../Pages/Reviews/Reviews';
 
-
+{/* <p>{translate('aboutUsText')}</p>
+interface AboutProps {
+  translate: (key: string) => string
+} */}
 
 export default function Home() {
 
