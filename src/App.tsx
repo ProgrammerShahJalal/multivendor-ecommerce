@@ -66,7 +66,7 @@ function App() {
   const { dispatch: { translate } } = useContext(LangContext);
 
   return (
-    <div>
+    <div className="dark:bg-slate-800" >
       <AuthProvider>
         <Router>
           <Header />

@@ -205,7 +205,7 @@ const AddProduct: React.FunctionComponent = (props) => {
 
                         <div className="col-span-2">
                             <div className="shadow sm:rounded-md sm:overflow-hidden">
-                                <div className="px-4 py-5 bg-white space-y-6 sm:p-6">
+                                <div className="px-4 py-5 bg-white dark:bg-slate-800 space-y-6 sm:p-6">
                                     {/* TITLE */}
                                     <div>
                                         <label className="block text-sm font-medium text-gray-700 mb-3"> Title </label>
@@ -297,7 +297,7 @@ const AddProduct: React.FunctionComponent = (props) => {
 
                             </div>
                         </div>
-                        <div className="shadow sm:rounded-md sm:overflow-hidden bg-white px-4 py-5 bg-white space-y-6 sm:p-6">
+                        <div className="shadow sm:rounded-md sm:overflow-hidden bg-white dark:bg-slate-800 px-4 py-5 bg-white dark:bg-slate-800 space-y-6 sm:p-6">
                             <section className='image-upload'>
                                 <label className='mt-1 flex justify-center px-6 pt-5 pb-6 border-2 border-gray-300 border-dashed rounded-md flex-col items-center ' onClick={() => setShowModal(true)}>
                                     <div>

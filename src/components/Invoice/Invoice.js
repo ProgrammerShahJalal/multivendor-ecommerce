@@ -71,7 +71,7 @@ const Invoice = () => {
       </div>
       <Pdf targetRef={ref} filename="invoice.pdf">
         {({ toPdf }) => (
-          <button className="mx-auto flex items-center justify-center my-6 border border-indigo-500 bg-white text-indigo-500 p-2 rounded-sm hover:bg-indigo-500 hover:text-white" onClick={toPdf}><i className="fa-light fa-file-arrow-down pe-2"></i>ㅤDownload invoice</button>
+          <button className="mx-auto flex items-center justify-center my-6 border border-indigo-500 bg-white dark:bg-slate-800 text-indigo-500 p-2 rounded-sm hover:bg-indigo-500 hover:text-white" onClick={toPdf}><i className="fa-light fa-file-arrow-down pe-2"></i>ㅤDownload invoice</button>
         )}
       </Pdf>
     </div>

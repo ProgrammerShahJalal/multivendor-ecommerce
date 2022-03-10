@@ -20,9 +20,9 @@
 .content .top-span{
 	color: #DC1010;
 }
-.poster-card{
+/* .poster-card{
 	background-color: white;
-}
+} */
 .small-banner .sngle-banner img{
 	padding-right: -50px;
 	height:50%;
@@ -43,7 +43,7 @@
 	font-size: 27px;
 	font-weight: 700;
 	text-transform: uppercase;
-	color: #000	;
+	/* color: #000	; */
 	line-height: 30px;
 }
 .small-banner{
@@ -61,7 +61,7 @@
 	text-transform: uppercase;
 }
 .small-banner .sngle-banner a {
-	color: #333;
+	color: cyan;
 	margin-top: 22px;
 	display: block;
 	font-size: 12px;

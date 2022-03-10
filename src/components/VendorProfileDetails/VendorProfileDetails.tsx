@@ -11,7 +11,7 @@ const VendorProfileDetails = () => {
                  <h1 className="text-4xl font-bold text-indigo-900 mt-">Welcome to Unity Mart!</h1>
             </div>
         <div>
-             <div className="flex items-center border rounded-lg bg-white w-max py-2 px-4 space-x-3">
+             <div className="flex items-center border rounded-lg bg-white dark:bg-slate-800 w-max py-2 px-4 space-x-3">
               <svg xmlns="http://www.w3.org/2000/svg" className="h-4 w-4    text-gray-400" fill="none" viewBox="0 0 24 24" stroke="currentColor">
               <path stroke-linecap="round" stroke-linejoin="round"    stroke-width="2" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z" />
             </svg>
@@ -22,7 +22,7 @@ const VendorProfileDetails = () => {
             {/* top part end  */}
 
             <div className="lg:flex space-x-4 my-12">
-        <div className="flex items-center justify-around p-6 bg-white w-64 rounded-xl space-x-2 mt-10 shadow-lg">
+        <div className="flex items-center justify-around p-6 bg-white dark:bg-slate-800 w-64 rounded-xl space-x-2 mt-10 shadow-lg">
           <div>
             <span className="text-sm font-semibold text-gray-400">Total Orders</span>
             <h1 className="text-2xl font-bold">$682.5</h1>
@@ -33,7 +33,7 @@ const VendorProfileDetails = () => {
             </svg>
           </div>
         </div>
-        <div className="flex items-center justify-around p-6 bg-white w-64 rounded-xl space-x-2 mt-10 shadow-lg">
+        <div className="flex items-center justify-around p-6 bg-white dark:bg-slate-800 w-64 rounded-xl space-x-2 mt-10 shadow-lg">
           <div>
             <span className="text-sm font-semibold text-gray-400">Total Earned</span>
             <h1 className="text-2xl font-bold">$20679.00</h1>
@@ -44,7 +44,7 @@ const VendorProfileDetails = () => {
             </svg>
           </div>
         </div>
-        <div className="flex items-center justify-around p-6 bg-white w-64 rounded-xl space-x-2 mt-10 shadow-lg">
+        <div className="flex items-center justify-around p-6 bg-white dark:bg-slate-800 w-64 rounded-xl space-x-2 mt-10 shadow-lg">
           <div>
             <span className="text-sm font-semibold text-gray-400">Total Products</span>
             <h1 className="text-2xl font-bold">79</h1>
@@ -55,7 +55,7 @@ const VendorProfileDetails = () => {
             </svg>
           </div>
         </div>
-        <div className="flex items-center justify-around p-6 bg-white w-64 rounded-xl space-x-2 mt-10 shadow-lg">
+        <div className="flex items-center justify-around p-6 bg-white dark:bg-slate-800 w-64 rounded-xl space-x-2 mt-10 shadow-lg">
           <div>
             <span className="text-sm font-semibold text-gray-400">Ratings</span>
             <p className="text-xl font-bold">5 star</p>
@@ -73,13 +73,13 @@ const VendorProfileDetails = () => {
             {/* <!-- Left Side --> */}
             <div className="w-full md:w-3/12 md:mx-2">
                 {/* <!-- Profile Card --> */}
-                <div className="bg-white p-3 border-t-4 border-green-400">
+                <div className="bg-white dark:bg-slate-800 p-3 border-t-4 border-green-400">
                     <div className="image overflow-hidden">
                         <img className="h-auto w-full mx-auto"
                             src="https://lavinephotography.com.au/wp-content/uploads/2017/01/PROFILE-Photography-112.jpg"
                             alt=""/>
                     </div>
-                    <h1 className="text-gray-900 font-bold text-xl leading-8 my-1">Hafsa Jahan Ohi</h1>
+                    <h1 className="text-gray-900 dark:text-white font-bold text-xl leading-8 my-1">Hafsa Jahan Ohi</h1>
                     <h3 className="text-gray-600 font-lg text-semibold leading-6">Owner at Her Company Inc.</h3>
                     <p className="text-sm text-gray-500 hover:text-gray-600 leading-6">
                         I am a gentle and kind person.
@@ -105,8 +105,8 @@ const VendorProfileDetails = () => {
             <div className="w-full md:w-9/12 mx-2 h-64">
                 {/* <!-- Profile tab -->
                 <!-- About Section --> */}
-                <div className="bg-white p-3 shadow-sm rounded-sm">
-                    <div className="flex items-center space-x-2 font-semibold text-gray-900 leading-8">
+                <div className="bg-white dark:bg-slate-800 p-3 shadow-sm rounded-sm">
+                    <div className="flex items-center space-x-2 font-semibold text-gray-900 dark:text-white leading-8">
                         <span className="text-green-500">
                             <svg className="h-5" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"
                                 stroke="currentColor">
@@ -159,11 +159,11 @@ const VendorProfileDetails = () => {
                 {/* <!-- End of about section --> */}
 
                 {/* <!-- Experience and education --> */}
-                <div className="bg-white p-3 shadow-sm rounded-sm text-left">
+                <div className="bg-white dark:bg-slate-800 p-3 shadow-sm rounded-sm text-left">
 
                     <div className="grid grid-cols-2">
                         <div>
-                            <div className="flex items-center space-x-2 font-semibold text-gray-900 leading-8 mb-3">
+                            <div className="flex items-center space-x-2 font-semibold text-gray-900 dark:text-white leading-8 mb-3">
                                 <span className="text-green-500">
                                     <svg className="h-5" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"
                                         stroke="currentColor">
@@ -184,7 +184,7 @@ const VendorProfileDetails = () => {
                             </ul>
                         </div>
                         <div>
-                            <div className="flex items-center space-x-2 font-semibold text-gray-900 leading-8 mb-3">
+                            <div className="flex items-center space-x-2 font-semibold text-gray-900 dark:text-white leading-8 mb-3">
                                 <span className="text-green-500">
                                     <svg className="h-5" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"
                                         stroke="currentColor">

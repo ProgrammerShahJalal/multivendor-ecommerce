@@ -12,7 +12,7 @@ const BannerMax = () => {
                         <img src="https://i.ibb.co/qRCgxC6/electro-banner1-2.jpg" className='w-full h-full ' alt="" />
                         <div className='absolute inset-y-12 left-5 font-bold py-7'>
                             <h1 className="text-4xl text-white hover:text-red-400 py-3">Monster Beats Headphones</h1>
-                            <button className='bg-white px-3 py-2 rounded-full font-bold'>READ MORE</button>
+                            <button className='bg-white dark:bg-slate-800 px-3 py-2 rounded-full font-bold'>READ MORE</button>
                         </div>
                     </div>
 
@@ -47,7 +47,7 @@ const BannerMax = () => {
 
                         <div className='absolute inset-y-12 left-5  font-bold py-7'>
                             <h1 className="text-4xl text-white  hover:text-pink-600 py-3">Monster Beats Headphones</h1>
-                            <button className='bg-white px-3 py-2 rounded-full font-bold'>WATCH DEMO</button>
+                            <button className='bg-white dark:bg-slate-800 px-3 py-2 rounded-full font-bold'>WATCH DEMO</button>
                         </div>
                     </div>
                 </div>

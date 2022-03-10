@@ -103,20 +103,20 @@ const WomenProductDetail = () => {
             </div>
           </div>
           <div className='space-y-2'>
-            <p className="p text-gray-800 font-semibold space-x-2">
+            <p className="p text-gray-800 dark:text-white font-semibold space-x-2">
               <span>Availability:</span>
               <span className='text-green-600'>In stock</span>
             </p>
             <p className="space-x-2">
-              <span className='text-gray-800 font-semibold'>Vendor:</span>
+              <span className='text-gray-800 dark:text-white font-semibold'>Vendor:</span>
               <span className='text-gray-600'>{vendorName}</span>
             </p>
             <p className="space-x-2">
-              <span className='text-gray-800 font-semibold'>Category:</span>
+              <span className='text-gray-800 dark:text-white font-semibold'>Category:</span>
               <span className='text-gray-600'>Women</span>
             </p>
             <p className="space-x-2">
-              <span className='text-gray-800 font-semibold'>SKU:</span>
+              <span className='text-gray-800 dark:text-white font-semibold'>SKU:</span>
               {/* <span className='text-gray-600 uppercase'>{_id.slice(4,12)}</span> */}
             </p>
           </div>
@@ -126,7 +126,7 @@ const WomenProductDetail = () => {
             <p className="text-sm text-gray-400 line-through">{price}</p>
           </div>
           <div className="">
-            <h3 className="text-xl text-gray-800 mb-3 uppercase font-medium ">Color</h3>
+            <h3 className="text-xl text-gray-800 dark:text-white mb-3 uppercase font-medium ">Color</h3>
             <div className="flex gap-2">
               {/* Single Color Starts */}
               <div className="color-selctor">
@@ -144,7 +144,7 @@ const WomenProductDetail = () => {
             </div>
           </div>
           <div className="pt-4 block">
-            <h3 className="text-xl text-gray-800 mb-3 uppercase font-medium">Size</h3>
+            <h3 className="text-xl text-gray-800 dark:text-white mb-3 uppercase font-medium">Size</h3>
             <div className="flex item-center gap-2">
               {/* single size selector starts */}
               <div className="size-selector">
@@ -174,7 +174,7 @@ const WomenProductDetail = () => {
             </div>
           </div>
           <div>
-            <h3 className='text-xl text-gray-800 mb-1'>Quantity</h3>
+            <h3 className='text-xl text-gray-800 dark:text-white mb-1'>Quantity</h3>
             <div className="flex border border-gray-500 divide-gray-500 text-gray-600 divide-x w-max">
               <button onClick={decrement} className='h-8 w-8 flex items-center justify-center cursor-pointer select-none'>
                 -
