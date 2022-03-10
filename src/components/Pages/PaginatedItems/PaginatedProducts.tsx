@@ -62,7 +62,7 @@ const PaginatedProducts = ({ product, isLoading }: any) => {
                     <Fade in={open}>
                         <Box>
                             <div className='md:block mx-auto px-1 lg:block hidden'>
-                                <ProductView handleClose={handleClose} selectedProduct={selectedProduct} />
+                                <ProductView   selectedProduct={selectedProduct} />
                             </div>
                             <div className='md:hidden lg:hidden block'>
                                 <ProductViewSm selectedProduct={selectedProduct} />

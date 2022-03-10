@@ -9,7 +9,7 @@ import "swiper/css/free-mode";
 import "swiper/css/navigation";
 import "swiper/css/thumbs";
 import { ShareButton } from "react-custom-share";
-const ProductView = ({ selectedProduct, handleClose }) => {
+const ProductView = ({ selectedProduct }) => {
     // console.log(selectedProduct, 'selectedProduct');
     const [thumbsSwiper, setThumbsSwiper] = useState(null);
     const [counter, setCounter] = useState(1);
@@ -33,7 +33,7 @@ const ProductView = ({ selectedProduct, handleClose }) => {
     const shareLNButtonProps = {
         url: "https://unitymart-c522a.web.app",
         network: "Linkedin",
-        text: "Share unity mart to your linkedin network. Let your connection know about us",
+        text: "Share unity mart to your facebook. Let your friends know about us",
         longtext:
           " "
       };
@@ -47,9 +47,8 @@ const ProductView = ({ selectedProduct, handleClose }) => {
 
 
     return (
-        <div onDoubleClick={handleClose} className='mx-auto'>
-            <div style={{width: '800px', height: '600px'}} className='py-12 border border-white container place-content-center px-8 justify-center items-center mx-auto mt-8 grid lg:grid-cols-2 md:grid-cols-2 grid-cols-1 gap-6'>
-
+        <div className='mx-auto'>
+            <div className='py-12 border border-white container place-content-center px-8 justify-center items-center mt-8 grid lg:grid-cols-2 md:grid-cols-2 grid-cols-1 gap-6'>
                 <div>
                     <Swiper
 
@@ -119,7 +118,7 @@ const ProductView = ({ selectedProduct, handleClose }) => {
                         </p>
                         <p className="space-x-2">
                             <span className='text-gray-800 dark:text-white font-semibold'>Category:</span>
-                            {/* <span className='text-gray-600'>{category}</span> */}
+                            <span className='text-gray-600'></span>
                         </p>
                         <p className="space-x-2">
                             <span className='text-gray-800 dark:text-white font-semibold'>SKU:</span>
