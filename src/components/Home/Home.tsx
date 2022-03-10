@@ -5,7 +5,7 @@ import Banners from '../Pages/Banner/Banner';
 import { Faq } from '../FAQ/FAQ';
 import HomeProducts from '../HomeProducts/HomeProducts';
 import BannerPro from '../Pages/BannerPro/BannerPro';
-// import SpecialDeal from '../SpecialDeal/SpecialDeal';
+import SpecialDeal from '../SpecialDeal/SpecialDeal';
 import ScrollToTop from "react-scroll-to-top";
 import BannerGadget from '../Pages/BannerGadget/BannerGadget';
 import Brands from '../Pages/Brands/Brands';
@@ -15,7 +15,6 @@ import PaginatedBlogsHome from '../Pages/PaginatedBlogsItems/PaginatedBlogsHome'
 import Products from '../Products/Products';
 // import Alan from './Alan-AI/Alan';
 // import Reviews from '../Pages/Reviews/Reviews';
-import SpecialDeal from './../SpecialDeal/SpecialDeal';
 
 {/* <p>{translate('aboutUsText')}</p>
 interface AboutProps {
@@ -37,7 +36,7 @@ export default function Home() {
             <Banners />
             <Notify />
             <TopBanner />
-            {/* <SpecialDeal /> */}
+            <SpecialDeal />
             <BannerGadget />
             <Products />
             <BannerPro />
