@@ -1,43 +1,11 @@
-import React, { useEffect } from 'react';
 import GridView from '../../CollectionGrid/GridView';
 import { useState } from 'react';
 import ListView from '../../ListView/ListView';
-
-interface DataState {
-    dataCategory: {
-        title: string
-        img: string
-        hoverImg: string
-        price: number
-        salePrice: number
-        size: string
-        vendorName: string
-        rating: number
-        category: string
-    }[]
-}
 
 
 const Products = () => {
     const [gridShow, setGridShow] = useState(true);
 
-    const [dataCategory, setDataCategory] = useState<DataState["dataCategory"]>
-        ([]);
-
-    useEffect(() => {
-        if (dataCategory) {
-
-            fetch('https://morning-inlet-49130.herokuapp.com/products')
-                .then(res => res.json())
-                .then(data => setDataCategory(data))
-        }
-    }, [dataCategory])
-    const filterResult = (catItem: string) => {
-        const result = dataCategory.filter(curData => {
-            return curData.category === catItem
-        });
-        setDataCategory(result);
-    }
     return (
         <div>
             <div>
@@ -52,7 +20,7 @@ const Products = () => {
                                 <div className='space-y-2'>
                                     <div className='flex item-center'>
                                         <input type="checkbox" id='cat-1' className='text-primary focus:ring-0 rounded-sm cursor-pointer' />
-                                        <label onClick={() => { filterResult('men') }} htmlFor="cat-1" className='text-gray-600 ml-3 cursor-pointer'>Mens</label>
+                                        <label htmlFor="cat-1" className='text-gray-600 ml-3 cursor-pointer'>Mens</label>
                                         <div className='ml-auto text-gray-600 text-sm'>(10)</div>
                                     </div>
                                     <div className='flex item-center'>

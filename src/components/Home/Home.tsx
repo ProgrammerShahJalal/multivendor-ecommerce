@@ -21,6 +21,7 @@ interface AboutProps {
   translate: (key: string) => string
 } */}
 
+
 export default function Home() {
 
     const [loading, setLoading] = useState(true);
