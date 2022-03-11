@@ -5,7 +5,6 @@ import Banners from '../Pages/Banner/Banner';
 import { Faq } from '../FAQ/FAQ';
 import HomeProducts from '../HomeProducts/HomeProducts';
 import BannerPro from '../Pages/BannerPro/BannerPro';
-// import SpecialDeal from '../SpecialDeal/SpecialDeal';
 import ScrollToTop from "react-scroll-to-top";
 import BannerGadget from '../Pages/BannerGadget/BannerGadget';
 import Brands from '../Pages/Brands/Brands';
@@ -16,12 +15,6 @@ import Products from '../Products/Products';
 // import Alan from './Alan-AI/Alan';
 // import Reviews from '../Pages/Reviews/Reviews';
 import SpecialDeal from './../SpecialDeal/SpecialDeal';
-import CompareProducts from '../CompareProducts/CompareProducts';
-
-{/* <p>{translate('aboutUsText')}</p>
-interface AboutProps {
-  translate: (key: string) => string
-} */}
 
 
 export default function Home() {
@@ -35,11 +28,10 @@ export default function Home() {
 
     return (
         <div>
-            <CompareProducts />
             <Banners />
             <Notify />
             <TopBanner />
-            {/* <SpecialDeal /> */}
+            <SpecialDeal />
             <BannerGadget />
             <Products />
             <BannerPro />
@@ -49,7 +41,6 @@ export default function Home() {
             <Brands />
             <PaginatedBlogsHome />
             <Faq />
-            {/* <Invoice/> */}
             {/* <Alan /> */}
             <ScrollToTop style={{ display: 'flex', bottom: 150, alignItems: 'center', justifyContent: 'center', left: 15, backgroundColor: '#7209b7' }} smooth color='#ffffff' top={20} height="28" viewBox="0 0 256 256" />
             <MessengerCustomerChat

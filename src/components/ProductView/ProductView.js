@@ -28,27 +28,27 @@ const ProductView = ({ selectedProduct, handleClose }) => {
         network: "Facebook",
         text: "Share unity mart to your facebook. Let your friends know about us",
         longtext:
-          " "
-      };
+            " "
+    };
     const shareLNButtonProps = {
         url: "https://unitymart-c522a.web.app",
         network: "Linkedin",
         text: "Share unity mart to your linkedin network. Let your connection know about us",
         longtext:
-          " "
-      };
+            " "
+    };
     const sharePNButtonProps = {
         url: "https://unitymart-c522a.web.app",
         network: "Pinterest",
         text: "Share unity mart to your facebook. Let your friends know about us",
         longtext:
-          " "
-      };
+            " "
+    };
 
 
     return (
         <div onDoubleClick={handleClose} className='mx-auto'>
-            <div style={{width: '800px', height: '600px'}} className='py-12 border border-white container place-content-center px-8 justify-center items-center mx-auto mt-8 grid lg:grid-cols-2 md:grid-cols-2 grid-cols-1 gap-6'>
+            <div style={{ width: '800px', height: '600px' }} className='py-12 border border-white container place-content-center px-8 justify-center items-center mx-auto mt-8 grid lg:grid-cols-2 md:grid-cols-2 grid-cols-1 gap-6'>
 
                 <div>
                     <Swiper
@@ -97,7 +97,7 @@ const ProductView = ({ selectedProduct, handleClose }) => {
                         </Swiper>
                     </div>
                 </div>
-                
+
                 <div>
                     <h2 className='text-3xl mb-2 font-medium'>{selectedProduct.title}</h2>
                     <div className='flex items-center mb-4'>
@@ -187,7 +187,7 @@ const ProductView = ({ selectedProduct, handleClose }) => {
                                 </button>
                             </div>
                         </div>
-                        
+
                         <div className="border-b -mt-20 border-gray-200 pb-5">
                             <Link to="/">
                                 <button className='w-40 text-center top-5 text-white  p-2 bg-indigo-500 border border-indigo-500 hover:bg-transparent hover:text-indigo-500 transition'>
@@ -201,11 +201,11 @@ const ProductView = ({ selectedProduct, handleClose }) => {
                             </Link>
                         </div>
                     </div>
-            <div className='mt-2 flex gap-2'>
-            <ShareButton {...shareFBButtonProps}><i class="fa-brands fa-facebook text-blue-600 text-2xl"></i></ShareButton>
-            <ShareButton {...shareLNButtonProps}><i class="fa-brands fa-linkedin text-blue-500 text-2xl"></i></ShareButton>
-            <ShareButton {...sharePNButtonProps}><i class="fa-brands fa-pinterest text-red-600 text-2xl"></i></ShareButton>
-            </div>
+                    <div className='mt-2 flex gap-2'>
+                        <ShareButton {...shareFBButtonProps}><i class="fa-brands fa-facebook text-blue-600 text-2xl"></i></ShareButton>
+                        <ShareButton {...shareLNButtonProps}><i class="fa-brands fa-linkedin text-blue-500 text-2xl"></i></ShareButton>
+                        <ShareButton {...sharePNButtonProps}><i class="fa-brands fa-pinterest text-red-600 text-2xl"></i></ShareButton>
+                    </div>
                 </div>
             </div>
         </div>
