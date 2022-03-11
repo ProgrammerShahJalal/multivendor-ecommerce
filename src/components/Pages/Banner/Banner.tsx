@@ -98,7 +98,7 @@ export default function Banners() {
             <div className="grid md:grid-cols-2 xs:grid-cols-1">
               <div className="flex flex-col items-center md:items-start justify-center md:pl-15 lg:pl-32 p-10 text-center md:text-left">
                 <h1 className="text-3xl text-black dark:text-white">
-                Rolex Datejust <span className="lg:block md:block hidden">, you prefer</span>
+                Rolex Datejust
                 </h1>
                 <p className="text-2xl text-black dark:text-white">
                   official rolex <span className="text-blue-600">X</span> unity mart discount
