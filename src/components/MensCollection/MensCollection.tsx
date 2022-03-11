@@ -2,10 +2,11 @@ import React, { useState, useEffect } from 'react';
 import { Rating } from "@mui/material";
 import Box from '@mui/material/Box';
 import Modal from '@mui/material/Modal';
-import Fade from '@mui/material/Fade';
+// import Fade from '@mui/material/Fade';
 import ProductViewSm from '../ProductView/ProductViewSm';
 import ProductView from '../ProductView/ProductView';
 import { Link } from 'react-router-dom';
+import Backdrop from '@mui/material/Backdrop';
 interface ProductState {
     products: {
         title: string
@@ -25,7 +26,34 @@ const MensCollection = () => {
     const [products, setProducts] = useState<ProductState["products"]>
         ([]);
     const [selectedProduct, setSelectedProduct] = useState<any>()
-
+    const style1 = {
+        position: 'absolute',
+        top: '50%',
+        left: '50%',
+        height: 500,
+        width: 800,
+        mx: "auto",
+        my: "auto",
+        transform: 'translate(-50%, -65%)',
+        // width: 400,
+        bgcolor: '#ffffff',
+        boxShadow: 24,
+        // p: 4,
+    };
+    const style2 = {
+        position: 'absolute',
+        top: '50%',
+        left: '50%',
+        // height: 500,
+        width: 400,
+        mx: "auto",
+        my: "auto",
+        transform: 'translate(-50%, -50%)',
+        // width: 400,
+        bgcolor: 'background.paper',
+        boxShadow: 24,
+        // p: 4,
+    };
     useEffect(() => {
         // if (products) {
 
@@ -35,7 +63,7 @@ const MensCollection = () => {
         // }
     }, [])
 
-    const [open, setOpen] = React.useState(false);
+    const [open, setOpen] = useState(false);
     const handleOpen = (products: { title: string; img: string; hoverImg: string; img3: string; img4: string; price: number; salePrice: number; size: string; vendorName: string; rating: number; _id: string; }) => {
         setSelectedProduct(products)
         setOpen(true)
@@ -87,22 +115,28 @@ const MensCollection = () => {
                     ))}
             </div>
 
-            <div className='px-3 mx-auto text-center'>
+            <div className='bg-white dark:bg-gray-800 text-center'>
                 <Modal
+                BackdropComponent={Backdrop}
+                onClose={handleClose}
                     open={open}
                 >
-                    <Fade in={open}>
-                        <Box>
-                            {/* <button className='justify-end text-white select-none bg-red-500 rounded-full w-8 h-8' onClick={handleClose}>x</button> */}
-                            <div style={{width: '805px', height: '600px'}} className='md:block mx-auto bg-white dark:bg-gray-800 px-1 lg:block hidden'>
-                                <ProductView handleClose={handleClose} selectedProduct={selectedProduct} />
+                    <div>
+                    <Box className='md:block lg:block hidden' sx={style1}>
+                            <div style={{width: '800px', height: '600px'}} className='mx-auto bg-white dark:bg-gray-800 px-1'>
+                                <ProductView selectedProduct={selectedProduct} />
                             </div>
-                            <div className='md:hidden lg:hidden bg-white dark:bg-gray-800 block'>
+                            
+                        </Box>
+                        <Box className='md:hidden lg:hidden block' sx={style2}>
+                            <div className='bg-white dark:bg-gray-800'>
                                 <ProductViewSm selectedProduct={selectedProduct} />
                             </div>
+                            
                         </Box>
-                    </Fade>
+                    </div>
                 </Modal>
+                        
             </div>
         </div>
     );

@@ -9,7 +9,7 @@ import "swiper/css/free-mode";
 import "swiper/css/navigation";
 import "swiper/css/thumbs";
 import { ShareButton } from "react-custom-share";
-const ProductView = ({ selectedProduct, handleClose }) => {
+const ProductView = ({ selectedProduct }) => {
     // console.log(selectedProduct, 'selectedProduct');
     const [thumbsSwiper, setThumbsSwiper] = useState(null);
     const [counter, setCounter] = useState(1);
@@ -33,7 +33,7 @@ const ProductView = ({ selectedProduct, handleClose }) => {
     const shareLNButtonProps = {
         url: "https://unitymart-c522a.web.app",
         network: "Linkedin",
-        text: "Share unity mart to your linkedin network. Let your connection know about us",
+        text: "Share unity mart to your facebook. Let your friends know about us",
         longtext:
             " "
     };
@@ -47,9 +47,8 @@ const ProductView = ({ selectedProduct, handleClose }) => {
 
 
     return (
-        <div onDoubleClick={handleClose} className='mx-auto'>
-            <div style={{ width: '800px', height: '600px' }} className='py-12 border border-white container place-content-center px-8 justify-center items-center mx-auto mt-8 grid lg:grid-cols-2 md:grid-cols-2 grid-cols-1 gap-6'>
-
+        <div className='mx-auto'>
+            <div className='py-12 border border-white container place-content-center px-8 justify-center items-centermt-8 grid lg:grid-cols-2 md:grid-cols-2 grid-cols-1 gap-6'>
                 <div>
                     <Swiper
 
@@ -119,7 +118,7 @@ const ProductView = ({ selectedProduct, handleClose }) => {
                         </p>
                         <p className="space-x-2">
                             <span className='text-gray-800 dark:text-white font-semibold'>Category:</span>
-                            {/* <span className='text-gray-600'>{category}</span> */}
+                            <span className='text-gray-600'></span>
                         </p>
                         <p className="space-x-2">
                             <span className='text-gray-800 dark:text-white font-semibold'>SKU:</span>
@@ -137,16 +136,19 @@ const ProductView = ({ selectedProduct, handleClose }) => {
                             <div className="flex gap-2">
                                 {/* Single Color Starts */}
                                 <div className="color-selctor">
-                                    <input type="radio" name='color' className='hidden' color='red' id='color-red' />
-                                    <label htmlFor="color" className='border border-gray-200 rounded-sm h-5 w-5 cursor-pointer shadow-sm block' style={{ backgroundColor: "red" }}></label>
+                                    <button className='w-5 h-5 bg-red-600 focus:ring-offset-2 focus:ring-1 focus:ring-indigo-500 focus:outline-none active:bg-red-700  '></button>
+                                    {/* <input type="radio" name='color' className='hidden' color='' id='color-red' />
+                                    <label htmlFor="color" className='border border-gray-200 rounded-sm h-5 w-5 cursor-pointer shadow-sm block bg-red-600'></label> */}
                                 </div>
                                 <div className="color-selctor">
-                                    <input type="radio" name='color' className='hidden' color='red' id='color-red' />
-                                    <label htmlFor="color" className='border border-gray-200 rounded-sm h-5 w-5 cursor-pointer shadow-sm block' style={{ backgroundColor: "green" }}></label>
+                                    {/* <input type="radio" name='color' className='hidden' color='red focus:ring-offset-2 focus:ring-1 focus:ring-sky-500  focus:outline-none  ' id='color-red' />
+                                    <label htmlFor="color" className='border border-gray-200 rounded-sm h-5 w-5 cursor-pointer shadow-sm block bg-green-600'></label> */}
+                                    <button className='w-5 h-5 bg-green-600 focus:ring-offset-2 focus:ring-1 focus:ring-indigo-500 focus:outline-none active:bg-green-700  '></button>
                                 </div>
                                 <div className="color-selctor">
-                                    <input type="radio" name='color' className='hidden' color='red' id='color-red' />
-                                    <label htmlFor="color" className='border border-gray-200 rounded-sm h-5 w-5 cursor-pointer shadow-sm block' style={{ backgroundColor: "blue" }}></label>
+                                    {/* <input type="radio" name='color' className='hidden' color='red focus:ring-offset-2 focus:ring-1 focus:ring-sky-500  focus:outline-none  ' id='color-red' />
+                                    <label htmlFor="color" className='border border-gray-200 rounded-sm h-5 w-5 cursor-pointer shadow-sm block bg-blue-500'></label> */}
+                                    <button className='w-5 h-5 bg-blue-600 focus:ring-offset-2 focus:ring-1 focus:ring-indigo-500 focus:outline-none active:bg-blue-700  '></button>
                                 </div>
                             </div>
                         </div>

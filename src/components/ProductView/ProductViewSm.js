@@ -22,19 +22,29 @@ const ProductViewSm = ({ selectedProduct }) => {
                     // navigation={true}
                     thumbs={{ swiper: thumbsSwiper }}
                     modules={[FreeMode, Navigation, Thumbs]}
-                    className="mySwiper2"
+                    // className="mySwiper2"
                 >
                     <SwiperSlide>
+                        <div className='mx-auto my-auto d-flex items-center mt-24 justify-center' style={{height:'150px',width:'300px'}}>
                         <img alt="" src={selectedProduct.img} />
+                        </div>
                     </SwiperSlide>
+
                     <SwiperSlide>
+                        <div className='mx-auto my-auto d-flex items-center mt-24 justify-center' style={{height:'150px',width:'300px'}}>
                         <img alt="" src={selectedProduct.img4} />
+                        </div>
                     </SwiperSlide>
+
                     <SwiperSlide>
+                    {/* <div className='mx-auto d-flex items-center mt-24 justify-center' style={{height:'150px',width:'300px'}}> */}
                         <img alt="" src={selectedProduct.img3} />
+                        {/* </div> */}
                     </SwiperSlide>
                     <SwiperSlide>
+                    <div className='mx-auto my-auto d-flex items-center mt-24 justify-center' style={{height:'150px',width:'300px'}}>
                         <img alt="" src={selectedProduct.hoverImg} />
+                        </div>
                     </SwiperSlide>
                 </Swiper>
                 <Swiper
@@ -50,10 +60,10 @@ const ProductViewSm = ({ selectedProduct }) => {
                         <img alt="" src={selectedProduct.img} />
                     </SwiperSlide>
                     <SwiperSlide>
-                        <img alt="" src={selectedProduct.img3} />
+                        <img alt="" src={selectedProduct.img4} />
                     </SwiperSlide>
                     <SwiperSlide>
-                        <img alt="" src={selectedProduct.img4} />
+                        <img alt="" src={selectedProduct.img3} />
                     </SwiperSlide>
                     <SwiperSlide>
                         <img alt="" src={selectedProduct.hoverImg} />
