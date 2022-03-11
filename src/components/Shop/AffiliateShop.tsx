@@ -17,12 +17,12 @@ export default function Shop() {
     return (
         <>
             <Helmet>
-                <title>Shop :: Unity Mart</title>
+                <title>Affiliate Department Shop :: Unity Mart</title>
                 <meta
                     name="description"
-                    content="Shop our latest products and enjoy."
+                    content="Shop our latest products from Affiliate Shop."
                 />
-                <link rel="canonical" href="/shop" />
+                <link rel="canonical" href="/affiliateShop" />
             </Helmet>
             <div>
                 <ScrollToTop style={{ display: 'flex', alignItems: 'center', justifyContent: 'center', left: 15, backgroundColor: '#7209b7' }} smooth color='#ffffff' top={20} />
