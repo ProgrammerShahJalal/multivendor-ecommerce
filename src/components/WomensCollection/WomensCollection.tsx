@@ -5,9 +5,14 @@ import Modal from '@mui/material/Modal';
 import Fade from '@mui/material/Fade';
 import ProductViewSm from '../ProductView/ProductViewSm';
 import ProductView from '../ProductView/ProductView';
+<<<<<<< HEAD
 import { Link } from 'react-router-dom';
 
 
+=======
+import { useDispatch } from 'react-redux';
+import { addToCart } from '../../redux/cartSlice';
+>>>>>>> 1d01f03323faf7b2e3635053e97819012aebcfa5
 interface ProductState {
     products: {
         title: string
@@ -26,6 +31,11 @@ const WomensCollection = () => {
     const [products, setProducts] = useState<ProductState["products"]>
         ([]);
     const [selectedProduct, setSelectedProduct] = useState<any>()
+    const dispatch = useDispatch()
+    const handleAddToCart = (id) => {
+        dispatch(addToCart(id))
+        // navigate('/cart')
+    }
 
     useEffect(() => {
         // if (products) {
@@ -80,9 +90,13 @@ const WomensCollection = () => {
                                     <div className="text-xs text-gray-500 ml-3">(1)</div>
                                 </div>
                             </div>
+<<<<<<< HEAD
                             <Link to={`/productDetails/women/${product._id}`}>
                                 <button className='block w-full py-1 text-center top-5 text-white bg-indigo-500 border border-indigo-500 rounded-b hover:bg-transparent hover:text-indigo-500 transition'>Add to Cart</button>
                             </Link>
+=======
+                            <button onClick={() => handleAddToCart(product)} className='block w-full py-1 text-center top-5 text-white bg-indigo-500 border border-indigo-500 rounded-b hover:bg-transparent hover:text-indigo-500 transition'>Add to Cart</button>
+>>>>>>> 1d01f03323faf7b2e3635053e97819012aebcfa5
                         </div>
                     ))}
             </div>

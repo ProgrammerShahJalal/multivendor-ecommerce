@@ -1,17 +1,12 @@
-import * as React from 'react';
+import { Elements } from '@stripe/react-stripe-js';
+import { loadStripe } from '@stripe/stripe-js';
+import CheckoutForm from './CheckoutForm';
 
-export interface IAppProps {
-    // email: string,
-    // id: number,
-}
-// type NewUser = {
-//     name: string,
-//     email: string,
-//     card: number,
-//     selected: string,
+const stripePromise = loadStripe('pk_test_KgaIBFneeLYYJnvovSnTw9dU00TkTPc6K9');
 
-// }
+const Checkout = () => {
 
+<<<<<<< HEAD
 export default class App extends React.PureComponent<IAppProps> {
     public render() {
         return (
@@ -164,3 +159,15 @@ export default class App extends React.PureComponent<IAppProps> {
         );
     }
 }
+=======
+    return (
+
+        <Elements stripe={stripePromise}>
+            <CheckoutForm />
+        </Elements>
+
+    );
+};
+
+export default Checkout;
+>>>>>>> 1d01f03323faf7b2e3635053e97819012aebcfa5
