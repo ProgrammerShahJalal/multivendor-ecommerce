@@ -5,6 +5,7 @@ import "swiper/css/effect-coverflow";
 import { Rating } from "@mui/material";
 import "swiper/css/pagination";
 import { Autoplay, EffectCoverflow, Pagination } from 'swiper';
+import { Link } from 'react-router-dom';
 
 interface ReviewState {
     reviews: {
@@ -91,8 +92,10 @@ const Reviews = () => {
                         ))}
                 </Swiper>
                 <div className="text-center">
-                    <button type="button" className="text-white bg-gradient-to-r from-green-400 to-blue-500 hover:from-pink-500 hover:to-yellow-500 my-3 px-4 py-2 rounded-md">Give Your Review
-                    </button>
+                    <Link to='/addReview'>
+                        <button type="button" className="text-white bg-gradient-to-r from-green-400 to-blue-500 hover:from-pink-500 hover:to-yellow-500 my-3 px-4 py-2 rounded-md">Give Your Review
+                        </button>
+                    </Link>
                 </div>
             </div>
         </div>

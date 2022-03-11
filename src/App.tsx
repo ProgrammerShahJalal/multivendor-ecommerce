@@ -49,6 +49,7 @@ import { LangContext } from "./components/Pages/MultiLanguage/languagecontext/la
 import Cart from "./components/Pages/CartPage/Cart";
 import Checkout from "./components/Checkout/Checkout";
 import AffiliateShop from "./components/Shop/AffiliateShop";
+import SiteUser from "./components/Pages/AddReview/SiteUser";
 
 
 
@@ -92,6 +93,7 @@ function App() {
             <Route path='/orderTrack' element={<OrderTracking />} />
             <Route path='/wishlist' element={<WishList />} />
             <Route path='/invoice' element={<Invoice />} />
+            <Route path='/addReview' element={<SiteUser />} />
             <Route path='/checkout' element={<PrivateRoute><Checkout /></PrivateRoute>} />
             <Route path='/shop' element={<Shop />} />
             <Route path='/affiliateShop' element={<AffiliateShop />} />
