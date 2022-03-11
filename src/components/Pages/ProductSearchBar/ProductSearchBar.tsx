@@ -27,9 +27,9 @@ const ProductSearchBar: React.FunctionComponent = () => {
     const handleOpen = (products) => {
         setSelectedProduct(products)
         setOpen(true)
-
     };
-    const handleClose = () => setOpen(false);
+    // const handleClose = () => setOpen(false);
+
     useLayoutEffect(() => {
 
 
