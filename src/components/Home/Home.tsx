@@ -12,8 +12,8 @@ import MessengerCustomerChat from 'react-messenger-customer-chat';
 import Notify from '../Notify/Notify';
 import PaginatedBlogsHome from '../Pages/PaginatedBlogsItems/PaginatedBlogsHome';
 import Products from '../Products/Products';
-// import Alan from './Alan-AI/Alan';
-// import Reviews from '../Pages/Reviews/Reviews';
+import Alan from './Alan-AI/Alan';
+import Reviews from '../Pages/Reviews/Reviews';
 import SpecialDeal from './../SpecialDeal/SpecialDeal';
 
 
@@ -23,11 +23,11 @@ export default function Home() {
     setTimeout(() => setLoading(false), 3000);
     if (loading) {
         return <div>
-        <img
-    src='https://i.ibb.co/xm46jwY/preloader.gif' className="mx-auto select-none dark:hidden block" alt=""></img>
-    <img
-        src='https://i.ibb.co/L9DK6z6/preloader.gif' className="mx-auto select-none dark:block hidden" alt=""></img>
-    </div>
+            <img
+                src='https://i.ibb.co/xm46jwY/preloader.gif' className="mx-auto select-none dark:hidden block" alt=""></img>
+            <img
+                src='https://i.ibb.co/L9DK6z6/preloader.gif' className="mx-auto select-none dark:block hidden" alt=""></img>
+        </div>
     }
 
     return (
@@ -41,11 +41,11 @@ export default function Home() {
             <BannerPro />
             <HomeProducts />
             <BottomBanner />
-            {/* <Reviews /> */}
+            <Reviews />
             <Brands />
             <PaginatedBlogsHome />
             <Faq />
-            {/* <Alan /> */}
+            <Alan />
             <ScrollToTop style={{ display: 'flex', bottom: 150, alignItems: 'center', justifyContent: 'center', left: 15, backgroundColor: '#7209b7' }} smooth color='#ffffff' top={20} height="28" viewBox="0 0 256 256" />
             <MessengerCustomerChat
                 pageId="104774475481224"

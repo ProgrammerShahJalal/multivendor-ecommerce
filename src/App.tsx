@@ -19,7 +19,6 @@ import SpecialDeal from "./components/SpecialDeal/SpecialDeal";
 
 import Media from "./components/Dashboard/Media/Media";
 import AddProduct from "./components/Dashboard/AddProduct/AddProduct";
-import DetailedOrder from "./components/Dashboard/Order/DetailedOrder";
 import Categories from "./components/Dashboard/AddProduct/Sub/Categories/Categories";
 import Attributes from "./components/Dashboard/AddProduct/Sub/Attributes/Attributes";
 import DealDetails from "./components/SpecialDeal/DealDetails";
@@ -49,6 +48,8 @@ import { LangContext } from "./components/Pages/MultiLanguage/languagecontext/la
 import Cart from "./components/Pages/CartPage/Cart";
 import Checkout from "./components/Checkout/Checkout";
 import AffiliateShop from "./components/Shop/AffiliateShop";
+import SiteUser from "./components/Pages/AddReview/SiteUser";
+import DetailedOrder from "./components/Dashboard/Order/DetailedOrder";
 
 
 
@@ -92,6 +93,7 @@ function App() {
             <Route path='/orderTrack' element={<OrderTracking />} />
             <Route path='/wishlist' element={<WishList />} />
             <Route path='/invoice' element={<Invoice />} />
+            <Route path='/addReview' element={<SiteUser />} />
             <Route path='/checkout' element={<PrivateRoute><Checkout /></PrivateRoute>} />
             <Route path='/shop' element={<Shop />} />
             <Route path='/affiliateShop' element={<AffiliateShop />} />
@@ -104,7 +106,6 @@ function App() {
             <Route path='/blogs/details/:id' element={<PrivateRoute><DetailBlogPage /></PrivateRoute>} />
             <Route path='/specials/details/:id' element={<PrivateRoute><DealDetails /></PrivateRoute>} />
             <Route path='/product/:id' element={<SingleProduct />} />
-            <Route path='*' element={<NotFound />} />
 
             {/* DASHBOARD ROUTES */}
             <Route path="/dashboard" element={<PrivateRoute><Dashboard /></PrivateRoute>} >
@@ -124,6 +125,7 @@ function App() {
               <Route path="vendors" element={<Vendors />}></Route>
               <Route path="vendor-profile" element={<VendorProfileDetails />}></Route>
             </Route>
+            <Route path='*' element={<NotFound />} />
           </Routes>
           <Footer />
         </Router>
