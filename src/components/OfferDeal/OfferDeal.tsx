@@ -72,7 +72,7 @@ export default function OfferDeal() {
                                 <h2 className="text-md italic font-light">High Tech Products</h2>
                                 <h2 className="font-bold text-3xl tracking-wide leading-relaxed">Google Smart Home 2022</h2>
                                 <HashLink smooth to="/#blog">
-                                    <button className="text-gray-800 dark:text-white dark:text-white px-2 py-1 rounded-2xl bg-slate-100">Read More</button>
+                                    <button className="text-gray-800 dark:text-white px-2 py-1 rounded-2xl bg-slate-100">Read More</button>
                                 </HashLink>
                             </div>
                         </Link>
@@ -87,7 +87,7 @@ export default function OfferDeal() {
                             {
                                 deals.map((deal) => (
                                     <div className="w-64 flex justify-center items-center gap-2 cursor-pointer">
-                                        <img className="w-20" src={deal.img} alt="" />
+                                        <img className="w-20 bg-white" src={deal.img} alt="" />
                                         <h3>{deal.title}</h3>
                                         <p>{deal.price}</p>
                                     </div>

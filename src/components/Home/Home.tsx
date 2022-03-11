@@ -22,8 +22,12 @@ export default function Home() {
     const [loading, setLoading] = useState(true);
     setTimeout(() => setLoading(false), 3000);
     if (loading) {
-        return <img
-            src='https://i.ibb.co/G0hxjqk/animation-500-l0if05al.gif' className="mx-auto select-none" alt=""></img>
+        return <div>
+        <img
+    src='https://i.ibb.co/xm46jwY/preloader.gif' className="mx-auto select-none dark:hidden block" alt=""></img>
+    <img
+        src='https://i.ibb.co/L9DK6z6/preloader.gif' className="mx-auto select-none dark:block hidden" alt=""></img>
+    </div>
     }
 
     return (
