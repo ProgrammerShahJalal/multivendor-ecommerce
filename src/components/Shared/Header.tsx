@@ -435,8 +435,8 @@ export default function Header() {
                                     <div>
                                         <Menu.Button className="flex text-sm focus:outline-none">
                                             <span className="sr-only">Open user menu</span>
-                                            <p className='font-semi-bold'>Explore </p>
-                                            <ChevronDownIcon className="w-6 h-6" aria-hidden="true" />
+                                            <p className='font-semi-bold text-black dark:text-white'>Explore </p>
+                                            <ChevronDownIcon className="w-6 h-6 text-black dark:text-white" aria-hidden="true" />
                                         </Menu.Button>
                                     </div>
                                     <Transition
@@ -453,7 +453,7 @@ export default function Header() {
                                                 {({ active }) => (
                                                     <NavLink
                                                         to='/offer'
-                                                        className={classNames(active ? 'bg-gray-100' : '', 'block px-4 py-2 text-sm text-gray-700')}
+                                                        className={classNames(active ? 'bg-gray-100 dark:bg-gray-800' : '', 'block px-4 py-2 text-sm text-black dark:text-white')}
                                                     >
                                                         Offer
                                                     </NavLink>
@@ -463,7 +463,7 @@ export default function Header() {
                                                 {({ active }) => (
                                                     <NavLink
                                                         to='/orderTrack'
-                                                        className={classNames(active ? 'bg-gray-100' : '', 'block px-4 py-2 text-sm text-gray-700')}
+                                                        className={classNames(active ? 'bg-gray-100 dark:bg-gray-800' : '', 'block px-4 py-2 text-sm text-black dark:text-white')}
                                                     >
                                                         Order Tracking
                                                     </NavLink>
@@ -473,7 +473,7 @@ export default function Header() {
                                                 {({ active }) => (
                                                     <NavLink
                                                         to='/checkout'
-                                                        className={classNames(active ? 'bg-gray-100' : '', 'block px-4 py-2 text-sm text-gray-700')}
+                                                        className={classNames(active ? 'bg-gray-100 dark:bg-gray-800' : '', 'block px-4 py-2 text-sm text-black dark:text-white')}
                                                     >
                                                         Checkout
                                                     </NavLink>
@@ -483,7 +483,7 @@ export default function Header() {
                                                 {({ active }) => (
                                                     <Link
                                                         to="/team"
-                                                        className={classNames(active ? 'bg-gray-100' : '', 'block px-4 py-2 text-sm text-gray-700')}
+                                                        className={classNames(active ? 'bg-gray-100 dark:bg-gray-800' : '', 'block px-4 py-2 text-sm text-black dark:text-white')}
                                                     >
                                                         Our Team
                                                     </Link>
@@ -493,7 +493,7 @@ export default function Header() {
                                                 {({ active }) => (
                                                     <Link
                                                         to="/unitTesting"
-                                                        className={classNames(active ? 'bg-gray-100' : '', 'block px-4 py-2 text-sm text-gray-700 cursor-pointer')}
+                                                        className={classNames(active ? 'bg-gray-100 dark:bg-gray-800' : '', 'block px-4 py-2 text-sm text-black dark:text-white cursor-pointer')}
                                                     >
                                                         Unit Testing
                                                     </Link>
@@ -503,7 +503,7 @@ export default function Header() {
                                                 {({ active }) => (
                                                     <Link
                                                         to="/vendorLogin"
-                                                        className={classNames(active ? 'bg-gray-100' : '', 'block px-4 py-2 text-sm text-gray-700 cursor-pointer')}
+                                                        className={classNames(active ? 'bg-gray-100 dark:bg-gray-800' : '', 'block px-4 py-2 text-sm text-black dark:text-white cursor-pointer')}
                                                     >
                                                         Become a Vendor
                                                     </Link>
@@ -585,7 +585,7 @@ export default function Header() {
                                                     {({ active }) => (
                                                         <NavLink
                                                             to='/profile'
-                                                            className={classNames(active ? 'bg-gray-100' : '', 'block px-4 py-2 text-sm text-gray-700')}
+                                                            className={classNames(active ? 'bg-gray-100 dark:text-gray-700' : '', 'block px-4 py-2 text-sm text-gray-700 dark:text-white')}
                                                         >
                                                             Your Profile
                                                         </NavLink>
@@ -595,7 +595,7 @@ export default function Header() {
                                                     {({ active }) => (
                                                         <a
                                                             href="#settings"
-                                                            className={classNames(active ? 'bg-gray-100' : '', 'block px-4 py-2 text-sm text-gray-700')}
+                                                            className={classNames(active ? 'bg-gray-100 dark:text-gray-700' : '', 'block px-4 py-2 text-sm text-gray-700 dark:text-white')}
                                                         >
                                                             Settings
                                                         </a>
@@ -605,7 +605,7 @@ export default function Header() {
                                                     {({ active }) => (
                                                         <p
                                                             onClick={logout}
-                                                            className={classNames(active ? 'bg-gray-100' : '', 'block px-4 py-2 text-sm text-gray-700 cursor-pointer')}
+                                                            className={classNames(active ? 'bg-gray-100 dark:text-gray-700' : '', 'block px-4 py-2 text-sm text-gray-700 dark:text-white cursor-pointer')}
                                                         >
                                                             Sign out
                                                         </p>

@@ -72,7 +72,7 @@ const Women = () => {
                     products.map((product) => (
                         <div className="bg-white dark:bg-slate-800 shadow-inner overflow-hidden single-card ">
                 <div className="relative group">
-                <div style={{height:'250px'}} className='z-100  overflow-hidden'>
+                <div style={{height:'250px'}} className='z-100 bg-white overflow-hidden'>
                                 <img src={product.hoverImg} className='w-full select-none block group-hover:hidden z-0 transition object-center' alt="" />
                                 <img src={product.img} className='w-full hidden select-none group-hover:block transition object-center' alt="" />
                 </div>
