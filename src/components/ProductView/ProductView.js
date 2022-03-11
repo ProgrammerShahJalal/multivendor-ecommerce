@@ -8,7 +8,7 @@ import "swiper/css";
 import "swiper/css/free-mode";
 import "swiper/css/navigation";
 import "swiper/css/thumbs";
-// import { ShareButton } from "react-custom-share";
+import { ShareButton } from "react-custom-share";
 const ProductView = ({ selectedProduct }) => {
     // console.log(selectedProduct, 'selectedProduct');
     const [thumbsSwiper, setThumbsSwiper] = useState(null);
@@ -203,11 +203,11 @@ const ProductView = ({ selectedProduct }) => {
                             </Link>
                         </div>
                     </div>
-                    {/* <div className='mt-2 flex gap-2'>
+                    <div className='mt-2 flex gap-2'>
                         <ShareButton {...shareFBButtonProps}><i class="fa-brands fa-facebook text-blue-600 text-2xl"></i></ShareButton>
                         <ShareButton {...shareLNButtonProps}><i class="fa-brands fa-linkedin text-blue-500 text-2xl"></i></ShareButton>
                         <ShareButton {...sharePNButtonProps}><i class="fa-brands fa-pinterest text-red-600 text-2xl"></i></ShareButton>
-                    </div> */}
+                    </div>
                 </div>
             </div>
         </div>

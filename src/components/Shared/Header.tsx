@@ -244,7 +244,7 @@ export default function Header() {
                                                     <p id={`${category.id}-${section.id}-heading-mobile`} className="font-medium text-gray-900 dark:text-white">
                                                         {section.name}
                                                     </p>
-                                                    <ul role="list" aria-labelledby={`${category.id}-${section.id}-heading-mobile`}
+                                                    <ul aria-labelledby={`${category.id}-${section.id}-heading-mobile`}
                                                         className="mt-6 flex flex-col space-y-6"
                                                     >
                                                         {section.items.map((item) => (
@@ -390,7 +390,6 @@ export default function Header() {
                                                                                         {section.name}
                                                                                     </p>
                                                                                     <ul
-                                                                                        role="list"
                                                                                         aria-labelledby={`${section.name}-heading`}
                                                                                         className="mt-6 space-y-6 sm:mt-4 sm:space-y-4"
                                                                                     >
@@ -529,11 +528,13 @@ export default function Header() {
                                 </div>
 
                                 {/* Search */}
+                                <div className="lg:block md:block hidden">
                                 <div className="flex lg:ml-6">
                                     <Link to="/" className="p-2 text-gray-400 hover:text-gray-500">
                                         <span className="sr-only">Search</span>
                                         <SearchIcon className="w-6 h-6" aria-hidden="true" />
                                     </Link>
+                                </div>
                                 </div>
 
                                 {/* Cart */}

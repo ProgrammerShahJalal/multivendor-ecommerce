@@ -27,9 +27,6 @@ const BannerGadget = () => {
                             <p className='text-gray-600 font-medium hover:text-pink-800 p-2 lg:block md:block hidden'>The webcam is an essential computer accessories.</p>
 
                             <img onClick={toggleModal} className='w-20 cursor-pointer' src="https://i.ibb.co/k5KPQ3S/video-player.gif" alt="" />
-
-
-
                             <div className=''>
 
                                 {modal && (
