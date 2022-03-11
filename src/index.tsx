@@ -5,27 +5,20 @@ import App from './App';
 import reportWebVitals from './reportWebVitals';
 import "swiper/css/bundle";
 import "@lottiefiles/lottie-player";
-<<<<<<< HEAD
 import { HelmetProvider } from "react-helmet-async";
 import LangState from './components/Pages/MultiLanguage/languagecontext/lang';
-
-ReactDOM.render(
-  <React.StrictMode>
-    <HelmetProvider>
-      <LangState>
-        <App />
-      </LangState>
-    </HelmetProvider>
-=======
 import { Provider } from 'react-redux'
 import store from './store';
 
 ReactDOM.render(
   <React.StrictMode>
-    <Provider store={store}>
-      <App />
-    </Provider>
->>>>>>> 1d01f03323faf7b2e3635053e97819012aebcfa5
+    <HelmetProvider>
+      <LangState>
+        <Provider store={store}>
+          <App />
+        </Provider>
+      </LangState>
+    </HelmetProvider>
   </React.StrictMode>,
   document.getElementById('root')
 );

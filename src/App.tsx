@@ -24,7 +24,6 @@ import Categories from "./components/Dashboard/AddProduct/Sub/Categories/Categor
 import Attributes from "./components/Dashboard/AddProduct/Sub/Attributes/Attributes";
 import DealDetails from "./components/SpecialDeal/DealDetails";
 import DetailBlogPage from "./components/Blogs/DetailBlogPage";
-<<<<<<< HEAD
 import Affiliate from "./components/Dashboard/AffiliateDashboard/AffiliateDashboard/Affliate";
 import AffiliateLinks from "./components/Dashboard/AffiliateDashboard/AffiliateLinks/AffiliateLinks";
 import Dashboard from "./components/Dashboard/Dashboard/Dashboard";
@@ -47,13 +46,11 @@ import About from "./components/Pages/About/About";
 import Invoice from "./components/Invoice/Invoice";
 import { useContext } from "react";
 import { LangContext } from "./components/Pages/MultiLanguage/languagecontext/lang";
-=======
-import SingleProduct from "./components/AllProducts/SingleProduct";
 import Cart from "./components/Pages/CartPage/Cart";
 import Checkout from "./components/Checkout/Checkout";
+import AffiliateShop from "./components/Shop/AffiliateShop";
 
 
->>>>>>> 1d01f03323faf7b2e3635053e97819012aebcfa5
 
 
 function App() {
@@ -93,14 +90,11 @@ function App() {
             <Route path='/login' element={<Login />} />
             <Route path='/register' element={<Register />} />
             <Route path='/orderTrack' element={<OrderTracking />} />
-<<<<<<< HEAD
-            <Route path='/checkout' element={<Checkout />} />
             <Route path='/wishlist' element={<WishList />} />
             <Route path='/invoice' element={<Invoice />} />
-=======
             <Route path='/checkout' element={<PrivateRoute><Checkout /></PrivateRoute>} />
->>>>>>> 1d01f03323faf7b2e3635053e97819012aebcfa5
             <Route path='/shop' element={<Shop />} />
+            <Route path='/affiliateShop' element={<AffiliateShop />} />
             <Route path='/cart' element={<Cart />} />
             <Route path='/vendorShop' element={<VendorShopPage />} />
             <Route path='/vendorSidebar' element={<VendorSidebar />} />

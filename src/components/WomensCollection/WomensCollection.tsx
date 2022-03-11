@@ -5,20 +5,14 @@ import Modal from '@mui/material/Modal';
 import Fade from '@mui/material/Fade';
 import ProductViewSm from '../ProductView/ProductViewSm';
 import ProductView from '../ProductView/ProductView';
-<<<<<<< HEAD
-import { Link } from 'react-router-dom';
-
-
-=======
 import { useDispatch } from 'react-redux';
 import { addToCart } from '../../redux/cartSlice';
->>>>>>> 1d01f03323faf7b2e3635053e97819012aebcfa5
 interface ProductState {
     products: {
         title: string
         img: string
         hoverImg: string
-        img3:string
+        img3: string
         price: number
         salePrice: number
         size: string
@@ -90,13 +84,7 @@ const WomensCollection = () => {
                                     <div className="text-xs text-gray-500 ml-3">(1)</div>
                                 </div>
                             </div>
-<<<<<<< HEAD
-                            <Link to={`/productDetails/women/${product._id}`}>
-                                <button className='block w-full py-1 text-center top-5 text-white bg-indigo-500 border border-indigo-500 rounded-b hover:bg-transparent hover:text-indigo-500 transition'>Add to Cart</button>
-                            </Link>
-=======
                             <button onClick={() => handleAddToCart(product)} className='block w-full py-1 text-center top-5 text-white bg-indigo-500 border border-indigo-500 rounded-b hover:bg-transparent hover:text-indigo-500 transition'>Add to Cart</button>
->>>>>>> 1d01f03323faf7b2e3635053e97819012aebcfa5
                         </div>
                     ))}
             </div>
@@ -108,11 +96,11 @@ const WomensCollection = () => {
                     <Fade in={open}>
                         <Box>
                             {/* <button className='justify-end text-white select-none bg-red-500 rounded-full w-8 h-8' onClick={handleClose}>x</button> */}
-                            <div style={{width: '800px', height: '600px'}} className='md:block mx-auto bg-white dark:bg-gray-800 px-1 lg:block hidden'>
-                                <ProductView   selectedProduct={selectedProduct} />
+                            <div style={{ width: '800px', height: '600px' }} className='md:block mx-auto bg-white dark:bg-gray-800 px-1 lg:block hidden'>
+                                <ProductView selectedProduct={selectedProduct} />
                             </div>
                             <div className='md:hidden lg:hidden block'>
-                                <ProductViewSm  selectedProduct={selectedProduct} />
+                                <ProductViewSm selectedProduct={selectedProduct} />
                             </div>
                         </Box>
                     </Fade>
