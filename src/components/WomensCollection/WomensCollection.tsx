@@ -118,36 +118,26 @@ const WomensCollection = () => {
 
             <div className='bg-white dark:bg-gray-800 text-center'>
                 <Modal
-                BackdropComponent={Backdrop}
-                onClose={handleClose}
+                    BackdropComponent={Backdrop}
+                    onClose={handleClose}
                     open={open}
                 >
-<<<<<<< HEAD
-                    <Fade in={open}>
-                        <Box>
-                            {/* <button className='justify-end text-white select-none bg-red-500 rounded-full w-8 h-8' onClick={handleClose}>x</button> */}
-                            <div style={{ width: '800px', height: '600px' }} className='md:block mx-auto bg-white dark:bg-gray-800 px-1 lg:block hidden'>
-                                <ProductView selectedProduct={selectedProduct} />
-                            </div>
-                            <div className='md:hidden lg:hidden block'>
-=======
                     <div>
-                    <Box className='md:block lg:block hidden' sx={style1}>
-                            <div style={{width: '800px', height: '600px'}} className='mx-auto bg-white dark:bg-gray-800 px-1'>
+                        <Box className='md:block lg:block hidden' sx={style1}>
+                            <div style={{ width: '800px', height: '600px' }} className='mx-auto bg-white dark:bg-gray-800 px-1'>
                                 <ProductView selectedProduct={selectedProduct} />
                             </div>
-                            
+
                         </Box>
                         <Box className='md:hidden lg:hidden block' sx={style2}>
                             <div className='bg-white dark:bg-gray-800'>
->>>>>>> 9ee6fd7c9bd459824884993538e5d9a1a25969c9
                                 <ProductViewSm selectedProduct={selectedProduct} />
                             </div>
-                            
+
                         </Box>
                     </div>
                 </Modal>
-                        
+
             </div>
         </div>
     );

@@ -144,6 +144,9 @@ export default function Header() {
     const { cart } = useSelector((state: any) => state.cart)
 
     // const [colorTheme, setTheme] = UseDarkMode();
+
+    const [theme, setTheme] = useState('light');
+    const colorTheme = theme === 'light' ? 'dark' : 'light';
     return (
         <div className="bg-white dark:bg-slate-800">
             {/* Mobile menu */}
@@ -518,7 +521,7 @@ export default function Header() {
 
 
 
-                                <div className="hidden lg:ml-8 lg:flex">
+                                {/* <div className="hidden lg:ml-8 lg:flex">
                                     <Link to="/" className="text-gray-700 hover:text-gray-800 dark:text-white flex items-center">
                                         <img
                                             src="https://upload.wikimedia.org/wikipedia/commons/thumb/7/75/Flag_of_Bangladesh_%283-2%29.svg/1200px-Flag_of_Bangladesh_%283-2%29.svg.png?20190306092954"
@@ -528,20 +531,20 @@ export default function Header() {
                                         <span className="ml-3 block text-sm font-medium">BAN</span>
                                         <span className="sr-only">, change currency</span>
                                     </Link>
-                                </div>
+                                </div> */}
 
                                 {/* Search */}
-                                <div className="lg:block md:block hidden">
+                                {/* <div className="lg:block md:block hidden">
                                     <div className="flex lg:ml-6">
                                         <Link to="/" className="p-2 text-gray-400 hover:text-gray-500">
                                             <span className="sr-only">Search</span>
                                             <SearchIcon className="w-6 h-6" aria-hidden="true" />
                                         </Link>
                                     </div>
-                                </div>
+                                </div> */}
 
                                 {/* Cart */}
-                                <div className="ml-4 flow-root lg:ml-6">
+                                {/* <div className="ml-4 flow-root lg:ml-6">
                                     <Link to="/" className="group -m-2 p-2 flex items-center">
                                         <ShoppingBagIcon
                                             className="flex-shrink-0 h-6 w-6 text-gray-400 group-hover:text-gray-500"
@@ -550,13 +553,13 @@ export default function Header() {
                                         <span className="ml-2 text-sm font-medium text-gray-700 group-hover:text-gray-800 dark:text-white">0</span>
                                         <span className="sr-only">items in cart, view bag</span>
                                     </Link>
-                                </div>
+                                </div> */}
                             </div>
-                            {/* <button onClick={() => setTheme(colorTheme)} className='h-10 w-10 bg-indigo-500 text-white flex items-center justify-center rounded-full m-2 cursor-pointer'>
+                            <button onClick={() => setTheme(colorTheme)} className='h-10 w-10 bg-indigo-500 text-white flex items-center justify-center rounded-full m-2 cursor-pointer'>
                                 {
                                     colorTheme === 'light' ? (<i className="fa-light fa-lightbulb"></i>) : (<i className="fa-solid fa-moon"></i>)
                                 }
-                            </button> */}
+                            </button>
 
 
                             {/* <Toggle/> */}
