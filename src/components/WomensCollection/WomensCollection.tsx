@@ -4,15 +4,14 @@ import Box from '@mui/material/Box';
 import Modal from '@mui/material/Modal';
 import ProductViewSm from '../ProductView/ProductViewSm';
 import ProductView from '../ProductView/ProductView';
-import { Link } from 'react-router-dom';
-
-
+import { useDispatch } from 'react-redux';
+import { addToCart } from '../../redux/cartSlice';
 interface ProductState {
     products: {
         title: string
         img: string
         hoverImg: string
-        img3:string
+        img3: string
         price: number
         salePrice: number
         size: string
@@ -53,6 +52,11 @@ const WomensCollection = () => {
     const [products, setProducts] = useState<ProductState["products"]>
         ([]);
     const [selectedProduct, setSelectedProduct] = useState<any>()
+    const dispatch = useDispatch()
+    const handleAddToCart = (id) => {
+        dispatch(addToCart(id))
+        // navigate('/cart')
+    }
 
     useEffect(() => {
         // if (products) {
@@ -107,35 +111,33 @@ const WomensCollection = () => {
                                     <div className="text-xs text-gray-500 ml-3">(1)</div>
                                 </div>
                             </div>
-                            <Link to={`/productDetails/women/${product._id}`}>
-                                <button className='block w-full py-1 text-center top-5 text-white bg-indigo-500 border border-indigo-500 rounded-b hover:bg-transparent hover:text-indigo-500 transition'>Add to Cart</button>
-                            </Link>
+                            <button onClick={() => handleAddToCart(product)} className='block w-full py-1 text-center top-5 text-white bg-indigo-500 border border-indigo-500 rounded-b hover:bg-transparent hover:text-indigo-500 transition'>Add to Cart</button>
                         </div>
                     ))}
             </div>
 
             <div className='bg-white dark:bg-gray-800 text-center'>
                 <Modal
-                BackdropComponent={Backdrop}
-                onClose={handleClose}
+                    BackdropComponent={Backdrop}
+                    onClose={handleClose}
                     open={open}
                 >
                     <div>
-                    <Box className='md:block lg:block hidden' sx={style1}>
-                            <div style={{width: '800px', height: '600px'}} className='mx-auto bg-white dark:bg-gray-800 px-1'>
+                        <Box className='md:block lg:block hidden' sx={style1}>
+                            <div style={{ width: '800px', height: '600px' }} className='mx-auto bg-white dark:bg-gray-800 px-1'>
                                 <ProductView selectedProduct={selectedProduct} />
                             </div>
-                            
+
                         </Box>
                         <Box className='md:hidden lg:hidden block' sx={style2}>
                             <div className='bg-white dark:bg-gray-800'>
                                 <ProductViewSm selectedProduct={selectedProduct} />
                             </div>
-                            
+
                         </Box>
                     </div>
                 </Modal>
-                        
+
             </div>
         </div>
     );

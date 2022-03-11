@@ -5,6 +5,7 @@ import { Link, NavLink } from 'react-router-dom';
 import UseAuth from '../../hooks/UseAuth';
 import Watch from '../Watch/Watch';
 // import UseDarkMode from '../../hooks/UseDarkMode';
+import { useSelector } from 'react-redux';
 
 const navigation = {
 
@@ -138,6 +139,12 @@ function classNames(...classes: any[]) {
 }
 
 export default function Header() {
+    const [open, setOpen] = useState(false)
+    const { user, logout } = UseAuth();
+    const { cart } = useSelector((state: any) => state.cart)
+
+    // const [colorTheme, setTheme] = UseDarkMode();
+
     const [theme, setTheme] = useState('light');
     const colorTheme = theme === 'light' ? 'dark' : 'light';
 
@@ -146,11 +153,6 @@ export default function Header() {
         root.classList.add(theme)
         root.classList.remove(colorTheme)
     }, [theme, colorTheme]);
-
-    const [open, setOpen] = useState(false);
-
-    const { user, logout } = UseAuth();
-    // const [colorTheme, setTheme] = UseDarkMode();
     return (
         <div className="bg-white dark:bg-slate-800">
             {/* Mobile menu */}
@@ -435,8 +437,8 @@ export default function Header() {
                                     <div>
                                         <Menu.Button className="flex text-sm focus:outline-none">
                                             <span className="sr-only">Open user menu</span>
-                                            <p className='font-semi-bold'>Explore </p>
-                                            <ChevronDownIcon className="w-6 h-6" aria-hidden="true" />
+                                            <p className='font-semi-bold dark:text-white'>Explore </p>
+                                            <ChevronDownIcon className="dark:text-white w-6 h-6" aria-hidden="true" />
                                         </Menu.Button>
                                     </div>
                                     <Transition
@@ -453,7 +455,7 @@ export default function Header() {
                                                 {({ active }) => (
                                                     <NavLink
                                                         to='/offer'
-                                                        className={classNames(active ? 'bg-gray-100' : '', 'block px-4 py-2 text-sm text-gray-700')}
+                                                        className={classNames(active ? 'bg-gray-100 dark:bg-gray-800' : '', 'block px-4 py-2 text-sm text-black dark:text-white')}
                                                     >
                                                         Offer
                                                     </NavLink>
@@ -463,7 +465,7 @@ export default function Header() {
                                                 {({ active }) => (
                                                     <NavLink
                                                         to='/orderTrack'
-                                                        className={classNames(active ? 'bg-gray-100' : '', 'block px-4 py-2 text-sm text-gray-700')}
+                                                        className={classNames(active ? 'bg-gray-100 dark:bg-gray-800' : '', 'block px-4 py-2 text-sm text-black dark:text-white')}
                                                     >
                                                         Order Tracking
                                                     </NavLink>
@@ -473,7 +475,7 @@ export default function Header() {
                                                 {({ active }) => (
                                                     <NavLink
                                                         to='/checkout'
-                                                        className={classNames(active ? 'bg-gray-100' : '', 'block px-4 py-2 text-sm text-gray-700')}
+                                                        className={classNames(active ? 'bg-gray-100 dark:bg-gray-800' : '', 'block px-4 py-2 text-sm text-black dark:text-white')}
                                                     >
                                                         Checkout
                                                     </NavLink>
@@ -483,7 +485,7 @@ export default function Header() {
                                                 {({ active }) => (
                                                     <Link
                                                         to="/team"
-                                                        className={classNames(active ? 'bg-gray-100' : '', 'block px-4 py-2 text-sm text-gray-700')}
+                                                        className={classNames(active ? 'bg-gray-100 dark:bg-gray-800' : '', 'block px-4 py-2 text-sm text-black dark:text-white')}
                                                     >
                                                         Our Team
                                                     </Link>
@@ -493,7 +495,7 @@ export default function Header() {
                                                 {({ active }) => (
                                                     <Link
                                                         to="/unitTesting"
-                                                        className={classNames(active ? 'bg-gray-100' : '', 'block px-4 py-2 text-sm text-gray-700 cursor-pointer')}
+                                                        className={classNames(active ? 'bg-gray-100 dark:bg-gray-800' : '', 'block px-4 py-2 text-sm text-black dark:text-white cursor-pointer')}
                                                     >
                                                         Unit Testing
                                                     </Link>
@@ -503,7 +505,7 @@ export default function Header() {
                                                 {({ active }) => (
                                                     <Link
                                                         to="/vendorLogin"
-                                                        className={classNames(active ? 'bg-gray-100' : '', 'block px-4 py-2 text-sm text-gray-700 cursor-pointer')}
+                                                        className={classNames(active ? 'bg-gray-100 dark:bg-gray-800' : '', 'block px-4 py-2 text-sm text-black dark:text-white cursor-pointer')}
                                                     >
                                                         Become a Vendor
                                                     </Link>
@@ -514,40 +516,6 @@ export default function Header() {
                                 </Menu>
 
 
-
-                                <div className="hidden lg:ml-8 lg:flex">
-                                    <Link to="/" className="text-gray-700 hover:text-gray-800 dark:text-white flex items-center">
-                                        <img
-                                            src="https://upload.wikimedia.org/wikipedia/commons/thumb/7/75/Flag_of_Bangladesh_%283-2%29.svg/1200px-Flag_of_Bangladesh_%283-2%29.svg.png?20190306092954"
-                                            alt=""
-                                            className="w-5 h-auto block flex-shrink-0"
-                                        />
-                                        <span className="ml-3 block text-sm font-medium">BAN</span>
-                                        <span className="sr-only">, change currency</span>
-                                    </Link>
-                                </div>
-
-                                {/* Search */}
-                                <div className="lg:block md:block hidden">
-                                <div className="flex lg:ml-6">
-                                    <Link to="/" className="p-2 text-gray-400 hover:text-gray-500">
-                                        <span className="sr-only">Search</span>
-                                        <SearchIcon className="w-6 h-6" aria-hidden="true" />
-                                    </Link>
-                                </div>
-                                </div>
-
-                                {/* Cart */}
-                                <div className="ml-4 flow-root lg:ml-6">
-                                    <Link to="/" className="group -m-2 p-2 flex items-center">
-                                        <ShoppingBagIcon
-                                            className="flex-shrink-0 h-6 w-6 text-gray-400 group-hover:text-gray-500"
-                                            aria-hidden="true"
-                                        />
-                                        <span className="ml-2 text-sm font-medium text-gray-700 group-hover:text-gray-800 dark:text-white">0</span>
-                                        <span className="sr-only">items in cart, view bag</span>
-                                    </Link>
-                                </div>
                             </div>
                             <button onClick={() => setTheme(colorTheme)} className='h-10 w-10 bg-indigo-500 text-white flex items-center justify-center rounded-full m-2 cursor-pointer'>
                                 {
@@ -585,7 +553,7 @@ export default function Header() {
                                                     {({ active }) => (
                                                         <NavLink
                                                             to='/profile'
-                                                            className={classNames(active ? 'bg-gray-100' : '', 'block px-4 py-2 text-sm text-gray-700')}
+                                                            className={classNames(active ? 'bg-gray-100 dark:text-gray-700' : '', 'block px-4 py-2 text-sm text-gray-700 dark:text-white')}
                                                         >
                                                             Your Profile
                                                         </NavLink>
@@ -595,7 +563,7 @@ export default function Header() {
                                                     {({ active }) => (
                                                         <a
                                                             href="#settings"
-                                                            className={classNames(active ? 'bg-gray-100' : '', 'block px-4 py-2 text-sm text-gray-700')}
+                                                            className={classNames(active ? 'bg-gray-100 dark:text-gray-700' : '', 'block px-4 py-2 text-sm text-gray-700 dark:text-white')}
                                                         >
                                                             Settings
                                                         </a>
@@ -605,13 +573,14 @@ export default function Header() {
                                                     {({ active }) => (
                                                         <p
                                                             onClick={logout}
-                                                            className={classNames(active ? 'bg-gray-100' : '', 'block px-4 py-2 text-sm text-gray-700 cursor-pointer')}
+                                                            className={classNames(active ? 'bg-gray-100 dark:text-gray-700' : '', 'block px-4 py-2 text-sm text-gray-700 dark:text-white cursor-pointer')}
                                                         >
                                                             Sign out
                                                         </p>
                                                     )}
                                                 </Menu.Item>
                                             </Menu.Items>
+
                                         </Transition>
                                     </Menu> :
                                         <div className='flex items-center gap-5 text-sm font-medium text-gray-700 hover:text-gray-800 dark:text-white'>
@@ -629,7 +598,37 @@ export default function Header() {
 
                                 }
 
+                                <div className="hidden lg:ml-8 lg:flex">
+                                    <Link to="/" className="text-gray-700 hover:text-gray-800 flex items-center">
+                                        <img
+                                            src="https://upload.wikimedia.org/wikipedia/commons/thumb/7/75/Flag_of_Bangladesh_%283-2%29.svg/1200px-Flag_of_Bangladesh_%283-2%29.svg.png?20190306092954"
+                                            alt=""
+                                            className="w-5 h-auto block flex-shrink-0"
+                                        />
+                                        <span className="ml-3 block text-sm font-medium dark:text-white">BAN</span>
+                                        <span className="sr-only">, change currency</span>
+                                    </Link>
+                                </div>
 
+                                {/* Search */}
+                                <div className="flex lg:ml-6">
+                                    <Link to="/" className="p-2 text-gray-400 hover:text-gray-500 dark:text-white">
+                                        <span className="sr-only">Search</span>
+                                        <SearchIcon className="w-6 h-6" aria-hidden="true" />
+                                    </Link>
+                                </div>
+
+                                {/* Cart */}
+                                <div className="ml-4 flow-root lg:ml-6">
+                                    <Link to="/cart" className="group -m-2 p-2 flex items-center">
+                                        <ShoppingBagIcon
+                                            className="flex-shrink-0 h-6 w-6 text-gray-400 group-hover:text-gray-500 dark:text-white"
+                                            aria-hidden="true"
+                                        />
+                                        <span className="ml-2 text-sm font-medium text-gray-700 group-hover:text-gray-800 dark:text-white dark:group-hover:text-white">{cart.length}</span>
+                                        <span className="sr-only">items in cart, view bag</span>
+                                    </Link>
+                                </div>
                             </div>
                         </div>
                     </div>

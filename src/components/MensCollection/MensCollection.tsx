@@ -136,7 +136,6 @@ const MensCollection = () => {
                         </Box>
                     </div>
                 </Modal>
-                        
             </div>
         </div>
     );

@@ -12,7 +12,6 @@ import Shop from "./components/Shop/Shop";
 import PrivateRoute from "./components/Route/PrivateRoute/PrivateRoute";
 import UserProfile from './components/UserProfile/UserProfile';
 import OrderTracking from './components/OrderTracking/OrderTracking';
-import Checkout from './components/Checkout/Checkout';
 import Success from "./components/Success";
 import VendorShopPage from "./components/VenderShopPage/VenderShopPage";
 import VendorSidebar from "./components/VendorSidebar/VendorSidebar";
@@ -20,7 +19,6 @@ import SpecialDeal from "./components/SpecialDeal/SpecialDeal";
 
 import Media from "./components/Dashboard/Media/Media";
 import AddProduct from "./components/Dashboard/AddProduct/AddProduct";
-import DetailedOrder from "./components/Dashboard/Order/DetailedOrder";
 import Categories from "./components/Dashboard/AddProduct/Sub/Categories/Categories";
 import Attributes from "./components/Dashboard/AddProduct/Sub/Attributes/Attributes";
 import DealDetails from "./components/SpecialDeal/DealDetails";
@@ -47,6 +45,13 @@ import About from "./components/Pages/About/About";
 import Invoice from "./components/Invoice/Invoice";
 import { useContext } from "react";
 import { LangContext } from "./components/Pages/MultiLanguage/languagecontext/lang";
+import Cart from "./components/Pages/CartPage/Cart";
+import Checkout from "./components/Checkout/Checkout";
+import AffiliateShop from "./components/Shop/AffiliateShop";
+import SiteUser from "./components/Pages/AddReview/SiteUser";
+import DetailedOrder from "./components/Dashboard/Order/DetailedOrder";
+
+
 
 
 function App() {
@@ -86,10 +91,13 @@ function App() {
             <Route path='/login' element={<Login />} />
             <Route path='/register' element={<Register />} />
             <Route path='/orderTrack' element={<OrderTracking />} />
-            <Route path='/checkout' element={<Checkout />} />
             <Route path='/wishlist' element={<WishList />} />
             <Route path='/invoice' element={<Invoice />} />
+            <Route path='/addReview' element={<SiteUser />} />
+            <Route path='/checkout' element={<PrivateRoute><Checkout /></PrivateRoute>} />
             <Route path='/shop' element={<Shop />} />
+            <Route path='/affiliateShop' element={<AffiliateShop />} />
+            <Route path='/cart' element={<Cart />} />
             <Route path='/vendorShop' element={<VendorShopPage />} />
             <Route path='/vendorSidebar' element={<VendorSidebar />} />
             <Route path='/vendorLogin' element={<VendorHomePage />} />
@@ -98,7 +106,6 @@ function App() {
             <Route path='/blogs/details/:id' element={<PrivateRoute><DetailBlogPage /></PrivateRoute>} />
             <Route path='/specials/details/:id' element={<PrivateRoute><DealDetails /></PrivateRoute>} />
             <Route path='/product/:id' element={<SingleProduct />} />
-            <Route path='*' element={<NotFound />} />
 
             {/* DASHBOARD ROUTES */}
             <Route path="/dashboard" element={<PrivateRoute><Dashboard /></PrivateRoute>} >
@@ -118,6 +125,7 @@ function App() {
               <Route path="vendors" element={<Vendors />}></Route>
               <Route path="vendor-profile" element={<VendorProfileDetails />}></Route>
             </Route>
+            <Route path='*' element={<NotFound />} />
           </Routes>
           <Footer />
         </Router>
