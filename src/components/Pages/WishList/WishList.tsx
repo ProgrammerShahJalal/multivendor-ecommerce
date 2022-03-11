@@ -19,7 +19,7 @@ const WishList = () => {
                 <div className='grid md:grid-cols-5 sm:grid-cols-1 gap-2 items-center justify-center  sm:text-green-600'>
                     <img src='https://template.annimexweb.com/diva/assets/images/product-images/product-image3-1.jpg' className='w-full p-7 rounded' alt='' />
                     <h3 className='font-bold text-xl text-pink-600'>Flying Ninja</h3>
-                    <h4 className='text-2xl text-gray-800 font-bold'>$500</h4>
+                    <h4 className='text-2xl text-gray-800 dark:text-white font-bold'>$500</h4>
                     <button type='button' className="w-40 mx-auto text-white bg-purple-600 rounded-full hover:bg-pink-600 py-2">Add To Cart</button>
 
                     <button className='text-3xl text-rose-600 hover:text-gray-600'><i className="fa-solid fa-trash"></i></button>
@@ -27,7 +27,7 @@ const WishList = () => {
                 <div className='grid  md:grid-cols-5 sm:grid-cols-1 gap-2 items-center justify-center  sm:text-green-600'>
                     <img src='https://template.annimexweb.com/diva/assets/images/product-images/product-image3-1.jpg' className='w-full p-7 rounded' alt='' />
                     <h3 className='font-bold text-xl text-pink-600'>Flying Ninja</h3>
-                    <h4 className='text-2xl text-gray-800 font-bold'>$500</h4>
+                    <h4 className='text-2xl text-gray-800 dark:text-white font-bold'>$500</h4>
                     <button type='button' className="w-40 mx-auto text-white bg-purple-600 rounded-full hover:bg-pink-600 py-2">Add To Cart</button>
 
                     <button className='text-3xl text-rose-600 hover:text-gray-600'><i className="fa-solid fa-trash"></i></button>

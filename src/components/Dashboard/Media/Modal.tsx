@@ -7,9 +7,6 @@ export default function Modal({ eventBubbling, handleUploadImages, showModal, se
 
     // console.log(images.target.files);
 
-
-
-
     useEffect(() => {
         fetch('https://guarded-ocean-73313.herokuapp.com/media')
             .then(res => res.json())
@@ -39,14 +36,14 @@ export default function Modal({ eventBubbling, handleUploadImages, showModal, se
                     >
                         <div className="relative w-auto my-6 mx-auto max-w-4xl ">
                             {/*content*/}
-                            <div className="border-0 rounded-lg shadow-lg relative flex flex-col w-full bg-white outline-none focus:outline-none px-5 py-4">
+                            <div className="border-0 rounded-lg shadow-lg relative flex flex-col w-full bg-white dark:bg-slate-800 outline-none focus:outline-none px-5 py-4">
                                 {/*header*/}
                                 <div className=''>
                                     <div>
                                         <h1 className='text-2xl	font-bold mb-2'>Media Gallery</h1>
                                         <div className='image-upload mb-5'>
                                             <form onSubmit={handleUploadImages}>
-                                                <label className='mt-1 flex justify-center px-6 pt-5 pb-6 border-2 border-gray-300 border-dashed rounded-md flex-col items-center bg-white'>
+                                                <label className='mt-1 flex justify-center px-6 pt-5 pb-6 border-2 border-gray-300 border-dashed rounded-md flex-col items-center bg-white dark:bg-slate-800'>
                                                     <div>
                                                         <svg className="mx-auto h-12 w-12 text-gray-400" stroke="currentColor" fill="none" viewBox="0 0 48 48" aria-hidden="true">
                                                             <path d="M28 8H12a4 4 0 00-4 4v20m32-12v8m0 0v8a4 4 0 01-4 4H12a4 4 0 01-4-4v-4m32-4l-3.172-3.172a4 4 0 00-5.656 0L28 28M8 32l9.172-9.172a4 4 0 015.656 0L28 28m0 0l4 4m4-24h8m-4-4v8m-12 4h.02" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" />
@@ -72,7 +69,7 @@ export default function Modal({ eventBubbling, handleUploadImages, showModal, se
                                         </div>
 
                                     </div>
-                                    <div className=" grid grid-cols-5 gap-2 mx-auto"  >
+                                    <div className=" grid grid-cols-5 gap-2 mx-auto gallery-images"  >
                                         {
                                             data?.map((order: any, idx: number) =>
                                                 Object.entries(order).map(

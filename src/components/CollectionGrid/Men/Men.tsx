@@ -1,8 +1,7 @@
 import React, { useState, useEffect } from 'react';
-import { Rating } from "@mui/material";
+import { Backdrop, Rating } from "@mui/material";
 import Box from '@mui/material/Box';
 import Modal from '@mui/material/Modal';
-import Fade from '@mui/material/Fade';
 import ProductView from '../../ProductView/ProductView';
 import ProductViewSm from '../../ProductView/ProductViewSm';
 interface ProductState {
@@ -37,13 +36,40 @@ const Men = () => {
                 .then(data => setProducts(data))
         }
     }, [products])
-
+    const style1 = {
+        position: 'absolute',
+        top: '50%',
+        left: '50%',
+        height: 500,
+        width: 800,
+        mx: "auto",
+        my: "auto",
+        transform: 'translate(-50%, -65%)',
+        // width: 400,
+        bgcolor: '#ffffff',
+        boxShadow: 24,
+        // p: 4,
+    };
+    const style2 = {
+        position: 'absolute',
+        top: '50%',
+        left: '50%',
+        // height: 500,
+        width: 400,
+        mx: "auto",
+        my: "auto",
+        transform: 'translate(-50%, -50%)',
+        // width: 400,
+        bgcolor: 'background.paper',
+        boxShadow: 24,
+        // p: 4,
+    };
     return (
         <div className="container lg:px-12 md:px-10 px-10 pb-16">
             <div className="grid lg:grid-cols-3 md:grid-cols-2 xs:grid-cols-1 gap-6">
                 {
                     products.map((product) => (
-                        <div className="bg-white shadow-inner overflow-hidden single-card ">
+                        <div className="bg-white dark:bg-slate-800 shadow-inner overflow-hidden single-card ">
                 <div className="relative group">
                 <div style={{height:'250px'}} className='z-100  overflow-hidden'>
                                 <img src={product.hoverImg} className='w-full select-none block group-hover:hidden z-0 transition object-center' alt="" />
@@ -61,8 +87,8 @@ const Men = () => {
                 </div>
                 <div style={{height:'200px'}} className="pt-4 gb-3 px-4">
                         <a href="/">
-                            <h4 className="font-medium text-xl mb-2 text-grey-800  transition">{product.title}</h4>
-                            <h5 className="font-bold text-sm mb-2 text-grey-800 transition">from {product.vendorName}</h5>
+                            <h4 className="font-medium text-xl mb-2 text-gray-800 dark:text-white  transition">{product.title}</h4>
+                            <h5 className="font-bold text-sm mb-2 text-gray-800 dark:text-white transition">from {product.vendorName}</h5>
                         </a>
                         <div className="flex items-baseline mb-1 space-x-2">
                             <p className="text-xl text-indigo-500 font-semibold">{product.salePrice}</p>
@@ -77,22 +103,28 @@ const Men = () => {
             </div>
                     ))}
             </div>
-            <div className='px-3 mx-auto text-center'>
-            <Modal
+            <div className='bg-white dark:bg-gray-800 text-center'>
+                <Modal
+                BackdropComponent={Backdrop}
+                onClose={handleClose}
                     open={open}
                 >
-                    <Fade in={open}>
-                        <Box>
-                            {/* <button className='justify-end text-white select-none bg-red-500 rounded-full w-8 h-8' onClick={handleClose}>x</button> */}
-                            <div className='md:block mx-auto px-1 lg:block hidden'>
-                                <ProductView handleClose={handleClose} selectedProduct={selectedProduct} />
+                    <div>
+                    <Box className='md:block lg:block hidden' sx={style1}>
+                            <div style={{width: '800px', height: '600px'}} className='mx-auto bg-white dark:bg-gray-800 px-1'>
+                                <ProductView selectedProduct={selectedProduct} />
                             </div>
-                            <div className='md:hidden lg:hidden block'>
+                            
+                        </Box>
+                        <Box className='md:hidden lg:hidden block' sx={style2}>
+                            <div className='bg-white dark:bg-gray-800'>
                                 <ProductViewSm selectedProduct={selectedProduct} />
                             </div>
+                            
                         </Box>
-                    </Fade>
+                    </div>
                 </Modal>
+                        
             </div>
         </div>
     );

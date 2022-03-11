@@ -2,27 +2,58 @@ import React, { useState, useEffect } from 'react';
 import { Rating } from "@mui/material";
 import Box from '@mui/material/Box';
 import Modal from '@mui/material/Modal';
-import Fade from '@mui/material/Fade';
+// import Fade from '@mui/material/Fade';
 import ProductViewSm from '../ProductView/ProductViewSm';
 import ProductView from '../ProductView/ProductView';
+import { Link } from 'react-router-dom';
+import Backdrop from '@mui/material/Backdrop';
 interface ProductState {
     products: {
         title: string
         img: string
         hoverImg: string
+        img4: string
         price: number
         salePrice: number
         size: string
         vendorName: string
         rating: number
         _id: string
+        img3: string
     }[]
 }
 const MensCollection = () => {
     const [products, setProducts] = useState<ProductState["products"]>
         ([]);
     const [selectedProduct, setSelectedProduct] = useState<any>()
-
+    const style1 = {
+        position: 'absolute',
+        top: '50%',
+        left: '50%',
+        height: 500,
+        width: 800,
+        mx: "auto",
+        my: "auto",
+        transform: 'translate(-50%, -65%)',
+        // width: 400,
+        bgcolor: '#ffffff',
+        boxShadow: 24,
+        // p: 4,
+    };
+    const style2 = {
+        position: 'absolute',
+        top: '50%',
+        left: '50%',
+        // height: 500,
+        width: 400,
+        mx: "auto",
+        my: "auto",
+        transform: 'translate(-50%, -50%)',
+        // width: 400,
+        bgcolor: 'background.paper',
+        boxShadow: 24,
+        // p: 4,
+    };
     useEffect(() => {
         // if (products) {
 
@@ -32,23 +63,24 @@ const MensCollection = () => {
         // }
     }, [])
 
-    const [open, setOpen] = React.useState(false);
-    const handleOpen = (products) => {
+    const [open, setOpen] = useState(false);
+    const handleOpen = (products: { title: string; img: string; hoverImg: string; img3: string; img4: string; price: number; salePrice: number; size: string; vendorName: string; rating: number; _id: string; }) => {
         setSelectedProduct(products)
         setOpen(true)
 
     };
+    // const category = 'men';
     const handleClose = () => setOpen(false);
     return (
         <div className="container lg:px-0 md:px-10 px-5 pb-16">
             <div className="grid place-content-center lg:grid-cols-4 md:grid-cols-3 grid-cols-1 gap-6">
                 {
                     products.map((product) => (
-                        <div className="bg-white shadow-inner overflow-hidden single-card">
+                        <div className="bg-white dark:bg-slate-800 shadow-inner overflow-hidden single-card">
                             <div className="relative group">
-                                <div style={{ height: '250px' }} className='z-100 overflow-hidden'>
+                                <div style={{ height: '250px' }} className='z-100 bg-white overflow-hidden'>
                                     <img src={product.hoverImg} className='select-none img z-0 group-hover:hidden block transition' alt="" />
-                                    <img src={product.img} className='items-center justify-center select-none hoverImg group-hover:block hidden transition' alt="" />
+                                    <img src={product.img3} className='select-none img z-0 group-hover:block hidden transition' alt="" />
                                 </div>
                                 <div className="absolute inset-0 bg-black bg-opacity-40 flex items-center justify-center gap-2 opacity-0 group-hover:opacity-100 transition">
                                     {/* <Link to={`/product/details/${product._id}`}> */}
@@ -56,16 +88,16 @@ const MensCollection = () => {
                                         <i className="fa-regular fa-magnifying-glass"></i>
                                     </button>
                                     {/* </Link> */}
-                                    <a className='text-white text-lg w-9 h-8 rounded-full bg-indigo-500 flex items-center justify-center hover:bg-gray-800 transition' href="/">
+                                    <Link className='text-white text-lg w-9 h-8 rounded-full bg-indigo-500 flex items-center justify-center hover:bg-gray-800 transition' to="/wishlist">
                                         <i className="fa-regular fa-heart"></i>
-                                    </a>
+                                    </Link>
                                 </div>
 
                             </div>
                             <div style={{ height: '200px' }} className="pt-4 gb-3 px-4">
                                 <a href="/">
-                                    <h4 className="font-medium text-xl mb-2 text-grey-800  transition">{product.title}</h4>
-                                    <h5 className="font-bold text-sm mb-2 text-grey-800 transition">from {product.vendorName}</h5>
+                                    <h4 className="font-medium text-xl mb-2 text-gray-800 dark:text-white  transition">{product.title}</h4>
+                                    <h5 className="font-bold text-sm mb-2 text-gray-800 dark:text-white transition">from {product.vendorName}</h5>
                                 </a>
                                 <div className="flex items-baseline mb-1 space-x-2">
                                     <p className="text-xl text-indigo-500 font-semibold">{product.salePrice}</p>
@@ -76,27 +108,35 @@ const MensCollection = () => {
                                     <div className="text-xs text-gray-500 ml-3">(1)</div>
                                 </div>
                             </div>
-                            <button className='block w-full py-1 text-center top-5 text-white bg-indigo-500 border border-indigo-500 rounded-b hover:bg-transparent hover:text-indigo-500 transition'>Add to Cart</button>
+                            <Link to={`/productDetails/men/${product._id}`}>
+                                <button className='block w-full py-1 text-center top-5 text-white bg-indigo-500 border border-indigo-500 rounded-b hover:bg-transparent hover:text-indigo-500 transition'>Add to Cart</button>
+                            </Link>
                         </div>
                     ))}
             </div>
 
-            <div className='px-3 mx-auto text-center'>
+            <div className='bg-white dark:bg-gray-800 text-center'>
                 <Modal
+                BackdropComponent={Backdrop}
+                onClose={handleClose}
                     open={open}
                 >
-                    <Fade in={open}>
-                        <Box>
-                            {/* <button className='justify-end text-white select-none bg-red-500 rounded-full w-8 h-8' onClick={handleClose}>x</button> */}
-                            <div className='md:block mx-auto px-1 lg:block hidden'>
-                                <ProductView handleClose={handleClose} selectedProduct={selectedProduct} />
+                    <div>
+                    <Box className='md:block lg:block hidden' sx={style1}>
+                            <div style={{width: '800px', height: '600px'}} className='mx-auto bg-white dark:bg-gray-800 px-1'>
+                                <ProductView selectedProduct={selectedProduct} />
                             </div>
-                            <div className='md:hidden lg:hidden block'>
+                            
+                        </Box>
+                        <Box className='md:hidden lg:hidden block' sx={style2}>
+                            <div className='bg-white dark:bg-gray-800'>
                                 <ProductViewSm selectedProduct={selectedProduct} />
                             </div>
+                            
                         </Box>
-                    </Fade>
+                    </div>
                 </Modal>
+                        
             </div>
         </div>
     );

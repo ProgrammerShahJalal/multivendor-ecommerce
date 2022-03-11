@@ -51,9 +51,9 @@ const DealDetails = () => {
     }
 
     return (
-        <div className="bg-gray-50 py-5">
+        <div className="bg-gray-50 dark:bg-gray-800 py-5">
             <h2 className='text-xl font-bold text-center'>{title}</h2>
-            <div className="grid lg:grid-cols-2 md:grid-cols-2 sm:grid-cols-1 xm:grid-cols-1 gap-3 justify-center items-center">
+            <div className="grid lg:grid-cols-2 md:grid-cols-2 sm:grid-cols-1 xm:grid-cols-1 gap-3 sm:gap-0 justify-center items-center">
                 <div>
                     <Swiper
                         style={{
@@ -76,10 +76,18 @@ const DealDetails = () => {
                                 <Magnifier mgShape='circle' src={img} className='bg-cover select-none' />
                             </div>
                         </SwiperSlide>
+                        <div className='lg:hidden md:hidden sm:block mx-auto px-8 w-80 sm:py-0'>
+                            <p>Vendor Name: {vendorName}</p>
+                            <p>Brands: {brands}</p>
+                            <p>Category: {category}</p>
+                            <p>Display: {display}</p>
+                            <p>RAM: {RAM}</p>
+                            <p>Comments: {details}</p>
+                        </div>
                     </Swiper>
                 </div>
                 <div>
-                    <table class="table-auto border border-separate border-purple-500">
+                    <table className="table-auto border border-separate border-purple-500">
                         <thead>
                             <tr>
                                 <th className='border border-purple-400'>Properties</th>
@@ -116,14 +124,14 @@ const DealDetails = () => {
                                 <td className='border border-purple-400'>{rating}</td>
                             </tr>
                             <tr>
-                                <td className='border border-purple-400'>Comment</td>
+                                <td className='border border-purple-400'>Details:</td>
                                 <td className='border border-purple-400'>{details}</td>
                             </tr>
                         </tbody>
                     </table>
                 </div>
             </div>
-            <div className='w-96 px-16 mx-auto'>
+            <div className='w-80 px-16 mx-auto'>
                 <button onClick={purchase} className='bg-indigo-500 text-white rounded-2xl px-4 py-2 mt-2'>Buy Now</button>
             </div>
         </div>

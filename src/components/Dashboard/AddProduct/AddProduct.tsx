@@ -197,9 +197,6 @@ const AddProduct: React.FunctionComponent = (props) => {
 
     }
 
-
-    console.log(content, 'content');
-
     return (
         <div>
             <div className="mt-5 md:mt-0 md:col-span-2">
@@ -208,7 +205,7 @@ const AddProduct: React.FunctionComponent = (props) => {
 
                         <div className="col-span-2">
                             <div className="shadow sm:rounded-md sm:overflow-hidden">
-                                <div className="px-4 py-5 bg-white space-y-6 sm:p-6">
+                                <div className="px-4 py-5 bg-white dark:bg-slate-800 space-y-6 sm:p-6">
                                     {/* TITLE */}
                                     <div>
                                         <label className="block text-sm font-medium text-gray-700 mb-3"> Title </label>
@@ -300,7 +297,7 @@ const AddProduct: React.FunctionComponent = (props) => {
 
                             </div>
                         </div>
-                        <div className="shadow sm:rounded-md sm:overflow-hidden bg-white px-4 py-5 bg-white space-y-6 sm:p-6">
+                        <div className="shadow sm:rounded-md sm:overflow-hidden bg-white dark:bg-slate-800 px-4 py-5 bg-white dark:bg-slate-800 space-y-6 sm:p-6">
                             <section className='image-upload'>
                                 <label className='mt-1 flex justify-center px-6 pt-5 pb-6 border-2 border-gray-300 border-dashed rounded-md flex-col items-center ' onClick={() => setShowModal(true)}>
                                     <div>
@@ -313,7 +310,7 @@ const AddProduct: React.FunctionComponent = (props) => {
                                         <span>+ Add Images up to 10 images</span>
                                     </div>
                                 </label>
-
+                                <label className='text-center'>Please first upload images from media</label>
                                 <Modal eventBubbling={eventBubbling} selectedItems={selectedImages} handleUploadImages={handleUploadImages} showModal={showModal} setShowModal={setShowModal} />
 
                                 <br />
@@ -356,13 +353,13 @@ const AddProduct: React.FunctionComponent = (props) => {
                                         })}
                                 </div>
                             </section>
-                            {/* <div className="basis-1/4">
+                            <div className="basis-1/4">
 
                                 <label className="block text-sm font-medium text-gray-700 mb-3"> Attributes </label>
 
                                 <Select onChange={(e: any) => setAttributes(e)} className="shadow appearance-none border rounded w-full text-gray-700 leading-tight focus:outline-none focus:shadow-outline" options={attributeLabel} isMulti />
 
-                            </div> */}
+                            </div>
 
                             <div className=" py-3 text-right ">
                                 <button type="submit" className="inline-flex justify-center py-2 px-4 border border-transparent drop-shadow-md text-sm font-medium rounded-md text-white bg-indigo-600 hover:bg-indigo-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500">Publish</button>
