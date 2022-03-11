@@ -1,0 +1,13 @@
+.img{
+    overflow: hidden;
+}
+.hoverImg{
+    display: none;
+    overflow: hidden;
+}
+.single-card:hover .img{
+    display: none;
+}
+.single-card:hover .hoverImg{
+    display: block;
+}

@@ -1,0 +1,25 @@
+.media-img{
+   
+    width: 100%;
+    height: 70%;
+    object-fit: cover;
+    
+}
+.product-thumb{
+    width: 100%;
+    object-fit: cover;
+    height: 50%;
+}
+.gallery-images{
+    height: 500px;
+    overflow-y: scroll;
+}
+.react-datetime-picker__wrapper {
+    border: none !important;
+}
+
+.public-DraftStyleDefault-block.public-DraftStyleDefault-ltr {
+    height: 270px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}

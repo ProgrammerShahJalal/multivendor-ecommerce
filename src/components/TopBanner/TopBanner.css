@@ -1,0 +1,76 @@
+.hovering-img{
+    display: none;
+}
+.sngle-banner:hover .hovering-img{
+    display: block;
+}
+.sngle-banner:hover .main-img{
+    display: none;
+}
+
+.small-banner{
+	padding:0;
+}
+.small-banner img{
+	justify-content: left;
+}
+.small-banner .sngle-banner{
+	position:relative;
+}
+.content .top-span{
+	color: #DC1010;
+}
+.poster-card{
+	background-color: white;
+}
+.small-banner .sngle-banner img{
+	padding-right: -50px;
+	height:50%;
+	width:50%;
+	-webkit-transition:all 0.4s ease;
+	-moz-transition:all 0.4s ease;
+	transition:all 0.4s ease;
+	margin-left: 150px;
+}
+.small-banner .sngle-banner .content {
+	padding-left:50px;
+	position: absolute;
+	left: 0;
+	top: 50%;
+	transform:translateY(-50%);
+}
+.small-banner .sngle-banner h3 {
+	font-size: 27px;
+	font-weight: 700;
+	text-transform: uppercase;
+	color: #000	;
+	line-height: 30px;
+}
+.small-banner{
+	overflow: hidden;
+	transition: transform .2s;
+	margin-left: 20px;
+	margin-right: 20px;
+}
+
+.small-banner .sngle-banner h4 {
+	font-size: 13px;
+	color: #ff0000;
+	font-weight: 500;
+	margin-bottom: 5px;
+	text-transform: uppercase;
+}
+.small-banner .sngle-banner a {
+	color: #333;
+	margin-top: 22px;
+	display: block;
+	font-size: 12px;
+	font-weight:500;
+	display: inline-block;
+	text-transform:uppercase;
+	border-bottom:2px solid #333;
+}
+.small-banner .sngle-banner a:hover{
+	color:#F7941D;
+	border-color:#F7941D;
+}

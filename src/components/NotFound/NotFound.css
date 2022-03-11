@@ -1,0 +1,11 @@
+.error-text{
+    position: absolute;
+    top:50%;
+    transform: translateY(-50%);
+    
+}
+.error-text h3{
+    background:url("https://media.istockphoto.com/photos/natural-black-slate-stone-background-pattern-with-high-resolution-top-picture-id1204580359?k=20&m=1204580359&s=612x612&w=0&h=Jl2jmn7kEUAq0LT8Nu0s9D5KPzqf-BdM6TS5mxk8jRQ=") center no-repeat;
+    -webkit-text-fill-color:transparent ;
+    -webkit-background-clip: text;
+}
