@@ -1,6 +1,7 @@
 import React from "react";
 import { Link } from 'react-router-dom';
-import LottieContact from '../Lottie/LottieContact';
+import Qrcode from "../Contact/Qrcode/Qrcode";
+import LottieQR from "../Lottie/LottieQR";
 
 export interface IAppProps {
 }
@@ -40,8 +41,9 @@ export default class App extends React.PureComponent<IAppProps> {
           </main>
         </div>
         <div className="lg:absolute lg:inset-y-0 lg:right-0 lg:w-1/2">
-          <div data-aos="fade-down" data-aos-duration="1500">
-            <LottieContact />
+          <div className="my-10 grid lg:grid-cols-2 md:grid-cols-2 sm:grid-cols-1 place-content-center h-96 place-items-center" data-aos="fade-down" data-aos-duration="1500">
+            <LottieQR />
+            <Qrcode />
           </div>
         </div>
       </div>

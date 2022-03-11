@@ -7,7 +7,6 @@ import Typography from '@mui/material/Typography';
 import Modal from '@mui/material/Modal';
 import { Helmet } from 'react-helmet-async';
 import OurLocation from '../Pages/OurLocation/OurLocation';
-import Qrcode from './Qrcode/Qrcode';
 const style = {
     position: 'absolute',
     top: '50%',
@@ -67,7 +66,6 @@ const Contact = () => {
             </Helmet>
             <div>
                 <ContactUsTop />
-                <Qrcode />
                 <div>
                     {/* <Button onClick={handleOpen}>Open modal</Button> */}
                     <Modal
