@@ -1,6 +1,6 @@
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import Home from "./components/Home/Home";
-import Header from './components/Shared/Header';
+import HeaderLanguage from './components/Shared/HeaderLanguage';
 import Footer from './components/Shared/Footer/Footer';
 import Contact from './components/Contact/Contact.js';
 import AuthProvider from "./context/AuthProvider";
@@ -75,7 +75,7 @@ function App() {
     <div className="dark:bg-slate-800" >
       <AuthProvider>
         <Router>
-          <Header />
+         <HeaderLanguage/>
           <Routes>
             <Route path='/' element={<Home />} />
             <Route path='/home' element={<Home />} />
