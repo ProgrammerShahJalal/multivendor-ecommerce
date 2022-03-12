@@ -1,5 +1,5 @@
 import { useNavigate, useParams } from "react-router-dom"
-import { GetOrderDetails } from "../../../Services/orderApi/GetOrderDetails";
+import { GetOrderDetails } from "../../../Services/orderApi/GetOrderDetails"
 import TextField from '@mui/material/TextField';
 import AdapterDateFns from '@mui/lab/AdapterDateFns';
 import LocalizationProvider from '@mui/lab/LocalizationProvider';
@@ -12,8 +12,6 @@ import { useState } from "react";
 import { UpdateOrder } from "../../../Services/orderApi/UpdateOrder";
 import { DeleteOrder } from "../../../Services/orderApi/DeleteOrder";
 import { toast } from 'react-toastify';
-import DateTimePicker from "react-datetime-picker";
-
 
 export default function DetailedOrder() {
     const { id } = useParams()
@@ -103,12 +101,12 @@ export default function DetailedOrder() {
 
 
                                     </div>
-                                    <div className="flex justify-center md:flex-row flex-col items-stretch w-full space-y-4 md:space-y-0 md:space-x-6 xl:space-x-8">
+                                    <div className="flex justify-center flex-col md:flex-row flex-col items-stretch w-full space-y-4 md:space-y-0 md:space-x-6 xl:space-x-8">
                                         <div className="flex flex-col px-4 py-6 md:p-6 xl:p-8 w-full bg-zinc-50	 dark:bg-zinc-50 space-y-6 drop-shadow-md rounded">
-                                            <h3 className="text-xl font-semibold leading-5 dark:text-zinc-700">Summary</h3>
+                                            <h3 className="text-xl dark:text-zinc-700	 font-semibold leading-5 dark:text-zinc-700">Summary</h3>
                                             <div className="flex justify-center items-center w-full space-y-4 flex-col border-gray-200 border-b pb-4">
                                                 <div className="flex justify-between w-full">
-                                                    <p className="text-base	 leading-4 dark:text-zinc-700">Subtotal</p>
+                                                    <p className="text-base dark:text-zinc-700	 leading-4 dark:text-zinc-700">Subtotal</p>
                                                     <p className="text-base dark:text-zinc-700 leading-4 text-zinc-700">${details.paymentDetails.amount / 100}</p>
                                                 </div>
                                                 <div className="flex justify-between items-center w-full">
@@ -166,9 +164,9 @@ export default function DetailedOrder() {
                                                 {/* <p className="text-sm px-4 py-1 font-semibold bg-indigo-500 rounded-full leading-6 dark:text-white text-white"> {details.status}</p> */}
                                             </div>
                                             <div className="w-full delivery-date">
-
-                                                {/* <LocalizationProvider sx={{ width: 100 }} dateAdapter={AdapterDateFns}>
-                                                    <DateTimePicker
+                                                {/* <button className="drop-shadow-md text-sm font-medium rounded-md text-white bg-indigo-600 hover:bg-indigo-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500 py-5 w-96 md:w-full  text-base font-medium leading-4 text-white">View Carrier Details</button> */}
+                                                <LocalizationProvider sx={{ width: 100 }} dateAdapter={AdapterDateFns}>
+                                                    <DatePicker
 
                                                         label="Delivery Date"
                                                         value={details.deliveryDate || date}
@@ -178,7 +176,7 @@ export default function DetailedOrder() {
                                                         }}
                                                         renderInput={(params) => <TextField {...params} />}
                                                     />
-                                                </LocalizationProvider> */}
+                                                </LocalizationProvider>
                                             </div>
                                         </div>
                                     </div>

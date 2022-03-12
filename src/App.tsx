@@ -37,7 +37,7 @@ import MenProductsDetail from './components/MenProductDetail';
 import WomenProductDetail from './components/WomenProductDetail';
 import KidsProductDetails from './components/KidsProductDetails';
 import Promo from './components/Promo/Promo';
-import SingleProduct from "./components/SingleProduct/SingleProduct";
+// import SingleProduct from "./components/SingleProduct/SingleProduct";
 import UnitTesting from "./components/Pages/UnitTesting/UnitTesting";
 import WishList from "./components/Pages/WishList/WishList";
 import VendorHomePage from "./components/Pages/VendorPages/VendorHomePage";
@@ -50,6 +50,7 @@ import Checkout from "./components/Checkout/Checkout";
 import AffiliateShop from "./components/Shop/AffiliateShop";
 import SiteUser from "./components/Pages/AddReview/SiteUser";
 import DetailedOrder from "./components/Dashboard/Order/DetailedOrder";
+import SingleProduct from "./components/AllProducts/SingleProduct";
 
 
 
@@ -116,7 +117,7 @@ function App() {
               <Route path="affiliate-links" element={<AffiliateLinks />}></Route>
               <Route path="addProduct" element={<AddProduct />}></Route>
               <Route path="orders" element={<AllOrders />}></Route>
-              <Route path="order-details" element={<DetailedOrder />}></Route>
+              <Route path="order-details/:id" element={<DetailedOrder />}></Route>
               <Route path="categories" element={<Categories />}></Route>
               <Route path="attributes" element={<Attributes />}></Route>
               <Route path="products" element={<Products />}></Route>

@@ -15,6 +15,7 @@ import Products from '../Products/Products';
 import Alan from './Alan-AI/Alan';
 import Reviews from '../Pages/Reviews/Reviews';
 import SpecialDeal from './../SpecialDeal/SpecialDeal';
+import AllProducts from '../AllProducts/AllProducts';
 
 
 export default function Home() {
@@ -37,7 +38,7 @@ export default function Home() {
             <TopBanner />
             <SpecialDeal />
             <BannerGadget />
-            <Products />
+            <AllProducts />
             <BannerPro />
             <HomeProducts />
             <BottomBanner />
