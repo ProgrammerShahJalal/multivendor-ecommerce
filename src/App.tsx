@@ -116,7 +116,7 @@ function App() {
               <Route path="affiliate-links" element={<AffiliateLinks />}></Route>
               <Route path="addProduct" element={<AddProduct />}></Route>
               <Route path="orders" element={<AllOrders />}></Route>
-              <Route path="order-details" element={<DetailedOrder />}></Route>
+              <Route path='detailed-order/:id' element={<DetailedOrder />} />
               <Route path="categories" element={<Categories />}></Route>
               <Route path="attributes" element={<Attributes />}></Route>
               <Route path="products" element={<Products />}></Route>
