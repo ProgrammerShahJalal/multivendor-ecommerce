@@ -1,11 +1,12 @@
 import React, { useEffect, useState } from 'react';
 import { useParams } from 'react-router-dom';
-import RelatedProducts from '../RelatedProducts/RelatedProducts';
+
 import { Swiper, SwiperSlide } from "swiper/react";
 import { FreeMode, Navigation, Thumbs } from "swiper";
 import Magnifier from "react-magnifier";
 import { useDispatch } from 'react-redux';
 import { addToCart } from '../../redux/cartSlice';
+import RelatedProducts from '../RelatedProducts/RelatedProducts';
 
 const SingleProduct = () => {
     const { id } = useParams();
@@ -178,7 +179,7 @@ const SingleProduct = () => {
                                                     </select>
                                                 </div>
 
-                                                {product?.attributes.map((attr) => {
+                                                {product.attributes ? product?.attributes.map((attr) => {
                                                     return <div className=" mr-6 items-center">
                                                         <span className="mr-3"><b>{attr.label}</b></span><br />
                                                         <div className="relative">
@@ -195,7 +196,7 @@ const SingleProduct = () => {
                                                             </span>
                                                         </div>
                                                     </div>
-                                                })}
+                                                }) : ''}
 
 
                                             </div>
@@ -232,7 +233,7 @@ const SingleProduct = () => {
                 <div className='bg-slate-300 mb-10 mt-10 shadow'>
                     <h2 className='text-2xl text-center py-3'>Related Products</h2>
                 </div>
-                {/* <RelatedProducts /> */}
+                <RelatedProducts />
             </section >
 
         </div >

@@ -1,6 +1,6 @@
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import Home from "./components/Home/Home";
-import Header from './components/Shared/Header';
+import HeaderLanguage from './components/Shared/HeaderLanguage';
 import Footer from './components/Shared/Footer/Footer';
 import Contact from './components/Contact/Contact.js';
 import AuthProvider from "./context/AuthProvider";
@@ -37,7 +37,7 @@ import MenProductsDetail from './components/MenProductDetail';
 import WomenProductDetail from './components/WomenProductDetail';
 import KidsProductDetails from './components/KidsProductDetails';
 import Promo from './components/Promo/Promo';
-import SingleProduct from "./components/SingleProduct/SingleProduct";
+// import SingleProduct from "./components/SingleProduct/SingleProduct";
 import UnitTesting from "./components/Pages/UnitTesting/UnitTesting";
 import WishList from "./components/Pages/WishList/WishList";
 import VendorHomePage from "./components/Pages/VendorPages/VendorHomePage";
@@ -50,7 +50,7 @@ import Checkout from "./components/Checkout/Checkout";
 import AffiliateShop from "./components/Shop/AffiliateShop";
 import SiteUser from "./components/Pages/AddReview/SiteUser";
 import DetailedOrder from "./components/Dashboard/Order/DetailedOrder";
-import UserOrders from './components/UserOrders/UserOrders';
+import SingleProduct from "./components/AllProducts/SingleProduct";
 
 
 
@@ -76,7 +76,7 @@ function App() {
     <div className="dark:bg-slate-800" >
       <AuthProvider>
         <Router>
-          <Header />
+          <HeaderLanguage />
           <Routes>
             <Route path='/' element={<Home />} />
             <Route path='/home' element={<Home />} />
@@ -107,7 +107,6 @@ function App() {
             <Route path='/blogs/details/:id' element={<PrivateRoute><DetailBlogPage /></PrivateRoute>} />
             <Route path='/specials/details/:id' element={<PrivateRoute><DealDetails /></PrivateRoute>} />
             <Route path='/product/:id' element={<SingleProduct />} />
-            <Route path='/myOwnOrders' element={<UserOrders />} />
 
             {/* DASHBOARD ROUTES */}
             <Route path="/dashboard" element={<PrivateRoute><Dashboard /></PrivateRoute>} >
@@ -118,7 +117,7 @@ function App() {
               <Route path="affiliate-links" element={<AffiliateLinks />}></Route>
               <Route path="addProduct" element={<AddProduct />}></Route>
               <Route path="orders" element={<AllOrders />}></Route>
-              <Route path="order-details" element={<DetailedOrder />}></Route>
+              <Route path='detailed-order/:id' element={<DetailedOrder />} />
               <Route path="categories" element={<Categories />}></Route>
               <Route path="attributes" element={<Attributes />}></Route>
               <Route path="products" element={<Products />}></Route>
