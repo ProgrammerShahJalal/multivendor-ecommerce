@@ -14,17 +14,6 @@ function Dashboard() {
     const subMenuToggle = (e) => {
         e.currentTarget.classList.toggle('showMenu');
     }
-    // useEffect(() => {
-    //     fetch('https://guarded-ocean-73313.herokuapp.com/product/62176dfbf3c519cef6df7df7')
-    //         .then(res => res.json())
-    //         .then(data => {
-    //             const arr = []
-    //             const img = data.map(products => products.images.map(img => arr.push(img.src)))
-    //             console.log(arr[0]);
-
-    //         })
-    // }, [])
-
     return (
         <div>
             <div className={`sidebar ${isTrue ? 'close' : ''}`}>
@@ -34,10 +23,6 @@ function Dashboard() {
                     <span className="logo_name">Unity Mart</span>
 
                 </div>
-                {/* <div className="home-content" onClick={toggleHamBurgerMenu}>
-
-                </div> */}
-
                 <ul className="nav-links" >
                     <li>
                         <Link to={`/dashboard/products`}>
@@ -58,21 +43,6 @@ function Dashboard() {
                         </ul>
 
                     </li>
-                    {/* <li onClick={subMenuToggle} className="">
-                        <div className="iocn-link">
-                            <Link to={`/dashboard/affiliate-dashboard`}>
-                                <i className='bx bx-collection'></i>
-                                <span className="link_name">Blogs</span>
-                            </Link>
-                            <i className='bx bxs-chevron-down arrow'></i>
-                        </div>
-                        <ul className="sub-menu">
-                            <li><Link className="link_name" to={`/dashboard/addBlog`}>Blogs</Link></li>
-                            <li><Link to={`/dashboard/add-blog`}>Add Blog</Link></li>
-                            <li><Link to={`/dashboard/products`}>Blogs</Link></li>
-                        </ul>
-
-                    </li> */}
                     <li onClick={subMenuToggle} className="">
                     
                         <div className="iocn-link">
@@ -89,15 +59,6 @@ function Dashboard() {
                             <li><Link to={`/dashboard/affiliate-links`}>Affiliate Links</Link></li>
                             {/* <li><Link to={`/dashboard/affiliate-links`}>Withdraw</Link></li> */}
                         </ul>
-                        {/* <ul className="sub-menu">
-                            <li><Link className="link_name" to={`/dashboard/affiliate-links`}>Affiliate Links</Link></li>
-                            <li><Link to={`/dashboard/affiliate-links`}>Affiliate Links</Link></li>
-                        </ul>
-                        <ul className="sub-menu">
-                            <li><Link className="link_name" to={`/dashboard/affiliate-links`}>Withdraw</Link></li>
-                            <li><Link to={`/dashboard/affiliate-links`}>Withdraw</Link></li>
-                        </ul> */}
-
                     </li>
 
                     <li onClick={subMenuToggle} className="">
@@ -115,8 +76,6 @@ function Dashboard() {
                             <li><Link to={`/dashboard/categories`}>Categories</Link></li>
                             <li><Link to={`/dashboard/attributes`}>Attributes</Link></li>
                         </ul>
-
-
                     </li>
                     <li >
                         <Link to={`/dashboard/orders`}>
@@ -154,18 +113,6 @@ function Dashboard() {
                             <li><Link className="link_name" to="/">Logout</Link></li>
                         </ul>
                     </li>
-
-
-                    {/*           
-                    <li>
-                        <a href="#">
-                            <i className='bx bx-cog'></i>
-                            <span className="link_name">Setting</span>
-                        </a>
-                        <ul className="sub-menu blank">
-                            <li><a className="link_name" href="#">Setting</a></li>
-                        </ul>
-                    </li> */}
                     <li>
                         <div className="profile-details">
                             <div className="profile-content mr-5">
@@ -182,8 +129,8 @@ function Dashboard() {
             </div>
             <section className="home-section">
                 <div className='container mx-auto'><Outlet></Outlet></div>
-
             </section>
+            
         </div>
     );
 }

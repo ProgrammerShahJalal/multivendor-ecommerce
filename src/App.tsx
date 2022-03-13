@@ -43,8 +43,8 @@ import WishList from "./components/Pages/WishList/WishList";
 import VendorHomePage from "./components/Pages/VendorPages/VendorHomePage";
 import About from "./components/Pages/About/About";
 import Invoice from "./components/Invoice/Invoice";
-import { useContext } from "react";
-import { LangContext } from "./components/Pages/MultiLanguage/languagecontext/lang";
+// import { useContext } from "react";
+// import { LangContext } from "./components/Pages/MultiLanguage/languagecontext/lang";
 import Cart from "./components/Pages/CartPage/Cart";
 import Checkout from "./components/Checkout/Checkout";
 import AffiliateShop from "./components/Shop/AffiliateShop";
@@ -68,7 +68,7 @@ function App() {
     }
   })
 
-  const { dispatch: { translate } } = useContext(LangContext);
+  // const { dispatch: { translate } } = useContext(LangContext);
 
   // translate={translate}
   return (
