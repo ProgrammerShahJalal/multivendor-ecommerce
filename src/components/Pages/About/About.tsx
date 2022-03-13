@@ -26,7 +26,7 @@ const About = () => {
                             </div>
                             <div className='w-50 px-5 text-center'>
                                 <h2 className='text-2xl font-medium text-gray-800 dark:text-white uppercase mb-6'>What is Unity Mart</h2>
-                                <p>Unity Mart comes with easy-to-use interface and outstanding support. You can implement your own design. You can easily change the store's appearance as per your requirements using our ready sections and options available.
+                                <p>Unity Mart comes with easy-to-use interface and outstanding support. You can implement your own design. You can easily change the store's appearance as per your requirements using our ready sections and options available.You can easily change the store's appearance as per your requirements using our ready sections and options available.
                                     Our support teams are ready to help you on any stage of your store setup</p>
                                 <button className="mt-2 text-white bg-purple-600 justify-center px-3 py-1 rounded-md hover:bg-purple-800 transition"><HomePopUp /></button>
                             </div>
