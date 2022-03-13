@@ -23,13 +23,9 @@ const AllOrders = () => {
         const searchText = event.target.value;
         const findOrders: any = orders && orders.length > 0 ? orders?.filter(p => JSON.stringify(p?.paymentDetails.createdId).toLowerCase().includes(searchText) || p?.paymentDetails.email.toLowerCase().includes(searchText)) : undefined;
         setOrderList(findOrders);
-        // console.log(findProduct, "Product");
         if (searchText === "" ) {
             setOrderList("");
         }
-        // if (searchNumberText <= 0 ) {
-        //     setOrderList("");
-        // }
     }
     return (
 

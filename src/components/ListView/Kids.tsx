@@ -29,7 +29,7 @@ const Kids = () => {
             setOpen(true)
     
         };
-        const handleClose = () => setOpen(false);
+        // const handleClose = () => setOpen(false);
         const [selectedProduct, setSelectedProduct] = useState<any>()
     useEffect(() => {
         if (products) {

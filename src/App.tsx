@@ -50,6 +50,7 @@ import Checkout from "./components/Checkout/Checkout";
 import AffiliateShop from "./components/Shop/AffiliateShop";
 import SiteUser from "./components/Pages/AddReview/SiteUser";
 import DetailedOrder from "./components/Dashboard/Order/DetailedOrder";
+import UserOrders from './components/UserOrders/UserOrders';
 
 
 
@@ -106,6 +107,7 @@ function App() {
             <Route path='/blogs/details/:id' element={<PrivateRoute><DetailBlogPage /></PrivateRoute>} />
             <Route path='/specials/details/:id' element={<PrivateRoute><DealDetails /></PrivateRoute>} />
             <Route path='/product/:id' element={<SingleProduct />} />
+            <Route path='/myOwnOrders' element={<UserOrders />} />
 
             {/* DASHBOARD ROUTES */}
             <Route path="/dashboard" element={<PrivateRoute><Dashboard /></PrivateRoute>} >
