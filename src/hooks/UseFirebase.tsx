@@ -68,6 +68,7 @@ export const UseFirebase = (
                 };
 
                 setUser(newUser);
+                saveUser(email, name)
                 navigate(location?.state?.from || '/')
                 setError('')
 
@@ -179,6 +180,15 @@ export const UseFirebase = (
         });
     }
 
-
+    const saveUser = (email: string, displayName: string) => {
+        const user = { email, displayName };
+        fetch('https://morning-inlet-49130.herokuapp.com/users', {
+            method: 'POST',
+            headers: {
+                'content-type': 'application/json'
+            },
+            body: JSON.stringify(user)
+        })
+    }
     return { RegisterUser, SignIn, user, logout, error, isLoading, handleGoogleSignIn, handleFacebookSIgnIn };
 };
