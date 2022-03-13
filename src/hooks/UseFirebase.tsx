@@ -68,7 +68,7 @@ export const UseFirebase = (
                 };
 
                 setUser(newUser);
-                saveUser(email, name)
+                saveUser(email, name, 'POST')
                 navigate(location?.state?.from || '/')
                 setError('')
 
@@ -142,7 +142,7 @@ export const UseFirebase = (
                 navigate(location?.state?.from || '/')
                 const user = result.user;
                 setUser(user)
-
+                saveUser(user.email, user.displayName, 'PUT');
                 // ...
             }).catch((error: any) => {
                 const errorMessage = error.message;
@@ -156,7 +156,7 @@ export const UseFirebase = (
                 // The signed-in user info.
                 const user = result.user;
                 setUser(user)
-
+                saveUser(user.email, user.displayName, 'PUT');
             })
             .catch((error: any) => {
                 const errorMessage = error.message;
@@ -180,10 +180,10 @@ export const UseFirebase = (
         });
     }
 
-    const saveUser = (email: string, displayName: string) => {
+    const saveUser = (email: string, displayName: string, method: string) => {
         const user = { email, displayName };
         fetch('https://morning-inlet-49130.herokuapp.com/users', {
-            method: 'POST',
+            method: method,
             headers: {
                 'content-type': 'application/json'
             },
