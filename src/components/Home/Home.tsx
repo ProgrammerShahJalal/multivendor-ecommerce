@@ -42,9 +42,9 @@ export default function Home() {
             <SpecialDeal translate={translate} />
             <BannerGadget />
             <Products translate={translate} />
-            <AllProducts />
+            <AllProducts translate={translate} />
             <BannerPro />
-            <HomeProducts />
+            <HomeProducts translate={translate} />
             <BottomBanner />
             {/* <Reviews /> */}
             <Brands />
