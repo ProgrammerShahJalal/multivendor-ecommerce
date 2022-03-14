@@ -19,7 +19,7 @@ Tasks related to new Week-6 Task.
 
 ## Project Goal Timeline
 - [ ] Admin Route
-- [ ] Dashboard Home fillup
+- [ ] Dashboard Home fillup - Some interactive charts like daily  orders, daily earnings, total users, total vendors, total users 
 - [ ] Vendor's & Users status dynamic
 - [ ] Graph Color need to be more dark
 - [ ] No Dummy will left. Every route should workable
