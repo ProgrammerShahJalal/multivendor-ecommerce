@@ -16,7 +16,6 @@ import PaginatedBlogsHome from '../Pages/PaginatedBlogsItems/PaginatedBlogsHome'
 import Reviews from '../Pages/Reviews/Reviews';
 import SpecialDeal from './../SpecialDeal/SpecialDeal';
 import AllProducts from '../AllProducts/AllProducts';
-import WishList from '../Pages/WishList/WishList';
 
 
 export default function Home() {
@@ -38,7 +37,6 @@ export default function Home() {
             <Notify />
             <TopBanner />
             <SpecialDeal />
-            <WishList />
             <BannerGadget />
             <AllProducts />
             <BannerPro />
