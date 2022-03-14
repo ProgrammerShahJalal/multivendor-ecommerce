@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import { useContext } from 'react';
 import TopBanner from '../TopBanner/TopBanner';
 import BottomBanner from '../BottomBanner/BottomBanner';
 import Banners from '../Pages/Banner/Banner';
@@ -15,9 +16,11 @@ import Products from '../Products/Products';
 import Alan from './Alan-AI/Alan';
 import Reviews from '../Pages/Reviews/Reviews';
 import SpecialDeal from './../SpecialDeal/SpecialDeal';
+import { LangContext } from '../Pages/MultiLanguage/languagecontext/lang';
 
 
 export default function Home() {
+    const { dispatch: { translate } } = useContext(LangContext);
 
     const [loading, setLoading] = useState(true);
     setTimeout(() => setLoading(false), 3000);
@@ -35,9 +38,9 @@ export default function Home() {
             <Banners />
             <Notify />
             <TopBanner />
-            <SpecialDeal />
+            <SpecialDeal translate={translate} />
             <BannerGadget />
-            <Products />
+            <Products translate={translate} />
             <BannerPro />
             <HomeProducts />
             <BottomBanner />

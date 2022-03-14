@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect, FC } from 'react';
 import { Rating } from "@mui/material";
 import Box from '@mui/material/Box';
 import Modal from '@mui/material/Modal';
@@ -18,10 +18,14 @@ interface ProductState {
         vendorName: string
         rating: number
         _id: string
-        brands:string
+        brands: string
     }[]
 }
-const Products = () => {
+interface ProductsProps {
+    translate: (key: string) => string
+}
+
+const Products: FC<ProductsProps> = ({ translate }) => {
     const [products, setProducts] = useState<any>([]);
     const [selectedProduct, setSelectedProduct] = useState<any>()
 
@@ -46,8 +50,8 @@ const Products = () => {
     return (
         <div className="container lg:px-0 md:px-10 px-5 pb-16 mx-auto">
             <h2 className="text-3xl text-center font-extrabold text-gray-900 dark:text-white sm:text-4xl mb-10">
-                <span className="text-5xl pr-3" >Latest</span>
-                <span className=" text-indigo-600 text-5xl">Products</span>
+                <span className="text-5xl pr-3" >{translate('latest')}</span>
+                <span className=" text-indigo-600 text-5xl">{translate('product')}</span>
             </h2>
             <div className="grid place-content-center lg:grid-cols-4 md:grid-cols-3 grid-cols-1 gap-6">
                 {
@@ -100,7 +104,7 @@ const Products = () => {
                         <Box>
                             {/* <button className='justify-end text-white select-none bg-red-500 rounded-full w-8 h-8' onClick={handleClose}>x</button> */}
                             <div className='md:block mx-auto px-1 lg:block hidden'>
-                                <ProductView   selectedProduct={selectedProduct} />
+                                <ProductView selectedProduct={selectedProduct} />
                             </div>
                             <div className='md:hidden lg:hidden block'>
                                 <ProductViewSm selectedProduct={selectedProduct} />
