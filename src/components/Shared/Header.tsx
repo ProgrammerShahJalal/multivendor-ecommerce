@@ -652,13 +652,13 @@ const Header: FC<HeaderProps> = ({ fixed, transparent }) => {
                                                 alt=""
                                                 className="w-5 h-auto block flex-shrink-0"
                                             />
-                                            {/* <span className="ml-3 block text-sm font-medium dark:text-white">BAN</span> */}
-                                            <div className="px-2 text-black">
+
+                                            <div className="px-2 dark:text-white">
                                                 <p className="selected" onClick={() => setShowDropdown(!showDropdown)}>{language}</p>
-                                                {showDropdown && <ul className="" ref={dropdownEl}>
-                                                    <li onClick={() => chooseLanguageHandler('EN')}>English</li>
-                                                    <li onClick={() => chooseLanguageHandler('BN')}>Bangla</li>
-                                                    <li onClick={() => chooseLanguageHandler('FR')}>French</li>
+                                                {showDropdown && <ul ref={dropdownEl}>
+                                                    <li className='dark:text-white' onClick={() => chooseLanguageHandler('EN')}>English</li>
+                                                    <li className='dark:text-white' onClick={() => chooseLanguageHandler('BN')}>Bangla</li>
+                                                    <li className='dark:text-white' onClick={() => chooseLanguageHandler('FR')}>French</li>
                                                 </ul>
                                                 }
                                             </div>

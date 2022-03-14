@@ -13,12 +13,6 @@
     width: 100%;
     padding: 10px 5px;
   }
-  .modal > .actions {
-    width: 100%;
-    padding: 10px 8px;
-    margin: auto;
-    text-align: center;
-  }
   .modal > .close {
     cursor: pointer;
     position: absolute;
