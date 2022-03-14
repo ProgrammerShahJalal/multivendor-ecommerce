@@ -13,7 +13,6 @@ import Notify from '../Notify/Notify';
 import PaginatedBlogsHome from '../Pages/PaginatedBlogsItems/PaginatedBlogsHome';
 // import Products from '../Products/Products';
 // import Alan from './Alan-AI/Alan';
-import Reviews from '../Pages/Reviews/Reviews';
 import SpecialDeal from './../SpecialDeal/SpecialDeal';
 import AllProducts from '../AllProducts/AllProducts';
 
