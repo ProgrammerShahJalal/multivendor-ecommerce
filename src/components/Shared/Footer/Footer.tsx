@@ -40,9 +40,14 @@ export default class App extends React.PureComponent<IAppProps> {
                                     <Link to='/offer'>
                                         <div className="cursor-pointer footer-link pb-4 hover:text-blue-200"> <i className='fa fa-chevron-right text-blue-200'></i> Special Offers</div>
                                     </Link>
-                                    <div className="cursor-pointer footer-link hover:text-blue-200  pb-4"> <i className='fa fa-chevron-right text-blue-200'></i> Privacy & Policy</div>
-                                    <div className="cursor-pointer footer-link hover:text-blue-200  pb-4"> <i className='fa fa-chevron-right text-blue-200'></i> Customer Service</div>
-                                    <div className="cursor-pointer footer-link hover:text-blue-200  pb-4">  <i className='fa fa-chevron-right text-blue-200'></i> Terms & Conditions</div>
+                                    <Link to='/privacy-policy'>
+                                    <p className="cursor-pointer footer-link hover:text-blue-200  pb-4"> <i className='fa fa-chevron-right text-blue-200'></i> Privacy & Policy</p>
+                                    </Link>
+                                    <Link to='/customer-service'>
+                                    <p className="cursor-pointer footer-link hover:text-blue-200  pb-4"> <i className='fa fa-chevron-right text-blue-200'></i> Customer Service</p>
+                                    </Link>
+                                    
+                                    <Link to='/terms&condition'><p className="cursor-pointer footer-link hover:text-blue-200  pb-4">  <i className='fa fa-chevron-right text-blue-200'></i> Terms & Conditions</p></Link>
                                 </div>
                             </div>
                             <div className="mb-5">

@@ -51,6 +51,9 @@ import AffiliateShop from "./components/Shop/AffiliateShop";
 import SiteUser from "./components/Pages/AddReview/SiteUser";
 import DetailedOrder from "./components/Dashboard/Order/DetailedOrder";
 import SingleProduct from "./components/AllProducts/SingleProduct";
+import TermsCondition from "./components/TermsCondition/TermsCondition";
+import PrivacyPolicy from "./components/PrivacyPolicy/PrivacyPolicy";
+import CustomersService from "./components/CustomersService/CustomersService";
 
 
 
@@ -102,6 +105,9 @@ function App() {
             <Route path='/vendorShop' element={<VendorShopPage />} />
             <Route path='/vendorSidebar' element={<VendorSidebar />} />
             <Route path='/vendorLogin' element={<VendorHomePage />} />
+            <Route path='/terms&condition' element={<TermsCondition />} />
+            <Route path='/privacy-policy' element={<PrivacyPolicy />} />
+            <Route path='/customer-service' element={<CustomersService />} />
             <Route path='/profile' element={<PrivateRoute><UserProfile /></PrivateRoute>} />
             <Route path='/success/:id' element={<PrivateRoute><Success /></PrivateRoute>} />
             <Route path='/blogs/details/:id' element={<PrivateRoute><DetailBlogPage /></PrivateRoute>} />
