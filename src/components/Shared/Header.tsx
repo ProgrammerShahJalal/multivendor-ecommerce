@@ -668,7 +668,7 @@ const Header: FC<HeaderProps> = ({ fixed, transparent }) => {
 
                                     {/* Search */}
                                     <div className="flex lg:ml-6">
-                                        <Link to="/" className="p-2 text-gray-400 hover:text-gray-500 dark:text-white">
+                                        <Link to="/searchField" className="p-2 text-gray-400 hover:text-gray-500 dark:text-white">
                                             <span className="sr-only">Search</span>
                                             <SearchIcon className="w-6 h-6" aria-hidden="true" />
                                         </Link>
