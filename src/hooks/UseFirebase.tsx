@@ -152,9 +152,9 @@ export const UseFirebase = (
                 navigate(location?.state?.from || '/')
                 const user = result.user;
                 setUser(user)
+                addUserToDB(result.user);
                 saveUser(user.email, user.displayName, 'PUT');
                 // ...
-                addUserToDB(result.user);
             }).catch((error: any) => {
                 const errorMessage = error.message;
                 setError(errorMessage)
@@ -206,6 +206,8 @@ export const UseFirebase = (
             body: JSON.stringify(user)
         })
     }
+
+
     return { RegisterUser, SignIn, user, logout, error, isLoading, handleGoogleSignIn, handleFacebookSIgnIn, userDetails };
 
 };
