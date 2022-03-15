@@ -46,6 +46,7 @@ const AddProduct: React.FunctionComponent = () => {
     console.log(userDetails, ' userDetails');
 
 
+
     // GET ATTRIBUTES LABELS AND VALUES
     useEffect(() => {
         fetch('https://guarded-ocean-73313.herokuapp.com/dashboard/attributes')

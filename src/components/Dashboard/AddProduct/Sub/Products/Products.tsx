@@ -1,5 +1,6 @@
 import { CircularProgress } from '@mui/material';
 import React, { useEffect, useState } from 'react';
+import { Link } from 'react-router-dom';
 import UseAuth from '../../../../../hooks/UseAuth';
 import { DeleteProductApi } from '../../../../../Services/DashboardProducts/DeleteProductApi';
 import Categories from '../Categories/Categories';
@@ -156,9 +157,11 @@ const Products = () => {
                                                 Admin
                                             </td>
                                             <td className="px-5 py-5 border-b border-gray-200 bg-white dark:bg-slate-800 text-sm flex">
-                                                <button className="cursor-pointer text-white rounded whitespace-no-wrap mr-2 text-left bg-indigo-500 p-2 mb-1 w-10">
-                                                    Edit
-                                                </button>
+                                                <Link to={`/dashboard/edit-product/${product._id}`}>
+                                                    <button className="cursor-pointer text-white rounded whitespace-no-wrap mr-2 text-left bg-indigo-500 p-2 mb-1 w-10">
+                                                        Edit
+                                                    </button>
+                                                </Link>
                                                 <p onClick={() => deleteProduct(product._id)} className="cursor-pointer bg-red-500 text-white rounded whitespace-no-wrap mr-2 p-2 mb-1 w-16">
                                                     Delete
                                                 </p>

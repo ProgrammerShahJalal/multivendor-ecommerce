@@ -58,6 +58,7 @@ import VendorCard from "./components/VenderShopPage/VendorCard";
 import StoreListCards from "./components/StoreListCard/StoreListCard";
 import SearchField from "./components/Pages/SearchField/SearchField";
 import UserOrders from "./components/UserOrders/UserOrders";
+import EditProduct from "./components/Dashboard/AddProduct/Sub/EditProduct/EditProduct";
 
 
 
@@ -119,6 +120,7 @@ function App() {
             <Route path='/specials/details/:id' element={<PrivateRoute><DealDetails /></PrivateRoute>} />
             <Route path='/product/:id' element={<SingleProduct />} />
 
+
             {/* DASHBOARD ROUTES */}
             <Route path="/dashboard" element={<AdminRoute><Dashboard /></AdminRoute>} >
               <Route path="media" element={<Media />}></Route>
@@ -131,7 +133,7 @@ function App() {
               <Route path="attributes" element={<Attributes />}></Route>
               <Route path="products" element={<Products />}></Route>
               <Route path="users" element={<Users />}></Route>
-
+              <Route path='edit-product/:id' element={<EditProduct />} />
               <Route path="vendors" element={<Vendors />}></Route>
               <Route path="vendor-profile" element={<VendorProfileDetails />}></Route>
             </Route>
