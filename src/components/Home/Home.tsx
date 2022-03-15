@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import { useContext } from 'react';
 import TopBanner from '../TopBanner/TopBanner';
 import BottomBanner from '../BottomBanner/BottomBanner';
 import Banners from '../Pages/Banner/Banner';
@@ -11,13 +12,15 @@ import Brands from '../Pages/Brands/Brands';
 import MessengerCustomerChat from 'react-messenger-customer-chat';
 import Notify from '../Notify/Notify';
 import PaginatedBlogsHome from '../Pages/PaginatedBlogsItems/PaginatedBlogsHome';
-// import Products from '../Products/Products';
+import Products from '../Products/Products';
 // import Alan from './Alan-AI/Alan';
 import SpecialDeal from './../SpecialDeal/SpecialDeal';
+import { LangContext } from '../Pages/MultiLanguage/languagecontext/lang';
 import AllProducts from '../AllProducts/AllProducts';
 
 
 export default function Home() {
+    const { dispatch: { translate } } = useContext(LangContext);
 
     const [loading, setLoading] = useState(true);
     setTimeout(() => setLoading(false), 3000);
@@ -35,11 +38,12 @@ export default function Home() {
             <Banners />
             <Notify />
             <TopBanner />
-            <SpecialDeal />
+            <SpecialDeal translate={translate} />
             <BannerGadget />
-            <AllProducts />
+            <Products translate={translate} />
+            <AllProducts translate={translate} />
             <BannerPro />
-            <HomeProducts />
+            <HomeProducts translate={translate} />
             <BottomBanner />
             {/* <Reviews /> */}
             <Brands />

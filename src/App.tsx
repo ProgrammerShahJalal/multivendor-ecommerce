@@ -84,7 +84,7 @@ function App() {
             <Route path='/about' element={<About />} />
             <Route path='/offer' element={<Promo />} />
             <Route path='/unitTesting' element={<UnitTesting />} />
-            <Route path='/specialDeal' element={<SpecialDeal />} />
+            <Route path='/specialDeal' element={<SpecialDeal translate={translate} />} />
             <Route path='/productDetails/men/:id' element={<MenProductsDetail />} />
             <Route path='/productDetails/women/:id' element={<WomenProductDetail />} />
             <Route path='/productDetails/kid/:id' element={<KidsProductDetails />} />
