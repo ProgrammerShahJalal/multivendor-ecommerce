@@ -22,6 +22,7 @@ const CheckoutForm = () => {
     const elements = useElements();
     const dispatch: any = useDispatch()
 
+
     const nameRef = React.useRef<HTMLInputElement>(null)
     const emailRef = React.useRef<HTMLInputElement>(null)
     const addressRef = React.useRef<HTMLInputElement>(null)
@@ -48,6 +49,7 @@ const CheckoutForm = () => {
             .then(res => res.json())
             .then(data => setClientSecret(data.clientSecret));
     }, [cartTotal]);
+    console.log(cart);
 
 
     const handleSubmit = async (e) => {
@@ -116,7 +118,7 @@ const CheckoutForm = () => {
             //     transaction: paymentIntent?.client_secret.slice('_secret')[0]
             // }
 
-            await fetch('https://guarded-ocean-73313.herokuapp.com/dashboard/orders', {
+            await fetch('http://localhost:5000/dashboard/orders', {
                 method: 'POST',
                 headers: {
                     'content-type': 'application/json'
@@ -131,7 +133,7 @@ const CheckoutForm = () => {
                         last4: paymentMethod.card.last4,
                         transaction: paymentIntent?.client_secret.slice('_secret')[0]
                     },
-                    status: 'Pending',
+                    status: 'Placed',
                     billing: {
                         country: countryRef.current?.value,
                         name: nameRef.current?.value,

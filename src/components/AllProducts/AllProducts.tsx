@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from 'react';
+import React, { useEffect, useState, FC } from 'react';
 import { Link } from 'react-router-dom';
 import { useDispatch } from 'react-redux';
 import { addToCart } from '../../redux/cartSlice';
@@ -9,7 +9,10 @@ import ProductView from '../ProductView/ProductView';
 import ProductViewSm from '../ProductView/ProductViewSm';
 import { Rating } from '@mui/material';
 
-const AllProducts = () => {
+interface AllProductsProps {
+    translate: (key: string) => string
+}
+const AllProducts: FC<AllProductsProps> = ({ translate }) => {
     const [products, setProducts] = useState<IProduct[]>([]);
     const [selectedProduct, setSelectedProduct] = useState<IProduct>()
     useEffect(() => {
@@ -35,8 +38,8 @@ const AllProducts = () => {
     return (
         <div className="container lg:px-0 md:px-10 px-10 pb-16 mx-auto">
             <h2 className="text-3xl text-center font-extrabold text-gray-900 sm:text-4xl mb-10">
-                <span className="text-5xl pr-3" >Latest</span>
-                <span className=" text-indigo-600 text-5xl">Products</span>
+                <span className="text-5xl pr-3" >{translate('latest')}</span>
+                <span className=" text-indigo-600 text-5xl">{translate('product')}</span>
             </h2>
             <div className="grid place-content-center lg:grid-cols-4 md:grid-cols-3 grid-cols-1 gap-6">
                 {
@@ -48,9 +51,11 @@ const AllProducts = () => {
                                 image: product.images[0]?.src,
                                 category: product.categories[0].label,
                                 price: parseInt(product.sale_price ? product.sale_price : product.reg_price),
-                                // attributes: attributes,
+                                attributes: [],
                                 cartQuantity: 1,
-                                vendor: 'fathekarim3@gmail.com'
+                                vendor: {
+                                    email: product?.publisherDetails?.publisher || null
+                                }
                             }
                             console.log(product);
 

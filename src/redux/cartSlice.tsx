@@ -24,15 +24,21 @@ interface ProductState {
     rating: number
     _id: string
 
+    vendor: {
+        email: string
+
+    }
+
+
 }
 export const cartSlice = createSlice({
     name: 'cart',
     initialState,
     reducers: {
-        addToCart: (state: any, { payload }: { payload: ProductState }) => {
-            console.log('add to cart');
+        addToCart: (state: any, { payload }: { payload: any }) => {
 
             const itemIndex = state.cart.findIndex(item => item._id === payload._id)
+            const isSameVendor = state.cart.every(c => c.vendor.email === payload.vendor.email)
             if (itemIndex >= 0) {
                 state.cart[itemIndex].cartQuantity += 1
                 toast.info(`${payload.title} quantity increased`, {
@@ -45,6 +51,25 @@ export const cartSlice = createSlice({
                     position: 'bottom-left'
                 })
             }
+
+            // if (!isSameVendor) {
+            //     alert('Please buy from one vendor')
+            // } else {
+            //     if (itemIndex >= 0) {
+            //         state.cart[itemIndex].cartQuantity += 1
+            //         toast.info(`${payload.title} quantity increased`, {
+            //             position: 'bottom-left'
+            //         })
+            //     } else {
+            //         const newCart = { ...payload }
+            //         state.cart.push(newCart)
+            //         toast.success(`${payload.title}  added to cart`, {
+            //             position: 'bottom-left'
+            //         })
+            //     }
+            //     localStorage.setItem("cartItems", JSON.stringify(state.cart));
+            // }
+
             localStorage.setItem("cartItems", JSON.stringify(state.cart));
 
         },
@@ -87,7 +112,6 @@ export const cartSlice = createSlice({
             state.cartTotalQuantity = quantity
         },
         removeItem: (state: any, { payload }) => {
-
             const newItems = state.cart.filter(item => item._id !== payload._id)
             state.cart = newItems
             localStorage.setItem("cartItems", JSON.stringify(state.cart));

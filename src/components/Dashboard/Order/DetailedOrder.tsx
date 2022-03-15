@@ -147,13 +147,14 @@ export default function DetailedOrder() {
                                                             open={open}
                                                             onClose={handleClose}
                                                             onOpen={handleOpen}
-                                                            value={details.status || status}
+                                                            value={status || details.status}
                                                             label="Status"
                                                             onChange={(e) => setStatus(e.target.value)}
                                                         >
-                                                            <MenuItem value={'Pending'}>
-                                                                <em>Pending</em>
+                                                            <MenuItem value={'Placed'}>
+                                                                <em>Placed</em>
                                                             </MenuItem>
+                                                            <MenuItem value={'Accepted'}>Accepted</MenuItem>
                                                             <MenuItem value={'Packed'}>Packed</MenuItem>
                                                             <MenuItem value={'Shipped'}>Shipped</MenuItem>
                                                             <MenuItem value={'Delivered'}>Delivered</MenuItem>

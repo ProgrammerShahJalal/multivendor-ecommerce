@@ -1,12 +1,12 @@
 import React, { useEffect, useState } from 'react';
 import { useParams } from 'react-router-dom';
-
 import { Swiper, SwiperSlide } from "swiper/react";
 import { FreeMode, Navigation, Thumbs } from "swiper";
 import Magnifier from "react-magnifier";
 import { useDispatch } from 'react-redux';
 import { addToCart } from '../../redux/cartSlice';
 import RelatedProducts from '../RelatedProducts/RelatedProducts';
+import { addToWishlist } from '../../redux/wishlistSlice';
 
 const SingleProduct = () => {
     const { id } = useParams();
@@ -14,6 +14,7 @@ const SingleProduct = () => {
     const [quantity, setQuantity] = useState<string>("1")
     const [isLoading, setIsLoading] = useState<boolean>(false)
     const [attributes, setAttributes] = useState<any>([]);
+    const [thumbsSwiper, setThumbsSwiper] = useState<any>(null);
 
     useEffect(() => {
         setIsLoading(true)
@@ -35,7 +36,7 @@ const SingleProduct = () => {
 
     const dispatch = useDispatch()
     const handleAddToCart = (product) => {
-        if (attributes.length === 0) {
+        if (product.attributes.length > 0 && attributes.length === 0) {
             return alert('Please select any attributes')
         }
         dispatch(addToCart(product))
@@ -44,7 +45,7 @@ const SingleProduct = () => {
     console.log(attributes, 'attributes');
 
 
-    const [thumbsSwiper, setThumbsSwiper] = useState<any>(null);
+
 
 
     const handleAttribute = (e) => {
@@ -74,7 +75,9 @@ const SingleProduct = () => {
                                     price: parseInt(product.sale_price ? product.sale_price : product.reg_price),
                                     attributes: attributes,
                                     cartQuantity: parseInt(quantity),
-                                    vendor: 'fathekarim3@gmail.com'
+                                    vendor: {
+                                        email: product?.publisherDetails?.publisher || null
+                                    }
                                 }
 
                                 return <>
@@ -179,7 +182,9 @@ const SingleProduct = () => {
                                                     </select>
                                                 </div>
 
-                                                {product.attributes ? product?.attributes.map((attr) => {
+                                                {product.attributes.length > 0 ? product?.attributes.map((attr) => {
+                                                    console.log(product.attributes.length, 'product.attributes.length');
+
                                                     return <div className=" mr-6 items-center">
                                                         <span className="mr-3"><b>{attr.label}</b></span><br />
                                                         <div className="relative">
@@ -215,7 +220,8 @@ const SingleProduct = () => {
                                                 {/* <span className="title-font font-medium text-2xl text-gray-900">${product.price | 0}        <span className='line-through text-gray-500'>{product?.sale_price}</span>
                                                 </span> */}
                                                 <button onClick={() => handleAddToCart(detailProduct)} className="flex ml-auto text-white bg-indigo-500 border-0 py-2 px-6 focus:outline-none hover:bg-indigo-600 rounded items-center">Add to cart</button>
-                                                <button className="rounded-full w-10 h-10 bg-gray-200 p-0 border-0 inline-flex items-center justify-center text-gray-500 ml-4">
+
+                                                <button onClick={() => dispatch((addToWishlist(product)))} className="rounded-full w-10 h-10 bg-gray-200 p-0 border-0 inline-flex items-center justify-center text-gray-500 ml-4">
                                                     <svg fill="currentColor" stroke-linecap="round" stroke-linejoin="round" strokeWidth="2" className="w-5 h-5" viewBox="0 0 24 24">
                                                         <path d="M20.84 4.61a5.5 5.5 0 00-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 00-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 000-7.78z"></path>
                                                     </svg>
