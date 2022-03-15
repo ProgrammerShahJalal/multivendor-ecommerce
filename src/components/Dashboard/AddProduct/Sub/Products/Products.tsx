@@ -1,4 +1,5 @@
 import React, { useEffect, useState } from 'react';
+import UseAuth from '../../../../../hooks/UseAuth';
 import Categories from '../Categories/Categories';
 type IProduct = {
     _id: string,
@@ -29,13 +30,21 @@ type IProduct = {
 }
 const Products = () => {
     const [products, setProducts] = useState<any[]>([])
+    const { userDetails } = UseAuth()
     useEffect(() => {
-        fetch('https://guarded-ocean-73313.herokuapp.com/products')
-            .then(res => res.json())
-            .then(data => setProducts(data))
-    }, [])
+        if (userDetails.email && userDetails.role === 'vendor') {
+            fetch(`http://localhost:5000/products/${userDetails.email}`)
+                .then(res => res.json())
+                .then(data => setProducts(data))
+        } else {
+            fetch('https://guarded-ocean-73313.herokuapp.com/products')
+                .then(res => res.json())
+                .then(data => setProducts(data))
+        }
 
-    console.log(products);
+    }, [userDetails.email, userDetails.role])
+    console.log('products', products);
+
 
     return (
 
@@ -102,7 +111,7 @@ const Products = () => {
                                 {/* first order start */}
                                 {
                                     products.map(product => {
-                                        return <tr>
+                                        return <tr key={product._id}>
                                             <td className="px-5 py-5 border-b border-gray-200 bg-white dark:bg-slate-800 text-sm">
                                                 <div className="flex items-center">
                                                     <div className="flex-shrink-0 w-10 h-10">

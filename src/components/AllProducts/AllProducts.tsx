@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from 'react';
+import React, { useEffect, useState, FC } from 'react';
 import { Link } from 'react-router-dom';
 import { useDispatch } from 'react-redux';
 import { addToCart } from '../../redux/cartSlice';
@@ -9,7 +9,10 @@ import ProductView from '../ProductView/ProductView';
 import ProductViewSm from '../ProductView/ProductViewSm';
 import { Rating } from '@mui/material';
 
-const AllProducts = () => {
+interface AllProductsProps {
+    translate: (key: string) => string
+}
+const AllProducts: FC<AllProductsProps> = ({ translate }) => {
     const [products, setProducts] = useState<IProduct[]>([]);
     const [selectedProduct, setSelectedProduct] = useState<IProduct>()
     useEffect(() => {
@@ -33,10 +36,10 @@ const AllProducts = () => {
     };
     const handleClose = () => setOpen(false);
     return (
-        <div className="container lg:px-0 md:px-10 px-5 pb-16 mx-auto">
+        <div className="container lg:px-0 md:px-10 px-10 pb-16 mx-auto">
             <h2 className="text-3xl text-center font-extrabold text-gray-900 sm:text-4xl mb-10">
-                <span className="text-5xl pr-3" >Latest</span>
-                <span className=" text-indigo-600 text-5xl">Products</span>
+                <span className="text-5xl pr-3" >{translate('latest')}</span>
+                <span className=" text-indigo-600 text-5xl">{translate('product')}</span>
             </h2>
             <div className="grid place-content-center lg:grid-cols-4 md:grid-cols-3 grid-cols-1 gap-6">
                 {
@@ -48,18 +51,20 @@ const AllProducts = () => {
                                 image: product.images[0]?.src,
                                 category: product.categories[0].label,
                                 price: parseInt(product.sale_price ? product.sale_price : product.reg_price),
-                                // attributes: attributes,
+                                attributes: [],
                                 cartQuantity: 1,
-                                vendor: 'fathekarim3@gmail.com'
+                                vendor: {
+                                    email: product?.publisherDetails?.publisher || null
+                                }
                             }
                             console.log(product);
 
                             return <div className="bg-white shadow-inner overflow-hidden single-card">
 
                                 <div className="relative group">
-                                    <div style={{ height: '250px' }} className='z-100 overflow-hidden'>
-                                        <img src={product.images[0]?.src} className='w-full select-none img z-0 group-hover:hidden block transition object-center' alt="" />
-                                        <img src={product.images[1]?.src} className='w-full select-none hoverImg group-hover:block hidden transition object-center' alt="" />
+                                    <div style={{ height: '300px' }} className='z-100 overflow-hidden'>
+                                        <img src={product.images[0]?.src} className='select-none w-full h-full img z-0 group-hover:hidden block transition object-contain' alt="" />
+                                        <img src={product.images[1]?.src} className='w-full select-none h-full hoverImg group-hover:block hidden transition object-center object-contain' alt="" />
                                     </div>
                                     <div className="absolute inset-0 bg-black bg-opacity-40 flex items-center justify-center gap-2 opacity-0 group-hover:opacity-100 transition">
                                         {/* <Link to={`/product/details/${product._id}`}> */}

@@ -165,7 +165,7 @@ const Products = () => {
 
                     </div>
                     <div className="col-span-3 mb-4">
-                        <select className='w-44 text-sm text-gray-600 dark:text-white px-4 border-gray-300 shadow-sm rounded focus:ring-red-500'>
+                        <select className='w-44 text-sm text-gray-600 px-4 border-gray-300 shadow-sm rounded focus:ring-red-500'>
                             <option>Default Sorting</option>
                             <option>Price low to high</option>
                             <option>Price high to low</option>

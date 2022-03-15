@@ -7,6 +7,7 @@ import { Editor } from "react-draft-wysiwyg";
 import { convertToRaw } from 'draft-js';
 import draftToHtml from 'draftjs-to-html';
 import "react-draft-wysiwyg/dist/react-draft-wysiwyg.css";
+import UseAuth from '../../../hooks/UseAuth';
 
 type attributeValues = {
     label: string, options: [{ label: string, value: string }]
@@ -14,7 +15,7 @@ type attributeValues = {
 type attributes = {
     label: string, value: string
 }
-const AddProduct: React.FunctionComponent = (props) => {
+const AddProduct: React.FunctionComponent = () => {
 
     const [categories, setCategories] = useState<string[]>([])
     const [attributes, setAttributes] = useState<attributes[]>([])
@@ -34,10 +35,15 @@ const AddProduct: React.FunctionComponent = (props) => {
 
     // PRODUCT VALUE
     const [productValue, setProductValue] = useState<any>()
+    // const [userDetails, setUserDetails] = useState<any>()
 
 
     // SELECTED IMAGES FROM MODAL
     const [selectedImages, setSelectedImages] = useState<any[]>([])
+
+    const { userDetails } = UseAuth()
+
+    console.log(userDetails, ' userDetails');
 
 
     // GET ATTRIBUTES LABELS AND VALUES
@@ -52,6 +58,8 @@ const AddProduct: React.FunctionComponent = (props) => {
                 // setAttributeLabel(data)
             })
     }, [])
+
+    // IS IT VENDOR OR ADMIN
 
 
 
@@ -89,15 +97,18 @@ const AddProduct: React.FunctionComponent = (props) => {
     // let newCat: any = []
     const [newCat, setNewCat] = useState()
     const [isLoading, setIsLoading] = useState<boolean>(false)
-    useEffect(() => {
-        setIsLoading(true)
-        fetch('https://guarded-ocean-73313.herokuapp.com/dashboard/categories')
-            .then(res => res.json())
-            .then(data => {
-                const options = data.map(({ options }: any) => options)
-                setNewCat(options)
 
-            }).finally(() => setIsLoading(false))
+    useEffect(() => {
+        if (!newCat) {
+            setIsLoading(true)
+            fetch('https://guarded-ocean-73313.herokuapp.com/dashboard/categories')
+                .then(res => res.json())
+                .then(data => {
+                    const options = data.map(({ options }: any) => options)
+                    setNewCat(options)
+
+                }).finally(() => setIsLoading(false))
+        }
     }, [newCat])
 
 
@@ -120,9 +131,6 @@ const AddProduct: React.FunctionComponent = (props) => {
     const handleProductSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
         e.preventDefault()
 
-        console.log(categories);
-
-
         if (categories.length === 0) {
             return alert('please add category')
         }
@@ -130,7 +138,17 @@ const AddProduct: React.FunctionComponent = (props) => {
             return alert('please add an image')
         }
 
-        const newProduct = { ...productValue, images: selectedImages, categories, product_des: content, newAttributes }
+        const newProduct = {
+            ...productValue,
+            images: selectedImages,
+            categories,
+            product_des: content,
+            newAttributes,
+            vendor: userDetails.role,
+            store: userDetails.store,
+            publisher: userDetails.email
+        }
+        console.log(newProduct, 'newProduct');
 
 
         fetch('https://guarded-ocean-73313.herokuapp.com/dashboard/addProduct', {
@@ -288,7 +306,7 @@ const AddProduct: React.FunctionComponent = (props) => {
                                                 setContent(draftToHtml(convertToRaw(newState.getCurrentContent())))
                                             }}
                                         />
-                                        {/* <textarea className="shadow form-textarea mt-1 block w-full border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline" onBlur={handleGetProductValues} name='product_des' rows={5} placeholder="Description"></textarea> */}
+                                        {/* <textarea className="shadow form-textarea mt-1 block w-full border rounded py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline" onBlur={handleGetProductValues} name='product_des' rows={5} placeholder="Description"></textarea> */}
                                     </div>
 
 
@@ -297,7 +315,7 @@ const AddProduct: React.FunctionComponent = (props) => {
 
                             </div>
                         </div>
-                        <div className="shadow sm:rounded-md sm:overflow-hidden bg-white dark:bg-slate-800 px-4 py-5 bg-white dark:bg-slate-800 space-y-6 sm:p-6">
+                        <div className="shadow sm:rounded-md sm:overflow-hidde px-4 py-5 bg-white dark:bg-slate-800 space-y-6 sm:p-6">
                             <section className='image-upload'>
                                 <label className='mt-1 flex justify-center px-6 pt-5 pb-6 border-2 border-gray-300 border-dashed rounded-md flex-col items-center ' onClick={() => setShowModal(true)}>
                                     <div>
@@ -327,7 +345,7 @@ const AddProduct: React.FunctionComponent = (props) => {
                                         ''
                                     ))} */}
 
-                                <div className=" grid grid-cols-5 gap-4 mx-auto gap-6">
+                                <div className=" grid grid-cols-5 mx-auto gap-6">
                                     {selectedImages &&
                                         selectedImages.map((image: { id: number, src: string }, index: number) => {
                                             return (

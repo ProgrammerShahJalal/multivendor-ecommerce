@@ -1,10 +1,12 @@
 import { configureStore } from '@reduxjs/toolkit'
 import cartSlice, { getTotal } from './redux/cartSlice'
+import wishlistSlice from './redux/wishlistSlice'
 
 
 const store = configureStore({
     reducer: {
-        cart: cartSlice
+        cart: cartSlice,
+        wishlist: wishlistSlice
     },
 })
 
