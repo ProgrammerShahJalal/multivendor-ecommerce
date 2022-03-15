@@ -85,7 +85,7 @@ const ProductSearchBar: React.FunctionComponent = () => {
     }
 
     return (
-        <div className="container mx-auto py-5 my-4">
+        <div className="container mx-auto pt-2 pb-5 my-4">
             <div className="text-xl text-center p-4">
                 <input
                     className='text-center border w-96 py-2 rounded-full'

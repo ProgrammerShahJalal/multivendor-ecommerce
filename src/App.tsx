@@ -51,6 +51,7 @@ import AffiliateShop from "./components/Shop/AffiliateShop";
 import SiteUser from "./components/Pages/AddReview/SiteUser";
 import DetailedOrder from "./components/Dashboard/Order/DetailedOrder";
 import SingleProduct from "./components/AllProducts/SingleProduct";
+import SearchField from "./components/Pages/SearchField/SearchField";
 
 
 
@@ -83,6 +84,7 @@ function App() {
             <Route path='/contact' element={<Contact />} />
             <Route path='/about' element={<About />} />
             <Route path='/offer' element={<Promo />} />
+            <Route path='/searchField' element={<SearchField />} />
             <Route path='/unitTesting' element={<UnitTesting />} />
             <Route path='/specialDeal' element={<SpecialDeal translate={translate} />} />
             <Route path='/productDetails/men/:id' element={<MenProductsDetail />} />
