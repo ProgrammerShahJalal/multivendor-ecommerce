@@ -27,8 +27,10 @@ export default class App extends React.PureComponent<IAppProps> {
                                 <hr className='mb-4 w-1/3' />
                                 <div className='text-gray-500' >
                                     <div className="cursor-pointer footer-link hover:text-blue-200  pb-4"> <i className='fa fa-chevron-right text-blue-200'></i> <Link to="/home">Home</Link></div>
-                                    <div className="cursor-pointer footer-link hover:text-blue-200  pb-4"> <i className='fa fa-chevron-right text-blue-200'></i><Link to="/about">About Us</Link></div>
-                                    <div className="cursor-pointer footer-link hover:text-blue-200  pb-4"> <i className='fa fa-chevron-right text-blue-200'></i> Delivery Information</div>
+                                    <div className="cursor-pointer footer-link hover:text-blue-200  pb-4"> <i className='fa fa-chevron-right text-blue-200'></i><Link to="/about"> About Us</Link></div>
+                                    <Link to="/team">
+                                        <div className="cursor-pointer footer-link hover:text-blue-200  pb-4"> <i className='fa fa-chevron-right text-blue-200'></i> Our Team</div>
+                                    </Link>
                                     <div className="cursor-pointer footer-link hover:text-blue-200  pb-4"> <i className='fa fa-chevron-right text-blue-200'></i> <Link to="/contact">Contact Us</Link></div>
                                 </div>
 
@@ -41,12 +43,12 @@ export default class App extends React.PureComponent<IAppProps> {
                                         <div className="cursor-pointer footer-link pb-4 hover:text-blue-200"> <i className='fa fa-chevron-right text-blue-200'></i> Special Offers</div>
                                     </Link>
                                     <Link to='/privacy-policy'>
-                                    <p className="cursor-pointer footer-link hover:text-blue-200  pb-4"> <i className='fa fa-chevron-right text-blue-200'></i> Privacy & Policy</p>
+                                        <p className="cursor-pointer footer-link hover:text-blue-200  pb-4"> <i className='fa fa-chevron-right text-blue-200'></i> Privacy & Policy</p>
                                     </Link>
                                     <Link to='/customer-service'>
-                                    <p className="cursor-pointer footer-link hover:text-blue-200  pb-4"> <i className='fa fa-chevron-right text-blue-200'></i> Customer Service</p>
+                                        <p className="cursor-pointer footer-link hover:text-blue-200  pb-4"> <i className='fa fa-chevron-right text-blue-200'></i> Customer Service</p>
                                     </Link>
-                                    
+
                                     <Link to='/terms&condition'><p className="cursor-pointer footer-link hover:text-blue-200  pb-4">  <i className='fa fa-chevron-right text-blue-200'></i> Terms & Conditions</p></Link>
                                 </div>
                             </div>
@@ -63,7 +65,7 @@ export default class App extends React.PureComponent<IAppProps> {
                     <div className='max-w-7xl flex flex-col sm:flex-row py-4 mx-auto justify-between items-center'>
                         <div className='text-center'>
                             <div>
-                                © 2022 Unity Mart by  <strong className='text-blue-200'> Unity Team</strong>  All Rights Reserved.
+                                © 2022 Unity Mart by  <strong className='text-blue-200'> <Link to="/team">Unity Team</Link> </strong>  All Rights Reserved.
                             </div>
                         </div>
                         <div className='text-center text-xl text-white mb-2'>

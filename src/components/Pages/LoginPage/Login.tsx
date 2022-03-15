@@ -33,7 +33,7 @@ const LoginForm = () => {
     }
 
     return (
-        <div className="relative min-h-screen bg-purple-100 backdrop-blur flex justify-center items-center bg-texture bg-cover py-28 sm:py-0">
+        <div style={{ padding: '70px 0px' }} className="relative min-h-screen bg-purple-100 backdrop-blur flex justify-center items-center bg-texture bg-cover py-28 sm:py-0">
             <div className="p-4 sm:p-8 flex-1 ">
                 <div className="max-w-[420px] min-w-[320px] bg-white dark:bg-slate-800 rounded-b-3xl mx-auto">
                     <div className="relative h-auto">
