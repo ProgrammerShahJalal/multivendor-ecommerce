@@ -43,7 +43,6 @@ function Dashboard() {
                         </ul>
 
                     </li>
-<<<<<<< HEAD
                     {/* <li onClick={subMenuToggle} className="">
                         <div className="iocn-link">
                             <Link to={`/dashboard/affiliate-dashboard`}>
@@ -60,10 +59,6 @@ function Dashboard() {
 
                     </li> */}
                     {userDetails.email && userDetails.role === 'admin' ? <li onClick={subMenuToggle} className="">
-=======
-                    <li onClick={subMenuToggle} className="">
-                    
->>>>>>> 2acdebc3cc6f8246e9f1153caddff985a1758f88
                         <div className="iocn-link">
                             <Link to={`/dashboard/affiliate-dashboard`}>
                                 <i className="fa-regular fa-link"></i>
@@ -78,13 +73,9 @@ function Dashboard() {
                             <li><Link to={`/dashboard/affiliate-links`}>Affiliate Links</Link></li>
                             {/* <li><Link to={`/dashboard/affiliate-links`}>Withdraw</Link></li> */}
                         </ul>
-<<<<<<< HEAD
 
 
                     </li> : ''}
-=======
-                    </li>
->>>>>>> 2acdebc3cc6f8246e9f1153caddff985a1758f88
 
                     <li onClick={subMenuToggle} className="">
                         <div className="iocn-link">
@@ -155,7 +146,7 @@ function Dashboard() {
             <section className="home-section">
                 <div className='container mx-auto'><Outlet></Outlet></div>
             </section>
-            
+
         </div>
     );
 }
