@@ -1,10 +1,16 @@
-import * as React from 'react';
+import axios from 'axios';
+import React, { useEffect, useState } from 'react';
+import UseAuth from '../../hooks/UseAuth';
 
-export interface IAppProps {
-}
 
-export default class App extends React.PureComponent<IAppProps> {
-    public render() {
+const OrderTracking = () => {
+    const {user}= UseAuth();
+    const [myOrders, setMyOrders] = useState<any[]>([]);
+    useEffect(() => {
+        axios.get('https://guarded-ocean-73313.herokuapp.com/dashboard/orders?userEmail=fathekarim3@gmail.com')
+            .then(res => setMyOrders(res.data))
+    }, [])
+    console.log(myOrders);
         return (
             <div>
                 <div className=' flex justify-center items-center gap-3'>
@@ -153,5 +159,9 @@ export default class App extends React.PureComponent<IAppProps> {
                 </div>
             </div>
         );
-    }
-}
+    };
+
+export default OrderTracking;
+
+
+

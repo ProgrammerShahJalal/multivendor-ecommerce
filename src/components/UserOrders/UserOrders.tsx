@@ -68,7 +68,7 @@ const UserOrders = () => {
 
                                             <div className='text-left text-lg'>
                                                 <div className="">{order?.products[0]?.title}</div>
-                                                <div className="">{order?.paymentDetails.date}</div>
+                                                <div className="">{order?.paymentDetails.date} | 12:05 PM</div>
                                             </div>
 
                                             <div className="rating flex items-center pt-1"> <img src="https://www.freepnglogos.com/uploads/like-png/like-png-hand-thumb-sign-vector-graphic-pixabay-39.png" alt="" /><span className="px-2">Rating:</span> <span className="fas fa-star"></span> <span className="fas fa-star"></span> <span className="fas fa-star"></span> <span className="fas fa-star"></span> <span className="far fa-star"></span> </div>
@@ -81,11 +81,11 @@ const UserOrders = () => {
                                             </div>
                                             <div className="progressbar-track">
                                                 <ul className="progressbar gap-3">
-                                                    <li id="step-1" className={`${order?.status === 'Placed' ? 'text-muted green mr-3' : 'gray mr-3'}`}> <button className="fas fa-gift"></button> </li>
-                                                    <li id="step-2" className={`${order?.status === 'Accepted' ? 'text-muted green mr-3' : 'gray mr-3'}`}> <button className="fas fa-check"></button> </li>
-                                                    <li id="step-3" className={`${order?.status === 'Packed' ? 'text-muted green mr-3' : 'gray mr-3'}`}> <button className="fas fa-box"></button> </li>
-                                                    <li id="step-4" className={`${order?.status === 'Shipped' ? 'text-muted green mr-3' : 'gray mr-3'}`}> <button className="fas fa-truck"></button> </li>
-                                                    <li id="step-5" className={`${order?.status === 'Delivered' ? 'text-muted green ' : 'gray'}`}> <button className="fas fa-box-open"></button> </li>
+                                                    <li id="step-1" className="text-muted gray mr-3"> <button className="fas fa-gift"></button> </li>
+                                                    <li id="step-2" className="text-muted gray mr-3"> <button className="fas fa-check"></button> </li>
+                                                    <li id="step-3" className="text-muted gray mr-3"> <button className="fas fa-box"></button> </li>
+                                                    <li id="step-4" className="text-muted gray mr-3"> <button className="fas fa-truck"></button> </li>
+                                                    <li id="step-5" className="text-muted green "> <button className="fas fa-box-open"></button> </li>
                                                 </ul>
                                                 <div id="tracker"></div>
                                             </div>
@@ -106,4 +106,3 @@ const UserOrders = () => {
 };
 
 export default UserOrders;
-
