@@ -31,7 +31,7 @@ export default function DetailBlogPage() {
                 </div>
                 <div className="lg:w-1/4">
                     <LottieBlog />
-                    <h2 className="text-xl font-bold">Related Blogs</h2>
+                    <h2 className="text-xl font-bold dark:text-white">Related Blogs</h2>
                     <div className="grid lg:grid-cols-1 md:grid-cols-2 gap-4">
                         {
                             blogs.slice(5, 10).map(blog => <RelatedBlog key={blog._id} blog={blog}></RelatedBlog>)
