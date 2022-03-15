@@ -56,6 +56,7 @@ import StoreListCards from "./components/StoreListCard/StoreListCard";
 import TermsCondition from "./components/TermsCondition/TermsCondition";
 import CustomersService from "./components/CustomersService/CustomersService";
 import PrivacyPolicy from "./components/PrivacyPolicy/PrivacyPolicy";
+import UserOrders from "./components/UserOrders/UserOrders";
 
 
 
@@ -85,6 +86,7 @@ function App() {
           <Routes>
             <Route path='/' element={<Home />} />
             <Route path='/home' element={<Home />} />
+            <Route path='/userOrders' element={<UserOrders />} />
             <Route path='/contact' element={<Contact />} />
             <Route path='/about' element={<About />} />
             <Route path='/offer' element={<Promo />} />
@@ -118,8 +120,6 @@ function App() {
             {/* DASHBOARD ROUTES */}
             <Route path="/dashboard" element={<AdminRoute><Dashboard /></AdminRoute>} >
               <Route path="media" element={<Media />}></Route>
-
-
               <Route path="affiliate-dashboard" element={<Affiliate />}></Route>
               <Route path="affiliate-links" element={<AffiliateLinks />}></Route>
               <Route path="addProduct" element={<AddProduct />}></Route>
