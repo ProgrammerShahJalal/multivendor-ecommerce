@@ -33,7 +33,28 @@ const AllOrders = () => {
         }
 
     }, [userDetails.role, userDetails.email])
-    console.log(orders)
+    // DELETE ORDER
+    const deleteOrderFunc = (id) => {
+
+        if (window.confirm('Are you sure you want to delete?')) {
+            setIsLoading(true)
+            fetch(`https://guarded-ocean-73313.herokuapp.com/dashboard/orders/${id}`, {
+                method: 'DELETE'
+            }).then(res => res.json())
+                .then(data => {
+                    console.log(data);
+                    if (data.deletedCount) {
+                        alert('Order Deleted')
+                        const remainingOrders = orders.filter(order => order._id !== id)
+                        setOrders(remainingOrders)//
+                    }
+
+                })
+                .finally(() => setIsLoading(false))
+        }
+
+    }
+
 
     return (
 
@@ -192,7 +213,7 @@ const AllOrders = () => {
                                                 <p className="text-gray-900 whitespace-no-wrap text-left">Fathe Store</p>
                                             </td>
                                             <td className="px-5 py-5 border-b border-gray-200 bg-white text-sm">
-                                                <p className="text-gray-900 whitespace-no-wrap text-left">${(order.paymentDetails.amount / 1000) * 0.03}</p>
+                                                <p className="text-gray-900 whitespace-no-wrap text-left">${((order.paymentDetails.amount / 1000) * 0.03).toFixed(2)}</p>
                                             </td>
                                             <td className="px-5 py-5 border-b border-gray-200 bg-white text-sm text-left">
                                                 <span
@@ -208,7 +229,7 @@ const AllOrders = () => {
                                                 </Link>
                                             </td>
                                             <td className="px-5 py-5 border-b border-gray-200 bg-white text-sm">
-                                                <p className="text-white rounded whitespace-no-wrap text-left bg-red-500 p-2 w-16">
+                                                <p onClick={() => deleteOrderFunc(order._id)} className="text-white rounded whitespace-no-wrap text-left bg-red-500 cursor-pointer p-2 w-16">
                                                     Delete
                                                 </p>
                                             </td>

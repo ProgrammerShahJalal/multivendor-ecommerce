@@ -312,9 +312,9 @@ const Header: FC<HeaderProps> = ({ fixed, transparent }) => {
                                 <div className="border-t border-gray-200 py-6 px-4 space-y-6">
                                     {
                                         user.email ? <div className="flow-root">
-                                            <p onClick={logout} className="-m-2 p-2 block font-medium text-gray-900 dark:text-white">
+                                            <Link to="/"> <p onClick={() => logout()} className="-m-2 p-2 block font-medium text-gray-900 dark:text-white">
                                                 Logout
-                                            </p>
+                                            </p></Link>
                                         </div> :
                                             <div>
                                                 <div className="flow-root">

@@ -81,11 +81,11 @@ const UserOrders = () => {
                                             </div>
                                             <div className="progressbar-track">
                                                 <ul className="progressbar gap-3">
-                                                    <li id="step-1" className={`${order?.status === 'Placed' ? 'text-muted green mr-3' : 'gray'}`}> <button className="fas fa-gift"></button> </li>
-                                                    <li id="step-2" className={`${order?.status === 'Accepted' ? 'text-muted green mr-3' : 'gray'}`}> <button className="fas fa-check"></button> </li>
-                                                    <li id="step-3" className={`${order?.status === 'Packed' ? 'text-muted green mr-3' : 'gray'}`}> <button className="fas fa-box"></button> </li>
-                                                    <li id="step-4" className={`${order?.status === 'Shipped' ? 'text-muted green mr-3' : 'gray'}`}> <button className="fas fa-truck"></button> </li>
-                                                    <li id="step-5" className={`${order?.status === 'Delivered' ? 'text-muted green mr-3' : 'gray'}`}> <button className="fas fa-box-open"></button> </li>
+                                                    <li id="step-1" className={`${order?.status === 'Placed' ? 'text-muted green mr-3' : 'gray mr-3'}`}> <button className="fas fa-gift"></button> </li>
+                                                    <li id="step-2" className={`${order?.status === 'Accepted' ? 'text-muted green mr-3' : 'gray mr-3'}`}> <button className="fas fa-check"></button> </li>
+                                                    <li id="step-3" className={`${order?.status === 'Packed' ? 'text-muted green mr-3' : 'gray mr-3'}`}> <button className="fas fa-box"></button> </li>
+                                                    <li id="step-4" className={`${order?.status === 'Shipped' ? 'text-muted green mr-3' : 'gray mr-3'}`}> <button className="fas fa-truck"></button> </li>
+                                                    <li id="step-5" className={`${order?.status === 'Delivered' ? 'text-muted green ' : 'gray'}`}> <button className="fas fa-box-open"></button> </li>
                                                 </ul>
                                                 <div id="tracker"></div>
                                             </div>
