@@ -81,10 +81,10 @@ const UserOrders = () => {
                             </div>
                             <div className="progressbar-track">
                                 <ul className="progressbar gap-3">
-                                    <li id="step-1" className="text-muted green mr-3"> <button className="fas fa-gift"></button> </li>
-                                    <li id="step-2" className="text-muted green mr-3"> <button className="fas fa-check"></button> </li>
-                                    <li id="step-3" className="text-muted green mr-3"> <button className="fas fa-box"></button> </li>
-                                    <li id="step-4" className="text-muted green mr-3"> <button className="fas fa-truck"></button> </li>
+                                   <li id="step-1" className="text-muted gray mr-3"> <button className="fas fa-gift"></button> </li>
+                                    <li id="step-2" className="text-muted gray mr-3"> <button className="fas fa-check"></button> </li>
+                                    <li id="step-3" className="text-muted gray mr-3"> <button className="fas fa-box"></button> </li>
+                                    <li id="step-4" className="text-muted gray mr-3"> <button className="fas fa-truck"></button> </li> 
                                     <li id="step-5" className="text-muted green "> <button className="fas fa-box-open"></button> </li>
                                 </ul>
                                 <div id="tracker"></div>
