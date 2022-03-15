@@ -9,7 +9,7 @@ const AllOrders = () => {
     useEffect(() => {
         setIsLoading(true)
         if (userDetails.role === 'vendor') {
-            fetch(`http://localhost:5000/dashboard/vendor-orders?email=${userDetails.email}`)
+            fetch(`https://guarded-ocean-73313.herokuapp.com/dashboard/vendor-orders?email=${userDetails.email}`)
                 .then(res => res.json())
                 .then(data => {
 

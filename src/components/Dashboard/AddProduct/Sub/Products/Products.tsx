@@ -33,7 +33,7 @@ const Products = () => {
     const { userDetails } = UseAuth()
     useEffect(() => {
         if (userDetails.email && userDetails.role === 'vendor') {
-            fetch(`http://localhost:5000/products/${userDetails.email}`)
+            fetch(`https://guarded-ocean-73313.herokuapp.com/products/${userDetails.email}`)
                 .then(res => res.json())
                 .then(data => setProducts(data))
         } else {
