@@ -1,6 +1,7 @@
 import { useState } from 'react';
 import { Link, Outlet } from 'react-router-dom';
 // import './Dashboard.css'
+import { DataChart } from './../../DataChart/HorizontalChart';
 
 const Dashboard = () => {
     const [isActive, setActive] = useState(true);
@@ -19,14 +20,6 @@ const Dashboard = () => {
                     <i className='fa-solid fa-bars' id="btn" onClick={toggleClass}></i>
                 </div>
                 <ul className="nav_list">
-
-                    {/* <li>
-                        <Link to={`/dashboard/media`}>
-                            <i className="fa-solid fa-users"></i>
-                            <span className="links_name">Media</span>
-                        </Link>
-                        <span className="tooltip">Media</span>
-                    </li> */}
                     <li>
                         <Link to={`/dashboard/my-blog`}>
                             <i className="fa-solid fa-users"></i>
@@ -147,6 +140,7 @@ const Dashboard = () => {
                 </div>
             </div>
             <div className="home_content">
+                {/* <DataChart/> */}
                 <Outlet></Outlet>
             </div>
         </div>

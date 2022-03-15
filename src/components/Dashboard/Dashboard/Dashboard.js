@@ -1,6 +1,8 @@
 import { useState } from 'react';
 import { Link, Outlet } from 'react-router-dom';
 import UseAuth from '../../../hooks/UseAuth';
+import { DataChart } from '../../DataChart/HorizontalChart';
+import LineCharts from '../../DataChart/LineChart';
 import './Dashboard.css'
 
 
@@ -128,7 +130,10 @@ function Dashboard() {
                 </ul>
             </div>
             <section className="home-section">
-                <div className='container mx-auto'><Outlet></Outlet></div>
+                <div className='container mx-auto'><Outlet></Outlet>
+                <DataChart/>
+                <LineCharts/>
+                </div>
             </section>
             
         </div>

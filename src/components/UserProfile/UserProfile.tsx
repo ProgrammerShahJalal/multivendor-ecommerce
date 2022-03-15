@@ -56,7 +56,7 @@ export default function UserProfile() {
 
           </ul>
         </div>
-        <div style={{
+        {/* <div style={{
           width: '600px',
           height: '600px',
           // marginLeft:'70px'
@@ -71,7 +71,7 @@ export default function UserProfile() {
         }} className='items-center right-50 justify-center'>
           <LineChart/>
 
-        </div>
+        </div> */}
       </div>
 
     </div>
