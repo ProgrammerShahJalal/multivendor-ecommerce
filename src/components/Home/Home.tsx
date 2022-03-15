@@ -14,6 +14,10 @@ import Notify from '../Notify/Notify';
 import PaginatedBlogsHome from '../Pages/PaginatedBlogsItems/PaginatedBlogsHome';
 import Products from '../Products/Products';
 // import Alan from './Alan-AI/Alan';
+<<<<<<< HEAD
+=======
+// import Reviews from '../Pages/Reviews/Reviews';
+>>>>>>> 2acdebc3cc6f8246e9f1153caddff985a1758f88
 import SpecialDeal from './../SpecialDeal/SpecialDeal';
 import { LangContext } from '../Pages/MultiLanguage/languagecontext/lang';
 import AllProducts from '../AllProducts/AllProducts';
@@ -38,7 +42,11 @@ export default function Home() {
             <Banners />
             <Notify />
             <TopBanner />
+<<<<<<< HEAD
             <SpecialDeal translate={translate} />
+=======
+            <SpecialDeal />
+>>>>>>> 2acdebc3cc6f8246e9f1153caddff985a1758f88
             <BannerGadget />
             <Products translate={translate} />
             <AllProducts translate={translate} />

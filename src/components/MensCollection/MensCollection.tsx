@@ -78,9 +78,9 @@ const MensCollection = () => {
                     products.map((product) => (
                         <div className="bg-white dark:bg-slate-800 shadow-inner overflow-hidden single-card">
                             <div className="relative group">
-                                <div style={{ height: '250px' }} className='z-100 bg-white overflow-hidden'>
-                                    <img src={product.hoverImg} className='select-none img z-0 group-hover:hidden block transition' alt="" />
-                                    <img src={product.img3} className='select-none img z-0 group-hover:block hidden transition' alt="" />
+                                <div style={{ height: '300px' }} className='bg-white overflow-hidden'>
+                                    <img src={product.hoverImg} className='select-none w-full h-full object-contain img group-hover:hidden block transition' alt="" />
+                                    <img src={product.img3} className='select-none img w-full h-full object-contain group-hover:block hidden transition' alt="" />
                                 </div>
                                 <div className="absolute inset-0 bg-black bg-opacity-40 flex items-center justify-center gap-2 opacity-0 group-hover:opacity-100 transition">
                                     {/* <Link to={`/product/details/${product._id}`}> */}
