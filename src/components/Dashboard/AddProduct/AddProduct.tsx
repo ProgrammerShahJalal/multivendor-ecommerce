@@ -306,7 +306,7 @@ const AddProduct: React.FunctionComponent = () => {
                                                 setContent(draftToHtml(convertToRaw(newState.getCurrentContent())))
                                             }}
                                         />
-                                        {/* <textarea className="shadow form-textarea mt-1 block w-full border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline" onBlur={handleGetProductValues} name='product_des' rows={5} placeholder="Description"></textarea> */}
+                                        {/* <textarea className="shadow form-textarea mt-1 block w-full border rounded py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline" onBlur={handleGetProductValues} name='product_des' rows={5} placeholder="Description"></textarea> */}
                                     </div>
 
 
@@ -315,7 +315,7 @@ const AddProduct: React.FunctionComponent = () => {
 
                             </div>
                         </div>
-                        <div className="shadow sm:rounded-md sm:overflow-hidden bg-white dark:bg-slate-800 px-4 py-5 bg-white dark:bg-slate-800 space-y-6 sm:p-6">
+                        <div className="shadow sm:rounded-md sm:overflow-hidde px-4 py-5 bg-white dark:bg-slate-800 space-y-6 sm:p-6">
                             <section className='image-upload'>
                                 <label className='mt-1 flex justify-center px-6 pt-5 pb-6 border-2 border-gray-300 border-dashed rounded-md flex-col items-center ' onClick={() => setShowModal(true)}>
                                     <div>
@@ -345,7 +345,7 @@ const AddProduct: React.FunctionComponent = () => {
                                         ''
                                     ))} */}
 
-                                <div className=" grid grid-cols-5 gap-4 mx-auto gap-6">
+                                <div className=" grid grid-cols-5 mx-auto gap-6">
                                     {selectedImages &&
                                         selectedImages.map((image: { id: number, src: string }, index: number) => {
                                             return (

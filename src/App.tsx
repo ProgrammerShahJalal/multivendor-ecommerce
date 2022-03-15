@@ -51,12 +51,12 @@ import AffiliateShop from "./components/Shop/AffiliateShop";
 import SiteUser from "./components/Pages/AddReview/SiteUser";
 import DetailedOrder from "./components/Dashboard/Order/DetailedOrder";
 import SingleProduct from "./components/AllProducts/SingleProduct";
-import SearchField from "./components/Pages/SearchField/SearchField";
 import VendorInformations from "./components/Pages/VendorPages/VendorInformations";
 import VendorRegister from "./components/Pages/VendorPages/VendorRegister";
 import AdminRoute from "./components/Route/AdminRoute/AdminRoute";
 import VendorCard from "./components/VenderShopPage/VendorCard";
 import StoreListCards from "./components/StoreListCard/StoreListCard";
+import SearchField from "./components/Pages/SearchField/SearchField";
 
 
 

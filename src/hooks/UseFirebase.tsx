@@ -206,8 +206,7 @@ export const UseFirebase = (
             body: JSON.stringify(user)
         })
     }
-
-
-    return { RegisterUser, SignIn, user, logout, error, isLoading, handleGoogleSignIn, handleFacebookSIgnIn, userDetails };
-
+    return { userDetails, RegisterUser, SignIn, user, logout, error, isLoading, handleGoogleSignIn, handleFacebookSIgnIn };
 };
+
+
