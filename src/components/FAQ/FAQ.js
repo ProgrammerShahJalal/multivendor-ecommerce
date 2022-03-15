@@ -1,8 +1,10 @@
-import { useState } from "react";
+import { useContext, useState } from "react";
 import LottieFaq from "../Lottie/LottieFaq";
+import { LangContext } from "../Pages/MultiLanguage/languagecontext/lang";
 
 
 const Item = ({ title, children }) => {
+
   const [isOpen, setIsOpen] = useState(false);
   return (
     <div className="border rounded shadow-sm">
@@ -41,11 +43,12 @@ const Item = ({ title, children }) => {
   );
 };
 export const Faq = () => {
+  const { dispatch: { translate } } = useContext(LangContext);
   return (
     <div className="px-4 py-16 mx-auto sm:max-w-xl md:max-w-full lg:max-w-screen-xl md:px-24 lg:px-8 lg:py-20">
       <div className="max-w-xl sm:mx-auto lg:max-w-2xl">
         <div className=" sm:text-center">
-          <h2 className="text-4xl text-black dark:text-white">Frequently Asked Question</h2>
+          <h2 className="text-4xl text-black dark:text-white">{translate('faq')}</h2>
         </div>
       </div>
       <br />
@@ -58,16 +61,22 @@ export const Faq = () => {
         </div>
         <div className="space-y-4 text-black dark:text-white">
           <Item className='text-black dark:text-white' title={<b>How can I check my products?</b>}>
-            Confirm that the product you have bought are from unityMart. Tilt the carton check the sticker on the carton and scan the QR code using our app.
+            <p className="dark:text-white">
+              Confirm that the product you have bought are from unityMart. Tilt the carton check the sticker on the carton and scan the QR code using our app.
+            </p>
           </Item>
           <Item className='text-black dark:text-white' title={<b>How to get coupons?</b>}>
-            Get coupon code and apply on you purchase for discount. Just go to coupons section than play games and collect coupons.
+            <p className="dark:text-white">
+              Get coupon code and apply on you purchase for discount. Just go to coupons section than play games and collect coupons.
+            </p>
           </Item>
           <Item className='text-black dark:text-white' title={<b>How to track my orders?</b>}>
-            Worried about your orders? Nothing to get worried just go to my orders section then just check the status. If still having confusion contact us.
+            <p className="dark:text-white">
+              Worried about your orders? Nothing to get worried just go to my orders section then just check the status. If still having confusion contact us.
+            </p>
           </Item>
           <Item className='text-black dark:text-white' title={<b>How to request for refund?</b>}>
-            Didn't got the perfect products, you may return it we will refund you. If you just received your order just apply from my order section for refund.
+            <p className="dark:text-white"> Didn't got the perfect products, you may return it we will refund you. If you just received your order just apply from my order section for refund.</p>
           </Item>
         </div>
 

@@ -1,4 +1,8 @@
+import { CircularProgress } from '@mui/material';
 import React, { useEffect, useState } from 'react';
+import { Link } from 'react-router-dom';
+import UseAuth from '../../../../../hooks/UseAuth';
+import { DeleteProductApi } from '../../../../../Services/DashboardProducts/DeleteProductApi';
 import Categories from '../Categories/Categories';
 type IProduct = {
     _id: string,
@@ -29,13 +33,28 @@ type IProduct = {
 }
 const Products = () => {
     const [products, setProducts] = useState<any[]>([])
+    const [isLoading, setIsLoading] = useState<boolean>(false)
+    const { userDetails } = UseAuth()
     useEffect(() => {
-        fetch('https://guarded-ocean-73313.herokuapp.com/products')
-            .then(res => res.json())
-            .then(data => setProducts(data))
-    }, [])
+        if (userDetails.email && userDetails.role === 'vendor') {
+            setIsLoading(true)
+            fetch(`https://guarded-ocean-73313.herokuapp.com/products/${userDetails.email}`)
+                .then(res => res.json())
+                .then(data => setProducts(data))
+                .finally(() => setIsLoading(false))
+        } else {
+            setIsLoading(true)
+            fetch('https://guarded-ocean-73313.herokuapp.com/products')
+                .then(res => res.json())
+                .then(data => setProducts(data))
+                .finally(() => setIsLoading(false))
+        }
 
-    console.log(products);
+    }, [userDetails.email, userDetails.role])
+    const deleteProduct = (id) => {
+        DeleteProductApi(id, setIsLoading, products, setProducts)
+    }
+
 
     return (
 
@@ -100,9 +119,10 @@ const Products = () => {
                             </thead>
                             <tbody>
                                 {/* first order start */}
-                                {
+                                {isLoading ? <CircularProgress color="inherit" /> :
+
                                     products.map(product => {
-                                        return <tr>
+                                        return <tr key={product._id}>
                                             <td className="px-5 py-5 border-b border-gray-200 bg-white dark:bg-slate-800 text-sm">
                                                 <div className="flex items-center">
                                                     <div className="flex-shrink-0 w-10 h-10">
@@ -137,10 +157,12 @@ const Products = () => {
                                                 Admin
                                             </td>
                                             <td className="px-5 py-5 border-b border-gray-200 bg-white dark:bg-slate-800 text-sm flex">
-                                                <button className="text-white rounded whitespace-no-wrap mr-2 text-left bg-indigo-500 p-2 mb-1 w-10">
-                                                    Edit
-                                                </button>
-                                                <p className="bg-red-500 text-white rounded whitespace-no-wrap mr-2 p-2 mb-1 w-16">
+                                                <Link to={`/dashboard/edit-product/${product._id}`}>
+                                                    <button className="cursor-pointer text-white rounded whitespace-no-wrap mr-2 text-left bg-indigo-500 p-2 mb-1 w-10">
+                                                        Edit
+                                                    </button>
+                                                </Link>
+                                                <p onClick={() => deleteProduct(product._id)} className="cursor-pointer bg-red-500 text-white rounded whitespace-no-wrap mr-2 p-2 mb-1 w-16">
                                                     Delete
                                                 </p>
                                             </td>

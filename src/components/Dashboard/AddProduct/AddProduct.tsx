@@ -7,6 +7,7 @@ import { Editor } from "react-draft-wysiwyg";
 import { convertToRaw } from 'draft-js';
 import draftToHtml from 'draftjs-to-html';
 import "react-draft-wysiwyg/dist/react-draft-wysiwyg.css";
+import UseAuth from '../../../hooks/UseAuth';
 
 type attributeValues = {
     label: string, options: [{ label: string, value: string }]
@@ -14,7 +15,7 @@ type attributeValues = {
 type attributes = {
     label: string, value: string
 }
-const AddProduct: React.FunctionComponent = (props) => {
+const AddProduct: React.FunctionComponent = () => {
 
     const [categories, setCategories] = useState<string[]>([])
     const [attributes, setAttributes] = useState<attributes[]>([])
@@ -34,10 +35,16 @@ const AddProduct: React.FunctionComponent = (props) => {
 
     // PRODUCT VALUE
     const [productValue, setProductValue] = useState<any>()
+    // const [userDetails, setUserDetails] = useState<any>()
 
 
     // SELECTED IMAGES FROM MODAL
     const [selectedImages, setSelectedImages] = useState<any[]>([])
+
+    const { userDetails } = UseAuth()
+
+    console.log(userDetails, ' userDetails');
+
 
 
     // GET ATTRIBUTES LABELS AND VALUES
@@ -52,6 +59,8 @@ const AddProduct: React.FunctionComponent = (props) => {
                 // setAttributeLabel(data)
             })
     }, [])
+
+    // IS IT VENDOR OR ADMIN
 
 
 
@@ -89,15 +98,18 @@ const AddProduct: React.FunctionComponent = (props) => {
     // let newCat: any = []
     const [newCat, setNewCat] = useState()
     const [isLoading, setIsLoading] = useState<boolean>(false)
-    useEffect(() => {
-        setIsLoading(true)
-        fetch('https://guarded-ocean-73313.herokuapp.com/dashboard/categories')
-            .then(res => res.json())
-            .then(data => {
-                const options = data.map(({ options }: any) => options)
-                setNewCat(options)
 
-            }).finally(() => setIsLoading(false))
+    useEffect(() => {
+        if (!newCat) {
+            setIsLoading(true)
+            fetch('https://guarded-ocean-73313.herokuapp.com/dashboard/categories')
+                .then(res => res.json())
+                .then(data => {
+                    const options = data.map(({ options }: any) => options)
+                    setNewCat(options)
+
+                }).finally(() => setIsLoading(false))
+        }
     }, [newCat])
 
 
@@ -120,9 +132,6 @@ const AddProduct: React.FunctionComponent = (props) => {
     const handleProductSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
         e.preventDefault()
 
-        console.log(categories);
-
-
         if (categories.length === 0) {
             return alert('please add category')
         }
@@ -130,7 +139,17 @@ const AddProduct: React.FunctionComponent = (props) => {
             return alert('please add an image')
         }
 
-        const newProduct = { ...productValue, images: selectedImages, categories, product_des: content, newAttributes }
+        const newProduct = {
+            ...productValue,
+            images: selectedImages,
+            categories,
+            product_des: content,
+            newAttributes,
+            vendor: userDetails.role,
+            store: userDetails.store,
+            publisher: userDetails.email
+        }
+        console.log(newProduct, 'newProduct');
 
 
         fetch('https://guarded-ocean-73313.herokuapp.com/dashboard/addProduct', {

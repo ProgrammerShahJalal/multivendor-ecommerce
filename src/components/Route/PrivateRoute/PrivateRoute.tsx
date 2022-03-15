@@ -1,18 +1,18 @@
+import { CircularProgress } from "@mui/material";
 import { Navigate, useLocation } from "react-router-dom";
 import UseAuth from "../../../hooks/UseAuth";
 
 
-function PrivateRoute({ children, isAuthenticaed }: any) {
+function PrivateRoute({ children }: any) {
     const { user, isLoading } = UseAuth()
     const location = useLocation();
 
     if (isLoading) {
-        return <span className="visually-hidden">Loading...</span>
+        return <CircularProgress color="inherit" />
 
     }
 
     if (user.email) {
-        console.log('i am able to log bro');
         return children;
     }
     return <Navigate to="/login" state={{ from: location }} />;

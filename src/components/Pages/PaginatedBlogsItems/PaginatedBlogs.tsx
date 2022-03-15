@@ -1,8 +1,10 @@
-import React from 'react';
+import React, { useContext } from 'react';
 import { Link } from 'react-router-dom'
+import { LangContext } from '../MultiLanguage/languagecontext/lang';
+
 
 const PaginatedBlogs = ({ blogs, isLoading }: any) => {
-
+    const { dispatch: { translate } } = useContext(LangContext);
 
     // console.log(blogs);
 
@@ -105,7 +107,7 @@ const PaginatedBlogs = ({ blogs, isLoading }: any) => {
     }
     return (<>
         <div className='py-5 w-full scroll-smooth'>
-            <h2 className='text-4xl font font-extrabold tracking-tight sm:text-6xl text-center my-5 text-black dark:text-white'>Our Blogs</h2>
+            <h2 className='text-4xl font font-extrabold tracking-tight sm:text-6xl text-center my-5 text-black dark:text-white'> {translate('blog')}</h2>
             <div className='md:grid grid-cols-2 max-w-md overflow-hidden md:max-w-7xl gap-5 mx-auto py-7'>
                 {
                     isLoading ? "Loading..." : blogs?.map((blog: any) => (

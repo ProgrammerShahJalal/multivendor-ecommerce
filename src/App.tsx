@@ -1,6 +1,6 @@
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import Home from "./components/Home/Home";
-import Header from './components/Shared/Header';
+import HeaderLanguage from './components/Shared/HeaderLanguage';
 import Footer from './components/Shared/Footer/Footer';
 import Contact from './components/Contact/Contact.js';
 import AuthProvider from "./context/AuthProvider";
@@ -12,7 +12,6 @@ import Shop from "./components/Shop/Shop";
 import PrivateRoute from "./components/Route/PrivateRoute/PrivateRoute";
 import UserProfile from './components/UserProfile/UserProfile';
 import OrderTracking from './components/OrderTracking/OrderTracking';
-import Checkout from './components/Checkout/Checkout';
 import Success from "./components/Success";
 import VendorShopPage from "./components/VenderShopPage/VenderShopPage";
 import VendorSidebar from "./components/VendorSidebar/VendorSidebar";
@@ -20,7 +19,6 @@ import SpecialDeal from "./components/SpecialDeal/SpecialDeal";
 
 import Media from "./components/Dashboard/Media/Media";
 import AddProduct from "./components/Dashboard/AddProduct/AddProduct";
-import DetailedOrder from "./components/Dashboard/Order/DetailedOrder";
 import Categories from "./components/Dashboard/AddProduct/Sub/Categories/Categories";
 import Attributes from "./components/Dashboard/AddProduct/Sub/Attributes/Attributes";
 import DealDetails from "./components/SpecialDeal/DealDetails";
@@ -39,7 +37,7 @@ import MenProductsDetail from './components/MenProductDetail';
 import WomenProductDetail from './components/WomenProductDetail';
 import KidsProductDetails from './components/KidsProductDetails';
 import Promo from './components/Promo/Promo';
-import SingleProduct from "./components/SingleProduct/SingleProduct";
+// import SingleProduct from "./components/SingleProduct/SingleProduct";
 import UnitTesting from "./components/Pages/UnitTesting/UnitTesting";
 import WishList from "./components/Pages/WishList/WishList";
 import VendorHomePage from "./components/Pages/VendorPages/VendorHomePage";
@@ -47,6 +45,22 @@ import About from "./components/Pages/About/About";
 import Invoice from "./components/Invoice/Invoice";
 import { useContext } from "react";
 import { LangContext } from "./components/Pages/MultiLanguage/languagecontext/lang";
+import Cart from "./components/Pages/CartPage/Cart";
+import Checkout from "./components/Checkout/Checkout";
+import AffiliateShop from "./components/Shop/AffiliateShop";
+import SiteUser from "./components/Pages/AddReview/SiteUser";
+import DetailedOrder from "./components/Dashboard/Order/DetailedOrder";
+import SingleProduct from "./components/AllProducts/SingleProduct";
+import VendorInformations from "./components/Pages/VendorPages/VendorInformations";
+import VendorRegister from "./components/Pages/VendorPages/VendorRegister";
+import AdminRoute from "./components/Route/AdminRoute/AdminRoute";
+import VendorCard from "./components/VenderShopPage/VendorCard";
+import StoreListCards from "./components/StoreListCard/StoreListCard";
+import SearchField from "./components/Pages/SearchField/SearchField";
+import UserOrders from "./components/UserOrders/UserOrders";
+import EditProduct from "./components/Dashboard/AddProduct/Sub/EditProduct/EditProduct";
+
+
 
 
 function App() {
@@ -70,54 +84,60 @@ function App() {
     <div className="dark:bg-slate-800" >
       <AuthProvider>
         <Router>
-          <Header />
+          <HeaderLanguage />
           <Routes>
             <Route path='/' element={<Home />} />
             <Route path='/home' element={<Home />} />
+            <Route path='/userOrders' element={<UserOrders />} />
             <Route path='/contact' element={<Contact />} />
             <Route path='/about' element={<About />} />
             <Route path='/offer' element={<Promo />} />
+            <Route path='/searchField' element={<SearchField />} />
             <Route path='/unitTesting' element={<UnitTesting />} />
-            <Route path='/specialDeal' element={<SpecialDeal />} />
+            <Route path='/specialDeal' element={<SpecialDeal translate={translate} />} />
             <Route path='/productDetails/men/:id' element={<MenProductsDetail />} />
             <Route path='/productDetails/women/:id' element={<WomenProductDetail />} />
             <Route path='/productDetails/kid/:id' element={<KidsProductDetails />} />
             <Route path='/team' element={<Team />} />
             <Route path='/login' element={<Login />} />
             <Route path='/register' element={<Register />} />
+            <Route path='/vendors' element={<StoreListCards />} />
+            <Route path='/vendor-register' element={<PrivateRoute><VendorRegister /></PrivateRoute>} />
             <Route path='/orderTrack' element={<OrderTracking />} />
-            <Route path='/checkout' element={<Checkout />} />
             <Route path='/wishlist' element={<WishList />} />
             <Route path='/invoice' element={<Invoice />} />
+            <Route path='/addReview' element={<SiteUser />} />
+            <Route path='/checkout' element={<PrivateRoute><Checkout /></PrivateRoute>} />
             <Route path='/shop' element={<Shop />} />
+            <Route path='/affiliateShop' element={<AffiliateShop />} />
+            <Route path='/cart' element={<Cart />} />
             <Route path='/vendorShop' element={<VendorShopPage />} />
             <Route path='/vendorSidebar' element={<VendorSidebar />} />
-            <Route path='/vendorLogin' element={<VendorHomePage />} />
+            <Route path='/vendorLogin' element={<PrivateRoute><VendorInformations /></PrivateRoute>} />
             <Route path='/profile' element={<PrivateRoute><UserProfile /></PrivateRoute>} />
             <Route path='/success/:id' element={<PrivateRoute><Success /></PrivateRoute>} />
             <Route path='/blogs/details/:id' element={<PrivateRoute><DetailBlogPage /></PrivateRoute>} />
             <Route path='/specials/details/:id' element={<PrivateRoute><DealDetails /></PrivateRoute>} />
             <Route path='/product/:id' element={<SingleProduct />} />
-            <Route path='*' element={<NotFound />} />
+
 
             {/* DASHBOARD ROUTES */}
-            <Route path="/dashboard" element={<PrivateRoute><Dashboard /></PrivateRoute>} >
+            <Route path="/dashboard" element={<AdminRoute><Dashboard /></AdminRoute>} >
               <Route path="media" element={<Media />}></Route>
-
-
               <Route path="affiliate-dashboard" element={<Affiliate />}></Route>
               <Route path="affiliate-links" element={<AffiliateLinks />}></Route>
               <Route path="addProduct" element={<AddProduct />}></Route>
               <Route path="orders" element={<AllOrders />}></Route>
-              <Route path="order-details" element={<DetailedOrder />}></Route>
+              <Route path='detailed-order/:id' element={<DetailedOrder />} />
               <Route path="categories" element={<Categories />}></Route>
               <Route path="attributes" element={<Attributes />}></Route>
               <Route path="products" element={<Products />}></Route>
               <Route path="users" element={<Users />}></Route>
-
+              <Route path='edit-product/:id' element={<EditProduct />} />
               <Route path="vendors" element={<Vendors />}></Route>
               <Route path="vendor-profile" element={<VendorProfileDetails />}></Route>
             </Route>
+            <Route path='*' element={<NotFound />} />
           </Routes>
           <Footer />
         </Router>

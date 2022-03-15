@@ -1,4 +1,4 @@
-import { useEffect, useState } from "react";
+import { useEffect, useState, FC } from "react";
 import { Link } from "react-router-dom";
 import CowndownTimer from "../CowntownTimer/CowndownTimer";
 import { HashLink } from 'react-router-hash-link';
@@ -13,50 +13,49 @@ interface DealState {
     }[],
 }
 interface SpecialState {
-    specials: {
-        _id: string
-        img: string
-        hoverImg: string
-        title: string
-        price: string
-        salePrice: string
-        rating: number
-        processor: string
-        offerTill: string
-    }[],
+    _id: string
+    img: string
+    hoverImg: string
+    title: string
+    price: string
+    salePrice: string
+    rating: number
+    processor: string
+    offerTill: string
+
 }
 
+interface SpecialDealProps {
+    translate: (key: string) => string
+}
 
-export default function SpecialDeal() {
+const SpecialDeal: FC<SpecialDealProps> = ({ translate }) => {
 
     const [deals, setDeals] = useState<DealState["deals"]>
         ([]);
-    const [specials, setSpecials] = useState<SpecialState["specials"]>
-        ([]);
+    const [specials, setSpecials] = useState<SpecialState[]>([]);
 
 
     useEffect(() => {
-        if (deals) {
-            fetch('https://morning-inlet-49130.herokuapp.com/features')
-                .then(res => res.json())
-                .then(data => setDeals(data))
-        }
-    }, [deals])
+        fetch('https://morning-inlet-49130.herokuapp.com/features')
+            .then(res => res.json())
+            .then(data => setDeals(data))
+
+    }, [])
 
     /* ----------special product fetch----------- */
     useEffect(() => {
-        if (specials) {
-            fetch('https://morning-inlet-49130.herokuapp.com/specials')
-                .then(res => res.json())
-                .then(data => setSpecials(data))
-        }
-    }, [specials])
+        fetch('https://morning-inlet-49130.herokuapp.com/specials')
+            .then(res => res.json())
+            .then(data => setSpecials(data))
+
+    }, [])
 
     return (
         <div className="bg-gray-100 dark:bg-gray-800">
             <h2 className="text-3xl text-center font-extrabold text-gray-900 dark:text-white sm:text-4xl">
-                <span className="text-5xl pr-3" >Special</span>
-                <span className=" text-indigo-600 text-5xl">Deal</span>
+                <span className="text-5xl pr-3" >{translate('special')}</span>
+                <span className=" text-indigo-600 text-5xl">{translate('deal')}</span>
             </h2>
             <div className="max-w-7xl mx-auto py-12 px-4 sm:px-6 lg:py-16 lg:px-8 lg:flex lg:items-center lg:justify-between">
                 <div className="mt-8 grid gap-4 lg:mt-0 grid-cols-1 justify-center items-center justify-self-center">
@@ -103,7 +102,7 @@ export default function SpecialDeal() {
                                     <img style={{ width: '250px', height: '300px' }} className="mx-auto group-hover:hidden block img" src={special.hoverImg} alt="" />
                                     <img style={{ width: '250px', height: '300px' }} className="mx-auto group-hover:block hidden hoverImg" src={special.img} alt="" />
                                 </div>
-                                
+
                                 <h2 className="font-bold text-black dark:text-white">{special.title}</h2>
                                 <p className="text-slate-400">{special.processor}</p>
                                 <div className="flex justify-center items-center gap-3">
@@ -125,3 +124,4 @@ export default function SpecialDeal() {
         </div>
     )
 }
+export default SpecialDeal;
