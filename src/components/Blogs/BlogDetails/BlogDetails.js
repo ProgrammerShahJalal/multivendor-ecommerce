@@ -25,11 +25,11 @@ const BlogDetails = () => {
                 <img className="h-auto w-full object-cover md:h-full md:w-full rounded-md" src={img} alt='' />
                 <h2 className='text-2xl font font-bold tracking-tight text-gray-900 dark:text-white sm:text-2xl text-center my-5'>{title}</h2>
                 <div className='flex justify-around items-center mb-5'>
-                    <p className="font-semi-bold mt-2 text-cyan-900">Posted by: {author}</p>
-                    <p className="font-semi-bold mt-2 text-purple-900">Last Updated: {new Date().toLocaleDateString()}</p>
+                    <p className="dark:text-white font-semi-bold mt-2 text-cyan-900">Posted by: {author}</p>
+                    <p className="dark:text-white font-semi-bold mt-2 text-purple-900">Last Updated: {new Date().toLocaleDateString()}</p>
                 </div>
                 <div>
-                    <p className='text-justify select-none'>
+                    <p className='text-justify select-none dark:text-white'>
                         {description}
                     </p>
                 </div>
