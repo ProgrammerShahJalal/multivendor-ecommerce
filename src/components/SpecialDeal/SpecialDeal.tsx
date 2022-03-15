@@ -52,7 +52,7 @@ const SpecialDeal: FC<SpecialDealProps> = ({ translate }) => {
     }, [])
 
     return (
-        <div className="bg-gray-100 dark:bg-gray-800">
+        <div className="bg-gray-100 dark:bg-gray-800 mt-4">
             <h2 className="text-3xl text-center font-extrabold text-gray-900 dark:text-white sm:text-4xl">
                 <span className="text-5xl pr-3" >{translate('special')}</span>
                 <span className=" text-indigo-600 text-5xl">{translate('deal')}</span>

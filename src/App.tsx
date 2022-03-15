@@ -56,6 +56,7 @@ import VendorSidebar from "./components/VendorSidebar/VendorSidebar";
 import WomenProductDetail from './components/WomenProductDetail';
 import AuthProvider from "./context/AuthProvider";
 
+import EditProduct from "./components/Dashboard/AddProduct/Sub/EditProduct/EditProduct";
 
 
 
@@ -116,6 +117,7 @@ function App() {
             <Route path='/specials/details/:id' element={<PrivateRoute><DealDetails /></PrivateRoute>} />
             <Route path='/product/:id' element={<SingleProduct />} />
 
+
             {/* DASHBOARD ROUTES */}
             <Route path="/dashboard" element={<AdminRoute><Dashboard /></AdminRoute>} >
               <Route path="media" element={<Media />}></Route>
@@ -128,7 +130,7 @@ function App() {
               <Route path="attributes" element={<Attributes />}></Route>
               <Route path="products" element={<Products />}></Route>
               <Route path="users" element={<Users />}></Route>
-
+              <Route path='edit-product/:id' element={<EditProduct />} />
               <Route path="vendors" element={<Vendors />}></Route>
               <Route path="vendor-profile" element={<VendorProfileDetails />}></Route>
             </Route>

@@ -37,7 +37,7 @@ const AllProducts: FC<AllProductsProps> = ({ translate }) => {
     const handleClose = () => setOpen(false);
     return (
         <div className="container lg:px-0 md:px-10 px-10 pb-16 mx-auto">
-            <h2 className="text-3xl text-center font-extrabold text-gray-900 sm:text-4xl mb-10">
+            <h2 className="text-3xl text-center font-extrabold text-gray-900 dark:text-white sm:text-4xl mb-10">
                 <span className="text-5xl pr-3" >{translate('latest')}</span>
                 <span className=" text-indigo-600 text-5xl">{translate('product')}</span>
             </h2>
