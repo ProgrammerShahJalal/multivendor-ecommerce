@@ -51,9 +51,11 @@ const AllProducts: FC<AllProductsProps> = ({ translate }) => {
                                 image: product.images[0]?.src,
                                 category: product.categories[0].label,
                                 price: parseInt(product.sale_price ? product.sale_price : product.reg_price),
-                                // attributes: attributes,
+                                attributes: [],
                                 cartQuantity: 1,
-                                vendor: 'fathekarim3@gmail.com'
+                                vendor: {
+                                    email: product?.publisherDetails?.publisher || null
+                                }
                             }
                             console.log(product);
 

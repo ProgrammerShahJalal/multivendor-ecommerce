@@ -52,6 +52,11 @@ import SiteUser from "./components/Pages/AddReview/SiteUser";
 import DetailedOrder from "./components/Dashboard/Order/DetailedOrder";
 import SingleProduct from "./components/AllProducts/SingleProduct";
 import SearchField from "./components/Pages/SearchField/SearchField";
+import VendorInformations from "./components/Pages/VendorPages/VendorInformations";
+import VendorRegister from "./components/Pages/VendorPages/VendorRegister";
+import AdminRoute from "./components/Route/AdminRoute/AdminRoute";
+import VendorCard from "./components/VenderShopPage/VendorCard";
+import StoreListCards from "./components/StoreListCard/StoreListCard";
 
 
 
@@ -93,6 +98,8 @@ function App() {
             <Route path='/team' element={<Team />} />
             <Route path='/login' element={<Login />} />
             <Route path='/register' element={<Register />} />
+            <Route path='/vendors' element={<StoreListCards />} />
+            <Route path='/vendor-register' element={<PrivateRoute><VendorRegister /></PrivateRoute>} />
             <Route path='/orderTrack' element={<OrderTracking />} />
             <Route path='/wishlist' element={<WishList />} />
             <Route path='/invoice' element={<Invoice />} />
@@ -103,7 +110,7 @@ function App() {
             <Route path='/cart' element={<Cart />} />
             <Route path='/vendorShop' element={<VendorShopPage />} />
             <Route path='/vendorSidebar' element={<VendorSidebar />} />
-            <Route path='/vendorLogin' element={<VendorHomePage />} />
+            <Route path='/vendorLogin' element={<PrivateRoute><VendorInformations /></PrivateRoute>} />
             <Route path='/profile' element={<PrivateRoute><UserProfile /></PrivateRoute>} />
             <Route path='/success/:id' element={<PrivateRoute><Success /></PrivateRoute>} />
             <Route path='/blogs/details/:id' element={<PrivateRoute><DetailBlogPage /></PrivateRoute>} />
@@ -111,7 +118,7 @@ function App() {
             <Route path='/product/:id' element={<SingleProduct />} />
 
             {/* DASHBOARD ROUTES */}
-            <Route path="/dashboard" element={<PrivateRoute><Dashboard /></PrivateRoute>} >
+            <Route path="/dashboard" element={<AdminRoute><Dashboard /></AdminRoute>} >
               <Route path="media" element={<Media />}></Route>
 
 

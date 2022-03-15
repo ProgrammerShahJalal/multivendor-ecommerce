@@ -1,6 +1,8 @@
 import { getAuth, createUserWithEmailAndPassword, signOut, onAuthStateChanged, signInWithEmailAndPassword, signInWithPopup, updateProfile, GoogleAuthProvider, FacebookAuthProvider } from "firebase/auth";
 import { useEffect, useState } from "react";
 import FirebaseInitialization from "../Firebase/Firebase.init";
+import { addUserToDB } from "../Services/AddUserToDB/AddUserToDB";
+import { GetUserDetails } from "../Services/UsersApi/GetUserDetails";
 
 FirebaseInitialization()
 const googleProvider = new GoogleAuthProvider();
@@ -44,6 +46,12 @@ export const UseFirebase = (
         photoURL: ''
     })
     const [error, setError] = useState('')
+    const [userDetails, setUserDetails] = useState({
+        name: '',
+        email: '',
+        role: '',
+        store: ''
+    } || null)
     const [isLoading, setIsLoading] = useState(true)
     const auth = getAuth()
 
@@ -75,7 +83,9 @@ export const UseFirebase = (
                 // Pass userCredential.user instead of auth.currentUser
                 updateProfile(userCredential.user, {
                     displayName: name
-                }).then(() => { }).catch((error) => { setError(error) });
+                }).then(() => {
+                    addUserToDB(userCredential.user)
+                }).catch((error) => { setError(error) });
             })
             .catch((error) => {
 
@@ -122,9 +132,9 @@ export const UseFirebase = (
     ) => {
         setIsLoading(true)
         await signInWithEmailAndPassword(auth, email, password)
-            .then((userCredential) => {
-                console.log(location);
-
+            .then((userCredential: any) => {
+                console.log(userCredential, 'userCredential');
+                addUserToDB(userCredential.user)
                 navigate(location?.state?.from || '/')
                 setError('')
             })
@@ -144,6 +154,7 @@ export const UseFirebase = (
                 setUser(user)
                 saveUser(user.email, user.displayName, 'PUT');
                 // ...
+                addUserToDB(result.user);
             }).catch((error: any) => {
                 const errorMessage = error.message;
                 setError(errorMessage)
@@ -163,8 +174,13 @@ export const UseFirebase = (
                 setError(errorMessage)
             });
     }
+    // CHECK ADMIN 
+    useEffect(() => {
+        if (user.email) {
+            GetUserDetails(user.email, setUserDetails, setIsLoading)
+        }
 
-
+    }, [user.email])
 
     // LOGOUT
     const logout = () => {
@@ -190,5 +206,6 @@ export const UseFirebase = (
             body: JSON.stringify(user)
         })
     }
-    return { RegisterUser, SignIn, user, logout, error, isLoading, handleGoogleSignIn, handleFacebookSIgnIn };
+    return { RegisterUser, SignIn, user, logout, error, isLoading, handleGoogleSignIn, handleFacebookSIgnIn, userDetails };
+
 };

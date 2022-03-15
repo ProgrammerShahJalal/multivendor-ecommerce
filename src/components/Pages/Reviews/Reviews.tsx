@@ -17,12 +17,10 @@ interface ReviewState {
 }
 
 const Reviews = () => {
-    const [reviews, setReviews] = useState<ReviewState["reviews"]>
-
-        ([]);
+    const [reviews, setReviews] = useState<ReviewState["reviews"]>([]);
 
     useEffect(() => {
-        if (reviews) {
+        if (reviews.length === 0) {
             fetch('https://morning-inlet-49130.herokuapp.com/reviews')
                 .then(res => res.json())
                 .then(data => { setReviews(data); }

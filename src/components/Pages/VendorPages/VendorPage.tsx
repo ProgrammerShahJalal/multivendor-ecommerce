@@ -1,48 +1,33 @@
 import * as React from 'react';
 import CssBaseline from '@mui/material/CssBaseline';
-import AppBar from '@mui/material/AppBar';
 import Box from '@mui/material/Box';
 import Container from '@mui/material/Container';
-import Toolbar from '@mui/material/Toolbar';
 import Paper from '@mui/material/Paper';
 import Stepper from '@mui/material/Stepper';
 import Step from '@mui/material/Step';
 import StepLabel from '@mui/material/StepLabel';
 import Button from '@mui/material/Button';
-import Link from '@mui/material/Link';
 import Typography from '@mui/material/Typography';
 import { createTheme, ThemeProvider } from '@mui/material/styles';
-import Addresform from './Addresform';
+import AddressForm from './AddressForm';
 import PaymentForm from './PaymentForm';
 import ConfirmVendor from './ConfirmVendor';
-import CoustomerSupport from './CoustomerSupport';
 import StoreName from './StoreName';
+import CustomerSupport from './CustomerSupport';
 
-function Copyright() {
-    return (
-        <Typography variant="body2" color="text.secondary" align="center">
-            {'Copyright © '}
-            <Link color="inherit" href="https://mui.com/">
-                Your Website
-            </Link>{' '}
-            {new Date().getFullYear()}
-            {'.'}
-        </Typography>
-    );
-}
 
-const steps = ['Vendore store', 'Store address', 'Payment details', 'Coustomer support', 'Confirm your selling'];
+const steps = ['Vendor store', 'Store address', 'Payment details', 'Customer support', 'Confirm your selling'];
 
 function getStepContent(step: number) {
     switch (step) {
         case 0:
             return <StoreName />;
         case 1:
-            return <Addresform />;
+            return <AddressForm />;
         case 2:
             return <PaymentForm />;
         case 3:
-            return <CoustomerSupport />;
+            return <CustomerSupport />;
         case 4:
             return <ConfirmVendor />;
         default:
@@ -111,7 +96,7 @@ const VendorPage = () => {
                         )}
                     </React.Fragment>
                 </Paper>
-                <Copyright />
+
             </Container>
         </ThemeProvider>
     );
