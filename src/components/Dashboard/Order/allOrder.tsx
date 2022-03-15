@@ -203,7 +203,7 @@ const AllOrders = () => {
                                                 </span>
                                             </td>
                                             <td className="px-5 py-5 border-b border-gray-200 bg-white text-sm">
-                                                <Link to={`/dashboard/order-details/${order._id}`}>
+                                                <Link to={`/dashboard/detailed-order/${order._id}`}>
                                                     <p className="text-gray-900 rounded whitespace-no-wrap text-left bg-green-200 p-2 w-10">Edit</p>
                                                 </Link>
                                             </td>

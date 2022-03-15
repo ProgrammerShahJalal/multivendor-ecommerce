@@ -8,7 +8,7 @@ const Qrcode = () => {
                 id='abc'
                 value='https://unitymart-c522a.web.app/'
             />
-            <h2>Scan the QR Code</h2>
+            <h2 className='dark:text-white'>Scan the QR Code</h2>
         </div>
     );
 };

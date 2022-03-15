@@ -1,6 +1,6 @@
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import Home from "./components/Home/Home";
-import Header from './components/Shared/Header';
+import HeaderLanguage from './components/Shared/HeaderLanguage';
 import Footer from './components/Shared/Footer/Footer';
 import Contact from './components/Contact/Contact.js';
 import AuthProvider from "./context/AuthProvider";
@@ -56,6 +56,7 @@ import VendorRegister from "./components/Pages/VendorPages/VendorRegister";
 import AdminRoute from "./components/Route/AdminRoute/AdminRoute";
 import VendorCard from "./components/VenderShopPage/VendorCard";
 import StoreListCards from "./components/StoreListCard/StoreListCard";
+import SearchField from "./components/Pages/SearchField/SearchField";
 
 
 
@@ -81,15 +82,16 @@ function App() {
     <div className="dark:bg-slate-800" >
       <AuthProvider>
         <Router>
-          <Header />
+          <HeaderLanguage />
           <Routes>
             <Route path='/' element={<Home />} />
             <Route path='/home' element={<Home />} />
             <Route path='/contact' element={<Contact />} />
             <Route path='/about' element={<About />} />
             <Route path='/offer' element={<Promo />} />
+            <Route path='/searchField' element={<SearchField />} />
             <Route path='/unitTesting' element={<UnitTesting />} />
-            <Route path='/specialDeal' element={<SpecialDeal />} />
+            <Route path='/specialDeal' element={<SpecialDeal translate={translate} />} />
             <Route path='/productDetails/men/:id' element={<MenProductsDetail />} />
             <Route path='/productDetails/women/:id' element={<WomenProductDetail />} />
             <Route path='/productDetails/kid/:id' element={<KidsProductDetails />} />
@@ -124,7 +126,7 @@ function App() {
               <Route path="affiliate-links" element={<AffiliateLinks />}></Route>
               <Route path="addProduct" element={<AddProduct />}></Route>
               <Route path="orders" element={<AllOrders />}></Route>
-              <Route path="order-details/:id" element={<DetailedOrder />}></Route>
+              <Route path='detailed-order/:id' element={<DetailedOrder />} />
               <Route path="categories" element={<Categories />}></Route>
               <Route path="attributes" element={<Attributes />}></Route>
               <Route path="products" element={<Products />}></Route>
