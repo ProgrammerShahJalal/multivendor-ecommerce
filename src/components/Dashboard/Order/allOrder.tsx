@@ -1,21 +1,38 @@
 import React, { useEffect, useState } from 'react';
 import { Link } from 'react-router-dom';
+import UseAuth from '../../../hooks/UseAuth';
 
 const AllOrders = () => {
     const [orders, setOrders] = useState<any[]>([])
     const [isLoading, setIsLoading] = useState<boolean>(false)
+    const { userDetails } = UseAuth()
     useEffect(() => {
         setIsLoading(true)
-        fetch(`https://guarded-ocean-73313.herokuapp.com/dashboard/orders`)
-            .then(res => res.json())
-            .then(data => {
-                const latestData = data.sort(
-                    (a, b) => new Date(b.paymentDetails.date).getTime() - new Date(a.paymentDetails.date).getTime()
-                );
-                setOrders(latestData)
-            })
-            .finally(() => setIsLoading(false))
-    }, [])
+        if (userDetails.role === 'vendor') {
+            fetch(`http://localhost:5000/dashboard/vendor-orders?email=${userDetails.email}`)
+                .then(res => res.json())
+                .then(data => {
+
+                    const latestData = data.sort(
+                        (a, b) => new Date(b.paymentDetails.date).getTime() - new Date(a.paymentDetails.date).getTime()
+                    );
+                    setOrders(latestData)
+                })
+                .finally(() => setIsLoading(false))
+        } else if (userDetails.role === 'admin') {
+            fetch(`https://guarded-ocean-73313.herokuapp.com/dashboard/orders`)
+                .then(res => res.json())
+                .then(data => {
+
+                    const latestData = data.sort(
+                        (a, b) => new Date(b.paymentDetails.date).getTime() - new Date(a.paymentDetails.date).getTime()
+                    );
+                    setOrders(latestData)
+                })
+                .finally(() => setIsLoading(false))
+        }
+
+    }, [userDetails.role, userDetails.email])
     console.log(orders)
 
     return (

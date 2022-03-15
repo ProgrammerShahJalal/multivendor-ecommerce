@@ -16,7 +16,7 @@ export default function Cart() {
         }
     }, [cart, dispatch])
 
-    console.log(cart);
+
 
     return (
         <div>
@@ -52,11 +52,11 @@ export default function Cart() {
                                                 <td>
 
                                                     <p className="mb-2 md:ml-4">{item.title}</p>
-                                                    <form action="" method="POST">
-                                                        <button onClick={() => dispatch(removeItem(item))} type="submit" className="text-red-700 md:ml-4">
-                                                            <small>(Remove item)</small>
-                                                        </button>
-                                                    </form>
+
+                                                    <button onClick={() => dispatch(removeItem(item))} type="submit" className="text-red-700 md:ml-4">
+                                                        <small>(Remove item)</small>
+                                                    </button>
+
 
                                                 </td>
                                                 <td>
@@ -97,7 +97,7 @@ export default function Cart() {
                                 <div className="p-4">
                                     <p className="mb-4 italic">If you have a coupon code, please enter it in the box below</p>
                                     <div className="justify-center md:flex">
-                                        <form action="" method="POST">
+                                        {/* <form action="" method="POST">
                                             <div className="flex items-center w-full h-13 pl-3 bg-white bg-gray-100 border rounded-full">
                                                 <input type="coupon" name="code" id="coupon" placeholder="Apply coupon" value="90off"
                                                     className="w-full bg-gray-100 outline-none appearance-none focus:outline-none active:outline-none" />
@@ -106,7 +106,7 @@ export default function Cart() {
                                                     <span className="font-medium">Apply coupon</span>
                                                 </button>
                                             </div>
-                                        </form>
+                                        </form> */}
                                     </div>
                                 </div>
                                 <div className="p-4 mt-6 bg-gray-100 rounded-full">

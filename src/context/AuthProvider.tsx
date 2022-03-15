@@ -17,6 +17,13 @@ export interface IAuth {
     isLoading: boolean,
     handleGoogleSignIn: (navigate: any, location: any) => void
     handleFacebookSIgnIn: () => void
+    userDetails: {
+        name: string,
+        email: string,
+        role: string,
+        store: string,
+
+    }
 
 }
 
@@ -35,7 +42,13 @@ export const AuthContext = React.createContext<IAuth>({
     error: '',
     isLoading: false,
     handleGoogleSignIn() { },
-    handleFacebookSIgnIn() { }
+    handleFacebookSIgnIn() { },
+    userDetails: {
+        name: '',
+        email: '',
+        role: '',
+        store: ''
+    }
 
 });
 

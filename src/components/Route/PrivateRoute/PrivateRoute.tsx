@@ -8,11 +8,9 @@ function PrivateRoute({ children, isAuthenticaed }: any) {
 
     if (isLoading) {
         return <span className="visually-hidden">Loading...</span>
-
     }
 
     if (user.email) {
-        console.log('i am able to log bro');
         return children;
     }
     return <Navigate to="/login" state={{ from: location }} />;
