@@ -118,7 +118,7 @@ const CheckoutForm = () => {
             //     transaction: paymentIntent?.client_secret.slice('_secret')[0]
             // }
 
-            await fetch('http://localhost:5000/dashboard/orders', {
+            await fetch('https://guarded-ocean-73313.herokuapp.com/dashboard/orders', {
                 method: 'POST',
                 headers: {
                     'content-type': 'application/json'

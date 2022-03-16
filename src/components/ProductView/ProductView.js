@@ -48,7 +48,7 @@ const ProductView = ({ selectedProduct }) => {
 
     return (
         <div className='mx-auto'>
-            <div className='py-12 border border-white container place-content-center px-8 justify-center items-center mt-8 grid lg:grid-cols-2 md:grid-cols-2 grid-cols-1 gap-6'>
+            <div className='py-12 border border-white container bg-white place-content-center px-8 justify-center items-center mt-8 grid lg:grid-cols-2 md:grid-cols-2 grid-cols-1 gap-6'>
                 <div>
                     <Swiper
                         spaceBetween={10}
@@ -57,19 +57,19 @@ const ProductView = ({ selectedProduct }) => {
                         modules={[FreeMode, Navigation, Thumbs]}
                         className="mySwiper2"
                     >
-                        <SwiperSlide className='flex items-center justify-center' style={{ height: '300px',overflow:'hidden',position:'relative' }}>
-                                <Magnifier src={selectedProduct.img3} className='select-none object-contain h-full' alt="" ></Magnifier>
+                        <SwiperSlide className='flex items-center justify-center' style={{ height: '300px', overflow: 'hidden', position: 'relative' }}>
+                            <Magnifier src={selectedProduct.img3} className='select-none object-contain h-full' alt="" ></Magnifier>
                         </SwiperSlide>
 
-                        <SwiperSlide className='flex items-center justify-center' style={{ height: '300px',overflow:'hidden',position:'relative' }} >
+                        <SwiperSlide className='flex items-center justify-center' style={{ height: '300px', overflow: 'hidden', position: 'relative' }} >
                             <Magnifier src={selectedProduct.img} className='select-none object-contain h-full' alt='' />
                         </SwiperSlide>
 
-                        <SwiperSlide className='flex items-center justify-center' style={{ height: '300px',overflow:'hidden',position:'relative' }}>
+                        <SwiperSlide className='flex items-center justify-center' style={{ height: '300px', overflow: 'hidden', position: 'relative' }}>
                             <Magnifier src={selectedProduct.hoverImg} className='select-none object-contain h-full' alt='' />
                         </SwiperSlide>
-                        
-                        <SwiperSlide className='flex items-center justify-center' style={{ height: '300px',overflow:'hidden',position:'relative' }} >
+
+                        <SwiperSlide className='flex items-center justify-center' style={{ height: '300px', overflow: 'hidden', position: 'relative' }} >
                             <Magnifier src={selectedProduct.img4} className='select-none object-contain h-full' alt='' />
                         </SwiperSlide>
                     </Swiper>

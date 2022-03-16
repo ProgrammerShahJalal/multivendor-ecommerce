@@ -3,7 +3,6 @@ import { useContext } from 'react';
 import TopBanner from '../TopBanner/TopBanner';
 import BottomBanner from '../BottomBanner/BottomBanner';
 import Banners from '../Pages/Banner/Banner';
-import { Faq } from '../FAQ/FAQ';
 import HomeProducts from '../HomeProducts/HomeProducts';
 import BannerPro from '../Pages/BannerPro/BannerPro';
 import ScrollToTop from "react-scroll-to-top";
@@ -12,12 +11,13 @@ import Brands from '../Pages/Brands/Brands';
 import MessengerCustomerChat from 'react-messenger-customer-chat';
 import Notify from '../Notify/Notify';
 import PaginatedBlogsHome from '../Pages/PaginatedBlogsItems/PaginatedBlogsHome';
-import Products from '../Products/Products';
+// import Products from '../Products/Products';
 // import Alan from './Alan-AI/Alan';
-// import Reviews from '../Pages/Reviews/Reviews';
+import Reviews from '../Pages/Reviews/Reviews';
 import SpecialDeal from './../SpecialDeal/SpecialDeal';
 import { LangContext } from '../Pages/MultiLanguage/languagecontext/lang';
 import AllProducts from '../AllOrders/AllOrders';
+import Products from '../Products/Products';
 
 
 export default function Home() {
@@ -46,11 +46,9 @@ export default function Home() {
             <BannerPro />
             <HomeProducts translate={translate} />
             <BottomBanner />
-            {/* <Reviews /> */}
+            <Reviews />
             <Brands />
             <PaginatedBlogsHome />
-            <Faq />
-            {/* <Alan /> */}
             <ScrollToTop style={{ display: 'flex', bottom: 150, alignItems: 'center', justifyContent: 'center', left: 15, backgroundColor: '#7209b7' }} smooth color='#ffffff' top={20} height="28" viewBox="0 0 256 256" />
             <MessengerCustomerChat
                 pageId="104774475481224"

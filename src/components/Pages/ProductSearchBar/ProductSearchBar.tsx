@@ -17,7 +17,7 @@ interface ProductState {
         size: string
         vendorName: string
         rating: number
-        _id:string
+        _id: string
     }[]
 }
 
@@ -64,7 +64,7 @@ const ProductSearchBar: React.FunctionComponent = () => {
     const handleClose = () => setOpen(false);
 
     useLayoutEffect(() => {
-        fetch('https://guarded-ocean-73313.herokuapp.com/products')
+        fetch('https://morning-inlet-49130.herokuapp.com/products')
             .then(res => res.json())
             .then(data => setProducts(data))
 
@@ -82,73 +82,73 @@ const ProductSearchBar: React.FunctionComponent = () => {
     }
 
     return (
-        <div className="container px-12 mx-auto items-center justify-center pt-2 pb-5 my-4 place-content-center place-items-center w-2/4">
+        <div className="container mx-auto items-center justify-center pt-2 pb-5 my-4 place-content-center place-items-center w-full">
             <div className="text-xl text-center p-4">
                 <input
-                    className='text-center border w-96 py-2 rounded-full'
+                    className='text-center border lg:w-96 sm:w-48 py-2 rounded-full'
                     type='text'
                     placeholder="Search Product"
                     onChange={handleOnChange}
                 />
             </div>
 
-            <div className="text-xl mx-auto justify-center items-center text-center">
+            <div className="text-xl mx-auto justify-center items-center">
                 {
                     productList && productList?.length === 0 && (
                         <h1 className="text-xl text-center font-bold text-red-600"> This Type Of Product Is Not Available Now</h1>
                     )
                 }
 
-                <div className='mx-auto items-start content-center justify-center place-content-center
+                <div className='mx-auto items-start content-start justify-start place-content-center lg:w-96 sm:w-48
 '>
-                <div className='mx-auto justify-center items-center place-content-center'>
+
                     {productList && productList?.length > 0 && productList?.map((product: any) =>
-                    
-                    <Link to={`/product/${product._id}`}>
-                    <tr className='mx-auto justify-center items-center'>
-                    <td className="px-5 mx-auto py-5 border-b border-gray-200 bg-white dark:bg-slate-800 text-sm">
-                    <div className="flex mx-auto items-center">
-                    <div style={{height:'60px',width:'60px'}}>
-                    <img className='h-full w-full object-contain' src={product?.images[0]?.src}
-                    alt="" />
-                    </div>
-                    <div className="ml-3">
-                    <p className="text-gray-900 dark:text-white whitespace-no-wrap text-left">
-                    {product.title}
-                    </p>
-        </div>
-    </div>
-</td>
-<div className="px-5 py-5 border-b border-gray-200 bg-white dark:bg-slate-800 text-sm">
-    <p className="text-gray-900 dark:text-white whitespace-no-wrap text-left line-through">${product.reg_price}</p>
-</div>
-<td className="px-5 py-5 border-b border-gray-200 bg-white dark:bg-slate-800 text-sm">
-    <p className="text-gray-900 dark:text-white whitespace-no-wrap text-left">${product.sale_price}</p>
-</td>
-<td className="px-5 py-5 border-b border-gray-200 bg-white dark:bg-slate-800 text-sm">
-    <p className="text-gray-900 dark:text-white whitespace-no-wrap text-left">
-      {product.stock}(left)
-    </p>
-</td>
-<td className="px-5 py-5 border-b border-gray-200 bg-white dark:bg-slate-800 text-sm">
-    <p className="text-gray-900 dark:text-white whitespace-no-wrap text-left">
-      from: {product.brand}
-    </p>
-</td>
-</tr>
-                    </Link>
+
+                        <Link to={`/product/${product._id}`}>
+                            <tr className='mx-auto justify-start items-center overflow-y-scroll w-2/4'>
+                                <td className="px-5 mx-auto py-5 border-b border-gray-200 bg-white dark:bg-slate-800 text-sm">
+                                    <div className="flex mx-auto items-center">
+                                        <div style={{ height: '60px', width: '60px' }}>
+                                            <img className='h-full w-full object-contain' src={product?.images[0]?.src}
+                                                alt="" />
+                                        </div>
+                                        <div className="ml-3">
+                                            <p className="text-gray-900 dark:text-white whitespace-no-wrap text-left">
+                                                {product.title}
+                                            </p>
+                                        </div>
+                                    </div>
+                                </td>
+                                <div className="px-5 py-5 bg-white dark:bg-slate-800 text-sm">
+                                    <p className="text-gray-900 dark:text-white whitespace-no-wrap text-left line-through">${product.reg_price}</p>
+                                </div>
+                                <td className="px-5 py-5 bg-white dark:bg-slate-800 text-sm">
+                                    <p className="text-gray-900 dark:text-white whitespace-no-wrap text-left">${product.sale_price}</p>
+                                </td>
+                                <td className="px-5 py-5 border-b border-gray-200 bg-white dark:bg-slate-800 text-sm">
+                                    <p className="text-gray-900 dark:text-white whitespace-no-wrap text-left">
+                                        {product.stock}(left)
+                                    </p>
+                                </td>
+                                <td className="px-5 py-5 border-b border-gray-200 bg-white dark:bg-slate-800 text-sm">
+                                    <p className="text-gray-900 dark:text-white whitespace-no-wrap text-left">
+                                        from: {product.brand}
+                                    </p>
+                                </td>
+                            </tr>
+                        </Link>
                     )}
-                    </div>
+
                 </div>
                 {
                     productList?.length === 0 ? <div className='flex justify-center items-center'>
                         <img className='w-64' src="https://i.ibb.co/Xptk1ZR/search.png" alt="" />
-                        </div>
-                
-                    :
-                    <></>
+                    </div>
+
+                        :
+                        <></>
                 }
-            
+
             </div>
 
             <div className='bg-white dark:bg-gray-800 text-center'>

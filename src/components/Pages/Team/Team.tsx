@@ -21,14 +21,13 @@ export default class App extends React.PureComponent<IAppProps> {
         <div className="px-4 py-16 mx-auto sm:max-w-xl md:max-w-full lg:max-w-screen-xl md:px-24 lg:px-8 lg:py-20">
           <div className="max-w-xl mb-10 md:mx-auto sm:text-center lg:max-w-2xl md:mb-12">
             <div>
-              <h1 className="inline-block px-3 py-px mb-4 text-2xl font-semibold tracking-wider text-orange-900 uppercase rounded-full bg-teal-accent-400">
-                Remote Coder Unity 
-                <br />
-                <span className='font-bold text-indigo-500'>
+              <h1 className="inline-block px-3 py-px mb-4 text-2xl font-semibold tracking-wider text-orange-900 dark:text-white uppercase rounded-full bg-teal-accent-400">
+                Remote Coder Unity-
+                <span style={{ color: 'rgb(79, 70, 229)', fontWeight: 'bold' }}>
                   {/* Style will be inherited from the parent element */}
                   <Typewriter
-                    words={['United We stand!✊', 'Divide we fall!!']}
-                    loop={5}
+                    words={['Unite We stand!✊', 'Divide we fall!!']}
+                    loop={true}
                     cursor
                     typeSpeed={70}
                     deleteSpeed={50}
@@ -65,7 +64,7 @@ export default class App extends React.PureComponent<IAppProps> {
               </span>{' '}
               <span>our Unity Mart team of Professionals</span>
             </h2>
-            <p className="text-base text-gray-700 md:text-lg select-none">
+            <p className="text-base text-gray-700 dark:text-white md:text-lg select-none">
               An Unity Mart team members work cooperatively alongside other  workers to select, pack, and promptly ship customer orders.Our Team Leader  assignes every works perfectly to ours, and take responsibilities specific to the different Fulfillment Center areas.
             </p>
           </div>
@@ -74,7 +73,7 @@ export default class App extends React.PureComponent<IAppProps> {
             <div>
               <div className="relative overflow-hidden transition duration-300 transform rounded hover:shadow-orange-500 hover:shadow-2xl shadow-lg shadow-cyan-500/50" data-aos="fade-right" data-aos-duration="1500">
                 <img
-                  className="object-cover w-full h-56 md:h-64 xl:h-80"
+                  className="object-contain w-full h-56 md:h-64 xl:h-80"
                   src="https://i.ibb.co/Wxr4sgr/najmus-sakib-vai.jpg"
                   alt="Person"
                 />
@@ -107,7 +106,7 @@ export default class App extends React.PureComponent<IAppProps> {
             <div>
               <div className="relative overflow-hidden transition duration-300 transform rounded hover:shadow-2xl shadow-lg shadow-cyan-500/50 hover:shadow-orange-500" data-aos="fade-up" data-aos-duration="1500">
                 <img
-                  className="object-cover w-full h-56 md:h-64 xl:h-80"
+                  className="object-contain w-full h-56 md:h-64 xl:h-80"
                   src="https://i.ibb.co/gSYPKD3/tarekvai.jpg"
                   alt="Person"
                 />
@@ -139,7 +138,7 @@ export default class App extends React.PureComponent<IAppProps> {
             <div>
               <div className="relative overflow-hidden transition duration-300 transform rounded hover:shadow-2xl shadow-lg shadow-cyan-500/50 hover:shadow-orange-500" data-aos="fade-right" data-aos-duration="1500">
                 <img
-                  className="object-cover w-full h-56 md:h-64 xl:h-80"
+                  className="object-contain w-full h-56 md:h-64 xl:h-80"
                   src="https://i.ibb.co/nbdT1Yz/ishtiaq-vai.jpg"
                   alt="Person"
                 />
@@ -171,7 +170,7 @@ export default class App extends React.PureComponent<IAppProps> {
             <div>
               <div className="relative overflow-hidden transition duration-300 transform rounded hover:shadow-2xl shadow-lg shadow-cyan-500/50 hover:shadow-orange-500" data-aos="fade-right" data-aos-duration="1500">
                 <img
-                  className="object-cover w-full h-56 md:h-64 xl:h-80"
+                  className="object-contain w-full h-56 md:h-64 xl:h-80"
                   src="https://i.ibb.co/zHMTPQj/shahjalal-logo.png"
                   alt="Person"
                 />
@@ -203,7 +202,7 @@ export default class App extends React.PureComponent<IAppProps> {
             <div>
               <div className="relative overflow-hidden transition duration-300 transform rounded hover:shadow-2xl shadow-lg shadow-cyan-500/50 hover:shadow-orange-500" data-aos="fade-up" data-aos-duration="1500">
                 <img
-                  className="object-cover w-full h-56 md:h-64 xl:h-80"
+                  className="object-contain w-full h-56 md:h-64 xl:h-80"
                   src="https://i.ibb.co/G5fqRy9/fathe-vai.jpg"
                   alt="Person"
                 />
@@ -235,7 +234,7 @@ export default class App extends React.PureComponent<IAppProps> {
             <div>
               <div className="relative overflow-hidden transition duration-300 transform rounded hover:shadow-2xl shadow-lg shadow-cyan-500/50 hover:shadow-orange-500" data-aos="fade-up" data-aos-duration="1500">
                 <img
-                  className="object-cover w-full h-56 md:h-64 xl:h-80"
+                  className="object-contain w-full h-56 md:h-64 xl:h-80"
                   src="https://i.ibb.co/wQMDcnn/Junaidul-Kader-Tanzim.jpg&amp;dpr=2&amp;h=750&amp;w=1260"
                   alt="Person"
                 />
@@ -267,7 +266,7 @@ export default class App extends React.PureComponent<IAppProps> {
             <div>
               <div className="relative overflow-hidden transition duration-300 transform rounded hover:shadow-2xl shadow-lg shadow-cyan-500/50 hover:shadow-orange-500" data-aos="fade-right" data-aos-duration="1500">
                 <img
-                  className="object-cover w-full h-56 md:h-64 xl:h-80"
+                  className="object-contain w-full h-56 md:h-64 xl:h-80"
                   src="https://i.ibb.co/QQhFjsk/ifazd.jpg"
                   alt="Person"
                 />
@@ -299,7 +298,7 @@ export default class App extends React.PureComponent<IAppProps> {
             <div>
               <div className="relative overflow-hidden transition duration-300 transform rounded hover:shadow-2xl shadow-lg shadow-cyan-500/50 hover:shadow-orange-500" data-aos="fade-up" data-aos-duration="1500">
                 <img
-                  className="object-cover w-full h-56 md:h-64 xl:h-80"
+                  className="object-contain w-full h-56 md:h-64 xl:h-80"
                   src="https://i.ibb.co/QkR7gLx/karima-a.jpg"
                   alt="Person"
                 />
@@ -331,8 +330,8 @@ export default class App extends React.PureComponent<IAppProps> {
             <div>
               <div className="relative overflow-hidden transition duration-300 transform rounded hover:shadow-2xl shadow-lg shadow-cyan-500/50 hover:shadow-orange-500" data-aos="fade-right" data-aos-duration="1500">
                 <img
-                  className="object-cover w-full h-56 md:h-64 xl:h-80"
-                  src="https://scontent.xx.fbcdn.net/v/t1.15752-9/s206x206/262402659_1735915976601927_4074890799033005079_n.jpg?_nc_cat=111&ccb=1-5&_nc_sid=aee45a&_nc_eui2=AeGDA2ilotiM8Y4uutqHqh9xfdg2QrckHk592DZCtyQeTpYvvtOpfs5gHR5jm-pOl1CedWuPeTB-aJg7Tj5Zh4H5&_nc_ohc=0HuAQFhiGxYAX-fBIAD&_nc_ad=z-m&_nc_cid=0&_nc_ht=scontent.xx&oh=03_AVJAJrzofj81rdFWnfZskWG1UKgPHxLuwLNQFKwXg8Qrag&oe=62307A64&amp;cs=tinysrgb&amp;dpr=2&amp;h=750&amp;w=1260"
+                  className="object-contain w-full h-56 md:h-64 xl:h-80"
+                  src="https://i.ibb.co/ZmBwzhy/Sahara-Banu-removebg-preview.jpg"
                   alt="Person"
                 />
                 <div className="absolute inset-0 flex flex-col justify-center px-5 py-4 text-center transition-opacity duration-300 bg-black bg-opacity-75 opacity-0 hover:opacity-100">

@@ -1,7 +1,7 @@
 
 // ADD VENDOR TO DATABASE
 export const AddVendorToDB = (data, navigate) => {
-    fetch('http://localhost:5000/add-vendor', {
+    fetch('https://guarded-ocean-73313.herokuapp.com/add-vendor', {
         method: 'POST',
         headers: {
             'content-type': 'application/json'

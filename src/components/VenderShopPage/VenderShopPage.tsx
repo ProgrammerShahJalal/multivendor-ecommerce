@@ -1,18 +1,19 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 import VendorSidebar from '../VendorSidebar/VendorSidebar';
-import VendorCard from './VendorCard';
 import VendorTop from './VendorTop';
 
 
 /* This example requires Tailwind CSS v2.0+ */
 export default function VendorShopPage() {
+    
+
     return (
         <div className="bg-gray-50 dark:bg-gray-800">
             <VendorTop />
 
-            {/* banner end  */}
-            {/* card start  */}
+            
+            
             <div className='min-h-screen lg:flex md:flex-1  '>
                 {/* sidebar start */}
                 <div className='bg-slate-200 pb-8 md:h-2/4'>
@@ -78,5 +79,5 @@ export default function VendorShopPage() {
                 </div>
             </div>
         </div>
-    )
-}
+    );
+};

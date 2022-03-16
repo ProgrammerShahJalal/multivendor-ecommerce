@@ -8,11 +8,10 @@ interface UserState {
 }
 const Users = () => {
     const [users, setUsers] = useState<UserState["users"]>([]);
-    const [userList, setUserList]= useState<any>([]);
+    const [userList, setUserList] = useState<any>([]);
     const [notFound, setNotFound] = useState('')
     useEffect(() => {
-        if (users) {
-
+        if (users.length === 0) {
             fetch('https://guarded-ocean-73313.herokuapp.com/users')
                 .then(res => res.json())
                 .then(data => setUsers(data))
@@ -21,21 +20,23 @@ const Users = () => {
     const handleOnChange = (event: any) => {
         const searchText = event.target.value.toLowerCase();
         // const findUser: any = users && users.length > 0 ? users?.filter(p => p?.email.toLowerCase().includes(searchText)) : undefined;
-        const findUser: any = users && users.length > 0 ? users?.filter(p => p?.email.toLowerCase().includes(searchText)) : undefined;
+        const findUser: any = users && users.length > 0 ? users?.filter(p => p?.email.toLowerCase().includes(searchText)) : null;
         // setUserList(findUser);
         if (findUser.length > 0) {
-        setUserList(findUser);
-        setNotFound('')
+            setUsers(findUser);
+            setNotFound('')
         }
-        else if (findUser.length===0){
+        else if (findUser.length === 0) {
             setNotFound('Not found')
-            setUserList([])
+            // setUsers([])
+            fetch('https://guarded-ocean-73313.herokuapp.com/users')
+                .then(res => res.json())
+                .then(data => setUsers(data))
         }
     }
-        
+
     return (
         <div className='container mx-auto px-4 sm:px-8'>
-            
             <div className='py-4'>
                 <div>
                     <h2 className="text-2xl font-semibold leading-tight text-left">Users</h2>
@@ -53,15 +54,15 @@ const Users = () => {
                         <input onChange={handleOnChange} placeholder="Search"
                             className="appearance-none rounded-r rounded-l sm:rounded-l-none border border-gray-400 border-b block pl-8 pr-6 py-2 w-full bg-white text-sm placeholder-gray-400 text-gray-700 focus:bg-white dark:bg-slate-800 focus:placeholder-gray-600 focus:text-gray-700 focus:outline-none" />
                     </div>
-                    
+
                 </div>
                 <div>
-            
-                        <div className="text-xl text-center font-md text-red-600">{notFound}</div>
+
+                    <div className="text-xl text-center font-md text-red-600">{notFound}</div>
                 </div>
                 <div className="-mx-4 sm:-mx-8 px-4 sm:px-8 py-4 overflow-x-auto">
-                
-                <div className="inline-block min-w-full shadow rounded-lg overflow-hidden">
+
+                    <div className="inline-block min-w-full shadow rounded-lg overflow-hidden">
                         <table className="min-w-full leading-normal">
                             <thead>
                                 <tr>
@@ -91,50 +92,50 @@ const Users = () => {
                                     </th>
                                 </tr>
                             </thead>
-                            {userList?.length > 0 && userList?.map((user: any) =>
+                            {users?.length > 0 && users?.map((user: any) =>
                             (<tbody>
-                            <tr>
-                            <td className="px-5 py-5 border-b border-gray-200 bg-white dark:bg-slate-800 text-sm">
-                            <div className="flex items-center">
-                            <div className="flex-shrink-0 w-10 h-10">
-                            <img className="w-full h-full rounded-full"
-                            src="https://images.unsplash.com/photo-1540845511934-7721dd7adec3?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=facearea&facepad=2.2&w=160&h=160&q=80"
-                            alt="" />
-                            </div>
-                            <div className="ml-3">
-                            <p className="text-gray-900 dark:text-white whitespace-no-wrap text-left">
-                            {user.name}
-                            </p>
-                </div>
-            </div>
-        </td>
-        <td className="px-5 py-5 border-b border-gray-200 bg-white dark:bg-slate-800 text-sm">
-            <p className="text-gray-900 dark:text-white whitespace-no-wrap text-left">{user.email}</p>
-        </td>
-        <td className="px-5 py-5 border-b border-gray-200 bg-white dark:bg-slate-800 text-sm">
-            <p className="text-gray-900 dark:text-white whitespace-no-wrap text-left">{user.role}</p>
-        </td>
-        <td className="px-5 py-5 border-b border-gray-200 bg-white dark:bg-slate-800 text-sm">
-            <p className="text-gray-900 dark:text-white whitespace-no-wrap text-left">
-                Jan 10, 2022
-            </p>
-        </td>
-        <td className="px-5 py-5 border-b border-gray-200 bg-white dark:bg-slate-800 text-sm">
-            <p className="text-gray-900 dark:text-white rounded whitespace-no-wrap text-left bg-green-200 p-2 w-10">
-                Edit
-            </p>
-        </td>
-        <td className="px-5 py-5 border-b border-gray-200 bg-white dark:bg-slate-800 text-sm">
-            <p className="text-white rounded whitespace-no-wrap text-left bg-red-500 p-2 w-16">
-                Delete
-            </p>
-        </td>
-    </tr>
-</tbody>)
-)}
-                           
+                                <tr>
+                                    <td className="px-5 py-5 border-b border-gray-200 bg-white dark:bg-slate-800 text-sm">
+                                        <div className="flex items-center">
+                                            <div className="flex-shrink-0 w-10 h-10">
+                                                <img className="w-full h-full rounded-full"
+                                                    src="https://images.unsplash.com/photo-1540845511934-7721dd7adec3?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=facearea&facepad=2.2&w=160&h=160&q=80"
+                                                    alt="" />
+                                            </div>
+                                            <div className="ml-3">
+                                                <p className="text-gray-900 dark:text-white whitespace-no-wrap text-left">
+                                                    {user.name}
+                                                </p>
+                                            </div>
+                                        </div>
+                                    </td>
+                                    <td className="px-5 py-5 border-b border-gray-200 bg-white dark:bg-slate-800 text-sm">
+                                        <p className="text-gray-900 dark:text-white whitespace-no-wrap text-left">{user.email}</p>
+                                    </td>
+                                    <td className="px-5 py-5 border-b border-gray-200 bg-white dark:bg-slate-800 text-sm">
+                                        <p className="text-gray-900 dark:text-white whitespace-no-wrap text-left">{user.role}</p>
+                                    </td>
+                                    <td className="px-5 py-5 border-b border-gray-200 bg-white dark:bg-slate-800 text-sm">
+                                        <p className="text-gray-900 dark:text-white whitespace-no-wrap text-left">
+                                            Jan 10, 2022
+                                        </p>
+                                    </td>
+                                    <td className="px-5 py-5 border-b border-gray-200 bg-white dark:bg-slate-800 text-sm">
+                                        <p className="text-gray-900 dark:text-white rounded whitespace-no-wrap text-left bg-green-200 p-2 w-10">
+                                            Edit
+                                        </p>
+                                    </td>
+                                    <td className="px-5 py-5 border-b border-gray-200 bg-white dark:bg-slate-800 text-sm">
+                                        <p className="text-white rounded whitespace-no-wrap text-left bg-red-500 p-2 w-16">
+                                            Delete
+                                        </p>
+                                    </td>
+                                </tr>
+                            </tbody>)
+                            )}
+
                         </table>
-                        
+
                         <div
                             className="px-5 py-5 bg-white dark:bg-slate-800 border-t flex flex-col xs:flex-row items-center xs:justify-between          ">
                             <span className="text-xs xs:text-sm text-gray-900 dark:text-white">
@@ -152,12 +153,13 @@ const Users = () => {
                             </div>
                         </div>
                     </div>
-                    
+
                 </div>
-                
+
             </div>
 
         </div>
+        
 
     );
 };

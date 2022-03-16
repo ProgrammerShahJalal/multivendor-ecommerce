@@ -20,46 +20,33 @@ export default function Banners() {
           loop={true}
           slidesPerView={"auto"}
           autoplay={{
-            delay: 3000,
+            delay: 5000,
             disableOnInteraction: false
           }}
           modules={[Autoplay]}
 
           className="mySwiper">
-          <SwiperSlide
-            className="md:flex items-center justify-center"
-            style={{ height: "34rem" }}>
-            <div className="grid md:grid-cols-2 xs:grid-cols-1">
-              <div className="flex flex-col items-center md:items-start justify-center md:pl-15 lg:pl-32 p-12 text-center md:text-left">
-                <h1 className="text-4xl text-black dark:text-white">
-                  Monster Beats Headphone
-                </h1>
-                <p className="text-2xl text-black dark:text-white">
-                  Feel the beats 🎧
-                </p>
-                <div className="flex gap-2">
-                <p className="line-through text-xl text-blue-500">
-                  $<span className="text-blue-500">49</span>
-                </p>
-                <p className="text-2xl text-black dark:text-white">
-                  $<span className="text-red-600">35</span>
-                </p>
-                </div>
-                <NavLink
-                  style={{ borderRadius: '35px' }}
-                  to="/shop"
-                  className="bg-gray-700 hover:bg-gray-800 transition-all px-6 py-2 mt-3 text-white"
-                >
-                  Buy Now <i className="fa-light fa-cart-circle-plus"></i>
-                </NavLink>
-              </div>
-              <div className="md:-mt-0 lg:-mt-0 -mt-12 items-end justify-end flex">
-                <img src='https://i.ibb.co/880G2zr/headphone.png' alt="Image1" className="md:block" />
-              </div>
-            </div>
-
+          <SwiperSlide style={{height:'30rem'}}
+            className="md:flex items-center justify-center">
+                <img src='https://i.ibb.co/cvWKp44/New-Project.png' alt="Image1" />
           </SwiperSlide>
-          <SwiperSlide
+          <SwiperSlide style={{height:'30rem'}}
+            className="md:flex items-center justify-center">
+                <img src='https://i.ibb.co/c1FZSg3/mac-Book-Banner.png' alt="Image2" />
+          </SwiperSlide>
+          <SwiperSlide style={{height:'30rem'}}
+            className="md:flex items-center justify-center">
+                <img src='https://i.ibb.co/QdDNtBF/nike-Banner.png' alt="Image3" />
+          </SwiperSlide>
+          <SwiperSlide style={{height:'30rem'}}
+            className="md:flex items-center justify-center">
+                <img src='https://i.ibb.co/f135FKC/ps5-Banner.png' alt="Image4" />
+          </SwiperSlide>
+          <SwiperSlide style={{height:'30rem'}}
+            className="md:flex items-center justify-center">
+                <img src='https://i.ibb.co/C8YpBMD/rolex-Banner.png' alt="Image5" />
+          </SwiperSlide>
+          {/* <SwiperSlide
             className="md:flex items-center justify-center"
             style={{ height: "30rem" }}>
             <div className="grid md:grid-cols-2 xs:grid-cols-1">
@@ -188,7 +175,7 @@ export default function Banners() {
               </div>
             </div>
 
-          </SwiperSlide>
+          </SwiperSlide> */}
         </Swiper>
       </div>
     </>
