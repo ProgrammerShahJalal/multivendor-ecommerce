@@ -27,7 +27,7 @@ const PaginatedBlogsItems = ({ itemsPerPage }: any) => {
             .finally(() => setIsLoading(false))
     }, [])
 
-    console.log(blogs, "blogs")
+    // console.log(blogs, "blogs")
 
     useEffect(() => {
         // Fetch items from another resources.

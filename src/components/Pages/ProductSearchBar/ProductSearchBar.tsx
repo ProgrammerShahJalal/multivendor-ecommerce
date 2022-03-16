@@ -64,7 +64,11 @@ const ProductSearchBar: React.FunctionComponent = () => {
     const handleClose = () => setOpen(false);
 
     useLayoutEffect(() => {
+<<<<<<< HEAD
         fetch('https://guarded-ocean-73313.herokuapp.com/products')
+=======
+        fetch('https://morning-inlet-49130.herokuapp.com/products')
+>>>>>>> 451a8d1ddff4fd3116c87137dbdf7a68d88e352a
             .then(res => res.json())
             .then(data => setProducts(data))
 
