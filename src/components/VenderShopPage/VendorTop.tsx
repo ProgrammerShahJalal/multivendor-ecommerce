@@ -21,7 +21,7 @@ const VendorTop = () => {
     let { storeBanner,firstName,lastName,storeEmail,storeLogo } = productsDetails[0] || {};
     return (
         <div>
-            <div>
+            <div className="">
                 <div>
                     <img className='w-full h-80' src={storeBanner} alt="" />
 
