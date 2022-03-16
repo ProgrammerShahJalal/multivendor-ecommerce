@@ -12,7 +12,7 @@ import Brands from '../Pages/Brands/Brands';
 import MessengerCustomerChat from 'react-messenger-customer-chat';
 import Notify from '../Notify/Notify';
 import PaginatedBlogsHome from '../Pages/PaginatedBlogsItems/PaginatedBlogsHome';
-import Products from '../Products/Products';
+// import Products from '../Products/Products';
 // import Alan from './Alan-AI/Alan';
 // import Reviews from '../Pages/Reviews/Reviews';
 import SpecialDeal from './../SpecialDeal/SpecialDeal';
@@ -41,7 +41,7 @@ export default function Home() {
             <TopBanner />
             <SpecialDeal translate={translate} />
             <BannerGadget />
-            <Products translate={translate} />
+            {/* <Products translate={translate} /> */}
             <AllProducts translate={translate} />
             <BannerPro />
             <HomeProducts translate={translate} />
