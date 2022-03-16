@@ -63,8 +63,6 @@ const ProductSearchBar: React.FunctionComponent = () => {
     const handleClose = () => setOpen(false);
 
     useLayoutEffect(() => {
-
-
         fetch('https://morning-inlet-49130.herokuapp.com/products')
             .then(res => res.json())
             .then(data => setProducts(data))

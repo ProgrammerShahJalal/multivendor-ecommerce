@@ -2,18 +2,46 @@ import React from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { addToCart } from '../../../redux/cartSlice';
 import { removeItem } from '../../../redux/wishlistSlice';
+import { ShareButton } from 'react-custom-share';
 
 
 const WishList = () => {
     const dispatch: any = useDispatch()
     const { wishlist } = useSelector((state: any) => state.wishlist);
-
     // console.log(wishlist);
+
+    const shareFBButtonProps = {
+        url: "https://unitymart-c522a.web.app",
+        network: "Facebook",
+        text: "Share unity mart to your facebook. Let your friends know about us",
+        longtext:
+            " "
+    };
+    const shareLNButtonProps = {
+        url: "https://unitymart-c522a.web.app",
+        network: "Linkedin",
+        text: "Share unity mart to your facebook. Let your friends know about us",
+        longtext:
+            " "
+    };
+    const sharePNButtonProps = {
+        url: "https://unitymart-c522a.web.app",
+        network: "Pinterest",
+        text: "Share unity mart to your facebook. Let your friends know about us",
+        longtext:
+            " "
+    };
+
     return (
         <div className="container mx-auto">
             <h1 className='text-4xl justify-center font-bold text-gray-500 uppercase py-4 text-center'>Wish List</h1>
             <div>
-                <p className='text-2xl justify-center font-medium uppercase pb-4 text-center'>Share on<i className="fa-brands fa-facebook text-blue-400 px-2"></i><i className="fa-brands fa-twitter-square text-blue-400"></i></p>
+                <p className='text-2xl justify-center font-medium uppercase pb-4 text-center'>Share on <ShareButton {...shareFBButtonProps}><i className="fa-brands fa-facebook text-blue-500 px-2"></i></ShareButton>
+                    <ShareButton {...shareLNButtonProps}><i className="fa-brands fa-linkedin text-blue-500"></i></ShareButton>
+                    <ShareButton {...sharePNButtonProps}><i className="fa-brands fa-pinterest text-red-600 px-2"></i></ShareButton></p>
+                <div className='mt-2 flex gap-2'>
+
+                </div>
             </div>
 
             <div className="container px-7">
