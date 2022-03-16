@@ -70,7 +70,7 @@ export default class App extends React.PureComponent<IAppProps> {
             </p>
           </div>
 
-          <div className="grid gap-10 sm:grid-cols-2 lg:grid-cols-4">
+          <div className="grid gap-10 sm:grid-cols-2 lg:grid-cols-3">
             <div>
               <div className="relative overflow-hidden transition duration-300 transform rounded hover:shadow-orange-500 hover:shadow-2xl shadow-lg shadow-cyan-500/50" data-aos="fade-right" data-aos-duration="1500">
                 <img

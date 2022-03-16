@@ -3,7 +3,6 @@ import { useContext } from 'react';
 import TopBanner from '../TopBanner/TopBanner';
 import BottomBanner from '../BottomBanner/BottomBanner';
 import Banners from '../Pages/Banner/Banner';
-import { Faq } from '../FAQ/FAQ';
 import HomeProducts from '../HomeProducts/HomeProducts';
 import BannerPro from '../Pages/BannerPro/BannerPro';
 import ScrollToTop from "react-scroll-to-top";
@@ -47,8 +46,6 @@ export default function Home() {
             <Reviews />
             <Brands />
             <PaginatedBlogsHome />
-            <Faq />
-            {/* <Alan /> */}
             <ScrollToTop style={{ display: 'flex', bottom: 150, alignItems: 'center', justifyContent: 'center', left: 15, backgroundColor: '#7209b7' }} smooth color='#ffffff' top={20} height="28" viewBox="0 0 256 256" />
             <MessengerCustomerChat
                 pageId="104774475481224"
