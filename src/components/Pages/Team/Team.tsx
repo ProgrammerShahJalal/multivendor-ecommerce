@@ -70,7 +70,7 @@ export default class App extends React.PureComponent<IAppProps> {
             </p>
           </div>
 
-          <div className="grid gap-10 sm:grid-cols-2 lg:grid-cols-3">
+          <div className="grid gap-10 sm:grid-cols-2 lg:grid-cols-4">
             <div>
               <div className="relative overflow-hidden transition duration-300 transform rounded hover:shadow-orange-500 hover:shadow-2xl shadow-lg shadow-cyan-500/50" data-aos="fade-right" data-aos-duration="1500">
                 <img
@@ -332,7 +332,7 @@ export default class App extends React.PureComponent<IAppProps> {
               <div className="relative overflow-hidden transition duration-300 transform rounded hover:shadow-2xl shadow-lg shadow-cyan-500/50 hover:shadow-orange-500" data-aos="fade-right" data-aos-duration="1500">
                 <img
                   className="object-contain w-full h-56 md:h-64 xl:h-80"
-                  src="https://scontent.xx.fbcdn.net/v/t1.15752-9/s206x206/262402659_1735915976601927_4074890799033005079_n.jpg?_nc_cat=111&ccb=1-5&_nc_sid=aee45a&_nc_eui2=AeGDA2ilotiM8Y4uutqHqh9xfdg2QrckHk592DZCtyQeTpYvvtOpfs5gHR5jm-pOl1CedWuPeTB-aJg7Tj5Zh4H5&_nc_ohc=0HuAQFhiGxYAX-fBIAD&_nc_ad=z-m&_nc_cid=0&_nc_ht=scontent.xx&oh=03_AVJAJrzofj81rdFWnfZskWG1UKgPHxLuwLNQFKwXg8Qrag&oe=62307A64&amp;cs=tinysrgb&amp;dpr=2&amp;h=750&amp;w=1260"
+                  src="https://i.ibb.co/ZmBwzhy/Sahara-Banu-removebg-preview.jpg"
                   alt="Person"
                 />
                 <div className="absolute inset-0 flex flex-col justify-center px-5 py-4 text-center transition-opacity duration-300 bg-black bg-opacity-75 opacity-0 hover:opacity-100">
