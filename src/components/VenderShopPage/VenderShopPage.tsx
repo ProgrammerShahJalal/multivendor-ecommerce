@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useEffect, useState } from 'react';
 import { Link } from 'react-router-dom';
 import VendorSidebar from '../VendorSidebar/VendorSidebar';
 import VendorTop from './VendorTop';
@@ -6,6 +6,16 @@ import VendorTop from './VendorTop';
 
 /* This example requires Tailwind CSS v2.0+ */
 export default function VendorShopPage() {
+    const [products, setProducts] = useState<any>([]);
+
+    useEffect(() => {
+        fetch('https://guarded-ocean-73313.herokuapp.com/products')
+            .then(res => res.json())
+            .then(data => {
+                console.log(data)
+                setProducts(data)})
+
+    }, [])
     
 
     return (
@@ -22,25 +32,29 @@ export default function VendorShopPage() {
                 </div>
                 {/* sidebar end  */}
 
-                <div className='grid lg:grid-cols-4 gap-4 w-full px-10 py-5'>
-                    <div className=' shadow-lg rounded-md h-48 border '>
+                <div className='grid lg:grid-cols-4 gap-10 w-full px-10 py-5 '>
+                    {products?.map((product:any)=>(
+
+                   
+
+                        <div className=' shadow-lg rounded-md h-48 border '>
                         <div>
-                            <img className='w-full h-full object-cover' src="https://images.unsplash.com/photo-1556905055-8f358a7a47b2?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxzZWFyY2h8M3x8Y2xvdGhlc3xlbnwwfHwwfHw%3D&auto=format&fit=crop&w=500&q=60" alt="clothes" />
+                            <img className='w-48' src={product.images[0]?.src} alt="vendor products" />
                         </div>
 
                         <div className='p-5  flex flex-col gap-3 bg-gray-100'>
                             <div className='flex items items-center gap-2'>
-                                <span className=' py-1 rounded-full text-xs bg-gray-100'>Stock ready</span>
+                                <span className=' py-1 rounded-full text-xs bg-gray-100'>Stock {product.stock}</span>
                                 <span className=' py-1 rounded-full text-xs bg-gray-100'>Vendor Store</span>
                             </div>
                             <div>
-                                <h2 className='text-left font-semibold text-2xl overflow-ellipsis overflow-hidden whitespace-nowrap' title='Best Clothes Ever'>Best Clothes </h2>
+                                <h2 className='text-left font-semibold text-2xl overflow-ellipsis overflow-hidden whitespace-nowrap' title='Best Clothes Ever'>{product.title} </h2>
                             </div>
                             <div className='text-left'>
-                                <span className='text-xl  font-bold'>$ 300.00</span>
+                                <span className='text-xl  font-bold'>{product.sale_price}</span>
                                 <div className='flex items-center gap-2 mt-1'>
                                     <span className='test-sm line-through opacity-50'>
-                                        $ 500.00
+                                    {product.reg_price}
                                     </span>
                                     <span className='bg-green-400 px-1 py-0.5 rounded-md text-xs text-white'>
                                         save 20%
@@ -59,7 +73,7 @@ export default function VendorShopPage() {
                                 </span>
                                 <div className='mt-5 flex gap-2'>
 
-                                    <Link to="/">
+                                    <Link to="/cart">
                                         <button className='flex-grow text-white flex justify-center items-center bg-indigo-600 hover:bg-indigo-500 transition rounded-md px-3 py-2'>
                                             Add To Cart
                                         </button></Link>
@@ -75,6 +89,9 @@ export default function VendorShopPage() {
                         </div>
 
                     </div>
+
+                    ))}
+                    
 
                 </div>
             </div>

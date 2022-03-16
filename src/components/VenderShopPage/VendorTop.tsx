@@ -7,14 +7,14 @@ const VendorTop = () => {
 
     const [productsDetails, setProductsDetails] = useState<any>([])
     useEffect(() => {
-        fetch('https://guarded-ocean-73313.herokuapp.com/user/vendor/daraz')
+        fetch(`https://guarded-ocean-73313.herokuapp.com/user/vendor/${storeSlug}`)
             .then(res => res.json())
             .then((data) => {console.log(data)
                 setProductsDetails(data);
 
             })
             
-    }, [])
+    }, [storeSlug])
 
     console.log(productsDetails);
 
@@ -33,7 +33,7 @@ const VendorTop = () => {
 
                     </div>
                     <div className='absolute z-10 ml-10 '>
-                        <Link to="/"><img style={{ marginTop: '-60px' }} src={storeLogo} alt="" /></Link>
+                        <Link to="/"><img style={{ marginTop: '-60px' }} className="w-20 h-20" src={storeLogo} alt="" /></Link>
                     </div>
 
                     <div className='absolute mt-20 ml-14 text-orange-500'>
