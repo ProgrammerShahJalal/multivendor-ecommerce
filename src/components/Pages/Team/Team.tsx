@@ -22,14 +22,14 @@ export default class App extends React.PureComponent<IAppProps> {
           <div className="max-w-xl mb-10 md:mx-auto sm:text-center lg:max-w-2xl md:mb-12">
             <div>
               <h1 className="inline-block px-3 py-px mb-4 text-2xl font-semibold tracking-wider text-orange-900 uppercase rounded-full bg-teal-accent-400">
-                Remote Coder Unity-
-                <span style={{ color: 'rgb(79, 70, 229)', fontWeight: 'bold' }}>
+                Remote Coder Unity 
+                <br />
+                <span className='font-bold text-indigo-500'>
                   {/* Style will be inherited from the parent element */}
                   <Typewriter
-                    words={['Unite We stand!✊', 'Divide we fall!!']}
+                    words={['United We stand!✊', 'Divide we fall!!']}
                     loop={5}
                     cursor
-                    cursorStyle='_'
                     typeSpeed={70}
                     deleteSpeed={50}
                     delaySpeed={1000}
@@ -63,7 +63,7 @@ export default class App extends React.PureComponent<IAppProps> {
                 </svg>
                 <span className="relative">Welcome To</span>
               </span>{' '}
-              our Unity Mart team of Professionals
+              <span>our Unity Mart team of Professionals</span>
             </h2>
             <p className="text-base text-gray-700 md:text-lg select-none">
               An Unity Mart team members work cooperatively alongside other  workers to select, pack, and promptly ship customer orders.Our Team Leader  assignes every works perfectly to ours, and take responsibilities specific to the different Fulfillment Center areas.

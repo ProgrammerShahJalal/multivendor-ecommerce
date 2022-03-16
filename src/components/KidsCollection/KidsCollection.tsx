@@ -75,7 +75,7 @@ const KidsCollection = () => {
             <div className="grid place-content-center lg:grid-cols-4 md:grid-cols-3 grid-cols-1 gap-6">
                 {
                     products.map((product) => (
-                        <div className="bg-white dark:bg-slate-800 shadow-inner overflow-hidden single-card">
+                        <div className="bg-white dark:bg-slate-600 shadow-inner overflow-hidden single-card">
                             <div className="relative group">
                             <div style={{ height: '300px' }} className='bg-white overflow-hidden'>
                                     <img src={product.hoverImg} className='select-none w-full h-full object-contain img group-hover:hidden block transition' alt="" />

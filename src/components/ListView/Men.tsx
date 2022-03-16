@@ -29,7 +29,6 @@ const Men = () => {
             setOpen(true)
     
         };
-        const handleClose = () => setOpen(false);
         const [selectedProduct, setSelectedProduct] = useState<any>()
     useEffect(() => {
         if (products) {
@@ -45,7 +44,7 @@ const Men = () => {
             <div className="grid grid-cols-1 gap-6">
                 {
                     products.map((product) => (
-                        <div className="bg-white dark:bg-slate-800 shadow-inner flex overflow-hidden single-card ">
+                        <div className="bg-white dark:bg-slate-600 shadow-inner flex overflow-hidden single-card ">
                 <div className="relative group">
                 <div style={{ height: '300px',width: '300px' }} className='bg-white overflow-hidden'>
                                     <img src={product.hoverImg} className='select-none w-full h-full object-contain img group-hover:hidden block transition' alt="" />

@@ -67,11 +67,11 @@ const Women = () => {
     }, [products])
 
     return (
-        <div className="container lg:px-12 md:px-10 px-10 pb-16">
+        <div>
             <div className="grid lg:grid-cols-3 md:grid-cols-2 xs:grid-cols-1 gap-6">
                 {
                     products.map((product) => (
-                        <div className="bg-white dark:bg-slate-800 shadow-inner overflow-hidden single-card ">
+                        <div className="bg-white dark:bg-slate-600 shadow-inner overflow-hidden single-card ">
                 <div className="relative group">
                 <div style={{ height: '300px' }} className='bg-white overflow-hidden'>
                                     <img src={product.img} className='select-none w-full h-full object-contain img group-hover:hidden block transition' alt="" />

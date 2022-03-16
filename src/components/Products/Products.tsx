@@ -7,20 +7,6 @@ import ProductView from '../ProductView/ProductView';
 import ProductViewSm from '../ProductView/ProductViewSm';
 import { Link } from 'react-router-dom';
 
-interface ProductState {
-    products: {
-        title: string
-        img: string
-        hoverImg: string
-        price: number
-        salePrice: number
-        size: string
-        vendorName: string
-        rating: number
-        _id: string
-        brands: string
-    }[]
-}
 interface ProductsProps {
     translate: (key: string) => string
 }
@@ -45,10 +31,8 @@ const Products: FC<ProductsProps> = ({ translate }) => {
 
     };
     console.log(products, 'products');
-
-    const handleClose = () => setOpen(false);
     return (
-        <div className="container lg:px-0 md:px-10 px-5 pb-16 mx-auto">
+        <div className="max-w-md md:max-w-7xl pb-16 mx-auto">
             <h2 className="text-3xl text-center font-extrabold text-gray-900 dark:text-white sm:text-4xl mb-10">
                 <span className="text-5xl pr-3" >{translate('latest')}</span>
                 <span className=" text-indigo-600 text-5xl">{translate('product')}</span>
@@ -56,12 +40,12 @@ const Products: FC<ProductsProps> = ({ translate }) => {
             <div className="grid place-content-center lg:grid-cols-4 md:grid-cols-3 grid-cols-1 gap-6">
                 {
                     products.map((product) => {
-                        return <div className="bg-white dark:bg-slate-800 shadow-inner overflow-hidden single-card">
+                        return <div className="bg-white dark:bg-slate-600 shadow-inner overflow-hidden single-card">
 
                             <div className="relative group">
-                                <div style={{ height: '250px' }} className='z-100 overflow-hidden'>
-                                    <img src={product.images[0]?.src} className='w-full select-none img z-0 group-hover:hidden block transition object-center' alt="" />
-                                    <img src={product.images[1]?.src} className='w-full select-none hoverImg group-hover:block hidden transition object-center' alt="" />
+                                <div style={{ height: '300px' }} className='z-100 bg-white overflow-hidden'>
+                                    <img src={product.images[0]?.src} className='w-full h-full select-none img z-0 group-hover:hidden block transition object-contain' alt="" />
+                                    <img src={product.images[1]?.src} className='w-full h-full select-none hoverImg group-hover:block hidden transition object-contain' alt="" />
                                 </div>
                                 <div className="absolute inset-0 bg-black bg-opacity-40 flex items-center justify-center gap-2 opacity-0 group-hover:opacity-100 transition">
                                     <Link to={`/product/details/${product._id}`}>

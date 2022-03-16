@@ -17,7 +17,7 @@ import Products from '../Products/Products';
 // import Reviews from '../Pages/Reviews/Reviews';
 import SpecialDeal from './../SpecialDeal/SpecialDeal';
 import { LangContext } from '../Pages/MultiLanguage/languagecontext/lang';
-import AllProducts from '../AllProducts/AllProducts';
+import AllProducts from '../AllOrders/AllOrders';
 
 
 export default function Home() {
@@ -42,7 +42,7 @@ export default function Home() {
             <SpecialDeal translate={translate} />
             <BannerGadget />
             <Products translate={translate} />
-            <AllProducts translate={translate} />
+            <AllProducts/>
             <BannerPro />
             <HomeProducts translate={translate} />
             <BottomBanner />

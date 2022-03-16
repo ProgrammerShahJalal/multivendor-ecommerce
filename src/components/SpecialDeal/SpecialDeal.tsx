@@ -85,7 +85,7 @@ const SpecialDeal: FC<SpecialDealProps> = ({ translate }) => {
                             {
                                 deals.map((deal) => (
                                     <div className="w-64 flex justify-center items-center gap-2 cursor-pointer">
-                                        <img className="w-20" src={deal.img} alt="" />
+                                        <img className="w-20 bg-white" src={deal.img} alt="" />
                                         <h3 className="text-black dark:text-white">{deal.title}</h3>
                                         <p className="text-black dark:text-white">{deal.price}</p>
                                     </div>
@@ -97,7 +97,7 @@ const SpecialDeal: FC<SpecialDealProps> = ({ translate }) => {
                 <div className="grid lg:grid-cols-3 md:grid-cols-2 sm:grid-cols-1 gap-5">
                     {
                         specials.map((special) => (
-                            <div className="text-center group">
+                            <div className="text-center group bg-white dark:bg-slate-600 p-3">
                                 <div className="hover:w-auto hover:h-auto">
                                     <img style={{ width: '250px', height: '300px' }} className="mx-auto group-hover:hidden block img" src={special.hoverImg} alt="" />
                                     <img style={{ width: '250px', height: '300px' }} className="mx-auto group-hover:block hidden hoverImg" src={special.img} alt="" />
