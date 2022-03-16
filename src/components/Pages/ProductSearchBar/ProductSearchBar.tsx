@@ -1,10 +1,10 @@
 import React, { useState, useLayoutEffect } from 'react';
+// import { Rating } from "@mui/material";
 import Box from '@mui/material/Box';
 import Modal from '@mui/material/Modal';
 import ProductView from '../../ProductView/ProductView';
 import ProductViewSm from '../../ProductView/ProductViewSm';
 import Backdrop from '@mui/material/Backdrop';
-import { Link } from 'react-router-dom';
 
 
 interface ProductState {
@@ -17,7 +17,6 @@ interface ProductState {
         size: string
         vendorName: string
         rating: number
-        _id: string
     }[]
 }
 
@@ -70,84 +69,77 @@ const ProductSearchBar: React.FunctionComponent = () => {
 
     }, [products])
 
+    console.log(products);
     const [productList, setProductList] = useState<any>();
 
     const handleOnChange = (event: any) => {
         const searchText = event.target.value.toLowerCase();
         const findProduct: any = products && products.length > 0 ? products?.filter(p => p?.title.toLowerCase().includes(searchText)) : undefined;
         setProductList(findProduct);
+        // console.log(findProduct, "Product");
         if (searchText === "") {
             setProductList("");
         }
     }
 
     return (
-        <div className="container mx-auto items-center justify-center pt-2 pb-5 my-4 place-content-center place-items-center w-full">
+        <div className="container mx-auto pt-2 pb-5 my-4">
             <div className="text-xl text-center p-4">
                 <input
-                    className='text-center border lg:w-96 sm:w-48 py-2 rounded-full'
+                    className='text-center border w-96 py-2 rounded-full'
                     type='text'
                     placeholder="Search Product"
                     onChange={handleOnChange}
                 />
             </div>
 
-            <div className="text-xl mx-auto justify-center items-center">
+            <div className="text-xl text-center">
                 {
                     productList && productList?.length === 0 && (
-                        <h1 className="text-xl text-center font-bold text-red-600"> This Type Of Product Is Not Available Now</h1>
+                        <div className="text-xl text-center font-bold text-red-600"> This Type Of Product Is Not Available Now</div>
                     )
                 }
 
-                <div className='mx-auto items-start content-start justify-start place-content-center lg:w-96 sm:w-48
-'>
-
+                <div className="grid place-content-center lg:grid-cols-4 md:grid-cols-3 grid-cols-1 gap-6">
                     {productList && productList?.length > 0 && productList?.map((product: any) =>
 
-                        <Link to={`/product/${product._id}`}>
-                            <tr className='mx-auto justify-start items-center overflow-y-scroll w-2/4'>
-                                <td className="px-5 mx-auto py-5 border-b border-gray-200 bg-white dark:bg-slate-800 text-sm">
-                                    <div className="flex mx-auto items-center">
-                                        <div style={{ height: '60px', width: '60px' }}>
-                                            <img className='h-full w-full object-contain' src={product?.images[0]?.src}
-                                                alt="" />
-                                        </div>
-                                        <div className="ml-3">
-                                            <p className="text-gray-900 dark:text-white whitespace-no-wrap text-left">
-                                                {product.title}
-                                            </p>
-                                        </div>
-                                    </div>
-                                </td>
-                                <div className="px-5 py-5 bg-white dark:bg-slate-800 text-sm">
-                                    <p className="text-gray-900 dark:text-white whitespace-no-wrap text-left line-through">${product.reg_price}</p>
-                                </div>
-                                <td className="px-5 py-5 bg-white dark:bg-slate-800 text-sm">
-                                    <p className="text-gray-900 dark:text-white whitespace-no-wrap text-left">${product.sale_price}</p>
-                                </td>
-                                <td className="px-5 py-5 border-b border-gray-200 bg-white dark:bg-slate-800 text-sm">
-                                    <p className="text-gray-900 dark:text-white whitespace-no-wrap text-left">
-                                        {product.stock}(left)
-                                    </p>
-                                </td>
-                                <td className="px-5 py-5 border-b border-gray-200 bg-white dark:bg-slate-800 text-sm">
-                                    <p className="text-gray-900 dark:text-white whitespace-no-wrap text-left">
-                                        from: {product.brand}
-                                    </p>
-                                </td>
-                            </tr>
-                        </Link>
+                    (<div className="bg-white dark:bg-slate-800 shadow-inner overflow-hidden single-card group" key={product._id}>
+                        <div className="relative">
+                            <div style={{ height: '250px' }} className='z-100 overflow-hidden'>
+                                <img src={product.images[0]?.src} className='w-full img z-0 transition object-cover' alt="" />
+                                {/* <img src={product.img} className='w-full hoverImg transition object-cover' alt="" /> */}
+                            </div>
+                            <div className="absolute inset-0 bg-black bg-opacity-40 flex items-center justify-center gap-2 opacity-0 group-hover:opacity-100 transition">
+                                <button onClick={() => handleOpen(product)} className='text-white text-lg w-9 h-8 rounded-full bg-indigo-500 flex items-center justify-center hover:bg-gray-800 transition'>
+                                    <i className="fa-regular fa-magnifying-glass"></i>
+                                </button>
+                                <a className='text-white text-lg w-9 h-8 rounded-full bg-indigo-500 flex items-center justify-center hover:bg-gray-800 transition' href="/">
+                                    <i className="fa-regular fa-heart"></i>
+                                </a>
+                            </div>
+
+                        </div>
+                        <div style={{ height: '200px' }} className="pt-4 gb-3 px-4">
+                            <a href="/">
+                                <h4 className="font-medium text-xl mb-2 text-gray-800 dark:text-white  transition">{product.title}</h4>
+                                <h5 className="font-bold text-sm mb-2 text-gray-800 dark:text-white transition">From: {product.brand}</h5>
+                            </a>
+                            <div className="flex justify-center mb-1 space-x-2 text-center">
+                                <p className="text-xl text-indigo-500 font-semibold text-center">$ {product.reg_price}</p>
+                                <p className="text-sm text-gray-400 line-through text-center">$ {product.sale_price}</p>
+                            </div>
+                            <div className="text-center">
+                                {/* <Rating name="half-rating-read" defaultValue={product.rating} precision={0.5} readOnly />
+                                <div className="text-xs text-gray-500 ml-3">(1)</div> */}
+                                <p className="font-medium text-xl mb-2 text-blue-800 dark:text-white px-2  transition">Stock: {product.stock}</p>
+                                <p className="font-bold text-sm mb-2 text-blue-800 dark:text-white transition"> Offer-Date: {product.offerDate}</p>
+                            </div>
+                        </div>
+                        <button className='block w-full py-1 text-center top-5 text-white bg-indigo-500 border border-indigo-500 rounded-b hover:bg-transparent hover:text-indigo-500 transition'>Add to Cart</button>
+                    </div>)
                     )}
-
                 </div>
-                {
-                    productList?.length === 0 ? <div className='flex justify-center items-center'>
-                        <img className='w-64' src="https://i.ibb.co/Xptk1ZR/search.png" alt="" />
-                    </div>
 
-                        :
-                        <></>
-                }
 
             </div>
 
