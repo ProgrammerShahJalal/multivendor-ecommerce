@@ -140,7 +140,7 @@ export default class App extends React.PureComponent<IAppProps> {
               <div className="relative overflow-hidden transition duration-300 transform rounded hover:shadow-2xl shadow-lg shadow-cyan-500/50 hover:shadow-orange-500" data-aos="fade-right" data-aos-duration="1500">
                 <img
                   className="object-contain w-full h-56 md:h-64 xl:h-80"
-                  src="https://i.ibb.co/nbdT1Yz/ishtiaq-vai.jpg"
+                  src="https://i.ibb.co/VN7NkrZ/Istiaque-Ahmed-vai.jpg"
                   alt="Person"
                 />
                 <div className="absolute inset-0 flex flex-col justify-center px-5 py-4 text-center transition-opacity duration-300 bg-black bg-opacity-75 opacity-0 hover:opacity-100">
@@ -181,7 +181,7 @@ export default class App extends React.PureComponent<IAppProps> {
                   </p>
                   <p className="mb-4 text-xs text-gray-100">Team Leader</p>
                   <p className="mb-4 text-xs tracking-wide text-gray-400">
-                    He is a really good and honest and intelligent person.
+                    He is an absolute responsibility leader. He practices 3I: Inspiration, Influence, Impact. He focuses on the possibilities and takes responsibility to change the world.
                   </p>
                   <div className="flex items-center justify-center space-x-3">
                     <a

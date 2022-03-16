@@ -6,16 +6,6 @@ import { ShareButton } from 'react-custom-share';
 
 
 const WishList = () => {
-<<<<<<< HEAD
-
-
-
-
-    return (
-        <div className="container mx-auto">
-
-            <h1 className='text-4xl justify-center font-bold text-gray-500 uppercase py-4'>Wish List</h1>
-=======
     const dispatch: any = useDispatch()
     const { wishlist } = useSelector((state: any) => state.wishlist);
     // console.log(wishlist);
@@ -45,7 +35,6 @@ const WishList = () => {
     return (
         <div className="container mx-auto">
             <h1 className='text-4xl justify-center font-bold text-gray-500 uppercase py-4 text-center'>Wish List</h1>
->>>>>>> 451a8d1ddff4fd3116c87137dbdf7a68d88e352a
             <div>
                 <p className='text-2xl justify-center font-medium uppercase pb-4 text-center'>Share on <ShareButton {...shareFBButtonProps}><i className="fa-brands fa-facebook text-blue-500 px-2"></i></ShareButton>
                     <ShareButton {...shareLNButtonProps}><i className="fa-brands fa-linkedin text-blue-500"></i></ShareButton>
@@ -63,13 +52,6 @@ const WishList = () => {
                     <h3>Add To Cart</h3>
                     <h3>Remove</h3>
                 </div>
-<<<<<<< HEAD
-                <div className='grid md:grid-cols-5 sm:grid-cols-1 gap-2 items-center justify-center  sm:text-green-600'>
-                    <img src='https://template.annimexweb.com/diva/assets/images/product-images/product-image3-1.jpg' className='w-full p-7 rounded' alt='' />
-                    <h3 className='font-bold text-xl text-pink-600'>Flying Ninja</h3>
-                    <h4 className='text-2xl text-gray-800 dark:text-white font-bold'>$500</h4>
-                    <button type='button' className="w-40 mx-auto text-white bg-indigo-600 rounded-full hover:bg-pink-600 py-2">Add To Cart</button>
-=======
                 <div className='mx-auto'>
                     {
                         wishlist?.map((product) =>
@@ -78,7 +60,6 @@ const WishList = () => {
                             <h3 className='font-bold text-xl text-pink-600 text-center'>{product.title}</h3>
                             <h4 className='text-2xl text-gray-800 dark:text-white font-bold text-center'>${product.sale_price}</h4>
                             <button onClick={() => dispatch(addToCart(product))} type='button' className="w-40 mx-auto text-white bg-indigo-600 rounded-full hover:bg-pink-600 py-2">Add To Cart</button>
->>>>>>> 451a8d1ddff4fd3116c87137dbdf7a68d88e352a
 
                             <button onClick={() => dispatch(removeItem(product))} className='text-3xl text-rose-600 hover:text-gray-600'><i className="fa-solid fa-trash"></i></button>
                         </div>))
