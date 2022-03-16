@@ -35,7 +35,6 @@ const Reviews = () => {
                 <Swiper
                     spaceBetween={30}
                     effect={"coverflow"}
-                    loop={true}
                     grabCursor={true}
                     centeredSlides={true}
                     slidesPerView={"auto"}
@@ -52,11 +51,12 @@ const Reviews = () => {
                     }}
                     breakpoints={{
                         640: {
-                            slidesPerView: 2,
+                            slidesPerView: 1,
                             spaceBetween: 20,
+
                         },
                         768: {
-                            slidesPerView: 3,
+                            slidesPerView: 2,
                             spaceBetween: 40,
                         },
                         1024: {
@@ -91,7 +91,7 @@ const Reviews = () => {
                 </Swiper>
                 <div className="text-center">
                     <Link to='/addReview'>
-                        <button type="button" className="text-white bg-gradient-to-r from-green-400 to-blue-500 hover:from-pink-500 hover:to-yellow-500 my-3 px-4 py-2 rounded-md">Give Your Review
+                        <button type="button" className="text-white bg-gradient-to-r from-green-500 to-blue-500 hover:from-blue-500 hover:to-green-500 my-3 px-4 py-2 rounded-md">Give Your Review
                         </button>
                     </Link>
                 </div>
