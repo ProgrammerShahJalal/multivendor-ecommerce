@@ -147,8 +147,8 @@ function Dashboard() {
             </div>
             <section className="home-section">
                 <div className='container mx-auto'><Outlet></Outlet>
-                <DataChart/>
-                <LineCharts/>
+                {/* <DataChart/>
+                <LineCharts/> */}
                 </div>
             </section>
 

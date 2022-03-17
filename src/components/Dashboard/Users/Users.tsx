@@ -8,7 +8,6 @@ interface UserState {
 }
 const Users = () => {
     const [users, setUsers] = useState<UserState["users"]>([]);
-    const [userList, setUserList] = useState<any>([]);
     const [notFound, setNotFound] = useState('')
     useEffect(() => {
         if (users.length === 0) {
@@ -19,22 +18,23 @@ const Users = () => {
     }, [users])
     const handleOnChange = (event: any) => {
         const searchText = event.target.value.toLowerCase();
-        // const findUser: any = users && users.length > 0 ? users?.filter(p => p?.email.toLowerCase().includes(searchText)) : undefined;
         const findUser: any = users && users.length > 0 ? users?.filter(p => p?.email.toLowerCase().includes(searchText)) : null;
-        // setUserList(findUser);
         if (findUser.length > 0) {
             setUsers(findUser);
             setNotFound('')
         }
         else if (findUser.length === 0) {
             setNotFound('Not found')
-            // setUsers([])
+            fetch('https://guarded-ocean-73313.herokuapp.com/users')
+                .then(res => res.json())
+                .then(data => setUsers(data))
+        }
+        if (searchText===''){
             fetch('https://guarded-ocean-73313.herokuapp.com/users')
                 .then(res => res.json())
                 .then(data => setUsers(data))
         }
     }
-
     return (
         <div className='container mx-auto px-4 sm:px-8'>
             <div className='py-4'>

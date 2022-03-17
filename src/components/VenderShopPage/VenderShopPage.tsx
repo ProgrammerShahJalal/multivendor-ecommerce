@@ -13,17 +13,18 @@ export default function VendorShopPage() {
             .then(res => res.json())
             .then(data => {
                 console.log(data)
-                setProducts(data)})
+                setProducts(data)
+            })
 
     }, [])
-    
+
 
     return (
         <div className="bg-gray-50 dark:bg-gray-800">
             <VendorTop />
 
-            
-            
+
+
             <div className='min-h-screen lg:flex md:flex-1  '>
                 {/* sidebar start */}
                 <div className='bg-slate-200 pb-8 md:h-2/4'>
@@ -32,14 +33,11 @@ export default function VendorShopPage() {
                 </div>
                 {/* sidebar end  */}
 
-               <div className='grid lg:grid-cols-4 gap-10 w-full px-10 py-5 '>
-                    
+                <div className='grid lg:grid-cols-4 md:grid-cols-2 sm:grid-cols-1 gap-10 py-5 '>
 
-                   
+                    {products?.map((product: any) => (<div className=' shadow-lg rounded-md w-border '>
 
-                {products?.map((product:any)=>(<div className=' shadow-lg rounded-md w-border '>
-                       
-                        <div>
+                        <div className='w-64 mx-auto px-8'>
                             <img className='w-48' src={product.images[0]?.src} alt="vendor products" />
                         </div>
 
@@ -49,18 +47,18 @@ export default function VendorShopPage() {
                                 <span className=' py-1 rounded-full text-xs bg-gray-200'>Vendor Store</span>
                             </div>
                             <div>
-                                <h2 className='text-left font-semibold text-2xl overflow-ellipsis overflow-hidden whitespace-nowrap' title='Best Vendor Product Title'>{product.title} </h2>
+                                <h2 className='text-left font-semibold text-xl  overflow-hidden w-64' title='Best Vendor Product Title'>{product.title} </h2>
                             </div>
                             <div className='text-left'>
-                                <span className='text-xl  font-bold'>{product.sale_price}</span> 
+                                <span className='text-xl  font-bold'>{product.sale_price}</span>
                                 <span className='test-sm line-through opacity-50 ml-2'>
                                     {product.reg_price}
-                                    </span>
+                                </span>
                                 {/* <div className='flex items-center gap-2 mt-1'>
                                     <span className='test-sm line-through opacity-50'>
                                     {product.reg_price}
                                     </span> */}
-                                    {/* <span className='bg-green-400 px-1 py-0.5 rounded-md text-xs text-white'>
+                                {/* <span className='bg-green-400 px-1 py-0.5 rounded-md text-xs text-white'>
                                         save 20%
                                     </span> */}
                                 {/* </div> */}
@@ -77,14 +75,14 @@ export default function VendorShopPage() {
                                     {/* flex items-center */}
 
                                 </span>
-                                <div className='mt-5 '>
+                                <div className='mt-5 grid grid-cols-2 lg:grid-cols-1 justify-between items-center place-items-center'>
 
                                     <Link to="/cart">
-                                        <button className=' bg-indigo-600 hover:bg-indigo-500 transition rounded-md px-3 py-2 mb-2'>
+                                        <button className=' bg-indigo-600 hover:bg-indigo-500 transition rounded-md px-3 py-2 text-white'>
                                             Add To Cart
                                         </button></Link>
                                     <Link to="/wishlist">
-                                        <button className=' bg-gray-300/60 hover:bg-gray-300/90 transition rounded-md px-6 mt-2 py-2'>
+                                        <button className=' bg-gray-300/60 hover:bg-gray-300/90 transition rounded-md px-6 py-2'>
                                             <i className="fa-regular fa-heart opacity-50 "></i> Wishlist
                                         </button></Link>
 
@@ -93,16 +91,16 @@ export default function VendorShopPage() {
 
                             </div>
                         </div>
-                        
+
 
                     </div>
                     ))}
 
-           
-                    
+
+
 
                 </div>
-               
+
             </div>
         </div>
     );

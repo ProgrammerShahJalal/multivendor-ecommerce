@@ -58,11 +58,11 @@ const ProductView = ({ selectedProduct }) => {
                         className="mySwiper2"
                     >
                         <SwiperSlide className='flex items-center justify-center' style={{ height: '300px', overflow: 'hidden', position: 'relative' }}>
-                            <Magnifier src={selectedProduct.img3} className='select-none object-contain h-full' alt="" ></Magnifier>
+                            <Magnifier src={selectedProduct.img3 || selectedProduct.images[0]?.src} className='select-none object-contain h-full' alt="" ></Magnifier>
                         </SwiperSlide>
 
                         <SwiperSlide className='flex items-center justify-center' style={{ height: '300px', overflow: 'hidden', position: 'relative' }} >
-                            <Magnifier src={selectedProduct.img} className='select-none object-contain h-full' alt='' />
+                            <Magnifier src={selectedProduct.img || selectedProduct.images[1]?.src} className='select-none object-contain h-full' alt='' />
                         </SwiperSlide>
 
                         <SwiperSlide className='flex items-center justify-center' style={{ height: '300px', overflow: 'hidden', position: 'relative' }}>
@@ -84,10 +84,10 @@ const ProductView = ({ selectedProduct }) => {
                             className="mySwiper"
                         >
                             <SwiperSlide style={{ height: '100px', width: '100px' }}>
-                                <img alt="" src={selectedProduct.img3} className='select-none cursor-pointer' />
+                                <img alt="" src={selectedProduct.img3 || selectedProduct.images[0]?.src} className='select-none cursor-pointer' />
                             </SwiperSlide>
                             <SwiperSlide style={{ height: '100px', width: '100px' }} >
-                                <img alt="" src={selectedProduct.img} className=' select-none cursor-pointer' />
+                                <img alt="" src={selectedProduct.img || selectedProduct.images[1]?.src} className=' select-none cursor-pointer' />
                             </SwiperSlide>
                             <SwiperSlide style={{ height: '100px', width: '100px' }}>
                                 <img alt="" src={selectedProduct.hoverImg} className=' select-none cursor-pointer' />

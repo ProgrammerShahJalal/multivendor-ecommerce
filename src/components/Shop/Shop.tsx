@@ -25,44 +25,6 @@ const subCategories = [
   { name: 'Hip Bags', href: '#' },
   { name: 'Laptop Sleeves', href: '#' },
 ]
-// const filters = [
-//   {
-//     id: 'color',
-//     name: 'Color',
-//     options: [
-//       { value: 'white', label: 'White', checked: false },
-//       { value: 'beige', label: 'Beige', checked: false },
-//       { value: 'blue', label: 'Blue', checked: true },
-//       { value: 'brown', label: 'Brown', checked: false },
-//       { value: 'green', label: 'Green', checked: false },
-//       { value: 'purple', label: 'Purple', checked: false },
-//     ],
-//   },
-//   {
-//     id: 'category',
-//     name: 'Category',
-//     options: [
-//       { value: 'new-arrivals', label: 'New Arrivals', checked: false },
-//       { value: 'sale', label: 'Sale', checked: false },
-//       { value: 'travel', label: 'Travel', checked: true },
-//       { value: 'organization', label: 'Organization', checked: false },
-//       { value: 'accessories', label: 'Accessories', checked: false },
-//     ],
-//   },
-//   {
-//     id: 'size',
-//     name: 'Size',
-//     options: [
-//       { value: '2l', label: '2L', checked: false },
-//       { value: '6l', label: '6L', checked: false },
-//       { value: '12l', label: '12L', checked: false },
-//       { value: '18l', label: '18L', checked: false },
-//       { value: '20l', label: '20L', checked: false },
-//       { value: '40l', label: '40L', checked: true },
-//     ],
-//   },
-// ]
-
 function classNames(...classes) {
   return classes.filter(Boolean).join(' ')
 }
@@ -124,19 +86,58 @@ export default function Shop() {
                     <XIcon className="h-6 w-6" aria-hidden="true" />
                   </button>
                 </div>
-
+                
                 {/* Filters */}
                 <form className="mt-4 border-t border-gray-200">
-                  {/* <h3 className="sr-only">Categories</h3> */}
-                  <ul className="font-medium text-gray-900 px-2 py-3">
-                    {subCategories.map((category) => (
-                      <li key={category.name}>
-                        <a href={category.href} className="block px-2 py-3">
-                          {category.name}
-                        </a>
-                      </li>
-                    ))}
-                  </ul>
+                <Disclosure as="div" className="border-b border-gray-200 p-6">
+                    {({ open }) => (
+                      <>
+                        <h3 className="-my-3 flow-root">
+                          <Disclosure.Button className="py-3 bg-white dark:bg-slate-800 text-black dark:text-white w-full flex items-center justify-between text-sm">
+                            <span className="font-medium text-gray-900 dark:text-white">Categories</span>
+                            <span className="ml-6 flex items-center">
+                              {open ? (
+                                <MinusSmIcon className="h-5 w-5" aria-hidden="true" />
+                              ) : (
+                                <PlusSmIcon className="h-5 w-5" aria-hidden="true" />
+                              )}
+                            </span>
+                          </Disclosure.Button>
+                        </h3>
+                        <Disclosure.Panel className="pt-6">
+                          <div className="space-y-4">
+                              <div  className="flex items-center gap-2 text-black dark:text-white">
+                                <input
+                                  type="checkbox"
+                                  checked={menChecked}
+                                  onChange={handleMenChange}
+                                  className="h-4 w-4 border-gray-300 rounded text-indigo-600 focus:ring-indigo-500"
+                                />
+                                <label htmlFor="cat-1 pl-1">Men</label>
+                              </div>
+                              <div  className="flex items-center gap-2 text-black dark:text-white">
+                                <input
+                                  type="checkbox"
+                                  checked={womenChecked}
+                                  onChange={handleWomenChange}
+                                  className="h-4 w-4 border-gray-300 rounded text-indigo-600 focus:ring-indigo-500"
+                                />
+                                <label htmlFor="cat-1 pl-1">Women</label>
+                              </div>
+                              <div  className="flex items-center gap-2 text-black dark:text-white">
+                                <input
+                                  type="checkbox"
+                                  checked={kidChecked}
+                                  onChange={handleKidChange}
+                                  className="h-4 w-4 border-gray-300 rounded text-indigo-600 focus:ring-indigo-500"
+                                />
+                                <label htmlFor="cat-1 pl-1">Kid</label>
+                              </div>
+                          </div>
+                        </Disclosure.Panel>
+                      </>
+                    )}
+                  </Disclosure>
                 </form>
               </div>
             </Transition.Child>

@@ -70,7 +70,7 @@ export default class App extends React.PureComponent<IAppProps> {
           </div>
 
           <div className="grid gap-10 sm:grid-cols-2 lg:grid-cols-3">
-            <div>
+            <div className='select-none'>
               <div className="relative overflow-hidden transition duration-300 transform rounded hover:shadow-orange-500 hover:shadow-2xl shadow-lg shadow-cyan-500/50" data-aos="fade-right" data-aos-duration="1500">
                 <img
                   className="object-contain w-full h-56 md:h-64 xl:h-80"
@@ -83,7 +83,7 @@ export default class App extends React.PureComponent<IAppProps> {
                   </p>
                   <p className="mb-4 text-xs text-gray-100">Project Manager</p>
                   <p className="mb-4 text-xs tracking-wide text-gray-400">
-                    He is a really talented and helpful man.
+                    The  Associate Manager at Programming Hero is the most intelligent, challenge taker, plan maker,hard working  and enthusiastic person . He always holds his mind to be successful.
                   </p>
                   <div className="flex items-center justify-center space-x-3">
                     <a
@@ -103,7 +103,7 @@ export default class App extends React.PureComponent<IAppProps> {
                 </div>
               </div>
             </div>
-            <div>
+            <div className='select-none'>
               <div className="relative overflow-hidden transition duration-300 transform rounded hover:shadow-2xl shadow-lg shadow-cyan-500/50 hover:shadow-orange-500" data-aos="fade-up" data-aos-duration="1500">
                 <img
                   className="object-contain w-full h-56 md:h-64 xl:h-80"
@@ -116,7 +116,7 @@ export default class App extends React.PureComponent<IAppProps> {
                   </p>
                   <p className="mb-4 text-xs text-gray-100">Project Manager</p>
                   <p className="mb-4 text-xs tracking-wide text-gray-400">
-                    He is a really talented and helpfull man.
+                    Job Placement Executive-Programming Hero who is a passionate, diligent,  patienceable and knowledgeable person. He always provides important guidelines and gives the answer to our silly questions.
                   </p>
                   <div className="flex items-center justify-center space-x-3">
                     <a
@@ -135,11 +135,11 @@ export default class App extends React.PureComponent<IAppProps> {
                 </div>
               </div>
             </div>
-            <div>
+            <div className='select-none'>
               <div className="relative overflow-hidden transition duration-300 transform rounded hover:shadow-2xl shadow-lg shadow-cyan-500/50 hover:shadow-orange-500" data-aos="fade-right" data-aos-duration="1500">
                 <img
                   className="object-contain w-full h-56 md:h-64 xl:h-80"
-                  src="https://i.ibb.co/nbdT1Yz/ishtiaq-vai.jpg"
+                  src="https://i.ibb.co/VN7NkrZ/Istiaque-Ahmed-vai.jpg"
                   alt="Person"
                 />
                 <div className="absolute inset-0 flex flex-col justify-center px-5 py-4 text-center transition-opacity duration-300 bg-black bg-opacity-75 opacity-0 hover:opacity-100">
@@ -148,7 +148,7 @@ export default class App extends React.PureComponent<IAppProps> {
                   </p>
                   <p className="mb-4 text-xs text-gray-100">Project Manager</p>
                   <p className="mb-4 text-xs tracking-wide text-gray-400">
-                    He is a really good and honest and intelligent person.
+                    Job Placement Executive - Programming hero is also an intelligent , active and weariless person. He always keeps his patience up and gives the answer to our repetitive questions.
                   </p>
                   <div className="flex items-center justify-center space-x-3">
                     <a
@@ -167,7 +167,7 @@ export default class App extends React.PureComponent<IAppProps> {
                 </div>
               </div>
             </div>
-            <div>
+            <div className='select-none'>
               <div className="relative overflow-hidden transition duration-300 transform rounded hover:shadow-2xl shadow-lg shadow-cyan-500/50 hover:shadow-orange-500" data-aos="fade-right" data-aos-duration="1500">
                 <img
                   className="object-contain w-full h-56 md:h-64 xl:h-80"
@@ -180,7 +180,7 @@ export default class App extends React.PureComponent<IAppProps> {
                   </p>
                   <p className="mb-4 text-xs text-gray-100">Team Leader</p>
                   <p className="mb-4 text-xs tracking-wide text-gray-400">
-                    He is a really good and honest and intelligent person.
+                    He is an absolute responsibility leader. He practices 3I: Inspiration, Influence, Impact. He focuses on the possibilities and takes responsibility to change the world.
                   </p>
                   <div className="flex items-center justify-center space-x-3">
                     <a
@@ -199,7 +199,7 @@ export default class App extends React.PureComponent<IAppProps> {
                 </div>
               </div>
             </div>
-            <div>
+            <div className='select-none'>
               <div className="relative overflow-hidden transition duration-300 transform rounded hover:shadow-2xl shadow-lg shadow-cyan-500/50 hover:shadow-orange-500" data-aos="fade-up" data-aos-duration="1500">
                 <img
                   className="object-contain w-full h-56 md:h-64 xl:h-80"
@@ -231,7 +231,7 @@ export default class App extends React.PureComponent<IAppProps> {
                 </div>
               </div>
             </div>
-            <div>
+            <div className='select-none'>
               <div className="relative overflow-hidden transition duration-300 transform rounded hover:shadow-2xl shadow-lg shadow-cyan-500/50 hover:shadow-orange-500" data-aos="fade-up" data-aos-duration="1500">
                 <img
                   className="object-contain w-full h-56 md:h-64 xl:h-80"
@@ -263,7 +263,7 @@ export default class App extends React.PureComponent<IAppProps> {
                 </div>
               </div>
             </div>
-            <div>
+            <div className='select-none'>
               <div className="relative overflow-hidden transition duration-300 transform rounded hover:shadow-2xl shadow-lg shadow-cyan-500/50 hover:shadow-orange-500" data-aos="fade-right" data-aos-duration="1500">
                 <img
                   className="object-contain w-full h-56 md:h-64 xl:h-80"
@@ -295,7 +295,7 @@ export default class App extends React.PureComponent<IAppProps> {
                 </div>
               </div>
             </div>
-            <div>
+            <div className='select-none'>
               <div className="relative overflow-hidden transition duration-300 transform rounded hover:shadow-2xl shadow-lg shadow-cyan-500/50 hover:shadow-orange-500" data-aos="fade-up" data-aos-duration="1500">
                 <img
                   className="object-contain w-full h-56 md:h-64 xl:h-80"
@@ -308,7 +308,7 @@ export default class App extends React.PureComponent<IAppProps> {
                   </p>
                   <p className="mb-4 text-xs text-gray-100">Team Member</p>
                   <p className="mb-4 text-xs tracking-wide text-gray-400">
-                    She is really good and honest person.
+                    She is a giver of wisdom, honest, hard worker. Very calmly handles any kind of feature development or any challenge wisely. Very keen to work she is unique in eye-catching UI design.
                   </p>
                   <div className="flex items-center justify-center space-x-3">
                     <a
@@ -327,7 +327,7 @@ export default class App extends React.PureComponent<IAppProps> {
                 </div>
               </div>
             </div>
-            <div>
+            <div className='select-none'>
               <div className="relative overflow-hidden transition duration-300 transform rounded hover:shadow-2xl shadow-lg shadow-cyan-500/50 hover:shadow-orange-500" data-aos="fade-right" data-aos-duration="1500">
                 <img
                   className="object-contain w-full h-56 md:h-64 xl:h-80"
