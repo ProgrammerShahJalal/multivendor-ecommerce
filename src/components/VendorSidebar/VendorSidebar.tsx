@@ -5,7 +5,7 @@ const VendorSidebar = () => {
         <div>
         <div>
             {/* sidebar starts */}
-            
+        
                 {/* Sidebar */}
                 <div className="col-span-1  px-4 pb-6 shadow rounded overflow-hidden">
                     <div className="divide-y divide-gray-200 space-y-5">
@@ -123,6 +123,7 @@ const VendorSidebar = () => {
                                             <input type="radio" name='color' className='hidden' color='red' id='color-red' />
                                             <label htmlFor="color" className='border border-gray-200 rounded-sm h-5 w-5 cursor-pointer shadow-sm block' style={{ backgroundColor: "red" }}></label>
                                         </div>
+                                        {/* <h2>Hello </h2> */}
                                         <div className="color-selctor">
                                             <input type="radio" name='color' className='hidden' color='red' id='color-red' />
                                             <label htmlFor="color" className='border border-gray-200 rounded-sm h-5 w-5 cursor-pointer shadow-sm block' style={{ backgroundColor: "green" }}></label>
