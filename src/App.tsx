@@ -8,6 +8,7 @@ import CustomersService from "./components/CustomersService/CustomersService";
 import AddProduct from "./components/Dashboard/AddProduct/AddProduct";
 import Attributes from "./components/Dashboard/AddProduct/Sub/Attributes/Attributes";
 import Categories from "./components/Dashboard/AddProduct/Sub/Categories/Categories";
+import EditProduct from "./components/Dashboard/AddProduct/Sub/EditProduct/EditProduct";
 // import { SummaryBoxSpecial } from "./components/Dashboard/DashboardHome/DashboardHome";
 import Products from "./components/Dashboard/AddProduct/Sub/Products/Products";
 import Affiliate from "./components/Dashboard/AffiliateDashboard/AffiliateDashboard/Affliate";
@@ -56,7 +57,6 @@ import VendorSidebar from "./components/VendorSidebar/VendorSidebar";
 import WomenProductDetail from './components/WomenProductDetail';
 import AuthProvider from "./context/AuthProvider";
 
-import EditProduct from "./components/Dashboard/AddProduct/Sub/EditProduct/EditProduct";
 
 
 
@@ -86,6 +86,7 @@ function App() {
           <Routes>
             <Route path='/' element={<Home />} />
             <Route path='/home' element={<Home />} />
+            
             <Route path='/userOrders' element={<UserOrders />} />
             <Route path='/contact' element={<Contact />} />
             <Route path='/about' element={<About />} />
