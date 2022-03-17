@@ -1,22 +1,22 @@
-import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
-import Home from "./components/Home/Home";
-import Header from './components/Shared/Header';
-import Footer from './components/Shared/Footer/Footer';
-import Contact from './components/Contact/Contact';
-import About from "./components/Pages/About/About";
-import AuthProvider from "./context/AuthProvider";
-import Register from "./components/Pages/RegisterPage/Register";
-import Login from "./components/Pages/LoginPage/Login";
-import NotFound from './components/NotFound/NotFound';
-import Team from './components/Pages/Team/Team';
-import Shop from "./components/Shop/Shop";
-import PrivateRoute from "./components/Route/PrivateRoute/PrivateRoute";
+import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
 import BlogDetails from "./components/Blogs/BlogDetails/BlogDetails";
-import UserProfile from './components/UserProfile/UserProfile';
-import OrderTracking from './components/OrderTracking/OrderTracking';
 import Checkout from './components/Checkout/Checkout';
+import Contact from './components/Contact/Contact';
+import Home from "./components/Home/Home";
+import NotFound from './components/NotFound/NotFound';
+import OrderTracking from './components/OrderTracking/OrderTracking';
+import About from "./components/Pages/About/About";
+import Login from "./components/Pages/LoginPage/Login";
+import Register from "./components/Pages/RegisterPage/Register";
+import Team from './components/Pages/Team/Team';
+import PrivateRoute from "./components/Route/PrivateRoute/PrivateRoute";
+import Footer from './components/Shared/Footer/Footer';
+import Header from './components/Shared/Header';
+import Shop from "./components/Shop/Shop";
 import SpecialDeal from "./components/SpecialDeal/SpecialDeal";
 import Success from "./components/Success";
+import UserProfile from './components/UserProfile/UserProfile';
+import AuthProvider from "./context/AuthProvider";
 
 
 
