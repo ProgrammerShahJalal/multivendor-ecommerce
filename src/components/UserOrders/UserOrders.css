@@ -119,8 +119,11 @@
 #step-4::after {
     content: 'Shipped'
 }
-
 #step-5::after {
+    content: 'Pending'
+}
+
+#step-6::after {
     content: 'Delivered';
     left: -10px
 }

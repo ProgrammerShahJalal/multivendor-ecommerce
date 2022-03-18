@@ -6,12 +6,12 @@ import './UserOrders.css';
 
 
 const UserOrders = () => {
-    const { user } = UseAuth();
+    const { user,userDetails } = UseAuth();
     const [myOrders, setMyOrders] = useState<any[]>([]);
     useEffect(() => {
         axios.get('https://guarded-ocean-73313.herokuapp.com/dashboard/orders?userEmail=fathekarim3@gmail.com')
             .then(res => setMyOrders(res.data))
-    }, [])
+    }, [userDetails.email])
     console.log(myOrders);
     return (
         <div className='container mx-auto'>
@@ -81,11 +81,12 @@ const UserOrders = () => {
                                             </div>
                                             <div className="progressbar-track">
                                                 <ul className="progressbar gap-3">
-                                                    <li id="step-1" className="text-muted gray mr-3"> <button className="fas fa-gift"></button> </li>
-                                                    <li id="step-2" className="text-muted gray mr-3"> <button className="fas fa-check"></button> </li>
-                                                    <li id="step-3" className="text-muted gray mr-3"> <button className="fas fa-box"></button> </li>
-                                                    <li id="step-4" className="text-muted gray mr-3"> <button className="fas fa-truck"></button> </li>
-                                                    <li id="step-5" className="text-muted green "> <button className="fas fa-box-open"></button> </li>
+                                                    <li id="step-1" className= {`${ order?.status === "Placed" ?' text-muted green mr-3' : 'gray mr-3'}`}> <button className="fas fa-gift"></button> </li>
+                                                    <li id="step-2" className= {`${ order?.status === "Accepted" ?' text-muted green mr-3' : 'gray mr-3'}`}> <button className="fas fa-check"></button> </li>
+                                                    <li id="step-3" className= {`${ order?.status === "Packed" ?' text-muted green mr-3' : 'gray mr-3'}`}> <button className="fas fa-box"></button> </li>
+                                                    <li id="step-4" className= {`${ order?.status === "Shipped" ?' text-muted green mr-3' : 'gray mr-3'}`}> <button className="fas fa-truck"></button> </li>
+                                                    <li id="step-5" className= {`${ order?.status === "Pending" ?' text-muted green mr-3' : 'gray mr-3'}`}> <button className="fas fa-box-open"></button> </li>
+                                                    <li id="step-6" className= {`${ order?.status === "Delivered" ?' text-muted green mr-3' : 'gray '}`}> <button className="fas fa-box-open"></button> </li>
                                                 </ul>
                                                 <div id="tracker"></div>
                                             </div>
