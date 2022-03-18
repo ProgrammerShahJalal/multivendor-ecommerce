@@ -1,6 +1,15 @@
-import React from 'react';
+import React, { useEffect, useState } from 'react';
+import VendorsSearchField from './VendorsSearchField';
 
 const Vendors = () => {
+    const [vendors, setVendors] = useState([]);
+    useEffect(() => {
+        fetch('https://guarded-ocean-73313.herokuapp.com/user/vendors')
+            .then(res => res.json())
+            .then(data => setVendors(data))
+
+    }, [])
+    console.log(vendors);
     return (
 
         <div className='container mx-auto px-4 sm:px-8'>
@@ -9,19 +18,8 @@ const Vendors = () => {
                 <div>
                     <h2 className="text-2xl font-semibold leading-tight text-left">Vendors</h2>
                 </div>
-                <div className="my-2 flex sm:flex-row flex-col">
-
-                    <div className="block relative">
-                        <span className="h-full absolute inset-y-0 left-0 flex items-center pl-2">
-                            <svg viewBox="0 0 24 24" className="h-4 w-4 fill-current text-gray-500">
-                                <path
-                                    d="M10 4a6 6 0 100 12 6 6 0 000-12zm-8 6a8 8 0 1114.32 4.906l5.387 5.387a1 1 0 01-1.414 1.414l-5.387-5.387A8 8 0 012 10z">
-                                </path>
-                            </svg>
-                        </span>
-                        <input placeholder="Search"
-                            className="appearance-none rounded-r rounded-l sm:rounded-l-none border border-gray-400 border-b block pl-8 pr-6 py-2 w-full bg-white dark:bg-slate-800 text-sm placeholder-gray-400 text-gray-700 focus:bg-white dark:bg-slate-800 focus:placeholder-gray-600 focus:text-gray-700 focus:outline-none" />
-                    </div>
+                <div>
+                    <VendorsSearchField />
                 </div>
                 {/* user part end  */}
                 {/* total part start  */}
@@ -81,15 +79,15 @@ const Vendors = () => {
                                 <tr>
                                     <th
                                         className="px-5 py-3 border-b-2 border-gray-200 bg-gray-100 text-left text-xs font-semibold text-gray-600 uppercase tracking-wider">
-                                        User
+                                        Vendor
                                     </th>
                                     <th
                                         className="px-5 py-3 border-b-2 border-gray-200 bg-gray-100 text-left text-xs font-semibold text-gray-600 uppercase tracking-wider">
-                                        Product Name
+                                        Mobile Number
                                     </th>
                                     <th
                                         className="px-5 py-3 border-b-2 border-gray-200 bg-gray-100 text-left text-xs font-semibold text-gray-600 uppercase tracking-wider">
-                                        Total
+                                        Email Address
                                     </th>
                                     <th
                                         className="px-5 py-3 border-b-2 border-gray-200 bg-gray-100 text-left text-xs font-semibold text-gray-600 uppercase tracking-wider">
@@ -112,486 +110,60 @@ const Vendors = () => {
                             </thead>
                             <tbody>
                                 {/* first order start */}
-                                <tr>
-                                    <td className="px-5 py-5 border-b border-gray-200 bg-white dark:bg-slate-800 text-sm">
-                                        <div className="flex items-center">
-                                            <div className="flex-shrink-0 w-10 h-10">
-                                                <img className="w-full h-full rounded-full"
-                                                    src="https://images.unsplash.com/photo-1494790108377-be9c29b29330?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=facearea&facepad=2.2&w=160&h=160&q=80"
-                                                    alt="" />
-                                            </div>
-                                            <div className="ml-3">
-                                                <p className="text-gray-900 dark:text-white whitespace-no-wrap">
-                                                    Vera Carpenter
+
+                                {
+                                    vendors.map((vendor: any) => (
+                                        <tr>
+                                            <td className="px-5 py-5 border-b border-gray-200 bg-white dark:bg-slate-800 text-sm">
+                                                <div className="flex items-center">
+                                                    <div className="flex-shrink-0 w-10 h-10">
+                                                        {/* <img className="w-full h-full rounded-full"
+                                                            src="https://images.unsplash.com/photo-1494790108377-be9c29b29330?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=facearea&facepad=2.2&w=160&h=160&q=80"
+                                                            alt="" /> */}
+                                                        <img className="w-full h-full rounded-full"
+                                                            src={vendor.storeLogo}
+                                                            alt="" />
+                                                    </div>
+                                                    <div className="ml-3">
+                                                        <p className="text-gray-900 dark:text-white whitespace-no-wrap">
+                                                            {vendor.storeName}
+                                                        </p>
+                                                    </div>
+                                                </div>
+                                            </td>
+                                            <td className="px-5 py-5 border-b border-gray-200 bg-white dark:bg-slate-800 text-sm">
+                                                <p className="text-gray-900 dark:text-white whitespace-no-wrap text-left">{vendor.phoneNumber}</p>
+                                            </td>
+                                            <td className="px-5 py-5 border-b border-gray-200 bg-white dark:bg-slate-800 text-sm">
+                                                <p className="text-gray-900 dark:text-white whitespace-no-wrap text-left">{vendor.storeEmail}</p>
+                                            </td>
+                                            <td className="px-5 py-5 border-b border-gray-200 bg-white dark:bg-slate-800 text-sm">
+                                                <p className="text-gray-900 dark:text-white whitespace-no-wrap text-left">
+                                                    Feb 21, 2022
                                                 </p>
-                                            </div>
-                                        </div>
-                                    </td>
-                                    <td className="px-5 py-5 border-b border-gray-200 bg-white dark:bg-slate-800 text-sm">
-                                        <p className="text-gray-900 dark:text-white whitespace-no-wrap text-left">Mobile iPhone</p>
-                                    </td>
-                                    <td className="px-5 py-5 border-b border-gray-200 bg-white dark:bg-slate-800 text-sm">
-                                        <p className="text-gray-900 dark:text-white whitespace-no-wrap text-left">300.00tk</p>
-                                    </td>
-                                    <td className="px-5 py-5 border-b border-gray-200 bg-white dark:bg-slate-800 text-sm">
-                                        <p className="text-gray-900 dark:text-white whitespace-no-wrap text-left">
-                                            Feb 21, 2022
-                                        </p>
-                                    </td>
-                                    <td className="px-5 py-5 border-b border-gray-200 bg-white dark:bg-slate-800 text-sm text-left">
-                                        <span
-                                            className="relative inline-block px-3 py-1  font-semibold text-green-900 leading-tight">
-                                            <span aria-hidden
-                                                className="absolute inset-0 bg-green-200 opacity-50 rounded-full"></span>
-                                            <span className="relative text-left">Delivered</span>
-                                        </span>
-                                    </td>
-                                    <td className="px-5 py-5 border-b border-gray-200 bg-white dark:bg-slate-800 text-sm">
-                                        <p className="text-gray-900 dark:text-white rounded whitespace-no-wrap text-left bg-green-200 p-2 w-10">
-                                            Edit
-                                        </p>
-                                    </td>
-                                    <td className="px-5 py-5 border-b border-gray-200 bg-white dark:bg-slate-800 text-sm">
-                                        <p className="text-white rounded whitespace-no-wrap text-left bg-red-500 p-2 w-16">
-                                            Delete
-                                        </p>
-                                    </td>
-                                </tr>
+                                            </td>
+                                            <td className="px-5 py-5 border-b border-gray-200 bg-white dark:bg-slate-800 text-sm text-left">
+                                                <span
+                                                    className="relative inline-block px-3 py-1  font-semibold text-green-900 leading-tight">
+                                                    <span aria-hidden
+                                                        className="absolute inset-0 bg-green-200 opacity-50 rounded-full"></span>
+                                                    <span className="relative text-left">Delivered</span>
+                                                </span>
+                                            </td>
+                                            <td className="px-5 py-5 border-b border-gray-200 bg-white dark:bg-slate-800 text-sm">
+                                                <p className="text-gray-900 dark:text-white rounded whitespace-no-wrap text-left bg-green-200 p-2 w-10">
+                                                    Edit
+                                                </p>
+                                            </td>
+                                            <td className="px-5 py-5 border-b border-gray-200 bg-white dark:bg-slate-800 text-sm">
+                                                <p className="text-white rounded whitespace-no-wrap text-left bg-red-500 p-2 w-16">
+                                                    Delete
+                                                </p>
+                                            </td>
+                                        </tr>
+                                    ))
+                                }
                                 {/* first order end  */}
-                                <tr>
-                                    <td className="px-5 py-5 border-b border-gray-200 bg-white dark:bg-slate-800 text-sm">
-                                        <div className="flex items-center">
-                                            <div className="flex-shrink-0 w-10 h-10">
-                                                <img className="w-full h-full rounded-full"
-                                                    src="https://images.unsplash.com/photo-1540845511934-7721dd7adec3?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=facearea&facepad=2.2&w=160&h=160&q=80"
-                                                    alt="" />
-                                            </div>
-                                            <div className="ml-3">
-                                                <p className="text-gray-900 dark:text-white whitespace-no-wrap text-left">
-                                                    Dana Moore
-                                                </p>
-                                            </div>
-                                        </div>
-                                    </td>
-                                    <td className="px-5 py-5 border-b border-gray-200 bg-white dark:bg-slate-800 text-sm">
-                                        <p className="text-gray-900 dark:text-white whitespace-no-wrap text-left">T-shirt</p>
-                                    </td>
-                                    <td className="px-5 py-5 border-b border-gray-200 bg-white dark:bg-slate-800 text-sm">
-                                        <p className="text-gray-900 dark:text-white whitespace-no-wrap text-left">300.00tk</p>
-                                    </td>
-                                    <td className="px-5 py-5 border-b border-gray-200 bg-white dark:bg-slate-800 text-sm">
-                                        <p className="text-gray-900 dark:text-white whitespace-no-wrap text-left">
-                                            Jan 10, 2022
-                                        </p>
-                                    </td>
-                                    <td className="px-5 py-5 border-b border-gray-200 bg-white dark:bg-slate-800 text-sm text-left">
-                                        <span
-                                            className="relative inline-block px-3 py-1 font-semibold text-orange-900 leading-tight">
-                                            <span aria-hidden
-                                                className="absolute inset-0 bg-orange-200 opacity-50 rounded-full"></span>
-                                            <span className="relative text-left">Suspended</span>
-                                        </span>
-                                    </td>
-                                    <td className="px-5 py-5 border-b border-gray-200 bg-white dark:bg-slate-800 text-sm">
-                                        <p className="text-gray-900 dark:text-white rounded whitespace-no-wrap text-left bg-green-200 p-2 w-10">
-                                            Edit
-                                        </p>
-                                    </td>
-                                    <td className="px-5 py-5 border-b border-gray-200 bg-white dark:bg-slate-800 text-sm">
-                                        <p className="text-white rounded whitespace-no-wrap text-left bg-red-500 p-2 w-16">
-                                            Delete
-                                        </p>
-                                    </td>
-                                </tr>
-
-
-                                <tr>
-                                    <td className="px-5 py-5 bg-white dark:bg-slate-800 text-sm">
-                                        <div className="flex items-center">
-                                            <div className="flex-shrink-0 w-10 h-10">
-                                                <img className="w-full h-full rounded-full"
-                                                    src="https://images.unsplash.com/photo-1522609925277-66fea332c575?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=facearea&facepad=2.2&h=160&w=160&q=80"
-                                                    alt="" />
-                                            </div>
-                                            <div className="ml-3">
-                                                <p className="text-gray-900 dark:text-white whitespace-no-wrap text-left">
-                                                    Alonzo Cox
-                                                </p>
-                                            </div>
-                                        </div>
-                                    </td>
-                                    <td className="px-5 py-5 bg-white dark:bg-slate-800 text-sm">
-                                        <p className="text-gray-900 dark:text-white whitespace-no-wrap text-left">Camera</p>
-                                    </td>
-                                    <td className="px-5 py-5 border-b border-gray-200 bg-white dark:bg-slate-800 text-sm">
-                                        <p className="text-gray-900 dark:text-white whitespace-no-wrap text-left">300.00tk</p>
-                                    </td>
-                                    <td className="px-5 py-5 bg-white dark:bg-slate-800 text-sm">
-                                        <p className="text-gray-900 dark:text-white whitespace-no-wrap text-left">March 18, 2022</p>
-                                    </td>
-                                    <td className="px-5 py-5 bg-white dark:bg-slate-800 text-sm text-left">
-                                        <span
-                                            className="relative inline-block px-3 py-1 font-semibold text-red-900 leading-tight">
-                                            <span aria-hidden
-                                                className="absolute inset-0 bg-red-200 opacity-50 rounded-full"></span>
-                                            <span className="relative text-left">Shipped</span>
-                                        </span>
-                                    </td>
-                                    <td className="px-5 py-5 border-b border-gray-200 bg-white dark:bg-slate-800 text-sm">
-                                        <p className="text-gray-900 dark:text-white rounded whitespace-no-wrap text-left bg-green-200 p-2 w-10">
-                                            Edit
-                                        </p>
-                                    </td>
-                                    <td className="px-5 py-5 border-b border-gray-200 bg-white dark:bg-slate-800 text-sm">
-                                        <p className="text-white rounded whitespace-no-wrap text-left bg-red-500 p-2 w-16">
-                                            Delete
-                                        </p>
-                                    </td>
-                                </tr>
-                                <tr>
-                                    <td className="px-5 py-5 bg-white dark:bg-slate-800 text-sm">
-                                        <div className="flex items-center">
-                                            <div className="flex-shrink-0 w-10 h-10">
-                                                <img className="w-full h-full rounded-full"
-                                                    src="https://images.unsplash.com/photo-1522609925277-66fea332c575?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=facearea&facepad=2.2&h=160&w=160&q=80"
-                                                    alt="" />
-                                            </div>
-                                            <div className="ml-3">
-                                                <p className="text-gray-900 dark:text-white whitespace-no-wrap text-left">
-                                                    Alonzo Cox
-                                                </p>
-                                            </div>
-                                        </div>
-                                    </td>
-                                    <td className="px-5 py-5 bg-white dark:bg-slate-800 text-sm">
-                                        <p className="text-gray-900 dark:text-white whitespace-no-wrap text-left">Camera</p>
-                                    </td>
-                                    <td className="px-5 py-5 border-b border-gray-200 bg-white dark:bg-slate-800 text-sm">
-                                        <p className="text-gray-900 dark:text-white whitespace-no-wrap text-left">300.00tk</p>
-                                    </td>
-                                    <td className="px-5 py-5 bg-white dark:bg-slate-800 text-sm">
-                                        <p className="text-gray-900 dark:text-white whitespace-no-wrap text-left">March 18, 2022</p>
-                                    </td>
-                                    <td className="px-5 py-5 bg-white dark:bg-slate-800 text-sm text-left">
-                                        <span
-                                            className="relative inline-block px-3 py-1 font-semibold text-red-900 leading-tight">
-                                            <span aria-hidden
-                                                className="absolute inset-0 bg-red-200 opacity-50 rounded-full"></span>
-                                            <span className="relative text-left">Shipped</span>
-                                        </span>
-                                    </td>
-                                    <td className="px-5 py-5 border-b border-gray-200 bg-white dark:bg-slate-800 text-sm">
-                                        <p className="text-gray-900 dark:text-white rounded whitespace-no-wrap text-left bg-green-200 p-2 w-10">
-                                            Edit
-                                        </p>
-                                    </td>
-                                    <td className="px-5 py-5 border-b border-gray-200 bg-white dark:bg-slate-800 text-sm">
-                                        <p className="text-white rounded whitespace-no-wrap text-left bg-red-500 p-2 w-16">
-                                            Delete
-                                        </p>
-                                    </td>
-                                </tr>
-                                <tr>
-                                    <td className="px-5 py-5 bg-white dark:bg-slate-800 text-sm">
-                                        <div className="flex items-center">
-                                            <div className="flex-shrink-0 w-10 h-10">
-                                                <img className="w-full h-full rounded-full"
-                                                    src="https://images.unsplash.com/photo-1522609925277-66fea332c575?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=facearea&facepad=2.2&h=160&w=160&q=80"
-                                                    alt="" />
-                                            </div>
-                                            <div className="ml-3">
-                                                <p className="text-gray-900 dark:text-white whitespace-no-wrap text-left">
-                                                    Alonzo Cox
-                                                </p>
-                                            </div>
-                                        </div>
-                                    </td>
-                                    <td className="px-5 py-5 bg-white dark:bg-slate-800 text-sm">
-                                        <p className="text-gray-900 dark:text-white whitespace-no-wrap text-left">Camera</p>
-                                    </td>
-                                    <td className="px-5 py-5 border-b border-gray-200 bg-white dark:bg-slate-800 text-sm">
-                                        <p className="text-gray-900 dark:text-white whitespace-no-wrap text-left">300.00tk</p>
-                                    </td>
-                                    <td className="px-5 py-5 bg-white dark:bg-slate-800 text-sm">
-                                        <p className="text-gray-900 dark:text-white whitespace-no-wrap text-left">March 18, 2022</p>
-                                    </td>
-                                    <td className="px-5 py-5 bg-white dark:bg-slate-800 text-sm text-left">
-                                        <span
-                                            className="relative inline-block px-3 py-1 font-semibold text-red-900 leading-tight">
-                                            <span aria-hidden
-                                                className="absolute inset-0 bg-red-200 opacity-50 rounded-full"></span>
-                                            <span className="relative text-left">Shipped</span>
-                                        </span>
-                                    </td>
-                                    <td className="px-5 py-5 border-b border-gray-200 bg-white dark:bg-slate-800 text-sm">
-                                        <p className="text-gray-900 dark:text-white rounded whitespace-no-wrap text-left bg-green-200 p-2 w-10">
-                                            Edit
-                                        </p>
-                                    </td>
-                                    <td className="px-5 py-5 border-b border-gray-200 bg-white dark:bg-slate-800 text-sm">
-                                        <p className="text-white rounded whitespace-no-wrap text-left bg-red-500 p-2 w-16">
-                                            Delete
-                                        </p>
-                                    </td>
-                                </tr>
-                                <tr>
-                                    <td className="px-5 py-5 bg-white dark:bg-slate-800 text-sm">
-                                        <div className="flex items-center">
-                                            <div className="flex-shrink-0 w-10 h-10">
-                                                <img className="w-full h-full rounded-full"
-                                                    src="https://images.unsplash.com/photo-1522609925277-66fea332c575?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=facearea&facepad=2.2&h=160&w=160&q=80"
-                                                    alt="" />
-                                            </div>
-                                            <div className="ml-3">
-                                                <p className="text-gray-900 dark:text-white whitespace-no-wrap text-left">
-                                                    Alonzo Cox
-                                                </p>
-                                            </div>
-                                        </div>
-                                    </td>
-                                    <td className="px-5 py-5 bg-white dark:bg-slate-800 text-sm">
-                                        <p className="text-gray-900 dark:text-white whitespace-no-wrap text-left">Camera</p>
-                                    </td>
-                                    <td className="px-5 py-5 border-b border-gray-200 bg-white dark:bg-slate-800 text-sm">
-                                        <p className="text-gray-900 dark:text-white whitespace-no-wrap text-left">300.00tk</p>
-                                    </td>
-                                    <td className="px-5 py-5 bg-white dark:bg-slate-800 text-sm">
-                                        <p className="text-gray-900 dark:text-white whitespace-no-wrap text-left">March 18, 2022</p>
-                                    </td>
-                                    <td className="px-5 py-5 bg-white dark:bg-slate-800 text-sm text-left">
-                                        <span
-                                            className="relative inline-block px-3 py-1 font-semibold text-red-900 leading-tight">
-                                            <span aria-hidden
-                                                className="absolute inset-0 bg-red-200 opacity-50 rounded-full"></span>
-                                            <span className="relative text-left">Shipped</span>
-                                        </span>
-                                    </td>
-                                    <td className="px-5 py-5 border-b border-gray-200 bg-white dark:bg-slate-800 text-sm">
-                                        <p className="text-gray-900 dark:text-white rounded whitespace-no-wrap text-left bg-green-200 p-2 w-10">
-                                            Edit
-                                        </p>
-                                    </td>
-                                    <td className="px-5 py-5 border-b border-gray-200 bg-white dark:bg-slate-800 text-sm">
-                                        <p className="text-white rounded whitespace-no-wrap text-left bg-red-500 p-2 w-16">
-                                            Delete
-                                        </p>
-                                    </td>
-                                </tr>
-                                <tr>
-                                    <td className="px-5 py-5 bg-white dark:bg-slate-800 text-sm">
-                                        <div className="flex items-center">
-                                            <div className="flex-shrink-0 w-10 h-10">
-                                                <img className="w-full h-full rounded-full"
-                                                    src="https://images.unsplash.com/photo-1522609925277-66fea332c575?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=facearea&facepad=2.2&h=160&w=160&q=80"
-                                                    alt="" />
-                                            </div>
-                                            <div className="ml-3">
-                                                <p className="text-gray-900 dark:text-white whitespace-no-wrap text-left">
-                                                    Alonzo Cox
-                                                </p>
-                                            </div>
-                                        </div>
-                                    </td>
-                                    <td className="px-5 py-5 bg-white dark:bg-slate-800 text-sm">
-                                        <p className="text-gray-900 dark:text-white whitespace-no-wrap text-left">Camera</p>
-                                    </td>
-                                    <td className="px-5 py-5 border-b border-gray-200 bg-white dark:bg-slate-800 text-sm">
-                                        <p className="text-gray-900 dark:text-white whitespace-no-wrap text-left">300.00tk</p>
-                                    </td>
-                                    <td className="px-5 py-5 bg-white dark:bg-slate-800 text-sm">
-                                        <p className="text-gray-900 dark:text-white whitespace-no-wrap text-left">March 18, 2022</p>
-                                    </td>
-                                    <td className="px-5 py-5 bg-white dark:bg-slate-800 text-sm text-left">
-                                        <span
-                                            className="relative inline-block px-3 py-1 font-semibold text-red-900 leading-tight">
-                                            <span aria-hidden
-                                                className="absolute inset-0 bg-red-200 opacity-50 rounded-full"></span>
-                                            <span className="relative text-left">Shipped</span>
-                                        </span>
-                                    </td>
-                                    <td className="px-5 py-5 border-b border-gray-200 bg-white dark:bg-slate-800 text-sm">
-                                        <p className="text-gray-900 dark:text-white rounded whitespace-no-wrap text-left bg-green-200 p-2 w-10">
-                                            Edit
-                                        </p>
-                                    </td>
-                                    <td className="px-5 py-5 border-b border-gray-200 bg-white dark:bg-slate-800 text-sm">
-                                        <p className="text-white rounded whitespace-no-wrap text-left bg-red-500 p-2 w-16">
-                                            Delete
-                                        </p>
-                                    </td>
-                                </tr>
-                                <tr>
-                                    <td className="px-5 py-5 bg-white dark:bg-slate-800 text-sm">
-                                        <div className="flex items-center">
-                                            <div className="flex-shrink-0 w-10 h-10">
-                                                <img className="w-full h-full rounded-full"
-                                                    src="https://images.unsplash.com/photo-1522609925277-66fea332c575?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=facearea&facepad=2.2&h=160&w=160&q=80"
-                                                    alt="" />
-                                            </div>
-                                            <div className="ml-3">
-                                                <p className="text-gray-900 dark:text-white whitespace-no-wrap text-left">
-                                                    Alonzo Cox
-                                                </p>
-                                            </div>
-                                        </div>
-                                    </td>
-                                    <td className="px-5 py-5 bg-white dark:bg-slate-800 text-sm">
-                                        <p className="text-gray-900 dark:text-white whitespace-no-wrap text-left">Camera</p>
-                                    </td>
-                                    <td className="px-5 py-5 border-b border-gray-200 bg-white dark:bg-slate-800 text-sm">
-                                        <p className="text-gray-900 dark:text-white whitespace-no-wrap text-left">300.00tk</p>
-                                    </td>
-                                    <td className="px-5 py-5 bg-white dark:bg-slate-800 text-sm">
-                                        <p className="text-gray-900 dark:text-white whitespace-no-wrap text-left">March 18, 2022</p>
-                                    </td>
-                                    <td className="px-5 py-5 bg-white dark:bg-slate-800 text-sm text-left">
-                                        <span
-                                            className="relative inline-block px-3 py-1 font-semibold text-red-900 leading-tight">
-                                            <span aria-hidden
-                                                className="absolute inset-0 bg-red-200 opacity-50 rounded-full"></span>
-                                            <span className="relative text-left">Shipped</span>
-                                        </span>
-                                    </td>
-                                    <td className="px-5 py-5 border-b border-gray-200 bg-white dark:bg-slate-800 text-sm">
-                                        <p className="text-gray-900 dark:text-white rounded whitespace-no-wrap text-left bg-green-200 p-2 w-10">
-                                            Edit
-                                        </p>
-                                    </td>
-                                    <td className="px-5 py-5 border-b border-gray-200 bg-white dark:bg-slate-800 text-sm">
-                                        <p className="text-white rounded whitespace-no-wrap text-left bg-red-500 p-2 w-16">
-                                            Delete
-                                        </p>
-                                    </td>
-                                </tr>
-                                <tr>
-                                    <td className="px-5 py-5 bg-white dark:bg-slate-800 text-sm">
-                                        <div className="flex items-center">
-                                            <div className="flex-shrink-0 w-10 h-10">
-                                                <img className="w-full h-full rounded-full"
-                                                    src="https://images.unsplash.com/photo-1522609925277-66fea332c575?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=facearea&facepad=2.2&h=160&w=160&q=80"
-                                                    alt="" />
-                                            </div>
-                                            <div className="ml-3">
-                                                <p className="text-gray-900 dark:text-white whitespace-no-wrap text-left">
-                                                    Alonzo Cox
-                                                </p>
-                                            </div>
-                                        </div>
-                                    </td>
-                                    <td className="px-5 py-5 bg-white dark:bg-slate-800 text-sm">
-                                        <p className="text-gray-900 dark:text-white whitespace-no-wrap text-left">Camera</p>
-                                    </td>
-                                    <td className="px-5 py-5 border-b border-gray-200 bg-white dark:bg-slate-800 text-sm">
-                                        <p className="text-gray-900 dark:text-white whitespace-no-wrap text-left">300.00tk</p>
-                                    </td>
-                                    <td className="px-5 py-5 bg-white dark:bg-slate-800 text-sm">
-                                        <p className="text-gray-900 dark:text-white whitespace-no-wrap text-left">March 18, 2022</p>
-                                    </td>
-                                    <td className="px-5 py-5 bg-white dark:bg-slate-800 text-sm text-left">
-                                        <span
-                                            className="relative inline-block px-3 py-1 font-semibold text-red-900 leading-tight">
-                                            <span aria-hidden
-                                                className="absolute inset-0 bg-red-200 opacity-50 rounded-full"></span>
-                                            <span className="relative text-left">Shipped</span>
-                                        </span>
-                                    </td>
-                                    <td className="px-5 py-5 border-b border-gray-200 bg-white dark:bg-slate-800 text-sm">
-                                        <p className="text-gray-900 dark:text-white rounded whitespace-no-wrap text-left bg-green-200 p-2 w-10">
-                                            Edit
-                                        </p>
-                                    </td>
-                                    <td className="px-5 py-5 border-b border-gray-200 bg-white dark:bg-slate-800 text-sm">
-                                        <p className="text-white rounded whitespace-no-wrap text-left bg-red-500 p-2 w-16">
-                                            Delete
-                                        </p>
-                                    </td>
-                                </tr>
-                                <tr>
-                                    <td className="px-5 py-5 bg-white dark:bg-slate-800 text-sm">
-                                        <div className="flex items-center">
-                                            <div className="flex-shrink-0 w-10 h-10">
-                                                <img className="w-full h-full rounded-full"
-                                                    src="https://images.unsplash.com/photo-1522609925277-66fea332c575?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=facearea&facepad=2.2&h=160&w=160&q=80"
-                                                    alt="" />
-                                            </div>
-                                            <div className="ml-3">
-                                                <p className="text-gray-900 dark:text-white whitespace-no-wrap text-left">
-                                                    Alonzo Cox
-                                                </p>
-                                            </div>
-                                        </div>
-                                    </td>
-                                    <td className="px-5 py-5 bg-white dark:bg-slate-800 text-sm">
-                                        <p className="text-gray-900 dark:text-white whitespace-no-wrap text-left">Camera</p>
-                                    </td>
-                                    <td className="px-5 py-5 border-b border-gray-200 bg-white dark:bg-slate-800 text-sm">
-                                        <p className="text-gray-900 dark:text-white whitespace-no-wrap text-left">300.00tk</p>
-                                    </td>
-                                    <td className="px-5 py-5 bg-white dark:bg-slate-800 text-sm">
-                                        <p className="text-gray-900 dark:text-white whitespace-no-wrap text-left">March 18, 2022</p>
-                                    </td>
-                                    <td className="px-5 py-5 bg-white dark:bg-slate-800 text-sm text-left">
-                                        <span
-                                            className="relative inline-block px-3 py-1 font-semibold text-red-900 leading-tight">
-                                            <span aria-hidden
-                                                className="absolute inset-0 bg-red-200 opacity-50 rounded-full"></span>
-                                            <span className="relative text-left">Shipped</span>
-                                        </span>
-                                    </td>
-                                    <td className="px-5 py-5 border-b border-gray-200 bg-white dark:bg-slate-800 text-sm">
-                                        <p className="text-gray-900 dark:text-white rounded whitespace-no-wrap text-left bg-green-200 p-2 w-10">
-                                            Edit
-                                        </p>
-                                    </td>
-                                    <td className="px-5 py-5 border-b border-gray-200 bg-white dark:bg-slate-800 text-sm">
-                                        <p className="text-white rounded whitespace-no-wrap text-left bg-red-500 p-2 w-16">
-                                            Delete
-                                        </p>
-                                    </td>
-                                </tr>
-                                <tr>
-                                    <td className="px-5 py-5 bg-white dark:bg-slate-800 text-sm">
-                                        <div className="flex items-center">
-                                            <div className="flex-shrink-0 w-10 h-10">
-                                                <img className="w-full h-full rounded-full"
-                                                    src="https://images.unsplash.com/photo-1522609925277-66fea332c575?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=facearea&facepad=2.2&h=160&w=160&q=80"
-                                                    alt="" />
-                                            </div>
-                                            <div className="ml-3">
-                                                <p className="text-gray-900 dark:text-white whitespace-no-wrap text-left">
-                                                    Alonzo Cox
-                                                </p>
-                                            </div>
-                                        </div>
-                                    </td>
-                                    <td className="px-5 py-5 bg-white dark:bg-slate-800 text-sm">
-                                        <p className="text-gray-900 dark:text-white whitespace-no-wrap text-left">Camera</p>
-                                    </td>
-                                    <td className="px-5 py-5 border-b border-gray-200 bg-white dark:bg-slate-800 text-sm">
-                                        <p className="text-gray-900 dark:text-white whitespace-no-wrap text-left">300.00tk</p>
-                                    </td>
-                                    <td className="px-5 py-5 bg-white dark:bg-slate-800 text-sm">
-                                        <p className="text-gray-900 dark:text-white whitespace-no-wrap text-left">March 18, 2022</p>
-                                    </td>
-                                    <td className="px-5 py-5 bg-white dark:bg-slate-800 text-sm text-left">
-                                        <span
-                                            className="relative inline-block px-3 py-1 font-semibold text-red-900 leading-tight">
-                                            <span aria-hidden
-                                                className="absolute inset-0 bg-red-200 opacity-50 rounded-full"></span>
-                                            <span className="relative text-left">Shipped</span>
-                                        </span>
-                                    </td>
-                                    <td className="px-5 py-5 border-b border-gray-200 bg-white dark:bg-slate-800 text-sm">
-                                        <p className="text-gray-900 dark:text-white rounded whitespace-no-wrap text-left bg-green-200 p-2 w-10">
-                                            Edit
-                                        </p>
-                                    </td>
-                                    <td className="px-5 py-5 border-b border-gray-200 bg-white dark:bg-slate-800 text-sm">
-                                        <p className="text-white rounded whitespace-no-wrap text-left bg-red-500 p-2 w-16">
-                                            Delete
-                                        </p>
-                                    </td>
-                                </tr>
                             </tbody>
                         </table>
                         <div

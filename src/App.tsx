@@ -119,7 +119,7 @@ function App() {
 
 
             {/* DASHBOARD ROUTES */}
-            <Route path="/dashboard" element={<AdminRoute><Dashboard /></AdminRoute>} >
+            <Route path="/dashboard" element={<Dashboard />} >
               <Route path="media" element={<Media />}></Route>
               <Route path="affiliate-dashboard" element={<Affiliate />}></Route>
               <Route path="affiliate-links" element={<AffiliateLinks />}></Route>
