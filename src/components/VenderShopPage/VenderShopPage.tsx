@@ -23,9 +23,7 @@ export default function VendorShopPage() {
         <div className="bg-gray-50 dark:bg-gray-800">
             <VendorTop />
 
-
-
-            <div className='min-h-screen lg:flex md:flex-1  '>
+            <div className='min-h-screen lg:flex md:flex-1 '>
                 {/* sidebar start */}
                 <div className='bg-slate-200 pb-8 md:h-2/4'>
 
@@ -47,10 +45,10 @@ export default function VendorShopPage() {
                                 <span className=' py-1 rounded-full text-xs bg-gray-200'>Vendor Store</span>
                             </div>
                             <div>
-                                <h2 className='text-left font-semibold text-xl  overflow-hidden w-64' title='Best Vendor Product Title'>{product.title} </h2>
+                                <h2 className='text-left font-semibold text-base  overflow-hidden' title='Best Vendor Product Title'>{product.title} </h2>
                             </div>
                             <div className='text-left'>
-                                <span className='text-xl  font-bold'>{product.sale_price}</span>
+                                <span className='text-base  font-bold'>{product.sale_price}</span>
                                 <span className='test-sm line-through opacity-50 ml-2'>
                                     {product.reg_price}
                                 </span>
@@ -75,7 +73,7 @@ export default function VendorShopPage() {
                                     {/* flex items-center */}
 
                                 </span>
-                                <div className='mt-5 grid grid-cols-2 lg:grid-cols-1 justify-between items-center place-items-center'>
+                                <div className='mt-5 grid grid-cols-2 lg:grid-cols-1 gap-4 justify-between items-center place-items-center'>
 
                                     <Link to="/cart">
                                         <button className=' bg-indigo-600 hover:bg-indigo-500 transition rounded-md px-3 py-2 text-white'>
