@@ -1,20 +1,3 @@
-<<<<<<< HEAD
-import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
-import BlogDetails from "./components/Blogs/BlogDetails/BlogDetails";
-import Checkout from './components/Checkout/Checkout';
-import Contact from './components/Contact/Contact';
-import Home from "./components/Home/Home";
-import NotFound from './components/NotFound/NotFound';
-import OrderTracking from './components/OrderTracking/OrderTracking';
-import About from "./components/Pages/About/About";
-import Login from "./components/Pages/LoginPage/Login";
-import Register from "./components/Pages/RegisterPage/Register";
-import Team from './components/Pages/Team/Team';
-import PrivateRoute from "./components/Route/PrivateRoute/PrivateRoute";
-import Footer from './components/Shared/Footer/Footer';
-import Header from './components/Shared/Header';
-import Shop from "./components/Shop/Shop";
-=======
 import { useContext, useLayoutEffect } from "react";
 import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
 import SingleProduct from "./components/AllProducts/SingleProduct";
@@ -25,6 +8,7 @@ import CustomersService from "./components/CustomersService/CustomersService";
 import AddProduct from "./components/Dashboard/AddProduct/AddProduct";
 import Attributes from "./components/Dashboard/AddProduct/Sub/Attributes/Attributes";
 import Categories from "./components/Dashboard/AddProduct/Sub/Categories/Categories";
+import EditProduct from "./components/Dashboard/AddProduct/Sub/EditProduct/EditProduct";
 // import { SummaryBoxSpecial } from "./components/Dashboard/DashboardHome/DashboardHome";
 import Products from "./components/Dashboard/AddProduct/Sub/Products/Products";
 import Affiliate from "./components/Dashboard/AffiliateDashboard/AffiliateDashboard/Affliate";
@@ -62,14 +46,9 @@ import HeaderLanguage from './components/Shared/HeaderLanguage';
 import AffiliateShop from "./components/Shop/AffiliateShop";
 import Shop from "./components/Shop/Shop";
 import DealDetails from "./components/SpecialDeal/DealDetails";
->>>>>>> b1f4bff6c2874c1694a4e4eb2830e30383b2c8c0
 import SpecialDeal from "./components/SpecialDeal/SpecialDeal";
 import StoreListCards from "./components/StoreListCard/StoreListCard";
 import Success from "./components/Success";
-<<<<<<< HEAD
-import UserProfile from './components/UserProfile/UserProfile';
-import AuthProvider from "./context/AuthProvider";
-=======
 import TermsCondition from "./components/TermsCondition/TermsCondition";
 import UserOrders from "./components/UserOrders/UserOrders";
 import UserProfile from './components/UserProfile/UserProfile';
@@ -78,8 +57,7 @@ import VendorSidebar from "./components/VendorSidebar/VendorSidebar";
 import WomenProductDetail from './components/WomenProductDetail';
 import AuthProvider from "./context/AuthProvider";
 
-import EditProduct from "./components/Dashboard/AddProduct/Sub/EditProduct/EditProduct";
->>>>>>> b1f4bff6c2874c1694a4e4eb2830e30383b2c8c0
+
 
 
 
@@ -168,12 +146,6 @@ function App() {
           <Footer />
         </Router>
       </AuthProvider>
-<<<<<<< HEAD
-
-      
-
-=======
->>>>>>> b1f4bff6c2874c1694a4e4eb2830e30383b2c8c0
     </div>
 
   );
