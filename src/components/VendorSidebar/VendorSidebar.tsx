@@ -6,6 +6,7 @@ const VendorSidebar = () => {
         <div>
             {/* sidebar starts */}
         <h2>hello ami jeno solve korte pari</h2>
+        <h2>hello ami jeno solve korte pari</h2>
                 {/* Sidebar */}
                 <div className="col-span-1  px-4 pb-6 shadow rounded overflow-hidden">
                     <div className="divide-y divide-gray-200 space-y-5">
