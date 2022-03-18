@@ -116,7 +116,7 @@ function App() {
             <Route path='/product/:id' element={<SingleProduct />} />
 
             {/* DASHBOARD ROUTES */}
-            <Route path="/dashboard" element={<AdminRoute><Dashboard /></AdminRoute>} >
+            <Route path="/dashboard" element={<Dashboard />} >
               <Route path="media" element={<Media />}></Route>
 
 
