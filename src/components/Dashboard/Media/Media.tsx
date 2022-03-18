@@ -114,7 +114,6 @@ export default function Media() {
                     </form>
 
                 </div>
-                {/* style={{ height: '150px' }}  width={150}  */}
             </div>
             <div className="container grid grid-cols-6 gap-4 mx-auto"  >
                 {isTrue ? <h2>Loading..</h2> :

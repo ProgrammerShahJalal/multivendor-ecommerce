@@ -7,6 +7,7 @@ const AllOrders = () => {
     const [orders, setOrders] = useState<any[]>([])
     const [isLoading, setIsLoading] = useState<boolean>(false)
     const [notFound, setNotFound] = useState('')
+    const [value, setValue] = useState('All');
     const { userDetails } = UseAuth()
     useEffect(() => {
         setIsLoading(true)
@@ -74,6 +75,23 @@ const AllOrders = () => {
                 .then(res => res.json())
                 .then(data => setOrders(data))
         }
+        
+    }
+    const handleChange = (event:any) =>{
+        const statusFilter = event.target.value;
+        event.preventDefault();
+        if (statusFilter === 'Delivered'){
+        const filteringDeliver = orders?.filter(p => p?.status === 'Delivered')
+        // console.log(filteringDeliver);
+        setOrders(filteringDeliver)
+        setValue('Delivered')
+        }
+        else if (statusFilter==='Shipped'){
+            const filteringShipped = orders?.filter(p => p?.status === 'Shipped')
+            // console.log(filteringShipped);
+            setOrders(filteringShipped)
+        setValue('Shipped')
+        }
     }
     return (
 
@@ -88,10 +106,12 @@ const AllOrders = () => {
 
                         <div className="relative">
                             <select
+                            value={value}
+                                onChange={handleChange}
                                 className="h-full rounded-r border-t sm:rounded-r-none sm:border-r-0 border-r border-b block appearance-none w-full bg-white border-gray-400 text-gray-700 py-2 px-4 pr-8 leading-tight focus:outline-none focus:border-l focus:border-r focus:bg-white focus:border-gray-500">
-                                <option value='all'>All</option>
-                                <option value='delivered'>Delivered</option>
-                                <option value='shipped'>Shipped</option>
+                                <option value='All'>All</option>
+                                <option value='Delivered'>Delivered</option>
+                                <option value='Shipped'>Shipped</option>
                             </select>
                             <div
                                 className="pointer-events-none absolute inset-y-0 right-1 flex items-center px-2 text-gray-700">

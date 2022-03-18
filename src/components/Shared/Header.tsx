@@ -22,7 +22,6 @@ const navigation = {
         { name: 'Shop', to: '/shop' },
         { name: 'About', to: '/about' },
         { name: 'Contact', to: '/contact' },
-        { name: 'Vendors', to: '/vendors' },
         { name: 'Dashboard', to: '/dashboard' },
     ],
 }
