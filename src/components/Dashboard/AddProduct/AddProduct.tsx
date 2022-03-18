@@ -1,5 +1,4 @@
 import React, { useEffect, useState } from 'react';
-import DateTimePicker from 'react-datetime-picker';
 import './AddProduct.css'
 import Select from 'react-select';
 import Modal from '../Media/Modal';
@@ -8,6 +7,11 @@ import { convertToRaw } from 'draft-js';
 import draftToHtml from 'draftjs-to-html';
 import "react-draft-wysiwyg/dist/react-draft-wysiwyg.css";
 import UseAuth from '../../../hooks/UseAuth';
+import TextField from '@mui/material/TextField';
+import AdapterDateFns from '@mui/lab/AdapterDateFns';
+import LocalizationProvider from '@mui/lab/LocalizationProvider';
+import MobileDateTimePicker from '@mui/lab/MobileDateTimePicker';
+import Stack from '@mui/material/Stack';
 
 type attributeValues = {
     label: string, options: [{ label: string, value: string }]
@@ -16,7 +20,6 @@ type attributes = {
     label: string, value: string
 }
 const AddProduct: React.FunctionComponent = () => {
-
     const [categories, setCategories] = useState<string[]>([])
     const [attributes, setAttributes] = useState<attributes[]>([])
     const [newAttributes, setNewAttributes] = useState<any>([])
@@ -43,10 +46,6 @@ const AddProduct: React.FunctionComponent = () => {
 
     const { userDetails } = UseAuth()
 
-    console.log(userDetails, ' userDetails');
-
-
-
     // GET ATTRIBUTES LABELS AND VALUES
     useEffect(() => {
         fetch('https://guarded-ocean-73313.herokuapp.com/dashboard/attributes')
@@ -60,13 +59,10 @@ const AddProduct: React.FunctionComponent = () => {
             })
     }, [])
 
-    // IS IT VENDOR OR ADMIN
-
-
 
     // GET DYNAMIC ATTRIBUTES VALUE
-    const previousValue = (label: string, e: any) => {
-        console.log(e.selected);
+    const previousValue = (label: string, e: any, options) => {
+        console.log(e, 'e');
 
         let itemIndex: any;
         if (newAttributes.length > 0) {
@@ -84,7 +80,8 @@ const AddProduct: React.FunctionComponent = () => {
 
                 updatedArr[itemIndex] = {
                     ...updatedArr[itemIndex],
-                    selected: [...e]
+                    selected: [...e],
+                    options: [...options]
                 }
                 return updatedArr
 
@@ -94,6 +91,7 @@ const AddProduct: React.FunctionComponent = () => {
             }
         });
     }
+
 
     // let newCat: any = []
     const [newCat, setNewCat] = useState()
@@ -131,7 +129,7 @@ const AddProduct: React.FunctionComponent = () => {
     // PRODUCT UPLOAD FUNCTION
     const handleProductSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
         e.preventDefault()
-
+        console.log('form 1');
         if (categories.length === 0) {
             return alert('please add category')
         }
@@ -151,7 +149,7 @@ const AddProduct: React.FunctionComponent = () => {
         }
         console.log(newProduct, 'newProduct');
 
-
+        setIsLoading(true)
         fetch('https://guarded-ocean-73313.herokuapp.com/dashboard/addProduct', {
             headers: { "Content-Type": "application/json" },
             method: 'POST',
@@ -165,37 +163,8 @@ const AddProduct: React.FunctionComponent = () => {
             })
             .catch(error => {
                 console.error('Error:', error);
-            });
+            }).finally(() => setIsLoading(false));
 
-
-    }
-
-    // UPLOAD IMAGES FROM MODAL
-
-    const handleUploadImages = (event: React.SyntheticEvent) => {
-
-        event.preventDefault();
-
-        // const formData = new FormData();
-        // const files = images.target.files;
-        // for (let i = 0; i < files.length; i += 1) {
-        //     formData.append('images[]', files[i]);
-        // }
-
-        // fetch('https://guarded-ocean-73313.herokuapp.com/addProduct', {
-        //     method: 'post',
-        //     body: formData
-        // })
-        //     .then(response => response.json())
-        //     .then(data => {
-        //         if (data.insertedId) {
-        //             alert('img Added')
-        //         }
-        //     })
-        //     .catch(error => {
-        //         console.error('Error:', error);
-        //     });
-        event.preventDefault();
 
     }
 
@@ -219,7 +188,7 @@ const AddProduct: React.FunctionComponent = () => {
     return (
         <div>
             <div className="mt-5 md:mt-0 md:col-span-2">
-                <form onSubmit={handleProductSubmit}>
+                <form onSubmit={handleProductSubmit} id="form1">
                     <div className="grid grid-cols-3 gap-4">
 
                         <div className="col-span-2">
@@ -259,7 +228,19 @@ const AddProduct: React.FunctionComponent = () => {
                                         </div>
                                         <div className="basis-1/4">
                                             <label className="block text-sm font-medium text-gray-700 mb-3"> Offer last date and time </label>
-                                            <DateTimePicker className='shadow appearance-none border-none rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline' onChange={setDate} value={date} />
+                                            <LocalizationProvider dateAdapter={AdapterDateFns}>
+                                                <Stack spacing={3}>
+                                                    <MobileDateTimePicker
+                                                        minDate={new Date()}
+                                                        value={date}
+                                                        onChange={(newValue) => {
+                                                            setDate(newValue);
+                                                        }}
+                                                        renderInput={(params) => <TextField {...params} />}
+                                                    />
+
+                                                </Stack>
+                                            </LocalizationProvider>
                                         </div>
                                         <div className="basis-1/4">
                                             <label className="block text-sm font-medium text-gray-700 mb-3"> Stock </label>
@@ -283,7 +264,7 @@ const AddProduct: React.FunctionComponent = () => {
                                                     <label className="block text-sm font-medium text-gray-700 mb-3"> {attr.label} </label>
 
                                                     <Select options={attr.options}
-                                                        onChange={(e: any) => previousValue(attr.label, e)}
+                                                        onChange={(e: any) => previousValue(attr.label, e, attr.options)}
                                                         className="shadow appearance-none border rounded w-full text-gray-700 leading-tight focus:outline-none focus:shadow-outline" isMulti />
                                                 </div>
                                             }
@@ -326,11 +307,10 @@ const AddProduct: React.FunctionComponent = () => {
                                     </div>
                                     <br />
                                     <div>
-                                        <span>+ Add Images up to 10 images</span>
+                                        <span>+ Add Images</span>
                                     </div>
                                 </label>
-                                <label className='text-center'>Please first upload images from media</label>
-                                <Modal eventBubbling={eventBubbling} selectedItems={selectedImages} handleUploadImages={handleUploadImages} showModal={showModal} setShowModal={setShowModal} />
+                                <Modal eventBubbling={eventBubbling} selectedItems={selectedImages} showModal={showModal} setShowModal={setShowModal} />
 
                                 <br />
 
@@ -353,13 +333,14 @@ const AddProduct: React.FunctionComponent = () => {
 
                                                 <div key={image.id} className="  w-full">
                                                     <div className='flex justify-between'>
-                                                        {/* <button
+                                                        <button
+                                                            className='bg-red-400 text-white rounded px-1'
                                                             onClick={() =>
-                                                                setSelectedImages(selectedImages.filter((e) => e !== image))
+                                                                setSelectedImages(selectedImages.filter((e) => e.id !== image.id))
                                                             }
                                                         >
                                                             x
-                                                        </button> */}
+                                                        </button>
                                                         <p>{index + 1}</p>
                                                     </div>
                                                     <img className='shadow sm:rounded-md product-thumb' src={image.src} height="200" alt="upload" />
@@ -381,7 +362,10 @@ const AddProduct: React.FunctionComponent = () => {
                             </div>
 
                             <div className=" py-3 text-right ">
-                                <button type="submit" className="inline-flex justify-center py-2 px-4 border border-transparent drop-shadow-md text-sm font-medium rounded-md text-white bg-indigo-600 hover:bg-indigo-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500">Publish</button>
+                                {isLoading ? <button type="button" className="inline-flex items-center justify-center py-2 px-4 border border-transparent drop-shadow-md text-sm font-medium rounded-md text-white bg-indigo-500 hover:bg-indigo-500 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500" disabled>
+                                    <i className="fa-solid fa-spinner motion-reduce:hidden animate-spin text-white mr-2"></i>
+                                    Processing...
+                                </button> : <button type="submit" className="inline-flex justify-center py-2 px-4 border border-transparent drop-shadow-md text-sm font-medium rounded-md text-white bg-indigo-600 hover:bg-indigo-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500">Publish</button>}
                             </div>
                         </div>
 

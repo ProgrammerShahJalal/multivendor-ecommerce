@@ -10,7 +10,7 @@ import NotFound from './components/NotFound/NotFound';
 import Team from './components/Pages/Team/Team';
 import Shop from "./components/Shop/Shop";
 import PrivateRoute from "./components/Route/PrivateRoute/PrivateRoute";
-import UserProfile from './components/UserProfile/UserProfile';
+import UserProfile from './components/UserDashboard/UserDashboard/UserDashboard';
 import OrderTracking from './components/OrderTracking/OrderTracking';
 import Success from "./components/Success";
 import VendorShopPage from "./components/VenderShopPage/VenderShopPage";
@@ -26,7 +26,7 @@ import DetailBlogPage from "./components/Blogs/DetailBlogPage";
 import Affiliate from "./components/Dashboard/AffiliateDashboard/AffiliateDashboard/Affliate";
 import AffiliateLinks from "./components/Dashboard/AffiliateDashboard/AffiliateLinks/AffiliateLinks";
 import Dashboard from "./components/Dashboard/Dashboard/Dashboard";
-import { useLayoutEffect } from "react";
+import { useEffect, useLayoutEffect, useState } from "react";
 import AllOrders from "./components/Dashboard/Order/allOrder";
 import Vendors from "./components/Dashboard/Vendors/Vendors";
 import VendorProfileDetails from "./components/Dashboard/Vendors/VendorsProfileDetails";
@@ -57,13 +57,18 @@ import AdminRoute from "./components/Route/AdminRoute/AdminRoute";
 import VendorCard from "./components/VenderShopPage/VendorCard";
 import StoreListCards from "./components/StoreListCard/StoreListCard";
 import SearchField from "./components/Pages/SearchField/SearchField";
-import UserOrders from "./components/UserOrders/UserOrders";
 import EditProduct from "./components/Dashboard/AddProduct/Sub/EditProduct/EditProduct";
+import UserDashboardHome from "./components/UserDashboard/UserDashboardHome/UserDashboardHome";
+import UserOrders from "./components/UserDashboard/UserOrders/UserOrders";
+import UseAuth from "./hooks/UseAuth";
+
+
 
 
 
 
 function App() {
+
   const affiliateLink = window.location.search.split('=')[1]
   useLayoutEffect(() => {
     if (affiliateLink) {
@@ -88,7 +93,6 @@ function App() {
           <Routes>
             <Route path='/' element={<Home />} />
             <Route path='/home' element={<Home />} />
-            <Route path='/userOrders' element={<UserOrders />} />
             <Route path='/contact' element={<Contact />} />
             <Route path='/about' element={<About />} />
             <Route path='/offer' element={<Promo />} />
@@ -114,15 +118,17 @@ function App() {
             <Route path='/vendorShop' element={<VendorShopPage />} />
             <Route path='/vendorSidebar' element={<VendorSidebar />} />
             <Route path='/vendorLogin' element={<PrivateRoute><VendorInformations /></PrivateRoute>} />
-            <Route path='/profile' element={<PrivateRoute><UserProfile /></PrivateRoute>} />
             <Route path='/success/:id' element={<PrivateRoute><Success /></PrivateRoute>} />
             <Route path='/blogs/details/:id' element={<PrivateRoute><DetailBlogPage /></PrivateRoute>} />
             <Route path='/specials/details/:id' element={<PrivateRoute><DealDetails /></PrivateRoute>} />
             <Route path='/product/:id' element={<SingleProduct />} />
-
-
+            {/* USER DASHBOARD */}
+            <Route path="/profile" element={<PrivateRoute><UserProfile /></PrivateRoute>} >
+              <Route path="dashboard" element={<UserDashboardHome />}></Route>
+              <Route path="orders" element={<UserOrders />}></Route>
+            </Route>
             {/* DASHBOARD ROUTES */}
-            <Route path="/dashboard" element={<AdminRoute><Dashboard /></AdminRoute>} >
+            <Route path="/dashboard" element={<AdminRoute ><Dashboard /></AdminRoute>} >
               <Route path="media" element={<Media />}></Route>
               <Route path="affiliate-dashboard" element={<Affiliate />}></Route>
               <Route path="affiliate-links" element={<AffiliateLinks />}></Route>
@@ -133,9 +139,9 @@ function App() {
               <Route path="attributes" element={<Attributes />}></Route>
               <Route path="products" element={<Products />}></Route>
               <Route path="users" element={<Users />}></Route>
-              <Route path='edit-product/:id' element={<EditProduct />} />
+              <Route path='edit-product/:id' element={<AdminRoute ><EditProduct /></AdminRoute>} />
               <Route path="vendors" element={<Vendors />}></Route>
-              <Route path="vendor-profile" element={<VendorProfileDetails />}></Route>
+              <Route path="vendor-profile/:id" element={<VendorProfileDetails />}></Route>
             </Route>
             <Route path='*' element={<NotFound />} />
           </Routes>

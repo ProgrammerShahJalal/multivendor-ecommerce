@@ -1,3 +1,4 @@
+import { CircularProgress } from '@mui/material';
 import React, { useEffect, useState } from 'react';
 import { Link } from 'react-router-dom';
 import UseAuth from '../../../hooks/UseAuth';
@@ -142,7 +143,7 @@ const AllOrders = () => {
                 </div> */}
                 {/* total part end  */}
                 {/* order part start */}
-                <div className="-mx-4 sm:-mx-8 px-4 sm:px-8 py-4 overflow-x-auto">
+                {isLoading ? <span className='flex justify-center'><CircularProgress color="inherit" /></span> : <div className="-mx-4 sm:-mx-8 px-4 sm:px-8 py-4 overflow-x-auto">
                     <div className="inline-block min-w-full shadow rounded-lg overflow-hidden">
                         <table className="min-w-full leading-normal">
                             <thead>
@@ -190,7 +191,7 @@ const AllOrders = () => {
                             <tbody>
 
 
-                                {isLoading ? ' Loading...' :
+                                {
                                     orders.map(order => {
                                         return <tr key={order._id}>
                                             <td className="px-5 py-5 border-b border-gray-200 bg-white text-sm">
@@ -260,7 +261,7 @@ const AllOrders = () => {
                             </div>
                         </div>
                     </div>
-                </div>
+                </div>}
                 {/* order part end  */}
 
             </div>

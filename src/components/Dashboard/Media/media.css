@@ -11,7 +11,7 @@
     height: 50%;
 }
 .gallery-images{
-    height: 500px;
+    height: 350px;
     overflow-y: scroll;
 }
 .react-datetime-picker__wrapper {

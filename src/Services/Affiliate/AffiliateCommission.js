@@ -1,5 +1,5 @@
 export const affiliateCommission = (affiliateShortURL, price) => {
-    console.log('affiliateShortURL', affiliateShortURL);
+    console.log('price', price);
     // SET COMMISSION
     const earned = ((2 / 100) * (price / 100)).toFixed(2)
 

@@ -4,18 +4,27 @@ import { Navigate, useLocation } from 'react-router';
 import UseAuth from '../../../hooks/UseAuth';
 
 const AdminRoute = ({ children, ...rest }) => {
-    const { userDetails, isLoading } = UseAuth()
+    const { isLoading, userDetails } = UseAuth()
     const location = useLocation();
-    if (isLoading) {
-        return <CircularProgress color="inherit" />
-    }
+    console.log(userDetails, isLoading, 'userDetails');
 
+    if (isLoading) {
+        return <span className='flex justify-center'><CircularProgress color="inherit" /></span>
+    }
     if (userDetails.email && userDetails.role === 'admin') {
         return children;
-    } else if (userDetails.email && userDetails.role === 'vendor') {
+    }
+    if (userDetails.email && userDetails.role === 'vendor') {
         return children;
     }
-    return (<Navigate to="/login" state={{ from: location }} />);
+
+    if (userDetails.role === '') {
+        return <Navigate to="/login" state={{ from: location }} />;
+    }
+    if (userDetails.role === 'user') {
+        return <Navigate to="/" state={{ from: location }} />;
+    }
+
 };
 
 export default AdminRoute;

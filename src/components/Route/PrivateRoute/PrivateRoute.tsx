@@ -8,7 +8,7 @@ function PrivateRoute({ children }: any) {
     const location = useLocation();
 
     if (isLoading) {
-        return <CircularProgress color="inherit" />
+        return <span className='flex justify-center'><CircularProgress color="inherit" /></span>
 
     }
 
