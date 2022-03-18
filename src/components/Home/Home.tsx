@@ -1,33 +1,58 @@
-import React from 'react'
-import './Home.css';
+import React, { useState } from 'react';
+import { useContext } from 'react';
 import TopBanner from '../TopBanner/TopBanner';
 import BottomBanner from '../BottomBanner/BottomBanner';
-import Reviews from '../Pages/Reviews/Reviews';
-import Blogs from '../Blogs/Blogs';
 import Banners from '../Pages/Banner/Banner';
-import { Faq } from '../FAQ/FAQ';
 import HomeProducts from '../HomeProducts/HomeProducts';
-import Brands from '../Pages/Brands/Brands';
 import BannerPro from '../Pages/BannerPro/BannerPro';
-import SpecialDeal from '../SpecialDeal/SpecialDeal';
 import ScrollToTop from "react-scroll-to-top";
 import BannerGadget from '../Pages/BannerGadget/BannerGadget';
+import Brands from '../Pages/Brands/Brands';
+import MessengerCustomerChat from 'react-messenger-customer-chat';
+import Notify from '../Notify/Notify';
+import PaginatedBlogsHome from '../Pages/PaginatedBlogsItems/PaginatedBlogsHome';
+// import Products from '../Products/Products';
+// import Alan from './Alan-AI/Alan';
+import Reviews from '../Pages/Reviews/Reviews';
+import SpecialDeal from './../SpecialDeal/SpecialDeal';
+import { LangContext } from '../Pages/MultiLanguage/languagecontext/lang';
+import AllProducts from '../AllProducts/AllProducts';
+
 
 export default function Home() {
+    const { dispatch: { translate } } = useContext(LangContext);
+
+    const [loading, setLoading] = useState(true);
+    setTimeout(() => setLoading(false), 3000);
+    if (loading) {
+        return <div>
+            <img
+                src='https://i.ibb.co/xm46jwY/preloader.gif' className="mx-auto select-none dark:hidden block" alt=""></img>
+            <img
+                src='https://i.ibb.co/L9DK6z6/preloader.gif' className="mx-auto select-none dark:block hidden" alt=""></img>
+        </div>
+    }
+
     return (
         <div>
             <Banners />
+            <Notify />
             <TopBanner />
-            <SpecialDeal />
+            <SpecialDeal translate={translate} />
             <BannerGadget />
-            <HomeProducts />
-            <BottomBanner />
-            {/* <Reviews /> */}
-            <Brands />
+            {/* <Products translate={translate} /> */}
+            <AllProducts translate={translate} />
             <BannerPro />
-            <Blogs />
-            <Faq />
-            <ScrollToTop smooth color='#6f00ff' top={20} height="28" viewBox="0 0 256 256" />
+            <HomeProducts translate={translate} />
+            <BottomBanner />
+            <Reviews />
+            <Brands />
+            <PaginatedBlogsHome />
+            <ScrollToTop style={{ display: 'flex', bottom: 150, alignItems: 'center', justifyContent: 'center', left: 15, backgroundColor: '#7209b7' }} smooth color='#ffffff' top={20} height="28" viewBox="0 0 256 256" />
+            <MessengerCustomerChat
+                pageId="104774475481224"
+                appId=" 1107053396762800"
+            />
         </div>
     )
 }

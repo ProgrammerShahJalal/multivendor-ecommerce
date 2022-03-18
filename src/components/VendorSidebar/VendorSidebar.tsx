@@ -2,18 +2,23 @@ import React from 'react';
 
 const VendorSidebar = () => {
     return (
-        <div>
+        <>
         <div>
             {/* sidebar starts */}
-        <h2>hello ami jeno solve korte pari</h2>
-        <h2>hello ami jeno solve korte pari</h2>
-        <h2>Allah help me</h2>
+        
+            <div>
+                {/* sidebar starts */}
+                <div className='pl-3'>
+                    <h2 className='uppercase font-bold text-lg text-left  py-3'>Search</h2>
+                    <input type="text" className=' bg-slate-100 text-slate-400 py-3   border border-slate-30 hover:border-indigo-300' placeholder='Search Products' />
+                    {/* <Sidebar/> */}
+                </div>
                 {/* Sidebar */}
                 <div className="col-span-1  px-4 pb-6 shadow rounded overflow-hidden">
                     <div className="divide-y divide-gray-200 space-y-5">
                         {/* Category Filter */}
                         <div>
-                            <h3 className="text-xl text-gray-800 mb-3 uppercase font-medium mt-5">Categories</h3>
+                            <h3 className="text-xl text-gray-800 dark:text-white mb-3 uppercase font-medium mt-5">Categories</h3>
                             <div className='space-y-2'>
                                 <div className='flex item-center'>
                                     <input type="checkbox" id='cat-1' className='text-primary focus:ring-0 rounded-sm cursor-pointer' />
@@ -38,7 +43,7 @@ const VendorSidebar = () => {
                             </div>
                         </div>
                         <div className='pt-4'>
-                            <h3 className="text-xl text-gray-800 mb-3 uppercase font-medium">Vendors</h3>
+                            <h3 className="text-xl text-gray-800 dark:text-white mb-3 uppercase font-medium">Vendors</h3>
                             <div className='space-y-2'>
                                 <div className='flex item-center'>
                                     <input type="checkbox" id='cat-1' className='text-primary focus:ring-0 rounded-sm cursor-pointer' />
@@ -80,7 +85,7 @@ const VendorSidebar = () => {
 
                         {/* Pricing Section Start */}
                         <div className="pt-4">
-                            <h3 className="text-xl text-gray-800 mb-3 uppercase font-medium">Price</h3>
+                            <h3 className="text-xl text-gray-800 dark:text-white mb-3 uppercase font-medium">Price</h3>
                             <div className="mt-4 flex items-center">
                                 <input type="text" className='w-full border-gray-300 focus:border-primary focus:ring-0 px-3 py-1 text-gray-600 text-sm shadow-sm rounded' placeholder='min' />
                                 <span className='mx-3 text-gray-500'>-</span>
@@ -89,7 +94,7 @@ const VendorSidebar = () => {
                         </div>
                         {/* Size Filter Section */}
                         <div className="pt-4 block">
-                            <h3 className="text-xl text-gray-800 mb-3 uppercase font-medium">Size</h3>
+                            <h3 className="text-xl text-gray-800 dark:text-white mb-3 uppercase font-medium">Size</h3>
                             <div className="flex item-center gap-2">
                                 {/* single size selector starts */}
                                 <div className="size-selector">
@@ -118,7 +123,7 @@ const VendorSidebar = () => {
                                 </div>
 
                                 <div className="pt-4 flex justify-center">
-                                    <h3 className="text-xl text-gray-800 mb-3 uppercase font-medium ">Color</h3>
+                                    <h3 className="text-xl text-gray-800 dark:text-white mb-3 uppercase font-medium ">Color</h3>
                                     <div className="flex item-center gap-2">
                                         {/* Single Color Starts */}
                                         <div className="color-selctor">
@@ -138,14 +143,15 @@ const VendorSidebar = () => {
                                 </div>
                             </div>
                         </div>
-                        
+
                     </div>
-                    
+
                 </div>
-               
+
             </div>
-            
+
         </div>
+        </>
     );
 };
 

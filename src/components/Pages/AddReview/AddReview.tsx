@@ -7,7 +7,6 @@ interface IProps {
     setReview: React.Dispatch<React.SetStateAction<Props["user"]>>
 }
 
-
 const AddReview: React.FC<IProps> = ({ users, setReview }) => {
 
     const [input, setInput] = useState({
@@ -23,7 +22,6 @@ const AddReview: React.FC<IProps> = ({ users, setReview }) => {
         })
         // console.log(e.target.value)
     }
-
 
     const handleClick = (): void => {
         if (
@@ -58,7 +56,7 @@ const AddReview: React.FC<IProps> = ({ users, setReview }) => {
 
     return (
         <div className="container mx-auto w-full py-5">
-            <h1 className='text-2xl text-center font-bold text-gray-800 bg-purple-500 uppercase py-4 rounded-md'>Put Your Review here</h1>
+            <h1 className='text-2xl text-center font-bold text-gray-800 dark:text-white bg-purple-500 uppercase py-4 rounded-md'>Put Your Review here</h1>
             <div className='bg-blue-200 rounded-md'>
                 <div className='w-96 flex flex-col mx-auto '>
                     <input
@@ -80,7 +78,7 @@ const AddReview: React.FC<IProps> = ({ users, setReview }) => {
                         name="img" />
 
                     <textarea
-                        placeholder="Descroption" className="border-solid border-2 border-indigo-600 w-full rounded-full text-center text-black py-3 my-3"
+                        placeholder="Descroption" className="border-solid border-2 border-indigo-600 w-full rounded-full text-center text-gray-800 dark:text-white dark:text-white py-3 my-3"
                         value={input.description}
                         onChange={handleChange}
                         name="description" />

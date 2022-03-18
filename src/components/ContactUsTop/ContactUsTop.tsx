@@ -1,6 +1,7 @@
 import React from "react";
 import { Link } from 'react-router-dom';
-import LottieContact from '../Lottie/LottieContact';
+import Qrcode from "../Contact/Qrcode/Qrcode";
+import LottieQR from "../Lottie/LottieQR";
 
 export interface IAppProps {
 }
@@ -8,20 +9,19 @@ export interface IAppProps {
 export default class App extends React.PureComponent<IAppProps> {
   public render() {
     return (
-      <div className='relative bg-white overflow-hidden '>
+      <div className='relative bg-white dark:bg-slate-800 overflow-hidden '>
 
         <div className='relative z-10 pb-8 sm:pb-16 md:pb-20 lg:max-w-2xl lg:w-full lg:pb-28 xl:pb-32'>
 
 
           <main className="mx-auto max-w-7xl px-8 pt-10 ">
             <div className="sm:text-center lg:text-left pr-8">
-              <h4 className="text-4xl tracking-tight font-extrabold text-gray-900 sm:text-5xl md:text-6xl ">
+              <h4 className="text-4xl tracking-tight font-extrabold text-gray-900 dark:text-white sm:text-5xl md:text-6xl ">
                 <span className="block xl:inline">Enrich Your online business </span>{' '}
                 <span className="block text-indigo-600 xl:inline">  by Unity Mart</span>
               </h4>
-              <p className="mt-3 text-base text-gray-500 sm:mt-5 sm:text-lg sm:max-w-xl sm:mx-auto md:mt-5 md:text-xl lg:mx-0">
+              <p className="mt-3 text-base text-gray-500 sm:mt-5 sm:text-lg sm:max-w-xl sm:mx-auto md:mt-5 md:text-xl lg:mx-0 select-none">
                 The Mutivendor E-commerce platform Unity Mart, Our main object is to give user the feel of online shopping as like as shopping from market.Our goal is to provide the best user interface and best user experience.
-
               </p>
               <div className="mt-5 sm:mt-8 sm:flex sm:justify-center lg:justify-start">
                 <div className="rounded-md shadow">
@@ -41,8 +41,9 @@ export default class App extends React.PureComponent<IAppProps> {
           </main>
         </div>
         <div className="lg:absolute lg:inset-y-0 lg:right-0 lg:w-1/2">
-          <div data-aos="fade-down" data-aos-duration="1500">
-            <LottieContact />
+          <div className="my-10 grid lg:grid-cols-2 md:grid-cols-2 sm:grid-cols-1 place-content-center h-96 place-items-center" data-aos="fade-down" data-aos-duration="1500">
+            <LottieQR />
+            <Qrcode />
           </div>
         </div>
       </div>

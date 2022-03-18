@@ -10,25 +10,25 @@ export default class Stats extends PureComponent<Props> {
         <div className="grid grid-cols-2 row-gap-8 md:grid-cols-4">
           <div className="text-center md:border-r">
             <h6 className="text-4xl font-bold lg:text-5xl xl:text-6xl">144K</h6>
-            <p className="text-sm font-medium tracking-widest text-gray-800 uppercase lg:text-base">
+            <p className="text-sm font-medium tracking-widest text-gray-800 dark:text-white uppercase lg:text-base">
               Downloads
             </p>
           </div>
           <div className="text-center md:border-r">
             <h6 className="text-4xl font-bold lg:text-5xl xl:text-6xl">12.9K</h6>
-            <p className="text-sm font-medium tracking-widest text-gray-800 uppercase lg:text-base">
+            <p className="text-sm font-medium tracking-widest text-gray-800 dark:text-white uppercase lg:text-base">
               Subscribers
             </p>
           </div>
           <div className="text-center md:border-r">
             <h6 className="text-4xl font-bold lg:text-5xl xl:text-6xl">48.3K</h6>
-            <p className="text-sm font-medium tracking-widest text-gray-800 uppercase lg:text-base">
+            <p className="text-sm font-medium tracking-widest text-gray-800 dark:text-white uppercase lg:text-base">
               Users
             </p>
           </div>
           <div className="text-center">
             <h6 className="text-4xl font-bold lg:text-5xl xl:text-6xl">24.5K</h6>
-            <p className="text-sm font-medium tracking-widest text-gray-800 uppercase lg:text-base">
+            <p className="text-sm font-medium tracking-widest text-gray-800 dark:text-white uppercase lg:text-base">
               Cookies
             </p>
           </div>
@@ -39,10 +39,10 @@ export default class Stats extends PureComponent<Props> {
           <img style={{width:'80%',height:'70%'}} src="https://cdn.tuk.dev/assets/components/26May-update/newsletter-1.png" alt="Envelope with a newsletter" className="h-full xl:w-full lg:w-1/2 w-full " />
       </div>
       <div className="w-full xl:w-1/2 xl:pl-40 xl:py-28 ">
-          <h1 className="text-2xl md:text-4xl xl:text-5xl font-bold leading-10 text-gray-800 mb-4 text-center xl:text-left md:mt-0 mt-4">Subscribe</h1>
+          <h1 className="text-2xl md:text-4xl xl:text-5xl font-bold leading-10 text-gray-800 dark:text-white mb-4 text-center xl:text-left md:mt-0 mt-4">Subscribe</h1>
           <p className="text-base leading-normal text-gray-600 text-center xl:text-left">Whether article spirits new her covered hastily sitting her. Money witty books nor son add.</p>
           <div className="flex items-stretch mt-12">
-              <input className="bg-gray-100 rounded-lg rounded-r-none text-base leading-none text-gray-800 p-5 w-4/5 border border-transparent focus:outline-none focus:border-gray-500" type="email" placeholder="Your Email" />
+              <input className="bg-gray-100 rounded-lg rounded-r-none text-base leading-none text-gray-800 dark:text-white p-5 w-4/5 border border-transparent focus:outline-none focus:border-gray-500" type="email" placeholder="Your Email" />
               <button className="w-32 rounded-l-none hover:bg-indigo-600 bg-indigo-700 rounded text-base font-medium leading-none text-white p-5 uppercase focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-700">subscribe</button>
           </div>
       </div>

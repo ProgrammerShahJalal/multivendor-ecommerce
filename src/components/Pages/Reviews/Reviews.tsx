@@ -4,7 +4,8 @@ import "swiper/css";
 import "swiper/css/effect-coverflow";
 import { Rating } from "@mui/material";
 import "swiper/css/pagination";
-import { Autoplay, EffectCoverflow, Pagination } from "swiper";
+import { Autoplay, EffectCoverflow, Pagination } from 'swiper';
+import { Link } from 'react-router-dom';
 
 interface ReviewState {
     reviews: {
@@ -16,11 +17,10 @@ interface ReviewState {
 }
 
 const Reviews = () => {
-    const [reviews, setReviews] = useState<ReviewState["reviews"]>
-        ([]);
+    const [reviews, setReviews] = useState<ReviewState["reviews"]>([]);
 
     useEffect(() => {
-        if (reviews) {
+        if (reviews.length === 0) {
             fetch('https://morning-inlet-49130.herokuapp.com/reviews')
                 .then(res => res.json())
                 .then(data => { setReviews(data); }
@@ -35,7 +35,6 @@ const Reviews = () => {
                 <Swiper
                     spaceBetween={30}
                     effect={"coverflow"}
-                    loop={true}
                     grabCursor={true}
                     centeredSlides={true}
                     slidesPerView={"auto"}
@@ -48,15 +47,16 @@ const Reviews = () => {
                     }}
                     autoplay={{
                         delay: 2500,
-                        disableOnInteraction: true,
+                        disableOnInteraction: false,
                     }}
                     breakpoints={{
                         640: {
-                            slidesPerView: 2,
+                            slidesPerView: 1,
                             spaceBetween: 20,
+
                         },
                         768: {
-                            slidesPerView: 3,
+                            slidesPerView: 2,
                             spaceBetween: 40,
                         },
                         1024: {
@@ -69,9 +69,6 @@ const Reviews = () => {
                         clickable: true,
                     }}
                     modules={[EffectCoverflow, Autoplay, Pagination]}
-
-                // className="mySwiper"
-
                 >
                     {
                         reviews.map((review) => (
@@ -93,8 +90,10 @@ const Reviews = () => {
                         ))}
                 </Swiper>
                 <div className="text-center">
-                    <button type="button" className="text-white bg-gradient-to-r from-green-400 to-blue-500 hover:from-pink-500 hover:to-yellow-500 my-3 px-4 py-2 rounded-md">Give Your Review
-                    </button>
+                    <Link to='/addReview'>
+                        <button type="button" className="text-white bg-gradient-to-r from-green-500 to-blue-500 hover:from-blue-500 hover:to-green-500 my-3 px-4 py-2 rounded-md">Give Your Review
+                        </button>
+                    </Link>
                 </div>
             </div>
         </div>
