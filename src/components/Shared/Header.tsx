@@ -360,12 +360,14 @@ const Header: FC<HeaderProps> = ({ fixed, transparent }) => {
                                                     </Menu.Item>
                                                     <Menu.Item>
                                                         {({ active }) => (
-                                                            <p
-                                                                onClick={logout}
-                                                                className={classNames(active ? 'bg-gray-100 dark:text-gray-700' : '', 'block px-4 py-2 text-sm text-gray-700 dark:text-white cursor-pointer')}
-                                                            >
-                                                                Sign out
-                                                            </p>
+                                                            <Link to="/login" className="-m-2 p-2 block font-medium text-gray-900 dark:text-white">
+                                                                <p
+                                                                    onClick={logout}
+                                                                    className={classNames(active ? 'bg-gray-100 dark:text-gray-700' : '', 'block px-4 py-2 text-sm text-gray-700 dark:text-white cursor-pointer')}
+                                                                >
+                                                                    Sign out
+                                                                </p>
+                                                            </Link>
                                                         )}
                                                     </Menu.Item>
                                                 </Menu.Items>

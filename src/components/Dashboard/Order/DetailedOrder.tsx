@@ -12,6 +12,7 @@ import { useState } from "react";
 import { UpdateOrder } from "../../../Services/orderApi/UpdateOrder";
 import { DeleteOrder } from "../../../Services/orderApi/DeleteOrder";
 import { toast } from 'react-toastify';
+import { CircularProgress } from "@mui/material";
 
 export default function DetailedOrder() {
     const { id } = useParams()
@@ -57,7 +58,7 @@ export default function DetailedOrder() {
         <>
 
             {
-                isLoading ? 'Loading' :
+                isLoading ? <span className='flex justify-center'><CircularProgress color="inherit" /></span> :
                     data?.map(details => {
 
                         return <div key={details._id} className="py-4 px-4 md:px-6 2xl:px-20 2xl:container 2xl:mx-auto">

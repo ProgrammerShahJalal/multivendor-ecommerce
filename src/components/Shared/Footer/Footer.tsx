@@ -13,7 +13,7 @@ export default class App extends React.PureComponent<IAppProps> {
                 <div className='bg-blue-700 text-white text-center'>Be Clever! Get more info from our blog. <strong className="underline"><HashLink smooth to="/#blog">view details</HashLink></strong></div>
                 <div className='p-10 bg-gray-900 text-gray-200 text-left'>
                     <div className='max-w-7xl mx-auto'>
-                        <div className='grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-2'>
+                        <div className='grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-1'>
                             <div className='mb-5'>
                                 <h2 className='text-2xl pb-4'>Unity Mart</h2>
                                 <p className='text-gray-500 w-64 text-justify'>A multi-vendor e-commerce website. Our main objective to provide best user experience and best user friendly interface.</p>
@@ -68,12 +68,23 @@ export default class App extends React.PureComponent<IAppProps> {
                                 © 2022 Unity Mart by  <strong className='text-blue-200'> <Link to="/team">Remote Coder Unity Team</Link> </strong>  All Rights Reserved.
                             </div>
                         </div>
-                        <div className='text-center text-xl text-white mb-2'>
+                        <div className='text-center text-xl text-white'>
 
-                            <span className="cursor-pointer w-10 h-10 rounded-full bg-blue-900 hover:bg-rose-900 mx-1 inline-block pt-1" ><i className="fab fa-facebook my-auto"></i></span>
-                            <span className="cursor-pointer	 w-10 h-10 rounded-full bg-blue-900 hover:bg-rose-900 mx-1 inline-block pt-1" ><i className="fab fa-linkedin my-auto"></i></span>
-                            <span className="cursor-pointer	 w-10 h-10 rounded-full bg-blue-900 hover:bg-rose-900 mx-1 inline-block pt-1" ><i className="fab fa-twitter my-auto"></i></span>
-                            <span className="cursor-pointer w-10 h-10 rounded-full bg-blue-900 hover:bg-rose-900 mx-1 inline-block pt-1" ><i className="fab fa-instagram my-auto"></i></span>
+                            <a target='_blank' rel="noreferrer" href="https://www.facebook.com/Unity-Mart-A-Multi-vendor-E-commerce-Website-104774475481224">
+                            <span className="cursor-pointer w-10 h-10 rounded-full text-blue-500 my-auto mx-1 inline-block pt-1" ><i className="fab fa-facebook p-1 my-auto"></i></span>
+                            </a>
+                            <a target='_blank' rel="noreferrer" href="https://www.linkedin.com">
+                            <span className="cursor-pointer w-10 h-10 rounded-full text-blue-700 my-auto mx-1 inline-block pt-1" ><i className="fab fa-linkedin p-1 my-auto"></i></span>
+                            </a>
+                            <a target='_blank' rel="noreferrer" href="https://www.twitter.com">
+                            <span className="cursor-pointer w-10 h-10 rounded-full text-blue-600 my-auto mx-1 inline-block pt-1" ><i className="fab fa-twitter p-1 my-auto"></i></span>
+                            </a>
+                            <a target='_blank' rel="noreferrer" href="https://www.instagram.com">
+                            <span className="cursor-pointer w-10 h-10 rounded-full text-pink-600 my-auto mx-1 inline-block pt-1" ><i className="fab fa-instagram p-1 my-auto"></i></span>
+                            </a>
+                            <a target='_blank' rel="noreferrer" href="https://www.youtube.com">
+                            <span className="cursor-pointer w-10 h-10 rounded-full text-red-600 my-auto mx-1 inline-block pt-1" ><i className="fab fa-youtube p-1 my-auto"></i></span>
+                            </a>
 
                         </div>
 

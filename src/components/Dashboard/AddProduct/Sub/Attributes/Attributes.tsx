@@ -31,10 +31,10 @@ export default function Attributes() {
 
     }
 
-    const [categoryId, setCategoryId] = useState<number>(0)
+    const [attributeId, setAttributeId] = useState<number>(0)
     const getCategoryId = (id: number) => {
         toggle()
-        setCategoryId(id)
+        setAttributeId(id)
     }
 
     const updateCategoryId = (id: number) => {
@@ -55,11 +55,9 @@ export default function Attributes() {
                 setAttributeValue('')
                 setIfShouldUpdate(true)
             })
-
     }
-    console.log(attributeValue, 'categoryValue');
 
-    //  LOAD CATEGORIES
+    //  LOAD ATTRIBUTES
     useEffect(() => {
         if (ifShouldUpdate) {
             fetch('https://guarded-ocean-73313.herokuapp.com/dashboard/attributes')
@@ -75,7 +73,23 @@ export default function Attributes() {
             .then(res => res.json())
             .then(data => setAttributes(data))
     }, [])
-    console.log(attributes);
+    const handleDelete = (id: number) => {
+
+        if (window.confirm('Are you sure you want to delete?')) {
+            setIsLoading(true)
+            fetch(`https://guarded-ocean-73313.herokuapp.com/dashboard/attributes/${id}`, {
+                method: 'DELETE'
+            }).then(res => res.json())
+                .then(data => {
+                    console.log(data);
+                    if (data.deletedCount) {
+                        alert('Attributes Deleted')
+                    }
+
+                })
+                .finally(() => { setIfShouldUpdate(true); setIsLoading(false) })
+        }
+    }
 
 
     return (
@@ -112,7 +126,7 @@ export default function Attributes() {
                                             <td className="py-4 px-6 border-b border-grey-light text-right	">
 
                                                 <Popup attr={attr} setIfShouldUpdate={setIfShouldUpdate} />
-                                                <Link to="#" className="text-white font-bold py-1 px-3 rounded text-xs bg-red-600 hover:bg-blue-dark">Delete</Link>
+                                                <button onClick={() => handleDelete(attr._id)} className="text-white font-bold py-1 px-3 rounded text-xs bg-red-600 hover:bg-blue-dark">Delete</button>
                                             </td>
                                         </tr>
                                     })

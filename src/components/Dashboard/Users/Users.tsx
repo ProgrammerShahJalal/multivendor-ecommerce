@@ -16,6 +16,8 @@ const Users = () => {
                 .then(data => setUsers(data))
         }
     }, [users])
+
+
     const handleOnChange = (event: any) => {
         const searchText = event.target.value.toLowerCase();
         const findUser: any = users && users.length > 0 ? users?.filter(p => p?.email.toLowerCase().includes(searchText)) : null;

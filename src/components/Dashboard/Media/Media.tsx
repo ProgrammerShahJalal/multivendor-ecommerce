@@ -1,3 +1,4 @@
+import { CircularProgress } from '@mui/material'
 import React, { useEffect, useState } from 'react'
 import './media.css'
 
@@ -5,9 +6,8 @@ import './media.css'
 export default function Media() {
     const [images, setImages] = useState<any>([])
     const [data, setData] = useState<any>()
-    const [isTrue, setIsTrue] = useState<boolean>()
-
-    console.log(images, 'images');
+    const [isTrue, setIsTrue] = useState<boolean>(true)
+    const [selectedItems, setSelectedItems] = useState<any>([])
 
     const handleUploadImages = (e: any) => {
         e.preventDefault()
@@ -65,22 +65,21 @@ export default function Media() {
     }, [isTrue])
 
 
-    const [selectedItems, setSelectedItems] = useState<any>([])
-    const [isClassTrue, setIsClassTrue] = useState(false)
+
 
     const eventBubbling = (e: any) => {
-        const isExist = selectedItems.findIndex((img: any) => img.id === e.target.id)
-        console.log(isExist);
-        if (isExist === -1) {
-            setSelectedItems((prevItem: any) => [...prevItem, { id: e.target.id, src: e.target.src }])
+        // const isExist = selectedItems.findIndex((img: any) => img.id === e.target.id)
 
-        } else {
-            const arr = selectedItems.filter((item) => {
-                return item.id !== e.target.id
-            })
-            setSelectedItems(arr)
+        // if (isExist === -1) {
+        //     setSelectedItems((prevItem: any) => [...prevItem, { id: e.target.id, src: e.target.src }])
 
-        }
+        // } else {
+        //     const arr = selectedItems.filter((item) => {
+        //         return item.id !== e.target.id
+        //     })
+        //     setSelectedItems(arr)
+
+        // }
 
     }
 
@@ -115,26 +114,28 @@ export default function Media() {
 
                 </div>
             </div>
-            <div className="container grid grid-cols-6 gap-4 mx-auto"  >
-                {isTrue ? <h2>Loading..</h2> :
-                    data?.map((order: any, idx: number) =>
+            {isTrue ? <span className='flex justify-center'><CircularProgress color="inherit" /></span> :
+                <div className="container grid grid-cols-6 gap-4 mx-auto"  >
+                    {data?.map((order: any, idx: number) =>
                         Object.entries(order).map(
                             ([key, value]: any) => {
                                 if (key === 'urls') {
                                     return value.map((url: any, idx: number) => {
 
                                         return (
-                                            <div className={`w-full  `}>
+                                            <div key={idx + 1} className={`w-full  `}>
                                                 <img className={`media-img shadow rounded ${selectedItems.includes(url.asset_id) ? 'border-4 border-indigo-600' : ''}`} onClick={eventBubbling} key={url.asset_id} id={url.asset_id} src={url.secure_url} alt="" />
                                             </div>
                                         );
                                     })
 
+                                } else {
+                                    return null
                                 }
                             }
                         )
                     )}
-            </div>
+                </div>}
         </div>
     )
 }
