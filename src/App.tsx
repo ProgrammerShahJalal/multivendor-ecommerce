@@ -53,6 +53,7 @@ import WomenProductDetail from './components/WomenProductDetail';
 import AuthProvider from "./context/AuthProvider";
 
 import EditProduct from "./components/Dashboard/AddProduct/Sub/EditProduct/EditProduct";
+import AddReview from "./components/Pages/AddReview/AddReview";
 
 
 
@@ -100,6 +101,7 @@ function App() {
             <Route path='/orderTrack' element={<OrderTracking />} />
             <Route path='/wishlist' element={<WishList />} />
             <Route path='/checkout' element={<PrivateRoute><Checkout /></PrivateRoute>} />
+            <Route path='/addReview' element={<PrivateRoute><AddReview /></PrivateRoute>} />
             <Route path='/shop' element={<Shop />} />
             <Route path='/cart' element={<Cart />} />
             <Route path='/vendorShop/:storeSlug' element={<VendorShopPage />} />

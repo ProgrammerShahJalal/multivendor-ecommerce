@@ -33,7 +33,7 @@ const BannerGadget = () => {
                                     <div className="modal">
                                         <div onClick={toggleModal} className="overlay"></div>
                                         <div className="modal-content">
-                                            <iframe width="100%" height="80%" src="https://m.media-amazon.com/images/S/vse-vms-transcoding-artifact-us-east-1-prod/v2/4a7c9a7e-f507-51c7-a42a-7413690693ea/ShortForm-Generic-480p-16-9-1409173089793-rpcbe5.mp4" title="YouTube video player" frameBorder={0} allow="autoplay" ></iframe>
+                                            <iframe width="475vw" height="250vh" src="https://m.media-amazon.com/images/S/vse-vms-transcoding-artifact-us-east-1-prod/v2/4a7c9a7e-f507-51c7-a42a-7413690693ea/ShortForm-Generic-480p-16-9-1409173089793-rpcbe5.mp4" title="YouTube video player" frameBorder={0} allow="autoplay" ></iframe>
 
                                         </div>
                                     </div>
