@@ -58,11 +58,11 @@ const ProductView = ({ selectedProduct }) => {
                         className="mySwiper2"
                     >
                         <SwiperSlide className='flex items-center justify-center' style={{ height: '300px', overflow: 'hidden', position: 'relative' }}>
-                            <Magnifier src={selectedProduct.img3} className='select-none object-contain h-full' alt="" ></Magnifier>
+                            <Magnifier src={selectedProduct.img3 || selectedProduct.images[0]?.src} className='select-none object-contain h-full' alt="" ></Magnifier>
                         </SwiperSlide>
 
                         <SwiperSlide className='flex items-center justify-center' style={{ height: '300px', overflow: 'hidden', position: 'relative' }} >
-                            <Magnifier src={selectedProduct.img} className='select-none object-contain h-full' alt='' />
+                            <Magnifier src={selectedProduct.img || selectedProduct.images[1]?.src} className='select-none object-contain h-full' alt='' />
                         </SwiperSlide>
 
                         <SwiperSlide className='flex items-center justify-center' style={{ height: '300px', overflow: 'hidden', position: 'relative' }}>
@@ -84,10 +84,10 @@ const ProductView = ({ selectedProduct }) => {
                             className="mySwiper"
                         >
                             <SwiperSlide style={{ height: '100px', width: '100px' }}>
-                                <img alt="" src={selectedProduct.img3} className='select-none cursor-pointer' />
+                                <img alt="" src={selectedProduct.img3 || selectedProduct.images[0]?.src} className='select-none cursor-pointer' />
                             </SwiperSlide>
                             <SwiperSlide style={{ height: '100px', width: '100px' }} >
-                                <img alt="" src={selectedProduct.img} className=' select-none cursor-pointer' />
+                                <img alt="" src={selectedProduct.img || selectedProduct.images[1]?.src} className=' select-none cursor-pointer' />
                             </SwiperSlide>
                             <SwiperSlide style={{ height: '100px', width: '100px' }}>
                                 <img alt="" src={selectedProduct.hoverImg} className=' select-none cursor-pointer' />
@@ -136,20 +136,13 @@ const ProductView = ({ selectedProduct }) => {
                         <div className="">
                             <h3 className="text-xl text-gray-800 dark:text-white mb-3 uppercase font-medium ">Color</h3>
                             <div className="flex gap-2">
-                                {/* Single Color Starts */}
                                 <div className="color-selctor">
                                     <button className='w-5 h-5 bg-red-600 focus:ring-offset-2 focus:ring-1 focus:ring-indigo-500 focus:outline-none active:bg-red-700  '></button>
-                                    {/* <input type="radio" name='color' className='hidden' color='' id='color-red' />
-                                    <label htmlFor="color" className='border border-gray-200 rounded-sm h-5 w-5 cursor-pointer shadow-sm block bg-red-600'></label> */}
                                 </div>
                                 <div className="color-selctor">
-                                    {/* <input type="radio" name='color' className='hidden' color='red focus:ring-offset-2 focus:ring-1 focus:ring-sky-500  focus:outline-none  ' id='color-red' />
-                                    <label htmlFor="color" className='border border-gray-200 rounded-sm h-5 w-5 cursor-pointer shadow-sm block bg-green-600'></label> */}
                                     <button className='w-5 h-5 bg-green-600 focus:ring-offset-2 focus:ring-1 focus:ring-indigo-500 focus:outline-none active:bg-green-700  '></button>
                                 </div>
                                 <div className="color-selctor">
-                                    {/* <input type="radio" name='color' className='hidden' color='red focus:ring-offset-2 focus:ring-1 focus:ring-sky-500  focus:outline-none  ' id='color-red' />
-                                    <label htmlFor="color" className='border border-gray-200 rounded-sm h-5 w-5 cursor-pointer shadow-sm block bg-blue-500'></label> */}
                                     <button className='w-5 h-5 bg-blue-600 focus:ring-offset-2 focus:ring-1 focus:ring-indigo-500 focus:outline-none active:bg-blue-700  '></button>
                                 </div>
                             </div>

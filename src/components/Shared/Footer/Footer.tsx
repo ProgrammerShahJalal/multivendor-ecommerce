@@ -65,15 +65,15 @@ export default class App extends React.PureComponent<IAppProps> {
                     <div className='max-w-7xl flex flex-col sm:flex-row py-4 mx-auto justify-between items-center'>
                         <div className='text-center'>
                             <div>
-                                © 2022 Unity Mart by  <strong className='text-blue-200'> <Link to="/team">Unity Team</Link> </strong>  All Rights Reserved.
+                                © 2022 Unity Mart by  <strong className='text-blue-200'> <Link to="/team">Remote Coder Unity Team</Link> </strong>  All Rights Reserved.
                             </div>
                         </div>
                         <div className='text-center text-xl text-white mb-2'>
 
-                            <span className="cursor-pointer	 w-10 h-10 rounded-full bg-blue-900 hover:bg-rose-900 mx-1 inline-block pt-1" ><i className="fab fa-facebook"></i></span>
-                            <span className="cursor-pointer	 w-10 h-10 rounded-full bg-blue-900 hover:bg-rose-900 mx-1 inline-block pt-1" ><i className="fab fa-linkedin"></i></span>
-                            <span className="cursor-pointer	 w-10 h-10 rounded-full bg-blue-900 hover:bg-rose-900 mx-1 inline-block pt-1" ><i className="fab fa-twitter"></i></span>
-                            <span className="cursor-pointer w-10 h-10 rounded-full bg-blue-900 hover:bg-rose-900 mx-1 inline-block pt-1" ><i className="fab fa-instagram"></i></span>
+                            <span className="cursor-pointer w-10 h-10 rounded-full bg-blue-900 hover:bg-rose-900 mx-1 inline-block pt-1" ><i className="fab fa-facebook my-auto"></i></span>
+                            <span className="cursor-pointer	 w-10 h-10 rounded-full bg-blue-900 hover:bg-rose-900 mx-1 inline-block pt-1" ><i className="fab fa-linkedin my-auto"></i></span>
+                            <span className="cursor-pointer	 w-10 h-10 rounded-full bg-blue-900 hover:bg-rose-900 mx-1 inline-block pt-1" ><i className="fab fa-twitter my-auto"></i></span>
+                            <span className="cursor-pointer w-10 h-10 rounded-full bg-blue-900 hover:bg-rose-900 mx-1 inline-block pt-1" ><i className="fab fa-instagram my-auto"></i></span>
 
                         </div>
 

@@ -2,7 +2,6 @@ import React, { useEffect, useState } from 'react';
 import { useParams } from 'react-router-dom';
 import { Swiper, SwiperSlide } from "swiper/react";
 import { FreeMode, Navigation, Thumbs } from "swiper";
-import Magnifier from "react-magnifier";
 import { useDispatch } from 'react-redux';
 import { addToCart } from '../../redux/cartSlice';
 import RelatedProducts from '../RelatedProducts/RelatedProducts';

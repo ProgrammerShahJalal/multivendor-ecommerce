@@ -113,7 +113,6 @@ export default function Media() {
                     </form>
 
                 </div>
-                {/* style={{ height: '150px' }}  width={150}  */}
             </div>
             {isTrue ? <span className='flex justify-center'><CircularProgress color="inherit" /></span> :
                 <div className="container grid grid-cols-6 gap-4 mx-auto"  >

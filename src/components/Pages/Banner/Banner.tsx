@@ -20,7 +20,7 @@ export default function Banners() {
           loop={true}
           slidesPerView={"auto"}
           autoplay={{
-            delay: 3000,
+            delay: 5000,
             disableOnInteraction: false
           }}
           modules={[Autoplay]}
@@ -59,6 +59,22 @@ export default function Banners() {
             </div>
 
           </SwiperSlide>
+          {/* <SwiperSlide style={{height:'30rem'}}
+            className="md:flex items-center justify-center">
+                <img src='https://i.ibb.co/c1FZSg3/mac-Book-Banner.png' alt="Image2" />
+          </SwiperSlide>
+          <SwiperSlide style={{height:'30rem'}}
+            className="md:flex items-center justify-center">
+                <img src='https://i.ibb.co/QdDNtBF/nike-Banner.png' alt="Image3" />
+          </SwiperSlide>
+          <SwiperSlide style={{height:'30rem'}}
+            className="md:flex items-center justify-center">
+                <img src='https://i.ibb.co/f135FKC/ps5-Banner.png' alt="Image4" />
+          </SwiperSlide>
+          <SwiperSlide style={{height:'30rem'}}
+            className="md:flex items-center justify-center">
+                <img src='https://i.ibb.co/C8YpBMD/rolex-Banner.png' alt="Image5" />
+          </SwiperSlide> */}
           <SwiperSlide
             className="md:flex items-center justify-center"
             style={{ height: "30rem" }}>
