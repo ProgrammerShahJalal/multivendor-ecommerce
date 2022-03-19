@@ -4,7 +4,21 @@ import SingleProduct from "./components/AllProducts/SingleProduct";
 import DetailBlogPage from "./components/Blogs/DetailBlogPage";
 import Checkout from "./components/Checkout/Checkout";
 import Contact from './components/Contact/Contact.js';
-import CustomersService from "./components/CustomersService/CustomersService";
+import AuthProvider from "./context/AuthProvider";
+import Register from "./components/Pages/RegisterPage/Register";
+import Login from "./components/Pages/LoginPage/Login";
+import NotFound from './components/NotFound/NotFound';
+import Team from './components/Pages/Team/Team';
+import Shop from "./components/Shop/Shop";
+import PrivateRoute from "./components/Route/PrivateRoute/PrivateRoute";
+import UserProfile from './components/UserDashboard/UserDashboard/UserDashboard';
+import OrderTracking from './components/OrderTracking/OrderTracking';
+import Success from "./components/Success";
+import VendorShopPage from "./components/VenderShopPage/VenderShopPage";
+import VendorSidebar from "./components/VendorSidebar/VendorSidebar";
+import SpecialDeal from "./components/SpecialDeal/SpecialDeal";
+
+import Media from "./components/Dashboard/Media/Media";
 import AddProduct from "./components/Dashboard/AddProduct/AddProduct";
 import Attributes from "./components/Dashboard/AddProduct/Sub/Attributes/Attributes";
 import Categories from "./components/Dashboard/AddProduct/Sub/Categories/Categories";
@@ -12,7 +26,6 @@ import Products from "./components/Dashboard/AddProduct/Sub/Products/Products";
 import Affiliate from "./components/Dashboard/AffiliateDashboard/AffiliateDashboard/Affliate";
 import AffiliateLinks from "./components/Dashboard/AffiliateDashboard/AffiliateLinks/AffiliateLinks";
 import Dashboard from "./components/Dashboard/Dashboard/Dashboard";
-import Media from "./components/Dashboard/Media/Media";
 import AllOrders from "./components/Dashboard/Order/allOrder";
 import DetailedOrder from "./components/Dashboard/Order/DetailedOrder";
 import Users from "./components/Dashboard/Users/Users";
@@ -21,44 +34,36 @@ import VendorProfileDetails from "./components/Dashboard/Vendors/VendorsProfileD
 import Home from "./components/Home/Home";
 import KidsProductDetails from './components/KidsProductDetails';
 import MenProductsDetail from './components/MenProductDetail';
-import NotFound from './components/NotFound/NotFound';
-import OrderTracking from './components/OrderTracking/OrderTracking';
 import About from "./components/Pages/About/About";
 import Cart from "./components/Pages/CartPage/Cart";
-import Login from "./components/Pages/LoginPage/Login";
 import { LangContext } from "./components/Pages/MultiLanguage/languagecontext/lang";
-import Register from "./components/Pages/RegisterPage/Register";
 import SearchField from "./components/Pages/SearchField/SearchField";
-import Team from './components/Pages/Team/Team';
 import UnitTesting from "./components/Pages/UnitTesting/UnitTesting";
 import VendorInformations from "./components/Pages/VendorPages/VendorInformations";
 import VendorRegister from "./components/Pages/VendorPages/VendorRegister";
 import WishList from "./components/Pages/WishList/WishList";
 import PrivacyPolicy from "./components/PrivacyPolicy/PrivacyPolicy";
 import Promo from './components/Promo/Promo';
-import PrivateRoute from "./components/Route/PrivateRoute/PrivateRoute";
 import Footer from './components/Shared/Footer/Footer';
 import HeaderLanguage from './components/Shared/HeaderLanguage';
-import Shop from "./components/Shop/Shop";
 import DealDetails from "./components/SpecialDeal/DealDetails";
-import SpecialDeal from "./components/SpecialDeal/SpecialDeal";
 import StoreListCards from "./components/StoreListCard/StoreListCard";
-import Success from "./components/Success";
-import TermsCondition from "./components/TermsCondition/TermsCondition";
-import UserOrders from "./components/UserOrders/UserOrders";
-import UserProfile from './components/UserProfile/UserProfile';
-import VendorShopPage from "./components/VenderShopPage/VenderShopPage";
-import VendorSidebar from "./components/VendorSidebar/VendorSidebar";
-import WomenProductDetail from './components/WomenProductDetail';
-import AuthProvider from "./context/AuthProvider";
-
 import EditProduct from "./components/Dashboard/AddProduct/Sub/EditProduct/EditProduct";
+import UserDashboardHome from "./components/UserDashboard/UserDashboardHome/UserDashboardHome";
+import UserOrders from "./components/UserDashboard/UserOrders/UserOrders";
+import TermsCondition from "./components/TermsCondition/TermsCondition";
+import CustomersService from "./components/CustomersService/CustomersService";
+import AdminRoute from "./components/Route/AdminRoute/AdminRoute";
 import AddReview from "./components/Pages/AddReview/AddReview";
+import WomenProductDetail from "./components/WomenProductDetail";
+
+
 
 
 
 
 function App() {
+
   const affiliateLink = window.location.search.split('=')[1]
   useLayoutEffect(() => {
     if (affiliateLink) {
@@ -83,7 +88,6 @@ function App() {
           <Routes>
             <Route path='/' element={<Home />} />
             <Route path='/home' element={<Home />} />
-            <Route path='/userOrders' element={<UserOrders />} />
             <Route path='/contact' element={<Contact />} />
             <Route path='/about' element={<About />} />
             <Route path='/offer' element={<Promo />} />
@@ -107,15 +111,17 @@ function App() {
             <Route path='/vendorShop/:storeSlug' element={<VendorShopPage />} />
             <Route path='/vendorSidebar' element={<VendorSidebar />} />
             <Route path='/vendorLogin' element={<PrivateRoute><VendorInformations /></PrivateRoute>} />
-            <Route path='/profile' element={<PrivateRoute><UserProfile /></PrivateRoute>} />
             <Route path='/success/:id' element={<PrivateRoute><Success /></PrivateRoute>} />
             <Route path='/blogs/details/:id' element={<PrivateRoute><DetailBlogPage /></PrivateRoute>} />
             <Route path='/specials/details/:id' element={<PrivateRoute><DealDetails /></PrivateRoute>} />
             <Route path='/product/:id' element={<SingleProduct />} />
-
-
+            {/* USER DASHBOARD */}
+            <Route path="/profile" element={<PrivateRoute><UserProfile /></PrivateRoute>} >
+              <Route path="dashboard" element={<UserDashboardHome />}></Route>
+              <Route path="orders" element={<UserOrders />}></Route>
+            </Route>
             {/* DASHBOARD ROUTES */}
-            <Route path="/dashboard" element={<Dashboard />} >
+            <Route path="/dashboard" element={<AdminRoute ><Dashboard /></AdminRoute>} >
               <Route path="media" element={<Media />}></Route>
               <Route path="affiliate-dashboard" element={<Affiliate />}></Route>
               <Route path="affiliate-links" element={<AffiliateLinks />}></Route>
@@ -126,9 +132,9 @@ function App() {
               <Route path="attributes" element={<Attributes />}></Route>
               <Route path="products" element={<Products />}></Route>
               <Route path="users" element={<Users />}></Route>
-              <Route path='edit-product/:id' element={<EditProduct />} />
+              <Route path='edit-product/:id' element={<AdminRoute ><EditProduct /></AdminRoute>} />
               <Route path="vendors" element={<Vendors />}></Route>
-              <Route path="vendor-profile" element={<VendorProfileDetails />}></Route>
+              <Route path="vendor-profile/:id" element={<VendorProfileDetails />}></Route>
             </Route>
 
             {/* footer route */}

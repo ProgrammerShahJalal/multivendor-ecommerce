@@ -80,7 +80,7 @@ const Products = () => {
                 </div>
 
                 {/* order part start */}
-                <div className="-mx-4 sm:-mx-8 px-4 sm:px-8 py-4 overflow-x-auto">
+                {isLoading ? <span className='flex justify-center'><CircularProgress color="inherit" /></span> : <div className="-mx-4 sm:-mx-8 px-4 sm:px-8 py-4 overflow-x-auto">
                     <div className="inline-block min-w-full shadow rounded-lg overflow-hidden">
                         <table className="min-w-full leading-normal">
                             <thead>
@@ -119,8 +119,7 @@ const Products = () => {
                             </thead>
                             <tbody>
                                 {/* first order start */}
-                                {isLoading ? <CircularProgress color="inherit" /> :
-
+                                {
                                     products.map(product => {
                                         return <tr key={product._id}>
                                             <td className="px-5 py-5 border-b border-gray-200 bg-white dark:bg-slate-800 text-sm">
@@ -190,7 +189,7 @@ const Products = () => {
                             </div>
                         </div>
                     </div>
-                </div>
+                </div>}
                 {/* order part end  */}
 
             </div>

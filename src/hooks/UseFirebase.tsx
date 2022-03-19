@@ -1,5 +1,5 @@
 import { getAuth, createUserWithEmailAndPassword, signOut, onAuthStateChanged, signInWithEmailAndPassword, signInWithPopup, updateProfile, GoogleAuthProvider, FacebookAuthProvider } from "firebase/auth";
-import { useEffect, useState } from "react";
+import { useEffect, useLayoutEffect, useState } from "react";
 import FirebaseInitialization from "../Firebase/Firebase.init";
 import { addUserToDB } from "../Services/AddUserToDB/AddUserToDB";
 import { GetUserDetails } from "../Services/UsersApi/GetUserDetails";
@@ -50,7 +50,11 @@ export const UseFirebase = (
         name: '',
         email: '',
         role: '',
-        store: ''
+        store: '',
+        date: '',
+        phone: '',
+        photo: '',
+        _id: ''
     } || null)
     const [isLoading, setIsLoading] = useState(true)
     const auth = getAuth()
@@ -68,6 +72,7 @@ export const UseFirebase = (
             .then((userCredential) => {
 
                 const newUser = {
+
                     displayName: name,
                     email: email,
                     emailVerified: false,
@@ -75,6 +80,7 @@ export const UseFirebase = (
                 };
 
                 setUser(newUser);
+
                 navigate(location?.state?.from || '/')
                 setError('')
 
@@ -131,7 +137,7 @@ export const UseFirebase = (
         setIsLoading(true)
         await signInWithEmailAndPassword(auth, email, password)
             .then((userCredential: any) => {
-                console.log(userCredential, 'userCredential');
+
                 addUserToDB(userCredential.user)
                 navigate(location?.state?.from || '/')
                 setError('')
@@ -175,8 +181,10 @@ export const UseFirebase = (
         if (user.email) {
             GetUserDetails(user.email, setUserDetails, setIsLoading)
         }
-
     }, [user.email])
+
+    console.log(userDetails, isLoading, 'firebase userDetails');
+
 
     // LOGOUT
     const logout = () => {
@@ -186,6 +194,16 @@ export const UseFirebase = (
                 email: '',
                 emailVerified: false,
                 photoURL: ''
+            })
+            setUserDetails({
+                name: '',
+                email: '',
+                role: '',
+                store: '',
+                date: '',
+                phone: '',
+                photo: '',
+                _id: ''
             })
         }).catch((error) => {
             setError(error.message)

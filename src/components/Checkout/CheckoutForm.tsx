@@ -147,7 +147,9 @@ const CheckoutForm = () => {
             })
                 .then(res => res.json())
                 .then(data => {
-                    if (data.insertedId) {
+                    console.log(data, 'order');
+
+                    if (data.insertedCount) {
                         alert('Order Successfully added')
                         dispatch(clearCart())
                         const ref: any = localStorage.getItem("affiliate_Link")
