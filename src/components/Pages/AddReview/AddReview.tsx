@@ -18,7 +18,7 @@ export default function AddReview() {
     }
     return (
 
-        <div className="container px-12 py-5">
+        <div className="container px-12 py-10">
             <div className="md:grid md:grid-cols-3 md:gap-6">
                 <div className="md:col-span-1">
                     <div className="px-4 sm:px-0">
@@ -84,12 +84,12 @@ export default function AddReview() {
                                             id="description"
                                             rows={3}
                                             className="shadow-sm focus:ring-indigo-500 focus:border-indigo-500 mt-1 block w-full sm:text-sm border border-gray-300 rounded-md"
-                                            placeholder="write your blog description"
+                                            placeholder="write your review description"
                                             defaultValue={''}
                                         />
                                     </div>
                                     <p className="mt-2 text-sm text-gray-500 dark:text-white">
-                                        Brief description for your blog. URLs are hyperlinked.
+                                        Brief description for your review.
                                     </p>
                                 </div>
                             </div>
