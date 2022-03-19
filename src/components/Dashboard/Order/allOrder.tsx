@@ -6,7 +6,7 @@ import UseAuth from '../../../hooks/UseAuth';
 const AllOrders = () => {
     const [orders, setOrders] = useState<any[]>([])
     const [isLoading, setIsLoading] = useState<boolean>(false)
-    const [notFound, setNotFound] = useState('')
+    const [notFound, setNotFound] = useState('');
     const [value, setValue] = useState('All');
     const { userDetails } = UseAuth()
     useEffect(() => {
@@ -75,26 +75,30 @@ const AllOrders = () => {
                 .then(res => res.json())
                 .then(data => setOrders(data))
         }
-        
     }
     const handleChange = (event:any) =>{
-        const statusFilter = event.target.value;
-        event.preventDefault();
+        const statusFilter = (event.target.value);
+        console.log(statusFilter);
+        const filteringDeliver: any = orders?.filter(order => order?.status === 'Delivered');
+        const filteringShipped: any = orders?.filter(order => order?.status === 'Shipped');
         if (statusFilter === 'Delivered'){
-        const filteringDeliver = orders?.filter(p => p?.status === 'Delivered')
-        // console.log(filteringDeliver);
+        // event.preventDefault()
         setOrders(filteringDeliver)
         setValue('Delivered')
         }
         else if (statusFilter==='Shipped'){
-            const filteringShipped = orders?.filter(p => p?.status === 'Shipped')
-            // console.log(filteringShipped);
             setOrders(filteringShipped)
+        // event.preventDefault()
         setValue('Shipped')
+        }
+        else{
+            fetch('https://guarded-ocean-73313.herokuapp.com/dashboard/orders')
+                .then(res => res.json())
+                .then(data => setOrders(data))
+                setValue('All')
         }
     }
     return (
-
         <div className='container mx-auto px-4 sm:px-8'>
             <div className='py-4'>
                 {/* user part 1  */}

@@ -2,6 +2,7 @@ import { useEffect, useState } from "react";
 import LottieBlog from "../Lottie/LottieBlog";
 import BlogDetails from "./BlogDetails/BlogDetails"
 import RelatedBlog from "./RelatedBlog";
+import AddBlogForm from "./AddBlogForm"
 
 /* This example requires Tailwind CSS v2.0+ */
 export default function DetailBlogPage() {
@@ -34,11 +35,12 @@ export default function DetailBlogPage() {
                     <h2 className="text-xl font-bold dark:text-white">Related Blogs</h2>
                     <div className="grid lg:grid-cols-1 md:grid-cols-2 gap-4">
                         {
-                            blogs.slice(5, 10).map(blog => <RelatedBlog key={blog._id} blog={blog}></RelatedBlog>)
+                            blogs.splice(0, 6).map(blog => <RelatedBlog key={blog._id} blog={blog}></RelatedBlog>)
                         }
                     </div>
                 </div>
             </div>
+            <AddBlogForm />
         </div>
     )
 }
