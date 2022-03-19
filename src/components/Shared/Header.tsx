@@ -198,7 +198,9 @@ const Header: FC<HeaderProps> = ({ fixed, transparent }) => {
 
                                 {/* Logo */}
                                 <div className="text-xl font-extrabold text-orange-500 ml-4 flex lg:ml-0">
-                                    <Link to="/">Unity Mart</Link>
+                                    <Link to="/">
+                                        <img className='w-44' src='https://i.ibb.co/89VNhLj/plane-logo.png' alt='Unity Mart logo' />
+                                    </Link>
                                 </div>
 
                                 {/* Flyout menus */}

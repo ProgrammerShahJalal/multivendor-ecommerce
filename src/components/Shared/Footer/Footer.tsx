@@ -15,12 +15,12 @@ export default class App extends React.PureComponent<IAppProps> {
                     <div className='max-w-7xl mx-auto'>
                         <div className='grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-1'>
                             <div className='mb-5'>
-                                <h2 className='text-2xl pb-4'>Unity Mart</h2>
-                                <p className='text-gray-500 w-64 text-justify'>A multi-vendor e-commerce website. Our main objective to provide best user experience and best user friendly interface.</p>
+                                <img className='w-36' src="https://i.ibb.co/8KJycX4/unitymartlogo.png" alt="" />
+                                <p className='text-gray-500 w-64 text-justify text-sm'>A multi-vendor e-commerce website. Our main objective to provide best user experience and best user friendly interface.</p>
                                 <p className='text-gray-500  pb-4'>Savar-1342, Dhaka
-                                    <br /> <br />
-                                    <strong>Phone:</strong>+01303856860 <br /> <br />
-                                    <strong>Email:</strong> remote.coder.unity@gmail.com <br /> <br /></p>
+                                    <br />
+                                    <strong>Phone:</strong>+01303856860 <br />
+                                    <strong>Email:</strong> remote.coder.unity@gmail.com <br /></p>
                             </div>
                             <div className='mb-5'>
                                 <h4 className='text-2xl pb-4'>Information</h4>
