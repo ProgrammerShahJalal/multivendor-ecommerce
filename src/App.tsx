@@ -8,7 +8,6 @@ import CustomersService from "./components/CustomersService/CustomersService";
 import AddProduct from "./components/Dashboard/AddProduct/AddProduct";
 import Attributes from "./components/Dashboard/AddProduct/Sub/Attributes/Attributes";
 import Categories from "./components/Dashboard/AddProduct/Sub/Categories/Categories";
-// import { SummaryBoxSpecial } from "./components/Dashboard/DashboardHome/DashboardHome";
 import Products from "./components/Dashboard/AddProduct/Sub/Products/Products";
 import Affiliate from "./components/Dashboard/AffiliateDashboard/AffiliateDashboard/Affliate";
 import AffiliateLinks from "./components/Dashboard/AffiliateDashboard/AffiliateLinks/AffiliateLinks";
@@ -37,11 +36,9 @@ import VendorRegister from "./components/Pages/VendorPages/VendorRegister";
 import WishList from "./components/Pages/WishList/WishList";
 import PrivacyPolicy from "./components/PrivacyPolicy/PrivacyPolicy";
 import Promo from './components/Promo/Promo';
-import AdminRoute from "./components/Route/AdminRoute/AdminRoute";
 import PrivateRoute from "./components/Route/PrivateRoute/PrivateRoute";
 import Footer from './components/Shared/Footer/Footer';
 import HeaderLanguage from './components/Shared/HeaderLanguage';
-import AffiliateShop from "./components/Shop/AffiliateShop";
 import Shop from "./components/Shop/Shop";
 import DealDetails from "./components/SpecialDeal/DealDetails";
 import SpecialDeal from "./components/SpecialDeal/SpecialDeal";
@@ -104,7 +101,6 @@ function App() {
             <Route path='/wishlist' element={<WishList />} />
             <Route path='/checkout' element={<PrivateRoute><Checkout /></PrivateRoute>} />
             <Route path='/shop' element={<Shop />} />
-            <Route path='/affiliateShop' element={<AffiliateShop />} />
             <Route path='/cart' element={<Cart />} />
             <Route path='/vendorShop/:storeSlug' element={<VendorShopPage />} />
             <Route path='/vendorSidebar' element={<VendorSidebar />} />

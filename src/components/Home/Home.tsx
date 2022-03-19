@@ -16,7 +16,6 @@ import Products from '../Products/Products';
 import Reviews from '../Pages/Reviews/Reviews';
 import SpecialDeal from './../SpecialDeal/SpecialDeal';
 import { LangContext } from '../Pages/MultiLanguage/languagecontext/lang';
-import AllProducts from '../AllProducts/AllProducts';
 
 
 export default function Home() {
