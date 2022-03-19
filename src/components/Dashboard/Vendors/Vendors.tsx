@@ -126,7 +126,6 @@ const Vendors = () => {
                 {/* order part end  */}
 
             </div>
-
         </div>
 
     );
