@@ -69,10 +69,7 @@ export default function UserProfile() {
           <LineChart/>
 
         </div> */}
-<<<<<<< HEAD:src/components/UserDashboard/UserDashboard/UserDashboard.tsx
         <Outlet />
-=======
->>>>>>> ba2116db458f13a3606d89375286aebfcf7237ed:src/components/UserProfile/UserProfile.tsx
       </div>
 
     </div>

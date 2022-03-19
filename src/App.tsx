@@ -50,12 +50,13 @@ import DealDetails from "./components/SpecialDeal/DealDetails";
 import StoreListCards from "./components/StoreListCard/StoreListCard";
 import EditProduct from "./components/Dashboard/AddProduct/Sub/EditProduct/EditProduct";
 import UserDashboardHome from "./components/UserDashboard/UserDashboardHome/UserDashboardHome";
-import UserOrders from "./components/UserDashboard/UserOrders/UserOrders";
 import TermsCondition from "./components/TermsCondition/TermsCondition";
 import CustomersService from "./components/CustomersService/CustomersService";
 import AdminRoute from "./components/Route/AdminRoute/AdminRoute";
 import AddReview from "./components/Pages/AddReview/AddReview";
 import WomenProductDetail from "./components/WomenProductDetail";
+import UserOrders from "./components/UserDashboard/UserOrders/UserOrders";
+import UserDetailedOrder from "./components/UserDashboard/UserOrders/UserDetailedOrder";
 
 
 
@@ -119,6 +120,7 @@ function App() {
             <Route path="/profile" element={<PrivateRoute><UserProfile /></PrivateRoute>} >
               <Route path="dashboard" element={<UserDashboardHome />}></Route>
               <Route path="orders" element={<UserOrders />}></Route>
+              <Route path="order/:id" element={<UserDetailedOrder />}></Route>
             </Route>
             {/* DASHBOARD ROUTES */}
             <Route path="/dashboard" element={<AdminRoute ><Dashboard /></AdminRoute>} >
