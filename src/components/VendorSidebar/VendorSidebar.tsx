@@ -6,8 +6,7 @@ const VendorSidebar = () => {
             <div>
                 {/* sidebar starts */}
                 <div className='pl-3'>
-                    <h2 className='uppercase font-bold text-lg text-left  py-3'>Search</h2>
-                    <input type="text" className=' bg-slate-100 text-slate-400 py-3   border border-slate-30 hover:border-indigo-300' placeholder='Search Products' />
+                    
                     {/* <Sidebar/> */}
                 </div>
                 {/* Sidebar */}
