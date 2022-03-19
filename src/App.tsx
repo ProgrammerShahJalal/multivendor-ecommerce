@@ -25,7 +25,6 @@ import MenProductsDetail from './components/MenProductDetail';
 import NotFound from './components/NotFound/NotFound';
 import OrderTracking from './components/OrderTracking/OrderTracking';
 import About from "./components/Pages/About/About";
-import SiteUser from "./components/Pages/AddReview/SiteUser";
 import Cart from "./components/Pages/CartPage/Cart";
 import Login from "./components/Pages/LoginPage/Login";
 import { LangContext } from "./components/Pages/MultiLanguage/languagecontext/lang";
@@ -103,7 +102,6 @@ function App() {
             <Route path='/vendor-register' element={<PrivateRoute><VendorRegister /></PrivateRoute>} />
             <Route path='/orderTrack' element={<OrderTracking />} />
             <Route path='/wishlist' element={<WishList />} />
-            <Route path='/addReview' element={<SiteUser />} />
             <Route path='/checkout' element={<PrivateRoute><Checkout /></PrivateRoute>} />
             <Route path='/shop' element={<Shop />} />
             <Route path='/affiliateShop' element={<AffiliateShop />} />
