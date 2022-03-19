@@ -120,11 +120,11 @@ const PaginatedBlogs = ({ blogs, isLoading }: any) => {
                                         </div>
                                         <div className="p-8">
                                             <div className="uppercase tracking-wide text-sm text-indigo-500 font-semibold">Category: {blog.category}</div>
-                                            <Link to={`/blogs/details/${blog._id}`} className="block mt-1 text-lg leading-tight font-medium text-gray-800 dark:text-white dark:text-white hover:underline truncate w-96">{blog.title}</Link>
+                                            <Link to={`/blogs/details/${blog._id}`} className="block mt-1 text-lg leading-tight font-medium text-gray-800 dark:text-white hover:underline truncate w-96">{blog.title}</Link>
                                             <p className="mt-2 py-3 text-slate-500 w-96 h-18">{blog.description?.slice(0, 80)}...</p>
                                             <div className="flex gap-4">
                                                 <h3 className='text-sm text-purple-700 font-semibold'>Posted by {blog.author}</h3>
-                                                <h3 className='text-sm text-fuchsia-600 font-semibold'>Last Updated: {new Date().toLocaleDateString()}</h3>
+                                                <h3 className='text-sm text-fuchsia-600 font-semibold'> Date: {blog.date}</h3>
                                             </div>
                                         </div>
                                     </div>
