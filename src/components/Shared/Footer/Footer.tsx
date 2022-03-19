@@ -73,10 +73,10 @@ export default class App extends React.PureComponent<IAppProps> {
                             <a target='_blank' rel="noreferrer" href="https://www.facebook.com/Unity-Mart-A-Multi-vendor-E-commerce-Website-104774475481224">
                             <span className="cursor-pointer w-10 h-10 rounded-full text-blue-500 my-auto mx-1 inline-block pt-1" ><i className="fab fa-facebook p-1 my-auto"></i></span>
                             </a>
-                            <a target='_blank' rel="noreferrer" href="https://www.linkedin.com">
+                            <a target='_blank' rel="noreferrer" href="https://www.linkedin.com/in/ProgrammerShahJalal/">
                             <span className="cursor-pointer w-10 h-10 rounded-full text-blue-700 my-auto mx-1 inline-block pt-1" ><i className="fab fa-linkedin p-1 my-auto"></i></span>
                             </a>
-                            <a target='_blank' rel="noreferrer" href="https://www.twitter.com">
+                            <a target='_blank' rel="noreferrer" href="https://twitter.com/mdshahjalal01">
                             <span className="cursor-pointer w-10 h-10 rounded-full text-blue-600 my-auto mx-1 inline-block pt-1" ><i className="fab fa-twitter p-1 my-auto"></i></span>
                             </a>
                             <a target='_blank' rel="noreferrer" href="https://www.instagram.com">
