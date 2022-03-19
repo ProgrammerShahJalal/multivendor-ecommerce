@@ -7,16 +7,35 @@ import VendorTop from './VendorTop';
 /* This example requires Tailwind CSS v2.0+ */
 export default function VendorShopPage() {
     const [products, setProducts] = useState<any>([]);
+    const [notFound, setNotFound] = useState('')
 
     useEffect(() => {
+        if (products.length === 0) {
         fetch('https://guarded-ocean-73313.herokuapp.com/products')
             .then(res => res.json())
             .then(data => {
-                console.log(data)
                 setProducts(data)
             })
+        }
 
-    }, [])
+    }, [products]);
+    const handleOnChange = (event: any) => {
+        const searchText = event.target.value.toLowerCase();
+       
+        const findProduct: any = products && products.length > 0 ? products?.filter(product => product?.title.toLowerCase().includes(searchText)) : null;
+        
+        if (findProduct.length > 0) {
+            setProducts(findProduct);
+            setNotFound('')
+        }
+        else if (findProduct.length === 0) {
+            setNotFound('This Type Of product Is Not Available Now')
+            
+            fetch('https://guarded-ocean-73313.herokuapp.com/products')
+                .then(res => res.json())
+                .then(data => setProducts(data))
+        }
+    }
 
 
     return (
@@ -31,9 +50,20 @@ export default function VendorShopPage() {
                 </div>
                 {/* sidebar end  */}
 
+                <div>
+                <div className='text center'>
+                    <h2 className='uppercase font-bold text-lg text-left  py-3'>Search</h2>
+                    <input onChange={handleOnChange} type="text" className=' bg-slate-100 text-slate-400 py-3   border border-slate-30 hover:border-indigo-300' placeholder='Search Products' />
+                    
+                </div>
+                <div>
+
+                    <div className="text-xl text-center font-md text-red-600">{notFound}</div>
+                </div>
+                
                 <div className='grid lg:grid-cols-4 md:grid-cols-2 sm:grid-cols-1 gap-10 py-5 '>
 
-                    {products?.map((product: any) => (<div className=' shadow-lg rounded-md w-border '>
+                    {products?.length > 0 && products?.map((product: any) => (<div className=' shadow-lg rounded-md w-border '>
 
                         <div className='w-64 mx-auto px-8'>
                             <img className='w-48' src={product.images[0]?.src} alt="vendor products" />
@@ -52,14 +82,7 @@ export default function VendorShopPage() {
                                 <span className='test-sm line-through opacity-50 ml-2'>
                                     {product.reg_price}
                                 </span>
-                                {/* <div className='flex items-center gap-2 mt-1'>
-                                    <span className='test-sm line-through opacity-50'>
-                                    {product.reg_price}
-                                    </span> */}
-                                {/* <span className='bg-green-400 px-1 py-0.5 rounded-md text-xs text-white'>
-                                        save 20%
-                                    </span> */}
-                                {/* </div> */}
+                                
                                 <br />
                                 <span className=' mt-1 text-amber-400'>
                                     <i className="fa-solid fa-star"></i>
@@ -67,10 +90,7 @@ export default function VendorShopPage() {
                                     <i className="fa-solid fa-star"></i>
                                     <i className="fa-solid fa-star-half-stroke"></i>
                                     <i className="fa-solid fa-star-half-stroke"></i>
-                                    {/* <span className='text-sm ml-2 text-gray-500'>
-                                        20k reviews
-                                    </span> */}
-                                    {/* flex items-center */}
+                                 
 
                                 </span>
                                 <div className='mt-5 grid grid-cols-2 lg:grid-cols-1 gap-4 justify-between items-center place-items-center'>
@@ -97,6 +117,7 @@ export default function VendorShopPage() {
 
 
 
+                </div>
                 </div>
 
             </div>
