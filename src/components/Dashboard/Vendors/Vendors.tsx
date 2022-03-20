@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import VendorsSearchField from './VendorsSearchField';
+import { Link, } from 'react-router-dom';
 
 const Vendors = () => {
     const [vendors, setVendors] = useState([]);
@@ -151,9 +152,11 @@ const Vendors = () => {
                                                 </span>
                                             </td>
                                             <td className="px-5 py-5 border-b border-gray-200 bg-white dark:bg-slate-800 text-sm">
-                                                <p className="text-gray-900 dark:text-white rounded whitespace-no-wrap text-left bg-green-200 p-2 w-10">
-                                                    Edit
-                                                </p>
+                                                <Link to={`/dashboard/user/vendor/${vendor.storeSlug}`}>
+                                                    <p className="text-gray-900 dark:text-white rounded whitespace-no-wrap text-center bg-green-200 p-2 w-16">
+                                                        Profile
+                                                    </p>
+                                                </Link>
                                             </td>
                                             <td className="px-5 py-5 border-b border-gray-200 bg-white dark:bg-slate-800 text-sm">
                                                 <p className="text-white rounded whitespace-no-wrap text-left bg-red-500 p-2 w-16">
