@@ -15,7 +15,7 @@ export default class App extends React.PureComponent<IAppProps> {
                     <div className='max-w-7xl mx-auto'>
                         <div className='grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-1'>
                             <div className='mb-5'>
-                                <img className='w-36' src="https://i.ibb.co/8KJycX4/unitymartlogo.png" alt="" />
+                                <img className='w-64' src="https://i.ibb.co/jk1QcVk/mainlogo.png" alt="" />
                                 <p className='text-gray-500 w-64 text-justify text-sm'>A multi-vendor e-commerce website. Our main objective to provide best user experience and best user friendly interface.</p>
                                 <p className='text-gray-500  pb-4'>Savar-1342, Dhaka
                                     <br />
