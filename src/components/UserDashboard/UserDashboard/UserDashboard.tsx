@@ -3,6 +3,7 @@ import { Link, Outlet } from 'react-router-dom';
 import UseAuth from '../../../hooks/UseAuth';
 import { DataChart } from '../../DataChart/HorizontalChart';
 import LineChart from '../../DataChart/LineChart';
+import UserMainProfile from '../../Pages/UserMainProfile/UserMainProfile';
 
 export default function UserProfile() {
 
@@ -53,22 +54,9 @@ export default function UserProfile() {
 
           </ul>
         </div>
-        {/* <div style={{
-          width: '600px',
-          height: '600px',
-          // marginLeft:'70px'
-        }} className='items-center right-50 justify-center'>
-          <DataChart />
-          
-        </div>
-        <div style={{
-          width: '600px',
-          height: '600px',
-          // marginLeft:'70px'
-        }} className='items-center right-50 justify-center'>
-          <LineChart/>
-
-        </div> */}
+      <div className='mx-auto'>
+      <UserMainProfile/>
+      </div>
       </div>
 
     </div>
