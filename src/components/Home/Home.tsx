@@ -47,7 +47,7 @@ export default function Home() {
             <HomeProducts translate={translate} />
             <BottomBanner />
             {/* <Reviews /> */}
-            <Brands />
+            {/* <Brands /> */}
             <PaginatedBlogsHome />
             <Faq />
             {/* <Alan /> */}

@@ -45,7 +45,6 @@ import { LangContext } from "./components/Pages/MultiLanguage/languagecontext/la
 import Cart from "./components/Pages/CartPage/Cart";
 import Checkout from "./components/Checkout/Checkout";
 import AffiliateShop from "./components/Shop/AffiliateShop";
-import SiteUser from "./components/Pages/AddReview/SiteUser";
 import DetailedOrder from "./components/Dashboard/Order/DetailedOrder";
 import SingleProduct from "./components/AllProducts/SingleProduct";
 import SearchField from "./components/Pages/SearchField/SearchField";
@@ -85,59 +84,58 @@ function App() {
           <Routes>
             <Route path='/' element={<Home />} />
             <Route path='/home' element={<Home />} />
-            <Route path='/contact' element={<Contact />} />
+            {/* <Route path='/contact' element={<Contact />} />
             <Route path='/about' element={<About />} />
-            <Route path='/offer' element={<Promo />} />
+            <Route path='/offer' element={<Promo />} /> */}
             <Route path='/searchField' element={<SearchField />} />
-            <Route path='/unitTesting' element={<UnitTesting />} />
+            {/* <Route path='/unitTesting' element={<UnitTesting />} /> */}
             <Route path='/specialDeal' element={<SpecialDeal translate={translate} />} />
-            <Route path='/productDetails/men/:id' element={<MenProductsDetail />} />
+            {/* <Route path='/productDetails/men/:id' element={<MenProductsDetail />} />
             <Route path='/productDetails/women/:id' element={<WomenProductDetail />} />
             <Route path='/productDetails/kid/:id' element={<KidsProductDetails />} />
-            <Route path='/team' element={<Team />} />
+            <Route path='/team' element={<Team />} /> */}
             <Route path='/login' element={<Login />} />
             <Route path='/register' element={<Register />} />
-            <Route path='/vendors' element={<StoreListCards />} />
+            {/* <Route path='/vendors' element={<StoreListCards />} /> */}
             <Route path='/vendor-register' element={<PrivateRoute><VendorRegister /></PrivateRoute>} />
-            <Route path='/orderTrack' element={<OrderTracking />} />
-            <Route path='/wishlist' element={<WishList />} />
-            <Route path='/addReview' element={<SiteUser />} />
-            <Route path='/checkout' element={<PrivateRoute><Checkout /></PrivateRoute>} />
+            {/* <Route path='/orderTrack' element={<OrderTracking />} />
+            <Route path='/wishlist' element={<WishList />} /> */}
+            {/* <Route path='/checkout' element={<PrivateRoute><Checkout /></PrivateRoute>} />
             <Route path='/shop' element={<Shop />} />
             <Route path='/affiliateShop' element={<AffiliateShop />} />
-            <Route path='/cart' element={<Cart />} />
+            <Route path='/cart' element={<Cart />} /> */}
             <Route path='/vendorShop' element={<VendorShopPage />} />
             <Route path='/vendorSidebar' element={<VendorSidebar />} />
             <Route path='/vendorLogin' element={<PrivateRoute><VendorInformations /></PrivateRoute>} />
             <Route path='/profile' element={<PrivateRoute><UserProfile /></PrivateRoute>} />
-            <Route path='/success/:id' element={<PrivateRoute><Success /></PrivateRoute>} />
+            {/* <Route path='/success/:id' element={<PrivateRoute><Success /></PrivateRoute>} />
             <Route path='/blogs/details/:id' element={<PrivateRoute><DetailBlogPage /></PrivateRoute>} />
-            <Route path='/specials/details/:id' element={<PrivateRoute><DealDetails /></PrivateRoute>} />
-            <Route path='/product/:id' element={<SingleProduct />} />
+            <Route path='/specials/details/:id' element={<PrivateRoute><DealDetails /></PrivateRoute>} /> */}
+            {/* <Route path='/product/:id' element={<SingleProduct />} /> */}
 
             {/* DASHBOARD ROUTES */}
             <Route path="/dashboard" element={<Dashboard />} >
-              <Route path="media" element={<Media />}></Route>
+              {/* <Route path="media" element={<Media />}></Route> */}
 
 
-              <Route path="affiliate-dashboard" element={<Affiliate />}></Route>
+              {/* <Route path="affiliate-dashboard" element={<Affiliate />}></Route>
               <Route path="affiliate-links" element={<AffiliateLinks />}></Route>
               <Route path="addProduct" element={<AddProduct />}></Route>
               <Route path="orders" element={<AllOrders />}></Route>
               <Route path='detailed-order/:id' element={<DetailedOrder />} />
               <Route path="categories" element={<Categories />}></Route>
               <Route path="attributes" element={<Attributes />}></Route>
-              <Route path="products" element={<Products />}></Route>
+              <Route path="products" element={<Products />}></Route> */}
               <Route path="users" element={<Users />}></Route>
 
               <Route path="vendors" element={<Vendors />}></Route>
-              <Route path="vendor-profile" element={<VendorProfileDetails />}></Route>
+              <Route path="user/vendor/:slug" element={<VendorProfileDetails />}></Route>
             </Route>
 
             {/* footer route */}
-            <Route path="/terms&condition" element={<TermsCondition />}></Route>
+            {/* <Route path="/terms&condition" element={<TermsCondition />}></Route>
             <Route path="/customer-service" element={<CustomersService />}></Route>
-            <Route path="/privacy-policy" element={<PrivacyPolicy />}></Route>
+            <Route path="/privacy-policy" element={<PrivacyPolicy />}></Route> */}
 
             <Route path='*' element={<NotFound />} />
           </Routes>
