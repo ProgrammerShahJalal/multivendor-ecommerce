@@ -148,7 +148,7 @@ const Header: FC<HeaderProps> = ({ fixed, transparent }) => {
                                                 </div>
                                                 <div className="flow-root">
                                                     <Link to="/register" className="-m-2 p-2 block font-medium text-gray-900 dark:text-white">
-                                                        Create account
+                                                        Register
                                                     </Link>
                                                 </div>
                                             </div>
@@ -373,7 +373,7 @@ const Header: FC<HeaderProps> = ({ fixed, transparent }) => {
                                                 </div>
                                                 <div className='flow-root'>
                                                     <Link to="/register" className="-m-2 p-2 block font-medium text-gray-900 dark:text-white">
-                                                        Create Account
+                                                        Register
                                                     </Link>
                                                 </div>
                                             </div>

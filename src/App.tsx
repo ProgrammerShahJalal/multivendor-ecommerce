@@ -1,6 +1,9 @@
 import { useContext, useLayoutEffect } from "react";
 import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
+import SingleProduct from "./components/AllProducts/SingleProduct";
 import DetailBlogPage from "./components/Blogs/DetailBlogPage";
+import Checkout from "./components/Checkout/Checkout";
+import Contact from './components/Contact/Contact.js';
 import AuthProvider from "./context/AuthProvider";
 import Register from "./components/Pages/RegisterPage/Register";
 import Login from "./components/Pages/LoginPage/Login";
@@ -24,6 +27,7 @@ import Affiliate from "./components/Dashboard/AffiliateDashboard/AffiliateDashbo
 import AffiliateLinks from "./components/Dashboard/AffiliateDashboard/AffiliateLinks/AffiliateLinks";
 import Dashboard from "./components/Dashboard/Dashboard/Dashboard";
 import AllOrders from "./components/Dashboard/Order/allOrder";
+import DetailedOrder from "./components/Dashboard/Order/DetailedOrder";
 import Users from "./components/Dashboard/Users/Users";
 import Vendors from "./components/Dashboard/Vendors/Vendors";
 import VendorProfileDetails from "./components/Dashboard/Vendors/VendorsProfileDetails";
@@ -32,9 +36,7 @@ import KidsProductDetails from './components/KidsProductDetails';
 import MenProductsDetail from './components/MenProductDetail';
 import About from "./components/Pages/About/About";
 import Cart from "./components/Pages/CartPage/Cart";
-import Checkout from "./components/Checkout/Checkout";
-import DetailedOrder from "./components/Dashboard/Order/DetailedOrder";
-import SingleProduct from "./components/AllProducts/SingleProduct";
+import { LangContext } from "./components/Pages/MultiLanguage/languagecontext/lang";
 import SearchField from "./components/Pages/SearchField/SearchField";
 import UnitTesting from "./components/Pages/UnitTesting/UnitTesting";
 import VendorInformations from "./components/Pages/VendorPages/VendorInformations";
@@ -51,9 +53,14 @@ import UserDashboardHome from "./components/UserDashboard/UserDashboardHome/User
 import TermsCondition from "./components/TermsCondition/TermsCondition";
 import CustomersService from "./components/CustomersService/CustomersService";
 import AdminRoute from "./components/Route/AdminRoute/AdminRoute";
+import AddReview from "./components/Pages/AddReview/AddReview";
 import WomenProductDetail from "./components/WomenProductDetail";
-import { LangContext } from "./components/Pages/MultiLanguage/languagecontext/lang";
-import Contact from "./components/Contact/Contact";
+import UserOrders from "./components/UserDashboard/UserOrders/UserOrders";
+import UserDetailedOrder from "./components/UserDashboard/UserOrders/UserDetailedOrder";
+import AddBlogForm from "./components/Blogs/AddBlogForm";
+import DashboardBlogs from "./components/Blogs/DashboardBlogs";
+import BlogsFirstLook from "./components/Blogs/BlogsFirstLook";
+import AffiliateFirstLook from "./components/Blogs/AffiliateFirstLook";
 
 
 
@@ -103,26 +110,33 @@ function App() {
             <Route path='/orderTrack' element={<OrderTracking />} />
             <Route path='/wishlist' element={<WishList />} />
             <Route path='/checkout' element={<PrivateRoute><Checkout /></PrivateRoute>} />
+            <Route path='/addReview' element={<PrivateRoute><AddReview /></PrivateRoute>} />
             <Route path='/shop' element={<Shop />} />
             <Route path='/cart' element={<Cart />} />
-            <Route path='/vendorShop' element={<VendorShopPage />} />
+            <Route path='/vendorShop/:storeSlug' element={<VendorShopPage />} />
             <Route path='/vendorSidebar' element={<VendorSidebar />} />
             <Route path='/vendorLogin' element={<PrivateRoute><VendorInformations /></PrivateRoute>} />
-            <Route path='/profile' element={<PrivateRoute><UserProfile /></PrivateRoute>} />
             <Route path='/success/:id' element={<PrivateRoute><Success /></PrivateRoute>} />
             <Route path='/blogs/details/:id' element={<PrivateRoute><DetailBlogPage /></PrivateRoute>} />
             <Route path='/specials/details/:id' element={<PrivateRoute><DealDetails /></PrivateRoute>} />
             <Route path='/product/:id' element={<SingleProduct />} />
-
+            {/* USER DASHBOARD */}
+            <Route path="/profile" element={<PrivateRoute><UserProfile /></PrivateRoute>} >
+              <Route path="dashboard" element={<UserDashboardHome />}></Route>
+              <Route path="orders" element={<UserOrders />}></Route>
+              <Route path="order/:id" element={<UserDetailedOrder />}></Route>
+            </Route>
             {/* DASHBOARD ROUTES */}
-            <Route path="/dashboard" element={<Dashboard />} >
+            <Route path="/dashboard" element={<AdminRoute ><Dashboard /></AdminRoute>} >
               <Route path="media" element={<Media />}></Route>
-
-
               <Route path="affiliate-dashboard" element={<Affiliate />}></Route>
+              <Route path="affiliate" element={<AffiliateFirstLook />}></Route>
               <Route path="affiliate-links" element={<AffiliateLinks />}></Route>
               <Route path="addProduct" element={<AddProduct />}></Route>
               <Route path="orders" element={<AllOrders />}></Route>
+              <Route path="blogs-dashboard" element={<BlogsFirstLook />}></Route>
+              <Route path="blogs" element={<DashboardBlogs />}></Route>
+              <Route path="add-blog" element={<AddBlogForm />}></Route>
               <Route path='detailed-order/:id' element={<DetailedOrder />} />
               <Route path="categories" element={<Categories />}></Route>
               <Route path="attributes" element={<Attributes />}></Route>

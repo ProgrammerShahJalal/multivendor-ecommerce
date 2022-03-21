@@ -1,8 +1,6 @@
 import { useState } from 'react';
 import { Link, Outlet } from 'react-router-dom';
 import UseAuth from '../../../hooks/UseAuth';
-import { DataChart } from '../../DataChart/HorizontalChart';
-import LineCharts from '../../DataChart/LineChart';
 import './Dashboard.css'
 
 
@@ -22,12 +20,14 @@ function Dashboard() {
                 <div className="logo-details">
 
                     <i onClick={toggleHamBurgerMenu} className='bx bx-menu text-white cursor-pointer'></i>
-                    <span className="logo_name">Unity Mart</span>
+                    <span className="logo_name">
+                        <img src='https://i.ibb.co/jk1QcVk/mainlogo.png' alt='Unity Mart' />
+                    </span>
 
                 </div>
                 <ul className="nav-links" >
                     <li>
-                        <Link to={`/dashboard/products`}>
+                        <Link to={`/dashboard`}>
                             <i className='bx bx-grid-alt'></i>
                             <span className="link_name">Dashboard</span>
                         </Link>
@@ -45,9 +45,9 @@ function Dashboard() {
                         </ul>
 
                     </li>
-                    {/* <li onClick={subMenuToggle} className="">
+                    <li onClick={subMenuToggle} className="">
                         <div className="iocn-link">
-                            <Link to={`/dashboard/affiliate-dashboard`}>
+                            <Link to={`/dashboard/blogs-dashboard`}>
                                 <i className='bx bx-collection'></i>
                                 <span className="link_name">Blogs</span>
                             </Link>
@@ -56,13 +56,13 @@ function Dashboard() {
                         <ul className="sub-menu">
                             <li><Link className="link_name" to={`/dashboard/addBlog`}>Blogs</Link></li>
                             <li><Link to={`/dashboard/add-blog`}>Add Blog</Link></li>
-                            <li><Link to={`/dashboard/products`}>Blogs</Link></li>
+                            <li><Link to={`/dashboard/blogs`}>Blogs</Link></li>
                         </ul>
 
-                    </li> */}
+                    </li>
                     {userDetails.email && userDetails.role === 'admin' ? <li onClick={subMenuToggle} className="">
                         <div className="iocn-link">
-                            <Link to={`/dashboard/affiliate-dashboard`}>
+                            <Link to={`/dashboard/affiliate`}>
                                 <i className="fa-regular fa-link"></i>
                                 {/* <i className='bx bx-collection'></i> */}
                                 <span className="link_name">Affiliate</span>
@@ -147,7 +147,7 @@ function Dashboard() {
             </div>
             <section className="home-section">
                 <div className='container mx-auto'><Outlet></Outlet>
-                {/* <DataChart/>
+                    {/* <DataChart/>
                 <LineCharts/> */}
                 </div>
             </section>

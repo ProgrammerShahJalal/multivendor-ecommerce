@@ -81,7 +81,7 @@ const WomensCollection = () => {
                     products.map((product) => (
                         <div className="bg-white dark:bg-slate-600 shadow-inner overflow-hidden single-card">
                             <div className="relative group">
-                            <div style={{ height: '300px' }} className='bg-white overflow-hidden'>
+                                <div style={{ height: '300px' }} className='bg-white overflow-hidden'>
                                     <img src={product.hoverImg} className='select-none w-full h-full object-contain img group-hover:hidden block transition' alt="" />
                                     <img src={product.img3} className='select-none img w-full h-full object-contain group-hover:block hidden transition' alt="" />
                                 </div>
@@ -111,7 +111,7 @@ const WomensCollection = () => {
                                     <div className="text-xs text-gray-500 ml-3">(1)</div>
                                 </div>
                             </div>
-                            <button onClick={() => handleAddToCart(product)} className='block w-full py-1 text-center top-5 text-white bg-indigo-500 border border-indigo-500 rounded-b hover:bg-transparent hover:text-indigo-500 transition'>Add to Cart</button>
+                            <button onClick={() => handleAddToCart(product)} className='block w-full py-1 text-center top-5 text-white bg-indigo-500 border border-indigo-500 rounded-b hover:bg-transparent hover:text-indigo-500 transition'>View Product</button>
                         </div>
                     ))}
             </div>
