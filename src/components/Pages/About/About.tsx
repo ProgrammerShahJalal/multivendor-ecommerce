@@ -21,8 +21,8 @@ const About = () => {
                     <div className='relative'>
                         <img src='https://template.annimexweb.com/diva/assets/images/parallax-banners/testimonials-bg.jpg' className="w-full mx-auto" alt='' />
                         <div className='absolute inset-0 bg-black bg-opacity-40 items-center py-12'>
-                            <h2 className='text-blue-200 text-center text-4xl font-bold py-3'>Unity Mart</h2>
-                            <h2 className='text-pink-200 text-center text-4xl font-bold py-3'>A multivendor E-commerce Site</h2>
+                            <h2 className='text-blue-300 text-center text-4xl font-bold py-3'>Unity Mart</h2>
+                            <h2 className='text-pink-300 text-center text-4xl font-bold py-3'>A multivendor E-commerce Site</h2>
                         </div>
                     </div>
 
@@ -33,7 +33,7 @@ const About = () => {
                             </div>
                             <div className='w-50 px-5 text-center'>
                                 <h2 className='text-2xl font-medium text-gray-800 dark:text-white uppercase mb-6'>What is Unity Mart</h2>
-                                <p className='dark:text-white'>Unity Mart comes with easy-to-use interface and outstanding support. You can implement your own design. You can easily change the store's appearance as per your requirements using our ready sections and options available.You can easily change the store's appearance as per your requirements using our ready sections and options available.
+                                <p className='dark:text-white'>Unity Mart comes with easy-to-use interface and outstanding support. You can implement your own design.You can easily change the store's appearance as per your requirements using our ready sections and options available.
                                     Our support teams are ready to help you on any stage of your store setup</p>
                                 <button className="mt-2 text-white bg-purple-600 justify-center px-3 py-1 rounded-md hover:bg-purple-800 transition"><HomePopUp /></button>
                             </div>
