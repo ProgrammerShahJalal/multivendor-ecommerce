@@ -5,7 +5,8 @@ import Footer from './components/Shared/Footer/Footer';
 import Contact from './components/Contact/Contact.js';
 import AuthProvider from "./context/AuthProvider";
 import Register from "./components/Pages/RegisterPage/Register";
-import Login from "./components/Pages/LoginPage/Login";
+import { lazy, Suspense, useLayoutEffect } from "react";
+
 import NotFound from './components/NotFound/NotFound';
 import Team from './components/Pages/Team/Team';
 import Shop from "./components/Shop/Shop";
@@ -17,22 +18,15 @@ import VendorShopPage from "./components/VenderShopPage/VenderShopPage";
 import VendorSidebar from "./components/VendorSidebar/VendorSidebar";
 import SpecialDeal from "./components/SpecialDeal/SpecialDeal";
 
-import Media from "./components/Dashboard/Media/Media";
-import AddProduct from "./components/Dashboard/AddProduct/AddProduct";
-import Categories from "./components/Dashboard/AddProduct/Sub/Categories/Categories";
-import Attributes from "./components/Dashboard/AddProduct/Sub/Attributes/Attributes";
+
+// import AllOrders from "./components/Dashboard/Order/allOrder";
+
+
 import DealDetails from "./components/SpecialDeal/DealDetails";
 import DetailBlogPage from "./components/Blogs/DetailBlogPage";
-import Affiliate from "./components/Dashboard/AffiliateDashboard/AffiliateDashboard/Affliate";
-import AffiliateLinks from "./components/Dashboard/AffiliateDashboard/AffiliateLinks/AffiliateLinks";
-import Dashboard from "./components/Dashboard/Dashboard/Dashboard";
-import { useEffect, useLayoutEffect, useState } from "react";
-import AllOrders from "./components/Dashboard/Order/allOrder";
-import Vendors from "./components/Dashboard/Vendors/Vendors";
-import VendorProfileDetails from "./components/Dashboard/Vendors/VendorsProfileDetails";
+
 // import { SummaryBoxSpecial } from "./components/Dashboard/DashboardHome/DashboardHome";
-import Products from "./components/Dashboard/AddProduct/Sub/Products/Products";
-import Users from "./components/Dashboard/Users/Users";
+
 import MenProductsDetail from './components/MenProductDetail';
 import WomenProductDetail from './components/WomenProductDetail';
 import KidsProductDetails from './components/KidsProductDetails';
@@ -40,7 +34,6 @@ import Promo from './components/Promo/Promo';
 // import SingleProduct from "./components/SingleProduct/SingleProduct";
 import UnitTesting from "./components/Pages/UnitTesting/UnitTesting";
 import WishList from "./components/Pages/WishList/WishList";
-import VendorHomePage from "./components/Pages/VendorPages/VendorHomePage";
 import About from "./components/Pages/About/About";
 import Invoice from "./components/Invoice/Invoice";
 import { useContext } from "react";
@@ -49,18 +42,39 @@ import Cart from "./components/Pages/CartPage/Cart";
 import Checkout from "./components/Checkout/Checkout";
 import AffiliateShop from "./components/Shop/AffiliateShop";
 import SiteUser from "./components/Pages/AddReview/SiteUser";
-import DetailedOrder from "./components/Dashboard/Order/DetailedOrder";
+
 import SingleProduct from "./components/AllProducts/SingleProduct";
 import VendorInformations from "./components/Pages/VendorPages/VendorInformations";
 import VendorRegister from "./components/Pages/VendorPages/VendorRegister";
 import AdminRoute from "./components/Route/AdminRoute/AdminRoute";
-import VendorCard from "./components/VenderShopPage/VendorCard";
 import StoreListCards from "./components/StoreListCard/StoreListCard";
 import SearchField from "./components/Pages/SearchField/SearchField";
-import EditProduct from "./components/Dashboard/AddProduct/Sub/EditProduct/EditProduct";
+
 import UserDashboardHome from "./components/UserDashboard/UserDashboardHome/UserDashboardHome";
 import UserOrders from "./components/UserDashboard/UserOrders/UserOrders";
-import UseAuth from "./hooks/UseAuth";
+import UserDetailedOrder from "./components/UserDashboard/UserOrders/UserDetailedOrder";
+import LoginForm from "./components/Pages/LoginPage/Login";
+
+const Dashboard = lazy(() => import("./components/Dashboard/Dashboard/Dashboard"));
+const AllOrders = lazy(() => import("./components/Dashboard/Order/allOrder"));
+const Media = lazy(() => import("./components/Dashboard/Media/Media"));
+const AddProduct = lazy(() => import("./components/Dashboard/AddProduct/AddProduct"));
+const Categories = lazy(() => import("./components/Dashboard/AddProduct/Sub/Categories/Categories"));
+const Attributes = lazy(() => import("./components/Dashboard/AddProduct/Sub/Attributes/Attributes"));
+const Affiliate = lazy(() => import("./components/Dashboard/AffiliateDashboard/AffiliateDashboard/Affliate"));
+const AffiliateLinks = lazy(() => import("./components/Dashboard/AffiliateDashboard/AffiliateLinks/AffiliateLinks"));
+const Vendors = lazy(() => import("./components/Dashboard/Vendors/Vendors"));
+const VendorProfileDetails = lazy(() => import("./components/Dashboard/Vendors/VendorsProfileDetails"));
+const Products = lazy(() => import("./components/Dashboard/AddProduct/Sub/Products/Products"));
+const Users = lazy(() => import("./components/Dashboard/Users/Users"));
+const DetailedOrder = lazy(() => import("./components/Dashboard/Order/DetailedOrder"));
+const EditProduct = lazy(() => import("./components/Dashboard/AddProduct/Sub/EditProduct/EditProduct"));
+
+// import Dashboard from "./components/Dashboard/Dashboard/Dashboard";
+
+
+
+
 
 
 
@@ -103,7 +117,7 @@ function App() {
             <Route path='/productDetails/women/:id' element={<WomenProductDetail />} />
             <Route path='/productDetails/kid/:id' element={<KidsProductDetails />} />
             <Route path='/team' element={<Team />} />
-            <Route path='/login' element={<Login />} />
+            <Route path='/login' element={<LoginForm />} />
             <Route path='/register' element={<Register />} />
             <Route path='/vendors' element={<StoreListCards />} />
             <Route path='/vendor-register' element={<PrivateRoute><VendorRegister /></PrivateRoute>} />
@@ -126,23 +140,26 @@ function App() {
             <Route path="/profile" element={<PrivateRoute><UserProfile /></PrivateRoute>} >
               <Route path="dashboard" element={<UserDashboardHome />}></Route>
               <Route path="orders" element={<UserOrders />}></Route>
+              <Route path="order/:id" element={<UserDetailedOrder />}></Route>
             </Route>
             {/* DASHBOARD ROUTES */}
-            <Route path="/dashboard" element={<AdminRoute ><Dashboard /></AdminRoute>} >
-              <Route path="media" element={<Media />}></Route>
-              <Route path="affiliate-dashboard" element={<Affiliate />}></Route>
-              <Route path="affiliate-links" element={<AffiliateLinks />}></Route>
-              <Route path="addProduct" element={<AddProduct />}></Route>
-              <Route path="orders" element={<AllOrders />}></Route>
-              <Route path='detailed-order/:id' element={<DetailedOrder />} />
-              <Route path="categories" element={<Categories />}></Route>
-              <Route path="attributes" element={<Attributes />}></Route>
-              <Route path="products" element={<Products />}></Route>
-              <Route path="users" element={<Users />}></Route>
-              <Route path='edit-product/:id' element={<AdminRoute ><EditProduct /></AdminRoute>} />
-              <Route path="vendors" element={<Vendors />}></Route>
-              <Route path="vendor-profile/:id" element={<VendorProfileDetails />}></Route>
+
+            <Route path="/dashboard" element={<Suspense fallback={<div>Loading...</div>}><AdminRoute ><Dashboard /></AdminRoute></Suspense>} >
+              <Route path="media" element={<Suspense fallback={<div>Loading...</div>}><Media /></Suspense>}></Route>
+              <Route path="affiliate-dashboard" element={<Suspense fallback={<div>Loading...</div>}><Affiliate /></Suspense>}></Route>
+              <Route path="affiliate-links" element={<Suspense fallback={<div>Loading...</div>}><AffiliateLinks /></Suspense>}></Route>
+              <Route path="addProduct" element={<Suspense fallback={<div>Loading...</div>}><AddProduct /></Suspense>}></Route>
+              <Route path="orders" element={<Suspense fallback={<div>Loading...</div>}><AllOrders /></Suspense>}></Route>
+              <Route path='detailed-order/:id' element={<Suspense fallback={<div>Loading...</div>}><DetailedOrder /></Suspense>} />
+              <Route path="categories" element={<Suspense fallback={<div>Loading...</div>}><Categories /></Suspense>}></Route>
+              <Route path="attributes" element={<Suspense fallback={<div>Loading...</div>}><Attributes /></Suspense>}></Route>
+              <Route path="products" element={<Suspense fallback={<div>Loading...</div>}><Products /></Suspense>}></Route>
+              <Route path="users" element={<Suspense fallback={<div>Loading...</div>}><Users /></Suspense>}></Route>
+              <Route path='edit-product/:id' element={<Suspense fallback={<div>Loading...</div>}><AdminRoute ><EditProduct /></AdminRoute></Suspense>} />
+              <Route path="vendors" element={<Suspense fallback={<div>Loading...</div>}><Vendors /></Suspense>}></Route>
+              <Route path="vendor-profile/:id" element={<Suspense fallback={<div>Loading...</div>}><VendorProfileDetails /></Suspense>}></Route>
             </Route>
+
             <Route path='*' element={<NotFound />} />
           </Routes>
           <Footer />

@@ -33,12 +33,12 @@ const Register = () => {
 
     const handleRegister = (e: any) => {
         e.preventDefault()
-        RegisterUser(newUser.email, newUser.password, newUser.name, location, navigate)
+        // RegisterUser(newUser.email, newUser.password, newUser.name, location, navigate, newUser)
         console.log('user name', newUser.name, newUser.email, newUser.password);
     }
 
     return (
-        <div style={{padding:'70px 0px'}} className="relative min-h-screen bg-purple-100 backdrop-blur flex justify-center items-center bg-texture bg-cover py-28 sm:py-0 login-reg">
+        <div style={{ padding: '70px 0px' }} className="relative min-h-screen bg-purple-100 backdrop-blur flex justify-center items-center bg-texture bg-cover py-28 sm:py-0 login-reg">
             <div className="p-4 sm:p-8 flex-1 ">
                 <div className="max-w-[420px] min-w-[320px] bg-white dark:bg-slate-800 rounded-b-3xl mx-auto">
                     <div className="relative h-auto">
@@ -59,9 +59,9 @@ const Register = () => {
                                 </div>
                             </div>
                             <div className="w-14 h-14 text-center rounded-full bg-red-500 text-white saturate-100 transition-all hover:bg-red-600">
-                                <div onClick={() => handleGoogleSignIn(navigate, location)} className="block mt-4 social-login hover:cursor-pointer">
+                                {/* <div onClick={() => handleGoogleSignIn(navigate, location)} className="block mt-4 social-login hover:cursor-pointer">
                                     <i className="fab fa-google fa-lg"></i>
-                                </div>
+                                </div> */}
                             </div>
 
                         </div>

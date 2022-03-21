@@ -34,6 +34,8 @@ const AllOrders = () => {
         }
 
     }, [userDetails.role, userDetails.email])
+    console.log(orders, ' orders');
+
     // DELETE ORDER
     const deleteOrderFunc = (id) => {
 
@@ -191,7 +193,7 @@ const AllOrders = () => {
                             <tbody>
 
 
-                                {
+                                {orders.length === 0 ? <h2>No Order Found</h2> :
                                     orders.map(order => {
                                         return <tr key={order._id}>
                                             <td className="px-5 py-5 border-b border-gray-200 bg-white text-sm">

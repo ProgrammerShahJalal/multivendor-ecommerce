@@ -39,25 +39,26 @@ function Dashboard() {
                 </div> */}
 
                 <ul className="nav-links" >
-                    <li>
-                        <Link to={`/dashboard/products`}>
-                            <i className='bx bx-grid-alt'></i>
-                            <span className="link_name">Dashboard</span>
-                        </Link>
-                        <ul className="sub-menu blank">
-                            <li><Link className="link_name" to={`/dashboard/products`}>Products</Link></li>
-                        </ul>
-                    </li>
-                    <li>
-                        <Link to={`/dashboard/media`}>
-                            <i className="fa-regular fa-folder-image"></i>
-                            <span className="link_name">Media</span>
-                        </Link>
-                        <ul className="sub-menu blank">
-                            <li><Link className="link_name" to={`/dashboard/media`}>Media</Link></li>
-                        </ul>
+                    {userDetails.role === "admin" || userDetails.role === "vendor" ? <>
+                        <li>
+                            <Link to={`/dashboard/products`}>
+                                <i className='bx bx-grid-alt'></i>
+                                <span className="link_name">Dashboard</span>
+                            </Link>
+                            <ul className="sub-menu blank">
+                                <li><Link className="link_name" to={`/dashboard/products`}>Products</Link></li>
+                            </ul>
+                        </li>
+                        <li>
+                            <Link to={`/dashboard/media`}>
+                                <i className="fa-regular fa-folder-image"></i>
+                                <span className="link_name">Media</span>
+                            </Link>
+                            <ul className="sub-menu blank">
+                                <li><Link className="link_name" to={`/dashboard/media`}>Media</Link></li>
+                            </ul>
 
-                    </li>
+                        </li> </> : ""}
                     {/* <li onClick={subMenuToggle} className="">
                         <div className="iocn-link">
                             <Link to={`/dashboard/affiliate-dashboard`}>
@@ -73,7 +74,7 @@ function Dashboard() {
                         </ul>
 
                     </li> */}
-                    {userDetails.email && userDetails.role === 'admin' ? <li onClick={subMenuToggle} className="">
+                    {userDetails.role === 'admin' || userDetails.role === 'affiliate' ? <li onClick={subMenuToggle} className="">
                         <div className="iocn-link">
                             <Link to={`/dashboard/affiliate-dashboard`}>
                                 <i className="fa-regular fa-link"></i>
@@ -92,7 +93,7 @@ function Dashboard() {
 
                     </li> : ''}
 
-                    <li onClick={subMenuToggle} className="">
+                    {userDetails.role === "admin" || userDetails.role === "vendor" ? <><li onClick={subMenuToggle} className="">
                         <div className="iocn-link">
                             <Link to={`/dashboard/products`}>
                                 <i className="fa-regular fa-shirt"></i>
@@ -110,15 +111,15 @@ function Dashboard() {
 
 
                     </li>
-                    <li >
-                        <Link to={`/dashboard/orders`}>
-                            <i className="fa-regular fa-arrow-up-square-triangle"></i>
-                            <span className="link_name">Orders</span>
-                        </Link>
-                        <ul className="sub-menu blank">
-                            <li><Link className="link_name" to={`/dashboard/orders`}>Orders</Link></li>
-                        </ul>
-                    </li>
+                        <li >
+                            <Link to={`/dashboard/orders`}>
+                                <i className="fa-regular fa-arrow-up-square-triangle"></i>
+                                <span className="link_name">Orders</span>
+                            </Link>
+                            <ul className="sub-menu blank">
+                                <li><Link className="link_name" to={`/dashboard/orders`}>Orders</Link></li>
+                            </ul>
+                        </li></> : ""}
                     {userDetails.email && userDetails.role === 'admin' ? <li>
                         <Link to={`/dashboard/vendors`}>
                             <i className="fa-light fa-screen-users"></i>
