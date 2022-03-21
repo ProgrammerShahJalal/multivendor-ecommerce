@@ -144,7 +144,7 @@ export default function Shop() {
           </Dialog>
         </Transition.Root>
         <main className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="relative z-10 flex items-baseline justify-between pt-24 pb-6 border-b border-gray-200">
+          <div className="relative z-10 flex items-end justify-end pt-24 pb-6 border-b border-gray-200 ">
 {/* <ProductSearchBar /> */}
             <div className="flex items-center">
               <Menu as="div" className="relative inline-block text-left">
