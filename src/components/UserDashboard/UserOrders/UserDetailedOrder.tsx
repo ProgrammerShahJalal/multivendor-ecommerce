@@ -156,7 +156,7 @@ export default function UserDetailedOrder() {
                                                 {/* <p className="text-sm px-4 py-1 font-semibold bg-indigo-500 rounded-full leading-6 dark:text-white text-white"> {details.status}</p> */}
                                             </div>
                                             <div className="w-full delivery-date">
-                                                {/* <button className="drop-shadow-md text-sm font-medium rounded-md text-white bg-indigo-600 hover:bg-indigo-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500 py-5 w-96 md:w-full  text-base font-medium leading-4 text-white">View Carrier Details</button> */}
+                                                {/* <button className="drop-shadow-md rounded-md bg-indigo-600 hover:bg-indigo-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500 py-5 w-96 md:w-full  text-base font-medium leading-4 text-white">View Carrier Details</button> */}
                                                 <LocalizationProvider sx={{ width: 100 }} dateAdapter={AdapterDateFns}>
                                                     <DatePicker
 
@@ -207,10 +207,10 @@ export default function UserDetailedOrder() {
                                             </div>
                                             <div>
                                                 <div className="flex w-full justify-center items-center md:justify-start md:items-start">
-                                                    <button onClick={() => CancelOrderFunc(details._id)} className="mt-6 md:mt-0	 py-5 drop-shadow-md text-sm font-medium rounded-md text-white bg-red-500 hover:bg-red-600 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-red-500 w-96 2xl:w-full text-base font-medium leading-4 text-gray-800">Cancel</button>
+                                                    <button onClick={() => CancelOrderFunc(details._id)} className="mt-6 md:mt-0	 py-5 drop-shadow-md rounded-md bg-red-500 hover:bg-red-600 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-red-500 w-96 2xl:w-full text-base font-medium leading-4 text-gray-800">Cancel</button>
                                                 </div>
                                                 <div className="flex w-full justify-center items-center md:justify-start md:items-start">
-                                                    <button onClick={() => SaveOrderFunc()} className="mt-6 py-5 drop-shadow-md text-sm font-medium rounded-md text-white bg-indigo-600 hover:bg-indigo-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500 w-96 2xl:w-full text-base font-medium leading-4 text-gray-800">Save</button>
+                                                    <button onClick={() => SaveOrderFunc()} className="mt-6 py-5 drop-shadow-md rounded-md bg-indigo-600 hover:bg-indigo-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500 w-96 2xl:w-full text-base font-medium leading-4 text-gray-800">Save</button>
                                                 </div>
                                             </div>
                                         </div>
