@@ -17,9 +17,7 @@
 .small-banner .sngle-banner{
 	position:relative;
 }
-.content .top-span{
-	color: #DC1010;
-}
+
 /* .poster-card{
 	background-color: white;
 } */
@@ -49,19 +47,18 @@
 .small-banner{
 	overflow: hidden;
 	transition: transform .2s;
-	margin-left: 20px;
-	margin-right: 20px;
+
 }
 
 .small-banner .sngle-banner h4 {
 	font-size: 13px;
-	color: #ff0000;
+	
 	font-weight: 500;
 	margin-bottom: 5px;
 	text-transform: uppercase;
 }
 .small-banner .sngle-banner a {
-	color: cyan;
+
 	margin-top: 22px;
 	display: block;
 	font-size: 12px;
@@ -69,8 +66,4 @@
 	display: inline-block;
 	text-transform:uppercase;
 	border-bottom:2px solid #333;
-}
-.small-banner .sngle-banner a:hover{
-	color:#F7941D;
-	border-color:#F7941D;
 }
