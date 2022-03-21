@@ -37,10 +37,13 @@ const AllProducts: FC<AllProductsProps> = ({ translate }) => {
     const handleClose = () => setOpen(false);
     return (
         <div className="container lg:px-0 md:px-10 px-10 pb-16 mx-auto">
-            <h2 className="text-3xl text-center font-extrabold text-gray-900 dark:text-white sm:text-4xl mb-10">
-                <span className="text-5xl pr-3" >{translate('latest')}</span>
-                <span className=" text-indigo-600 text-5xl">{translate('product')}</span>
-            </h2>
+            <div data-aos="fade-up"
+                data-aos-duration="3000">
+                <h2 className="text-3xl text-center font-extrabold text-gray-900 dark:text-white sm:text-4xl mb-10">
+                    <span className="text-5xl pr-3" >{translate('latest')}</span>
+                    <span className=" text-indigo-600 text-5xl">{translate('product')}</span>
+                </h2>
+            </div>
             <div className="grid place-content-center lg:grid-cols-4 md:grid-cols-3 grid-cols-1 gap-6">
                 {
                     products.length === 0 ? <h2>No Products Found</h2> :

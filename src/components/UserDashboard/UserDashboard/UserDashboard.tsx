@@ -54,9 +54,23 @@ export default function UserProfile() {
 
           </ul>
         </div>
-      <div className='mx-auto'>
-      <UserMainProfile/>
-      </div>
+        {/* <div style={{
+          width: '600px',
+          height: '600px',
+          // marginLeft:'70px'
+        }} className='items-center right-50 justify-center'>
+          <DataChart />
+          
+        </div>
+        <div style={{
+          width: '600px',
+          height: '600px',
+          // marginLeft:'70px'
+        }} className='items-center right-50 justify-center'>
+          <LineChart/>
+
+        </div> */}
+        <Outlet />
       </div>
 
     </div>

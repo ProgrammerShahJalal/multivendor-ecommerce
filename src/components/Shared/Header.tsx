@@ -22,6 +22,7 @@ const navigation = {
         { name: 'Shop', to: '/shop' },
         { name: 'About', to: '/about' },
         { name: 'Contact', to: '/contact' },
+        { name: 'Vendors', to: '/vendors' },
         { name: 'Dashboard', to: '/dashboard' },
     ],
 }
@@ -155,18 +156,6 @@ const Header: FC<HeaderProps> = ({ fixed, transparent }) => {
 
                                 </div>
 
-                                <div className="border-t border-gray-200 py-6 px-4">
-                                    <Link to="/cad" className="-m-2 p-2 flex items-center">
-                                        <img
-                                            src="https://tailwindui.com/img/flags/flag-canada.svg"
-                                            alt=""
-                                            className="w-5 h-auto block flex-shrink-0"
-                                        />
-
-                                        <span className="sr-only">, change currency</span>
-                                    </Link>
-                                </div>
-
                             </div>
                         </Transition.Child>
                     </Dialog>
@@ -197,7 +186,9 @@ const Header: FC<HeaderProps> = ({ fixed, transparent }) => {
 
                                 {/* Logo */}
                                 <div className="text-xl font-extrabold text-orange-500 ml-4 flex lg:ml-0">
-                                    <Link to="/">Unity Mart</Link>
+                                    <Link to="/">
+                                        <img className='w-60' src='https://i.ibb.co/jk1QcVk/mainlogo.png' alt='Unity Mart logo' />
+                                    </Link>
                                 </div>
 
                                 {/* Flyout menus */}

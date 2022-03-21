@@ -15,12 +15,12 @@ export default class App extends React.PureComponent<IAppProps> {
                     <div className='max-w-7xl mx-auto'>
                         <div className='grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-1'>
                             <div className='mb-5'>
-                                <h2 className='text-2xl pb-4'>Unity Mart</h2>
-                                <p className='text-gray-500 w-64 text-justify'>A multi-vendor e-commerce website. Our main objective to provide best user experience and best user friendly interface.</p>
+                                <img className='w-64' src="https://i.ibb.co/jk1QcVk/mainlogo.png" alt="" />
+                                <p className='text-gray-500 w-64 text-justify text-sm'>A multi-vendor e-commerce website. Our main objective to provide best user experience and best user friendly interface.</p>
                                 <p className='text-gray-500  pb-4'>Savar-1342, Dhaka
-                                    <br /> <br />
-                                    <strong>Phone:</strong>+01303856860 <br /> <br />
-                                    <strong>Email:</strong> remote.coder.unity@gmail.com <br /> <br /></p>
+                                    <br />
+                                    <strong>Phone:</strong>+01303856860 <br />
+                                    <strong>Email:</strong> remote.coder.unity@gmail.com <br /></p>
                             </div>
                             <div className='mb-5'>
                                 <h4 className='text-2xl pb-4'>Information</h4>
@@ -71,19 +71,19 @@ export default class App extends React.PureComponent<IAppProps> {
                         <div className='text-center text-xl text-white'>
 
                             <a target='_blank' rel="noreferrer" href="https://www.facebook.com/Unity-Mart-A-Multi-vendor-E-commerce-Website-104774475481224">
-                            <span className="cursor-pointer w-10 h-10 rounded-full text-blue-500 my-auto mx-1 inline-block pt-1" ><i className="fab fa-facebook p-1 my-auto"></i></span>
+                                <span className="cursor-pointer w-10 h-10 rounded-full text-blue-500 my-auto mx-1 inline-block pt-1" ><i className="fab fa-facebook p-1 my-auto"></i></span>
                             </a>
                             <a target='_blank' rel="noreferrer" href="https://www.linkedin.com/in/ProgrammerShahJalal/">
-                            <span className="cursor-pointer w-10 h-10 rounded-full text-blue-700 my-auto mx-1 inline-block pt-1" ><i className="fab fa-linkedin p-1 my-auto"></i></span>
+                                <span className="cursor-pointer w-10 h-10 rounded-full text-blue-700 my-auto mx-1 inline-block pt-1" ><i className="fab fa-linkedin p-1 my-auto"></i></span>
                             </a>
                             <a target='_blank' rel="noreferrer" href="https://twitter.com/mdshahjalal01">
-                            <span className="cursor-pointer w-10 h-10 rounded-full text-blue-600 my-auto mx-1 inline-block pt-1" ><i className="fab fa-twitter p-1 my-auto"></i></span>
+                                <span className="cursor-pointer w-10 h-10 rounded-full text-blue-600 my-auto mx-1 inline-block pt-1" ><i className="fab fa-twitter p-1 my-auto"></i></span>
                             </a>
                             <a target='_blank' rel="noreferrer" href="https://www.instagram.com">
-                            <span className="cursor-pointer w-10 h-10 rounded-full text-pink-600 my-auto mx-1 inline-block pt-1" ><i className="fab fa-instagram p-1 my-auto"></i></span>
+                                <span className="cursor-pointer w-10 h-10 rounded-full text-pink-600 my-auto mx-1 inline-block pt-1" ><i className="fab fa-instagram p-1 my-auto"></i></span>
                             </a>
                             <a target='_blank' rel="noreferrer" href="https://www.youtube.com">
-                            <span className="cursor-pointer w-10 h-10 rounded-full text-red-600 my-auto mx-1 inline-block pt-1" ><i className="fab fa-youtube p-1 my-auto"></i></span>
+                                <span className="cursor-pointer w-10 h-10 rounded-full text-red-600 my-auto mx-1 inline-block pt-1" ><i className="fab fa-youtube p-1 my-auto"></i></span>
                             </a>
 
                         </div>
