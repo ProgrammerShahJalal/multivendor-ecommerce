@@ -1,6 +1,7 @@
 import React from 'react';
 import { Helmet } from 'react-helmet-async';
 import HomePopUp from '../HomePopUp/HomePopUp';
+import TimeLine from './TimeLine';
 
 const About = () => {
 
@@ -17,7 +18,13 @@ const About = () => {
             <div>
                 <h1 className='text-white text-center text-4xl font-bold py-3 bg-purple-600  hover:bg-sky-700'>About Us</h1>
                 <div className='container mx-auto overflow-hidden'>
-                    <img src='https://template.annimexweb.com/diva/assets/images/parallax-banners/testimonials-bg.jpg' className="w-full mx-auto" alt='' />
+                    <div className='relative'>
+                        <img src='https://template.annimexweb.com/diva/assets/images/parallax-banners/testimonials-bg.jpg' className="w-full mx-auto" alt='' />
+                        <div className='absolute inset-0 bg-black bg-opacity-40 items-center py-12'>
+                            <h2 className='text-blue-200 text-center text-4xl font-bold py-3'>Unity Mart</h2>
+                            <h2 className='text-pink-200 text-center text-4xl font-bold py-3'>A multivendor E-commerce Site</h2>
+                        </div>
+                    </div>
 
                     <div className='container'>
                         <div className='grid md:grid-cols-2 sm:grid-cols-1 gap-0 items-center justify-center'>
@@ -43,6 +50,9 @@ const About = () => {
                                 <img src="https://images.pexels.com/photos/135620/pexels-photo-135620.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940" alt='' />
                             </div>
                         </div>
+                    </div>
+                    <div>
+                        <TimeLine />
                     </div>
                 </div>
             </div>
