@@ -50,7 +50,6 @@ export default function Banners() {
                 <img src='https://i.ibb.co/y5PdPdP/Make-your-business-2.png' alt="Image1" className="md:block" />
               </div>
             </div>
-
           </SwiperSlide>
           <SwiperSlide
             className="md:flex items-center justify-center"
