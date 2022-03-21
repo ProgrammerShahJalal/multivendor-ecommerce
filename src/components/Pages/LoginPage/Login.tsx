@@ -1,19 +1,25 @@
 import React, { useState } from 'react';
-import { Link, useLocation, useNavigate } from 'react-router-dom';
+import { useLocation, useNavigate } from 'react-router-dom';
 import UseAuth from '../../../hooks/UseAuth';
+import LoginLottie from './LoginLottie';
+
 
 type NewUser = {
     email: string,
     password: string,
+    name: string
 }
 
 const LoginForm = () => {
+    const [userRole, setUserRole] = useState<string>("customer");
     const [newUser, setNewUser] = useState<NewUser>({
         email: '',
-        password: ''
+        password: '',
+        name: ''
     })
+    const [isTrue, setIsTrue] = useState<boolean>(true)
 
-    const { SignIn, error, handleFacebookSIgnIn, handleGoogleSignIn } = UseAuth()
+    const { RegisterUser, SignIn, error, isLoading, handleGoogleSignIn } = UseAuth()
     const navigate = useNavigate()
     const location = useLocation()
 
@@ -26,63 +32,98 @@ const LoginForm = () => {
 
     }
 
+
     const handleRegister = (e: any) => {
         e.preventDefault()
-        SignIn(newUser.email, newUser.password, location, navigate)
-        console.log('user name', newUser.email, newUser.password);
+        if (isTrue) {
+            console.log('register');
+            RegisterUser(newUser.email, newUser.password, newUser.name, location, navigate, userRole)
+
+        } else {
+            SignIn(newUser.email, newUser.password, location, navigate)
+        }
+
     }
 
+
+    function onChangeValue(event) {
+        setUserRole(event.target.value);
+        console.log(event.target.value);
+    }
+
+
+
     return (
-        <div style={{ padding: '70px 0px' }} className="relative min-h-screen bg-purple-100 dark:bg-slate-800 backdrop-blur flex justify-center items-center bg-texture bg-cover py-28 sm:py-0">
-            <div className="p-4 sm:p-8 flex-1 ">
-                <div className="max-w-[420px] min-w-[320px] bg-white rounded-b-3xl mx-auto">
-                    <div className="relative h-auto">
-                        <svg className="absolute -top-20 " xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 320">
-                            <path fill="#fff" fillOpacity="1" d="M0,64L48,80C96,96,192,128,288,128C384,128,480,96,576,85.3C672,75,768,85,864,122.7C960,160,1056,224,1152,245.3C1248,267,1344,245,1392,234.7L1440,224L1440,320L1392,320C1344,320,1248,320,1152,320C1056,320,960,320,864,320C768,320,672,320,576,320C480,320,384,320,288,320C192,320,96,320,48,320L0,320Z"></path>
-                        </svg>
+
+        <div className="py-6">
+            <div className="flex bg-white rounded-lg shadow-lg overflow-hidden mx-auto max-w-sm lg:max-w-4xl">
+                <div className="hidden lg:block lg:w-1/2 bg-cover">
+                    <LoginLottie />
+                </div>
+                <div className="w-full p-8 lg:w-1/2">
+                    <h2 className="text-2xl font-semibold text-gray-700 text-center">Hi! there</h2>
+                    <p className="text-xl text-gray-600 text-center">Welcome back!</p>
+                    <button onClick={() => handleGoogleSignIn(navigate, location, userRole)} className="flex items-center justify-center mt-4 text-white rounded-lg shadow-md hover:bg-gray-100 w-full">
+                        <div className="px-4 py-3">
+                            <svg className="h-6 w-6" viewBox="0 0 40 40">
+                                <path d="M36.3425 16.7358H35V16.6667H20V23.3333H29.4192C28.045 27.2142 24.3525 30 20 30C14.4775 30 10 25.5225 10 20C10 14.4775 14.4775 9.99999 20 9.99999C22.5492 9.99999 24.8683 10.9617 26.6342 12.5325L31.3483 7.81833C28.3717 5.04416 24.39 3.33333 20 3.33333C10.7958 3.33333 3.33335 10.7958 3.33335 20C3.33335 29.2042 10.7958 36.6667 20 36.6667C29.2042 36.6667 36.6667 29.2042 36.6667 20C36.6667 18.8825 36.5517 17.7917 36.3425 16.7358Z" fill="#FFC107" />
+                                <path d="M5.25497 12.2425L10.7308 16.2583C12.2125 12.59 15.8008 9.99999 20 9.99999C22.5491 9.99999 24.8683 10.9617 26.6341 12.5325L31.3483 7.81833C28.3716 5.04416 24.39 3.33333 20 3.33333C13.5983 3.33333 8.04663 6.94749 5.25497 12.2425Z" fill="#FF3D00" />
+                                <path d="M20 36.6667C24.305 36.6667 28.2167 35.0192 31.1742 32.34L26.0159 27.975C24.3425 29.2425 22.2625 30 20 30C15.665 30 11.9842 27.2359 10.5975 23.3784L5.16254 27.5659C7.92087 32.9634 13.5225 36.6667 20 36.6667Z" fill="#4CAF50" />
+                                <path d="M36.3425 16.7358H35V16.6667H20V23.3333H29.4192C28.7592 25.1975 27.56 26.805 26.0133 27.9758C26.0142 27.975 26.015 27.975 26.0158 27.9742L31.1742 32.3392C30.8092 32.6708 36.6667 28.3333 36.6667 20C36.6667 18.8825 36.5517 17.7917 36.3425 16.7358Z" fill="#1976D2" />
+                            </svg>
+                        </div>
+                        {isTrue ? <h1 className="px-4 py-3 w-5/6 text-center text-gray-600 font-bold">Sign Up with Google</h1> : <h1 className="px-4 py-3 w-5/6 text-center text-gray-600 font-bold">Sign in with Google</h1>}
+                    </button>
+                    <div className="mt-4 flex items-center justify-between">
+                        <span className="border-b w-1/5 lg:w-1/4"></span>
+                        <span className="text-xs text-center text-gray-500 uppercase">or login with email</span>
+                        <span className="border-b w-1/5 lg:w-1/4"></span>
                     </div>
-                    <div className="px-10 pt-4 pb-8 rounded-3xl shadow-xl">
-                        <div className="mx-auto text-center">
-                            <h1 className="text-4xl text-gray-800 dark:text-white">Login</h1>
-                            <p className="mt-4">Login and enjoy our products</p>
+                    <form onSubmit={handleRegister}>
+                        {
+                            isTrue ? <div className="mt-4">
+                                <label className="block text-gray-700 text-sm font-bold mb-2">Name</label>
+                                <input placeholder='Jhon Doe' className="bg-gray-200 text-gray-700 focus:outline-none focus:shadow-outline border border-gray-300 rounded py-2 px-4 block w-full appearance-none" name='name' type="text" onChange={handleValues} />
+                            </div> : ''
+                        }
+                        <div className="mt-4">
+                            <label className="block text-gray-700 text-sm font-bold mb-2">Email Address</label>
+                            <input className="bg-gray-200 text-gray-700 focus:outline-none focus:shadow-outline border border-gray-300 rounded py-2 px-4 block w-full appearance-none" name='email' type="email" onChange={handleValues} />
                         </div>
-                        <div className="flex items-center justify-around mt-6">
-                            <div className="w-14 h-14 text-center rounded-full bg-blue-500 text-white saturate-200 transition-all hover:bg-blue-600">
-                                <div onClick={() => handleFacebookSIgnIn()} className="block mt-4 social-login">
-                                    <i className="fab fa-facebook-f fa-lg "></i>
-                                </div>
+                        <div className="mt-4">
+                            <div className="flex justify-between">
+                                <label className="block text-gray-700 text-sm font-bold mb-2">Password</label>
+                                {/* <a href="#" className="text-xs text-gray-500">Forget Password?</a> */}
                             </div>
-                            <div className="w-14 h-14 text-center rounded-full bg-red-500 text-white saturate-100 transition-all hover:bg-red-600">
-                                <div onClick={() => handleGoogleSignIn(navigate, location)} className="block mt-4 social-login">
-                                    <i className="fab fa-google fa-lg"></i>
-                                </div>
+                            <input name='password' className="bg-gray-200 text-gray-700 focus:outline-none focus:shadow-outline border border-gray-300 rounded py-2 px-4 block w-full appearance-none" type="password" onChange={handleValues} />
+                        </div>
+                        {isTrue ? <div className='flex gap-5 items-center hover:outline-0 mt-5' onChange={onChangeValue}>
+                            <div>
+                                <input className='hover:outline-0' type="radio" value="customer" name="gender" defaultChecked={userRole === "customer"} /> Customer
                             </div>
+                            <div>
+                                <input type="radio" value="vendor" name="gender" defaultChecked={userRole === "vendor"} /> Vendor                            </div>
+                            <div>
+                                <input type="radio" value="affiliate" name="gender" defaultChecked={userRole === "affiliate"} /> Affiliate
+                            </div>
+
+                        </div> : ''}
+
+                        <div className="mt-8">
+                            {isLoading ? <button type="button" className="bg-gray-700 text-white font-bold py-2 px-4 w-full rounded hover:bg-gray-600" disabled>
+                                <i className="fa-solid fa-spinner motion-reduce:hidden animate-spin text-white mr-2"></i>
+                                Processing...
+                            </button> : !isTrue ? <button type='submit' className="bg-gray-700 text-white font-bold py-2 px-4 w-full rounded hover:bg-gray-600">Login</button> : <button type='submit' className="bg-gray-700 text-white font-bold py-2 px-4 w-full rounded hover:bg-gray-600">Register</button>}
 
                         </div>
-                        <div className="flex items-center my-6">
-                            <hr className="flex-1" />
-                            <span className="px-4 text-sm text-gray-400">Or continue with</span>
-                            <hr className="flex-1" />
-                        </div>
-
-                        <form onSubmit={handleRegister} >
-
-                            <div className="mt-10 relative">
-                                <input id="email" name="email" type="text" className="peer w-full px-0.5 border-0 border-b-2 border-gray-300 placeholder-transparent focus:ring-0 focus:border-purple-600" placeholder="willPig@tailwind.com" onChange={handleValues} />
-                                <label htmlFor="email" className="absolute left-0 -top-3.5 text-gray-600 text-sm transition-all peer-placeholder-shown:text-base peer-placeholder-shown:text-gray-400 peer-placeholder-shown:top-2 peer-focus:-top-3.5 peer-focus:text-purple-600 peer-focus:text-sm">Email</label>
-                            </div>
-                            <div className="mt-10 relative">
-                                <input id="password" type="password" name="password" className="peer w-full px-0.5 border-0 border-b-2 border-gray-300 placeholder-transparent focus:ring-0 focus:border-purple-600" placeholder="Password" onChange={handleValues} />
-                                <label htmlFor="password" className="absolute left-0 -top-3.5 text-gray-600 text-sm transition-all peer-placeholder-shown:text-base peer-placeholder-shown:text-gray-400 peer-placeholder-shown:top-2 peer-focus:-top-3.5 peer-focus:text-purple-600 peer-focus:text-sm">Password</label>
-                            </div>
-
-                            {error && <p className='text-red-600 mt-3'>{error}</p>}
-                            <button type="submit" className="w-full mt-14 py-4 text-lg text-white font-semibold text-center rounded-full bg-purple-500 transition-all hover:bg-purple-600 focus:outline-none">Sign In</button>
-                            <p className="text-center text-sm text-gray-400 mt-4">Don't have an account ? <Link to="/register" className="font-semibold text-purple-600 hover:underline">Register</Link></p>
-                        </form>
+                    </form>
+                    {error && <p className='text-red-600 mt-3'>{error}</p>}
+                    <div className="mt-4 flex items-center justify-between">
+                        <span className="border-b w-1/5 md:w-1/4"></span>
+                        {isTrue ? <button onClick={() => setIsTrue(!isTrue)} className="text-xs text-gray-500 uppercase">or Sign In</button> : <button onClick={() => setIsTrue(!isTrue)} className="text-xs text-gray-500 uppercase">or sign up</button>}
+                        <span className="border-b w-1/5 md:w-1/4"></span>
                     </div>
                 </div>
-
             </div>
         </div>
     );

@@ -53,10 +53,13 @@ const SpecialDeal: FC<SpecialDealProps> = ({ translate }) => {
 
     return (
         <div className="bg-gray-100 dark:bg-gray-800 mt-4">
-            <h2 className="text-3xl text-center font-extrabold text-gray-900 dark:text-white sm:text-4xl">
-                <span className="text-5xl pr-3" >{translate('special')}</span>
-                <span className=" text-indigo-600 text-5xl">{translate('deal')}</span>
-            </h2>
+            <div data-aos="fade-up"
+                data-aos-duration="3000">
+                <h2 className="text-3xl text-center font-extrabold text-gray-900 dark:text-white sm:text-4xl">
+                    <span className="text-5xl pr-3" >{translate('special')}</span>
+                    <span className=" text-indigo-600 text-5xl">{translate('deal')}</span>
+                </h2>
+            </div>
             <div className="max-w-7xl mx-auto py-12 px-4 sm:px-6 lg:py-16 lg:px-8 lg:flex lg:items-center lg:justify-between">
                 <div className="mt-8 grid gap-4 lg:mt-0 grid-cols-1 justify-center items-center justify-self-center">
                     <div className="hover:brightness-125 rounded-md shadow h-96 cursor-pointer bg-center bg-cover pt-3 pl-2" style={{

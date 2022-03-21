@@ -91,7 +91,7 @@ const Reviews = () => {
                 </Swiper>
                 <div className="text-center">
                     <Link to='/addReview'>
-                        <button type="button" className="text-white bg-gradient-to-r from-green-500 to-blue-500 hover:from-blue-500 hover:to-green-500 my-3 px-4 py-2 rounded-md">Give Your Review
+                        <button type="button" className="text-white bg-blue-800	hover:bg-blue-700 my-3 px-4 py-2 rounded-md">Give Your Review
                         </button>
                     </Link>
                 </div>

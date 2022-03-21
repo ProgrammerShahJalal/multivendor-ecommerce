@@ -18,6 +18,7 @@ type RegisterUserFunction = (
     name: string,
     location: object,
     navigate: (destination: string) => void,
+    userRole: string
 ) => Promise<void>;
 
 type SignInUserFunction = (
@@ -57,6 +58,7 @@ export const UseFirebase = (
         _id: ''
     } || null)
     const [isLoading, setIsLoading] = useState(true)
+    const [isUserLoading, setIsUserLoading] = useState(true)
     const auth = getAuth()
 
     // REGISTER WITH EMAIL AND PASSWORD
@@ -66,6 +68,7 @@ export const UseFirebase = (
         name: string,
         location: any,
         navigate: (destination: string) => void,
+        userRole: string
     ) => {
         setIsLoading(true)
         await createUserWithEmailAndPassword(auth, email, password)
@@ -81,14 +84,19 @@ export const UseFirebase = (
 
                 setUser(newUser);
 
-                navigate(location?.state?.from || '/')
                 setError('')
 
                 // Pass userCredential.user instead of auth.currentUser
                 updateProfile(userCredential.user, {
                     displayName: name
                 }).then(() => {
-                    addUserToDB(userCredential.user)
+                    addUserToDB(userCredential.user, userRole)
+                    if (userRole === "vendor") {
+                        GetUserDetails(email, setUserDetails, setIsLoading)
+                        navigate('/vendorLogin')
+                    } else {
+                        navigate(location?.state?.from || '/')
+                    }
                 }).catch((error) => { setError(error) });
             })
             .catch((error) => {
@@ -133,12 +141,12 @@ export const UseFirebase = (
         password: string,
         location: any,
         navigate: (destination: string) => void,
+
     ) => {
         setIsLoading(true)
         await signInWithEmailAndPassword(auth, email, password)
             .then((userCredential: any) => {
-
-                addUserToDB(userCredential.user)
+                GetUserDetails(userCredential.user.email, setUserDetails, setIsLoading)
                 navigate(location?.state?.from || '/')
                 setError('')
             })
@@ -150,14 +158,17 @@ export const UseFirebase = (
     // GOOGLE SIGN
     const handleGoogleSignIn = async (
         navigate: (destination: string) => void,
-        location: any) => {
+        location: any, userRole: string) => {
         await signInWithPopup(auth, googleProvider)
             .then((result: any) => {
-                navigate(location?.state?.from || '/')
                 const user = result.user;
                 setUser(user)
-                addUserToDB(result.user);
-                // ...
+                addUserToDB(result.user, userRole);
+                if (userRole === "vendor") {
+                    navigate("/vendorLogin")
+                } else {
+                    navigate(location?.state?.from || '/')
+                }
             }).catch((error: any) => {
                 const errorMessage = error.message;
                 setError(errorMessage)
@@ -177,7 +188,7 @@ export const UseFirebase = (
             });
     }
     // CHECK ADMIN 
-    useEffect(() => {
+    useLayoutEffect(() => {
         if (user.email) {
             GetUserDetails(user.email, setUserDetails, setIsLoading)
         }
@@ -205,12 +216,13 @@ export const UseFirebase = (
                 photo: '',
                 _id: ''
             })
+            localStorage.removeItem("userDetails");
         }).catch((error) => {
             setError(error.message)
         });
     }
 
-    return { userDetails, RegisterUser, SignIn, user, logout, error, isLoading, handleGoogleSignIn, handleFacebookSIgnIn };
+    return { isUserLoading, userDetails, RegisterUser, SignIn, user, logout, error, isLoading, handleGoogleSignIn, handleFacebookSIgnIn };
 };
 
 

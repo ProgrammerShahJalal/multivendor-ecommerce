@@ -1,29 +1,39 @@
 import { CircularProgress } from '@mui/material';
-import React from 'react';
+import React, { useEffect, useState } from 'react';
 import { Navigate, useLocation } from 'react-router';
 import UseAuth from '../../../hooks/UseAuth';
 
 const AdminRoute = ({ children, ...rest }) => {
-    const { isLoading, userDetails } = UseAuth()
+    const { user } = UseAuth()
+    const [isLoading, setIsLoading] = useState(false)
+    useEffect(() => {
+        if (user.email) {
+            setIsLoading(true)
+            fetch(`https://guarded-ocean-73313.herokuapp.com/users/${user.email}`)
+                .then(res => res.json())
+                .then(data => {
+                    localStorage.setItem("userDetails", JSON.stringify(data))
+                }).finally(() => setIsLoading(false))
+        }
+    }, [user])
     const location = useLocation();
-    console.log(userDetails, isLoading, 'userDetails');
+    const userDetails = localStorage.getItem("userDetails") ? JSON.parse(localStorage.getItem('userDetails') || '{}') : { role: "", email: "" }
 
     if (isLoading) {
         return <span className='flex justify-center'><CircularProgress color="inherit" /></span>
-    }
-    if (userDetails.email && userDetails.role === 'admin') {
-        return children;
-    }
-    if (userDetails.email && userDetails.role === 'vendor') {
-        return children;
-    }
-
-    if (userDetails.role === '') {
+    } else if (userDetails.role === '') {
         return <Navigate to="/login" state={{ from: location }} />;
-    }
-    if (userDetails.role === 'user') {
+    } else if (userDetails.email && userDetails.role === 'admin') {
+        return children;
+    } else if (userDetails.email && userDetails.role === 'vendor') {
+        return children;
+    } if (userDetails.role === 'user') {
+    } else if (userDetails.email && userDetails.role === 'affiliate') {
+        return children;
+    } if (userDetails.role === 'user') {
         return <Navigate to="/" state={{ from: location }} />;
     }
+
 
 };
 

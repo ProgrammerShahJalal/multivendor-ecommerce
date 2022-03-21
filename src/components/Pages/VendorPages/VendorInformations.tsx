@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import {
     Typography,
     TextField,
@@ -17,6 +17,9 @@ import {
 import { Container, Grid, Paper } from "@mui/material";
 import { AddVendorToDB } from "../../../Services/VendorApi/AddVendorToDB";
 import { useNavigate } from "react-router-dom";
+import { addUserToDB } from "../../../Services/AddUserToDB/AddUserToDB";
+import { GetUserDetails } from "../../../Services/UsersApi/GetUserDetails";
+import UseAuth from "../../../hooks/UseAuth";
 
 const useStyles = makeStyles((theme) => ({
     button: {
@@ -429,6 +432,15 @@ const VendorInformations = () => {
             supportPhoneNumber: ""
         },
     });
+    const { user } = UseAuth()
+    useEffect(() => {
+        fetch(`https://guarded-ocean-73313.herokuapp.com/users/${user.email}`)
+            .then(res => res.json())
+            .then(data => {
+                localStorage.setItem("userDetails", JSON.stringify(data))
+            })
+    }, [user])
+
     const [activeStep, setActiveStep] = useState<number>(0);
     const [skippedSteps, setSkippedSteps] = useState<any>([]);
     const steps = getSteps();
@@ -442,7 +454,6 @@ const VendorInformations = () => {
     };
 
     const handleNext = (data) => {
-        console.log(data);
         if (activeStep === steps.length - 1) {
             AddVendorToDB(data, navigate)
         } else {
