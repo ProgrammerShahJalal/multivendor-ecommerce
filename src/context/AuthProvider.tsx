@@ -9,13 +9,14 @@ type userState = {
 }
 
 export interface IAuth {
-    RegisterUser(name: string, email: string, password: string, location: object, navigate: any): void;
+    RegisterUser(name: string, email: string, password: string, location: object, navigate: any, userRole: string): void;
     SignIn(name: string, email: string, location: object, navigate: any): void;
     user: userState
     logout: () => void,
     error: string,
     isLoading: boolean,
-    handleGoogleSignIn: (navigate: any, location: any) => void
+    isUserLoading: boolean,
+    handleGoogleSignIn: (navigate: any, location: any, userRole: string) => void
     handleFacebookSIgnIn: () => void
     userDetails: {
         name: string,
@@ -23,7 +24,8 @@ export interface IAuth {
         role: string,
         store: string,
 
-    }
+    },
+
 
 }
 
@@ -41,6 +43,7 @@ export const AuthContext = React.createContext<IAuth>({
     },
     error: '',
     isLoading: false,
+    isUserLoading: false,
     handleGoogleSignIn() { },
     handleFacebookSIgnIn() { },
     userDetails: {
@@ -48,7 +51,7 @@ export const AuthContext = React.createContext<IAuth>({
         email: '',
         role: '',
         store: ''
-    }
+    },
 
 });
 

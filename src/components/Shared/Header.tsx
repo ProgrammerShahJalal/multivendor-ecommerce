@@ -23,7 +23,7 @@ const navigation = {
         { name: 'About', to: '/about' },
         { name: 'Contact', to: '/contact' },
         { name: 'Vendors', to: '/vendors' },
-        { name: 'Dashboard', to: '/dashboard' },
+        // { name: 'Dashboard', to: '/dashboard' },
     ],
 }
 
@@ -68,19 +68,45 @@ const Header: FC<HeaderProps> = ({ fixed, transparent }) => {
     // Multilanguage-End
 
     const [open, setOpen] = useState(false)
+    const [isVendorProfileCompleted, setIsVendorProfileCompleted] = useState<any>([])
+    const [isLoading, setIsLoading] = useState<any>(false)
     const { user, logout } = UseAuth();
     const { cart } = useSelector((state: any) => state.cart)
-
+    const userDetails = localStorage.getItem("userDetails") ? JSON.parse(localStorage.getItem('userDetails') || '{}') : []
+    // useEffect(() => {
+    //     if (userDetails?.role === "vendor") {
+    //         setIsLoading(true)
+    //         fetch(`https://guarded-ocean-73313.herokuapp.com/user/vendors/fathe@gmail.com`)
+    //             .then(res => res.json())
+    //             .then(data => setIsVendorProfileCompleted(data))
+    //             .finally(() => setIsLoading(false))
+    //     }
+    // }, [userDetails.role])
     // const [colorTheme, setTheme] = UseDarkMode();
+    useEffect(() => {
+        if (user.email) {
+            setIsLoading(true)
+            fetch(`https://guarded-ocean-73313.herokuapp.com/users/${user.email}`)
+                .then(res => res.json())
+                .then(data => {
+                    localStorage.setItem("userDetails", JSON.stringify(data))
+                }).finally(() => setIsLoading(false))
+        }
+    }, [user])
+    console.log(userDetails, 'userDetails from header');
+
 
     const [theme, setTheme] = useState('light');
     const colorTheme = theme === 'light' ? 'dark' : 'light';
+    console.log(isVendorProfileCompleted[0]?.isProfileCompleted, 'isVendorProfileCompleted');
 
     useEffect(() => {
         const root = window.document.documentElement;
         root.classList.add(theme)
         root.classList.remove(colorTheme)
     }, [theme, colorTheme]);
+    console.log(isVendorProfileCompleted);
+
     return (
         <div className={headerClass}>
             <div className="bg-white dark:bg-slate-800">
@@ -148,7 +174,7 @@ const Header: FC<HeaderProps> = ({ fixed, transparent }) => {
                                                 </div>
                                                 <div className="flow-root">
                                                     <Link to="/register" className="-m-2 p-2 block font-medium text-gray-900 dark:text-white">
-                                                        Create account
+                                                        Register
                                                     </Link>
                                                 </div>
                                             </div>
@@ -205,6 +231,7 @@ const Header: FC<HeaderProps> = ({ fixed, transparent }) => {
                                                 {page.name}
                                             </Link>
                                         ))}
+                                        {isLoading ? <h2>...</h2> : userDetails?.role === "admin" || userDetails?.role === "vendor" || userDetails?.role === "affiliate" ? <Link className="flex items-center text-sm font-medium text-gray-700 hover:text-gray-800 dark:text-white" to="/dashboard">Dashboard</Link> : ""}
                                     </div>
                                 </Popover.Group>
 
@@ -373,7 +400,7 @@ const Header: FC<HeaderProps> = ({ fixed, transparent }) => {
                                                 </div>
                                                 <div className='flow-root'>
                                                     <Link to="/register" className="-m-2 p-2 block font-medium text-gray-900 dark:text-white">
-                                                        Create Account
+                                                        Register
                                                     </Link>
                                                 </div>
                                             </div>

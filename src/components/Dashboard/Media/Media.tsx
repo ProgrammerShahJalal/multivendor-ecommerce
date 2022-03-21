@@ -1,5 +1,6 @@
 import { CircularProgress } from '@mui/material'
 import React, { useEffect, useState } from 'react'
+import UseAuth from '../../../hooks/UseAuth'
 import './media.css'
 
 
@@ -8,16 +9,16 @@ export default function Media() {
     const [data, setData] = useState<any>()
     const [isTrue, setIsTrue] = useState<boolean>(true)
     const [selectedItems, setSelectedItems] = useState<any>([])
+    const { userDetails } = UseAuth()
 
     const handleUploadImages = (e: any) => {
         e.preventDefault()
         const formData = new FormData();
         const files = images
-
-
         for (let i = 0; i < files.length; i += 1) {
             formData.append('images[]', files[i]);
         }
+        formData.append("vendor", userDetails.email)
 
         fetch('https://guarded-ocean-73313.herokuapp.com/media', {
             method: 'post',
@@ -38,8 +39,8 @@ export default function Media() {
     }
 
     useEffect(() => {
-        if (isTrue) {
-            fetch('https://guarded-ocean-73313.herokuapp.com/media')
+        if (userDetails.role === "vendor") {
+            fetch(`https://guarded-ocean-73313.herokuapp.com/media/${userDetails.email}`)
                 .then(res => res.json())
                 .then(async data => {
                     // Show latest
@@ -48,6 +49,18 @@ export default function Media() {
                     });
                     setData(sort)
                     setIsTrue(false)
+                })
+        } else if (isTrue) {
+            fetch('https://guarded-ocean-73313.herokuapp.com/media')
+                .then(res => res.json())
+                .then(data => {
+                    // Show latest
+                    const sort = data.sort(function (a: any, b: any) {
+                        return +new Date(b.uploadDate) - +new Date(a.uploadDate);
+                    });
+                    setData(sort)
+                    setIsTrue(false)
+
                 })
         } else {
             fetch('https://guarded-ocean-73313.herokuapp.com/media')
@@ -62,7 +75,7 @@ export default function Media() {
                 })
         }
 
-    }, [isTrue])
+    }, [isTrue, userDetails.email, userDetails.role])
 
 
 

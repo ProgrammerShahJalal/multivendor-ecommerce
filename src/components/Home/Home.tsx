@@ -43,7 +43,7 @@ export default function Home() {
             {/* <Products translate={translate} /> */}
             <AllProducts translate={translate} />
             <BannerPro />
-            <HomeProducts translate={translate} />
+            {/* <HomeProducts translate={translate} /> */}
             <BottomBanner />
             <Reviews />
             <Brands />

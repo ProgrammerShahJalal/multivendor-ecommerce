@@ -71,6 +71,9 @@ export default function UserProfile() {
 
         </div> */}
         <Outlet />
+        <div className='mx-auto'>
+          <UserMainProfile />
+        </div>
       </div>
 
     </div>
