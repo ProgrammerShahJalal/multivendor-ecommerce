@@ -46,7 +46,7 @@ function Dashboard() {
                             </ul>
 
                         </li> </> : ""}
-                    {/* <li onClick={subMenuToggle} className="">
+                    <li onClick={subMenuToggle} className="">
                         <div className="iocn-link">
                             <Link to={`/dashboard/blogs-dashboard`}>
                                 <i className='bx bx-collection'></i>
@@ -60,7 +60,7 @@ function Dashboard() {
                             <li><Link to={`/dashboard/blogs`}>Blogs</Link></li>
                         </ul>
 
-                    </li> */}
+                    </li>
                     {userDetails.role === 'admin' || userDetails.role === 'affiliate' ? <li onClick={subMenuToggle} className="">
                         <div className="iocn-link">
                             <Link to={`/dashboard/affiliate`}>

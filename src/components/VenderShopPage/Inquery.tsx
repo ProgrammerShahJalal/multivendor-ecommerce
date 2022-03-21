@@ -24,11 +24,7 @@ const Inquery = () => {
                             <div className="md:flex items-center place-content-center">
 
                                 <div className="md:shrink-0">
-                                    <img className="w-20 p-3" src="https://i.ibb.co/nQn7Vkc/trophy.png" alt="Man looking at item at a store" />
-                                </div>
-                                <div>
-                                    <div className="uppercase tracking-wide text-xl text-indigo-500 font-semibold">Remote Coder Unity</div>
-                                    <p className="mt-2 text-white  text-justify">United we stand, divided we fall.</p>
+                                    <img className="w-64 p-3" src="https://i.ibb.co/jk1QcVk/mainlogo.png" alt="Unity Mart" />
                                 </div>
                             </div>
                             <div className="md:flex items-center">
