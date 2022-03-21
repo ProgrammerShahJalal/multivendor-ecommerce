@@ -36,8 +36,8 @@ const AllProducts: FC<AllProductsProps> = ({ translate }) => {
     };
     const handleClose = () => setOpen(false);
     return (
-        <div className="container lg:px-0 md:px-10 px-5 pb-16 mx-auto">
-            <h2 className="text-3xl text-center font-extrabold text-gray-900 sm:text-4xl mb-10">
+        <div className="container lg:px-0 md:px-10 px-10 pb-16 mx-auto">
+            <h2 className="text-3xl text-center font-extrabold text-gray-900 dark:text-white sm:text-4xl mb-10">
                 <span className="text-5xl pr-3" >{translate('latest')}</span>
                 <span className=" text-indigo-600 text-5xl">{translate('product')}</span>
             </h2>
@@ -62,9 +62,9 @@ const AllProducts: FC<AllProductsProps> = ({ translate }) => {
                             return <div className="bg-white shadow-inner overflow-hidden single-card">
 
                                 <div className="relative group">
-                                    <div style={{ height: '250px' }} className='z-100 overflow-hidden'>
-                                        <img src={product.images[0]?.src} className='w-full select-none img z-0 group-hover:hidden block transition object-center' alt="" />
-                                        <img src={product.images[1]?.src} className='w-full select-none hoverImg group-hover:block hidden transition object-center' alt="" />
+                                    <div style={{ height: '300px' }} className='z-100 overflow-hidden'>
+                                        <img src={product.images[0]?.src} className='select-none w-full h-full img z-0 group-hover:hidden block transition object-contain' alt="" />
+                                        <img src={product.images[1]?.src} className='w-full select-none h-full hoverImg group-hover:block hidden transition object-center object-contain' alt="" />
                                     </div>
                                     <div className="absolute inset-0 bg-black bg-opacity-40 flex items-center justify-center gap-2 opacity-0 group-hover:opacity-100 transition">
                                         {/* <Link to={`/product/details/${product._id}`}> */}

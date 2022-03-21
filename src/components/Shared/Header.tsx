@@ -1,6 +1,6 @@
 import React, { useCallback, useRef, useContext, FC } from 'react';
 import { Fragment, useEffect, useState } from 'react';
-import { Dialog, Menu, Popover, Tab, Transition } from '@headlessui/react';
+import { Dialog, Menu, Popover, Transition } from '@headlessui/react';
 import { ChevronDownIcon, MenuIcon, SearchIcon, ShoppingBagIcon, XIcon } from '@heroicons/react/outline';
 import { Link, NavLink } from 'react-router-dom';
 import UseAuth from '../../hooks/UseAuth';
@@ -18,128 +18,11 @@ interface HeaderProps {
 const navigation = {
 
     pages: [
+        { name: 'Home', to: '/home' },
         { name: 'Shop', to: '/shop' },
         { name: 'About', to: '/about' },
         { name: 'Contact', to: '/contact' },
-        { name: 'Vendors', to: '/vendors' },
         { name: 'Dashboard', to: '/dashboard' },
-    ],
-
-    categories: [
-        {
-            id: 'women',
-            name: 'Women',
-            featured: [
-                {
-                    name: 'New Arrivals',
-                    to: '#',
-                    imageSrc: 'https://img.freepik.com/free-photo/three-young-beautiful-smiling-girls-trendy-summer-casual-jeans-clothes-sexy-carefree-women-posing-positive-models-sunglasses_158538-4730.jpg',
-                    imageAlt: 'Models sitting back to back, wearing Basic Tee in black and bone.',
-                },
-                {
-                    name: 'Basic Tees',
-                    to: '#',
-                    imageSrc: 'https://img.freepik.com/free-photo/fashion-portrait-two-elegant-women-best-friends-posing-indoor-grey-wall-wearing-winter-fluffy-coat-black-casual-hat-fashionable-clothes-sisters-walking_273443-4074.jpg',
-                    imageAlt: 'Close up of Basic Tee fall bundle with off-white, ochre, olive, and black tees.',
-                },
-            ],
-            sections: [
-                {
-                    id: 'clothing',
-                    name: 'Clothing',
-                    items: [
-                        { name: 'Tops', to: '/' },
-                        { name: 'Dresses', to: '/' },
-                        { name: 'Pants', to: '/' },
-                        { name: 'Denim', to: '/' },
-                        { name: 'Sweaters', to: '/' },
-                        { name: 'T-Shirts', to: '/' },
-                        { name: 'Jackets', to: '/' },
-                        { name: 'Activewear', to: '/' },
-                        { name: 'Browse All', to: '/' },
-                    ],
-                },
-                {
-                    id: 'accessories',
-                    name: 'Accessories',
-                    items: [
-                        { name: 'Watches', to: '/' },
-                        { name: 'Wallets', to: '/' },
-                        { name: 'Bags', to: '/' },
-                        { name: 'Sunglasses', to: '/' },
-                        { name: 'Hats', to: '/' },
-                        { name: 'Belts', to: '/' },
-                    ],
-                },
-                {
-                    id: 'brands',
-                    name: 'Brands',
-                    items: [
-                        { name: 'Full Nelson', to: '/' },
-                        { name: 'My Way', to: '/' },
-                        { name: 'Re-Arranged', to: '/' },
-                        { name: 'Counterfeit', to: '/' },
-                        { name: 'Significant Other', to: '/' },
-                    ],
-                },
-            ],
-        },
-        {
-            id: 'men',
-            name: 'Men',
-            featured: [
-                {
-                    name: 'New Arrivals',
-                    to: '#',
-                    imageSrc: 'https://img.freepik.com/free-photo/full-length-portrait-handsome-serious-man_171337-17388.jpg',
-                    imageAlt: 'Drawstring top with elastic loop closure and textured interior padding.',
-                },
-                {
-                    name: 'Artwork Tees',
-                    to: '#',
-                    imageSrc: 'https://img.freepik.com/free-photo/elegant-young-handsome-man_1301-5870.jpg',
-                    imageAlt:
-                        'Three shirts in gray, white, and blue arranged on table with same line drawing of hands and shapes overlapping on front of shirt.',
-                },
-            ],
-            sections: [
-                {
-                    id: 'clothing',
-                    name: 'Clothing',
-                    items: [
-                        { name: 'Tops', to: '/' },
-                        { name: 'Pants', to: '/' },
-                        { name: 'Sweaters', to: '/' },
-                        { name: 'T-Shirts', to: '/' },
-                        { name: 'Jackets', to: '/' },
-                        { name: 'Activewear', to: '/' },
-                        { name: 'Browse All', to: '/' },
-                    ],
-                },
-                {
-                    id: 'accessories',
-                    name: 'Accessories',
-                    items: [
-                        { name: 'Watches', to: '/' },
-                        { name: 'Wallets', to: '/' },
-                        { name: 'Bags', to: '/' },
-                        { name: 'Sunglasses', to: '/' },
-                        { name: 'Hats', to: '/' },
-                        { name: 'Belts', to: '/' },
-                    ],
-                },
-                {
-                    id: 'brands',
-                    name: 'Brands',
-                    items: [
-                        { name: 'Re-Arranged', to: '/' },
-                        { name: 'Counterfeit', to: '/' },
-                        { name: 'Full Nelson', to: '/' },
-                        { name: 'My Way', to: '/' },
-                    ],
-                },
-            ],
-        },
     ],
 }
 
@@ -249,66 +132,6 @@ const Header: FC<HeaderProps> = ({ fixed, transparent }) => {
                                     ))}
                                 </div>
 
-                                <Tab.Group as="div" className="mt-2">
-                                    <div className="border-b border-gray-200">
-                                        <Tab.List className="-mb-px flex px-4 space-x-8">
-                                            {navigation.categories.map((category) => (
-                                                <Tab
-                                                    key={category.name}
-                                                    className={({ selected }) =>
-                                                        classNames(
-                                                            selected ? 'text-indigo-600 border-indigo-600' : 'text-gray-900 dark:text-white border-transparent',
-                                                            'flex-1 whitespace-nowrap py-4 px-1 border-b-2 text-base font-medium'
-                                                        )
-                                                    }
-                                                >
-                                                    {category.name}
-                                                </Tab>
-                                            ))}
-                                        </Tab.List>
-                                    </div>
-                                    <Tab.Panels as={Fragment}>
-                                        {navigation.categories.map((category) => (
-                                            <Tab.Panel key={category.name} className="pt-10 pb-8 px-4 space-y-10">
-                                                <div className="grid grid-cols-2 gap-x-4">
-                                                    {category.featured.map((item) => (
-                                                        <div key={item.name} className="group relative text-sm">
-                                                            <div className="aspect-w-1 aspect-h-1 rounded-lg bg-gray-100 overflow-hidden group-hover:opacity-75">
-                                                                <img src={item.imageSrc} alt={item.imageAlt} className="object-center object-cover" />
-                                                            </div>
-                                                            <Link to={item.to} className="mt-6 block font-medium text-gray-900 dark:text-white">
-                                                                <span className="absolute z-10 inset-0" aria-hidden="true" />
-                                                                {item.name}
-                                                            </Link>
-                                                            <p aria-hidden="true" className="mt-1">
-                                                                Shop now
-                                                            </p>
-                                                        </div>
-                                                    ))}
-                                                </div>
-                                                {category.sections.map((section) => (
-                                                    <div key={section.name}>
-                                                        <p id={`${category.id}-${section.id}-heading-mobile`} className="font-medium text-gray-900 dark:text-white">
-                                                            {section.name}
-                                                        </p>
-                                                        <ul aria-labelledby={`${category.id}-${section.id}-heading-mobile`}
-                                                            className="mt-6 flex flex-col space-y-6"
-                                                        >
-                                                            {section.items.map((item) => (
-                                                                <li key={item.name} className="flow-root">
-                                                                    <Link to={item.to} className="-m-2 p-2 block text-gray-500">
-                                                                        {item.name}
-                                                                    </Link>
-                                                                </li>
-                                                            ))}
-                                                        </ul>
-                                                    </div>
-                                                ))}
-                                            </Tab.Panel>
-                                        ))}
-                                    </Tab.Panels>
-                                </Tab.Group>
-
                                 <div className="border-t border-gray-200 py-6 px-4 space-y-6">
                                     {
                                         user.email ? <div className="flow-root">
@@ -380,89 +203,7 @@ const Header: FC<HeaderProps> = ({ fixed, transparent }) => {
                                 {/* Flyout menus */}
                                 <Popover.Group className="z-50 hidden lg:ml-8 lg:block lg:self-stretch">
                                     <div className="h-full flex space-x-8">
-                                        {navigation.categories.map((category) => (
-                                            <Popover key={category.name} className="flex">
-                                                {({ open }) => (
-                                                    <>
-                                                        <div className="relative flex">
-                                                            <Popover.Button
-                                                                className={classNames(
-                                                                    open
-                                                                        ? 'border-indigo-600 text-indigo-600'
-                                                                        : 'border-transparent text-gray-700 hover:text-gray-800 dark:text-white',
-                                                                    'relative z-10 flex items-center transition-colors ease-out duration-200 text-sm font-medium border-b-2 -mb-px pt-px'
-                                                                )}
-                                                            >
-                                                                {category.name}
-                                                            </Popover.Button>
-                                                        </div>
 
-                                                        <Transition
-                                                            as={Fragment}
-                                                            enter="transition ease-out duration-200"
-                                                            enterFrom="opacity-0"
-                                                            enterTo="opacity-100"
-                                                            leave="transition ease-in duration-150"
-                                                            leaveFrom="opacity-100"
-                                                            leaveTo="opacity-0"
-                                                        >
-                                                            <Popover.Panel className="absolute top-full inset-x-0 text-sm text-gray-500">
-                                                                {/* Presentational element used to render the bottom shadow, if we put the shadow on the actual panel it pokes out the top, so we use this shorter element to hide the top of the shadow */}
-                                                                <div className="absolute inset-0 top-1/2 bg-white dark:bg-slate-800 shadow" aria-hidden="true" />
-
-                                                                <div className="relative bg-white dark:bg-slate-800">
-                                                                    <div className="max-w-7xl mx-auto px-8">
-                                                                        <div className="grid grid-cols-2 gap-y-10 gap-x-8 py-16">
-                                                                            <div className="col-start-2 grid grid-cols-2 gap-x-8">
-                                                                                {category.featured.map((item) => (
-                                                                                    <div key={item.name} className="group relative text-base sm:text-sm">
-                                                                                        <div className="aspect-w-1 aspect-h-1 rounded-lg bg-gray-100 overflow-hidden group-hover:opacity-75">
-                                                                                            <img
-                                                                                                src={item.imageSrc}
-                                                                                                alt={item.imageAlt}
-                                                                                                className="object-center object-cover"
-                                                                                            />
-                                                                                        </div>
-                                                                                        <Link to={item.to} className="mt-6 block font-medium text-gray-900 dark:text-white">
-                                                                                            <span className="absolute z-10 inset-0" aria-hidden="true" />
-                                                                                            {item.name}
-                                                                                        </Link>
-                                                                                        <p aria-hidden="true" className="mt-1">
-                                                                                            Shop now
-                                                                                        </p>
-                                                                                    </div>
-                                                                                ))}
-                                                                            </div>
-                                                                            <div className="row-start-1 grid grid-cols-3 gap-y-10 gap-x-8 text-sm">
-                                                                                {category.sections.map((section) => (
-                                                                                    <div key={section.name}>
-                                                                                        <p id={`${section.name}-heading`} className="font-medium text-gray-900 dark:text-white">
-                                                                                            {section.name}
-                                                                                        </p>
-                                                                                        <ul
-                                                                                            aria-labelledby={`${section.name}-heading`}
-                                                                                            className="mt-6 space-y-6 sm:mt-4 sm:space-y-4"
-                                                                                        >
-                                                                                            {section.items.map((item) => (
-                                                                                                <li key={item.name} className="flex">
-                                                                                                    <Link to={item.to} className="hover:text-gray-800 dark:text-white">
-                                                                                                        {item.name}
-                                                                                                    </Link>
-                                                                                                </li>
-                                                                                            ))}
-                                                                                        </ul>
-                                                                                    </div>
-                                                                                ))}
-                                                                            </div>
-                                                                        </div>
-                                                                    </div>
-                                                                </div>
-                                                            </Popover.Panel>
-                                                        </Transition>
-                                                    </>
-                                                )}
-                                            </Popover>
-                                        ))}
 
                                         {navigation.pages.map((page) => (
                                             <Link
@@ -619,12 +360,14 @@ const Header: FC<HeaderProps> = ({ fixed, transparent }) => {
                                                     </Menu.Item>
                                                     <Menu.Item>
                                                         {({ active }) => (
-                                                            <p
-                                                                onClick={logout}
-                                                                className={classNames(active ? 'bg-gray-100 dark:text-gray-700' : '', 'block px-4 py-2 text-sm text-gray-700 dark:text-white cursor-pointer')}
-                                                            >
-                                                                Sign out
-                                                            </p>
+                                                            <Link to="/login" className="-m-2 p-2 block font-medium text-gray-900 dark:text-white">
+                                                                <p
+                                                                    onClick={logout}
+                                                                    className={classNames(active ? 'bg-gray-100 dark:text-gray-700' : '', 'block px-4 py-2 text-sm text-gray-700 dark:text-white cursor-pointer')}
+                                                                >
+                                                                    Sign out
+                                                                </p>
+                                                            </Link>
                                                         )}
                                                     </Menu.Item>
                                                 </Menu.Items>

@@ -1,13 +1,10 @@
-import React, { useEffect, useState } from 'react';
+import React, { useEffect, useRef, useState } from 'react';
 import '../../AddProduct.css'
 import Select from 'react-select';
-
 import TextField from '@mui/material/TextField';
 import AdapterDateFns from '@mui/lab/AdapterDateFns';
 import LocalizationProvider from '@mui/lab/LocalizationProvider';
-import DateTimePicker from '@mui/lab/DateTimePicker';
 import MobileDateTimePicker from '@mui/lab/MobileDateTimePicker';
-import DesktopDateTimePicker from '@mui/lab/DesktopDateTimePicker';
 import Stack from '@mui/material/Stack';
 
 import { Editor } from "react-draft-wysiwyg";
@@ -16,23 +13,32 @@ import draftToHtml from 'draftjs-to-html';
 import "react-draft-wysiwyg/dist/react-draft-wysiwyg.css";
 import UseAuth from '../../../../../hooks/UseAuth';
 import Modal from '../../../Media/Modal';
-import { useParams } from 'react-router-dom';
+import { useNavigate, useParams } from 'react-router-dom';
 import { CircularProgress } from '@mui/material';
 
 
 type attributeValues = {
-    label: string, options: [{ label: string, value: string }]
+    label: string, selected: [{ label: string, value: string }], options: [{ label: string, value: string }]
 }
+
 type attributes = {
     label: string, value: string
 }
 const EditProduct: React.FunctionComponent = () => {
     const { id } = useParams()
+    const navigate = useNavigate()
     const [categories, setCategories] = useState<string[]>([])
     const [attributes, setAttributes] = useState<attributes[]>([])
-    const [newAttributes, setNewAttributes] = useState<any>([])
+    const [selectedAttributes, setSelectedAttributes] = useState<any>([])
+
+    const titleRef = useRef<any>()
+    const brandRef = useRef<any>()
+    const regPriceRef = useRef<any>()
+    const salePriceRef = useRef<any>()
+    const stockRef = useRef<any>()
 
     const [attributeLabel, setAttributeLabel] = useState<any>([])
+    const [defaultAttributeLabel, setDefaultAttributeLabel] = useState<any>([])
     const [attributeValues, setAttributeValues] = useState<attributeValues[]>([])
 
     // DESCRIPTION
@@ -60,16 +66,25 @@ const EditProduct: React.FunctionComponent = () => {
     useEffect(() => {
         setIsLoading(true)
         if (productData.length === 0) {
-            fetch(`http://localhost:5000/product/${id}`)
+            fetch(`https://guarded-ocean-73313.herokuapp.com/product/${id}`)
                 .then(res => res.json())
                 .then(data => {
-                    // setCategories(data[0].categories)
-                    setProductData(data)
+                    const newArray = data[0]?.attributes ?? data[0]?.attributes.map(({ label, slug }: any) => ({ label, value: slug }));
+                    setDefaultAttributeLabel(newArray);
+                    const values = data[0]?.attributes ?? data[0]?.attributes.map(({ label, options }: any) => ({ label, options: options }));
+                    setAttributes(data[0]?.attributes) // set All the attributes to show on attributes field
+                    setCategories(data[0]?.categories) // set All the attributes to show on attributes field
+                    setSelectedAttributes(data[0]?.attributes) // to store the previous data into the state
+                    setAttributeValues(values) // attributes values
+                    setSelectedImages(data[0].images) // previous selected images
+                    setContent(data[0].product_des) // previous selected images
+                    setProductData(data) // single product data
                 })
                 .finally(() => setIsLoading(false))
         }
     }, [id, productData.length])
-    console.log(productData, 'productData');
+
+
 
 
     // GET ATTRIBUTES LABELS AND VALUES
@@ -88,7 +103,7 @@ const EditProduct: React.FunctionComponent = () => {
 
     }, [])
 
-    // IS IT VENDOR OR ADMIN
+    console.log(selectedImages, 'selectedImages');
 
 
 
@@ -97,15 +112,15 @@ const EditProduct: React.FunctionComponent = () => {
         console.log(e.selected);
 
         let itemIndex: any;
-        if (newAttributes.length > 0) {
-            itemIndex = newAttributes.findIndex((attr: any) => attr.label === label)
+        if (selectedAttributes.length > 0) {
+            itemIndex = selectedAttributes.findIndex((attr: any) => attr.label === label)
         }
 
         const newValue = {
             label: label,
             selected: e
         }
-        setNewAttributes((oldArray: any): any => {
+        setSelectedAttributes((oldArray: any): any => {
             if (itemIndex >= 0) {
                 // item exists at newAttributes[itemIndex]
                 let updatedArr = [...oldArray];
@@ -141,7 +156,6 @@ const EditProduct: React.FunctionComponent = () => {
     }, [newCat])
 
 
-
     // GET ALL THE VALUES FROM FIELDS
     const handleGetProductValues = (e: any) => {
 
@@ -152,14 +166,15 @@ const EditProduct: React.FunctionComponent = () => {
             offerDate: date
         }
         newProductData[field] = value
+
         setProductValue(newProductData)
 
     }
 
     // PRODUCT UPLOAD FUNCTION
-    const handleProductSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
+    const handleProductSubmit = async (e: React.FormEvent<HTMLFormElement>, id) => {
         e.preventDefault()
-
+        console.log('  event.preventDefault(2);');
         if (categories.length === 0) {
             return alert('please add category')
         }
@@ -168,64 +183,73 @@ const EditProduct: React.FunctionComponent = () => {
         }
 
         const newProduct = {
-            ...productValue,
+            title: titleRef.current.value,
+            brand: brandRef.current.value,
+            reg_price: regPriceRef.current.value,
+            sale_price: salePriceRef.current.value,
+            stock: stockRef.current.value,
+            offerDate: date,
             images: selectedImages,
             categories,
             product_des: content,
-            newAttributes,
-            vendor: userDetails.role,
-            store: userDetails.store,
-            publisher: userDetails.email
+            newAttributes: selectedAttributes,
         }
+
         console.log(newProduct, 'newProduct');
 
-
-        fetch('https://guarded-ocean-73313.herokuapp.com/dashboard/addProduct', {
-            headers: { "Content-Type": "application/json" },
-            method: 'POST',
+        setIsLoading(true)
+        fetch(`https://guarded-ocean-73313.herokuapp.com/dashboard/updateProduct/${id}`, {
+            method: 'PUT',
+            headers: {
+                'content-type': 'application/json'
+            },
             body: JSON.stringify(newProduct)
         })
             .then(response => response.json())
             .then(data => {
-                if (data.insertedId) {
-                    alert('Product Added')
+                console.log(data);
+
+                if (data.modifiedCount) {
+                    alert('Product Updated')
+                    navigate('/dashboard/products')
                 }
             })
             .catch(error => {
                 console.error('Error:', error);
-            });
+            }).finally(() => setIsLoading(false));
 
 
     }
-
+    // console.log(newAttributes, 'newAttributes');
     // UPLOAD IMAGES FROM MODAL
 
-    const handleUploadImages = (event: React.SyntheticEvent) => {
+    // const handleUploadImages = (event: any) => {
+    //     console.log('  event.preventDefault();');
 
-        event.preventDefault();
+    //     event.preventDefault();
 
-        // const formData = new FormData();
-        // const files = images.target.files;
-        // for (let i = 0; i < files.length; i += 1) {
-        //     formData.append('images[]', files[i]);
-        // }
+    //     // const formData = new FormData();
+    //     // const files = images.target.files;
+    //     // for (let i = 0; i < files.length; i += 1) {
+    //     //     formData.append('images[]', files[i]);
+    //     // }
 
-        // fetch('https://guarded-ocean-73313.herokuapp.com/addProduct', {
-        //     method: 'post',
-        //     body: formData
-        // })
-        //     .then(response => response.json())
-        //     .then(data => {
-        //         if (data.insertedId) {
-        //             alert('img Added')
-        //         }
-        //     })
-        //     .catch(error => {
-        //         console.error('Error:', error);
-        //     });
-        event.preventDefault();
+    //     // fetch('https://guarded-ocean-73313.herokuapp.com/addProduct', {
+    //     //     method: 'post',
+    //     //     body: formData
+    //     // })
+    //     //     .then(response => response.json())
+    //     //     .then(data => {
+    //     //         if (data.insertedId) {
+    //     //             alert('img Added')
+    //     //         }
+    //     //     })
+    //     //     .catch(error => {
+    //     //         console.error('Error:', error);
+    //     //     });
 
-    }
+
+    // }
 
     // GET SELECTED IMAGE
     const eventBubbling = (e: any) => {
@@ -250,7 +274,7 @@ const EditProduct: React.FunctionComponent = () => {
         <>
             {productData.length === 0 ? <CircularProgress color="inherit" /> :
                 <div className="mt-5 md:mt-0 md:col-span-2">
-                    <form onSubmit={handleProductSubmit}>
+                    <form onSubmit={(e) => handleProductSubmit(e, productData[0]._id)}>
                         <div className="grid grid-cols-3 gap-4">
 
                             <div className="col-span-2">
@@ -259,20 +283,20 @@ const EditProduct: React.FunctionComponent = () => {
                                         {/* TITLE */}
                                         <div>
                                             <label className="block text-sm font-medium text-gray-700 mb-3"> Title </label>
-                                            <input defaultValue={productData[0].title} className="shadow appearance-none border-none rounded w-full py-3 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline" name='title' id="name" onBlur={handleGetProductValues} type="text" placeholder="Title" />
+                                            <input defaultValue={productData[0].title} className="shadow appearance-none border-none rounded w-full py-3 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline" name='title' id="name" ref={titleRef} type="text" placeholder="Title" />
                                         </div>
                                         {/* SHORT DETAILS */}
                                         <div className="flex flex-row gap-6">
                                             <div className="basis-1/2">
                                                 <label className="block text-sm font-medium text-gray-700 mb-3"> Brand </label>
-                                                <input defaultValue={productData[0]?.brand} className="shadow appearance-none border-none rounded w-full py-3 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline" name='brand' onBlur={handleGetProductValues} id="brand" type="text" placeholder="Brand " required />
+                                                <input ref={brandRef} defaultValue={productData[0]?.brand} className="shadow appearance-none border-none rounded w-full py-3 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline" name='brand' onBlur={handleGetProductValues} id="brand" type="text" placeholder="Brand " />
 
                                             </div>
 
                                             <div className="basis-1/2">
 
                                                 <label className="block text-sm font-medium text-gray-700 mb-3"> Categories </label>
-                                                <Select value={productData[0]?.categories} isLoading={isLoading} onChange={(e: any) => setCategories(e)} className="shadow appearance-none border rounded w-full text-gray-700 leading-tight focus:outline-none focus:shadow-outline" options={newCat} isMulti />
+                                                <Select defaultValue={productData[0]?.categories} isLoading={isLoading} onChange={(e: any) => setCategories(e)} className="shadow appearance-none border rounded w-full text-gray-700 leading-tight focus:outline-none focus:shadow-outline" options={newCat} isMulti />
 
                                             </div>
 
@@ -280,12 +304,12 @@ const EditProduct: React.FunctionComponent = () => {
                                         <div className="flex flex-row gap-6">
                                             <div className="basis-1/4">
                                                 <label className="block text-sm font-medium text-gray-700 mb-3"> Regular Price </label>
-                                                <input defaultValue={productData[0].reg_price} className="shadow appearance-none border-none rounded w-full py-3 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline" name="reg_price" onBlur={handleGetProductValues} type="text" placeholder="Regular Price " required />
+                                                <input ref={regPriceRef} defaultValue={productData[0].reg_price} className="shadow appearance-none border-none rounded w-full py-3 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline" name="reg_price" onBlur={handleGetProductValues} type="number" placeholder="Regular Price " required />
 
                                             </div>
                                             <div className="basis-1/4">
                                                 <label className="block text-sm font-medium text-gray-700 mb-3"> Sale Price </label>
-                                                <input defaultValue={productData[0].sale_price} className="shadow appearance-none border-none rounded w-full py-3 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline" name="sale_price" onBlur={handleGetProductValues} type="text" placeholder="Sale Price" />
+                                                <input ref={salePriceRef} defaultValue={productData[0].sale_price} className="shadow appearance-none border-none rounded w-full py-3 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline" name="sale_price" onBlur={handleGetProductValues} type="number" placeholder="Sale Price" />
 
                                             </div>
                                             <div className="basis-1/4">
@@ -294,7 +318,8 @@ const EditProduct: React.FunctionComponent = () => {
                                                 <LocalizationProvider dateAdapter={AdapterDateFns}>
                                                     <Stack spacing={3}>
                                                         <MobileDateTimePicker
-                                                            value={productData[0].offerDate}
+                                                            minDate={new Date()}
+                                                            value={productData[0].offerDate || date}
                                                             onChange={(newValue) => {
                                                                 setDate(newValue);
                                                             }}
@@ -306,7 +331,7 @@ const EditProduct: React.FunctionComponent = () => {
                                             </div>
                                             <div className="basis-1/4">
                                                 <label className="block text-sm font-medium text-gray-700 mb-3"> Stock </label>
-                                                <input defaultValue={productData[0].stock} className="shadow appearance-none border-none rounded w-full py-3 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline" name="stock" onBlur={handleGetProductValues} type="text" placeholder="Quantity Available" required />
+                                                <input ref={stockRef} defaultValue={productData[0].stock} className="shadow appearance-none border-none rounded w-full py-3 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline" name="stock" onBlur={handleGetProductValues} type="text" placeholder="Quantity Available" required />
 
                                             </div>
 
@@ -317,6 +342,7 @@ const EditProduct: React.FunctionComponent = () => {
 
 
                                             {attributeValues.map((attr: attributeValues) => {
+
                                                 const item = attributes.filter((list) => {
                                                     return list.label === attr.label;
                                                 })[0];
@@ -325,16 +351,13 @@ const EditProduct: React.FunctionComponent = () => {
                                                     return <div key={attr.label} className="basis-1/4">
                                                         <label className="block text-sm font-medium text-gray-700 mb-3"> {attr.label} </label>
 
-                                                        <Select options={attr.options}
-                                                            value={productData[0]?.attributes}
+                                                        <Select options={attr?.options}
+                                                            defaultValue={attr.selected}
                                                             onChange={(e: any) => previousValue(attr.label, e)}
                                                             className="shadow appearance-none border rounded w-full text-gray-700 leading-tight focus:outline-none focus:shadow-outline" isMulti />
                                                     </div>
                                                 }
                                             })}
-
-
-
 
                                         </div>
 
@@ -351,10 +374,8 @@ const EditProduct: React.FunctionComponent = () => {
                                                     setContent(draftToHtml(convertToRaw(newState.getCurrentContent())))
                                                 }}
                                             />
-                                            {/* <textarea className="shadow form-textarea mt-1 block w-full border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline" onBlur={handleGetProductValues} name='product_des' rows={5} placeholder="Description"></textarea> */}
+
                                         </div>
-
-
 
                                     </div>
 
@@ -373,8 +394,9 @@ const EditProduct: React.FunctionComponent = () => {
                                             <span>+ Add Images up to 10 images</span>
                                         </div>
                                     </label>
+
                                     <label className='text-center'>Please first upload images from media</label>
-                                    <Modal eventBubbling={eventBubbling} selectedItems={selectedImages} handleUploadImages={handleUploadImages} showModal={showModal} setShowModal={setShowModal} />
+                                    <Modal eventBubbling={eventBubbling} selectedItems={selectedImages} showModal={showModal} setShowModal={setShowModal} />
 
                                     <br />
 
@@ -397,13 +419,14 @@ const EditProduct: React.FunctionComponent = () => {
 
                                                     <div key={image.id} className="  w-full">
                                                         <div className='flex justify-between'>
-                                                            {/* <button
-                                                            onClick={() =>
-                                                                setSelectedImages(selectedImages.filter((e) => e !== image))
-                                                            }
-                                                        >
-                                                            x
-                                                        </button> */}
+                                                            <button
+                                                                className='bg-red-400 text-white rounded px-1'
+                                                                onClick={() =>
+                                                                    setSelectedImages(selectedImages.filter((e) => e.id !== image.id))
+                                                                }
+                                                            >
+                                                                x
+                                                            </button>
                                                             <p>{index + 1}</p>
                                                         </div>
                                                         <img className='shadow sm:rounded-md product-thumb' src={image.src} height="200" alt="upload" />
@@ -420,12 +443,15 @@ const EditProduct: React.FunctionComponent = () => {
 
                                     <label className="block text-sm font-medium text-gray-700 mb-3"> Attributes </label>
 
-                                    <Select value={productData[0]?.attributes} onChange={(e: any) => setAttributes(e)} className="shadow appearance-none border rounded w-full text-gray-700 leading-tight focus:outline-none focus:shadow-outline" options={attributeLabel} isMulti />
+                                    <Select defaultValue={defaultAttributeLabel} onChange={(e: any) => setAttributes(e)} className="shadow appearance-none border rounded w-full text-gray-700 leading-tight focus:outline-none focus:shadow-outline" options={attributeLabel} isMulti />
 
                                 </div>
 
                                 <div className=" py-3 text-right ">
-                                    <button type="submit" className="inline-flex justify-center py-2 px-4 border border-transparent drop-shadow-md text-sm font-medium rounded-md text-white bg-indigo-600 hover:bg-indigo-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500">Publish</button>
+                                    {isLoading ? <button type="button" className="inline-flex items-center justify-center py-2 px-4 border border-transparent drop-shadow-md text-sm font-medium rounded-md text-white bg-indigo-500 hover:bg-indigo-500 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500" disabled>
+                                        <i className="fa-solid fa-spinner motion-reduce:hidden animate-spin text-white mr-2"></i>
+                                        Processing...
+                                    </button> : <button type="submit" className="inline-flex justify-center py-2 px-4 border border-transparent drop-shadow-md text-sm font-medium rounded-md text-white bg-indigo-600 hover:bg-indigo-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500">Publish</button>}
                                 </div>
                             </div>
 

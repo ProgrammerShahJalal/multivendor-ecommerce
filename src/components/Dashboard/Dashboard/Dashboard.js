@@ -1,6 +1,8 @@
 import { useState } from 'react';
 import { Link, Outlet } from 'react-router-dom';
 import UseAuth from '../../../hooks/UseAuth';
+import { DataChart } from '../../DataChart/HorizontalChart';
+import LineCharts from '../../DataChart/LineChart';
 import './Dashboard.css'
 
 
@@ -14,17 +16,6 @@ function Dashboard() {
     const subMenuToggle = (e) => {
         e.currentTarget.classList.toggle('showMenu');
     }
-    // useEffect(() => {
-    //     fetch('https://guarded-ocean-73313.herokuapp.com/product/62176dfbf3c519cef6df7df7')
-    //         .then(res => res.json())
-    //         .then(data => {
-    //             const arr = []
-    //             const img = data.map(products => products.images.map(img => arr.push(img.src)))
-    //             console.log(arr[0]);
-
-    //         })
-    // }, [])
-
     return (
         <div>
             <div className={`sidebar ${isTrue ? 'close' : ''}`}>
@@ -34,10 +25,6 @@ function Dashboard() {
                     <span className="logo_name">Unity Mart</span>
 
                 </div>
-                {/* <div className="home-content" onClick={toggleHamBurgerMenu}>
-
-                </div> */}
-
                 <ul className="nav-links" >
                     <li>
                         <Link to={`/dashboard/products`}>
@@ -107,8 +94,6 @@ function Dashboard() {
                             <li><Link to={`/dashboard/categories`}>Categories</Link></li>
                             <li><Link to={`/dashboard/attributes`}>Attributes</Link></li>
                         </ul>
-
-
                     </li>
                     <li >
                         <Link to={`/dashboard/orders`}>
@@ -146,18 +131,6 @@ function Dashboard() {
                             <li><Link className="link_name" to="/">Logout</Link></li>
                         </ul>
                     </li>
-
-
-                    {/*           
-                    <li>
-                        <a href="#">
-                            <i className='bx bx-cog'></i>
-                            <span className="link_name">Setting</span>
-                        </a>
-                        <ul className="sub-menu blank">
-                            <li><a className="link_name" href="#">Setting</a></li>
-                        </ul>
-                    </li> */}
                     <li>
                         <div className="profile-details">
                             <div className="profile-content mr-5">
@@ -173,9 +146,12 @@ function Dashboard() {
                 </ul>
             </div>
             <section className="home-section">
-                <div className='container mx-auto'><Outlet></Outlet></div>
-
+                <div className='container mx-auto'><Outlet></Outlet>
+                {/* <DataChart/>
+                <LineCharts/> */}
+                </div>
             </section>
+
         </div>
     );
 }

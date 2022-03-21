@@ -63,10 +63,25 @@ export default function Popup({ attr, setIfShouldUpdate }: any) {
             .then(data => setAttributes(data))
     }, [])
 
+    const handleDeleteValue = (id, value) => {
+
+        fetch(`https://guarded-ocean-73313.herokuapp.com/dashboard/attribute/fieldDelete/${id}`, {
+            method: 'PUT',
+            headers: { 'content-type': 'application/json' },
+            body: JSON.stringify({ value: value.value })
+        })
+            .then(res => res.json())
+            .then(data => {
+                if (data.modifiedCount) {
+                    alert('Value deleted')
+                }
+                setIfShouldUpdate(true)
+            })
+    }
 
     return (
         <>
-            <button className="text-white font-bold py-1 px-3 rounded text-xs bg-indigo-600 hover:bg-green-dark mr-3 cursor-pointer" onClick={() => toggle()}>Edit</button>
+            <button className="text-white font-bold py-1 px-3 rounded text-xs bg-indigo-600 hover:bg-green-dark mr-3 cursor-pointer" onClick={() => toggle()}>Add Value</button>
             {/* Modal */}
 
             <div className={`fixed z-10 overflow-y-auto top-0 w-full left-0 ${isTrue ? '' : 'hidden'}`} id="modal">
@@ -106,7 +121,7 @@ export default function Popup({ attr, setIfShouldUpdate }: any) {
                                             <td className="py-4 px-6 border-b border-grey-light">{value.label}</td>
                                             <td className="py-4 px-6 border-b border-grey-light text-right	">
 
-                                                <Link to="#" className="text-white font-bold py-1 px-3 rounded text-xs bg-red-600 hover:bg-blue-dark">Delete</Link>
+                                                <button onClick={() => handleDeleteValue(attr._id, value)} className="text-white font-bold py-1 px-3 rounded text-xs bg-red-600 hover:bg-blue-dark">Delete</button>
                                             </td>
                                         </tr>
 

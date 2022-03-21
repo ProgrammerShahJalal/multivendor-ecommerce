@@ -20,14 +20,14 @@ export default function Banners() {
           loop={true}
           slidesPerView={"auto"}
           autoplay={{
-            delay: 3000,
+            delay: 5000,
             disableOnInteraction: false
           }}
           modules={[Autoplay]}
 
           className="mySwiper">
           <SwiperSlide
-            className="md:flex justify-between"
+            className="md:flex items-center justify-center"
             style={{ height: "34rem" }}>
             <div className="grid md:grid-cols-2 xs:grid-cols-1">
               <div className="flex flex-col items-center md:items-start justify-center md:pl-15 lg:pl-32 p-12 text-center md:text-left">
@@ -53,14 +53,30 @@ export default function Banners() {
                   Buy Now <i className="fa-light fa-cart-circle-plus"></i>
                 </NavLink>
               </div>
-              <div className="md:-mt-0 lg:-mt-0 -mt-12">
+              <div className="md:-mt-0 lg:-mt-0 -mt-12 items-end justify-end flex">
                 <img src='https://i.ibb.co/880G2zr/headphone.png' alt="Image1" className="md:block" />
               </div>
             </div>
 
           </SwiperSlide>
+          {/* <SwiperSlide style={{height:'30rem'}}
+            className="md:flex items-center justify-center">
+                <img src='https://i.ibb.co/c1FZSg3/mac-Book-Banner.png' alt="Image2" />
+          </SwiperSlide>
+          <SwiperSlide style={{height:'30rem'}}
+            className="md:flex items-center justify-center">
+                <img src='https://i.ibb.co/QdDNtBF/nike-Banner.png' alt="Image3" />
+          </SwiperSlide>
+          <SwiperSlide style={{height:'30rem'}}
+            className="md:flex items-center justify-center">
+                <img src='https://i.ibb.co/f135FKC/ps5-Banner.png' alt="Image4" />
+          </SwiperSlide>
+          <SwiperSlide style={{height:'30rem'}}
+            className="md:flex items-center justify-center">
+                <img src='https://i.ibb.co/C8YpBMD/rolex-Banner.png' alt="Image5" />
+          </SwiperSlide> */}
           <SwiperSlide
-            className="md:flex justify-between"
+            className="md:flex items-center justify-center"
             style={{ height: "30rem" }}>
             <div className="grid md:grid-cols-2 xs:grid-cols-1">
               <div className="flex flex-col items-center md:items-start justify-center md:pl-15 lg:pl-32 p-10 text-center md:text-left">
@@ -86,14 +102,14 @@ export default function Banners() {
                   Buy Now <i className="fa-light fa-cart-circle-plus"></i>
                 </NavLink>
               </div>
-              <div className="md:-mt-0 -mt-20">
+              <div className="md:-mt-0 -mt-20 items-end justify-end flex">
                 <img src='https://i.ibb.co/X23hLSd/macbook-air.png' alt="Image1" className="md:block" />
               </div>
             </div>
 
           </SwiperSlide>
           <SwiperSlide
-            className="md:flex justify-between"
+            className="md:flex items-center justify-center"
             style={{ height: "30rem" }}>
             <div className="grid md:grid-cols-2 xs:grid-cols-1">
               <div className="flex flex-col items-center md:items-start justify-center md:pl-15 lg:pl-32 p-10 text-center md:text-left">
@@ -119,14 +135,14 @@ export default function Banners() {
                   Buy Now <i className="fa-light fa-cart-circle-plus"></i>
                 </NavLink>
               </div>
-              <div className="md:-mt-0 -mt-20">
+              <div className="md:-mt-0 -mt-20 items-end justify-end flex">
                 <img src='https://i.ibb.co/BBfjnfk/rolex.webp' alt="Image1" className="md:block" />
               </div>
             </div>
 
           </SwiperSlide>
           <SwiperSlide
-            className="md:flex justify-between"
+            className="md:flex items-center justify-center"
             style={{ height: "30rem" }}>
             <div className="grid md:grid-cols-2 xs:grid-cols-1">
               <div className="flex flex-col items-center md:items-start justify-center md:pl-15 lg:pl-32 p-10 text-center md:text-left">
@@ -152,14 +168,14 @@ export default function Banners() {
                   Buy Now <i className="fa-light fa-cart-circle-plus"></i>
                 </NavLink>
               </div>
-              <div className="md:-mt-0 -mt-36">
+              <div className="md:-mt-0 -mt-36 items-end justify-end flex">
                 <img src='https://i.ibb.co/ZX9c3hS/nike.png' alt="Image1" className="md:block" />
               </div>
             </div>
 
           </SwiperSlide>
           <SwiperSlide
-            className="md:flex justify-between"
+            className="md:flex items-center justify-center"
             style={{ height: "30rem" }}>
             <div className="grid md:grid-cols-2 xs:grid-cols-1">
               <div className="flex flex-col items-center md:items-start justify-center md:pl-15 lg:pl-32 p-10 text-center md:text-left">
@@ -183,7 +199,7 @@ export default function Banners() {
                   Buy Now <i className="fa-light fa-cart-circle-plus"></i>
                 </NavLink>
               </div>
-              <div className="md:-mt-0 -mt-10">
+              <div className="md:-mt-0 -mt-10 items-end justify-end flex">
                 <img src='https://i.ibb.co/2d1cqfq/ps5.png' alt="Image1" className="md:block" />
               </div>
             </div>

@@ -8,6 +8,7 @@ interface ProductState {
     products: {
         title: string
         img: string
+        img3: string
         hoverImg: string
         price: number
         salePrice: number
@@ -65,16 +66,16 @@ const Men = () => {
         // p: 4,
     };
     return (
-        <div className="container lg:px-12 md:px-10 px-10 pb-16">
-            <div className="grid lg:grid-cols-3 md:grid-cols-2 xs:grid-cols-1 gap-6">
+            <div>
+                <div className="grid lg:grid-cols-3 md:grid-cols-2 xs:grid-cols-1 gap-6">
                 {
                     products.map((product) => (
-                        <div className="bg-white dark:bg-slate-800 shadow-inner overflow-hidden single-card ">
-                <div className="relative group">
-                <div style={{height:'250px'}} className='z-100 bg-white overflow-hidden'>
-                                <img src={product.hoverImg} className='w-full select-none block group-hover:hidden z-0 transition object-center' alt="" />
-                                <img src={product.img} className='w-full hidden select-none group-hover:block transition object-center' alt="" />
-                </div>
+                        <div className="bg-white dark:bg-slate-600 shadow-inner overflow-hidden single-card group">
+                <div className="relative ">
+                <div style={{ height: '300px' }} className='bg-white overflow-hidden'>
+                                    <img src={product.hoverImg} className='select-none w-full h-full object-contain img group-hover:hidden block transition' alt="" />
+                                    <img src={product.img3} className='select-none img w-full h-full object-contain group-hover:block hidden transition' alt="" />
+                                </div>
                     <div className="absolute inset-0 bg-black bg-opacity-20 flex items-center justify-center gap-2 opacity-0 group-hover:opacity-100 transition">
                         <button onClick={() => handleOpen(product)} className='text-white text-lg w-9 h-8 rounded-full bg-indigo-500 flex items-center justify-center hover:bg-gray-800 transition'>
                         <i className="fa-regular fa-magnifying-glass"></i>
@@ -99,7 +100,7 @@ const Men = () => {
                             <div className="text-xs text-gray-500 ml-3">(1)</div>
                         </div>
                     </div>
-                    <button className='block w-full py-1 text-center top-5 text-white bg-indigo-500 border border-indigo-500 rounded-b hover:bg-transparent hover:text-indigo-500 transition'>Add to Cart</button>
+                    <button className='w-full py-1 text-center top-5 text-white bg-indigo-500 border border-indigo-500 rounded-b hover:bg-transparent hover:text-indigo-500 transition'>Add to Cart</button>
             </div>
                     ))}
             </div>
@@ -126,8 +127,8 @@ const Men = () => {
                 </Modal>
                         
             </div>
-        </div>
-    );
+
+            </div>    );
 };
 
 export default Men;

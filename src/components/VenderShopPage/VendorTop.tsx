@@ -1,12 +1,30 @@
-import React from 'react'
-import { Link } from 'react-router-dom'
+import React, { useEffect, useState } from 'react';
+import { Link, useParams } from 'react-router-dom';
 
 const VendorTop = () => {
+    const { storeSlug } = useParams();
+
+
+    const [productsDetails, setProductsDetails] = useState<any>([])
+    useEffect(() => {
+        fetch(`https://guarded-ocean-73313.herokuapp.com/user/vendor/${storeSlug}`)
+            .then(res => res.json())
+            .then((data) => {
+                console.log(data)
+                setProductsDetails(data);
+
+            })
+
+    }, [storeSlug])
+
+    console.log(productsDetails);
+
+    let { storeBanner, firstName, lastName, storeEmail, storeLogo } = productsDetails[0] || {};
     return (
         <div>
-            <div>
+            <div className="">
                 <div>
-                    <img className='w-full h-80' src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQPogp2EySmA852FvfpuScP011dldVhz4FLyw&usqp=CAU" alt="" />
+                    <img className='w-full h-80' src={storeBanner} alt="" />
 
                 </div>
 
@@ -16,26 +34,28 @@ const VendorTop = () => {
 
                     </div>
                     <div className='absolute z-10 ml-10 '>
-                        <Link to="/"><img style={{ marginTop: '-60px' }} src="https://cjxfits.biz/wp-content/plugins/wc-frontend-manager/assets/images/wcfmmp-blue.png" alt="" /></Link>
+                        <Link to="/"><img style={{ marginTop: '-60px' }} className="w-20 h-20" src={storeLogo} alt="" /></Link>
                     </div>
 
-                    <div className='absolute mt-20 ml-14 text-orange-500'>
-                        <i className="fa-solid fa-star"></i>
-                        <i className="fa-solid fa-star"></i>
-                        <i className="fa-solid fa-star"></i>
-                        <i className="fa-solid fa-star"></i>
-                        <i className="fa-solid fa-star"></i>
-                    </div>
-                    <div className='absolute z-10 pl-48 pt-10'>
-                        <h2 className='text-white font-bold text-2xl'>Sahara Banu</h2>
-                        <h2 className='text-white  '><Link to="email"><i className="fa-solid fa-envelope pr-3"></i>saharabanu@gmail.com</Link></h2>
+                    <div className='grid lg:grid-cols-2 grid-cols-1'>
+                        <div className='absolute mt-20 ml-14 text-orange-500'>
+                            <i className="fa-solid fa-star"></i>
+                            <i className="fa-solid fa-star"></i>
+                            <i className="fa-solid fa-star"></i>
+                            <i className="fa-solid fa-star"></i>
+                            <i className="fa-solid fa-star"></i>
+                        </div>
+                        <div className='text-center z-10 pt-7 pb-3'>
+                            <h2 className='text-white font-bold text-2xl'>{firstName} {lastName}</h2>
+                            <h2 className='text-white  '><Link to="email"><i className="fa-solid fa-envelope pr-3"></i>{storeEmail}</Link></h2>
+                        </div>
                     </div>
 
 
                 </div>
 
             </div>
-            {/* banner end  */}
+
         </div>
     )
 }

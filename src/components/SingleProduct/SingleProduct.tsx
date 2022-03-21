@@ -1,9 +1,8 @@
 import React, { useEffect, useState } from 'react';
 import { useParams } from 'react-router-dom';
-import RelatedProducts from '../RelatedProducts/RelatedProducts';
-import { Swiper, SwiperSlide } from "swiper/react";
 import { FreeMode, Navigation, Thumbs } from "swiper";
-import Magnifier from "react-magnifier";
+import { Swiper, SwiperSlide } from "swiper/react";
+import RelatedProducts from '../RelatedProducts/RelatedProducts';
 
 const SingleProduct = () => {
     const { id } = useParams();

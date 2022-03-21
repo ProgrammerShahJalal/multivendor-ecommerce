@@ -11,6 +11,7 @@ interface ProductState {
     products: {
         title: string
         img: string
+        img3: string
         hoverImg: string
         price: number
         salePrice: number
@@ -31,7 +32,6 @@ const Women = () => {
         setOpen(true)
 
     };
-    const handleClose = () => setOpen(false);
     const [selectedProduct, setSelectedProduct] = useState<any>()
     useEffect(() => {
         if (products) {
@@ -47,11 +47,11 @@ const Women = () => {
             <div className="grid grid-cols-1 gap-6">
                 {
                     products.map((product) => (
-                        <div className="bg-white shadow-inner flex overflow-hidden single-card ">
+                        <div className="bg-white dark:bg-slate-600 shadow-inner flex overflow-hidden single-card ">
                             <div className="relative group">
-                                <div style={{ height: '300px', width: '300px' }} className='z-100  overflow-hidden'>
-                                    <img src={product.hoverImg} className='w-full select-none block group-hover:hidden z-0 transition object-center' alt="" />
-                                    <img src={product.img} className='w-full hidden select-none group-hover:block transition object-center' alt="" />
+                            <div style={{ height: '300px',width: '300px' }} className='bg-white overflow-hidden'>
+                                    <img src={product.hoverImg} className='select-none w-full h-full object-contain img group-hover:hidden block transition' alt="" />
+                                    <img src={product.img3} className='select-none img w-full h-full object-contain group-hover:block hidden transition' alt="" />
                                 </div>
                                 <div className="absolute inset-0 bg-black bg-opacity-20 flex items-center justify-center gap-2 opacity-0 group-hover:opacity-100 transition">
                                     <button onClick={() => handleOpen(product)} className='text-white text-lg w-9 h-8 rounded-full bg-indigo-500 flex items-center justify-center hover:bg-gray-800  transition'>
@@ -111,7 +111,7 @@ const Women = () => {
                             <div className="grid grid-cols-3">
 
                                 <div className="pt-4 -mt-32 block">
-                                    <h3 className="text-xl text-gray-800 mb-3 uppercase font-medium">Size</h3>
+                                    <h3 className="text-xl text-gray-800 dark:text-white mb-3 uppercase font-medium">Size</h3>
                                     <div className="flex item-center gap-2">
                                         <div className="size-selector">
                                             <input type="radio" name='size' className='hidden' id='xs' />
