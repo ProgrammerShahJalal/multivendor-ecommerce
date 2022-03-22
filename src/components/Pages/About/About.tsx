@@ -1,5 +1,6 @@
 import React from 'react';
 import { Helmet } from 'react-helmet-async';
+import { Typewriter } from 'react-simple-typewriter';
 import HomePopUp from '../HomePopUp/HomePopUp';
 import TimeLine from './TimeLine';
 
@@ -22,13 +23,21 @@ const About = () => {
             <img src='https://template.annimexweb.com/diva/assets/images/parallax-banners/testimonials-bg.jpg' className="w-full mx-auto" alt='' />
             <div className='bg-black bg-opacity-40'>
               <div className='absolute inset-24 items-center py-12'>
-                <div className='top-48 bottom-48 left-48 right-48'>
+                <div className='top-48 bottom-48 left-48 right-48 text-center'>
                   <h2 className='text-blue-300 text-center text-4xl font-bold py-3'>Unity Mart</h2>
-                  <h2 className='text-pink-300 text-center text-4xl font-bold py-3'>A Multi-Vendor E-commerce Site</h2>
+                  <span style={{ color: '#c77dff', fontWeight: 'bold', fontSize: '2rem' }}>
+                    <Typewriter
+                      words={['Multi-Vendor e-commerce website', 'Opportunity of affiliate marketing!!', 'Included artificial intelligence', 'Way to best payment system']}
+                      loop={true}
+                      cursor
+                      typeSpeed={70}
+                      deleteSpeed={50}
+                      delaySpeed={1000}
+                    />
+                  </span>
                 </div>
               </div>
             </div>
-
           </div>
 
           <div className='container'>

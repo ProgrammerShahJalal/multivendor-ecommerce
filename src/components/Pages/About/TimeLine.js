@@ -9,7 +9,7 @@ import { LoginIcon, ShoppingBagIcon, CreditCardIcon, IdentificationIcon, ChatIco
 const TimeLine = () => {
     return (
         <div>
-            <h2 className='text-pink-600 text-center text-3xl font-bold py-4 hover:text-sky-700'>Unity Mart Help Line Information</h2>
+            <h2 className='text-indigo-600 text-center text-3xl font-bold py-4 hover:text-sky-700'>Unity Mart Help Line Information</h2>
             <VerticalTimeline>
                 <VerticalTimelineElement
                     className="vertical-timeline-element--work"
@@ -20,7 +20,7 @@ const TimeLine = () => {
                     icon={<LoginIcon />}
 
                 >
-                    <h3 className="text-xl font-semibold text-white">To use our site an user must be register and login.</h3>
+                    <h3 className="text-xl font-base text-white">To use our site an user must be register and login.</h3>
                     <h4 className="font-base text-white">* Without login users can search and see product.</h4>
                     <h4 className="font-base text-white">
                         * But they can't be able to see more product and product details, to use our site properly and buy any product.
@@ -34,7 +34,7 @@ const TimeLine = () => {
                     iconStyle={{ background: 'rgb(16, 204, 82)', color: '#fff' }}
                     icon={<ShoppingBagIcon />}
                 >
-                    <h3 className="text-xl font-semibold text-white">After register and login </h3>
+                    <h3 className="text-xl font-base text-white">After register and login </h3>
                     <h4 className="text-xl font-base text-white">User can see product details</h4>
                     <h4 className="text-xl font-base text-white">
                         And add product to wishlist or directly add to cart.
@@ -48,7 +48,7 @@ const TimeLine = () => {
                     iconStyle={{ background: 'rgb(233, 30, 99)', color: '#fff' }}
                     icon={<CreditCardIcon />}
                 >
-                    <h3 className="text-xl font-semibold text-white">If users wants to buy our product before they must be paid using our payment gateway method</h3>
+                    <h3 className="text-xl font-base text-white">If users wants to buy our product before they must be paid using our payment gateway method</h3>
                 </VerticalTimelineElement>
                 <VerticalTimelineElement
                     className="vertical-timeline-element--work"
@@ -58,7 +58,7 @@ const TimeLine = () => {
                     iconStyle={{ background: 'rgb(33, 150, 243)', color: '#fff' }}
                     icon={<IdentificationIcon />}
                 >
-                    <h3 className="text-xl font-semibold text-white">After adding product to cart users have to give their details information. To complete the payment they need to checkout.</h3>
+                    <h3 className="text-xl font-base text-white">After adding product to cart users have to give their details information. To complete the payment they need to checkout.</h3>
                 </VerticalTimelineElement>
                 <VerticalTimelineElement
                     className="vertical-timeline-element--education"
@@ -68,7 +68,7 @@ const TimeLine = () => {
                     iconStyle={{ background: 'rgb(16, 204, 82)', color: '#fff' }}
                     icon={<ChatIcon />}
                 >
-                    <h3 className="text-xl font-semibold text-white"> After completing the payment, order will be successful and get a successful message.</h3>
+                    <h3 className="text-xl font-base text-white"> After completing the payment, order will be successful and get a successful message.</h3>
                 </VerticalTimelineElement>
                 <VerticalTimelineElement
                     className="vertical-timeline-element--education"
@@ -78,7 +78,7 @@ const TimeLine = () => {
                     iconStyle={{ background: 'rgb(233, 30, 99)', color: '#fff' }}
                     icon={<AnnotationIcon />}
                 >
-                    <h3 className="text-xl font-semibold text-white">If users are logged in they can go to the dashboard and get more services.</h3>
+                    <h3 className="text-xl font-base text-white">If users are logged in they can go to the dashboard and get more services.</h3>
 
                 </VerticalTimelineElement>
                 <VerticalTimelineElement
@@ -89,7 +89,7 @@ const TimeLine = () => {
                     iconStyle={{ background: 'rgb(33, 150, 243)', color: '#fff' }}
                     icon={<ReceiptRefundIcon />}
                 >
-                    <h3 className="text-xl font-semibold text-white">If users want to sell their products, they can do using our vendor services</h3>
+                    <h3 className="text-xl font-base text-white">If users want to sell their products, they can do using our vendor services</h3>
 
                 </VerticalTimelineElement>
                 <VerticalTimelineElement

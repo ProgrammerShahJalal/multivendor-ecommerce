@@ -26,7 +26,7 @@ export default class App extends React.PureComponent<IAppProps> {
                 <span style={{ color: 'rgb(79, 70, 229)', fontWeight: 'bold' }}>
                   {/* Style will be inherited from the parent element */}
                   <Typewriter
-                    words={['Unite We stand!✊', 'Divide we fall!!']}
+                    words={['United We stand!✊', 'Divided we fall!!']}
                     loop={true}
                     cursor
                     typeSpeed={70}
