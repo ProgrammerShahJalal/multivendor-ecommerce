@@ -49,6 +49,7 @@ import DashboardBlogs from "./components/Blogs/DashboardBlogs";
 import BlogsFirstLook from "./components/Blogs/BlogsFirstLook";
 import AffiliateFirstLook from "./components/Blogs/AffiliateFirstLook";
 import LoginForm from "./components/Pages/LoginPage/Login";
+import DashboardUI from "./components/Dashboard/Dashboard/DashboardUI.js";
 
 const Dashboard = lazy(() => import("./components/Dashboard/Dashboard/Dashboard"));
 const AllOrders = lazy(() => import("./components/Dashboard/Order/allOrder"));
@@ -127,6 +128,7 @@ function App() {
             {/* DASHBOARD ROUTES */}
             <Route path="/dashboard" element={<Suspense fallback={<div>Loading...</div>}><AdminRoute ><Dashboard /></AdminRoute></Suspense>} >
               <Route path="media" element={<Suspense fallback={<div>Loading...</div>}><Media /></Suspense>}></Route>
+              <Route path="dashboardGlance" element={<Suspense fallback={<div>Loading...</div>}><DashboardUI /></Suspense>}></Route>
               <Route path="affiliate" element={<Suspense fallback={<div>Loading...</div>}><AffiliateFirstLook /></Suspense>}></Route>
               <Route path="affiliate-dashboard" element={<Suspense fallback={<div>Loading...</div>}><Affiliate /></Suspense>}></Route>
               <Route path="affiliate-links" element={<Suspense fallback={<div>Loading...</div>}><AffiliateLinks /></Suspense>}></Route>
