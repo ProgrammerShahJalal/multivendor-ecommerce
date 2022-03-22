@@ -9,7 +9,7 @@ import { LoginIcon, ShoppingBagIcon, CreditCardIcon, IdentificationIcon, ChatIco
 const TimeLine = () => {
     return (
         <div>
-            <h2 className='text-indigo-600 text-center text-3xl font-bold py-4 hover:text-sky-700'>Unity Mart Help Line Information</h2>
+            <h2 className='text-indigo-600 text-center text-3xl font-bold py-4 hover:text-sky-700 dark:text-white'>Unity Mart Help Line Information</h2>
             <VerticalTimeline>
                 <VerticalTimelineElement
                     className="vertical-timeline-element--work"
