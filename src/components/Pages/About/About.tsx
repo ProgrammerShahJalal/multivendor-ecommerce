@@ -2,6 +2,7 @@ import React from 'react';
 import { Helmet } from 'react-helmet-async';
 import { Faq } from '../../FAQ/FAQ';
 import HomePopUp from '../HomePopUp/HomePopUp';
+import TimeLine from './TimeLine';
 const About = () => {
 
   return (
@@ -93,6 +94,7 @@ const About = () => {
           </div>
         </div>
       </div>
+      <TimeLine />
       <Faq />
     </>
   );
