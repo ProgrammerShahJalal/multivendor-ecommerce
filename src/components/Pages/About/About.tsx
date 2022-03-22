@@ -1,8 +1,8 @@
 import React from 'react';
 import { Helmet } from 'react-helmet-async';
-import { Faq } from '../../FAQ/FAQ';
 import HomePopUp from '../HomePopUp/HomePopUp';
 import TimeLine from './TimeLine';
+
 const About = () => {
 
   return (
@@ -15,10 +15,21 @@ const About = () => {
         />
         <link rel="canonical" href="/about" />
       </Helmet>
-      <div>
+      <div className='bg-gray-200'>
         <h1 className='text-white text-center text-4xl font-bold py-3 bg-purple-600  hover:bg-sky-700'>About Us</h1>
         <div className='container mx-auto overflow-hidden'>
-          <img src='https://template.annimexweb.com/diva/assets/images/parallax-banners/testimonials-bg.jpg' className="w-full mx-auto" alt='' />
+          <div className='relative'>
+            <img src='https://template.annimexweb.com/diva/assets/images/parallax-banners/testimonials-bg.jpg' className="w-full mx-auto" alt='' />
+            <div className='bg-black bg-opacity-40'>
+              <div className='absolute inset-24 items-center py-12'>
+                <div className='top-48 bottom-48 left-48 right-48'>
+                  <h2 className='text-blue-300 text-center text-4xl font-bold py-3'>Unity Mart</h2>
+                  <h2 className='text-pink-300 text-center text-4xl font-bold py-3'>A Multi-Vendor E-commerce Site</h2>
+                </div>
+              </div>
+            </div>
+
+          </div>
 
           <div className='container'>
             <div className='grid md:grid-cols-2 sm:grid-cols-1 gap-0 items-center justify-center'>
@@ -27,9 +38,9 @@ const About = () => {
               </div>
               <div className='w-50 px-5 text-center'>
                 <h2 className='text-2xl font-medium text-gray-800 dark:text-white uppercase mb-6'>What is Unity Mart</h2>
-                <p className='dark:text-white'>Unity Mart comes with easy-to-use interface and outstanding support. You can implement your own design. You can easily change the store's appearance as per your requirements using our ready sections and options available.You can easily change the store's appearance as per your requirements using our ready sections and options available.
+                <p className='dark:text-white'>Unity Mart comes with easy-to-use interface and outstanding support. You can implement your own design.You can easily change the store's appearance as per your requirements using our ready sections and options available.
                   Our support teams are ready to help you on any stage of your store setup</p>
-                <button className="mt-2 text-white bg-purple-600 justify-center px-3 py-1 rounded-md hover:bg-purple-800 transition"><HomePopUp /></button>
+                <button className="mt-2 text-white bg-purple-600 justify-center px-3 py-2 rounded-md hover:bg-purple-800 transition"><HomePopUp /></button>
               </div>
             </div>
           </div>
@@ -45,10 +56,11 @@ const About = () => {
               </div>
             </div>
           </div>
+          <div>
+            <TimeLine />
+          </div>
         </div>
       </div>
-      <TimeLine />
-      <Faq />
     </>
   );
 };

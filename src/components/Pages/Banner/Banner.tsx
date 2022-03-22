@@ -8,6 +8,7 @@ import "swiper/css/navigation";
 import "swiper/css/pagination";
 import "swiper/css/thumbs";
 import { NavLink } from "react-router-dom";
+import BannerLottie1 from "../../Lottie/BannerLottie1";
 
 
 SwiperCore.use([Autoplay])
@@ -56,10 +57,10 @@ export default function Banners() {
             style={{ height: "30rem" }}>
             <div className="grid md:grid-cols-2 xs:grid-cols-1">
               <div className="flex flex-col items-center md:items-start justify-center md:pl-15 lg:pl-32 p-10 text-center md:text-left">
-                <h1 className="text-6xl text-black font-bold dark:text-white">
+                <h1 className="text-6xl text-black font-bold dark:text-white sm:text-sm">
                   Earn money
                 </h1>
-                <p className="text-2xl py-5 text-black dark:text-white">
+                <p className="text-2xl py-5 text-black dark:text-white sm:text-sm">
                   Register as a affiliate user and earn unlimited from us.
                 </p>
                 <NavLink
@@ -71,7 +72,7 @@ export default function Banners() {
                 </NavLink>
               </div>
               <div className="md:-mt-0 -mt-20 items-end justify-end flex">
-                <img width={700} src='https://i.ibb.co/D4sPxZR/20943954.jpg' alt="Image1" className="md:block w-50" />
+                <BannerLottie1 />
               </div>
             </div>
 
@@ -81,10 +82,10 @@ export default function Banners() {
             style={{ height: "30rem" }}>
             <div className="grid md:grid-cols-2 xs:grid-cols-1">
               <div className="flex flex-col items-center md:items-start justify-center md:pl-15 lg:pl-32 p-10 text-center md:text-left">
-                <h1 className="text-6xl text-black font-bold dark:text-white">
+                <h1 className="text-6xl text-black font-bold dark:text-white sm:text-sm">
                   Flash Sale
                 </h1>
-                <p className="text-2xl py-5 text-black dark:text-white">
+                <p className="text-2xl py-5 text-black dark:text-white sm:text-sm">
                   Special offers are on going. So buy now before offer ends
                 </p>
                 <NavLink
@@ -106,10 +107,10 @@ export default function Banners() {
             style={{ height: "30rem" }}>
             <div className="grid md:grid-cols-2 xs:grid-cols-1">
               <div className="flex flex-col items-center md:items-start justify-center md:pl-15 lg:pl-32 p-10 text-center md:text-left">
-                <h1 className="text-6xl text-black font-bold dark:text-white">
+                <h1 className="text-6xl text-black font-bold dark:text-white sm:text-sm">
                   Track Your Order
                 </h1>
-                <p className="text-2xl py-5 text-black dark:text-white">
+                <p className="text-2xl py-5 text-black dark:text-white sm:text-sm">
                   Now you can track your orders <br />also you can see the estimate delivery time
                 </p>
                 <NavLink
