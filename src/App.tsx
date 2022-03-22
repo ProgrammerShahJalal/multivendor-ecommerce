@@ -12,7 +12,6 @@ import UserProfile from './components/UserDashboard/UserDashboard/UserDashboard'
 import OrderTracking from './components/OrderTracking/OrderTracking';
 import Success from "./components/Success";
 import VendorShopPage from "./components/VenderShopPage/VenderShopPage";
-import VendorSidebar from "./components/VendorSidebar/VendorSidebar";
 import SpecialDeal from "./components/SpecialDeal/SpecialDeal";
 import Home from "./components/Home/Home";
 import DetailBlogPage from "./components/Blogs/DetailBlogPage";
@@ -114,7 +113,6 @@ function App() {
             <Route path='/shop' element={<Shop />} />
             <Route path='/cart' element={<Cart />} />
             <Route path='/vendorShop/:storeSlug' element={<VendorShopPage />} />
-            <Route path='/vendorSidebar' element={<VendorSidebar />} />
             <Route path='/vendorLogin' element={<PrivateRoute><VendorInformations /></PrivateRoute>} />
             <Route path='/success/:id' element={<PrivateRoute><Success /></PrivateRoute>} />
             <Route path='/blogs/details/:id' element={<PrivateRoute><DetailBlogPage /></PrivateRoute>} />

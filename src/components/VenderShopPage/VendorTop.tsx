@@ -29,7 +29,7 @@ const VendorTop = () => {
 
                 </div>
 
-                <div className='bg-slate-400 h-36 text-left relative'>
+                <div className='bg-blue-900 h-36 text-left relative'>
                     <div className='absolute right-4 top-0' style={{ marginTop: '-50px' }}>
                         <button className='text-white text-lg uppercase bg-indigo-500 px-5 py-1 hover:bg-black'><Inquery /></button>
 
