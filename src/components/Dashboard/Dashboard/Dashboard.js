@@ -28,12 +28,12 @@ function Dashboard() {
                 <ul className="nav-links" >
                     {userDetails.role === "admin" || userDetails.role === "vendor" ? <>
                         <li>
-                            <Link to={`/dashboard/products`}>
+                            <Link to={`/dashboard/dashboardGlance`}>
                                 <i className='bx bx-grid-alt'></i>
                                 <span className="link_name">Dashboard</span>
                             </Link>
                             <ul className="sub-menu blank">
-                                <li><Link className="link_name" to={`/dashboard/products`}>Products</Link></li>
+                                <li><Link className="link_name" to={`/dashboard/dashboardGlance`}>Dashboard</Link></li>
                             </ul>
                         </li>
                         <li>
@@ -55,7 +55,7 @@ function Dashboard() {
                             <i className='bx bxs-chevron-down arrow'></i>
                         </div>
                         <ul className="sub-menu">
-                            <li><Link className="link_name" to={`/dashboard/addBlog`}>Blogs</Link></li>
+                            <li><Link className="link_name" to={`/dashboard/blogs-dashboard`}>Blogs</Link></li>
                             <li><Link to={`/dashboard/add-blog`}>Add Blog</Link></li>
                             <li><Link to={`/dashboard/blogs`}>Blogs</Link></li>
                         </ul>
@@ -120,7 +120,7 @@ function Dashboard() {
                             <span className="link_name">Users</span>
                         </Link>
                         <ul className="sub-menu blank">
-                            <li><Link className="link_name" to={`/dashboard/vendors`}>Users</Link></li>
+                            <li><Link className="link_name" to={`/dashboard/users`}>Users</Link></li>
                         </ul>
                     </li> : ''}
                     <li onClick={() => logout()}>

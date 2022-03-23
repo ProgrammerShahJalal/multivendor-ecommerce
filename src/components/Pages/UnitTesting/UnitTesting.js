@@ -9,7 +9,7 @@ const UnitTesting = () => {
                     <span className="text-5xl pr-3" >Unit</span>
                     <span className=" text-indigo-600 text-5xl">Testing</span>
                 </h2>
-                <img className='w-80 my-6' src="https://i.ibb.co/KVmKdgK/test.png" alt="" />
+                <lottie-player src="https://assets8.lottiefiles.com/packages/lf20_aj6xq4lp.json" background="transparent" speed="1" style={{ width: '600px', height: '600px' }} loop autoplay></lottie-player>
             </div>
             <Counter />
         </>

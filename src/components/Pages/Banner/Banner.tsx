@@ -8,6 +8,8 @@ import "swiper/css/navigation";
 import "swiper/css/pagination";
 import "swiper/css/thumbs";
 import { NavLink } from "react-router-dom";
+import BannerLottie1 from "../../Lottie/BannerLottie1";
+import BannerLottie2 from "../../Lottie/BannerLottie2";
 
 
 SwiperCore.use([Autoplay])
@@ -20,47 +22,20 @@ export default function Banners() {
           loop={true}
           slidesPerView={"auto"}
           autoplay={{
-            delay: 5000,
+            delay: 6000,
             disableOnInteraction: false
           }}
           modules={[Autoplay]}
-
           className="mySwiper">
-          {/* <SwiperSlide style={{height:'30rem'}}
-            className="md:flex items-center justify-center">
-                <img src='https://i.ibb.co/c1FZSg3/mac-Book-Banner.png' alt="Image2" />
-          </SwiperSlide>
-          <SwiperSlide style={{height:'30rem'}}
-            className="md:flex items-center justify-center">
-                <img src='https://i.ibb.co/QdDNtBF/nike-Banner.png' alt="Image3" />
-          </SwiperSlide>
-          <SwiperSlide style={{height:'30rem'}}
-            className="md:flex items-center justify-center">
-                <img src='https://i.ibb.co/f135FKC/ps5-Banner.png' alt="Image4" />
-          </SwiperSlide>
-          <SwiperSlide style={{height:'30rem'}}
-            className="md:flex items-center justify-center">
-                <img src='https://i.ibb.co/C8YpBMD/rolex-Banner.png' alt="Image5" />
-          </SwiperSlide> */}
           <SwiperSlide
             className="md:flex items-center justify-center"
             style={{ height: "30rem" }}>
-            <div className="grid md:grid-cols-1 xs:grid-cols-1">
-              <div className="md:-mt-0 -mt-20 items-end justify-end flex">
-                <img src='https://i.ibb.co/y5PdPdP/Make-your-business-2.png' alt="Image1" className="md:block" />
-              </div>
-            </div>
-
-          </SwiperSlide>
-          <SwiperSlide
-            className="md:flex items-center justify-center"
-            style={{ height: "30rem" }}>
-            <div className="grid md:grid-cols-2 xs:grid-cols-1">
+            <div className="grid md:grid-cols-2 xs:grid-cols-2">
               <div className="flex flex-col items-center md:items-start justify-center md:pl-15 lg:pl-32 p-10 text-center md:text-left">
-                <h1 className="text-6xl text-black font-bold dark:text-white">
+                <h1 className="md:text-3xl lg:text-6xl text-black font-bold dark:text-white text-sm">
                   Earn money
                 </h1>
-                <p className="text-2xl py-5 text-black dark:text-white">
+                <p className="lg:w-80 md:w-64 sm:w-64 md:text-2xl py-5 text-black dark:text-white sm:text-sm">
                   Register as a affiliate user and earn unlimited from us.
                 </p>
                 <NavLink
@@ -72,7 +47,7 @@ export default function Banners() {
                 </NavLink>
               </div>
               <div className="md:-mt-0 -mt-20 items-end justify-end flex">
-                <img width={700} src='https://i.ibb.co/GPsN5rt/20943954-removebg-preview.png' alt="Image1" className="md:block w-50" />
+                <BannerLottie1 />
               </div>
             </div>
 
@@ -80,12 +55,12 @@ export default function Banners() {
           <SwiperSlide
             className="md:flex items-center justify-center"
             style={{ height: "30rem" }}>
-            <div className="grid md:grid-cols-2 xs:grid-cols-1">
+            <div className="grid md:grid-cols-2 xs:grid-cols-2">
               <div className="flex flex-col items-center md:items-start justify-center md:pl-15 lg:pl-32 p-10 text-center md:text-left">
-                <h1 className="text-6xl text-black font-bold dark:text-white">
+                <h1 className="md:text-3xl lg:text-6xl text-black font-bold dark:text-white sm:text-sm">
                   Flash Sale
                 </h1>
-                <p className="text-2xl py-5 text-black dark:text-white">
+                <p className="lg:w-80 md:w-64 sm:w-64 md:text-2xl py-5 text-black dark:text-white sm:text-sm">
                   Special offers are on going. So buy now before offer ends
                 </p>
                 <NavLink
@@ -96,8 +71,8 @@ export default function Banners() {
                   Shop
                 </NavLink>
               </div>
-              <div className="md:-mt-0 -mt-20 items-end justify-end flex">
-                <img src='https://i.ibb.co/JvYkfgS/Untitled-2.png' width={600} alt="Image1" className="md:block" />
+              <div className="md:-mt-0 -mt-20 items-center justify-center flex py-4">
+                <img src='https://i.ibb.co/JvYkfgS/Untitled-2.png' alt="Image1" className="md:w-80 lg:w-11/12 sm:60 my-5" />
               </div>
             </div>
 
@@ -105,13 +80,13 @@ export default function Banners() {
           <SwiperSlide
             className="md:flex items-center justify-center"
             style={{ height: "30rem" }}>
-            <div className="grid md:grid-cols-2 xs:grid-cols-1">
+            <div className="grid md:grid-cols-2 xs:grid-cols-2">
               <div className="flex flex-col items-center md:items-start justify-center md:pl-15 lg:pl-32 p-10 text-center md:text-left">
-                <h1 className="text-6xl text-black font-bold dark:text-white">
+                <h1 className="md:text-3xl lg:text-6xl text-black font-bold dark:text-white sm:text-sm">
                   Track Your Order
                 </h1>
-                <p className="text-2xl py-5 text-black dark:text-white">
-                  Now you can track your orders <br />also you can see the estimate delivery time
+                <p className="lg:w-80 md:w-64 sm:w-64 md:text-2xl py-5 text-black dark:text-white sm:text-sm">
+                  Now you can track your orders also you can see the estimate delivery time
                 </p>
                 <NavLink
                   style={{ borderRadius: '35px' }}
@@ -121,8 +96,8 @@ export default function Banners() {
                   Track
                 </NavLink>
               </div>
-              <div className="md:-mt-0 -mt-20 items-end justify-end flex">
-                <img src='https://i.ibb.co/WcfqgZz/Online-Shoping-29-Converted.png' width={500} alt="Image1" className="md:block" />
+              <div className="md:-mt-0 -mt-20 items-end justify-end flex py-4">
+                <BannerLottie2 />
               </div>
             </div>
 

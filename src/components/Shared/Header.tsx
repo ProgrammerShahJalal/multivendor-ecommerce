@@ -231,7 +231,7 @@ const Header: FC<HeaderProps> = ({ fixed, transparent }) => {
                                                 {page.name}
                                             </Link>
                                         ))}
-                                        {isLoading ? <h2>...</h2> : userDetails?.role === "admin" || userDetails?.role === "vendor" || userDetails?.role === "affiliate" ? <Link className="flex items-center text-sm font-medium text-gray-700 hover:text-gray-800 dark:text-white" to="/dashboard">Dashboard</Link> : ""}
+                                        {isLoading ? <h2>...</h2> : userDetails?.role === "admin" || userDetails?.role === "vendor" || userDetails?.role === "affiliate" ? <Link className="flex items-center text-sm font-medium text-gray-700 hover:text-gray-800 dark:text-white" to="/dashboard/dashboardGlance">Dashboard</Link> : ""}
                                     </div>
                                 </Popover.Group>
 

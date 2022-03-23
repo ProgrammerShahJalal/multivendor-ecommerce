@@ -11,7 +11,6 @@ import UserProfile from './components/UserDashboard/UserDashboard/UserDashboard'
 import OrderTracking from './components/OrderTracking/OrderTracking';
 import Success from "./components/Success";
 import VendorShopPage from "./components/VenderShopPage/VenderShopPage";
-import VendorSidebar from "./components/VendorSidebar/VendorSidebar";
 import SpecialDeal from "./components/SpecialDeal/SpecialDeal";
 import Home from "./components/Home/Home";
 import DetailBlogPage from "./components/Blogs/DetailBlogPage";
@@ -50,6 +49,7 @@ import BlogsFirstLook from "./components/Blogs/BlogsFirstLook";
 import AffiliateFirstLook from "./components/Blogs/AffiliateFirstLook";
 import LoginForm from "./components/Pages/LoginPage/Login";
 import UserMainProfile from './components/Pages/UserMainProfile/UserMainProfile';
+import DashboardUI from "./components/Dashboard/Dashboard/DashboardUI.js";
 
 const Dashboard = lazy(() => import("./components/Dashboard/Dashboard/Dashboard"));
 const AllOrders = lazy(() => import("./components/Dashboard/Order/allOrder"));
@@ -113,7 +113,6 @@ function App() {
             <Route path='/shop' element={<Shop />} />
             <Route path='/cart' element={<Cart />} />
             <Route path='/vendorShop/:storeSlug' element={<VendorShopPage />} />
-            <Route path='/vendorSidebar' element={<VendorSidebar />} />
             <Route path='/vendorLogin' element={<PrivateRoute><VendorInformations /></PrivateRoute>} />
             <Route path='/success/:id' element={<PrivateRoute><Success /></PrivateRoute>} />
             <Route path='/blogs/details/:id' element={<PrivateRoute><DetailBlogPage /></PrivateRoute>} />
@@ -129,6 +128,7 @@ function App() {
             {/* DASHBOARD ROUTES */}
             <Route path="/dashboard" element={<Suspense fallback={<div>Loading...</div>}><AdminRoute ><Dashboard /></AdminRoute></Suspense>} >
               <Route path="media" element={<Suspense fallback={<div>Loading...</div>}><Media /></Suspense>}></Route>
+              <Route path="dashboardGlance" element={<Suspense fallback={<div>Loading...</div>}><DashboardUI /></Suspense>}></Route>
               <Route path="affiliate" element={<Suspense fallback={<div>Loading...</div>}><AffiliateFirstLook /></Suspense>}></Route>
               <Route path="affiliate-dashboard" element={<Suspense fallback={<div>Loading...</div>}><Affiliate /></Suspense>}></Route>
               <Route path="affiliate-links" element={<Suspense fallback={<div>Loading...</div>}><AffiliateLinks /></Suspense>}></Route>

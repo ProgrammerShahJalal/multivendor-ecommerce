@@ -2,7 +2,7 @@ import React, { useEffect, useState } from 'react';
 import { useParams } from 'react-router-dom';
 
 import UseAuth from '../../hooks/UseAuth';
-import  { FreeMode, Navigation, Thumbs } from "swiper";
+import { FreeMode, Navigation, Thumbs } from "swiper";
 import "swiper/css";
 import "swiper/css/free-mode";
 import "swiper/css/navigation";
@@ -51,7 +51,7 @@ const DealDetails = () => {
     }
 
     return (
-        <div className="bg-gray-50 dark:bg-gray-800 py-5">
+        <div className="bg-gray-50 dark:bg-gray-800 py-5 dark:text-white">
             <h2 className='text-xl font-bold text-center'>{title}</h2>
             <div className="grid lg:grid-cols-2 md:grid-cols-2 sm:grid-cols-1 xm:grid-cols-1 gap-3 sm:gap-0 justify-center items-center">
                 <div>

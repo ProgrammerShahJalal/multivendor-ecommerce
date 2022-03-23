@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from 'react';
-import './AddProduct.css'
+import './AddProduct.css';
 import Select from 'react-select';
 import Modal from '../Media/Modal';
 import { Editor } from "react-draft-wysiwyg";
@@ -310,7 +310,7 @@ const AddProduct: React.FunctionComponent = () => {
                                         <span>+ Add Images</span>
                                     </div>
                                 </label>
-                                <Modal eventBubbling={eventBubbling} selectedItems={selectedImages} showModal={showModal} setShowModal={setShowModal} />
+                                <Modal className='overflow-y-scroll w-full h-full' eventBubbling={eventBubbling} selectedItems={selectedImages} showModal={showModal} setShowModal={setShowModal} />
 
                                 <br />
 
