@@ -2,6 +2,7 @@ import React, { useState, useEffect } from 'react'
 import Clock from './Clock/Clock';
 
 const CowndownTimer = ({ offerTill }) => {
+    const date = offerTill.split("T")[0].split("-").toString()
     const [timerDays, setTimerDays] = useState();
     const [timerHours, setTimerHours] = useState();
     const [timerMinutes, setTimerMinutes] = useState();
@@ -11,7 +12,7 @@ const CowndownTimer = ({ offerTill }) => {
     let interval;
 
     const startTimer = () => {
-        const countDownDate = new Date(offerTill).getTime();
+        const countDownDate = new Date(date).getTime();
 
         interval = setInterval(() => {
             const now = new Date().getTime();
@@ -41,7 +42,7 @@ const CowndownTimer = ({ offerTill }) => {
 
     useEffect(() => {
         startTimer();
-    });
+    }, [startTimer]);
 
     return (
         <div className='text-sm'>

@@ -62,7 +62,7 @@ const Women = () => {
     const [selectedProduct, setSelectedProduct] = useState<any>()
     useEffect(() => {
         if (products) {
-            fetch('http://localhost:5000/shop/products/category?category=Womens')
+            fetch('https://guarded-ocean-73313.herokuapp.com/shop/products/category?category=Womens')
                 .then(res => res.json())
                 .then(data => setProducts(data))
         }

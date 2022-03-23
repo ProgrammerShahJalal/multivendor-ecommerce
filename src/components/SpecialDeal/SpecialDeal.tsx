@@ -31,25 +31,36 @@ interface SpecialDealProps {
 
 const SpecialDeal: FC<SpecialDealProps> = ({ translate }) => {
 
-    const [deals, setDeals] = useState<DealState["deals"]>
-        ([]);
-    const [specials, setSpecials] = useState<SpecialState[]>([]);
+    const [deals, setDeals] = useState<any>([]);
+    const [specials, setSpecials] = useState<any[]>([]);
 
 
     useEffect(() => {
-        fetch('https://morning-inlet-49130.herokuapp.com/features')
-            .then(res => res.json())
-            .then(data => setDeals(data))
+        if (deals.length === 0) {
+            fetch('https://guarded-ocean-73313.herokuapp.com/products')
+                .then(res => res.json())
+                .then(data => setDeals(data?.slice(0, 5)))
+        }
 
-    }, [])
+    }, [deals])
 
     /* ----------special product fetch----------- */
     useEffect(() => {
-        fetch('https://morning-inlet-49130.herokuapp.com/specials')
-            .then(res => res.json())
-            .then(data => setSpecials(data))
+        if (specials.length === 0) {
+            fetch('https://guarded-ocean-73313.herokuapp.com/products')
+                .then(res => res.json())
+                .then(data => {
+                    const filter = data.filter(p => p.offerDate)
+                    const filter2 = filter.sort((a, b) => (a > b ? -1 : 1))
+                    setSpecials(filter2?.slice(0, 6))
+                })
+        }
 
-    }, [])
+    }, [specials.length])
+    console.log(specials);
+
+
+
 
     return (
         <div className="bg-gray-100 dark:bg-gray-800 pt-4">
@@ -87,11 +98,11 @@ const SpecialDeal: FC<SpecialDealProps> = ({ translate }) => {
                         <div className="grid grid-cols-1 gap-1">
                             {
                                 deals.map((deal) => (
-                                    <div className="w-64 flex justify-center items-center gap-2 cursor-pointer">
-                                        <img className="w-20 bg-white" src={deal.img} alt="" />
+                                    <Link to={`/product/${deal._id}`}> <div className="w-64 flex justify-center items-center gap-2 cursor-pointer">
+                                        <img className="w-20 bg-white" src={deal.images[0]?.src} alt="" />
                                         <h3 className="text-black dark:text-white">{deal.title}</h3>
-                                        <p className="text-black dark:text-white">{deal.price}</p>
-                                    </div>
+                                        <p className="text-black dark:text-white">${deal.sale_price ? deal.sale_price : deal.reg_price}</p>
+                                    </div></Link>
                                 ))
                             }
                         </div>
@@ -102,20 +113,20 @@ const SpecialDeal: FC<SpecialDealProps> = ({ translate }) => {
                         specials.map((special) => (
                             <div className="text-center group bg-white dark:bg-slate-600 p-3">
                                 <div className="hover:w-auto hover:h-auto">
-                                    <img style={{ width: '250px', height: '300px' }} className="mx-auto group-hover:hidden block img" src={special.hoverImg} alt="" />
-                                    <img style={{ width: '250px', height: '300px' }} className="mx-auto group-hover:block hidden hoverImg" src={special.img} alt="" />
+                                    <img style={{ width: '250px', height: '300px' }} className="mx-auto group-hover:hidden block img" src={special.images[0]?.src} alt="" />
+                                    <img style={{ width: '250px', height: '300px' }} className="mx-auto group-hover:block hidden hoverImg" src={special?.images[1]?.src} alt="" />
                                 </div>
 
                                 <h2 className="font-bold text-black dark:text-white">{special.title}</h2>
-                                <p className="text-slate-400">{special.processor}</p>
+                                <p className="text-slate-400">{special.categories[0].label}</p>
                                 <div className="flex justify-center items-center gap-3">
-                                    <p className="text-slate-400 line-through decoration-pink-500">${special.price}</p>
-                                    <p className="font-bold text-indigo-500">${special.salePrice}</p>
+                                    <p className="text-slate-400 line-through decoration-pink-500">${special.reg_price}</p>
+                                    <p className="font-bold text-indigo-500">${special.sale_price}</p>
                                 </div>
                                 <div className="bg-violet-200 rounded-lg py-1">
-                                    <CowndownTimer offerTill={special.offerTill} />
+                                    <CowndownTimer offerTill={special.offerDate} />
                                 </div>
-                                <Link to={`/specials/details/${special._id}`}>
+                                <Link to={`/product/${special._id}`}>
                                     <button className='rounded-md hover:text-white hover:bg-indigo-500 border border-indigo-500 bg-transparent text-indigo-500 transition px-4 py-2 mt-2'>Details <i className="fa-light fa-file-circle-info"></i></button>
                                 </Link>
                             </div>
@@ -124,7 +135,7 @@ const SpecialDeal: FC<SpecialDealProps> = ({ translate }) => {
                 </div>
 
             </div>
-        </div>
+        </div >
     )
 }
 export default SpecialDeal;

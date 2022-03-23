@@ -22,7 +22,7 @@ export default function VendorShopPage() {
 
     useEffect(() => {
         setIsLoading(true)
-        fetch(`http://localhost:5000/user/vendors/products/${storeSlug}`)
+        fetch(`https://guarded-ocean-73313.herokuapp.com/user/vendors/products/${storeSlug}`)
             .then(res => res.json())
             .then(data => {
                 setProducts(data)
@@ -46,7 +46,7 @@ export default function VendorShopPage() {
         }
         else if (findProduct.length === 0) {
             setNotFound('This Type Of product Is Not Available Now')
-            fetch(`http://localhost:5000/user/vendors/products/${storeSlug}`)
+            fetch(`https://guarded-ocean-73313.herokuapp.com/user/vendors/products/${storeSlug}`)
                 .then(res => res.json())
                 .then(data => setProducts(data))
         }

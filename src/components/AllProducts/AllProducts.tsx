@@ -18,9 +18,13 @@ const AllProducts: FC<AllProductsProps> = ({ translate }) => {
     useEffect(() => {
         fetch('https://guarded-ocean-73313.herokuapp.com/products')
             .then(res => res.json())
-            .then(data => setProducts(data?.slice(0, 8)))
+            .then(data => {
+                const filter2 = data.sort((a, b) => parseFloat(b.reg_price) - parseFloat(a.reg_price));
+                setProducts(filter2?.slice(0, 8))
+            })
 
     }, [])
+    console.log(products);
 
 
     const dispatch = useDispatch()

@@ -3,7 +3,6 @@ import { Link, Outlet } from 'react-router-dom';
 import UseAuth from '../../../hooks/UseAuth';
 import { DataChart } from '../../DataChart/HorizontalChart';
 import LineChart from '../../DataChart/LineChart';
-import UserMainProfile from '../../Pages/UserMainProfile/UserMainProfile';
 
 export default function UserProfile() {
 
@@ -21,30 +20,20 @@ export default function UserProfile() {
               </Link>
             </li>
             <li>
+              <Link to="/profile/profile" className="flex flex-row items-center h-12 transform hover:translate-x-2 transition-transform ease-in duration-200 text-gray-500 hover:text-gray-800 dark:text-white">
+                <span className="inline-flex items-center justify-center h-12 w-12 text-lg text-gray-400"><i className="bx bx-home"></i></span>
+                <span className="text-sm font-medium">Profile</span>
+              </Link>
+            </li>
+            <li>
               <Link to="/profile/orders" className="flex flex-row items-center h-12 transform hover:translate-x-2 transition-transform ease-in duration-200 text-gray-500 hover:text-gray-800 dark:text-white">
                 <span className="inline-flex items-center justify-center h-12 w-12 text-lg text-gray-400"><i className="bx bx-shopping-bag"></i></span>
                 <span className="text-sm font-medium">Orders</span>
               </Link>
             </li>
-            <li>
-              <Link to="/profile" className="flex flex-row items-center h-12 transform hover:translate-x-2 transition-transform ease-in duration-200 text-gray-500 hover:text-gray-800 dark:text-white">
-                <span className="inline-flex items-center justify-center h-12 w-12 text-lg text-gray-400"><i className="bx bx-chat"></i></span>
-                <span className="text-sm font-medium">Chat</span>
-              </Link>
-            </li>
-            <li>
-              <Link to="/profile" className="flex flex-row items-center h-12 transform hover:translate-x-2 transition-transform ease-in duration-200 text-gray-500 hover:text-gray-800 dark:text-white">
-                <span className="inline-flex items-center justify-center h-12 w-12 text-lg text-gray-400"><i className="bx bx-user"></i></span>
-                <span className="text-sm font-medium">Profile</span>
-              </Link>
-            </li>
-            <li>
-              <Link to="/profile" className="flex flex-row items-center h-12 transform hover:translate-x-2 transition-transform ease-in duration-200 text-gray-500 hover:text-gray-800 dark:text-white">
-                <span className="inline-flex items-center justify-center h-12 w-12 text-lg text-gray-400"><i className="bx bx-bell"></i></span>
-                <span className="text-sm font-medium">Notifications</span>
-                <span className="ml-auto mr-6 text-sm bg-red-100 rounded-full px-3 py-px text-red-500">5</span>
-              </Link>
-            </li>
+
+
+
             <li>
               <Link to="/login" className="flex flex-row items-center h-12 transform hover:translate-x-2 transition-transform ease-in duration-200 text-gray-500 hover:text-gray-800 dark:text-white">
                 <span className="inline-flex items-center justify-center h-12 w-12 text-lg text-gray-400"><i className="bx bx-log-out"></i></span>
@@ -72,7 +61,7 @@ export default function UserProfile() {
         </div> */}
         <Outlet />
         <div className='mx-auto'>
-          <UserMainProfile />
+
         </div>
       </div>
 

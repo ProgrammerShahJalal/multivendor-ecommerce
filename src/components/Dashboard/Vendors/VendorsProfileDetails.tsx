@@ -32,7 +32,7 @@ const VendorProfileDetails = () => {
     const updateProfile = (email) => {
         if (fieldsValue.length > 0) {
             setIsLoading(true)
-            fetch(`http://localhost:5000/user/vendors/update-profile/${email}`, {
+            fetch(`https://guarded-ocean-73313.herokuapp.com/user/vendors/update-profile/${email}`, {
                 method: 'PUT',
                 headers: {
                     'content-type': 'application/json'
@@ -58,7 +58,7 @@ const VendorProfileDetails = () => {
     }
     const updateStatus = (email, status) => {
         setIsLoading(true)
-        fetch(`http://localhost:5000/user/vendors/update-status/${email}`, {
+        fetch(`https://guarded-ocean-73313.herokuapp.com/user/vendors/update-status/${email}`, {
             method: 'PUT',
             headers: {
                 'content-type': 'application/json'
@@ -238,7 +238,7 @@ const VendorProfileDetails = () => {
                                             </ul> 
                                     </div> */}
                                     </div>
-                                    <div className="lg:flex space-x-4 mb-7">
+                                    {/* <div className="lg:flex space-x-4 mb-7">
                                         <div className="flex items-center justify-around p-6 bg-white dark:bg-slate-800 w-64 rounded-xl space-x-2 mt-10 shadow-lg">
                                             <div>
                                                 <span className="text-sm font-semibold text-gray-400">Total Orders</span>
@@ -283,7 +283,7 @@ const VendorProfileDetails = () => {
                                                 </svg>
                                             </div>
                                         </div>
-                                    </div>
+                                    </div> */}
 
                                 </div>
 
