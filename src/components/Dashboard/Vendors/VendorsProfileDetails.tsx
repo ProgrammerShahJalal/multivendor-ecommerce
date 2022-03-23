@@ -16,7 +16,7 @@ const VendorProfileDetails = () => {
 
     }, [slug]);
 
-    // GET ALL THE VALUES FROM FIELDS
+    // GET ALL THE VALUES FROM 
     const handleGetFieldValues = (e: any) => {
 
         const field = e.target.name
