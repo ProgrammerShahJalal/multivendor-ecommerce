@@ -24,7 +24,7 @@ export default function Modal({ eventBubbling, showModal, setShowModal, selected
             formData.append('images[]', files[i]);
         }
 
-        fetch('https://guarded-ocean-73313.herokuapp.com/media', {
+        fetch('http://localhost:5000/media', {
             method: 'post',
             body: formData
         })
@@ -42,7 +42,7 @@ export default function Modal({ eventBubbling, showModal, setShowModal, selected
 
     useEffect(() => {
         if (userDetails.role === "vendor") {
-            fetch(`https://guarded-ocean-73313.herokuapp.com/media/${userDetails.email}`)
+            fetch(`https://young-springs-82149.herokuapp.com/media/${userDetails.email}`)
                 .then(res => res.json())
                 .then(async data => {
                     // Show latest
@@ -53,7 +53,7 @@ export default function Modal({ eventBubbling, showModal, setShowModal, selected
                     setIsTrue(false)
                 })
         } else if (isTrue) {
-            fetch('https://guarded-ocean-73313.herokuapp.com/media')
+            fetch('https://young-springs-82149.herokuapp.com/media')
                 .then(res => res.json())
                 .then(data => {
                     // Show latest
@@ -65,7 +65,7 @@ export default function Modal({ eventBubbling, showModal, setShowModal, selected
 
                 })
         } else {
-            fetch('https://guarded-ocean-73313.herokuapp.com/media')
+            fetch('http://localhost:5000/media')
                 .then(res => res.json())
                 .then(data => {
                     // Show latest

@@ -37,7 +37,7 @@ const SpecialDeal: FC<SpecialDealProps> = ({ translate }) => {
 
     useEffect(() => {
         if (deals.length === 0) {
-            fetch('https://guarded-ocean-73313.herokuapp.com/products')
+            fetch('https://young-springs-82149.herokuapp.com/products')
                 .then(res => res.json())
                 .then(data => setDeals(data?.slice(0, 5)))
         }
@@ -47,7 +47,7 @@ const SpecialDeal: FC<SpecialDealProps> = ({ translate }) => {
     /* ----------special product fetch----------- */
     useEffect(() => {
         if (specials.length === 0) {
-            fetch('https://guarded-ocean-73313.herokuapp.com/products')
+            fetch('https://young-springs-82149.herokuapp.com/products')
                 .then(res => res.json())
                 .then(data => {
                     const filter = data.filter(p => p.offerDate)

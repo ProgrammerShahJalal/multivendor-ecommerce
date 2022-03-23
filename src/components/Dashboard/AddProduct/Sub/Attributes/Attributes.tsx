@@ -45,7 +45,7 @@ export default function Attributes() {
         }
 
         const update = { categoryValue: attributeValue, id }
-        fetch('https://guarded-ocean-73313.herokuapp.com/dashboard/categories', {
+        fetch('https://young-springs-82149.herokuapp.com/dashboard/categories', {
             method: 'PUT',
             headers: { 'content-type': 'application/json' },
             body: JSON.stringify(update)
@@ -60,7 +60,7 @@ export default function Attributes() {
     //  LOAD ATTRIBUTES
     useEffect(() => {
         if (ifShouldUpdate) {
-            fetch('https://guarded-ocean-73313.herokuapp.com/dashboard/attributes')
+            fetch('https://young-springs-82149.herokuapp.com/dashboard/attributes')
                 .then(res => res.json())
                 .then(data => setAttributes(data))
             setIfShouldUpdate(false)
@@ -69,7 +69,7 @@ export default function Attributes() {
     }, [ifShouldUpdate])
 
     useEffect(() => {
-        fetch('https://guarded-ocean-73313.herokuapp.com/dashboard/attributes')
+        fetch('https://young-springs-82149.herokuapp.com/dashboard/attributes')
             .then(res => res.json())
             .then(data => setAttributes(data))
     }, [])
@@ -77,7 +77,7 @@ export default function Attributes() {
 
         if (window.confirm('Are you sure you want to delete?')) {
             setIsLoading(true)
-            fetch(`https://guarded-ocean-73313.herokuapp.com/dashboard/attributes/${id}`, {
+            fetch(`https://young-springs-82149.herokuapp.com/dashboard/attributes/${id}`, {
                 method: 'DELETE'
             }).then(res => res.json())
                 .then(data => {

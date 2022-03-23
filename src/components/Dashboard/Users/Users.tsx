@@ -13,7 +13,7 @@ const Users = () => {
     const [notFound, setNotFound] = useState('')
     useEffect(() => {
         if (users.length === 0) {
-            fetch('https://guarded-ocean-73313.herokuapp.com/users')
+            fetch('https://young-springs-82149.herokuapp.com/users')
                 .then(res => res.json())
                 .then(data => setUsers(data))
         }
@@ -29,12 +29,12 @@ const Users = () => {
         }
         else if (findUser.length === 0) {
             setNotFound('Not found')
-            fetch('https://guarded-ocean-73313.herokuapp.com/users')
+            fetch('https://young-springs-82149.herokuapp.com/users')
                 .then(res => res.json())
                 .then(data => setUsers(data))
         }
         if (searchText === '') {
-            fetch('https://guarded-ocean-73313.herokuapp.com/users')
+            fetch('https://young-springs-82149.herokuapp.com/users')
                 .then(res => res.json())
                 .then(data => setUsers(data))
         }
@@ -43,7 +43,7 @@ const Users = () => {
     const deleteUser = (id) => {
         if (window.confirm('Are you sure you want to delete?')) {
             setIsLoading(true)
-            fetch(`https://guarded-ocean-73313.herokuapp.com/dashboard/user-delete/${id}`, {
+            fetch(`https://young-springs-82149.herokuapp.com/dashboard/user-delete/${id}`, {
                 method: 'DELETE'
             }).then(res => res.json())
                 .then(data => {

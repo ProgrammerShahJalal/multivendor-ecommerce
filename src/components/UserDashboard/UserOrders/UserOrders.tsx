@@ -7,7 +7,7 @@ const UserOrders = () => {
     const [myOrders, setMyOrders] = useState<any[]>([]);
     const { userDetails } = UseAuth()
     useEffect(() => {
-        axios.get(`https://guarded-ocean-73313.herokuapp.com/dashboard/orders?userEmail=${userDetails.email}`)
+        axios.get(`https://young-springs-82149.herokuapp.com/dashboard/orders?userEmail=${userDetails.email}`)
             .then(res => {
                 setMyOrders(res.data)
                 console.log(res.data)

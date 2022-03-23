@@ -35,7 +35,7 @@ const Men = () => {
     useEffect(() => {
         if (products) {
 
-            fetch('https://guarded-ocean-73313.herokuapp.com/shop/products/category?category=Mens')
+            fetch('https://young-springs-82149.herokuapp.com/shop/products/category?category=Mens')
                 .then(res => res.json())
                 .then(data => setProducts(data))
         }

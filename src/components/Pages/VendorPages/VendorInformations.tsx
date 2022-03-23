@@ -434,7 +434,7 @@ const VendorInformations = () => {
     });
     const { user } = UseAuth()
     useEffect(() => {
-        fetch(`https://guarded-ocean-73313.herokuapp.com/users/${user.email}`)
+        fetch(`https://young-springs-82149.herokuapp.com/users/${user.email}`)
             .then(res => res.json())
             .then(data => {
                 localStorage.setItem("userDetails", JSON.stringify(data))

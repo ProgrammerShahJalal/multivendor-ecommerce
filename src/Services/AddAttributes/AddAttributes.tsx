@@ -12,7 +12,7 @@ export const addAttributeValue = (attribute: string, setIfShouldUpdate: any, att
 
     const newAttribute = { label: attribute, vendor: 'admin' }
 
-    fetch('https://guarded-ocean-73313.herokuapp.com/dashboard/add-attributes', {
+    fetch('https://young-springs-82149.herokuapp.com/dashboard/add-attributes', {
         headers: { "Content-Type": "application/json" },
         method: 'POST',
         body: JSON.stringify(newAttribute)

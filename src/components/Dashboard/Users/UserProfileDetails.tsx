@@ -6,7 +6,7 @@ const UserProfileDetails = () => {
     const { slug } = useParams();
     const [vendors, setVendors] = useState<any>([]);
     useEffect(() => {
-        fetch(`https://guarded-ocean-73313.herokuapp.com/user/vendor/${slug}`)
+        fetch(`https://young-springs-82149.herokuapp.com/user/vendor/${slug}`)
             .then(res => res.json())
             .then(data => setVendors(data))
 

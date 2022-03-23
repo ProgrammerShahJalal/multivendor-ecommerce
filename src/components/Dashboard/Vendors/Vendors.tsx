@@ -7,7 +7,7 @@ const Vendors = () => {
     const [isLoading, setIsLoading] = useState<boolean>(false);
 
     useEffect(() => {
-        fetch('https://guarded-ocean-73313.herokuapp.com/user/vendors')
+        fetch('https://young-springs-82149.herokuapp.com/user/vendors')
             .then(res => res.json())
             .then(data => setVendors(data))
 
@@ -15,7 +15,7 @@ const Vendors = () => {
     const deleteVendor = (id) => {
         if (window.confirm('Are you sure you want to delete?')) {
             setIsLoading(true)
-            fetch(`https://guarded-ocean-73313.herokuapp.com/dashboard/vendor-delete/${id}`, {
+            fetch(`https://young-springs-82149.herokuapp.com/dashboard/vendor-delete/${id}`, {
                 method: 'DELETE'
             }).then(res => res.json())
                 .then(data => {

@@ -76,7 +76,7 @@ const Header: FC<HeaderProps> = ({ fixed, transparent }) => {
     // useEffect(() => {
     //     if (userDetails?.role === "vendor") {
     //         setIsLoading(true)
-    //         fetch(`https://guarded-ocean-73313.herokuapp.com/user/vendors/fathe@gmail.com`)
+    //         fetch(`https://young-springs-82149.herokuapp.com/user/vendors/fathe@gmail.com`)
     //             .then(res => res.json())
     //             .then(data => setIsVendorProfileCompleted(data))
     //             .finally(() => setIsLoading(false))
@@ -86,7 +86,7 @@ const Header: FC<HeaderProps> = ({ fixed, transparent }) => {
     useEffect(() => {
         if (user.email) {
             setIsLoading(true)
-            fetch(`https://guarded-ocean-73313.herokuapp.com/users/${user.email}`)
+            fetch(`https://young-springs-82149.herokuapp.com/users/${user.email}`)
                 .then(res => res.json())
                 .then(data => {
                     localStorage.setItem("userDetails", JSON.stringify(data))

@@ -9,7 +9,7 @@ const StoreListCards = () => {
 
     useEffect(() => {
 
-        fetch('https://guarded-ocean-73313.herokuapp.com/user/vendors')
+        fetch('https://young-springs-82149.herokuapp.com/user/vendors')
             .then(res => res.json())
             .then(data => {
                 console.log(data)
