@@ -23,7 +23,6 @@ const navigation = {
         { name: 'About', to: '/about' },
         { name: 'Contact', to: '/contact' },
         { name: 'Vendors', to: '/vendors' },
-        // { name: 'Dashboard', to: '/dashboard' },
     ],
 }
 
@@ -152,6 +151,7 @@ const Header: FC<HeaderProps> = ({ fixed, transparent }) => {
                                 </div>
 
                                 <div className="border-t border-gray-200 py-6 px-4 space-y-6">
+                                    {isLoading ? <h2>...</h2> : userDetails?.role === "admin" || userDetails?.role === "vendor" || userDetails?.role === "affiliate" ? <Link className="flex items-center text-sm font-medium text-gray-700 hover:text-gray-800 dark:text-white" to="/dashboard/dashboardGlance">Dashboard</Link> : ""}
                                     {
                                         user.email ? <div className="flow-root">
                                             <Link to="/"> <p onClick={() => logout()} className="-m-2 p-2 block font-medium text-gray-900 dark:text-white">
