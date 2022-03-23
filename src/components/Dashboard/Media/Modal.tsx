@@ -24,7 +24,7 @@ export default function Modal({ eventBubbling, showModal, setShowModal, selected
             formData.append('images[]', files[i]);
         }
 
-        fetch('http://localhost:5000/media', {
+        fetch('https://young-springs-82149.herokuapp.com/media', {
             method: 'post',
             body: formData
         })
@@ -65,7 +65,7 @@ export default function Modal({ eventBubbling, showModal, setShowModal, selected
 
                 })
         } else {
-            fetch('http://localhost:5000/media')
+            fetch('https://young-springs-82149.herokuapp.com/media')
                 .then(res => res.json())
                 .then(data => {
                     // Show latest

@@ -10,7 +10,7 @@ const VendorProfileDetails = () => {
     const [isLoading, setIsLoading] = useState<boolean>(true)
     const navigate = useNavigate()
     useEffect(() => {
-        fetch(`http://localhost:5000/user/vendor/${slug}`)
+        fetch(`https://young-springs-82149.herokuapp.com/user/vendor/${slug}`)
             .then(res => res.json())
             .then(data => setVendors(data))
 
@@ -33,7 +33,7 @@ const VendorProfileDetails = () => {
 
         if (fieldsValue.length !== 0) {
             setIsLoading(true)
-            fetch(`http://localhost:5000/user/vendors/update-profile/${email}`, {
+            fetch(`https://young-springs-82149.herokuapp.com/user/vendors/update-profile/${email}`, {
                 method: 'PUT',
                 headers: {
                     'content-type': 'application/json'
