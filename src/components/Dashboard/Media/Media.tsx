@@ -97,9 +97,9 @@ export default function Media() {
     }
 
     return (
-        <div className=''>
-            <div>
-                <h1 className='text-2xl	font-bold mb-2'>Media Gallery</h1>
+        <div>
+            <div className='px-5'>
+                <h1 className='lg:text-2xl md:text-lg sm:text-sm font-bold mb-2'>Media Gallery</h1>
                 <div className='image-upload mb-5'>
                     <form onSubmit={handleUploadImages}>
                         <label className='mt-1 flex justify-center px-6 pt-5 pb-6 border-2 border-gray-300 border-dashed rounded-md flex-col items-center bg-white dark:bg-slate-800'>
@@ -109,7 +109,7 @@ export default function Media() {
                                 </svg>
                             </div>
                             <br />
-                            <div>
+                            <div className='lg:text-lg md:text-base sm:text-xs lg:w-96 md:w-72 sm:w-32'>
                                 <span>+ Add Images up to 10 images</span>
                                 <input
                                     type="file"
