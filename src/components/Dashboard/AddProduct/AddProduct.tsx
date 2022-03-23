@@ -189,7 +189,7 @@ const AddProduct: React.FunctionComponent = () => {
         <div>
             <div className="mt-5 md:mt-0 md:col-span-2">
                 <form onSubmit={handleProductSubmit} id="form1">
-                    <div className="grid grid-cols-3 gap-4">
+                    <div className="grid grid-cols-1 lg:grid-cols-3 gap-4">
 
                         <div className="col-span-2">
                             <div className="shadow sm:rounded-md sm:overflow-hidden">
@@ -215,7 +215,7 @@ const AddProduct: React.FunctionComponent = () => {
                                         </div>
 
                                     </div>
-                                    <div className="flex flex-row gap-6">
+                                    <div className="grid grid-cols-1 lg:grid-cols-3 gap-6">
                                         <div className="basis-1/4">
                                             <label className="block text-sm font-medium text-gray-700 mb-3"> Regular Price </label>
                                             <input className="shadow appearance-none border-none rounded w-full py-3 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline" name="reg_price" onBlur={handleGetProductValues} type="text" placeholder="Regular Price " required />
