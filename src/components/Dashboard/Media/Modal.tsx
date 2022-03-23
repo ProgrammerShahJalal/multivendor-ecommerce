@@ -1,27 +1,16 @@
 import React, { useEffect, useState } from "react";
+import UseAuth from "../../../hooks/UseAuth";
 
 export default function Modal({ eventBubbling, showModal, setShowModal, selectedItems }: any) {
 
     const [data, setData] = useState<any>()
     const [images, setImages] = useState<any>()
-    const [isTrue, setIsTrue] = useState<boolean>(false)
-    // console.log(images.target.files);
-    console.log('images 2', images);
-    useEffect(() => {
-        fetch('https://guarded-ocean-73313.herokuapp.com/media')
-            .then(res => res.json())
-            .then(data => {
-                // Show latest
-                const sort = data.sort(function (a: any, b: any) {
-                    return +new Date(b.uploadDate) - +new Date(a.uploadDate);
-                });
-                setData(sort)
-            })
-    }, [])
+    const [isTrue, setIsTrue] = useState<boolean>(true)
+    const { userDetails } = UseAuth()
 
-    function imgExists(id: string) {
-        return selectedItems.some((img: any) => img.id === id);
-    }
+    // function imgExists(id: string) {
+    //     return selectedItems.some((img: any) => img.id === id);
+    // }
 
     const handleUploadImages = (event: React.SyntheticEvent) => {
         console.log('form 2', images);
@@ -52,8 +41,8 @@ export default function Modal({ eventBubbling, showModal, setShowModal, selected
     }
 
     useEffect(() => {
-        if (isTrue) {
-            fetch('https://guarded-ocean-73313.herokuapp.com/media')
+        if (userDetails.role === "vendor") {
+            fetch(`https://guarded-ocean-73313.herokuapp.com/media/${userDetails.email}`)
                 .then(res => res.json())
                 .then(async data => {
                     // Show latest
@@ -62,6 +51,18 @@ export default function Modal({ eventBubbling, showModal, setShowModal, selected
                     });
                     setData(sort)
                     setIsTrue(false)
+                })
+        } else if (isTrue) {
+            fetch('https://guarded-ocean-73313.herokuapp.com/media')
+                .then(res => res.json())
+                .then(data => {
+                    // Show latest
+                    const sort = data.sort(function (a: any, b: any) {
+                        return +new Date(b.uploadDate) - +new Date(a.uploadDate);
+                    });
+                    setData(sort)
+                    setIsTrue(false)
+
                 })
         } else {
             fetch('https://guarded-ocean-73313.herokuapp.com/media')
@@ -76,7 +77,7 @@ export default function Modal({ eventBubbling, showModal, setShowModal, selected
                 })
         }
 
-    }, [isTrue])
+    }, [isTrue, userDetails.email, userDetails.role])
 
     return (
         <>
@@ -90,7 +91,7 @@ export default function Modal({ eventBubbling, showModal, setShowModal, selected
                             {/*content*/}
                             <div className="border-0 rounded-lg shadow-lg relative flex flex-col w-full bg-white dark:bg-slate-800 outline-none focus:outline-none px-5 py-4">
                                 {/*header*/}
-                                <div className=''>
+                                <div className='scroll'>
                                     <div>
                                         <h1 className='text-2xl	font-bold mb-2'>Media Gallery</h1>
                                         <div className='image-upload mb-5'>

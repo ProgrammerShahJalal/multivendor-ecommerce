@@ -63,7 +63,7 @@ const AllProducts: FC<AllProductsProps> = ({ translate }) => {
                             }
                             console.log(product);
 
-                            return <div className="bg-white shadow-inner overflow-hidden single-card">
+                            return <div key={product._id} className="bg-white shadow-inner overflow-hidden single-card">
 
                                 <div className="relative group">
                                     <div style={{ height: '300px' }} className='z-100 overflow-hidden'>
