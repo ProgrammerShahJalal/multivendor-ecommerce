@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from "react";
 import UseAuth from "../../../hooks/UseAuth";
-
+import "./media.css"
 export default function Modal({ eventBubbling, showModal, setShowModal, selectedItems }: any) {
 
     const [data, setData] = useState<any>()
@@ -122,7 +122,7 @@ export default function Modal({ eventBubbling, showModal, setShowModal, selected
                                         </div>
 
                                     </div>
-                                    <div className=" grid grid-cols-5 gap-2 mx-auto gallery-images"  >
+                                    <div className=" grid grid-cols-5 gap-2 mx-auto gallery-images scroll-modal"  >
                                         {
                                             data?.map((order: any, idx: number) =>
                                                 Object.entries(order).map(
