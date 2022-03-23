@@ -35,7 +35,7 @@ const Kids = () => {
     useEffect(() => {
         if (products) {
 
-            fetch('https://young-springs-82149.herokuapp.com/shop/products/category?category=kids')
+            fetch('https://young-springs-82149.herokuapp.com/shop/products/category?category=Kids')
                 .then(res => res.json())
                 .then(data => setProducts(data))
         }
