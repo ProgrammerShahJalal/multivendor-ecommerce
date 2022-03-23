@@ -93,7 +93,7 @@ export default function Attributes() {
 
 
     return (
-        <div className='grid grid-cols-3 gap-4'>
+        <div className='grid lg:grid-cols-3 grid-cols-1 gap-4'>
             <div className=' px-4 py-5 bg-white dark:bg-slate-800 space-y-6 sm:p-6 shadow sm:rounded-md sm:overflow-hidden'>
                 <form onSubmit={handleAddAttributes}>
                     <div>
