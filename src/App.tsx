@@ -2,7 +2,6 @@ import { useContext, useLayoutEffect, lazy, Suspense } from "react";
 import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
 import Contact from './components/Contact/Contact.js';
 import AuthProvider from "./context/AuthProvider";
-import Register from "./components/Pages/RegisterPage/Register";
 
 import NotFound from './components/NotFound/NotFound';
 import Team from './components/Pages/Team/Team';
@@ -50,6 +49,7 @@ import DashboardBlogs from "./components/Blogs/DashboardBlogs";
 import BlogsFirstLook from "./components/Blogs/BlogsFirstLook";
 import AffiliateFirstLook from "./components/Blogs/AffiliateFirstLook";
 import LoginForm from "./components/Pages/LoginPage/Login";
+import UserMainProfile from './components/Pages/UserMainProfile/UserMainProfile';
 
 const Dashboard = lazy(() => import("./components/Dashboard/Dashboard/Dashboard"));
 const AllOrders = lazy(() => import("./components/Dashboard/Order/allOrder"));
@@ -104,7 +104,6 @@ function App() {
             <Route path='/productDetails/kid/:id' element={<KidsProductDetails />} />
             <Route path='/team' element={<Team />} />
             <Route path='/login' element={<LoginForm />} />
-            <Route path='/register' element={<Register />} />
             <Route path='/vendors' element={<StoreListCards />} />
             <Route path='/vendor-register' element={<PrivateRoute><VendorRegister /></PrivateRoute>} />
             <Route path='/orderTrack' element={<OrderTracking />} />
@@ -121,30 +120,31 @@ function App() {
             <Route path='/specials/details/:id' element={<PrivateRoute><DealDetails /></PrivateRoute>} />
             <Route path='/product/:id' element={<SingleProduct />} />
             {/* USER DASHBOARD */}
-            <Route path="/profile" element={<PrivateRoute><UserProfile /></PrivateRoute>} >
+            <Route path="/profile" element={<PrivateRoute><UserProfile/></PrivateRoute>}>
+              <Route path="" element={<div className="mx-auto my-auto"><UserMainProfile/></div>}></Route>
               <Route path="dashboard" element={<UserDashboardHome />}></Route>
               <Route path="orders" element={<UserOrders />}></Route>
               <Route path="order/:id" element={<UserDetailedOrder />}></Route>
             </Route>
             {/* DASHBOARD ROUTES */}
-            <Route path="/dashboard" element={<AdminRoute ><Dashboard /></AdminRoute>} >
-              <Route path="media" element={<Media />}></Route>
-              <Route path="affiliate-dashboard" element={<Affiliate />}></Route>
-              <Route path="affiliate" element={<AffiliateFirstLook />}></Route>
-              <Route path="affiliate-links" element={<AffiliateLinks />}></Route>
-              <Route path="addProduct" element={<AddProduct />}></Route>
-              <Route path="orders" element={<AllOrders />}></Route>
-              <Route path="blogs-dashboard" element={<BlogsFirstLook />}></Route>
-              <Route path="blogs" element={<DashboardBlogs />}></Route>
-              <Route path="add-blog" element={<AddBlogForm />}></Route>
-              <Route path='detailed-order/:id' element={<DetailedOrder />} />
-              <Route path="categories" element={<Categories />}></Route>
-              <Route path="attributes" element={<Attributes />}></Route>
-              <Route path="products" element={<Products />}></Route>
-              <Route path="users" element={<Users />}></Route>
-              <Route path='edit-product/:id' element={<AdminRoute ><EditProduct /></AdminRoute>} />
-              <Route path="vendors" element={<Vendors />}></Route>
-              <Route path="user/vendor/:slug" element={<VendorProfileDetails />}></Route>
+            <Route path="/dashboard" element={<Suspense fallback={<div>Loading...</div>}><AdminRoute ><Dashboard /></AdminRoute></Suspense>} >
+              <Route path="media" element={<Suspense fallback={<div>Loading...</div>}><Media /></Suspense>}></Route>
+              <Route path="affiliate" element={<Suspense fallback={<div>Loading...</div>}><AffiliateFirstLook /></Suspense>}></Route>
+              <Route path="affiliate-dashboard" element={<Suspense fallback={<div>Loading...</div>}><Affiliate /></Suspense>}></Route>
+              <Route path="affiliate-links" element={<Suspense fallback={<div>Loading...</div>}><AffiliateLinks /></Suspense>}></Route>
+              <Route path="addProduct" element={<Suspense fallback={<div>Loading...</div>}><AddProduct /></Suspense>}></Route>
+              <Route path="orders" element={<Suspense fallback={<div>Loading...</div>}><AllOrders /></Suspense>}></Route>
+              <Route path="blogs-dashboard" element={<Suspense fallback={<div>Loading...</div>}><BlogsFirstLook /></Suspense>}></Route>
+              <Route path="blogs" element={<Suspense fallback={<div>Loading...</div>}><DashboardBlogs /></Suspense>}></Route>
+              <Route path="add-blog" element={<Suspense fallback={<div>Loading...</div>}><AddBlogForm /></Suspense>}></Route>
+              <Route path='detailed-order/:id' element={<Suspense fallback={<div>Loading...</div>}><DetailedOrder /></Suspense>} />
+              <Route path="categories" element={<Suspense fallback={<div>Loading...</div>}><Categories /></Suspense>}></Route>
+              <Route path="attributes" element={<Suspense fallback={<div>Loading...</div>}><Attributes /></Suspense>}></Route>
+              <Route path="products" element={<Suspense fallback={<div>Loading...</div>}><Products /></Suspense>}></Route>
+              <Route path="users" element={<Suspense fallback={<div>Loading...</div>}><Users /></Suspense>}></Route>
+              <Route path='edit-product/:id' element={<Suspense fallback={<div>Loading...</div>}><AdminRoute ><EditProduct /></AdminRoute></Suspense>} />
+              <Route path="vendors" element={<Suspense fallback={<div>Loading...</div>}><Vendors /></Suspense>}></Route>
+              <Route path="user/vendor/:slug" element={<Suspense fallback={<div>Loading...</div>}><VendorProfileDetails /></Suspense>}></Route>
             </Route>
 
             {/* footer route */}

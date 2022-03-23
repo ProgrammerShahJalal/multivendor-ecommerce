@@ -54,6 +54,7 @@ export default class App extends React.PureComponent<IAppProps> {
                             </div>
                             <div className="mb-5">
                                 <img className='select-none' src="https://i.ibb.co/m9vtPBZ/ssl-commerce-1d268dce.png" alt="" />
+                                <img className='select-none mt-3 rounded-xl' src="https://i.ibb.co/tM6DD0M/strip.png" alt="" />
                             </div>
 
                         </div>

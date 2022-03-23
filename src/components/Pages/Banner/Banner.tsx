@@ -26,39 +26,6 @@ export default function Banners() {
           modules={[Autoplay]}
 
           className="mySwiper">
-          <SwiperSlide
-            className="md:flex items-center justify-center"
-            style={{ height: "34rem" }}>
-            <div className="grid md:grid-cols-2 xs:grid-cols-1">
-              <div className="flex flex-col items-center md:items-start justify-center md:pl-15 lg:pl-32 p-12 text-center md:text-left">
-                <h1 className="text-4xl text-black dark:text-white">
-                  Monster Beats Headphone
-                </h1>
-                <p className="text-2xl text-black dark:text-white">
-                  Feel the beats 🎧
-                </p>
-                <div className="flex gap-2">
-                <p className="line-through text-xl text-blue-500">
-                  $<span className="text-blue-500">49</span>
-                </p>
-                <p className="text-2xl text-black dark:text-white">
-                  $<span className="text-red-600">35</span>
-                </p>
-                </div>
-                <NavLink
-                  style={{ borderRadius: '35px' }}
-                  to="/shop"
-                  className="bg-gray-700 hover:bg-gray-800 transition-all px-6 py-2 mt-3 text-white"
-                >
-                  Buy Now <i className="fa-light fa-cart-circle-plus"></i>
-                </NavLink>
-              </div>
-              <div className="md:-mt-0 lg:-mt-0 -mt-12 items-end justify-end flex">
-                <img src='https://i.ibb.co/880G2zr/headphone.png' alt="Image1" className="md:block" />
-              </div>
-            </div>
-
-          </SwiperSlide>
           {/* <SwiperSlide style={{height:'30rem'}}
             className="md:flex items-center justify-center">
                 <img src='https://i.ibb.co/c1FZSg3/mac-Book-Banner.png' alt="Image2" />
@@ -78,32 +45,34 @@ export default function Banners() {
           <SwiperSlide
             className="md:flex items-center justify-center"
             style={{ height: "30rem" }}>
+            <div className="grid md:grid-cols-1 xs:grid-cols-1">
+              <div className="md:-mt-0 -mt-20 items-end justify-end flex">
+                <img src='https://i.ibb.co/y5PdPdP/Make-your-business-2.png' alt="Image1" className="md:block" />
+              </div>
+            </div>
+
+          </SwiperSlide>
+          <SwiperSlide
+            className="md:flex items-center justify-center"
+            style={{ height: "30rem" }}>
             <div className="grid md:grid-cols-2 xs:grid-cols-1">
               <div className="flex flex-col items-center md:items-start justify-center md:pl-15 lg:pl-32 p-10 text-center md:text-left">
-                <h1 className="text-4xl text-black dark:text-white">
-                  Apple macbook air 2022
+                <h1 className="text-6xl text-black font-bold dark:text-white">
+                  Earn money
                 </h1>
-                <p className="text-2xl text-black dark:text-white">
-                  Smart like you
+                <p className="text-2xl py-5 text-black dark:text-white">
+                  Register as a affiliate user and earn unlimited from us.
                 </p>
-                <div className="flex gap-2">
-                <p className="line-through text-xl text-blue-500">
-                  $<span className="text-blue-500">1999</span>
-                </p>
-                <p className="text-2xl text-black dark:text-white">
-                  $<span className="text-red-600">1799</span>
-                </p>
-                </div>
                 <NavLink
                   style={{ borderRadius: '35px' }}
-                  to="/shop"
+                  to="/register"
                   className="bg-gray-700 hover:bg-gray-800 transition-all px-6 py-2 mt-3 text-white"
                 >
-                  Buy Now <i className="fa-light fa-cart-circle-plus"></i>
+                  Register
                 </NavLink>
               </div>
               <div className="md:-mt-0 -mt-20 items-end justify-end flex">
-                <img src='https://i.ibb.co/X23hLSd/macbook-air.png' alt="Image1" className="md:block" />
+                <img width={700} src='https://i.ibb.co/GPsN5rt/20943954-removebg-preview.png' alt="Image1" className="md:block w-50" />
               </div>
             </div>
 
@@ -113,30 +82,22 @@ export default function Banners() {
             style={{ height: "30rem" }}>
             <div className="grid md:grid-cols-2 xs:grid-cols-1">
               <div className="flex flex-col items-center md:items-start justify-center md:pl-15 lg:pl-32 p-10 text-center md:text-left">
-                <h1 className="text-3xl text-black dark:text-white">
-                Rolex Datejust
+                <h1 className="text-6xl text-black font-bold dark:text-white">
+                  Flash Sale
                 </h1>
-                <p className="text-2xl text-black dark:text-white">
-                  official rolex <span className="text-blue-600">X</span> unity mart discount
+                <p className="text-2xl py-5 text-black dark:text-white">
+                  Special offers are on going. So buy now before offer ends
                 </p>
-                <div className="flex gap-2">
-                <p className="line-through text-xl text-blue-500">
-                  $<span className="text-blue-500">799</span>
-                </p>
-                <p className="text-2xl text-black dark:text-white">
-                  $<span className="text-red-600">699</span>
-                </p>
-                </div>
                 <NavLink
                   style={{ borderRadius: '35px' }}
                   to="/shop"
                   className="bg-gray-700 hover:bg-gray-800 transition-all px-6 py-2 mt-3 text-white"
                 >
-                  Buy Now <i className="fa-light fa-cart-circle-plus"></i>
+                  Shop
                 </NavLink>
               </div>
               <div className="md:-mt-0 -mt-20 items-end justify-end flex">
-                <img src='https://i.ibb.co/BBfjnfk/rolex.webp' alt="Image1" className="md:block" />
+                <img src='https://i.ibb.co/JvYkfgS/Untitled-2.png' width={600} alt="Image1" className="md:block" />
               </div>
             </div>
 
@@ -146,65 +107,27 @@ export default function Banners() {
             style={{ height: "30rem" }}>
             <div className="grid md:grid-cols-2 xs:grid-cols-1">
               <div className="flex flex-col items-center md:items-start justify-center md:pl-15 lg:pl-32 p-10 text-center md:text-left">
-                <h1 className="text-4xl text-black dark:text-white">
-                  Perfect fit for you
+                <h1 className="text-6xl text-black font-bold dark:text-white">
+                  Track Your Order
                 </h1>
-                <p className="text-2xl text-black dark:text-white">
-                  Nike sports shoes for all feet size. For you.
+                <p className="text-2xl py-5 text-black dark:text-white">
+                  Now you can track your orders <br />also you can see the estimate delivery time
                 </p>
-                <div className="flex gap-2">
-                <p className="line-through text-xl text-blue-500">
-                  $<span className="text-blue-500">120</span>
-                </p>
-                <p className="text-2xl text-black dark:text-white">
-                  $<span className="text-red-600">113</span>
-                </p>
-                </div>
                 <NavLink
                   style={{ borderRadius: '35px' }}
-                  to="/shop"
+                  to="/orderTrack"
                   className="bg-gray-700 hover:bg-gray-800 transition-all px-6 py-2 mt-3 text-white"
                 >
-                  Buy Now <i className="fa-light fa-cart-circle-plus"></i>
+                  Track
                 </NavLink>
               </div>
-              <div className="md:-mt-0 -mt-36 items-end justify-end flex">
-                <img src='https://i.ibb.co/ZX9c3hS/nike.png' alt="Image1" className="md:block" />
+              <div className="md:-mt-0 -mt-20 items-end justify-end flex">
+                <img src='https://i.ibb.co/WcfqgZz/Online-Shoping-29-Converted.png' width={500} alt="Image1" className="md:block" />
               </div>
             </div>
 
           </SwiperSlide>
-          <SwiperSlide
-            className="md:flex items-center justify-center"
-            style={{ height: "30rem" }}>
-            <div className="grid md:grid-cols-2 xs:grid-cols-1">
-              <div className="flex flex-col items-center md:items-start justify-center md:pl-15 lg:pl-32 p-10 text-center md:text-left">
-                <h1 className="text-4xl text-black dark:text-white">Sony Ps5 <span className="text-red-500">+</span> <span className="text-blue-500">(controller)</span></h1>
-                <p className="text-2xl text-black dark:text-white">
-                  Sony playstation version 5 with controller
-                </p>
-                <div className="flex gap-2">
-                <p className="line-through text-xl text-blue-500">
-                  $<span className="text-blue-500">999</span>
-                </p>
-                <p className="text-2xl text-black dark:text-white">
-                  $<span className="text-red-600">985</span>
-                </p>
-                </div>
-                <NavLink
-                  style={{ borderRadius: '35px' }}
-                  to="/shop"
-                  className="bg-gray-700 hover:bg-gray-800 transition-all px-6 py-2 mt-3 text-white"
-                >
-                  Buy Now <i className="fa-light fa-cart-circle-plus"></i>
-                </NavLink>
-              </div>
-              <div className="md:-mt-0 -mt-10 items-end justify-end flex">
-                <img src='https://i.ibb.co/2d1cqfq/ps5.png' alt="Image1" className="md:block" />
-              </div>
-            </div>
 
-          </SwiperSlide>
         </Swiper>
       </div>
     </>

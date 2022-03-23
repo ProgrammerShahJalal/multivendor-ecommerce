@@ -17,6 +17,7 @@ import Reviews from '../Pages/Reviews/Reviews';
 import SpecialDeal from './../SpecialDeal/SpecialDeal';
 import { LangContext } from '../Pages/MultiLanguage/languagecontext/lang';
 import AllProducts from '../AllProducts/AllProducts';
+import Alan from './Alan-AI/Alan';
 
 
 export default function Home() {
@@ -38,7 +39,7 @@ export default function Home() {
             <Banners />
             <Notify />
             <TopBanner />
-            <SpecialDeal translate={translate} />
+            {/* <SpecialDeal translate={translate} /> */}
             <BannerGadget />
             {/* <Products translate={translate} /> */}
             <AllProducts translate={translate} />
@@ -46,9 +47,10 @@ export default function Home() {
             {/* <HomeProducts translate={translate} /> */}
             <BottomBanner />
             <Reviews />
+            <Alan />
             <Brands />
             <PaginatedBlogsHome />
-            <ScrollToTop style={{ display: 'flex', bottom: 150, alignItems: 'center', justifyContent: 'center', left: 15, backgroundColor: '#7209b7' }} smooth color='#ffffff' top={20} height="28" viewBox="0 0 256 256" />
+            <ScrollToTop style={{ display: 'flex', bottom: 180, alignItems: 'center', justifyContent: 'center', left: 15, backgroundColor: '#7209b7' }} smooth color='#ffffff' top={20} height="28" viewBox="0 0 256 256" />
             <MessengerCustomerChat
                 pageId="104774475481224"
                 appId=" 1107053396762800"

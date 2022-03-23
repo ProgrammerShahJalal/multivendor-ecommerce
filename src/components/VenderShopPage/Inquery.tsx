@@ -24,31 +24,27 @@ const Inquery = () => {
                             <div className="md:flex items-center place-content-center">
 
                                 <div className="md:shrink-0">
-                                    <img className="w-20 p-3" src="https://i.ibb.co/nQn7Vkc/trophy.png" alt="Man looking at item at a store" />
-                                </div>
-                                <div>
-                                    <div className="uppercase tracking-wide text-xl text-indigo-500 font-semibold">Remote Coder Unity</div>
-                                    <p className="mt-2 text-white  text-justify">United we stand, divided we fall.</p>
+                                    <img className="w-64 p-3" src="https://i.ibb.co/jk1QcVk/mainlogo.png" alt="Unity Mart" />
                                 </div>
                             </div>
                             <div className="md:flex items-center">
 
                                 <div className="md:shrink-0">
-                                    <img className="w-28 pl-2" src="https://i.ibb.co/k8DK23c/team-management.png" alt="Man looking at item at a store" />
+                                    <img className="w-28 pl-2" src="https://i.ibb.co/dgvVngw/earnings.png" alt="Man looking at item at a store" />
                                 </div>
                                 <div className="p-6">
-                                    <div className="uppercase tracking-wide text-xl text-indigo-500 font-semibold">Dedicated Team</div>
-                                    <p className="mt-2 text-white text-justify">We are Remote Coder Unity. We have accepted the challenge to be the best team and also to be the best project holder in the end game. We are facing a lot of challenges in doing so, yet we are overcoming of all challenges with our best team collaboration.</p>
+                                    <div className="uppercase tracking-wide text-xl text-indigo-500 font-semibold">Earning</div>
+                                    <p className="mt-2 text-white text-justify">You can earn by affiliate marketing based on our affiliate terms and condition. As a vendor you haven't paid monthly or yearly cost. You have to pay 3% price per product selling.So, be a vendor and increase your business.</p>
                                 </div>
 
                             </div>
                             <div className="md:flex items-center">
                                 <div className="p-6">
-                                    <div className="uppercase tracking-wide text-xl text-indigo-500 font-semibold">Our Goal</div>
-                                    <p className="mt-2 text-white  text-justify">If we want to say something about our goal, we can simply say that our website is multi-vendor e-commerce based and so our goal is to provide the best user experience and interface. By Using exclusive features of our website users can be able to explore the website and get their preferable product whatever they want. Our main purpose is to give users the feel of online shopping as shopping from the market. </p>
+                                    <div className="uppercase tracking-wide text-xl text-indigo-500 font-semibold">Secure Payment</div>
+                                    <p className="mt-2 text-white  text-justify">We ensure users Secure payment. The "Unity Mart" decision is final for all types of payment matters. Be sure to check the product price and medium before making the payment. We accept payments through bKash Merchant, Nagad, Rocket, Upay, Stripe and SSL Commerce. For any inquiries regarding this you can contact us on the given number, support, email or Facebook page.</p>
                                 </div>
                                 <div className="md:shrink-0">
-                                    <img className="w-28 pr-2" src="https://i.ibb.co/F6cCyBR/target.png" alt="Man looking at item at a store" />
+                                    <img className="w-28 pr-2" src="https://i.ibb.co/y6q2My0/secure-payment.png" alt="Man looking at item at a store" />
                                 </div>
                             </div>
 
