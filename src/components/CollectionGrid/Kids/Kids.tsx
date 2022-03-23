@@ -4,8 +4,8 @@ import Box from '@mui/material/Box';
 import Modal from '@mui/material/Modal';
 import ProductView from '../../ProductView/ProductView';
 import ProductViewSm from '../../ProductView/ProductViewSm';
-import { addToWishlist } from '../../../redux/wishlistSlice';
 import { useDispatch } from 'react-redux';
+import { addToWishlist } from '../../../redux/wishlistSlice';
 
 interface ProductState {
     products: {

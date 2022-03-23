@@ -6,7 +6,6 @@ import { LangContext } from '../MultiLanguage/languagecontext/lang';
 const PaginatedBlogs = ({ blogs, isLoading }: any) => {
     const { dispatch: { translate } } = useContext(LangContext);
 
-    // console.log(blogs);
 
     if (isLoading) {
         return <div className='my-5'>
