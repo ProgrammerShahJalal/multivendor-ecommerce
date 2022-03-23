@@ -32,8 +32,8 @@ export default function AddBlogForm() {
                     <form onSubmit={handleSubmit(onSubmit)}>
                         <div className="shadow sm:rounded-md sm:overflow-hidden">
                             <div className="px-4 py-5 bg-white dark:bg-slate-700 space-y-6 sm:p-6">
-                                <div className="grid grid-cols-1 gap-6">
-                                    <div className="col-span-6 sm:col-span-1">
+                                <div className="grid grid-cols-3 gap-6">
+                                    <div className="col-span-6 sm:col-span-3">
                                         <label htmlFor="author-name" className="block text-sm font-medium text-gray-700 dark:text-white">
                                             Author name
                                         </label>
@@ -45,7 +45,7 @@ export default function AddBlogForm() {
                                             className="mt-1 focus:ring-indigo-500 focus:border-indigo-500 block w-full shadow-sm sm:text-sm border-gray-300 rounded-md"
                                         />
                                     </div>
-                                    <div className="col-span-6 sm:col-span-1">
+                                    <div className="col-span-6 sm:col-span-3">
                                         <label htmlFor="title" className="block text-sm font-medium text-gray-700 dark:text-white">
                                             Blog title
                                         </label>
@@ -57,7 +57,7 @@ export default function AddBlogForm() {
                                             className="mt-1 focus:ring-indigo-500 focus:border-indigo-500 block w-full shadow-sm sm:text-sm border-gray-300 rounded-md"
                                         />
                                     </div>
-                                    <div className="col-span-3 sm:col-span-1">
+                                    <div className="col-span-3 sm:col-span-2">
                                         <label htmlFor="image-link" className="block text-sm font-medium text-gray-700 dark:text-white">
                                             Image link
                                         </label>
@@ -84,16 +84,15 @@ export default function AddBlogForm() {
                                             />
                                         </div>
                                     </div>
-                                    <div className="mt-1 flex rounded-md shadow-sm">
-                                        <input
-                                            {...register("date", { required: true })}
-                                            type="date"
-                                            id="date"
-                                            className="focus:ring-indigo-500 focus:border-indigo-500 flex-1 block w-full rounded-none rounded-r-md sm:text-sm border-gray-300"
-                                        />
-                                    </div>
                                 </div>
-
+                                <div className="mt-1 flex rounded-md shadow-sm">
+                                    <input
+                                        {...register("date", { required: true })}
+                                        type="date"
+                                        id="date"
+                                        className="focus:ring-indigo-500 focus:border-indigo-500 flex-1 block w-full rounded-none rounded-r-md sm:text-sm border-gray-300"
+                                    />
+                                </div>
                                 <div>
                                     <label htmlFor="description" className="block text-sm font-medium text-gray-700 dark:text-white">
                                         Description
