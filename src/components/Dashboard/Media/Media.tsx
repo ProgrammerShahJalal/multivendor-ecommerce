@@ -20,7 +20,7 @@ export default function Media() {
         }
         formData.append("vendor", userDetails.email)
 
-        fetch('http://localhost:5000/media', {
+        fetch('https://guarded-ocean-73313.herokuapp.com/media', {
             method: 'post',
             body: formData
         })
@@ -40,7 +40,7 @@ export default function Media() {
 
     useEffect(() => {
         if (userDetails.role === "vendor") {
-            fetch(`http://localhost:5000/media/${userDetails.email}`)
+            fetch(`https://guarded-ocean-73313.herokuapp.com/media/${userDetails.email}`)
                 .then(res => res.json())
                 .then(async data => {
                     // Show latest
@@ -51,7 +51,7 @@ export default function Media() {
                     setIsTrue(false)
                 })
         } else if (isTrue) {
-            fetch('http://localhost:5000/media')
+            fetch('https://guarded-ocean-73313.herokuapp.com/media')
                 .then(res => res.json())
                 .then(data => {
                     // Show latest
@@ -63,7 +63,7 @@ export default function Media() {
 
                 })
         } else {
-            fetch('http://localhost:5000/media')
+            fetch('https://guarded-ocean-73313.herokuapp.com/media')
                 .then(res => res.json())
                 .then(data => {
                     // Show latest

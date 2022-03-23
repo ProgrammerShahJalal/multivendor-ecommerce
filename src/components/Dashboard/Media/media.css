@@ -23,3 +23,8 @@
     border: 1px solid #ccc;
     border-radius: 5px;
 }
+
+.scroll{
+    height: 200px;
+    overflow-y: scroll;
+}

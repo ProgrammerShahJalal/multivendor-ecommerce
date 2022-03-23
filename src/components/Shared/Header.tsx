@@ -76,7 +76,7 @@ const Header: FC<HeaderProps> = ({ fixed, transparent }) => {
     // useEffect(() => {
     //     if (userDetails?.role === "vendor") {
     //         setIsLoading(true)
-    //         fetch(`http://localhost:5000/user/vendors/fathe@gmail.com`)
+    //         fetch(`https://guarded-ocean-73313.herokuapp.com/user/vendors/fathe@gmail.com`)
     //             .then(res => res.json())
     //             .then(data => setIsVendorProfileCompleted(data))
     //             .finally(() => setIsLoading(false))
