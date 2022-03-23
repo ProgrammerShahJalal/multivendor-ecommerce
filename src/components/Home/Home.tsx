@@ -39,7 +39,7 @@ export default function Home() {
             <Banners />
             <Notify />
             <TopBanner />
-            {/* <SpecialDeal translate={translate} /> */}
+            <SpecialDeal translate={translate} />
             <BannerGadget />
             {/* <Products translate={translate} /> */}
             <AllProducts translate={translate} />

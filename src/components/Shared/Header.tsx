@@ -190,26 +190,28 @@ const Header: FC<HeaderProps> = ({ fixed, transparent }) => {
                         <Watch />
 
                     </div>
-                    <div className="bg-gray-200 h-10 flex items-center justify-between text-sm font-medium px-4 sm:px-6 lg:px-8">
-                        <div className='flex justify-start items-center'>
-                            <NavLink
-                                to='/orderTrack'
-                                className='block px-4 py-2 text-sm text-black'
-                            >
-                                Order Tracking
-                            </NavLink>
-                            <NavLink
-                                to='/checkout'
-                                className='block px-4 py-2 text-sm text-black'
-                            >
-                                Checkout
-                            </NavLink>
-                            <NavLink
-                                to='/offer'
-                                className='block px-4 py-2 text-sm text-black'
-                            >
-                                Offer
-                            </NavLink>
+                    <div className="bg-gray-200 h-10 flex items-center justify-end lg:justify-between text-sm font-medium px-4 sm:px-6 lg:px-8">
+                        <div className='hidden lg:block'>
+                            <div className='flex justify-start items-center'>
+                                <NavLink
+                                    to='/orderTrack'
+                                    className='block px-4 py-2 text-sm text-black'
+                                >
+                                    Order Tracking
+                                </NavLink>
+                                <NavLink
+                                    to='/checkout'
+                                    className='block px-4 py-2 text-sm text-black'
+                                >
+                                    Checkout
+                                </NavLink>
+                                <NavLink
+                                    to='/offer'
+                                    className='block px-4 py-2 text-sm text-black'
+                                >
+                                    Offer
+                                </NavLink>
+                            </div>
                         </div>
                         <div className='flex justify-end items-center'>
                             <button onClick={() => setTheme(colorTheme)} className='h-8 w-8 bg-indigo-500 text-white flex items-center justify-center rounded-full m-2 cursor-pointer'>
@@ -265,7 +267,7 @@ const Header: FC<HeaderProps> = ({ fixed, transparent }) => {
                                             {({ active }) => (
                                                 <p
                                                     onClick={() => chooseLanguageHandler('EN')}
-                                                    className={classNames(active ? 'bg-gray-300 cursor-pointer' : '', 'block px-4 py-2 text-sm text-black cursor-pointer')}
+                                                    className={classNames(active ? 'bg-gray-300 hover:bg-gray-200 cursor-pointer' : '', 'block px-4 py-2 text-sm text-black cursor-pointer')}
                                                 >
                                                     English
                                                 </p>
@@ -275,7 +277,7 @@ const Header: FC<HeaderProps> = ({ fixed, transparent }) => {
                                             {({ active }) => (
                                                 <p
                                                     onClick={() => chooseLanguageHandler('BN')}
-                                                    className={classNames(active ? 'bg-gray-300' : '', 'block px-4 py-2 text-sm text-black cursor-pointer')}
+                                                    className={classNames(active ? 'cursor-pointer bg-gray-300 hover:bg-gray-200' : '', 'block px-4 py-2 text-sm text-black cursor-pointer')}
                                                 >
                                                     Bangla
                                                 </p>
@@ -285,7 +287,7 @@ const Header: FC<HeaderProps> = ({ fixed, transparent }) => {
                                             {({ active }) => (
                                                 <p
                                                     onClick={() => chooseLanguageHandler('FR')}
-                                                    className={classNames(active ? 'bg-gray-300' : '', 'block px-4 py-2 text-sm text-black cursor-pointer')}
+                                                    className={classNames(active ? 'cursor-pointer bg-gray-300 hover:bg-gray-200' : '', 'block px-4 py-2 text-sm text-black cursor-pointer')}
                                                 >
                                                     Franch
                                                 </p>
@@ -370,6 +372,36 @@ const Header: FC<HeaderProps> = ({ fixed, transparent }) => {
                                                 <Menu.Item>
                                                     {({ active }) => (
                                                         <Link
+                                                            to="/orderTracking"
+                                                            className={classNames(active ? 'bg-gray-100 dark:bg-gray-800' : '', 'block px-4 py-2 text-sm text-black dark:text-white')}
+                                                        >
+                                                            Order Tracking
+                                                        </Link>
+                                                    )}
+                                                </Menu.Item>
+                                                <Menu.Item>
+                                                    {({ active }) => (
+                                                        <Link
+                                                            to="/offer"
+                                                            className={classNames(active ? 'bg-gray-100 dark:bg-gray-800' : '', 'block px-4 py-2 text-sm text-black dark:text-white')}
+                                                        >
+                                                            Special offer
+                                                        </Link>
+                                                    )}
+                                                </Menu.Item>
+                                                <Menu.Item>
+                                                    {({ active }) => (
+                                                        <Link
+                                                            to="/checkout"
+                                                            className={classNames(active ? 'bg-gray-100 dark:bg-gray-800' : '', 'block px-4 py-2 text-sm text-black dark:text-white')}
+                                                        >
+                                                            Checkout
+                                                        </Link>
+                                                    )}
+                                                </Menu.Item>
+                                                <Menu.Item>
+                                                    {({ active }) => (
+                                                        <Link
                                                             to="/unitTesting"
                                                             className={classNames(active ? 'bg-gray-100 dark:bg-gray-800' : '', 'block px-4 py-2 text-sm text-black dark:text-white cursor-pointer')}
                                                         >
@@ -430,16 +462,7 @@ const Header: FC<HeaderProps> = ({ fixed, transparent }) => {
                                                             </NavLink>
                                                         )}
                                                     </Menu.Item>
-                                                    <Menu.Item>
-                                                        {({ active }) => (
-                                                            <a
-                                                                href="#settings"
-                                                                className={classNames(active ? 'bg-gray-100 dark:text-gray-700' : '', 'block px-4 py-2 text-sm text-gray-700 dark:text-white')}
-                                                            >
-                                                                Settings
-                                                            </a>
-                                                        )}
-                                                    </Menu.Item>
+
                                                     <Menu.Item>
                                                         {({ active }) => (
                                                             <Link to="/login" className="-m-2 p-2 block font-medium text-gray-900 dark:text-white">
