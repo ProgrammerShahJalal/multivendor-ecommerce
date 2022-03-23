@@ -5,6 +5,8 @@ import Modal from '@mui/material/Modal';
 import ProductView from '../../ProductView/ProductView';
 import ProductViewSm from '../../ProductView/ProductViewSm';
 import Backdrop from '@mui/material/Backdrop';
+import { addToWishlist } from '../../../redux/wishlistSlice';
+import { useDispatch } from 'react-redux';
 
 
 interface ProductState {
@@ -72,6 +74,8 @@ const ProductSearchBar: React.FunctionComponent = () => {
     console.log(products);
     const [productList, setProductList] = useState<any>();
 
+    const dispatch = useDispatch()
+
     const handleOnChange = (event: any) => {
         const searchText = event.target.value.toLowerCase();
         const findProduct: any = products && products.length > 0 ? products?.filter(p => p?.title.toLowerCase().includes(searchText)) : undefined;
@@ -113,9 +117,9 @@ const ProductSearchBar: React.FunctionComponent = () => {
                                 <button onClick={() => handleOpen(product)} className='text-white text-lg w-9 h-8 rounded-full bg-indigo-500 flex items-center justify-center hover:bg-gray-800 transition'>
                                     <i className="fa-regular fa-magnifying-glass"></i>
                                 </button>
-                                <a className='text-white text-lg w-9 h-8 rounded-full bg-indigo-500 flex items-center justify-center hover:bg-gray-800 transition' href="/">
+                                <button onClick={() => dispatch((addToWishlist(product)))} className='text-white text-lg w-9 h-8 rounded-full bg-indigo-500 flex items-center justify-center hover:bg-gray-800 transition'>
                                     <i className="fa-regular fa-heart"></i>
-                                </a>
+                                </button>
                             </div>
 
                         </div>
@@ -132,7 +136,6 @@ const ProductSearchBar: React.FunctionComponent = () => {
                                 {/* <Rating name="half-rating-read" defaultValue={product.rating} precision={0.5} readOnly />
                                 <div className="text-xs text-gray-500 ml-3">(1)</div> */}
                                 <p className="font-medium text-xl mb-2 text-blue-800 dark:text-white px-2  transition">Stock: {product.stock}</p>
-                                <p className="font-bold text-sm mb-2 text-blue-800 dark:text-white transition"> Offer-Date: {product.offerDate}</p>
                             </div>
                         </div>
                         <button className='block w-full py-1 text-center top-5 text-white bg-indigo-500 border border-indigo-500 rounded-b hover:bg-transparent hover:text-indigo-500 transition'>Add to Cart</button>

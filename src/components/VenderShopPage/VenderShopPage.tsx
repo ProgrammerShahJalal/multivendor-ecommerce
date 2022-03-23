@@ -1,13 +1,16 @@
 import React, { useEffect, useState } from 'react';
-import { Link } from 'react-router-dom';
+import { Link, useParams } from 'react-router-dom';
 import VendorSidebar from '../VendorSidebar/VendorSidebar';
 import VendorTop from './VendorTop';
 
 
 /* This example requires Tailwind CSS v2.0+ */
 export default function VendorShopPage() {
+    const { storeSlug } = useParams()
     const [products, setProducts] = useState<any>([]);
     const [notFound, setNotFound] = useState('')
+
+    // const userDetails = localStorage.getItem("userDetails") ? JSON.parse(localStorage.getItem('userDetails') || '{}') : { role: "", email: "" }
 
     useEffect(() => {
         if (products.length === 0) {
@@ -18,7 +21,9 @@ export default function VendorShopPage() {
                 })
         }
 
-    }, [products]);
+    }, [storeSlug]);
+    console.log(storeSlug, 'asd');
+
     const handleOnChange = (event: any) => {
         const searchText = event.target.value.toLowerCase();
 
@@ -30,7 +35,6 @@ export default function VendorShopPage() {
         }
         else if (findProduct.length === 0) {
             setNotFound('This Type Of product Is Not Available Now')
-
             fetch('https://guarded-ocean-73313.herokuapp.com/products')
                 .then(res => res.json())
                 .then(data => setProducts(data))
@@ -41,6 +45,7 @@ export default function VendorShopPage() {
     return (
         <div className="bg-gray-200 dark:bg-gray-800 px-8">
             <VendorTop />
+
 
             <div className='min-h-screen lg:flex md:flex-1 gap-5'>
                 {/* sidebar start */}

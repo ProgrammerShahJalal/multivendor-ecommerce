@@ -52,7 +52,7 @@ const SpecialDeal: FC<SpecialDealProps> = ({ translate }) => {
     }, [])
 
     return (
-        <div className="bg-gray-100 dark:bg-gray-800 mt-4">
+        <div className="bg-gray-100 dark:bg-gray-800 pt-4">
             <div data-aos="fade-up"
                 data-aos-duration="3000">
                 <h2 className="text-3xl text-center font-extrabold text-gray-900 dark:text-white sm:text-4xl">

@@ -12,7 +12,7 @@ interface ReviewState {
         img: string
         name: string
         description: string
-        ratings: number
+        ratings: string
     }[],
 }
 
@@ -27,6 +27,8 @@ const Reviews = () => {
                 )
         }
     }, [reviews])
+    console.log(reviews, 'review.ratings');
+
 
     return (
         <div className='my-7'>
@@ -83,7 +85,7 @@ const Reviews = () => {
                                     <div className='my-4'><p className='text-sm'>{review.description}</p> </div>
                                     <div className="flex justify-center gap-4">
                                         <p>{review.ratings} </p>
-                                        <Rating name="half-rating-read" defaultValue={review.ratings} precision={0.5} readOnly />
+                                        <Rating name="half-rating-read" defaultValue={parseInt(review.ratings)} precision={0.5} readOnly />
                                     </div>
                                 </div>
                             </SwiperSlide>

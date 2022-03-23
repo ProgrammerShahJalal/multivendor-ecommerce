@@ -250,11 +250,11 @@ const AddProduct: React.FunctionComponent = () => {
 
 
                                     </div>
+ 
+                                    <div className='flex flex-row gap-6 z-40'>
 
-                                    <div className='flex flex-row gap-6'>
 
-
-                                        {attributeValues.map((attr: attributeValues) => {
+                                        {attributeValues.map((attr: attributeValues) =>  {
                                             const item = attributes.filter((list) => {
                                                 return list.label === attr.label;
                                             })[0];
@@ -276,7 +276,7 @@ const AddProduct: React.FunctionComponent = () => {
                                     </div>
 
                                     <div>
-                                        <label className="block text-sm font-medium text-gray-700 mb-3"> Description </label>
+                                        <label className="block text-sm font-medium text-gray-700 mb-3 z-0"> Description </label>
                                         <Editor
                                             editorState={onEditorStateChange}
                                             toolbarClassName="toolbarClassName"

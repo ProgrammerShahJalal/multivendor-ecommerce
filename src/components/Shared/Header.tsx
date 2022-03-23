@@ -1,7 +1,7 @@
 import React, { useCallback, useRef, useContext, FC } from 'react';
 import { Fragment, useEffect, useState } from 'react';
 import { Dialog, Menu, Popover, Transition } from '@headlessui/react';
-import { ChevronDownIcon, MenuIcon, SearchIcon, ShoppingBagIcon, XIcon } from '@heroicons/react/outline';
+import { ChevronDownIcon, HeartIcon, MenuIcon, SearchIcon, ShoppingBagIcon, XIcon } from '@heroicons/react/outline';
 import { Link, NavLink } from 'react-router-dom';
 import UseAuth from '../../hooks/UseAuth';
 import Watch from '../Watch/Watch';
@@ -72,17 +72,8 @@ const Header: FC<HeaderProps> = ({ fixed, transparent }) => {
     const [isLoading, setIsLoading] = useState<any>(false)
     const { user, logout } = UseAuth();
     const { cart } = useSelector((state: any) => state.cart)
+    const { wishlist } = useSelector((state: any) => state.wishlist)
     const userDetails = localStorage.getItem("userDetails") ? JSON.parse(localStorage.getItem('userDetails') || '{}') : []
-    // useEffect(() => {
-    //     if (userDetails?.role === "vendor") {
-    //         setIsLoading(true)
-    //         fetch(`https://guarded-ocean-73313.herokuapp.com/user/vendors/fathe@gmail.com`)
-    //             .then(res => res.json())
-    //             .then(data => setIsVendorProfileCompleted(data))
-    //             .finally(() => setIsLoading(false))
-    //     }
-    // }, [userDetails.role])
-    // const [colorTheme, setTheme] = UseDarkMode();
     useEffect(() => {
         if (user.email) {
             setIsLoading(true)
@@ -193,10 +184,118 @@ const Header: FC<HeaderProps> = ({ fixed, transparent }) => {
                     <div className="bg-indigo-600 h-10 flex items-center justify-around text-sm font-medium text-white px-4 sm:px-6 lg:px-8">
                         <p>
                             {translate('time')}
-                            {/* Let's know current time timer */}
+                            {/* Let's know the current time */}
                         </p>
                         <Watch />
 
+                    </div>
+                    <div className="bg-gray-200 h-10 flex items-center justify-end lg:justify-between text-sm font-medium px-4 sm:px-6 lg:px-8">
+                        <div className='hidden lg:block'>
+                            <div className='flex justify-start items-center'>
+                                <NavLink
+                                    to='/orderTrack'
+                                    className='block px-4 py-2 text-sm text-black'
+                                >
+                                    Order Tracking
+                                </NavLink>
+                                <NavLink
+                                    to='/checkout'
+                                    className='block px-4 py-2 text-sm text-black'
+                                >
+                                    Checkout
+                                </NavLink>
+                                <NavLink
+                                    to='/offer'
+                                    className='block px-4 py-2 text-sm text-black'
+                                >
+                                    Offer
+                                </NavLink>
+                            </div>
+                        </div>
+                        <div className='flex justify-end items-center'>
+                            <button onClick={() => setTheme(colorTheme)} className='h-8 w-8 bg-indigo-500 text-white flex items-center justify-center rounded-full m-2 cursor-pointer'>
+                                {
+                                    colorTheme === 'light' ? (<i className="fa-light fa-lightbulb"></i>) : (<i className="fa-solid fa-moon"></i>)
+                                }
+                            </button>
+                            {/* Cart */}
+                            <div className="ml-4 flow-root lg:ml-6">
+                                <Link to="/cart" className="group -m-2 p-2 flex items-center">
+                                    <ShoppingBagIcon
+                                        className="flex-shrink-0 h-6 w-6 text-gray-400 group-hover:text-gray-500"
+                                        aria-hidden="true"
+                                    />
+                                    <span className="ml-2 text-sm font-medium text-gray-700 group-hover:text-gray-800">{cart.length}</span>
+                                    <span className="sr-only">items in cart, view bag</span>
+                                </Link>
+                            </div>
+                            {/* Wishlist */}
+                            <div className="ml-4 flow-root lg:ml-6">
+                                <Link to="/wishlist" className="group -m-2 p-2 flex items-center">
+                                    <HeartIcon
+                                        className="flex-shrink-0 h-6 w-6 text-gray-400 group-hover:text-gray-500"
+                                        aria-hidden="true"
+                                    />
+                                    <span className="ml-2 text-sm font-medium text-gray-700 group-hover:text-gray-800">{wishlist.length}</span>
+                                    <span className="sr-only">items in wishlist, view list</span>
+                                </Link>
+                            </div>
+
+                            {/* multi-languages */}
+
+                            <Menu as="div" className="ml-3 relative">
+                                <div>
+                                    <Menu.Button className="flex text-sm focus:outline-none">
+                                        <span className="sr-only">Open user menu</span>
+                                        <p className='font-semi-bold'>Language </p>
+                                        <ChevronDownIcon className="w-6 h-6" aria-hidden="true" />
+                                    </Menu.Button>
+                                </div>
+                                <Transition
+                                    as={Fragment}
+                                    enter="transition ease-out duration-100"
+                                    enterFrom="transform opacity-0 scale-95"
+                                    enterTo="transform opacity-100 scale-100"
+                                    leave="transition ease-in duration-75"
+                                    leaveFrom="transform opacity-100 scale-100"
+                                    leaveTo="transform opacity-0 scale-95"
+                                >
+                                    <Menu.Items className="z-10 origin-top-right absolute right-0 mt-2 w-48 rounded-md shadow-lg py-1  ring-1 ring-black ring-opacity-5 focus:outline-none bg-gray-300">
+
+                                        <Menu.Item>
+                                            {({ active }) => (
+                                                <p
+                                                    onClick={() => chooseLanguageHandler('EN')}
+                                                    className={classNames(active ? 'bg-gray-300 hover:bg-gray-200 cursor-pointer' : '', 'block px-4 py-2 text-sm text-black cursor-pointer')}
+                                                >
+                                                    English
+                                                </p>
+                                            )}
+                                        </Menu.Item>
+                                        <Menu.Item>
+                                            {({ active }) => (
+                                                <p
+                                                    onClick={() => chooseLanguageHandler('BN')}
+                                                    className={classNames(active ? 'cursor-pointer bg-gray-300 hover:bg-gray-200' : '', 'block px-4 py-2 text-sm text-black cursor-pointer')}
+                                                >
+                                                    Bangla
+                                                </p>
+                                            )}
+                                        </Menu.Item>
+                                        <Menu.Item>
+                                            {({ active }) => (
+                                                <p
+                                                    onClick={() => chooseLanguageHandler('FR')}
+                                                    className={classNames(active ? 'cursor-pointer bg-gray-300 hover:bg-gray-200' : '', 'block px-4 py-2 text-sm text-black cursor-pointer')}
+                                                >
+                                                    Franch
+                                                </p>
+                                            )}
+                                        </Menu.Item>
+                                    </Menu.Items>
+                                </Transition>
+                            </Menu>
+                        </div>
                     </div>
                     <nav aria-label="Top" className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
                         <div className="border-b border-gray-200">
@@ -238,7 +337,7 @@ const Header: FC<HeaderProps> = ({ fixed, transparent }) => {
 
 
                                 <div className="ml-auto flex items-center">
-                                    {/* simple dropdown */}
+                                    {/* simple explore dropdown */}
 
                                     <Menu as="div" className="ml-3 relative">
                                         <div>
@@ -258,36 +357,7 @@ const Header: FC<HeaderProps> = ({ fixed, transparent }) => {
                                             leaveTo="transform opacity-0 scale-95"
                                         >
                                             <Menu.Items className="z-10 origin-top-right absolute right-0 mt-2 w-48 rounded-md shadow-lg py-1 bg-white dark:bg-slate-800 ring-1 ring-black ring-opacity-5 focus:outline-none">
-                                                <Menu.Item>
-                                                    {({ active }) => (
-                                                        <NavLink
-                                                            to='/offer'
-                                                            className={classNames(active ? 'bg-gray-100 dark:bg-gray-800' : '', 'block px-4 py-2 text-sm text-black dark:text-white')}
-                                                        >
-                                                            Offer
-                                                        </NavLink>
-                                                    )}
-                                                </Menu.Item>
-                                                <Menu.Item>
-                                                    {({ active }) => (
-                                                        <NavLink
-                                                            to='/orderTrack'
-                                                            className={classNames(active ? 'bg-gray-100 dark:bg-gray-800' : '', 'block px-4 py-2 text-sm text-black dark:text-white')}
-                                                        >
-                                                            Order Tracking
-                                                        </NavLink>
-                                                    )}
-                                                </Menu.Item>
-                                                <Menu.Item>
-                                                    {({ active }) => (
-                                                        <NavLink
-                                                            to='/checkout'
-                                                            className={classNames(active ? 'bg-gray-100 dark:bg-gray-800' : '', 'block px-4 py-2 text-sm text-black dark:text-white')}
-                                                        >
-                                                            Checkout
-                                                        </NavLink>
-                                                    )}
-                                                </Menu.Item>
+
                                                 <Menu.Item>
                                                     {({ active }) => (
                                                         <Link
@@ -295,6 +365,36 @@ const Header: FC<HeaderProps> = ({ fixed, transparent }) => {
                                                             className={classNames(active ? 'bg-gray-100 dark:bg-gray-800' : '', 'block px-4 py-2 text-sm text-black dark:text-white')}
                                                         >
                                                             Our Team
+                                                        </Link>
+                                                    )}
+                                                </Menu.Item>
+                                                <Menu.Item>
+                                                    {({ active }) => (
+                                                        <Link
+                                                            to="/orderTracking"
+                                                            className={classNames(active ? 'bg-gray-100 dark:bg-gray-800' : '', 'block px-4 py-2 text-sm text-black dark:text-white')}
+                                                        >
+                                                            Order Tracking
+                                                        </Link>
+                                                    )}
+                                                </Menu.Item>
+                                                <Menu.Item>
+                                                    {({ active }) => (
+                                                        <Link
+                                                            to="/offer"
+                                                            className={classNames(active ? 'bg-gray-100 dark:bg-gray-800' : '', 'block px-4 py-2 text-sm text-black dark:text-white')}
+                                                        >
+                                                            Special offer
+                                                        </Link>
+                                                    )}
+                                                </Menu.Item>
+                                                <Menu.Item>
+                                                    {({ active }) => (
+                                                        <Link
+                                                            to="/checkout"
+                                                            className={classNames(active ? 'bg-gray-100 dark:bg-gray-800' : '', 'block px-4 py-2 text-sm text-black dark:text-white')}
+                                                        >
+                                                            Checkout
                                                         </Link>
                                                     )}
                                                 </Menu.Item>
@@ -324,11 +424,6 @@ const Header: FC<HeaderProps> = ({ fixed, transparent }) => {
 
 
                                 </div>
-                                <button onClick={() => setTheme(colorTheme)} className='h-10 w-10 bg-indigo-500 text-white flex items-center justify-center rounded-full m-2 cursor-pointer'>
-                                    {
-                                        colorTheme === 'light' ? (<i className="fa-light fa-lightbulb"></i>) : (<i className="fa-solid fa-moon"></i>)
-                                    }
-                                </button>
 
 
                                 {/* <Toggle/> */}
@@ -366,16 +461,7 @@ const Header: FC<HeaderProps> = ({ fixed, transparent }) => {
                                                             </NavLink>
                                                         )}
                                                     </Menu.Item>
-                                                    <Menu.Item>
-                                                        {({ active }) => (
-                                                            <a
-                                                                href="#settings"
-                                                                className={classNames(active ? 'bg-gray-100 dark:text-gray-700' : '', 'block px-4 py-2 text-sm text-gray-700 dark:text-white')}
-                                                            >
-                                                                Settings
-                                                            </a>
-                                                        )}
-                                                    </Menu.Item>
+
                                                     <Menu.Item>
                                                         {({ active }) => (
                                                             <Link to="/login" className="-m-2 p-2 block font-medium text-gray-900 dark:text-white">
@@ -407,44 +493,11 @@ const Header: FC<HeaderProps> = ({ fixed, transparent }) => {
 
                                     }
 
-                                    <div className="hidden lg:ml-8 lg:flex">
-                                        <Link to="/" className="text-gray-700 hover:text-gray-800 flex items-center">
-                                            <img
-                                                src="https://upload.wikimedia.org/wikipedia/commons/thumb/7/75/Flag_of_Bangladesh_%283-2%29.svg/1200px-Flag_of_Bangladesh_%283-2%29.svg.png?20190306092954"
-                                                alt=""
-                                                className="w-5 h-auto block flex-shrink-0"
-                                            />
-
-                                            <div className="px-2 dark:text-white">
-                                                <p className="selected" onClick={() => setShowDropdown(!showDropdown)}>{language}</p>
-                                                {showDropdown && <ul ref={dropdownEl}>
-                                                    <li className='dark:text-white' onClick={() => chooseLanguageHandler('EN')}>English</li>
-                                                    <li className='dark:text-white' onClick={() => chooseLanguageHandler('BN')}>Bangla</li>
-                                                    <li className='dark:text-white' onClick={() => chooseLanguageHandler('FR')}>French</li>
-                                                </ul>
-                                                }
-                                            </div>
-                                            <span className="sr-only">, change currency</span>
-                                        </Link>
-                                    </div>
-
                                     {/* Search */}
                                     <div className="flex lg:ml-6">
                                         <Link to="/searchField" className="p-2 text-gray-400 hover:text-gray-500 dark:text-white">
                                             <span className="sr-only">Search</span>
                                             <SearchIcon className="w-6 h-6" aria-hidden="true" />
-                                        </Link>
-                                    </div>
-
-                                    {/* Cart */}
-                                    <div className="ml-4 flow-root lg:ml-6">
-                                        <Link to="/cart" className="group -m-2 p-2 flex items-center">
-                                            <ShoppingBagIcon
-                                                className="flex-shrink-0 h-6 w-6 text-gray-400 group-hover:text-gray-500 dark:text-white"
-                                                aria-hidden="true"
-                                            />
-                                            <span className="ml-2 text-sm font-medium text-gray-700 group-hover:text-gray-800 dark:text-white dark:group-hover:text-white">{cart.length}</span>
-                                            <span className="sr-only">items in cart, view bag</span>
                                         </Link>
                                     </div>
                                 </div>

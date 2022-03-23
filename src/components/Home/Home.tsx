@@ -42,7 +42,10 @@ export default function Home() {
             {/* <SpecialDeal translate={translate} /> */}
             <BannerGadget />
             {/* <Products translate={translate} /> */}
+            <div className='max-w-md md:max-w-7xl mx-auto'>
             <AllProducts translate={translate} />
+            </div>
+            
             <BannerPro />
             {/* <HomeProducts translate={translate} /> */}
             <BottomBanner />

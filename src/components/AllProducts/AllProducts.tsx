@@ -7,6 +7,7 @@ import Modal from '@mui/material/Modal';
 import ProductView from '../ProductView/ProductView';
 import ProductViewSm from '../ProductView/ProductViewSm';
 import { Backdrop, Rating } from '@mui/material';
+import { addToWishlist } from '../../redux/wishlistSlice';
 
 interface AllProductsProps {
     translate: (key: string) => string
@@ -68,7 +69,7 @@ const AllProducts: FC<AllProductsProps> = ({ translate }) => {
             </div>
             <div className="grid place-content-center lg:grid-cols-4 md:grid-cols-3 grid-cols-1 gap-6">
                 {
-                    products.length === 0 ? <h2>No Products Found</h2> :
+                    products.length === 0 ? <h2 className='text-center'>No Products Found</h2> :
                         products.map((product: any) => {
                             const detailProduct = {
                                 _id: product._id,
@@ -84,7 +85,7 @@ const AllProducts: FC<AllProductsProps> = ({ translate }) => {
                             }
                             console.log(product);
 
-                            return <div className="bg-white shadow-inner overflow-hidden single-card">
+                            return <div key={product._id} className="bg-white shadow-inner overflow-hidden single-card">
 
                                 <div className="relative group">
                                     <div style={{ height: '300px' }} className='z-100 overflow-hidden'>
@@ -97,9 +98,9 @@ const AllProducts: FC<AllProductsProps> = ({ translate }) => {
                                             <i className="fa-regular fa-magnifying-glass"></i>
                                         </button>
                                         {/* </Link> */}
-                                        <a className='text-white text-lg w-9 h-8 rounded-full bg-indigo-500 flex items-center justify-center hover:bg-gray-800 transition' href="/">
+                                        <button onClick={() => dispatch((addToWishlist(product)))} className='text-white text-lg w-9 h-8 rounded-full bg-indigo-500 flex items-center justify-center hover:bg-gray-800 transition'>
                                             <i className="fa-regular fa-heart"></i>
-                                        </a>
+                                        </button>
                                     </div>
 
                                 </div>
