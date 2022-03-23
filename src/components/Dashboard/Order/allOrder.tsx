@@ -24,6 +24,7 @@ const AllOrders = () => {
             fetch(`https://guarded-ocean-73313.herokuapp.com/dashboard/orders`)
                 .then(res => res.json())
                 .then(data => {
+                    console.log(data);
 
                     const latestData = data.sort(
                         (a, b) => new Date(b.paymentDetails.date).getTime() - new Date(a.paymentDetails.date).getTime()
@@ -34,7 +35,7 @@ const AllOrders = () => {
         }
 
     }, [userDetails.role, userDetails.email])
-    console.log(orders, ' orders');
+
 
     // DELETE ORDER
     const deleteOrderFunc = (id) => {
@@ -45,7 +46,7 @@ const AllOrders = () => {
                 method: 'DELETE'
             }).then(res => res.json())
                 .then(data => {
-                    console.log(data);
+
                     if (data.deletedCount) {
                         alert('Order Deleted')
                         const remainingOrders = orders.filter(order => order._id !== id)
@@ -71,12 +72,12 @@ const AllOrders = () => {
                     <div className="flex flex-row mb-1 sm:mb-0">
 
                         <div className="relative">
-                            <select
+                            {/* <select
                                 className="appearance-none h-full rounded-r border-t sm:rounded-r-none sm:border-r-0 border-r border-b block w-full bg-white border-gray-400 text-gray-700 py-2 px-4 pr-8 leading-tight focus:outline-none focus:border-l focus:border-r focus:bg-white focus:border-gray-500">
                                 <option>All</option>
                                 <option>Delivered</option>
                                 <option>Shipped</option>
-                            </select>
+                            </select> */}
                             <div
                                 className="pointer-events-none absolute inset-y-0 right-1 flex items-center px-2 text-gray-700">
 
@@ -207,7 +208,7 @@ const AllOrders = () => {
                                                 <p className="text-gray-900 whitespace-no-wrap text-left">{order.paymentDetails.email}</p>
                                             </td>
                                             <td className="px-5 py-5 border-b border-gray-200 bg-white text-sm">
-                                                <p className="text-gray-900 whitespace-no-wrap text-left">${order.paymentDetails.amount / 1000}</p>
+                                                <p className="text-gray-900 whitespace-no-wrap text-left">${order.paymentDetails.amount}</p>
                                             </td>
                                             <td className="px-5 py-5 border-b border-gray-200 bg-white text-sm">
                                                 <p className="text-gray-900 whitespace-no-wrap text-left">{order.paymentDetails.date}</p>
@@ -216,7 +217,7 @@ const AllOrders = () => {
                                                 <p className="text-gray-900 whitespace-no-wrap text-left">Fathe Store</p>
                                             </td>
                                             <td className="px-5 py-5 border-b border-gray-200 bg-white text-sm">
-                                                <p className="text-gray-900 whitespace-no-wrap text-left">${((order.paymentDetails.amount / 1000) * 0.03).toFixed(2)}</p>
+                                                <p className="text-gray-900 whitespace-no-wrap text-left">${((order.paymentDetails.amount) * 0.03).toFixed(2)}</p>
                                             </td>
                                             <td className="px-5 py-5 border-b border-gray-200 bg-white text-sm text-left">
                                                 <span

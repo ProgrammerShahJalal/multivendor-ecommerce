@@ -50,6 +50,8 @@ import BlogsFirstLook from "./components/Blogs/BlogsFirstLook";
 import AffiliateFirstLook from "./components/Blogs/AffiliateFirstLook";
 import LoginForm from "./components/Pages/LoginPage/Login";
 import DashboardUI from "./components/Dashboard/Dashboard/DashboardUI.js";
+import UserMainProfile from "./components/Pages/UserMainProfile/UserMainProfile";
+
 
 const Dashboard = lazy(() => import("./components/Dashboard/Dashboard/Dashboard"));
 const AllOrders = lazy(() => import("./components/Dashboard/Order/allOrder"));
@@ -122,6 +124,7 @@ function App() {
             {/* USER DASHBOARD */}
             <Route path="/profile" element={<PrivateRoute><UserProfile /></PrivateRoute>} >
               <Route path="dashboard" element={<UserDashboardHome />}></Route>
+              <Route path="profile" element={<UserMainProfile />}></Route>
               <Route path="orders" element={<UserOrders />}></Route>
               <Route path="order/:id" element={<UserDetailedOrder />}></Route>
             </Route>

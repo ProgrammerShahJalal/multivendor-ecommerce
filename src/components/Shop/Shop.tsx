@@ -36,6 +36,9 @@ export default function Shop() {
   const [menChecked, setMenChecked] = useState(true);
   const [womenChecked, setWomenChecked] = useState(true);
   const [kidChecked, setKidChecked] = useState(true);
+  const [categoryvalue, setCategoryValue] = useState("");
+  console.log(categoryvalue);
+
   const handleMenChange = () => {
     setMenChecked(!menChecked);
     return;
@@ -387,7 +390,7 @@ export default function Shop() {
                         womenChecked && <Womens />
                       }
                       {
-                        kidChecked && <Kids />
+                        kidChecked && <Kid />
                       }
 
                       {
