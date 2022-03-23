@@ -18,7 +18,7 @@ const AllProducts: FC<AllProductsProps> = ({ translate }) => {
     useEffect(() => {
         fetch('https://guarded-ocean-73313.herokuapp.com/products')
             .then(res => res.json())
-            .then(data => setProducts(data))
+            .then(data => setProducts(data?.slice(0, 8)))
 
     }, [])
 
@@ -60,7 +60,7 @@ const AllProducts: FC<AllProductsProps> = ({ translate }) => {
                                     email: product?.publisherDetails?.publisher || null
                                 }
                             }
-                            console.log(product);
+
 
                             return <div key={product._id} className="bg-white shadow-inner overflow-hidden single-card">
 

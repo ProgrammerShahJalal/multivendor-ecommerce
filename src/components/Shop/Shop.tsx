@@ -35,18 +35,21 @@ export default function Shop() {
   const [menChecked, setMenChecked] = useState(true);
   const [womenChecked, setWomenChecked] = useState(true);
   const [kidChecked, setKidChecked] = useState(true);
+  const [categoryvalue, setCategoryValue] = useState("");
+  console.log(categoryvalue);
+
   const handleMenChange = () => {
-      setMenChecked(!menChecked);
-      return;
-    };
+    setMenChecked(!menChecked);
+    return;
+  };
   const handleWomenChange = () => {
-      setWomenChecked(!womenChecked);
-      return;
-    };
+    setWomenChecked(!womenChecked);
+    return;
+  };
   const handleKidChange = () => {
-      setKidChecked(!kidChecked);
-      return;
-    };
+    setKidChecked(!kidChecked);
+    return;
+  };
   return (
     <div className="bg-white dark:bg-slate-800">
       <div>
@@ -86,10 +89,10 @@ export default function Shop() {
                     <XIcon className="h-6 w-6" aria-hidden="true" />
                   </button>
                 </div>
-                
+
                 {/* Filters */}
                 <form className="mt-4 border-t border-gray-200">
-                <Disclosure as="div" className="border-b border-gray-200 p-6">
+                  <Disclosure as="div" className="border-b border-gray-200 p-6">
                     {({ open }) => (
                       <>
                         <h3 className="-my-3 flow-root">
@@ -106,33 +109,33 @@ export default function Shop() {
                         </h3>
                         <Disclosure.Panel className="pt-6">
                           <div className="space-y-4">
-                              <div  className="flex items-center gap-2 text-black dark:text-white">
-                                <input
-                                  type="checkbox"
-                                  checked={menChecked}
-                                  onChange={handleMenChange}
-                                  className="h-4 w-4 border-gray-300 rounded text-indigo-600 focus:ring-indigo-500"
-                                />
-                                <label htmlFor="cat-1 pl-1">Men</label>
-                              </div>
-                              <div  className="flex items-center gap-2 text-black dark:text-white">
-                                <input
-                                  type="checkbox"
-                                  checked={womenChecked}
-                                  onChange={handleWomenChange}
-                                  className="h-4 w-4 border-gray-300 rounded text-indigo-600 focus:ring-indigo-500"
-                                />
-                                <label htmlFor="cat-1 pl-1">Women</label>
-                              </div>
-                              <div  className="flex items-center gap-2 text-black dark:text-white">
-                                <input
-                                  type="checkbox"
-                                  checked={kidChecked}
-                                  onChange={handleKidChange}
-                                  className="h-4 w-4 border-gray-300 rounded text-indigo-600 focus:ring-indigo-500"
-                                />
-                                <label htmlFor="cat-1 pl-1">Kid</label>
-                              </div>
+                            <div className="flex items-center gap-2 text-black dark:text-white">
+                              <input
+                                type="checkbox"
+                                checked={menChecked}
+                                onChange={handleMenChange}
+                                className="h-4 w-4 border-gray-300 rounded text-indigo-600 focus:ring-indigo-500"
+                              />
+                              <label htmlFor="cat-1 pl-1">Men</label>
+                            </div>
+                            <div className="flex items-center gap-2 text-black dark:text-white">
+                              <input
+                                type="checkbox"
+                                checked={womenChecked}
+                                onChange={handleWomenChange}
+                                className="h-4 w-4 border-gray-300 rounded text-indigo-600 focus:ring-indigo-500"
+                              />
+                              <label htmlFor="cat-1 pl-1">Women</label>
+                            </div>
+                            <div className="flex items-center gap-2 text-black dark:text-white">
+                              <input
+                                type="checkbox"
+                                checked={kidChecked}
+                                onChange={handleKidChange}
+                                className="h-4 w-4 border-gray-300 rounded text-indigo-600 focus:ring-indigo-500"
+                              />
+                              <label htmlFor="cat-1 pl-1">Kid</label>
+                            </div>
                           </div>
                         </Disclosure.Panel>
                       </>
@@ -145,7 +148,7 @@ export default function Shop() {
         </Transition.Root>
         <main className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="relative z-10 flex items-end justify-end pt-24 pb-6 border-b border-gray-200 ">
-{/* <ProductSearchBar /> */}
+            {/* <ProductSearchBar /> */}
             <div className="flex items-center">
               <Menu as="div" className="relative inline-block text-left">
                 <div>
@@ -190,12 +193,12 @@ export default function Shop() {
                 </Transition>
               </Menu>
               <div className="mx-2 flex items-end justify-end content-end gap-2">
-              <button onClick={() => setGridShow(true)} className={gridShow === true ? 'bg-indigo-500 w-8 h-8 rounded-sm text-white p-2' : 'text-indigo-500 w-8 h-8 border-indigo-500 rounded-sm border p-2'} type="button">
-                <i className="fa-thin fa-grid flex items-center justify-center object-contain"></i>
-              </button>
-              <button onClick={() => setGridShow(false)} className={gridShow === false ? 'bg-indigo-500 w-8 h-8 rounded-sm text-white' : 'text-indigo-500 border w-8 h-8 border-indigo-500 rounded-sm'} type="button">
-                <i className="fa-thin fa-list flex items-center justify-center object-contain"></i>
-              </button>
+                <button onClick={() => setGridShow(true)} className={gridShow === true ? 'bg-indigo-500 w-8 h-8 rounded-sm text-white p-2' : 'text-indigo-500 w-8 h-8 border-indigo-500 rounded-sm border p-2'} type="button">
+                  <i className="fa-thin fa-grid flex items-center justify-center object-contain"></i>
+                </button>
+                <button onClick={() => setGridShow(false)} className={gridShow === false ? 'bg-indigo-500 w-8 h-8 rounded-sm text-white' : 'text-indigo-500 border w-8 h-8 border-indigo-500 rounded-sm'} type="button">
+                  <i className="fa-thin fa-list flex items-center justify-center object-contain"></i>
+                </button>
               </div>
               <button
                 type="button"
@@ -225,182 +228,182 @@ export default function Shop() {
                   ))}
                 </ul>
 
-                  <Disclosure as="div" className="border-b border-gray-200 py-6">
-                    {({ open }) => (
-                      <>
-                        <h3 className="-my-3 flow-root">
-                          <Disclosure.Button className="py-3 bg-white dark:bg-slate-800 text-black dark:text-white w-full flex items-center justify-between text-sm">
-                            <span className="font-medium text-gray-900 dark:text-white">Categories</span>
-                            <span className="ml-6 flex items-center">
-                              {open ? (
-                                <MinusSmIcon className="h-5 w-5" aria-hidden="true" />
-                              ) : (
-                                <PlusSmIcon className="h-5 w-5" aria-hidden="true" />
-                              )}
-                            </span>
-                          </Disclosure.Button>
-                        </h3>
-                        <Disclosure.Panel className="pt-6">
-                          <div className="space-y-4">
-                              <div  className="flex items-center gap-2 text-black dark:text-white">
-                                <input
-                                  type="checkbox"
-                                  checked={menChecked}
-                                  onChange={handleMenChange}
-                                  className="h-4 w-4 border-gray-300 rounded text-indigo-600 focus:ring-indigo-500"
-                                />
-                                <label htmlFor="cat-1 pl-1">Men</label>
-                              </div>
-                              <div  className="flex items-center gap-2 text-black dark:text-white">
-                                <input
-                                  type="checkbox"
-                                  checked={womenChecked}
-                                  onChange={handleWomenChange}
-                                  className="h-4 w-4 border-gray-300 rounded text-indigo-600 focus:ring-indigo-500"
-                                />
-                                <label htmlFor="cat-1 pl-1">Women</label>
-                              </div>
-                              <div  className="flex items-center gap-2 text-black dark:text-white">
-                                <input
-                                  type="checkbox"
-                                  checked={kidChecked}
-                                  onChange={handleKidChange}
-                                  className="h-4 w-4 border-gray-300 rounded text-indigo-600 focus:ring-indigo-500"
-                                />
-                                <label htmlFor="cat-1 pl-1">Kid</label>
-                              </div>
+                <Disclosure as="div" className="border-b border-gray-200 py-6">
+                  {({ open }) => (
+                    <>
+                      <h3 className="-my-3 flow-root">
+                        <Disclosure.Button className="py-3 bg-white dark:bg-slate-800 text-black dark:text-white w-full flex items-center justify-between text-sm">
+                          <span className="font-medium text-gray-900 dark:text-white">Categories</span>
+                          <span className="ml-6 flex items-center">
+                            {open ? (
+                              <MinusSmIcon className="h-5 w-5" aria-hidden="true" />
+                            ) : (
+                              <PlusSmIcon className="h-5 w-5" aria-hidden="true" />
+                            )}
+                          </span>
+                        </Disclosure.Button>
+                      </h3>
+                      <Disclosure.Panel className="pt-6">
+                        <div className="space-y-4">
+                          <div className="flex items-center gap-2 text-black dark:text-white">
+                            <input
+                              type="checkbox"
+                              checked={menChecked}
+                              onChange={handleMenChange}
+                              className="h-4 w-4 border-gray-300 rounded text-indigo-600 focus:ring-indigo-500"
+                            />
+                            <label htmlFor="cat-1 pl-1">Men</label>
                           </div>
-                        </Disclosure.Panel>
-                      </>
-                    )}
-                  </Disclosure>
-                  <Disclosure as="div" className="border-b border-gray-200 py-6">
-                    {({ open }) => (
-                      <>
-                        <h3 className="-my-3 flow-root">
-                          <Disclosure.Button className="py-3 bg-white dark:bg-slate-800 text-black dark:text-white w-full flex items-center justify-between text-sm">
-                            <span className="font-medium text-gray-900 dark:text-white">Size</span>
-                            <span className="ml-6 flex items-center">
-                              {open ? (
-                                <MinusSmIcon className="h-5 w-5" aria-hidden="true" />
-                              ) : (
-                                <PlusSmIcon className="h-5 w-5" aria-hidden="true" />
-                              )}
-                            </span>
-                          </Disclosure.Button>
-                        </h3>
-                        <Disclosure.Panel className="pt-6">
-                          <div className="space-y-4">
-                              <div  className="flex items-center gap-2 text-black dark:text-white">
-                                <input
-                                  type="checkbox"
-                                  className="h-4 w-4 border-gray-300 rounded text-indigo-600 focus:ring-indigo-500"
-                                />
-                                <label htmlFor="cat-1 pl-1">XL</label>
-                              </div>
-                              <div  className="flex items-center gap-2 text-black dark:text-white">
-                                <input
-                                  type="checkbox"
-                                  className="h-4 w-4 border-gray-300 rounded text-indigo-600 focus:ring-indigo-500"
-                                />
-                                <label htmlFor="cat-1 pl-1">XXL</label>
-                              </div>
-                              <div  className="flex items-center gap-2 text-black dark:text-white">
-                                <input
-                                  type="checkbox"
-                                  className="h-4 w-4 border-gray-300 rounded text-indigo-600 focus:ring-indigo-500"
-                                />
-                                <label htmlFor="cat-1 pl-1">SM</label>
-                              </div>
+                          <div className="flex items-center gap-2 text-black dark:text-white">
+                            <input
+                              type="checkbox"
+                              checked={womenChecked}
+                              onChange={handleWomenChange}
+                              className="h-4 w-4 border-gray-300 rounded text-indigo-600 focus:ring-indigo-500"
+                            />
+                            <label htmlFor="cat-1 pl-1">Women</label>
                           </div>
-                        </Disclosure.Panel>
-                      </>
-                    )}
-                  </Disclosure>
-                  <Disclosure as="div" className="border-b border-gray-200 py-6">
-                    {({ open }) => (
-                      <>
-                        <h3 className="-my-3 flow-root">
-                          <Disclosure.Button className="py-3 bg-white dark:bg-slate-800 text-black dark:text-white w-full flex items-center justify-between text-sm">
-                            <span className="font-medium text-gray-900 dark:text-white">Color</span>
-                            <span className="ml-6 flex items-center">
-                              {open ? (
-                                <MinusSmIcon className="h-5 w-5" aria-hidden="true" />
-                              ) : (
-                                <PlusSmIcon className="h-5 w-5" aria-hidden="true" />
-                              )}
-                            </span>
-                          </Disclosure.Button>
-                        </h3>
-                        <Disclosure.Panel className="pt-6">
+                          <div className="flex items-center gap-2 text-black dark:text-white">
+                            <input
+                              type="checkbox"
+                              checked={kidChecked}
+                              onChange={handleKidChange}
+                              className="h-4 w-4 border-gray-300 rounded text-indigo-600 focus:ring-indigo-500"
+                            />
+                            <label htmlFor="cat-1 pl-1">Kid</label>
+                          </div>
+                        </div>
+                      </Disclosure.Panel>
+                    </>
+                  )}
+                </Disclosure>
+                <Disclosure as="div" className="border-b border-gray-200 py-6">
+                  {({ open }) => (
+                    <>
+                      <h3 className="-my-3 flow-root">
+                        <Disclosure.Button className="py-3 bg-white dark:bg-slate-800 text-black dark:text-white w-full flex items-center justify-between text-sm">
+                          <span className="font-medium text-gray-900 dark:text-white">Size</span>
+                          <span className="ml-6 flex items-center">
+                            {open ? (
+                              <MinusSmIcon className="h-5 w-5" aria-hidden="true" />
+                            ) : (
+                              <PlusSmIcon className="h-5 w-5" aria-hidden="true" />
+                            )}
+                          </span>
+                        </Disclosure.Button>
+                      </h3>
+                      <Disclosure.Panel className="pt-6">
+                        <div className="space-y-4">
+                          <div className="flex items-center gap-2 text-black dark:text-white">
+                            <input
+                              type="checkbox"
+                              className="h-4 w-4 border-gray-300 rounded text-indigo-600 focus:ring-indigo-500"
+                            />
+                            <label htmlFor="cat-1 pl-1">XL</label>
+                          </div>
+                          <div className="flex items-center gap-2 text-black dark:text-white">
+                            <input
+                              type="checkbox"
+                              className="h-4 w-4 border-gray-300 rounded text-indigo-600 focus:ring-indigo-500"
+                            />
+                            <label htmlFor="cat-1 pl-1">XXL</label>
+                          </div>
+                          <div className="flex items-center gap-2 text-black dark:text-white">
+                            <input
+                              type="checkbox"
+                              className="h-4 w-4 border-gray-300 rounded text-indigo-600 focus:ring-indigo-500"
+                            />
+                            <label htmlFor="cat-1 pl-1">SM</label>
+                          </div>
+                        </div>
+                      </Disclosure.Panel>
+                    </>
+                  )}
+                </Disclosure>
+                <Disclosure as="div" className="border-b border-gray-200 py-6">
+                  {({ open }) => (
+                    <>
+                      <h3 className="-my-3 flow-root">
+                        <Disclosure.Button className="py-3 bg-white dark:bg-slate-800 text-black dark:text-white w-full flex items-center justify-between text-sm">
+                          <span className="font-medium text-gray-900 dark:text-white">Color</span>
+                          <span className="ml-6 flex items-center">
+                            {open ? (
+                              <MinusSmIcon className="h-5 w-5" aria-hidden="true" />
+                            ) : (
+                              <PlusSmIcon className="h-5 w-5" aria-hidden="true" />
+                            )}
+                          </span>
+                        </Disclosure.Button>
+                      </h3>
+                      <Disclosure.Panel className="pt-6">
                         <div className="flex gap-2">
-                                <div className="color-selctor">
-                                    <button className='w-5 h-5 bg-red-600 focus:ring-offset-2 focus:ring-1 focus:ring-indigo-500 focus:outline-none active:bg-red-700'></button>
-                                </div>
-                                <div className="color-selctor">
-                                    <button className='w-5 h-5 bg-green-600 focus:ring-offset-2 focus:ring-1 focus:ring-indigo-500 focus:outline-none active:bg-green-700'></button>
-                                </div>
-                                <div className="color-selctor">
-                                    <button className='w-5 h-5 bg-blue-600 focus:ring-offset-2 focus:ring-1 focus:ring-indigo-500 focus:outline-none active:bg-blue-700'></button>
-                                </div>
-                            </div>
-                        </Disclosure.Panel>
-                      </>
-                    )}
-                  </Disclosure>
+                          <div className="color-selctor">
+                            <button className='w-5 h-5 bg-red-600 focus:ring-offset-2 focus:ring-1 focus:ring-indigo-500 focus:outline-none active:bg-red-700'></button>
+                          </div>
+                          <div className="color-selctor">
+                            <button className='w-5 h-5 bg-green-600 focus:ring-offset-2 focus:ring-1 focus:ring-indigo-500 focus:outline-none active:bg-green-700'></button>
+                          </div>
+                          <div className="color-selctor">
+                            <button className='w-5 h-5 bg-blue-600 focus:ring-offset-2 focus:ring-1 focus:ring-indigo-500 focus:outline-none active:bg-blue-700'></button>
+                          </div>
+                        </div>
+                      </Disclosure.Panel>
+                    </>
+                  )}
+                </Disclosure>
               </form>
 
               {/* Product grid */}
-                <ScrollToTop style={{ display: 'flex', alignItems: 'center', justifyContent: 'center', left: 15, backgroundColor: '#7209b7' }} smooth color='#ffffff' top={20} />
-                <div className='lg:col-span-3'>
-                        {
-                            gridShow ?
-                            <div>
-                                {
-                                    menChecked && <Men />
-                                }
-                                {
-                                    womenChecked && <Women />
-                                }
-                                {
-                                    kidChecked && <Kids />
-                                }
-                                
-                                {
-                                    kidChecked === false && menChecked === false && kidChecked===false &&
-                                    <div>
-                                    <Men/>
-                                    <Women/>
-                                    <Kids/>
-                                    </div>
-                                }
-                            </div>      
-                            // <GridView />
-                            :
-                            <div>
-                            {
-                                    menChecked && <Mens />
-                                }
-                                {
-                                    womenChecked && <Womens />
-                                }
-                                {
-                                    kidChecked && <Kid />
-                                }
-                                
-                                {
-                                    kidChecked === false && menChecked === false && kidChecked===false &&
-                                    <div>
-                                    <Mens/>
-                                    <Womens/>
-                                    <Kid/>
-                                    </div>
-                                }
-                            </div>
-                            // <ListView />
-                        }
+              <ScrollToTop style={{ display: 'flex', alignItems: 'center', justifyContent: 'center', left: 15, backgroundColor: '#7209b7' }} smooth color='#ffffff' top={20} />
+              <div className='lg:col-span-3'>
+                {
+                  gridShow ?
+                    <div>
+                      {
+                        menChecked && <Men />
+                      }
+                      {
+                        womenChecked && <Women />
+                      }
+                      {
+                        kidChecked && <Kids />
+                      }
+
+                      {
+                        kidChecked === false && menChecked === false && kidChecked === false &&
+                        <div>
+                          <Men />
+                          <Women />
+                          <Kids />
+                        </div>
+                      }
                     </div>
-                </div>
+                    // <GridView />
+                    :
+                    <div>
+                      {
+                        menChecked && <Mens />
+                      }
+                      {
+                        womenChecked && <Womens />
+                      }
+                      {
+                        kidChecked && <Kid />
+                      }
+
+                      {
+                        kidChecked === false && menChecked === false && kidChecked === false &&
+                        <div>
+                          <Mens />
+                          <Womens />
+                          <Kid />
+                        </div>
+                      }
+                    </div>
+                  // <ListView />
+                }
+              </div>
+            </div>
           </section>
         </main>
       </div>

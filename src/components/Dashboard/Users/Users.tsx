@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from 'react';
 interface UserState {
     users: {
+        _id: string
         name: string
         email: string
         role: string
@@ -8,6 +9,7 @@ interface UserState {
 }
 const Users = () => {
     const [users, setUsers] = useState<UserState["users"]>([]);
+    const [isLoading, setIsLoading] = useState<boolean>(false);
     const [notFound, setNotFound] = useState('')
     useEffect(() => {
         if (users.length === 0) {
@@ -31,10 +33,29 @@ const Users = () => {
                 .then(res => res.json())
                 .then(data => setUsers(data))
         }
-        if (searchText===''){
+        if (searchText === '') {
             fetch('https://guarded-ocean-73313.herokuapp.com/users')
                 .then(res => res.json())
                 .then(data => setUsers(data))
+        }
+    }
+
+    const deleteUser = (id) => {
+        if (window.confirm('Are you sure you want to delete?')) {
+            setIsLoading(true)
+            fetch(`http://localhost:5000/dashboard/user-delete/${id}`, {
+                method: 'DELETE'
+            }).then(res => res.json())
+                .then(data => {
+
+                    if (data.deletedCount) {
+                        alert('Product Deleted')
+                        const remainingProducts = users.filter(user => user._id !== id)
+                        setUsers(remainingProducts)
+                    }
+
+                })
+                .finally(() => setIsLoading(false))
         }
     }
     return (
@@ -101,7 +122,7 @@ const Users = () => {
                                         <div className="flex items-center">
                                             <div className="flex-shrink-0 w-10 h-10">
                                                 <img className="w-full h-full rounded-full"
-                                                    src="https://images.unsplash.com/photo-1540845511934-7721dd7adec3?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=facearea&facepad=2.2&w=160&h=160&q=80"
+                                                    src={user.photo || "https://i.ibb.co/dDS0Jq5/user.png"}
                                                     alt="" />
                                             </div>
                                             <div className="ml-3">
@@ -119,16 +140,16 @@ const Users = () => {
                                     </td>
                                     <td className="px-5 py-5 border-b border-gray-200 bg-white dark:bg-slate-800 text-sm">
                                         <p className="text-gray-900 dark:text-white whitespace-no-wrap text-left">
-                                            Jan 10, 2022
+                                            {user.date}
                                         </p>
                                     </td>
                                     <td className="px-5 py-5 border-b border-gray-200 bg-white dark:bg-slate-800 text-sm">
-                                        <p className="text-gray-900 dark:text-white rounded whitespace-no-wrap text-left bg-green-200 p-2 w-10">
+                                        <p className="text-white text-white rounded whitespace-no-wrap text-left bg-indigo-600 p-2 w-10">
                                             Edit
                                         </p>
                                     </td>
                                     <td className="px-5 py-5 border-b border-gray-200 bg-white dark:bg-slate-800 text-sm">
-                                        <p className="text-white rounded whitespace-no-wrap text-left bg-red-500 p-2 w-16">
+                                        <p onClick={() => deleteUser(user._id)} className="cursor-pointer text-white rounded whitespace-no-wrap text-left bg-red-500 p-2 w-16">
                                             Delete
                                         </p>
                                     </td>
@@ -161,7 +182,7 @@ const Users = () => {
             </div>
 
         </div>
-        
+
 
     );
 };
