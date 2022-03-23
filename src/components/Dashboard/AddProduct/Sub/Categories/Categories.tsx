@@ -84,7 +84,7 @@ export default function Categories() {
             })
 
     }
-    console.log(categoryValue, 'categoryValue');
+    // console.log(categoryValue, 'categoryValue');
 
 
 
@@ -129,7 +129,7 @@ export default function Categories() {
 
 
     return (
-        <div className='grid grid-cols-3 gap-4'>
+        <div className='grid grid-cols-1 lg:grid-cols-3 gap-4'>
             <div className=' px-4 py-5 bg-white dark:bg-slate-800 space-y-6 sm:p-6 shadow sm:rounded-md sm:overflow-hidden'>
                 <form onSubmit={handleAddCategory}>
                     <div>

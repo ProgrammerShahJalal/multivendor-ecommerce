@@ -387,7 +387,7 @@ export default function Shop() {
                         womenChecked && <Womens />
                       }
                       {
-                        kidChecked && <Kid />
+                        kidChecked && <Kids />
                       }
 
                       {

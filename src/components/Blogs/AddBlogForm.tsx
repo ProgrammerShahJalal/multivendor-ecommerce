@@ -84,16 +84,15 @@ export default function AddBlogForm() {
                                             />
                                         </div>
                                     </div>
-                                    <div className="mt-1 flex rounded-md shadow-sm">
-                                        <input
-                                            {...register("date", { required: true })}
-                                            type="date"
-                                            id="date"
-                                            className="focus:ring-indigo-500 focus:border-indigo-500 flex-1 block w-full rounded-none rounded-r-md sm:text-sm border-gray-300"
-                                        />
-                                    </div>
                                 </div>
-
+                                <div className="mt-1 flex rounded-md shadow-sm">
+                                    <input
+                                        {...register("date", { required: true })}
+                                        type="date"
+                                        id="date"
+                                        className="focus:ring-indigo-500 focus:border-indigo-500 flex-1 block w-full rounded-none rounded-r-md sm:text-sm border-gray-300"
+                                    />
+                                </div>
                                 <div>
                                     <label htmlFor="description" className="block text-sm font-medium text-gray-700 dark:text-white">
                                         Description

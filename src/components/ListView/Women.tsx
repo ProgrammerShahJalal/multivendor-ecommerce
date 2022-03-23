@@ -6,6 +6,8 @@ import Modal from '@mui/material/Modal';
 import Fade from '@mui/material/Fade';
 import ProductView from '../ProductView/ProductView';
 import ProductViewSm from '../ProductView/ProductViewSm';
+import { useDispatch } from 'react-redux';
+import { addToWishlist } from '../../redux/wishlistSlice';
 
 interface ProductState {
     products: {
@@ -23,6 +25,8 @@ interface ProductState {
 }
 
 const Women = () => {
+    const dispatch = useDispatch()
+
     const [products, setProducts] = useState<ProductState["products"]>
         ([]);
 
@@ -49,7 +53,7 @@ const Women = () => {
                     products.map((product) => (
                         <div className="bg-white dark:bg-slate-600 shadow-inner flex overflow-hidden single-card ">
                             <div className="relative group">
-                            <div style={{ height: '300px',width: '300px' }} className='bg-white overflow-hidden'>
+                                <div style={{ height: '300px', width: '300px' }} className='bg-white overflow-hidden'>
                                     <img src={product.hoverImg} className='select-none w-full h-full object-contain img group-hover:hidden block transition' alt="" />
                                     <img src={product.img3} className='select-none img w-full h-full object-contain group-hover:block hidden transition' alt="" />
                                 </div>
@@ -57,9 +61,9 @@ const Women = () => {
                                     <button onClick={() => handleOpen(product)} className='text-white text-lg w-9 h-8 rounded-full bg-indigo-500 flex items-center justify-center hover:bg-gray-800  transition'>
                                         <i className="fa-regular fa-magnifying-glass"></i>
                                     </button>
-                                    <a className='text-white text-lg w-9 h-8 rounded-full bg-indigo-500 flex items-center justify-center hover:bg-gray-800 transition' href="/">
+                                    <button onClick={() => dispatch((addToWishlist(product)))} className='text-white text-lg w-9 h-8 rounded-full bg-indigo-500 flex items-center justify-center hover:bg-gray-800 transition'>
                                         <i className="fa-regular fa-heart"></i>
-                                    </a>
+                                    </button>
                                 </div>
 
                             </div>
