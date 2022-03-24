@@ -117,19 +117,19 @@ export default function UserDetailedOrder() {
                                             </div>
                                         </div>
                                         <div className="flex flex-col justify-center px-4 py-6 md:p-6 xl:p-8 w-full bg-zinc-50 dark:bg-zinc-50 space-y-6 drop-shadow-md rounded">
-                                            <h3 className="text-xl dark:text-zinc-700 font-semibold leading-5 text-gray-800">Delivery Date</h3>
+                                            <h3 className="text-xl dark:text-zinc-700 font-semibold leading-5 text-gray-800">Delivery Date {details.deliveryDate}</h3>
                                             <div className="flex justify-between items-start w-full">
                                                 <div className="flex justify-center items-center space-x-4">
                                                     <div className="w-8 h-8">
                                                         <img className="w-full h-full" alt="logo" src="https://i.ibb.co/L8KSdNQ/image-3.png" />
                                                     </div>
                                                     <div className="flex flex-col justify-start items-center">
-                                                        <p className="text-lg leading-6 dark:text-zinc-700	 font-semibold text-gray-800">Delivery Status<br />
+                                                        <p className="text-lg leading-6 dark:text-zinc-700	 font-semibold text-gray-800">Delivery Status - {details.status}<br />
 
                                                         </p>
                                                     </div>
                                                 </div>
-                                                <div>
+                                                {/* <div>
                                                     <FormControl sx={{ m: 1, minWidth: 120 }}>
                                                         <InputLabel id="demo-controlled-open-select-label">Status</InputLabel>
                                                         <Select
@@ -152,12 +152,12 @@ export default function UserDetailedOrder() {
                                                             <MenuItem value={'Cancel'}>Cancel</MenuItem>
                                                         </Select>
                                                     </FormControl>
-                                                </div>
+                                                </div> */}
                                                 {/* <p className="text-sm px-4 py-1 font-semibold bg-indigo-500 rounded-full leading-6 dark:text-white text-white"> {details.status}</p> */}
                                             </div>
                                             <div className="w-full delivery-date">
                                                 {/* <button className="drop-shadow-md rounded-md bg-indigo-600 hover:bg-indigo-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500 py-5 w-96 md:w-full  text-base font-medium leading-4 text-white">View Carrier Details</button> */}
-                                                <LocalizationProvider sx={{ width: 100 }} dateAdapter={AdapterDateFns}>
+                                                {/* <LocalizationProvider sx={{ width: 100 }} dateAdapter={AdapterDateFns}>
                                                     <DatePicker
 
                                                         label="Delivery Date"
@@ -168,7 +168,7 @@ export default function UserDetailedOrder() {
                                                         }}
                                                         renderInput={(params) => <TextField {...params} />}
                                                     />
-                                                </LocalizationProvider>
+                                                </LocalizationProvider> */}
                                             </div>
                                         </div>
                                     </div>
@@ -207,10 +207,10 @@ export default function UserDetailedOrder() {
                                             </div>
                                             <div>
                                                 <div className="flex w-full justify-center items-center md:justify-start md:items-start">
-                                                    <button onClick={() => CancelOrderFunc(details._id)} className="mt-6 md:mt-0	 py-5 drop-shadow-md rounded-md bg-red-500 hover:bg-red-600 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-red-500 w-96 2xl:w-full text-base font-medium leading-4 text-gray-800">Cancel</button>
+                                                    <button onClick={() => CancelOrderFunc(details._id)} className="mt-6 md:mt-0	 py-5 drop-shadow-md rounded-md bg-red-500 hover:bg-red-600 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-red-500 w-96 2xl:w-full text-base font-medium leading-4 text-white">Cancel</button>
                                                 </div>
                                                 <div className="flex w-full justify-center items-center md:justify-start md:items-start">
-                                                    <button onClick={() => SaveOrderFunc()} className="mt-6 py-5 drop-shadow-md rounded-md bg-indigo-600 hover:bg-indigo-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500 w-96 2xl:w-full text-base font-medium leading-4 text-gray-800">Save</button>
+                                                    <button onClick={() => SaveOrderFunc()} className="mt-6 py-5 drop-shadow-md rounded-md bg-indigo-600 hover:bg-indigo-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500 w-96 2xl:w-full text-base font-medium leading-4 text-white">Save</button>
                                                 </div>
                                             </div>
                                         </div>

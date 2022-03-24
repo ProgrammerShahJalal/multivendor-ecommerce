@@ -3,7 +3,7 @@
 export const AddVendorToDB = (data, navigate) => {
     const date = new Date().toLocaleString()
     const vendorDetails = { ...data, isProfileCompleted: true, date, status: "Active" }
-    fetch('https://guarded-ocean-73313.herokuapp.com/add-vendor', {
+    fetch('https://young-springs-82149.herokuapp.com/add-vendor', {
         method: 'POST',
         headers: {
             'content-type': 'application/json'

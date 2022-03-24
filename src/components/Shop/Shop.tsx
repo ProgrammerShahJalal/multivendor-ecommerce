@@ -36,6 +36,9 @@ export default function Shop() {
   const [menChecked, setMenChecked] = useState(true);
   const [womenChecked, setWomenChecked] = useState(true);
   const [kidChecked, setKidChecked] = useState(true);
+  const [categoryvalue, setCategoryValue] = useState("");
+  console.log(categoryvalue);
+
   const handleMenChange = () => {
     setMenChecked(!menChecked);
     return;
@@ -48,6 +51,7 @@ export default function Shop() {
     setKidChecked(!kidChecked);
     return;
   };
+  
   return (
     <div className="bg-white dark:bg-slate-800">
       <Collection />
@@ -276,7 +280,7 @@ export default function Shop() {
                     </>
                   )}
                 </Disclosure>
-                <Disclosure as="div" className="border-b border-gray-200 py-6">
+                {/* <Disclosure as="div" className="border-b border-gray-200 py-6">
                   {({ open }) => (
                     <>
                       <h3 className="-my-3 flow-root">
@@ -349,7 +353,7 @@ export default function Shop() {
                       </Disclosure.Panel>
                     </>
                   )}
-                </Disclosure>
+                </Disclosure> */}
               </form>
 
               {/* Product grid */}
@@ -387,7 +391,7 @@ export default function Shop() {
                         womenChecked && <Womens />
                       }
                       {
-                        kidChecked && <Kids />
+                        kidChecked && <Kid />
                       }
 
                       {

@@ -25,7 +25,6 @@ import SearchField from "./components/Pages/SearchField/SearchField";
 import UnitTesting from "./components/Pages/UnitTesting/UnitTesting";
 import VendorInformations from "./components/Pages/VendorPages/VendorInformations";
 import VendorRegister from "./components/Pages/VendorPages/VendorRegister";
-import WishList from "./components/Pages/WishList/WishList";
 import PrivacyPolicy from "./components/PrivacyPolicy/PrivacyPolicy";
 import Promo from './components/Promo/Promo';
 import Footer from './components/Shared/Footer/Footer';
@@ -48,8 +47,10 @@ import DashboardBlogs from "./components/Blogs/DashboardBlogs";
 import BlogsFirstLook from "./components/Blogs/BlogsFirstLook";
 import AffiliateFirstLook from "./components/Blogs/AffiliateFirstLook";
 import LoginForm from "./components/Pages/LoginPage/Login";
-import UserMainProfile from './components/Pages/UserMainProfile/UserMainProfile';
 import DashboardUI from "./components/Dashboard/Dashboard/DashboardUI.js";
+import UserMainProfile from "./components/Pages/UserMainProfile/UserMainProfile";
+import WishList from "./components/Pages/WishList/WishList";
+
 
 const Dashboard = lazy(() => import("./components/Dashboard/Dashboard/Dashboard"));
 const AllOrders = lazy(() => import("./components/Dashboard/Order/allOrder"));
@@ -72,7 +73,7 @@ function App() {
   const affiliateLink = window.location.search.split('=')[1]
   useLayoutEffect(() => {
     if (affiliateLink) {
-      fetch(`https://guarded-ocean-73313.herokuapp.com/findUrl/${affiliateLink}`)
+      fetch(`https://young-springs-82149.herokuapp.com/findUrl/${affiliateLink}`)
         .then(res => res.json())
         .then(data => {
           if (data.isUrlTrue) {
@@ -122,6 +123,7 @@ function App() {
             <Route path="/profile" element={<PrivateRoute><UserProfile/></PrivateRoute>}>
               <Route path="" element={<div className="mx-auto my-auto"><UserMainProfile/></div>}></Route>
               <Route path="dashboard" element={<UserDashboardHome />}></Route>
+              <Route path="profile" element={<UserMainProfile />}></Route>
               <Route path="orders" element={<UserOrders />}></Route>
               <Route path="order/:id" element={<UserDetailedOrder />}></Route>
             </Route>

@@ -33,7 +33,7 @@ const CheckoutForm = () => {
     const [clientSecret, setClientSecret] = React.useState('');
 
     React.useEffect(() => {
-        fetch('https://guarded-ocean-73313.herokuapp.com/create-payment-intent', {
+        fetch('https://young-springs-82149.herokuapp.com/create-payment-intent', {
             method: 'POST',
             headers: {
                 'content-type': 'application/json'
@@ -119,7 +119,7 @@ const CheckoutForm = () => {
     //         }
     //         console.log(paymentIntent);
 
-    //         fetch('https://guarded-ocean-73313.herokuapp.com/dashboard/orders', {
+    //         fetch('https://young-springs-82149.herokuapp.com/dashboard/orders', {
     //             method: 'POST',
     //             headers: {
     //                 'content-type': 'application/json'

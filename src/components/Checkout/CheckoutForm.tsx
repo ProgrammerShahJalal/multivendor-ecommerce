@@ -16,7 +16,7 @@ import { affiliateCommission } from '../../Services/Affiliate/AffiliateCommissio
 
 const CheckoutForm = () => {
     const { cart, cartTotal } = useSelector((state: any) => state.cart)
-    const { user } = UseAuth()
+    const { user, userDetails } = UseAuth()
     const date = new Date().toDateString()
     const stripe = useStripe();
     const elements = useElements();
@@ -39,7 +39,7 @@ const CheckoutForm = () => {
     const [clientSecret, setClientSecret] = React.useState('');
 
     React.useEffect(() => {
-        fetch('https://guarded-ocean-73313.herokuapp.com/create-payment-intent', {
+        fetch('https://young-springs-82149.herokuapp.com/create-payment-intent', {
             method: 'POST',
             headers: {
                 'content-type': 'application/json'
@@ -85,7 +85,7 @@ const CheckoutForm = () => {
                 payment_method: {
                     card: card,
                     billing_details: {
-                        name: nameRef.current?.value,
+                        name: userDetails.email || nameRef.current?.value,
                         email: emailRef.current?.value || user.email,
                         phone: phoneRef.current?.value,
                         address: {
@@ -118,7 +118,7 @@ const CheckoutForm = () => {
             //     transaction: paymentIntent?.client_secret.slice('_secret')[0]
             // }
 
-            await fetch('https://guarded-ocean-73313.herokuapp.com/dashboard/orders', {
+            await fetch('https://young-springs-82149.herokuapp.com/dashboard/orders', {
                 method: 'POST',
                 headers: {
                     'content-type': 'application/json'
@@ -127,14 +127,15 @@ const CheckoutForm = () => {
                     products: [...cart], paymentDetails: {
                         createdId: paymentIntent.created,
                         date,
-                        amount: paymentIntent.amount,
-                        email: emailRef.current?.value,
+                        amount: paymentIntent.amount / 100,
+                        email: userDetails.email,
                         billing: paymentIntent.billing_details,
                         last4: paymentMethod.card.last4,
                         transaction: paymentIntent?.client_secret.slice('_secret')[0]
                     },
                     status: 'Placed',
                     billing: {
+                        email: emailRef.current?.value,
                         country: countryRef.current?.value,
                         name: nameRef.current?.value,
                         phone: phoneRef.current?.value,
@@ -162,6 +163,8 @@ const CheckoutForm = () => {
 
 
     }
+
+
 
     return (
         <div className="h-screen grid grid-cols-3">

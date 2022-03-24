@@ -18,61 +18,66 @@ const UserMainProfile = () => {
         p: 4,
       };
     return (
-        <div>
-            <div className="grid lg:grid-cols-2 md:grid-cols-2 grid-cols-1 container px-16 gap-5">
-                <div>
-                <img src={user.photoURL} alt="" className='rounded-full lg:w-36 md:w-36 w-18 lg:h-36 md:h-36 h-18' />
-                <h1 className="text-2xl">Name: {user.displayName}</h1>
-                <p className='md:text-xl lg:text-xl sm:text-xs'>{user.email}</p>
-                </div>
-            
-            <div>
-                <ul>
-                    
-                    <li className='md:text-xl lg:text-xl sm:text-sm'>Phone: N/A</li>
-                    <li className='md:text-xl lg:text-xl sm:text-sm'>Religion: N/A</li>
-                    <li className='md:text-xl lg:text-xl sm:text-sm'>Address: N/A</li>
-                    <li className='md:text-xl lg:text-xl sm:text-sm'>Age: N/A</li>
-                    <li className="md:text-xl lg:text-xl sm:text-sm">Occupation: N/A</li>
-                </ul>
-                <button onClick={handleOpen} className='border-indigo-500 text-indigo-500 border p-1 rounded m-3'>Update profile</button>
+
+        <div className="container mx-auto my-5 bg-white shadow overflow-hidden sm:rounded-lg">
+            <div className="px-4 py-5 sm:px-6">
+                <h3 className="text-lg leading-6 font-medium text-gray-900">Applicant Information</h3>
+                <p className="mt-1 max-w-2xl text-sm text-gray-500">Personal details and application.</p>
             </div>
-            
-            </div>
-            <div>
-            <Modal
-        open={open}
-        onClose={handleClose}
-        aria-labelledby="modal-modal-title"
-        aria-describedby="modal-modal-description"
-      >
-        <Box sx={style}>
-        <div className="mt-4">
-        <label className="block text-gray-700 text-sm font-bold mb-2">Name</label>
-        <input className="bg-gray-200 text-gray-700 focus:outline-none focus:shadow-outline border border-gray-300 rounded py-2 px-4 block w-full appearance-none" name='text' type="email" />
-        </div>
-        <div className="mt-4">
-        <label className="block text-gray-700 text-sm font-bold mb-2">Phone</label>
-        <input className="bg-gray-200 text-gray-700 focus:outline-none focus:shadow-outline border border-gray-300 rounded py-2 px-4 block w-full appearance-none" name='email' type="number" />
-        </div>
-        <div className="mt-4">
-        <label className="block text-gray-700 text-sm font-bold mb-2">Age</label>
-        <input className="bg-gray-200 text-gray-700 focus:outline-none focus:shadow-outline border border-gray-300 rounded py-2 px-4 block w-full appearance-none" name='email' type="number" />
-        </div>
-        <div className="mt-4">
-        <label className="block text-gray-700 text-sm font-bold mb-2">Address</label>
-        <input className="bg-gray-200 text-gray-700 focus:outline-none focus:shadow-outline border border-gray-300 rounded py-2 px-4 block w-full appearance-none" name='email' type="text" />
-        </div>
-        <div className="mt-4">
-        <label className="block text-gray-700 text-sm font-bold mb-2">Occupation</label>
-        <input className="bg-gray-200 text-gray-700 focus:outline-none focus:shadow-outline border border-gray-300 rounded py-2 px-4 block w-full appearance-none" name='email' type="text" />
-        </div>
-        <h1 className="block text-gray-700 text-sm font-bold mt-2 mb-1">Upload a profile image</h1>
-        <div className='mt-4 flex items-center justify-center'>
-        <input className='border-2 border-gray-500 border-dashed rounded p-4' aria-hidden={true} accept="image/png , image/jpeg, image/webp" type="file"/>
-        </div>
-        </Box>
-      </Modal>
+            <div className="border-t border-gray-200">
+                <dl>
+                    <div className="bg-gray-50 px-4 py-5 sm:grid sm:grid-cols-3 sm:gap-4 sm:px-6">
+                        <dt className="text-sm font-medium text-gray-500">Full name</dt>
+                        <dd className="mt-1 text-sm text-gray-900 sm:mt-0 sm:col-span-2">Margot Foster</dd>
+                    </div>
+                    <div className="bg-white px-4 py-5 sm:grid sm:grid-cols-3 sm:gap-4 sm:px-6">
+                        <dt className="text-sm font-medium text-gray-500">Application for</dt>
+                        <dd className="mt-1 text-sm text-gray-900 sm:mt-0 sm:col-span-2">Backend Developer</dd>
+                    </div>
+                    <div className="bg-gray-50 px-4 py-5 sm:grid sm:grid-cols-3 sm:gap-4 sm:px-6">
+                        <dt className="text-sm font-medium text-gray-500">Email address</dt>
+                        <dd className="mt-1 text-sm text-gray-900 sm:mt-0 sm:col-span-2">margotfoster@example.com</dd>
+                    </div>
+                    <div className="bg-white px-4 py-5 sm:grid sm:grid-cols-3 sm:gap-4 sm:px-6">
+                        <dt className="text-sm font-medium text-gray-500">Salary expectation</dt>
+                        <dd className="mt-1 text-sm text-gray-900 sm:mt-0 sm:col-span-2">$120,000</dd>
+                    </div>
+                    <div className="bg-gray-50 px-4 py-5 sm:grid sm:grid-cols-3 sm:gap-4 sm:px-6">
+                        <dt className="text-sm font-medium text-gray-500">About</dt>
+                        <dd className="mt-1 text-sm text-gray-900 sm:mt-0 sm:col-span-2">Fugiat ipsum ipsum deserunt culpa aute sint do nostrud anim incididunt cillum culpa consequat. Excepteur qui ipsum aliquip consequat sint. Sit id mollit nulla mollit nostrud in ea officia proident. Irure nostrud pariatur mollit ad adipisicing reprehenderit deserunt qui eu.</dd>
+                    </div>
+                    <div className="bg-white px-4 py-5 sm:grid sm:grid-cols-3 sm:gap-4 sm:px-6">
+                        <dt className="text-sm font-medium text-gray-500">Attachments</dt>
+                        <dd className="mt-1 text-sm text-gray-900 sm:mt-0 sm:col-span-2">
+                            <ul role="list" className="border border-gray-200 rounded-md divide-y divide-gray-200">
+                                <li className="pl-3 pr-4 py-3 flex items-center justify-between text-sm">
+                                    <div className="w-0 flex-1 flex items-center">
+
+                                        <svg className="flex-shrink-0 h-5 w-5 text-gray-400" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor" aria-hidden="true">
+                                            <path fill-rule="evenodd" d="M8 4a3 3 0 00-3 3v4a5 5 0 0010 0V7a1 1 0 112 0v4a7 7 0 11-14 0V7a5 5 0 0110 0v4a3 3 0 11-6 0V7a1 1 0 012 0v4a1 1 0 102 0V7a3 3 0 00-3-3z" clip-rule="evenodd" />
+                                        </svg>
+                                        <span className="ml-2 flex-1 w-0 truncate"> resume_back_end_developer.pdf </span>
+                                    </div>
+                                    <div className="ml-4 flex-shrink-0">
+                                        <a href="#" className="font-medium text-indigo-600 hover:text-indigo-500"> Download </a>
+                                    </div>
+                                </li>
+                                <li className="pl-3 pr-4 py-3 flex items-center justify-between text-sm">
+                                    <div className="w-0 flex-1 flex items-center">
+
+                                        <svg className="flex-shrink-0 h-5 w-5 text-gray-400" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor" aria-hidden="true">
+                                            <path fill-rule="evenodd" d="M8 4a3 3 0 00-3 3v4a5 5 0 0010 0V7a1 1 0 112 0v4a7 7 0 11-14 0V7a5 5 0 0110 0v4a3 3 0 11-6 0V7a1 1 0 012 0v4a1 1 0 102 0V7a3 3 0 00-3-3z" clip-rule="evenodd" />
+                                        </svg>
+                                        <span className="ml-2 flex-1 w-0 truncate"> coverletter_back_end_developer.pdf </span>
+                                    </div>
+                                    <div className="ml-4 flex-shrink-0">
+                                        <a href="#" className="font-medium text-indigo-600 hover:text-indigo-500"> Download </a>
+                                    </div>
+                                </li>
+                            </ul>
+                        </dd>
+                    </div>
+                </dl>
             </div>
         </div>
     );

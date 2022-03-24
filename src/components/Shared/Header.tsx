@@ -76,7 +76,7 @@ const Header: FC<HeaderProps> = ({ fixed, transparent }) => {
     useEffect(() => {
         if (user.email) {
             setIsLoading(true)
-            fetch(`https://guarded-ocean-73313.herokuapp.com/users/${user.email}`)
+            fetch(`https://young-springs-82149.herokuapp.com/users/${user.email}`)
                 .then(res => res.json())
                 .then(data => {
                     localStorage.setItem("userDetails", JSON.stringify(data))
@@ -454,7 +454,7 @@ const Header: FC<HeaderProps> = ({ fixed, transparent }) => {
                                                     <Menu.Item>
                                                         {({ active }) => (
                                                             <NavLink
-                                                                to='/profile'
+                                                                to='/profile/dashboard'
                                                                 className={classNames(active ? 'bg-gray-100 dark:text-gray-700' : '', 'block px-4 py-2 text-sm text-gray-700 dark:text-white')}
                                                             >
                                                                 Your Profile

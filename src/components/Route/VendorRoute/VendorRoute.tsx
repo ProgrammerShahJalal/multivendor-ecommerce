@@ -23,12 +23,7 @@ const AdminRoute = ({ children, ...rest }) => {
         return <span className='flex justify-center'><CircularProgress color="inherit" /></span>
     } else if (userDetails.role === '') {
         return <Navigate to="/login" state={{ from: location }} />;
-    } else if (userDetails.email && userDetails.role === 'admin') {
-        return children;
     } else if (userDetails.email && userDetails.role === 'vendor') {
-        return children;
-    } if (userDetails.role === 'user') {
-    } else if (userDetails.email && userDetails.role === 'affiliate') {
         return children;
     } if (userDetails.role === 'user') {
         return <Navigate to="/" state={{ from: location }} />;

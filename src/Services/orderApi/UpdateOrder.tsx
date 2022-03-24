@@ -3,7 +3,7 @@ import { toast } from 'react-toastify';
 export const UpdateOrder = (id, status, deliveryDate, setData, setIsLoading, navigate, details) => {
 
     setIsLoading(true)
-    fetch(`https://guarded-ocean-73313.herokuapp.com/dashboard/orders/${id}`, {
+    fetch(`https://young-springs-82149.herokuapp.com/dashboard/orders/${id}`, {
         method: 'PUT',
         headers: {
             'content-type': 'application/json'

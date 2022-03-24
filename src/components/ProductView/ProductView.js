@@ -9,6 +9,8 @@ import "swiper/css/free-mode";
 import "swiper/css/navigation";
 import "swiper/css/thumbs";
 import { ShareButton } from "react-custom-share";
+import { useDispatch } from 'react-redux';
+import { addToCart } from '../../redux/cartSlice';
 const ProductView = ({ selectedProduct }) => {
     // console.log(selectedProduct, 'selectedProduct');
     const [thumbsSwiper, setThumbsSwiper] = useState(null);
@@ -22,7 +24,18 @@ const ProductView = ({ selectedProduct }) => {
             setCounter(counter - 1)
         )
     }
-
+    const detailProduct = {
+        _id: selectedProduct._id,
+        title: selectedProduct.title,
+        image: selectedProduct.images[0]?.src,
+        category: selectedProduct.categories[0].label,
+        price: parseInt(selectedProduct.sale_price ? selectedProduct.sale_price : selectedProduct.reg_price),
+        attributes: [],
+        cartQuantity: 1,
+        vendor: {
+            email: selectedProduct?.publisherDetails?.publisher || null
+        }
+    }
     const shareFBButtonProps = {
         url: "https://unitymart-c522a.web.app",
         network: "Facebook",
@@ -44,8 +57,12 @@ const ProductView = ({ selectedProduct }) => {
         longtext:
             " "
     };
+    const dispatch = useDispatch()
 
-
+    const handleAddToCart = (id) => {
+        dispatch(addToCart(id))
+        // navigate('/cart')
+    }
     return (
         <div className='mx-auto'>
             <div className='py-12 border border-white container bg-white place-content-center px-8 justify-center items-center mt-8 grid lg:grid-cols-2 md:grid-cols-2 grid-cols-1 gap-6'>
@@ -186,11 +203,9 @@ const ProductView = ({ selectedProduct }) => {
                         </div>
 
                         <div className="border-b -mt-20 border-gray-200 pb-5">
-                            <Link to="/">
-                                <button className='w-40 text-center top-5 text-white  p-2 bg-indigo-500 border border-indigo-500 hover:bg-transparent hover:text-indigo-500 transition'>
+                                <button onClick={() => handleAddToCart(detailProduct)} className='w-40 text-center top-5 text-white  p-2 bg-indigo-500 border border-indigo-500 hover:bg-transparent hover:text-indigo-500 transition'>
                                     <i className="fa-regular fa-bag-shopping"></i> Add to cart
                                 </button>
-                            </Link>
                             <Link to="/">
                                 <button className='w-40 text-center top-5 hover:text-white my-2 p-2 hover:bg-indigo-500 border border-indigo-500 bg-transparent text-indigo-500 transition'>
                                     <i className="fa-regular fa-heart"> </i> Add to wishlist

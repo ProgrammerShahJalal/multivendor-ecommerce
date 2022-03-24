@@ -4,9 +4,9 @@ import Box from '@mui/material/Box';
 import Modal from '@mui/material/Modal';
 import ProductView from '../../ProductView/ProductView';
 import ProductViewSm from '../../ProductView/ProductViewSm';
+import { Link } from 'react-router-dom';
 import { useDispatch } from 'react-redux';
-import { addToWishlist } from '../../../redux/wishlistSlice';
-
+import { addToCart } from '../../../redux/cartSlice';
 interface ProductState {
     products: {
         title: string
@@ -23,8 +23,6 @@ interface ProductState {
 
 const Kids = () => {
 
-    const dispatch = useDispatch()
-
     const [products, setProducts] = useState<ProductState["products"]>
         ([]);
     const [open, setOpen] = React.useState(false);
@@ -38,7 +36,7 @@ const Kids = () => {
     useEffect(() => {
         if (products) {
 
-            fetch('https://morning-inlet-49130.herokuapp.com/kids')
+            fetch('https://young-springs-82149.herokuapp.com/shop/products/category?category=kids')
                 .then(res => res.json())
                 .then(data => setProducts(data))
         }
@@ -71,45 +69,70 @@ const Kids = () => {
         boxShadow: 24,
         // p: 4,
     };
+    const dispatch = useDispatch()
+    const handleAddToCart = (id) => {
+        dispatch(addToCart(id))
+        // navigate('/cart')
+    }
     return (
-        <div>
-            <div className="grid lg:grid-cols-3 md:grid-cols-2 xs:grid-cols-1 gap-6">
+        <div className="container lg:px-0 md:px-10 px-10 pb-16 mx-auto">
+            <div className="grid place-content-center lg:grid-cols-4 md:grid-cols-3 grid-cols-1 gap-6">
                 {
-                    products.map((product) => (
-                        <div className="bg-white dark:bg-slate-600 shadow-inner overflow-hidden single-card ">
-                            <div className="relative group">
-                                <div style={{ height: '300px' }} className='bg-white overflow-hidden'>
-                                    <img src={product.hoverImg} className='select-none w-full h-full object-contain img group-hover:hidden block transition' alt="" />
-                                    <img src={product.img3} className='select-none img w-full h-full object-contain group-hover:block hidden transition' alt="" />
-                                </div>
-                                <div className="absolute inset-0 bg-black bg-opacity-20 flex items-center justify-center gap-2 opacity-0 group-hover:opacity-100 transition">
-                                    <button onClick={() => handleOpen(product)} className='text-white text-lg w-9 h-8 rounded-full bg-indigo-500 flex items-center justify-center hover:bg-gray-800 transition'>
-                                        <i className="fa-regular fa-magnifying-glass"></i>
-                                    </button>
-                                    <button onClick={() => dispatch((addToWishlist(product)))} className='text-white text-lg w-9 h-8 rounded-full bg-indigo-500 flex items-center justify-center hover:bg-gray-800 transition'>
-                                        <i className="fa-regular fa-heart"></i>
-                                    </button>
-                                </div>
+                    products.length === 0 ? <h2>No Products Found</h2> :
+                        products.map((product: any) => {
+                            const detailProduct = {
+                                _id: product._id,
+                                title: product.title,
+                                image: product.images[0]?.src,
+                                category: product.categories[0].label,
+                                price: parseInt(product.sale_price ? product.sale_price : product.reg_price),
+                                attributes: [],
+                                cartQuantity: 1,
+                                vendor: {
+                                    email: product?.publisherDetails?.publisher || null
+                                }
+                            }
 
-                            </div>
-                            <div style={{ height: '200px' }} className="pt-4 gb-3 px-4">
-                                <a href="/">
-                                    <h4 className="font-medium text-xl mb-2 text-gray-800 dark:text-white  transition">{product.title}</h4>
-                                    <h5 className="font-bold text-sm mb-2 text-gray-800 dark:text-white transition">from {product.vendorName}</h5>
-                                </a>
-                                <div className="flex items-baseline mb-1 space-x-2">
-                                    <p className="text-xl text-indigo-500 font-semibold">{product.salePrice}</p>
-                                    <p className="text-sm text-gray-400 line-through">{product.price}</p>
+
+                            return <div key={product._id} className="bg-white shadow-inner overflow-hidden single-card">
+
+                                <div className="relative group">
+                                    <div style={{ height: '300px' }} className='z-100 overflow-hidden'>
+                                        <img src={product.images[0]?.src} className='select-none w-full h-full img z-0 group-hover:hidden block transition object-contain' alt="" />
+                                        <img src={product.images[1]?.src} className='w-full select-none h-full hoverImg group-hover:block hidden transition object-center object-contain' alt="" />
+                                    </div>
+                                    <div className="absolute inset-0 bg-black bg-opacity-40 flex items-center justify-center gap-2 opacity-0 group-hover:opacity-100 transition">
+                                        {/* <Link to={`/product/details/${product._id}`}> */}
+                                        <button className='text-white text-lg w-9 h-8 rounded-full bg-indigo-500 flex items-center justify-center hover:bg-gray-800 transition' onClick={() => handleOpen(product)}>
+                                            <i className="fa-regular fa-magnifying-glass"></i>
+                                        </button>
+                                        {/* </Link> */}
+                                        <a className='text-white text-lg w-9 h-8 rounded-full bg-indigo-500 flex items-center justify-center hover:bg-gray-800 transition' href="/">
+                                            <i className="fa-regular fa-heart"></i>
+                                        </a>
+                                    </div>
+
                                 </div>
-                                <div className="flex items-center">
-                                    <Rating name="half-rating-read" defaultValue={product.rating} precision={0.5} readOnly />
-                                    <div className="text-xs text-gray-500 ml-3">(1)</div>
+                                <div style={{ height: '200px' }} className="pt-4 gb-3 px-4">
+                                    <Link to={`/product/${product._id}`}>
+                                        <h4 className="font-medium text-xl mb-2 text-grey-800  transition">{product.title?.slice(0, 20)}...</h4>
+                                        <h5 className="font-bold text-sm mb-2 text-grey-800 transition">Category: {product.categories[0]?.label}</h5>
+                                    </Link>
+                                    <div className="flex items-baseline mb-1 space-x-2">
+                                        <p className="text-xl text-indigo-500 font-semibold">{product.sale_price}</p>
+                                        <p className="text-sm text-gray-400 line-through">{product.reg_price}</p>
+                                    </div>
+                                    <div className="flex items-center">
+                                        <Rating name="half-rating-read" defaultValue={5} precision={0.5} readOnly />
+                                        {/* <div className="text-xs text-gray-500 ml-3">(1)</div> */}
+                                    </div>
                                 </div>
+                                {product.attributes.length === 0 ? <button onClick={() => handleAddToCart(detailProduct)} className='block w-full py-1 text-center top-5 text-white bg-indigo-500 border border-indigo-500 rounded-b hover:bg-transparent hover:text-indigo-500 transition'>Add to Cart</button> : <Link to={`/product/${product._id}`}> <button className='block w-full py-1 text-center top-5 text-white bg-indigo-500 border border-indigo-500 rounded-b hover:bg-transparent hover:text-indigo-500 transition'>View Product</button></Link>}
                             </div>
-                            <button className='block w-full py-1 text-center top-5 text-white bg-indigo-500 border border-indigo-500 rounded-b hover:bg-transparent hover:text-indigo-500 transition'>Add to Cart</button>
-                        </div>
-                    ))}
+                        })}
+
             </div>
+
             <div className='bg-white dark:bg-gray-800 text-center'>
                 <Modal
                     BackdropComponent={Backdrop}
@@ -131,7 +154,6 @@ const Kids = () => {
                         </Box>
                     </div>
                 </Modal>
-
             </div>
         </div>
     );
