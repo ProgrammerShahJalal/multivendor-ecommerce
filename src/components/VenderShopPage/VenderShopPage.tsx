@@ -57,10 +57,9 @@ export default function VendorShopPage() {
         <div className="bg-gray-200 dark:bg-gray-800 px-8">
             <VendorTop />
 
-            <div className='min-h-screen lg:flex md:flex-1 container'>
+            <div className='min-h-screen lg:flex md:flex-1 gap-5'>
                 {/* sidebar start */}
                 {/* <div className='bg-slate-200 pb-8 md:h-2/4'>
-
             <div className='min-h-screen lg:flex md:flex-1 gap-5'>
                 {/* sidebar start */}
                 <div className='bg-slate-200 pb-8 md:h-2/4 w-1/5'>
@@ -68,7 +67,7 @@ export default function VendorShopPage() {
                 </div>
                 {/* sidebar end  */}
 
-                <div className='mx-10'>
+                <div className='w-4/5'>
                     <div className='text center'>
                         <h2 className='uppercase font-bold text-lg text-left  py-3'>Search</h2>
                         <input onChange={handleOnChange} type="text" className=' bg-slate-100 text-slate-400 py-3   border border-slate-30 hover:border-indigo-300' placeholder='Search Products' />
@@ -79,7 +78,7 @@ export default function VendorShopPage() {
                         <div className="text-xl text-center font-md text-red-600">{notFound}</div>
                     </div>
 
-                    {isLoading ? <span className='flex justify-center'><CircularProgress color="inherit" /></span> : <div className=' grid lg:grid-cols-4 md:grid-cols-2 sm:grid-cols-1 gap-10 py-5 '>
+                    {isLoading ? <span className='flex justify-center'><CircularProgress color="inherit" /></span> : <div className='grid lg:grid-cols-4 md:grid-cols-2 sm:grid-cols-1 gap-5 py-5'>
 
                         {products?.length === 0 ? <h2>No Products Found</h2> : products?.map((product: any) => {
                             const detailProduct = {
@@ -99,17 +98,17 @@ export default function VendorShopPage() {
 
                             return <div className=' shadow-lg rounded-md w-border '>
 
-                                <Link to={`/product/${product._id}`}><div className='w-64 mx-auto px-8'>
-                                    <img className='w-48' src={product.images[0]?.src} alt="vendor products" />
+                                <Link to={`/product/${product._id}`}><div className='w-60 mx-auto px-8 bg-white'>
+                                    <img className='select-none w-full h-36 object-contain bg-white' src={product.images[0]?.src} alt="vendor products" />
                                 </div></Link>
 
-                                <div className='p-5  flex flex-col gap-3 bg-gray-100'>
+                                <div className='p-5  flex flex-col gap-3 bg-gray-100 w-60'>
                                     <div className='flex items items-center gap-2'>
                                         <span className=' py-1 rounded-full text-xs bg-gray-200'>Stock {product.stock}</span>
                                         <span className=' py-1 rounded-full text-xs bg-gray-200'>{product.publisherDetails.store}</span>
                                     </div>
                                     <Link to={`/product/${product._id}`}><div>
-                                        <h2 className='text-left font-semibold text-base  overflow-hidden' title='Best Vendor Product Title'>{product.title} </h2>
+                                        <h2 className='text-left font-semibold text-base  overflow-hidden h-20 w-36' title='Best Vendor Product Title'>{product.title} </h2>
                                     </div></Link>
                                     <div className='text-left'>
                                         <span className='text-base  font-bold'>{product.sale_price}</span>
@@ -130,7 +129,7 @@ export default function VendorShopPage() {
                                         {/* <div className='mt-5 grid grid-cols-2 lg:grid-cols-1 gap-4 justify-between items-center place-items-center'> */}
 
 
-                                        <div className='flex justify-between mt-4'>
+                                        <div className='mt-5 grid grid-cols-1 gap-3 justify-between items-center place-items-center'>
                                             <button onClick={() => handleAddToCart(detailProduct)} className=' bg-indigo-600 hover:bg-indigo-500 transition rounded-md px-3 py-2 text-white'>
                                                 Add To Cart
                                             </button>

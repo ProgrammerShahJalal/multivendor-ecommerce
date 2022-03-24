@@ -58,10 +58,10 @@ const SingleProduct = () => {
         }
     }
     const shareFBButtonProps = {
-        
+
         url: 'https://unity-mart.netlify.app/',
         network: "Facebook",
-        text: 'See what I just bought from Unity Mart'  ,
+        text: 'See what I just bought from Unity Mart',
         longtext:
             " "
     };
@@ -165,11 +165,11 @@ const SingleProduct = () => {
                                                     </svg>
                                                     <span className="text-gray-600 ml-3">4 Reviews</span>
                                                 </span>
-                                                    <div className='flex ml-3 pl-3 py-2 border-l-2 border-gray-200 gap-2'>
-                        <ShareButton {...shareFBButtonProps}><i className="fa-brands fa-facebook-square text-xl"></i></ShareButton>
-                        <ShareButton {...shareLNButtonProps}><i className="fa-brands fa-linkedin text-xl"></i></ShareButton>
-                        <ShareButton {...sharePNButtonProps}><i className="fa-brands fa-pinterest text-xl"></i></ShareButton>
-                    </div>
+                                                <div className='flex ml-3 pl-3 py-2 border-l-2 border-gray-200 gap-2'>
+                                                    <ShareButton {...shareFBButtonProps}><i className="fa-brands fa-facebook-square text-xl"></i></ShareButton>
+                                                    <ShareButton {...shareLNButtonProps}><i className="fa-brands fa-linkedin text-xl"></i></ShareButton>
+                                                    <ShareButton {...sharePNButtonProps}><i className="fa-brands fa-pinterest text-xl"></i></ShareButton>
+                                                </div>
                                             </div>
                                             <p className="leading-relaxed"
                                                 dangerouslySetInnerHTML={({ __html: product.product_des })}></p>

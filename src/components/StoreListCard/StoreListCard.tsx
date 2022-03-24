@@ -31,12 +31,15 @@ const StoreListCards = () => {
                 <div className="grid gap-10 sm:grid-cols-2 lg:grid-cols-4">
                     {
                         vendors?.map((vendor: any) => <div key={vendor?._id} className="card shadow-lg">
-                            <div className="card-image border-b-2 border-blue-600 flex justify-center ">
-                                <img style={{ maxHeight: '200px' }} src={vendor?.storeBanner} alt="" />
+                            <div style={{ height: '150px', width: '350px' }} className="card-image border-b-2 border-blue-600">
+                                <img className='h-full w-60 object-contain' src={vendor?.storeBanner} alt="" />
                             </div>
-                            <img className="w-20 h-20 ml-5 border-4 rounded-full relative z-50 border-indigo-600" style={{ marginTop: '-40px' }} src={vendor?.storeLogo} alt="vendor logo" />
+                            <div style={{ marginTop: '-40px' }} className='w-20 h-20 ml-5 relative z-50 '>
+                                <img className="w-full h-full object-contain border-indigo-600 border-4 rounded-full " src={vendor?.storeLogo} alt="vendor logo" />
+                            </div>
                             <div className="content text-left pl-5">
-                                <h5 className='text-2xl font-bold text-dark ' >{vendor?.storeDescription}</h5>
+                                <h2 className='text-xl font-bold '>{vendor?.storeName}</h2>
+                                <h5 className='text-md text-dark ' >{vendor?.storeDescription}</h5>
                                 <p className='py-2 font-bold text-sm text-gray-500'><i className="fa-solid fa-envelope text-gray-500 text-lg"></i> {vendor?.storeEmail}</p>
                                 <p className='font-bold text-sm text-gray-500 '><i className="fa-solid fa-phone text-gray-500  text-lg"></i> {vendor?.phoneNumber}</p>
                             </div>

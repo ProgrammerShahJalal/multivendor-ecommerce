@@ -159,7 +159,6 @@ export default function UserDetailedOrder() {
                                                 {/* <button className="drop-shadow-md rounded-md bg-indigo-600 hover:bg-indigo-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500 py-5 w-96 md:w-full  text-base font-medium leading-4 text-white">View Carrier Details</button> */}
                                                 {/* <LocalizationProvider sx={{ width: 100 }} dateAdapter={AdapterDateFns}>
                                                     <DatePicker
-
                                                         label="Delivery Date"
                                                         value={details.deliveryDate || date}
                                                         minDate={new Date()}
