@@ -102,7 +102,7 @@ const AllProducts: FC<AllProductsProps> = ({ translate }) => {
                                             <i className="fa-regular fa-magnifying-glass"></i>
                                         </button>
                                         {/* </Link> */}
-                                        <button onClick={() => dispatch((addToWishlist(product)))} className='text-white text-lg w-9 h-8 rounded-full bg-indigo-500 flex items-center justify-center hover:bg-gray-800 transition'>
+                                        <button onClick={() => dispatch((addToWishlist(detailProduct)))} className='text-white text-lg w-9 h-8 rounded-full bg-indigo-500 flex items-center justify-center hover:bg-gray-800 transition'>
                                             <i className="fa-regular fa-heart"></i>
                                         </button>
                                     </div>

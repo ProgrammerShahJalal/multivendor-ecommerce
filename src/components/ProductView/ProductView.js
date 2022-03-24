@@ -186,7 +186,7 @@ const ProductView = ({ selectedProduct }) => {
                                 <button onClick={() => handleAddToCart(detailProduct)} className='w-40 text-center top-5 text-white  p-2 bg-indigo-500 border border-indigo-500 hover:bg-transparent hover:text-indigo-500 transition'>
                                     <i className="fa-regular fa-bag-shopping"></i> Add to cart
                                 </button>
-                                <button onClick={() => dispatch((addToWishlist(selectedProduct)))} className='w-40 text-center top-5 hover:text-white my-2 p-2 hover:bg-indigo-500 border border-indigo-500 bg-transparent text-indigo-500 transition'>
+                                <button onClick={() => dispatch((addToWishlist(detailProduct)))} className='w-40 text-center top-5 hover:text-white my-2 p-2 hover:bg-indigo-500 border border-indigo-500 bg-transparent text-indigo-500 transition'>
                                     <i className="fa-regular fa-heart"> </i> Add to wishlist
                                 </button>
                         </div>

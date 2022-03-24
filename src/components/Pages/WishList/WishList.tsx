@@ -8,7 +8,7 @@ import { ShareButton } from 'react-custom-share';
 const WishList = () => {
     const dispatch: any = useDispatch()
     const { wishlist } = useSelector((state: any) => state.wishlist);
-    console.log(wishlist);
+    // console.log(wishlist);
 
     const shareFBButtonProps = {
         url: "https://unitymart-c522a.web.app",
@@ -46,7 +46,7 @@ const WishList = () => {
 
             <div className="container px-7">
                 <div className='grid md:grid-cols-5 gap-2 bg-gray-200 py-4 text-xl font-bold uppercase text-center'>
-                    <h3>Thumbnail</h3>
+                    <h3>ThubNail</h3>
                     <h3>Title</h3>
                     <h3>Price</h3>
                     <h3>Add To Cart</h3>
@@ -58,7 +58,7 @@ const WishList = () => {
                             const detailProduct = {
                                 _id: product._id,
                                 title: product.title,
-                                // image: product.images[0]?.src,
+                                image: product.image,
                                 category: product.category,
                                 price: product.price,
                                 attributes: [],
@@ -68,9 +68,9 @@ const WishList = () => {
                                 }
                             }
                             return <div className='grid md:grid-cols-5 sm:grid-cols-1 gap-2 items-center justify-center '>
-                                {/* <img src={product.images[0]?.src} className='w-full p-6 rounded' alt="" /> */}
+                                <img src={product.image} className='w-full p-6 rounded' alt="" />
                                 <h3 className='font-bold text-xl  text-center'>{product.title}</h3>
-                                <h4 className='text-2xl text-gray-800 dark:text-white font-bold text-center'>${product.sale_price}</h4>
+                                <h4 className='text-2xl text-gray-800 dark:text-white font-bold text-center'>${product.price}</h4>
                                 <button onClick={() => dispatch(addToCart(detailProduct))} type='button' className="w-40 mx-auto text-white bg-indigo-600 rounded-full hover:bg-pink-600 py-2">Add To Cart</button>
 
                                 <button onClick={() => dispatch(removeItem(product))} className='text-3xl text-rose-600 hover:text-gray-600'><i className="fa-solid fa-trash"></i></button>
@@ -86,4 +86,3 @@ const WishList = () => {
 };
 
 export default WishList;
-
