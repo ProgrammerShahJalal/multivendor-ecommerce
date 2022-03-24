@@ -10,6 +10,7 @@ interface ReviewState {
     reviews: {
         img: string
         name: string
+        title: string
         description: string
         ratings: string
     }[],
@@ -46,7 +47,10 @@ const BlogReviewUI = () => {
                             <SwiperSlide key={review.name}>
                                 <div className='p-7 bg-indigo-100 justify-center text-center rounded-md lg:h-64 md:h-60 sm:h-32'>
                                     <div>
-                                        <h2>{review.name}</h2>
+                                        Review on <h1 className='text-sm font-semibold'>{review.title}</h1>
+                                    </div>
+                                    <div>
+                                        <h2 className='text-sm'>{review.name}</h2>
                                     </div>
                                     <div className='my-4'><p className='text-sm'>{review.description}</p> </div>
                                     <div className="flex justify-center gap-4">

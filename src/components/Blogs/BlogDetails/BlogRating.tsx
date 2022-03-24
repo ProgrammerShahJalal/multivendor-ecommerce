@@ -1,7 +1,8 @@
-import React from 'react';
+import React, { useEffect, useState } from 'react';
 import axios from 'axios';
 import { useForm } from "react-hook-form";
 import UseAuth from '../../../hooks/UseAuth';
+import { useParams } from 'react-router-dom';
 
 export default function BlogRating() {
 
@@ -18,6 +19,20 @@ export default function BlogRating() {
                 }
             })
     }
+
+    let { id } = useParams();
+    // console.log(id)
+    const [blogDetails, setBlogDetails] = useState([])
+    useEffect(() => {
+        fetch('https://morning-inlet-49130.herokuapp.com/blogs')
+            .then(res => res.json())
+            .then((data) => {
+                const foundBlog = data.filter(detail => detail._id === id)
+                setBlogDetails(foundBlog);
+            })
+    }, [id])
+
+    const { title } = blogDetails[0] || {};
     return (
 
         <div className="container px-12 py-5">
@@ -26,6 +41,19 @@ export default function BlogRating() {
                     <form onSubmit={handleSubmit(onSubmit)}>
                         <div className="shadow sm:rounded-md sm:overflow-hidden">
                             <div className="px-4 py-5 bg-white dark:bg-slate-700 space-y-6 sm:p-6">
+                                <div className="col-span-6 sm:col-span-3">
+                                    <label htmlFor="blog-title" className="block text-sm font-medium text-gray-700 dark:text-white">
+                                        Blog Title
+                                    </label>
+                                    <input
+                                        type="text"
+                                        id="blog-title"
+                                        defaultValue={title}
+                                        readOnly
+                                        {...register("title", { required: true })}
+                                        className="mt-1 focus:ring-indigo-500 focus:border-indigo-500 block w-full shadow-sm sm:text-sm border-gray-300 rounded-md"
+                                    />
+                                </div>
                                 <div className="col-span-6 sm:col-span-3">
                                     <label htmlFor="reviewer-name" className="block text-sm font-medium text-gray-700 dark:text-white">
                                         Your Name
