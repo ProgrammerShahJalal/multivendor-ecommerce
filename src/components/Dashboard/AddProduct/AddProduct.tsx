@@ -6,12 +6,12 @@ import { Editor } from "react-draft-wysiwyg";
 import { convertToRaw } from 'draft-js';
 import draftToHtml from 'draftjs-to-html';
 import "react-draft-wysiwyg/dist/react-draft-wysiwyg.css";
-import UseAuth from '../../../hooks/UseAuth';
 import TextField from '@mui/material/TextField';
 import AdapterDateFns from '@mui/lab/AdapterDateFns';
 import LocalizationProvider from '@mui/lab/LocalizationProvider';
 import MobileDateTimePicker from '@mui/lab/MobileDateTimePicker';
 import Stack from '@mui/material/Stack';
+import { UseFirebase } from '../../../hooks/UseFirebase';
 
 type attributeValues = {
     label: string, options: [{ label: string, value: string }]
@@ -44,7 +44,7 @@ const AddProduct: React.FunctionComponent = () => {
     // SELECTED IMAGES FROM MODAL
     const [selectedImages, setSelectedImages] = useState<any[]>([])
 
-    const { userDetails } = UseAuth()
+    const { userDetails } = UseFirebase()
 
     // GET ATTRIBUTES LABELS AND VALUES
     useEffect(() => {
@@ -145,7 +145,7 @@ const AddProduct: React.FunctionComponent = () => {
             product_des: content,
             newAttributes,
             vendor: userDetails.role,
-            store: userDetails.store || "",
+            store: userDetails.slug || "",
             publisher: userDetails.email
         }
         console.log(newProduct, 'newProduct');
@@ -251,11 +251,11 @@ const AddProduct: React.FunctionComponent = () => {
 
 
                                     </div>
- 
+
                                     <div className='flex flex-row gap-6 z-40'>
 
 
-                                        {attributeValues.map((attr: attributeValues) =>  {
+                                        {attributeValues.map((attr: attributeValues) => {
                                             const item = attributes.filter((list) => {
                                                 return list.label === attr.label;
                                             })[0];

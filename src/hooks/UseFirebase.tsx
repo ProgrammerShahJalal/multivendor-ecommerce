@@ -55,7 +55,8 @@ export const UseFirebase = (
         date: '',
         phone: '',
         photo: '',
-        _id: ''
+        _id: '',
+        slug: ''
     } || null)
     const [isLoading, setIsLoading] = useState(true)
     const [isUserLoading, setIsUserLoading] = useState(true)
@@ -217,7 +218,8 @@ export const UseFirebase = (
                 date: '',
                 phone: '',
                 photo: '',
-                _id: ''
+                _id: '',
+                slug: ''
             })
             localStorage.removeItem("userDetails");
         }).catch((error) => {
