@@ -54,7 +54,7 @@ export default function VendorShopPage() {
 
 
     return (
-        <div className="bg-gray-200 dark:bg-gray-800 px-8">
+        <div className=" dark:bg-gray-800 px-8">
             <VendorTop />
 
             <div className='min-h-screen lg:flex md:flex-1 gap-5'>
@@ -102,10 +102,10 @@ export default function VendorShopPage() {
                                     <img className='select-none w-full h-36 object-contain bg-white' src={product.images[0]?.src} alt="vendor products" />
                                 </div></Link>
 
-                                <div className='p-5  flex flex-col gap-3 bg-gray-100 w-60'>
+                                <div className='p-5 dark:text-white flex flex-col gap-3 w-60'>
                                     <div className='flex items items-center gap-2'>
-                                        <span className=' py-1 rounded-full text-xs bg-gray-200'>Stock {product.stock}</span>
-                                        <span className=' py-1 rounded-full text-xs bg-gray-200'>{product.publisherDetails.store}</span>
+                                        <span className=' py-1 rounded-full text-xs'>Stock {product.stock}</span>
+                                        <span className=' py-1 rounded-full text-xs'>{product.publisherDetails.store}</span>
                                     </div>
                                     <Link to={`/product/${product._id}`}><div>
                                         <h2 className='text-left font-semibold text-base  overflow-hidden h-20 w-36' title='Best Vendor Product Title'>{product.title} </h2>

@@ -1,31 +1,27 @@
+import { CircularProgress } from '@mui/material';
 import { useState } from 'react';
-import { Link, Outlet } from 'react-router-dom';
+import { Link, Outlet, useNavigate } from 'react-router-dom';
 import UseAuth from '../../../hooks/UseAuth';
 import './Dashboard.css'
-import { Helmet } from 'react-helmet-async';
 
 
 function Dashboard() {
-    const [isTrue, setIsTrue] = useState(false)
+    const [isTrue, setIsTrue] = useState<boolean>(false)
+    const navigate = useNavigate()
     const toggleHamBurgerMenu = () => {
         setIsTrue(!isTrue);
     };
-    const { user, logout, userDetails } = UseAuth()
-
+    const { user, logout, isLoading } = UseAuth()
+    const userDetails = localStorage.getItem("userDetails") ? JSON.parse(localStorage.getItem('userDetails') || '{}') : { role: "", email: "" }
     const subMenuToggle = (e) => {
         e.currentTarget.classList.toggle('showMenu');
     }
+    // if (userDetails.status === "Deactivate") {
+    //     navigate("/")
+    // }
     return (
         <div>
-            <Helmet>
-                <title>Dashboard of Unity Mart</title>
-                <meta
-                    name="description"
-                    content="Shop from Unity Mart."
-                />
-                <link rel="canonical" href="/dashboard/dashboardGlance" />
-            </Helmet>
-            <div className={`sidebar ${isTrue ? 'close' : ''}`}>
+            {isLoading ? <span className='flex justify-center'><CircularProgress color="inherit" /></span> : userDetails.status === "Deactivate" ? <div className='h-96 flex justify-center items-center'><h2 className='text-center text-6xl'>Your Account Deactivated</h2> </div> : <><div className={`sidebar ${isTrue ? 'close' : ''}`}>
                 <div className="logo-details">
 
                     <i onClick={toggleHamBurgerMenu} className='bx bx-menu text-white cursor-pointer'></i>
@@ -42,7 +38,7 @@ function Dashboard() {
                                 <span className="link_name">Dashboard</span>
                             </Link>
                             <ul className="sub-menu blank">
-                                <li><Link className="link_name" to={`/dashboard/dashboardGlance`}>Dashboard</Link></li>
+                                <li><Link className="link_name" to={`/dashboard/products`}>Products</Link></li>
                             </ul>
                         </li>
                         <li>
@@ -80,14 +76,14 @@ function Dashboard() {
                             <i className='bx bxs-chevron-down arrow'></i>
                         </div>
                         <ul className="sub-menu">
-                            <li><Link className="link_name" to={`/dashboard/affiliate-dashboard`}>Affiliate</Link></li>
+                            <li><Link className="link_name" to={`/dashboard/affiliate`}>Affiliate</Link></li>
                             <li><Link to={`/dashboard/affiliate-dashboard`}>Dashboard</Link></li>
                             <li><Link to={`/dashboard/affiliate-links`}>Affiliate Links</Link></li>
                             {/* <li><Link to={`/dashboard/affiliate-links`}>Withdraw</Link></li> */}
                         </ul>
 
 
-                    </li> : ''}
+                    </li> : ""}
 
                     {userDetails.role === "admin" || userDetails.role === "vendor" ? <><li onClick={subMenuToggle} className="">
                         <div className="iocn-link">
@@ -122,7 +118,7 @@ function Dashboard() {
                         <ul className="sub-menu blank">
                             <li><Link className="link_name" to={`/dashboard/vendors`}>Vendors</Link></li>
                         </ul>
-                    </li> : ''}
+                    </li> : ""}
                     {userDetails.email && userDetails.role === 'admin' ? <li >
                         <Link to={`/dashboard/users`}>
                             <i className="fa-light fa-users"></i>
@@ -131,7 +127,17 @@ function Dashboard() {
                         <ul className="sub-menu blank">
                             <li><Link className="link_name" to={`/dashboard/users`}>Users</Link></li>
                         </ul>
-                    </li> : ''}
+                    </li> : ""}
+                    {userDetails.email && userDetails.role === 'vendor' ? <li>
+                        <Link to={`/dashboard/profile`}>
+                            <i className="fa-solid fa-user-pen"></i>
+                            <span className="link_name">Profile</span>
+                        </Link>
+                        <ul className="sub-menu blank">
+                            <li><Link className="link_name" to={`/dashboard/profile`}>Profile</Link></li>
+                        </ul>
+
+                    </li> : ""}
                     <li onClick={() => logout()}>
                         <Link to="/">
                             <i className='bx bx-pie-chart-alt-2'></i>
@@ -155,12 +161,12 @@ function Dashboard() {
                     </li>
                 </ul>
             </div>
-            <section className="home-section">
-                <div className='container mx-auto'><Outlet></Outlet>
-                    {/* <DataChart/>
+                <section className="home-section">
+                    <div className='container mx-auto'><Outlet></Outlet>
+                        {/* <DataChart/>
                 <LineCharts/> */}
-                </div>
-            </section>
+                    </div>
+                </section></>}
 
         </div>
     );
