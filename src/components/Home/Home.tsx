@@ -3,7 +3,6 @@ import { useContext } from 'react';
 import TopBanner from '../TopBanner/TopBanner';
 import BottomBanner from '../BottomBanner/BottomBanner';
 import Banners from '../Pages/Banner/Banner';
-import HomeProducts from '../HomeProducts/HomeProducts';
 import BannerPro from '../Pages/BannerPro/BannerPro';
 import ScrollToTop from "react-scroll-to-top";
 import BannerGadget from '../Pages/BannerGadget/BannerGadget';
@@ -11,8 +10,6 @@ import Brands from '../Pages/Brands/Brands';
 import MessengerCustomerChat from 'react-messenger-customer-chat';
 import Notify from '../Notify/Notify';
 import PaginatedBlogsHome from '../Pages/PaginatedBlogsItems/PaginatedBlogsHome';
-// import Products from '../Products/Products';
-// import Alan from './Alan-AI/Alan';
 import Reviews from '../Pages/Reviews/Reviews';
 import SpecialDeal from './../SpecialDeal/SpecialDeal';
 import { LangContext } from '../Pages/MultiLanguage/languagecontext/lang';
@@ -51,10 +48,10 @@ export default function Home() {
                 <TopBanner />
                 <SpecialDeal translate={translate} />
                 <BannerGadget />
-                {/* <Products translate={translate} /> */}
-                <AllProducts translate={translate} />
+                <div className="max-w-md md:max-w-7xl mx-auto">
+                    <AllProducts translate={translate} />
+                </div>
                 <BannerPro />
-                {/* <HomeProducts translate={translate} /> */}
                 <BottomBanner />
                 <Reviews />
                 <Alan />

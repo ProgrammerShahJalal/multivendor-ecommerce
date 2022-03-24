@@ -13,17 +13,6 @@ import Kid from './../ListView/Kids';
 import Collection from './Collection'
 import { Helmet } from 'react-helmet-async'
 
-const sortOptions = [
-  { name: 'Most Popular', href: '#', current: true },
-  { name: 'Best Rating', href: '#', current: false },
-  { name: 'Newest', href: '#', current: false },
-  { name: 'Price: Low to High', href: '#', current: false },
-  { name: 'Price: High to Low', href: '#', current: false },
-]
-
-function classNames(...classes) {
-  return classes.filter(Boolean).join(' ')
-}
 
 export default function Shop() {
   const [mobileFiltersOpen, setMobileFiltersOpen] = useState(false)
@@ -32,8 +21,6 @@ export default function Shop() {
   const [womenChecked, setWomenChecked] = useState(true);
   const [kidChecked, setKidChecked] = useState(true);
   const [electronicChecked, setElectronicChecked] = useState(true);
-  const [categoryvalue, setCategoryValue] = useState("");
-  console.log(categoryvalue);
 
   const handleMenChange = () => {
     setMenChecked(!menChecked);
@@ -182,26 +169,7 @@ export default function Shop() {
                     leaveFrom="transform opacity-100 scale-100"
                     leaveTo="transform opacity-0 scale-95"
                   >
-                    <Menu.Items className="origin-top-right absolute right-0 mt-2 w-40 rounded-md shadow-2xl bg-white ring-1 ring-black ring-opacity-5 focus:outline-none">
-                      <div className="py-1">
-                        {sortOptions.map((option) => (
-                          <Menu.Item key={option.name}>
-                            {({ active }) => (
-                              <a
-                                href={option.href}
-                                className={classNames(
-                                  option.current ? 'font-medium text-gray-900' : 'text-gray-500',
-                                  active ? 'bg-gray-100' : '',
-                                  'block px-4 py-2 text-sm'
-                                )}
-                              >
-                                {option.name}
-                              </a>
-                            )}
-                          </Menu.Item>
-                        ))}
-                      </div>
-                    </Menu.Items>
+
                   </Transition>
                 </Menu>
                 <div className="mx-2 flex items-end justify-end content-end gap-2">
@@ -292,80 +260,6 @@ export default function Shop() {
                                 className="h-4 w-4 border-gray-300 rounded text-indigo-600 focus:ring-indigo-500"
                               />
                               <label htmlFor="cat-1 pl-1">Electronic</label>
-                            </div>
-                          </div>
-                        </Disclosure.Panel>
-                      </>
-                    )}
-                  </Disclosure>
-                  <Disclosure as="div" className="border-b border-gray-200 py-6">
-                    {({ open }) => (
-                      <>
-                        <h3 className="-my-3 flow-root">
-                          <Disclosure.Button className="py-3 bg-white dark:bg-slate-800 text-black dark:text-white w-full flex items-center justify-between text-sm">
-                            <span className="font-medium text-gray-900 dark:text-white">Size</span>
-                            <span className="ml-6 flex items-center">
-                              {open ? (
-                                <MinusSmIcon className="h-5 w-5" aria-hidden="true" />
-                              ) : (
-                                <PlusSmIcon className="h-5 w-5" aria-hidden="true" />
-                              )}
-                            </span>
-                          </Disclosure.Button>
-                        </h3>
-                        <Disclosure.Panel className="pt-6">
-                          <div className="space-y-4">
-                            <div className="flex items-center gap-2 text-black dark:text-white">
-                              <input
-                                type="checkbox"
-                                className="h-4 w-4 border-gray-300 rounded text-indigo-600 focus:ring-indigo-500"
-                              />
-                              <label htmlFor="cat-1 pl-1">XL</label>
-                            </div>
-                            <div className="flex items-center gap-2 text-black dark:text-white">
-                              <input
-                                type="checkbox"
-                                className="h-4 w-4 border-gray-300 rounded text-indigo-600 focus:ring-indigo-500"
-                              />
-                              <label htmlFor="cat-1 pl-1">XXL</label>
-                            </div>
-                            <div className="flex items-center gap-2 text-black dark:text-white">
-                              <input
-                                type="checkbox"
-                                className="h-4 w-4 border-gray-300 rounded text-indigo-600 focus:ring-indigo-500"
-                              />
-                              <label htmlFor="cat-1 pl-1">SM</label>
-                            </div>
-                          </div>
-                        </Disclosure.Panel>
-                      </>
-                    )}
-                  </Disclosure>
-                  <Disclosure as="div" className="border-b border-gray-200 py-6">
-                    {({ open }) => (
-                      <>
-                        <h3 className="-my-3 flow-root">
-                          <Disclosure.Button className="py-3 bg-white dark:bg-slate-800 text-black dark:text-white w-full flex items-center justify-between text-sm">
-                            <span className="font-medium text-gray-900 dark:text-white">Color</span>
-                            <span className="ml-6 flex items-center">
-                              {open ? (
-                                <MinusSmIcon className="h-5 w-5" aria-hidden="true" />
-                              ) : (
-                                <PlusSmIcon className="h-5 w-5" aria-hidden="true" />
-                              )}
-                            </span>
-                          </Disclosure.Button>
-                        </h3>
-                        <Disclosure.Panel className="pt-6">
-                          <div className="flex gap-2">
-                            <div className="color-selctor">
-                              <button className='w-5 h-5 bg-red-600 focus:ring-offset-2 focus:ring-1 focus:ring-indigo-500 focus:outline-none active:bg-red-700'></button>
-                            </div>
-                            <div className="color-selctor">
-                              <button className='w-5 h-5 bg-green-600 focus:ring-offset-2 focus:ring-1 focus:ring-indigo-500 focus:outline-none active:bg-green-700'></button>
-                            </div>
-                            <div className="color-selctor">
-                              <button className='w-5 h-5 bg-blue-600 focus:ring-offset-2 focus:ring-1 focus:ring-indigo-500 focus:outline-none active:bg-blue-700'></button>
                             </div>
                           </div>
                         </Disclosure.Panel>
