@@ -78,7 +78,8 @@ const Products: FC<ProductsProps> = ({ translate }) => {
                             cartQuantity: (1),
                             vendor: {
                                 email: product?.publisherDetails?.publisher || null
-                            }}
+                            }
+                        }
                         return <div className="bg-white dark:bg-slate-600 shadow-inner overflow-hidden single-card">
 
                             <div className="relative group">
@@ -87,9 +88,9 @@ const Products: FC<ProductsProps> = ({ translate }) => {
                                     <img src={product.images[1]?.src} className='w-full h-full select-none hoverImg group-hover:block hidden transition object-contain' alt="" />
                                 </div>
                                 <div className="absolute inset-0 bg-black bg-opacity-40 flex items-center justify-center gap-2 opacity-0 group-hover:opacity-100 transition">
-                                        <button className='text-white text-lg w-9 h-8 rounded-full bg-indigo-500 flex items-center justify-center hover:bg-gray-800 transition' onClick={() => handleOpen(product)}>
-                                            <i className="fa-regular fa-magnifying-glass"></i>
-                                        </button>
+                                    <button className='text-white text-lg w-9 h-8 rounded-full bg-indigo-500 flex items-center justify-center hover:bg-gray-800 transition' onClick={() => handleOpen(product)}>
+                                        <i className="fa-regular fa-magnifying-glass"></i>
+                                    </button>
                                     <a className='text-white text-lg w-9 h-8 rounded-full bg-indigo-500 flex items-center justify-center hover:bg-gray-800 transition' href="/">
                                         <i className="fa-regular fa-heart"></i>
                                     </a>
@@ -111,29 +112,29 @@ const Products: FC<ProductsProps> = ({ translate }) => {
                                     <div className="text-xs text-gray-500 ml-3">(1)</div>
                                 </div>
                             </div>
-                            <button onClick={()=> handleAddToCart(detailProduct)} className='block w-full py-1 text-center top-5 text-white bg-indigo-500 border border-indigo-500 rounded-b hover:bg-transparent hover:text-indigo-500 transition'>Add to Cart</button>
+                            <button onClick={() => handleAddToCart(detailProduct)} className='block w-full py-1 text-center top-5 text-white bg-indigo-500 border border-indigo-500 rounded-b hover:bg-transparent hover:text-indigo-500 transition'>Add to Cart</button>
                         </div>
                     })}
 
             </div>
             <div className='bg-white dark:bg-gray-800 text-center'>
                 <Modal
-                BackdropComponent={Backdrop}
-                onClose={handleClose}
+                    BackdropComponent={Backdrop}
+                    onClose={handleClose}
                     open={open}
                 >
                     <div>
-                    <Box className='md:block lg:block hidden' sx={style1}>
-                            <div style={{width: '800px', height: '600px'}} className='mx-auto bg-white dark:bg-gray-800 px-1'>
+                        <Box className='md:block lg:block hidden' sx={style1}>
+                            <div style={{ width: '800px', height: '600px' }} className='mx-auto bg-white dark:bg-gray-800 px-1'>
                                 <ProductView selectedProduct={selectedProduct} />
                             </div>
-                            
+
                         </Box>
                         <Box className='md:hidden lg:hidden block' sx={style2}>
                             <div className='bg-white dark:bg-gray-800'>
                                 <ProductViewSm selectedProduct={selectedProduct} />
                             </div>
-                            
+
                         </Box>
                     </div>
                 </Modal>

@@ -1,4 +1,5 @@
 import React, { useEffect, useState } from 'react';
+import { Link } from 'react-router-dom';
 interface UserState {
     users: {
         _id: string
@@ -144,9 +145,9 @@ const Users = () => {
                                         </p>
                                     </td>
                                     <td className="px-5 py-5 border-b border-gray-200 bg-white dark:bg-slate-800 text-sm">
-                                        <p className="text-white text-white rounded whitespace-no-wrap text-left bg-indigo-600 p-2 w-10">
+                                        <Link to={`/dashboard/users/${user._id}`}><p className="text-white rounded whitespace-no-wrap text-left bg-indigo-600 p-2 w-10">
                                             Edit
-                                        </p>
+                                        </p></Link>
                                     </td>
                                     <td className="px-5 py-5 border-b border-gray-200 bg-white dark:bg-slate-800 text-sm">
                                         <p onClick={() => deleteUser(user._id)} className="cursor-pointer text-white rounded whitespace-no-wrap text-left bg-red-500 p-2 w-16">
@@ -159,7 +160,7 @@ const Users = () => {
 
                         </table>
 
-                        <div
+                        {/* <div
                             className="px-5 py-5 bg-white dark:bg-slate-800 border-t flex flex-col xs:flex-row items-center xs:justify-between          ">
                             <span className="text-xs xs:text-sm text-gray-900 dark:text-white">
                                 Showing 1 to 10 of 50 Entries
@@ -174,7 +175,7 @@ const Users = () => {
                                     Next
                                 </button>
                             </div>
-                        </div>
+                        </div> */}
                     </div>
 
                 </div>

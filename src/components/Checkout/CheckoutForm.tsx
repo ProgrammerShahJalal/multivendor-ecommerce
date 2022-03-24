@@ -1,6 +1,7 @@
 import { CardElement, useElements, useStripe } from '@stripe/react-stripe-js';
 import * as React from 'react';
 import { useDispatch, useSelector } from 'react-redux';
+import { Navigate, useNavigate } from 'react-router-dom';
 import UseAuth from '../../hooks/UseAuth';
 import { clearCart } from '../../redux/cartSlice';
 import { affiliateCommission } from '../../Services/Affiliate/AffiliateCommission';
@@ -21,7 +22,7 @@ const CheckoutForm = () => {
     const stripe = useStripe();
     const elements = useElements();
     const dispatch: any = useDispatch()
-
+    const navigate = useNavigate()
 
     const nameRef = React.useRef<HTMLInputElement>(null)
     const emailRef = React.useRef<HTMLInputElement>(null)
@@ -153,6 +154,7 @@ const CheckoutForm = () => {
                     if (data.insertedCount) {
                         alert('Order Successfully added')
                         dispatch(clearCart())
+                        navigate("/profile/orders")
                         const ref: any = localStorage.getItem("affiliate_Link")
                         const affiliateLink = JSON.parse(ref)
                         affiliateCommission(affiliateLink, paymentIntent.amount)

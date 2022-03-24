@@ -189,7 +189,7 @@ const Products = () => {
 
                             </tbody>
                         </table>
-                        <div
+                        {/* <div
                             className="px-5 py-5 bg-white dark:bg-slate-800 border-t flex flex-col xs:flex-row items-center xs:justify-between          ">
                             <span className="text-xs xs:text-sm text-gray-900 dark:text-white">
                                 Showing 1 to 10 of 50 Entries
@@ -204,7 +204,7 @@ const Products = () => {
                                     Next
                                 </button>
                             </div>
-                        </div>
+                        </div> */}
                     </div>
                 </div>}
                 {/* order part end  */}

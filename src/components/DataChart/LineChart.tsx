@@ -73,18 +73,18 @@ const LineCharts = () => {
 
     return (
         <div className="container mx-auto">
-<LineChart
-  width={800}
-  height={800}
-  data={data}
-  margin={{ top: 5, right: 20, left: 10, bottom: 5 }}
->
-  <XAxis dataKey="date" />
-  <Tooltip />
-  <CartesianGrid stroke="#f5f5f5" />
-  <Line type="monotone" dataKey="earned" stroke="#ff7300" yAxisId={0} />
-  <Line type="monotone" dataKey="clicks" stroke="#387908" yAxisId={1} />
-</LineChart>
+            <LineChart
+                width={800}
+                height={800}
+                data={data}
+                margin={{ top: 5, right: 20, left: 10, bottom: 5 }}
+            >
+                <XAxis dataKey="date" />
+                <Tooltip />
+                <CartesianGrid stroke="#f5f5f5" />
+                <Line type="monotone" dataKey="earned" stroke="#ff7300" yAxisId={0} />
+                <Line type="monotone" dataKey="clicks" stroke="#387908" yAxisId={1} />
+            </LineChart>
         </div>
     );
 };

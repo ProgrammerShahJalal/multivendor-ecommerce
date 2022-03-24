@@ -96,7 +96,7 @@ const Men = () => {
                             return <div key={product._id} className="bg-white shadow-inner overflow-hidden single-card">
 
                                 <div className="relative group">
-                                    <div style={{ height: '300px' }} className='z-100 overflow-hidden'>
+                                    <div style={{ height: '150px' }} className='z-100 overflow-hidden'>
                                         <img src={product.images[0]?.src} className='select-none w-full h-full img z-0 group-hover:hidden block transition object-contain' alt="" />
                                         <img src={product.images[1]?.src} className='w-full select-none h-full hoverImg group-hover:block hidden transition object-center object-contain' alt="" />
                                     </div>
@@ -106,9 +106,9 @@ const Men = () => {
                                             <i className="fa-regular fa-magnifying-glass"></i>
                                         </button>
                                         {/* </Link> */}
-                                        <a className='text-white text-lg w-9 h-8 rounded-full bg-indigo-500 flex items-center justify-center hover:bg-gray-800 transition' href="/">
+                                        <button className='text-white text-lg w-9 h-8 rounded-full bg-indigo-500 flex items-center justify-center hover:bg-gray-800 transition'>
                                             <i className="fa-regular fa-heart"></i>
-                                        </a>
+                                        </button>
                                     </div>
 
                                 </div>

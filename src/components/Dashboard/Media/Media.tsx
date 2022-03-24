@@ -71,7 +71,7 @@ export default function Media() {
                         return +new Date(b.uploadDate) - +new Date(a.uploadDate);
                     });
                     setData(sort)
-
+                    setIsTrue(false)
                 })
         }
 

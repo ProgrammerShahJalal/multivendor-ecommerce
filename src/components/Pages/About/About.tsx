@@ -21,8 +21,8 @@ const About = () => {
         <h1 className='text-white text-center text-4xl font-bold py-3 bg-purple-600  hover:bg-sky-700'>About Us</h1>
         <div className='container mx-auto overflow-hidden'>
           <div className='relative'>
-            <img src='https://static.vecteezy.com/system/resources/previews/002/448/589/large_2x/people-grocery-shopping-at-online-supermarkets-with-mobile-app-free-vector.jpg' className="w-full mx-auto" alt='' />
-            <div className='bg-black bg-opacity-40'>
+            <img src='https://template.annimexweb.com/diva/assets/images/parallax-banners/testimonials-bg.jpg' className="w-full mx-auto" alt='' />
+            <div className='bg-black bg-opacity-40 hidden md:block'>
               <div className='absolute inset-24 items-center py-12'>
                 <div className='top-48 bottom-48 left-48 right-48 text-center'>
                   <h2 className='text-blue-300 text-center text-4xl font-bold py-3'>Unity Mart</h2>
@@ -41,7 +41,7 @@ const About = () => {
             </div>
           </div>
 
-          <div className='container'>
+          {/* <div className='container'>
             <div className='grid md:grid-cols-2 sm:grid-cols-1 gap-0 items-center justify-center'>
               <div style={{height:'200px',width:'400px'}} className='w-50'>
                 <img src="https://template.annimexweb.com/diva/assets/images/about/about-us-image5.jpg" className="w-full" alt='' />
@@ -53,11 +53,11 @@ const About = () => {
                 <button className="mt-2 text-white bg-purple-600 justify-center px-3 py-2 rounded-md hover:bg-green-500 transition"><HomePopUp /></button>
               </div>
             </div>
-          </div>
+          </div> */}
 
-          <div className='container mx-auto'>
-            <div className='grid grid-cols-2 gap-0 items-center justify-center'>
-              <div className='w-50  px-7 text-center'>
+          {/* <div className='container mx-auto my-5'>
+            <div className='grid grid-cols-1 md:grid-cols-2 gap-0 items-center justify-center'>
+              <div className='w-50  px-7 text-center py-3'>
                 <h2 className='text-2xl font-medium text-gray-800 dark:text-white uppercase mb-6'>Our Mission</h2>
                 <p className='dark:text-white'>Our mission is to create top-quality shopify theme which is unique, clean, easy to use, bug less, easy to load and have all the features that merchant need to run their online eCommerce business successfully.</p>
                 <Link to="/team">
@@ -67,7 +67,7 @@ const About = () => {
                 <img src="https://images.pexels.com/photos/135620/pexels-photo-135620.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940" alt='' />
               </div>
             </div>
-          </div>
+          </div> */}
           <div>
             <TimeLine />
           </div>

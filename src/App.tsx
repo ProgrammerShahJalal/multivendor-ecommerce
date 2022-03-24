@@ -15,8 +15,6 @@ import SpecialDeal from "./components/SpecialDeal/SpecialDeal";
 import Home from "./components/Home/Home";
 import DetailBlogPage from "./components/Blogs/DetailBlogPage";
 // import { SummaryBoxSpecial } from "./components/Dashboard/DashboardHome/DashboardHome";
-import MenProductsDetail from './components/MenProductDetail';
-import KidsProductDetails from './components/KidsProductDetails';
 // import SingleProduct from "./components/SingleProduct/SingleProduct";
 import About from "./components/Pages/About/About";
 import Cart from "./components/Pages/CartPage/Cart";
@@ -39,7 +37,6 @@ import UserDashboardHome from "./components/UserDashboard/UserDashboardHome/User
 import TermsCondition from "./components/TermsCondition/TermsCondition";
 import CustomersService from "./components/CustomersService/CustomersService";
 import AddReview from "./components/Pages/AddReview/AddReview";
-import WomenProductDetail from "./components/WomenProductDetail";
 import UserOrders from "./components/UserDashboard/UserOrders/UserOrders";
 import UserDetailedOrder from "./components/UserDashboard/UserOrders/UserDetailedOrder";
 import AddBlogForm from "./components/Blogs/AddBlogForm";
@@ -49,7 +46,9 @@ import AffiliateFirstLook from "./components/Blogs/AffiliateFirstLook";
 import LoginForm from "./components/Pages/LoginPage/Login";
 import DashboardUI from "./components/Dashboard/Dashboard/DashboardUI.js";
 import UserMainProfile from "./components/Pages/UserMainProfile/UserMainProfile";
+import UserProfileDetails from "./components/Dashboard/Users/UserProfileDetails";
 import WishList from "./components/Pages/WishList/WishList";
+
 
 
 const Dashboard = lazy(() => import("./components/Dashboard/Dashboard/Dashboard"));
@@ -100,9 +99,6 @@ function App() {
             <Route path='/searchField' element={<SearchField />} />
             <Route path='/unitTesting' element={<UnitTesting />} />
             <Route path='/specialDeal' element={<SpecialDeal translate={translate} />} />
-            <Route path='/productDetails/men/:id' element={<MenProductsDetail />} />
-            <Route path='/productDetails/women/:id' element={<WomenProductDetail />} />
-            <Route path='/productDetails/kid/:id' element={<KidsProductDetails />} />
             <Route path='/team' element={<Team />} />
             <Route path='/login' element={<LoginForm />} />
             <Route path='/vendors' element={<StoreListCards />} />
@@ -144,6 +140,7 @@ function App() {
               <Route path="attributes" element={<Suspense fallback={<div>Loading...</div>}><Attributes /></Suspense>}></Route>
               <Route path="products" element={<Suspense fallback={<div>Loading...</div>}><Products /></Suspense>}></Route>
               <Route path="users" element={<Suspense fallback={<div>Loading...</div>}><Users /></Suspense>}></Route>
+              <Route path="users/:id" element={<Suspense fallback={<div>Loading...</div>}><UserProfileDetails /></Suspense>}></Route>
               <Route path='edit-product/:id' element={<Suspense fallback={<div>Loading...</div>}><AdminRoute ><EditProduct /></AdminRoute></Suspense>} />
               <Route path="vendors" element={<Suspense fallback={<div>Loading...</div>}><Vendors /></Suspense>}></Route>
               <Route path="user/vendor/:slug" element={<Suspense fallback={<div>Loading...</div>}><VendorProfileDetails /></Suspense>}></Route>
@@ -155,7 +152,7 @@ function App() {
             <Route path="/privacy-policy" element={<PrivacyPolicy />}></Route>
 
 
-            <Route path="/dashboard" element={<Suspense fallback={<div>Loading...</div>}><AdminRoute ><Dashboard /></AdminRoute></Suspense>} >
+            {/* <Route path="/dashboard" element={<Suspense fallback={<div>Loading...</div>}><AdminRoute ><Dashboard /></AdminRoute></Suspense>} >
               <Route path="media" element={<Suspense fallback={<div>Loading...</div>}><Media /></Suspense>}></Route>
               <Route path="affiliate-dashboard" element={<Suspense fallback={<div>Loading...</div>}><Affiliate /></Suspense>}></Route>
               <Route path="affiliate-links" element={<Suspense fallback={<div>Loading...</div>}><AffiliateLinks /></Suspense>}></Route>
@@ -166,10 +163,11 @@ function App() {
               <Route path="attributes" element={<Suspense fallback={<div>Loading...</div>}><Attributes /></Suspense>}></Route>
               <Route path="products" element={<Suspense fallback={<div>Loading...</div>}><Products /></Suspense>}></Route>
               <Route path="users" element={<Suspense fallback={<div>Loading...</div>}><Users /></Suspense>}></Route>
+              <Route path="user/:id" element={<Suspense fallback={<div>Loading...</div>}><UsersProfileDetails /></Suspense>}></Route>
               <Route path='edit-product/:id' element={<Suspense fallback={<div>Loading...</div>}><AdminRoute ><EditProduct /></AdminRoute></Suspense>} />
               <Route path="vendors" element={<Suspense fallback={<div>Loading...</div>}><Vendors /></Suspense>}></Route>
               <Route path="vendor-profile/:id" element={<Suspense fallback={<div>Loading...</div>}><VendorProfileDetails /></Suspense>}></Route>
-            </Route>
+            </Route> */}
 
             <Route path='*' element={<NotFound />} />
           </Routes>

@@ -7,6 +7,7 @@ import ProductViewSm from '../../ProductView/ProductViewSm';
 import { Link } from 'react-router-dom';
 import { useDispatch } from 'react-redux';
 import { addToCart } from '../../../redux/cartSlice';
+import { addToWishlist } from '../../../redux/wishlistSlice';
 interface ProductState {
     products: {
         title: string
@@ -21,7 +22,26 @@ interface ProductState {
     }[]
 }
 
-const Women = () => {
+const Electronics = () => {
+
+    const [products, setProducts] = useState<ProductState["products"]>
+        ([]);
+    const [open, setOpen] = React.useState(false);
+    const handleOpen = (products) => {
+        setSelectedProduct(products)
+        setOpen(true)
+
+    };
+    const handleClose = () => setOpen(false);
+    const [selectedProduct, setSelectedProduct] = useState<any>()
+    useEffect(() => {
+        if (products) {
+
+            fetch('https://young-springs-82149.herokuapp.com/shop/products/category?category=Electronics')
+                .then(res => res.json())
+                .then(data => setProducts(data))
+        }
+    }, [products])
     const style1 = {
         position: 'absolute',
         top: '50%',
@@ -50,32 +70,11 @@ const Women = () => {
         boxShadow: 24,
         // p: 4,
     };
-
     const dispatch = useDispatch()
-
-    const [products, setProducts] = useState<ProductState["products"]>
-        ([]);
-    const [open, setOpen] = React.useState(false);
-    const handleOpen = (products) => {
-        setSelectedProduct(products)
-        setOpen(true)
-
-    };
-    const handleClose = () => setOpen(false);
-    const [selectedProduct, setSelectedProduct] = useState<any>()
-    useEffect(() => {
-        if (products) {
-            fetch('https://young-springs-82149.herokuapp.com/shop/products/category?category=Womens')
-                .then(res => res.json())
-                .then(data => setProducts(data))
-        }
-    }, [products])
-
     const handleAddToCart = (id) => {
         dispatch(addToCart(id))
         // navigate('/cart')
     }
-
     return (
         <div className="container lg:px-0 md:px-10 px-10 pb-16 mx-auto">
             <div className="grid place-content-center lg:grid-cols-4 md:grid-cols-3 grid-cols-1 gap-6">
@@ -108,10 +107,9 @@ const Women = () => {
                                         <button className='text-white text-lg w-9 h-8 rounded-full bg-indigo-500 flex items-center justify-center hover:bg-gray-800 transition' onClick={() => handleOpen(product)}>
                                             <i className="fa-regular fa-magnifying-glass"></i>
                                         </button>
-                                        {/* </Link> */}
-                                        <a className='text-white text-lg w-9 h-8 rounded-full bg-indigo-500 flex items-center justify-center hover:bg-gray-800 transition' href="/">
+                                        <button onClick={() => dispatch((addToWishlist(detailProduct)))} className='text-white text-lg w-9 h-8 rounded-full bg-indigo-500 flex items-center justify-center hover:bg-gray-800 transition'>
                                             <i className="fa-regular fa-heart"></i>
-                                        </a>
+                                        </button>
                                     </div>
 
                                 </div>
@@ -134,7 +132,6 @@ const Women = () => {
                         })}
 
             </div>
-
             <div className='bg-white dark:bg-gray-800 text-center'>
                 <Modal
                     BackdropComponent={Backdrop}
@@ -161,4 +158,4 @@ const Women = () => {
     );
 };
 
-export default Women;
+export default Electronics;

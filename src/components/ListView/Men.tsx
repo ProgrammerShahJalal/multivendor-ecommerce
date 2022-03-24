@@ -1,12 +1,13 @@
 import React, { useState, useEffect } from 'react';
-import { Rating } from "@mui/material";
 import Box from '@mui/material/Box';
 import Modal from '@mui/material/Modal';
-import Fade from '@mui/material/Fade';
 import ProductView from '../ProductView/ProductView';
 import ProductViewSm from '../ProductView/ProductViewSm';
 import { useDispatch } from 'react-redux';
+import { Backdrop } from '@mui/material';
+import { addToCart } from '../../redux/cartSlice';
 import { addToWishlist } from '../../redux/wishlistSlice';
+
 
 interface ProductState {
     products: {
@@ -24,68 +25,128 @@ interface ProductState {
 
 const Men = () => {
     const dispatch = useDispatch()
-
+    const handleAddToCart = (id) => {
+        dispatch(addToCart(id))
+        // navigate('/cart')
+    }
     const [products, setProducts] = useState<ProductState["products"]>
         ([]);
     const [open, setOpen] = React.useState(false);
     const handleOpen = (products) => {
         setSelectedProduct(products)
         setOpen(true)
-
+    };
+    const handleClose = (products) => {
+        setOpen(false)
     };
     const [selectedProduct, setSelectedProduct] = useState<any>()
     useEffect(() => {
         if (products) {
 
-            fetch('https://morning-inlet-49130.herokuapp.com/mens')
+            fetch('https://young-springs-82149.herokuapp.com/shop/products/category?category=Mens')
                 .then(res => res.json())
                 .then(data => setProducts(data))
         }
     }, [products])
-
+    const style1 = {
+        position: 'absolute',
+        top: '50%',
+        left: '50%',
+        height: 500,
+        width: 800,
+        mx: "auto",
+        my: "auto",
+        transform: 'translate(-50%, -65%)',
+        // width: 400,
+        bgcolor: '#ffffff',
+        boxShadow: 24,
+        // p: 4,
+    };
+    const style2 = {
+        position: 'absolute',
+        top: '50%',
+        left: '50%',
+        // height: 500,
+        width: 400,
+        mx: "auto",
+        my: "auto",
+        transform: 'translate(-50%, -50%)',
+        // width: 400,
+        bgcolor: 'background.paper',
+        boxShadow: 24,
+        // p: 4,
+    };
     return (
-        <div className="container lg:px-12 md:px-10 px-10 pb-16">
+        <div className="container lg:px-12 md:px-10 px-0">
             {
-                    products.map((product) => (
-                        <div className='justify-center items-center'>
-                            <div className='grid lg:grid-cols-2 md:grid-cols-2 grid-cols-1 p-4'>
-            <div className='h-44 w-44'>
-                <img className='w-full h-full object-contain select-none ' src={product.img} alt="" />
+                    products.length === 0 ? <h2>No Products Found</h2> :
+                        products.map((product: any) => {
+                            const detailProduct = {
+                                _id: product._id,
+                                title: product.title,
+                                image: product.images[0]?.src,
+                                category: product.categories[0].label,
+                                price: parseInt(product.sale_price ? product.sale_price : product.reg_price),
+                                attributes: [],
+                                cartQuantity: 1,
+                                vendor: {
+                                    email: product?.publisherDetails?.publisher || null
+                                }
+                            }
+                            return  <div key={product._id} className='justify-center items-center'>
+                            <div className='grid lg:grid-cols-2 md:grid-cols-2 grid-cols-2 gap-5 p-4 group border border-indigo-500 my-2 rounded'>
+            <div className='lg:h-52 lg:w-52 md:h-52 md:w-52 h-44 w-40'>
+                
+                <img className='w-full h-full object-contain select-none group-hover:hidden block transition' src={product.images[0]?.src} alt="" />
+                <img className='w-full h-full object-contain select-none group-hover:block hidden transition' src={product.images[1]?.src} alt="" />
             </div>
             <div className='grid grid-cols-1'>
                 <div>
                 <h1 className='text-md'>{product.title}</h1>
-                <h1 className='text-md'>from: {product.vendorName}</h1>
-                <Rating name="half-rating-read" defaultValue={product.rating} precision={0.5} readOnly />
+                <h1 className='text-md'>from: {product.brand}</h1>
+                <h1> Price: <span className='line-through text-red-500'> ${product.reg_price}</span> <span>${product.sale_price}</span></h1>
+                {/* <Rating name="half-rating-read" defaultValue={product.rating} precision={0.5} readOnly /> */}
                 </div>
+                <button onClick={() => dispatch((addToWishlist(detailProduct)))} className="rounded-full w-10 h-10 bg-gray-200 p-0 border-0 inline-flex items-center justify-center text-gray-500 ml-4">
+                                                    <svg fill="currentColor" stroke-linecap="round" stroke-linejoin="round" strokeWidth="2" className="w-5 h-5" viewBox="0 0 24 24">
+                                                        <path d="M20.84 4.61a5.5 5.5 0 00-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 00-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 000-7.78z"></path>
+                                                    </svg>
+                                                </button>
                 <div className='mt-2'>
-                <button className='w-40 text-center top-5 text-white  p-2 bg-indigo-500 border border-indigo-500 hover:bg-transparent hover:text-indigo-500 transition mr-2 md:mb-0 lg:mb-0 mb-2'>
+                
+                <button onClick={() => handleAddToCart(detailProduct)} className='w-40 text-center top-5 text-white  p-2 bg-indigo-500 border border-indigo-500 hover:bg-transparent hover:text-indigo-500 transition mr-2 md:mb-0 lg:mb-0 mb-2'>
                 <i className="fa-regular fa-bag-shopping"></i> Add to cart
                 </button>
-                <button className='w-40 text-center top-5 hover:text-white p-2 hover:bg-indigo-500 border border-indigo-500 bg-transparent text-indigo-500 transition'>
-                <i className="fa-regular fa-heart"> </i> Add to wishlist
+                <button onClick={() => handleOpen(product)} className='w-40 text-center top-5 hover:text-white p-2 hover:bg-indigo-500 border border-indigo-500 bg-transparent text-indigo-500 transition'>
+                <i className="fa-regular fa-search"> </i> Quick View
                 </button>
+                
                 </div>
             </div>
             </div>
                         </div>
-            ))}
+            })}
             
-            <div className='px-3 mx-auto text-center'>
+            <div className='bg-white dark:bg-gray-800 text-center'>
                 <Modal
+                    BackdropComponent={Backdrop}
+                    onClose={handleClose}
                     open={open}
                 >
-                    <Fade in={open}>
-                        <Box>
-                            {/* <button className='justify-end text-white select-none bg-red-500 rounded-full w-8 h-8' onClick={handleClose}>x</button> */}
-                            <div style={{ width: '805px', height: '600px' }} className='md:block bg-white dark:bg-gray-800 mx-auto px-1 lg:block hidden'>
+                    <div>
+                        <Box className='md:block lg:block hidden' sx={style1}>
+                            <div style={{ width: '800px', height: '600px' }} className='mx-auto bg-white dark:bg-gray-800 px-1'>
                                 <ProductView selectedProduct={selectedProduct} />
                             </div>
-                            <div className='md:hidden lg:hidden block'>
+
+                        </Box>
+                        <Box className='md:hidden lg:hidden block' sx={style2}>
+                            <div className='bg-white dark:bg-gray-800'>
                                 <ProductViewSm selectedProduct={selectedProduct} />
                             </div>
+
                         </Box>
-                    </Fade>
+                    </div>
                 </Modal>
             </div>
         </div>

@@ -7,6 +7,7 @@ import ProductViewSm from '../../ProductView/ProductViewSm';
 import { Link } from 'react-router-dom';
 import { useDispatch } from 'react-redux';
 import { addToCart } from '../../../redux/cartSlice';
+import { addToWishlist } from '../../../redux/wishlistSlice';
 interface ProductState {
     products: {
         title: string
@@ -36,7 +37,7 @@ const Kids = () => {
     useEffect(() => {
         if (products) {
 
-            fetch('https://young-springs-82149.herokuapp.com/shop/products/category?category=kids')
+            fetch('https://young-springs-82149.herokuapp.com/shop/products/category?category=Kids')
                 .then(res => res.json())
                 .then(data => setProducts(data))
         }
@@ -97,7 +98,7 @@ const Kids = () => {
                             return <div key={product._id} className="bg-white shadow-inner overflow-hidden single-card">
 
                                 <div className="relative group">
-                                    <div style={{ height: '300px' }} className='z-100 overflow-hidden'>
+                                    <div style={{ height: '150px' }} className='z-100 overflow-hidden'>
                                         <img src={product.images[0]?.src} className='select-none w-full h-full img z-0 group-hover:hidden block transition object-contain' alt="" />
                                         <img src={product.images[1]?.src} className='w-full select-none h-full hoverImg group-hover:block hidden transition object-center object-contain' alt="" />
                                     </div>
@@ -106,10 +107,9 @@ const Kids = () => {
                                         <button className='text-white text-lg w-9 h-8 rounded-full bg-indigo-500 flex items-center justify-center hover:bg-gray-800 transition' onClick={() => handleOpen(product)}>
                                             <i className="fa-regular fa-magnifying-glass"></i>
                                         </button>
-                                        {/* </Link> */}
-                                        <a className='text-white text-lg w-9 h-8 rounded-full bg-indigo-500 flex items-center justify-center hover:bg-gray-800 transition' href="/">
+                                        <button onClick={() => dispatch((addToWishlist(detailProduct)))} className='text-white text-lg w-9 h-8 rounded-full bg-indigo-500 flex items-center justify-center hover:bg-gray-800 transition'>
                                             <i className="fa-regular fa-heart"></i>
-                                        </a>
+                                        </button>
                                     </div>
 
                                 </div>
@@ -132,7 +132,6 @@ const Kids = () => {
                         })}
 
             </div>
-
             <div className='bg-white dark:bg-gray-800 text-center'>
                 <Modal
                     BackdropComponent={Backdrop}

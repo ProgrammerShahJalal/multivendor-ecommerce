@@ -371,7 +371,7 @@ const Header: FC<HeaderProps> = ({ fixed, transparent }) => {
                                                 <Menu.Item>
                                                     {({ active }) => (
                                                         <Link
-                                                            to="/orderTracking"
+                                                            to="/orderTrack"
                                                             className={classNames(active ? 'bg-gray-100 dark:bg-gray-800' : '', 'block px-4 py-2 text-sm text-black dark:text-white')}
                                                         >
                                                             Order Tracking

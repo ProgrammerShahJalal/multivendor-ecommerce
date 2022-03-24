@@ -16,7 +16,7 @@ const VendorProfileDetails = () => {
 
     }, [slug]);
 
-    // GET ALL THE VALUES FROM FIELDS
+    // GET ALL THE VALUES FROM 
     const handleGetFieldValues = (e: any) => {
 
         const field = e.target.name
@@ -28,9 +28,10 @@ const VendorProfileDetails = () => {
         setFieldsValue(newFieldData)
 
     }
-    console.log(fieldsValue);
+    // console.log(fieldsValue.length, 'fieldsValue');
     const updateProfile = (email) => {
-        if (fieldsValue.length > 0) {
+
+        if (fieldsValue.length !== 0) {
             setIsLoading(true)
             fetch(`https://young-springs-82149.herokuapp.com/user/vendors/update-profile/${email}`, {
                 method: 'PUT',
@@ -176,7 +177,7 @@ const VendorProfileDetails = () => {
                                             <div className="grid grid-cols-2">
                                                 <div className="px-4 py-2 font-semibold">Email.</div>
                                                 <div className="px-4 py-2">
-                                                    <a className="text-blue-800" href="mailto:jane@example.com">{vendor.storeEmail}</a>
+                                                    <a className="text-blue-800" href={vendor.storeEmail}>{vendor.storeEmail}</a>
 
                                                 </div>
                                             </div>

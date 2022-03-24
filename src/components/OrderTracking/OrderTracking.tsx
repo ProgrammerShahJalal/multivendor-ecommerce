@@ -13,7 +13,7 @@ export default function OrderTracking() {
         TrackOrderApi(id, email, setOrdersTrack, setIsLoading)
     }
 
-    return <div>
+    return <div className='dark:text-white'>
         <div className=' flex justify-center items-center gap-3'>
             <img className='w-72' src="https://i.ibb.co/52Vj8CR/oder-1.png" alt="" />
             <img className='w-72' src="https://i.ibb.co/pRkCpsP/order-2.png" alt="" />

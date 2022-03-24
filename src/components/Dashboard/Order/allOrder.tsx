@@ -239,7 +239,7 @@ const AllOrders = () => {
 
                             </tbody>
                         </table>
-                        <div
+                        {/* <div
                             className="px-5 py-5 bg-white border-t flex flex-col xs:flex-row items-center xs:justify-between          ">
                             <span className="text-xs xs:text-sm text-gray-900">
                                 Showing 1 to 10 of 50 Entries
@@ -254,7 +254,7 @@ const AllOrders = () => {
                                     Next
                                 </button>
                             </div>
-                        </div>
+                        </div> */}
                     </div>
                 </div>}
                 {/* order part end  */}
