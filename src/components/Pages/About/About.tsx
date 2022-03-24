@@ -55,7 +55,7 @@ const About = () => {
             </div>
           </div>
 
-          <div className='container mx-auto my-5'>
+          <div className='container mx-auto'>
             <div className='grid grid-cols-1 md:grid-cols-2 gap-0 items-center justify-center'>
               <div className='w-50  px-7 text-center py-3'>
                 <h2 className='text-2xl font-medium text-gray-800 dark:text-white uppercase mb-6'>Our Mission</h2>
