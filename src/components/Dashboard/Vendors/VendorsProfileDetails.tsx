@@ -9,12 +9,25 @@ const VendorProfileDetails = () => {
     const [isTrue, setIsTrue] = useState<boolean>(true)
     const [isLoading, setIsLoading] = useState<boolean>(true)
     const navigate = useNavigate()
-    useEffect(() => {
-        fetch(`https://young-springs-82149.herokuapp.com/user/vendor/${slug}`)
-            .then(res => res.json())
-            .then(data => setVendors(data))
+    const userDetails = localStorage.getItem("userDetails") ? JSON.parse(localStorage.getItem('userDetails') || '{}') : { role: "", email: "" }
 
-    }, [slug]);
+    useEffect(() => {
+        if (slug) {
+            setIsLoading(true)
+            fetch(`https://young-springs-82149.herokuapp.com/user/vendor/${slug}`)
+                .then(res => res.json())
+                .then(data => setVendors(data))
+                .finally(() => setIsLoading(false))
+        } else if (vendors.length === 0) {
+            setIsLoading(true)
+            fetch(`https://young-springs-82149.herokuapp.com/user/vendors/${userDetails.email}`)
+                .then(res => res.json())
+                .then(data => setVendors(data))
+                .finally(() => setIsLoading(false))
+        }
+
+
+    }, [slug, vendors, userDetails]);
 
     // GET ALL THE VALUES FROM 
     const handleGetFieldValues = (e: any) => {
@@ -48,15 +61,23 @@ const VendorProfileDetails = () => {
                         //     position: 'bottom-left'
                         // })
                         setIsTrue(!isTrue)
-                        navigate('/dashboard/vendors')
+                        if (slug) {
+                            navigate('/dashboard/vendors')
+                        }
+
                     }
 
                 })
         } else {
-            navigate('/dashboard/vendors')
+            if (slug) {
+                navigate('/dashboard/vendors')
+            }
+            setIsTrue(!isTrue)
         }
 
     }
+    console.log(slug, 'sad');
+
     const updateStatus = (email, status) => {
         setIsLoading(true)
         fetch(`https://young-springs-82149.herokuapp.com/user/vendors/update-status/${email}`, {
@@ -96,10 +117,13 @@ const VendorProfileDetails = () => {
                                             src="https://lavinephotography.com.au/wp-content/uploads/2017/01/PROFILE-Photography-112.jpg"
                                             alt="" /> */}
                                         {isTrue ? <img className="h-auto w-full mx-auto"
-                                            src={vendor.storeBanner}
+                                            src={vendor.storeLogo}
                                             alt="" /> : <>
                                             <div className="px-1 py-2 font-semibold">Logo</div>
-                                            <input type="url" defaultValue={vendor.storeBanner} name="storeBanner" onBlur={handleGetFieldValues} className="my-2 bg-purple-white shadow rounded border-1 border-neutral-300 p-3" placeholder="Search by name..." /></>}
+                                            <input type="url" defaultValue={vendor.storeLogo} name="storeLogo" onBlur={handleGetFieldValues} className="my-2 w-full bg-purple-white shadow rounded border-1 border-neutral-300 p-3" placeholder="Search by name..." /></>}
+                                        {isTrue ? "" : <>
+                                            <div className="px-1 py-2 font-semibold">Banner</div>
+                                            <input type="url" defaultValue={vendor.storeBanner} name="storeBanner" onBlur={handleGetFieldValues} className="my-2 w-full bg-purple-white shadow rounded border-1 border-neutral-300 p-3" placeholder="Search by name..." /></>}
                                     </div>
                                     <h1 className="text-gray-900 dark:text-white font-bold text-xl leading-8 my-1">{vendor.storeName}</h1>
                                     {/* <h3 className="text-gray-600 font-lg text-semibold leading-6">Owner at Her Company Inc.</h3> */}
@@ -108,7 +132,7 @@ const VendorProfileDetails = () => {
                                             {vendor.storeDescription}
                                         </p> : <>
                                             <div className="px-1 py-2 font-semibold">Description</div>
-                                            <input name="storeDescription" onBlur={handleGetFieldValues} type="text" defaultValue={vendor.storeDescription} className="my-2 bg-purple-white shadow rounded border-1 border-neutral-300 p-3" placeholder="Search by name..." /></>}
+                                            <textarea name="storeDescription" onBlur={handleGetFieldValues} defaultValue={vendor.storeDescription} className="my-2 w-full bg-purple-white shadow rounded border-1 border-neutral-300 p-3" placeholder="Search by name..." /></>}
                                     <ul
                                         className="bg-gray-100 text-gray-600 hover:text-gray-700 hover:shadow py-2 px-3 mt-3 divide-y rounded shadow-sm">
                                         <li className="flex items-center py-3">
@@ -118,14 +142,14 @@ const VendorProfileDetails = () => {
                                         </li>
                                         <li className="flex items-center py-3">
                                             <span>Member since</span>
-                                            <span className="ml-auto">Feb 17, 2022</span>
+                                            <span className="ml-auto">{vendor.date}</span>
                                         </li>
                                     </ul>
                                 </div>
                                 {isTrue ? <button onClick={() => setIsTrue(!isTrue)} type="submit" className="inline-flex justify-center w-full mt-4 py-2 px-4 border border-transparent drop-shadow-md text-sm font-medium rounded-md text-white bg-indigo-600 hover:bg-indigo-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500">Edit</button> : <button onClick={() => updateProfile(vendor.storeEmail)} type="submit" className="inline-flex justify-center w-full mt-4 py-2 px-4 border border-transparent drop-shadow-md text-sm font-medium rounded-md text-white bg-indigo-600 hover:bg-indigo-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500">Save</button>}
                                 {/* <!-- End of profile card -->  */}
 
-                                {vendor.status === "Deactivate" ? <button onClick={() => updateStatus(vendor.storeEmail, "Active")} type="submit" className="inline-flex justify-center w-full mt-4 py-2 px-4 border border-transparent drop-shadow-md text-sm font-medium rounded-md text-white bg-green-600 hover:bg-green-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-green-500">Active</button> : <button onClick={() => updateStatus(vendor.storeEmail, "Deactivate")} type="submit" className="inline-flex justify-center w-full mt-4 py-2 px-4 border border-transparent drop-shadow-md text-sm font-medium rounded-md text-white bg-red-600 hover:bg-red-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500">Deactivate</button>}
+                                {userDetails.role === "admin" ? vendor.status === "Deactivate" ? <button onClick={() => updateStatus(vendor.storeEmail, "Active")} type="submit" className="inline-flex justify-center w-full mt-4 py-2 px-4 border border-transparent drop-shadow-md text-sm font-medium rounded-md text-white bg-green-600 hover:bg-green-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-green-500">Active</button> : <button onClick={() => updateStatus(vendor.storeEmail, "Deactivate")} type="submit" className="inline-flex justify-center w-full mt-4 py-2 px-4 border border-transparent drop-shadow-md text-sm font-medium rounded-md text-white bg-red-600 hover:bg-red-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500">Deactivate</button> : ""}
 
                             </div>
 
@@ -165,14 +189,29 @@ const VendorProfileDetails = () => {
                                                     <input name="supportPhoneNumber" onBlur={handleGetFieldValues} type="text" defaultValue={vendor.supportPhoneNumber} className="bg-purple-white shadow rounded border-1 border-neutral-300 p-3" placeholder="Search by name..." />}
                                             </div>
                                             <div className="grid grid-cols-2">
-                                                <div className="px-4 py-2 font-semibold">Current Address</div>
-                                                {isTrue ? <div className="px-4 py-2">{vendor.city}, {vendor.country}</div> :
-                                                    <input name="country" onBlur={handleGetFieldValues} type="text" defaultValue={vendor.city} className="my-2 bg-purple-white shadow rounded border-1 border-neutral-300 p-3" placeholder="Search by name..." />}
+                                                <div className="px-4 py-2 font-semibold">Current City</div>
+                                                {isTrue ? <div className="px-4 py-2">{vendor.city}</div> :
+                                                    <input name="city" onBlur={handleGetFieldValues} type="text" defaultValue={vendor.city} className="my-2 bg-purple-white shadow rounded border-1 border-neutral-300 p-3" placeholder="Search by name..." />}
+                                            </div>
+                                            <div className="grid grid-cols-2">
+                                                <div className="px-4 py-2 font-semibold">Current Country</div>
+                                                {isTrue ? <div className="px-4 py-2">{vendor.country}</div> :
+                                                    <input name="country" onBlur={handleGetFieldValues} type="text" defaultValue={vendor.country} className="my-2 bg-purple-white shadow rounded border-1 border-neutral-300 p-3" placeholder="Search by name..." />}
+                                            </div>
+                                            <div className="grid grid-cols-2">
+                                                <div className="px-4 py-2 font-semibold">Current Zip code</div>
+                                                {isTrue ? <div className="px-4 py-2">{vendor.zip}</div> :
+                                                    <input name="zip" onBlur={handleGetFieldValues} type="text" defaultValue={vendor.zip} className="my-2 bg-purple-white shadow rounded border-1 border-neutral-300 p-3" placeholder="Search by name..." />}
                                             </div>
                                             <div className="grid grid-cols-2">
                                                 <div className="px-4 py-2 font-semibold">Support email</div>
                                                 {isTrue ? <div className="px-4 py-2">{vendor.supportEmail}</div> :
                                                     <input name="supportEmail" onBlur={handleGetFieldValues} type="text" defaultValue={`${vendor.supportEmail}`} className="my-2 bg-purple-white shadow rounded border-1 border-neutral-300 p-3" placeholder="Search by name..." />}
+                                            </div>
+                                            <div className="grid grid-cols-2">
+                                                <div className="px-4 py-2 font-semibold">Paypal No.</div>
+                                                {isTrue ? <div className="px-4 py-2">{vendor.paypalNumber}</div> :
+                                                    <input name="paypalNumber" onBlur={handleGetFieldValues} type="text" defaultValue={`${vendor.paypalNumber}`} className="my-2 bg-purple-white shadow rounded border-1 border-neutral-300 p-3" placeholder="Search by name..." />}
                                             </div>
                                             <div className="grid grid-cols-2">
                                                 <div className="px-4 py-2 font-semibold">Email.</div>

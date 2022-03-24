@@ -63,6 +63,7 @@ const UserMainProfile = () => {
 
                 })
         } else {
+            setIsTrue(!isTrue)
             // navigate('/dashboard/vendors')
         }
 

@@ -3,7 +3,7 @@ export const addUserToDB = (details, userRole) => {
     console.log(details, 'details details details');
 
     const date = new Date()
-    const user = { name: details.displayName, email: details.email, photo: details.photoURL, phone: details.phoneNumber, role: userRole, date: date.toLocaleString() }
+    const user = { name: details.displayName, email: details.email, photo: details.photoURL, phone: details.phoneNumber, role: userRole, date: date.toLocaleString(), status: "Active" }
     // localStorage.setItem("userDetails", JSON.stringify(user))
     fetch('https://young-springs-82149.herokuapp.com/addUser', {
         method: 'POST',

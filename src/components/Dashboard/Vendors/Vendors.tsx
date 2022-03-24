@@ -1,15 +1,18 @@
 import React, { useEffect, useState } from 'react';
 import VendorsSearchField from './VendorsSearchField';
 import { Link, } from 'react-router-dom';
+import { CircularProgress } from '@mui/material';
 
 const Vendors = () => {
     const [vendors, setVendors] = useState<any>([]);
     const [isLoading, setIsLoading] = useState<boolean>(false);
 
     useEffect(() => {
+        setIsLoading(true)
         fetch('https://young-springs-82149.herokuapp.com/user/vendors')
             .then(res => res.json())
             .then(data => setVendors(data))
+            .finally(() => setIsLoading(false))
 
     }, [])
     const deleteVendor = (id) => {
@@ -86,7 +89,7 @@ const Vendors = () => {
                                 <tbody>
                                     {/* first order start */}
 
-                                    {
+                                    {isLoading ? <span className='flex justify-center'><CircularProgress color="inherit" /></span> :
                                         vendors.map((vendor: any) => (
                                             <tr key={vendor._id}>
                                                 <td className="px-5 py-5 border-b border-gray-200 bg-white dark:bg-slate-800 text-sm">
