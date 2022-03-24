@@ -30,7 +30,7 @@ const TimeLine = () => {
                     className="vertical-timeline-element--title"
                     contentStyle={{ background: 'rgb(16, 204, 82)', color: '#333' }}
                     contentArrowStyle={{ borderRight: '7px solid rgb(16, 204, 82)' }}
-                    date="2010 - 2011"
+                    date="Add to Cart"
                     iconStyle={{ background: 'rgb(16, 204, 82)', color: '#fff' }}
                     icon={<ShoppingBagIcon />}
                 >
@@ -44,7 +44,7 @@ const TimeLine = () => {
                     className="vertical-timeline-element--education"
                     contentStyle={{ background: 'rgb(233, 30, 99)', color: '#333' }}
                     contentArrowStyle={{ borderRight: '7px solid  rgb(233, 30, 99)' }}
-                    date="2008 - 2010"
+                    date="Payment"
                     iconStyle={{ background: 'rgb(233, 30, 99)', color: '#fff' }}
                     icon={<CreditCardIcon />}
                 >
@@ -54,7 +54,7 @@ const TimeLine = () => {
                     className="vertical-timeline-element--work"
                     contentStyle={{ background: 'rgb(33, 150, 243)', color: '#333' }}
                     contentArrowStyle={{ borderRight: '7px solid  rgb(33, 150, 243)' }}
-                    date="2006 - 2008"
+                    date="Checkout"
                     iconStyle={{ background: 'rgb(33, 150, 243)', color: '#fff' }}
                     icon={<IdentificationIcon />}
                 >
@@ -64,7 +64,7 @@ const TimeLine = () => {
                     className="vertical-timeline-element--education"
                     contentStyle={{ background: 'rgb(16, 204, 82)', color: '#333' }}
                     contentArrowStyle={{ borderRight: '7px solid rgb(16, 204, 82)' }}
-                    date="April 2013"
+                    date="Message"
                     iconStyle={{ background: 'rgb(16, 204, 82)', color: '#fff' }}
                     icon={<ChatIcon />}
                 >
@@ -74,7 +74,7 @@ const TimeLine = () => {
                     className="vertical-timeline-element--education"
                     contentStyle={{ background: 'rgb(233, 30, 99)', color: '#333' }}
                     contentArrowStyle={{ borderRight: '7px solid  rgb(233, 30, 99)' }}
-                    date="November 2012"
+                    date="Dashboard"
                     iconStyle={{ background: 'rgb(233, 30, 99)', color: '#fff' }}
                     icon={<AnnotationIcon />}
                 >
@@ -85,7 +85,7 @@ const TimeLine = () => {
                     className="vertical-timeline-element--education"
                     contentStyle={{ background: 'rgb(33, 150, 243)', color: '#333' }}
                     contentArrowStyle={{ borderRight: '7px solid  rgb(33, 150, 243)' }}
-                    date="2002 - 2006"
+                    date="Vendor"
                     iconStyle={{ background: 'rgb(33, 150, 243)', color: '#fff' }}
                     icon={<ReceiptRefundIcon />}
                 >

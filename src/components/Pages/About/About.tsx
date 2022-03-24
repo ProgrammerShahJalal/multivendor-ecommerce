@@ -22,7 +22,7 @@ const About = () => {
         <div className='container mx-auto overflow-hidden'>
           <div className='relative'>
             <img src='https://template.annimexweb.com/diva/assets/images/parallax-banners/testimonials-bg.jpg' className="w-full mx-auto" alt='' />
-            <div className='bg-black bg-opacity-40'>
+            <div className='bg-black bg-opacity-40 hidden md:block'>
               <div className='absolute inset-24 items-center py-12'>
                 <div className='top-48 bottom-48 left-48 right-48 text-center'>
                   <h2 className='text-blue-300 text-center text-4xl font-bold py-3'>Unity Mart</h2>
@@ -55,9 +55,9 @@ const About = () => {
             </div>
           </div>
 
-          <div className='container mx-auto'>
-            <div className='grid grid-cols-2 gap-0 items-center justify-center'>
-              <div className='w-50  px-7 text-center'>
+          <div className='container mx-auto my-5'>
+            <div className='grid grid-cols-1 md:grid-cols-2 gap-0 items-center justify-center'>
+              <div className='w-50  px-7 text-center py-3'>
                 <h2 className='text-2xl font-medium text-gray-800 dark:text-white uppercase mb-6'>Our Mission</h2>
                 <p className='dark:text-white'>Our mission is to create top-quality shopify theme which is unique, clean, easy to use, bug less, easy to load and have all the features that merchant need to run their online eCommerce business successfully.</p>
                 <Link to="/team">
