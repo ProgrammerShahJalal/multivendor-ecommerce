@@ -51,6 +51,8 @@ import AffiliateFirstLook from "./components/Blogs/AffiliateFirstLook";
 import LoginForm from "./components/Pages/LoginPage/Login";
 import DashboardUI from "./components/Dashboard/Dashboard/DashboardUI.js";
 import UserMainProfile from "./components/Pages/UserMainProfile/UserMainProfile";
+import UserProfileDetails from "./components/Dashboard/Users/UserProfileDetails";
+
 
 
 const Dashboard = lazy(() => import("./components/Dashboard/Dashboard/Dashboard"));
@@ -74,7 +76,7 @@ function App() {
   const affiliateLink = window.location.search.split('=')[1]
   useLayoutEffect(() => {
     if (affiliateLink) {
-      fetch(`https://guarded-ocean-73313.herokuapp.com/findUrl/${affiliateLink}`)
+      fetch(`https://young-springs-82149.herokuapp.com/findUrl/${affiliateLink}`)
         .then(res => res.json())
         .then(data => {
           if (data.isUrlTrue) {
@@ -145,6 +147,7 @@ function App() {
               <Route path="attributes" element={<Suspense fallback={<div>Loading...</div>}><Attributes /></Suspense>}></Route>
               <Route path="products" element={<Suspense fallback={<div>Loading...</div>}><Products /></Suspense>}></Route>
               <Route path="users" element={<Suspense fallback={<div>Loading...</div>}><Users /></Suspense>}></Route>
+              <Route path="users/:id" element={<Suspense fallback={<div>Loading...</div>}><UserProfileDetails /></Suspense>}></Route>
               <Route path='edit-product/:id' element={<Suspense fallback={<div>Loading...</div>}><AdminRoute ><EditProduct /></AdminRoute></Suspense>} />
               <Route path="vendors" element={<Suspense fallback={<div>Loading...</div>}><Vendors /></Suspense>}></Route>
               <Route path="user/vendor/:slug" element={<Suspense fallback={<div>Loading...</div>}><VendorProfileDetails /></Suspense>}></Route>
@@ -156,7 +159,7 @@ function App() {
             <Route path="/privacy-policy" element={<PrivacyPolicy />}></Route>
 
 
-            <Route path="/dashboard" element={<Suspense fallback={<div>Loading...</div>}><AdminRoute ><Dashboard /></AdminRoute></Suspense>} >
+            {/* <Route path="/dashboard" element={<Suspense fallback={<div>Loading...</div>}><AdminRoute ><Dashboard /></AdminRoute></Suspense>} >
               <Route path="media" element={<Suspense fallback={<div>Loading...</div>}><Media /></Suspense>}></Route>
               <Route path="affiliate-dashboard" element={<Suspense fallback={<div>Loading...</div>}><Affiliate /></Suspense>}></Route>
               <Route path="affiliate-links" element={<Suspense fallback={<div>Loading...</div>}><AffiliateLinks /></Suspense>}></Route>
@@ -167,10 +170,11 @@ function App() {
               <Route path="attributes" element={<Suspense fallback={<div>Loading...</div>}><Attributes /></Suspense>}></Route>
               <Route path="products" element={<Suspense fallback={<div>Loading...</div>}><Products /></Suspense>}></Route>
               <Route path="users" element={<Suspense fallback={<div>Loading...</div>}><Users /></Suspense>}></Route>
+              <Route path="user/:id" element={<Suspense fallback={<div>Loading...</div>}><UsersProfileDetails /></Suspense>}></Route>
               <Route path='edit-product/:id' element={<Suspense fallback={<div>Loading...</div>}><AdminRoute ><EditProduct /></AdminRoute></Suspense>} />
               <Route path="vendors" element={<Suspense fallback={<div>Loading...</div>}><Vendors /></Suspense>}></Route>
               <Route path="vendor-profile/:id" element={<Suspense fallback={<div>Loading...</div>}><VendorProfileDetails /></Suspense>}></Route>
-            </Route>
+            </Route> */}
 
             <Route path='*' element={<NotFound />} />
           </Routes>

@@ -10,7 +10,7 @@ const AllOrders = () => {
     useEffect(() => {
         setIsLoading(true)
         if (userDetails.role === 'vendor') {
-            fetch(`https://guarded-ocean-73313.herokuapp.com/dashboard/vendor-orders?email=${userDetails.email}`)
+            fetch(`https://young-springs-82149.herokuapp.com/dashboard/vendor-orders?email=${userDetails.email}`)
                 .then(res => res.json())
                 .then(data => {
 
@@ -21,7 +21,7 @@ const AllOrders = () => {
                 })
                 .finally(() => setIsLoading(false))
         } else if (userDetails.role === 'admin') {
-            fetch(`https://guarded-ocean-73313.herokuapp.com/dashboard/orders`)
+            fetch(`https://young-springs-82149.herokuapp.com/dashboard/orders`)
                 .then(res => res.json())
                 .then(data => {
                     console.log(data);
@@ -42,7 +42,7 @@ const AllOrders = () => {
 
         if (window.confirm('Are you sure you want to delete?')) {
             setIsLoading(true)
-            fetch(`https://guarded-ocean-73313.herokuapp.com/dashboard/orders/${id}`, {
+            fetch(`https://young-springs-82149.herokuapp.com/dashboard/orders/${id}`, {
                 method: 'DELETE'
             }).then(res => res.json())
                 .then(data => {

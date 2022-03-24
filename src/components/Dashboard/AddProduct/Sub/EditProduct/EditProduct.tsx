@@ -66,7 +66,7 @@ const EditProduct: React.FunctionComponent = () => {
     useEffect(() => {
         setIsLoading(true)
         if (productData.length === 0) {
-            fetch(`https://guarded-ocean-73313.herokuapp.com/product/${id}`)
+            fetch(`https://young-springs-82149.herokuapp.com/product/${id}`)
                 .then(res => res.json())
                 .then(data => {
                     const newArray = data[0]?.attributes ?? data[0]?.attributes.map(({ label, slug }: any) => ({ label, value: slug }));
@@ -91,7 +91,7 @@ const EditProduct: React.FunctionComponent = () => {
     useEffect(() => {
         setIsLoading(true)
 
-        fetch('https://guarded-ocean-73313.herokuapp.com/dashboard/attributes')
+        fetch('https://young-springs-82149.herokuapp.com/dashboard/attributes')
             .then(res => res.json())
             .then(data => {
                 const newArray = data.map(({ label, slug }: any) => ({ label, value: slug }));
@@ -145,7 +145,7 @@ const EditProduct: React.FunctionComponent = () => {
     useEffect(() => {
         if (!newCat) {
             setIsLoading(true)
-            fetch('https://guarded-ocean-73313.herokuapp.com/dashboard/categories')
+            fetch('https://young-springs-82149.herokuapp.com/dashboard/categories')
                 .then(res => res.json())
                 .then(data => {
                     const options = data.map(({ options }: any) => options)
@@ -198,7 +198,7 @@ const EditProduct: React.FunctionComponent = () => {
         console.log(newProduct, 'newProduct');
 
         setIsLoading(true)
-        fetch(`https://guarded-ocean-73313.herokuapp.com/dashboard/updateProduct/${id}`, {
+        fetch(`https://young-springs-82149.herokuapp.com/dashboard/updateProduct/${id}`, {
             method: 'PUT',
             headers: {
                 'content-type': 'application/json'
@@ -234,7 +234,7 @@ const EditProduct: React.FunctionComponent = () => {
     //     //     formData.append('images[]', files[i]);
     //     // }
 
-    //     // fetch('https://guarded-ocean-73313.herokuapp.com/addProduct', {
+    //     // fetch('https://young-springs-82149.herokuapp.com/addProduct', {
     //     //     method: 'post',
     //     //     body: formData
     //     // })

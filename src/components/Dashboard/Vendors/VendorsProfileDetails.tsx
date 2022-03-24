@@ -10,13 +10,13 @@ const VendorProfileDetails = () => {
     const [isLoading, setIsLoading] = useState<boolean>(true)
     const navigate = useNavigate()
     useEffect(() => {
-        fetch(`https://guarded-ocean-73313.herokuapp.com/user/vendor/${slug}`)
+        fetch(`https://young-springs-82149.herokuapp.com/user/vendor/${slug}`)
             .then(res => res.json())
             .then(data => setVendors(data))
 
     }, [slug]);
 
-    // GET ALL THE VALUES FROM FIELDS
+    // GET ALL THE VALUES FROM 
     const handleGetFieldValues = (e: any) => {
 
         const field = e.target.name
@@ -28,11 +28,12 @@ const VendorProfileDetails = () => {
         setFieldsValue(newFieldData)
 
     }
-    console.log(fieldsValue);
+    // console.log(fieldsValue.length, 'fieldsValue');
     const updateProfile = (email) => {
-        if (fieldsValue.length > 0) {
+
+        if (fieldsValue.length !== 0) {
             setIsLoading(true)
-            fetch(`https://guarded-ocean-73313.herokuapp.com/user/vendors/update-profile/${email}`, {
+            fetch(`https://young-springs-82149.herokuapp.com/user/vendors/update-profile/${email}`, {
                 method: 'PUT',
                 headers: {
                     'content-type': 'application/json'
@@ -58,7 +59,7 @@ const VendorProfileDetails = () => {
     }
     const updateStatus = (email, status) => {
         setIsLoading(true)
-        fetch(`https://guarded-ocean-73313.herokuapp.com/user/vendors/update-status/${email}`, {
+        fetch(`https://young-springs-82149.herokuapp.com/user/vendors/update-status/${email}`, {
             method: 'PUT',
             headers: {
                 'content-type': 'application/json'

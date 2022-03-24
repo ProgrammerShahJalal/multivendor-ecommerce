@@ -13,7 +13,7 @@ const VendorsSearchField: React.FunctionComponent = () => {
     const [vendors, setVendors] = useState<VendorState["vendors"]>([]);
     const [vendorList, setVendorList] = useState<any>();
     useLayoutEffect(() => {
-        fetch('https://guarded-ocean-73313.herokuapp.com/user/vendors')
+        fetch('https://young-springs-82149.herokuapp.com/user/vendors')
             .then(res => res.json())
             .then(data => setVendors(data));
     }, []);
