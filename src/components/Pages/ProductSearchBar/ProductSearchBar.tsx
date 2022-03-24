@@ -96,7 +96,7 @@ const ProductSearchBar: React.FunctionComponent = () => {
         <div className="container mx-auto pt-2 pb-5 my-4">
             <div className="text-xl text-center p-4">
                 <input
-                    className='text-center border w-96 py-2 rounded-full'
+                    className='text-center border lg:w-96 md:w-80 sm:w-64 py-2 rounded-full'
                     type='text'
                     placeholder="Search Product"
                     onChange={handleOnChange}
