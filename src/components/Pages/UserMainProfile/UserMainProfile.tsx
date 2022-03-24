@@ -85,7 +85,7 @@ const UserMainProfile = () => {
                                             {/* <img className="h-auto w-full mx-auto"
                                             src="https://lavinephotography.com.au/wp-content/uploads/2017/01/PROFILE-Photography-112.jpg"
                                             alt="" /> */}
-                                            {isTrue ? <img className="h-80 w-full mx-auto" height="100"
+                                            {isTrue ? <img className="h-36 w-36 mx-auto"
                                                 src={vendor.photo || "https://i.ibb.co/dDS0Jq5/user.png"}
                                                 alt="" /> : <>
                                                 <div className="px-1 py-2 font-semibold">Photo</div>
