@@ -122,7 +122,7 @@ const AllProducts: FC<AllProductsProps> = ({ translate }) => {
                                         {/* <div className="text-xs text-gray-500 ml-3">(1)</div> */}
                                     </div>
                                 </div>
-                                {product.attributes.length === 0 ? <button onClick={() => handleAddToCart(detailProduct)} className='block w-full py-1 text-center top-5 text-white bg-indigo-500 border border-indigo-500 rounded-b hover:bg-transparent hover:text-indigo-500 transition'>Add to Cart</button> : <Link to={`/product/${product._id}`}> <button className='block w-full py-1 text-center top-5 text-white bg-indigo-500 border border-indigo-500 hover:bg-transparent hover:text-indigo-500 transition'>View Product</button></Link>}
+                                {product.attributes.length === 0 ? <button onClick={() => handleAddToCart(detailProduct)} className='block w-full py-1 text-center top-5 text-white bg-indigo-500 border border-indigo-500 hover:bg-transparent hover:text-indigo-500 transition'>Add to Cart</button> : <Link to={`/product/${product._id}`}> <button className='block w-full py-1 text-center top-5 text-white bg-indigo-500 border border-indigo-500 hover:bg-transparent hover:text-indigo-500 transition'>View Product</button></Link>}
                             </div>
                         })}
 
