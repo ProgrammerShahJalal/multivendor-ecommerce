@@ -2,7 +2,6 @@ import { useContext, useLayoutEffect, lazy, Suspense } from "react";
 import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
 import Contact from './components/Contact/Contact.js';
 import AuthProvider from "./context/AuthProvider";
-import Register from "./components/Pages/RegisterPage/Register";
 
 import NotFound from './components/NotFound/NotFound';
 import Team from './components/Pages/Team/Team';
@@ -16,8 +15,6 @@ import SpecialDeal from "./components/SpecialDeal/SpecialDeal";
 import Home from "./components/Home/Home";
 import DetailBlogPage from "./components/Blogs/DetailBlogPage";
 // import { SummaryBoxSpecial } from "./components/Dashboard/DashboardHome/DashboardHome";
-import MenProductsDetail from './components/MenProductDetail';
-import KidsProductDetails from './components/KidsProductDetails';
 // import SingleProduct from "./components/SingleProduct/SingleProduct";
 import About from "./components/Pages/About/About";
 import Cart from "./components/Pages/CartPage/Cart";
@@ -26,7 +23,6 @@ import SearchField from "./components/Pages/SearchField/SearchField";
 import UnitTesting from "./components/Pages/UnitTesting/UnitTesting";
 import VendorInformations from "./components/Pages/VendorPages/VendorInformations";
 import VendorRegister from "./components/Pages/VendorPages/VendorRegister";
-import WishList from "./components/Pages/WishList/WishList";
 import PrivacyPolicy from "./components/PrivacyPolicy/PrivacyPolicy";
 import Promo from './components/Promo/Promo';
 import Footer from './components/Shared/Footer/Footer';
@@ -41,7 +37,6 @@ import UserDashboardHome from "./components/UserDashboard/UserDashboardHome/User
 import TermsCondition from "./components/TermsCondition/TermsCondition";
 import CustomersService from "./components/CustomersService/CustomersService";
 import AddReview from "./components/Pages/AddReview/AddReview";
-import WomenProductDetail from "./components/WomenProductDetail";
 import UserOrders from "./components/UserDashboard/UserOrders/UserOrders";
 import UserDetailedOrder from "./components/UserDashboard/UserOrders/UserDetailedOrder";
 import AddBlogForm from "./components/Blogs/AddBlogForm";
@@ -52,6 +47,7 @@ import LoginForm from "./components/Pages/LoginPage/Login";
 import DashboardUI from "./components/Dashboard/Dashboard/DashboardUI.js";
 import UserMainProfile from "./components/Pages/UserMainProfile/UserMainProfile";
 import UserProfileDetails from "./components/Dashboard/Users/UserProfileDetails";
+import WishList from "./components/Pages/WishList/WishList";
 
 
 
@@ -105,12 +101,8 @@ function App() {
             <Route path='/searchField' element={<SearchField />} />
             <Route path='/unitTesting' element={<UnitTesting />} />
             <Route path='/specialDeal' element={<SpecialDeal translate={translate} />} />
-            <Route path='/productDetails/men/:id' element={<MenProductsDetail />} />
-            <Route path='/productDetails/women/:id' element={<WomenProductDetail />} />
-            <Route path='/productDetails/kid/:id' element={<KidsProductDetails />} />
             <Route path='/team' element={<Team />} />
             <Route path='/login' element={<LoginForm />} />
-            <Route path='/register' element={<Register />} />
             <Route path='/vendors' element={<StoreListCards />} />
             <Route path='/vendor-register' element={<PrivateRoute><VendorRegister /></PrivateRoute>} />
             <Route path='/orderTrack' element={<OrderTracking />} />
@@ -126,7 +118,8 @@ function App() {
             <Route path='/specials/details/:id' element={<PrivateRoute><DealDetails /></PrivateRoute>} />
             <Route path='/product/:id' element={<SingleProduct />} />
             {/* USER DASHBOARD */}
-            <Route path="/profile" element={<PrivateRoute><UserProfile /></PrivateRoute>} >
+            <Route path="/profile" element={<PrivateRoute><UserProfile/></PrivateRoute>}>
+              <Route path="" element={<div className="mx-auto my-auto"><UserMainProfile/></div>}></Route>
               <Route path="dashboard" element={<UserDashboardHome />}></Route>
               <Route path="profile" element={<UserMainProfile />}></Route>
               <Route path="orders" element={<UserOrders />}></Route>

@@ -4,10 +4,9 @@ import { useDispatch } from 'react-redux';
 import { addToCart } from '../../redux/cartSlice';
 import Box from '@mui/material/Box';
 import Modal from '@mui/material/Modal';
-import Fade from '@mui/material/Fade';
 import ProductView from '../ProductView/ProductView';
 import ProductViewSm from '../ProductView/ProductViewSm';
-import { Rating } from '@mui/material';
+import { Backdrop, Rating } from '@mui/material';
 import { addToWishlist } from '../../redux/wishlistSlice';
 
 interface AllProductsProps {
@@ -21,7 +20,7 @@ const AllProducts: FC<AllProductsProps> = ({ translate }) => {
             .then(res => res.json())
             .then(data => {
                 const filter2 = data.sort((a, b) => parseFloat(b.reg_price) - parseFloat(a.reg_price));
-                setProducts(filter2?.slice(0, 8))
+                setProducts(filter2)
             })
 
     }, [])
@@ -40,6 +39,29 @@ const AllProducts: FC<AllProductsProps> = ({ translate }) => {
 
     };
     const handleClose = () => setOpen(false);
+    const style1 = {
+        position: 'absolute',
+        top: '50%',
+        left: '50%',
+        height: 500,
+        width: 800,
+        mx: "auto",
+        my: "auto",
+        transform: 'translate(-50%, -65%)',
+        bgcolor: '#ffffff',
+        boxShadow: 24,
+    };
+    const style2 = {
+        position: 'absolute',
+        top: '50%',
+        left: '50%',
+        width: 400,
+        mx: "auto",
+        my: "auto",
+        transform: 'translate(-50%, -50%)',
+        bgcolor: 'background.paper',
+        boxShadow: 24,
+    };
     return (
         <div className="container lg:px-0 md:px-10 px-10 pb-16 mx-auto">
             <div data-aos="fade-up"
@@ -51,7 +73,7 @@ const AllProducts: FC<AllProductsProps> = ({ translate }) => {
             </div>
             <div className="grid place-content-center lg:grid-cols-4 md:grid-cols-3 grid-cols-1 gap-6">
                 {
-                    products.length === 0 ? <h2>No Products Found</h2> :
+                    products.length === 0 ? <h2 className='text-center'>No Products Found</h2> :
                         products.map((product: any) => {
                             const detailProduct = {
                                 _id: product._id,
@@ -100,27 +122,32 @@ const AllProducts: FC<AllProductsProps> = ({ translate }) => {
                                         {/* <div className="text-xs text-gray-500 ml-3">(1)</div> */}
                                     </div>
                                 </div>
-                                {product.attributes.length === 0 ? <button onClick={() => handleAddToCart(detailProduct)} className='block w-full py-1 text-center top-5 text-white bg-indigo-500 border border-indigo-500 rounded-b hover:bg-transparent hover:text-indigo-500 transition'>Add to Cart</button> : <Link to={`/product/${product._id}`}> <button className='block w-full py-1 text-center top-5 text-white bg-indigo-500 border border-indigo-500 rounded-b hover:bg-transparent hover:text-indigo-500 transition'>View Product</button></Link>}
+                                {product.attributes.length === 0 ? <button onClick={() => handleAddToCart(detailProduct)} className='block w-full py-1 text-center top-5 text-white bg-indigo-500 border border-indigo-500 hover:bg-transparent hover:text-indigo-500 transition'>Add to Cart</button> : <Link to={`/product/${product._id}`}> <button className='block w-full py-1 text-center top-5 text-white bg-indigo-500 border border-indigo-500 hover:bg-transparent hover:text-indigo-500 transition'>View Product</button></Link>}
                             </div>
                         })}
 
             </div>
 
-            <div className='px-3 mx-auto text-center'>
+            <div className='bg-white dark:bg-gray-800 text-center'>
                 <Modal
+                    BackdropComponent={Backdrop}
+                    onClose={handleClose}
                     open={open}
                 >
-                    <Fade in={open}>
-                        <Box>
-                            <button className='justify-end text-white select-none bg-red-500 rounded-full w-8 h-8' onClick={handleClose}>x</button>
-                            <div className='md:block mx-auto px-1 lg:block hidden'>
+                    <div>
+                        <Box className='md:block lg:block hidden' sx={style1}>
+                            <div style={{ width: '800px', height: '600px' }} className='mx-auto bg-white dark:bg-gray-800 px-1'>
                                 <ProductView selectedProduct={selectedProduct} />
                             </div>
-                            <div className='md:hidden lg:hidden block'>
+
+                        </Box>
+                        <Box className='md:hidden lg:hidden block' sx={style2}>
+                            <div className='bg-white dark:bg-gray-800'>
                                 <ProductViewSm selectedProduct={selectedProduct} />
                             </div>
+
                         </Box>
-                    </Fade>
+                    </div>
                 </Modal>
             </div>
         </div>

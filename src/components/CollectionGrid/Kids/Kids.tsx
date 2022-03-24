@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import { Fade, Rating } from "@mui/material";
+import { Backdrop, Rating } from "@mui/material";
 import Box from '@mui/material/Box';
 import Modal from '@mui/material/Modal';
 import ProductView from '../../ProductView/ProductView';
@@ -7,6 +7,7 @@ import ProductViewSm from '../../ProductView/ProductViewSm';
 import { Link } from 'react-router-dom';
 import { useDispatch } from 'react-redux';
 import { addToCart } from '../../../redux/cartSlice';
+import { addToWishlist } from '../../../redux/wishlistSlice';
 interface ProductState {
     products: {
         title: string
@@ -97,7 +98,7 @@ const Kids = () => {
                             return <div key={product._id} className="bg-white shadow-inner overflow-hidden single-card">
 
                                 <div className="relative group">
-                                    <div style={{ height: '300px' }} className='z-100 overflow-hidden'>
+                                    <div style={{ height: '150px' }} className='z-100 overflow-hidden'>
                                         <img src={product.images[0]?.src} className='select-none w-full h-full img z-0 group-hover:hidden block transition object-contain' alt="" />
                                         <img src={product.images[1]?.src} className='w-full select-none h-full hoverImg group-hover:block hidden transition object-center object-contain' alt="" />
                                     </div>
@@ -106,10 +107,9 @@ const Kids = () => {
                                         <button className='text-white text-lg w-9 h-8 rounded-full bg-indigo-500 flex items-center justify-center hover:bg-gray-800 transition' onClick={() => handleOpen(product)}>
                                             <i className="fa-regular fa-magnifying-glass"></i>
                                         </button>
-                                        {/* </Link> */}
-                                        <a className='text-white text-lg w-9 h-8 rounded-full bg-indigo-500 flex items-center justify-center hover:bg-gray-800 transition' href="/">
+                                        <button onClick={() => dispatch((addToWishlist(detailProduct)))} className='text-white text-lg w-9 h-8 rounded-full bg-indigo-500 flex items-center justify-center hover:bg-gray-800 transition'>
                                             <i className="fa-regular fa-heart"></i>
-                                        </a>
+                                        </button>
                                     </div>
 
                                 </div>
@@ -132,22 +132,26 @@ const Kids = () => {
                         })}
 
             </div>
-
-            <div className='px-3 mx-auto text-center'>
+            <div className='bg-white dark:bg-gray-800 text-center'>
                 <Modal
+                    BackdropComponent={Backdrop}
+                    onClose={handleClose}
                     open={open}
                 >
-                    <Fade in={open}>
-                        <Box>
-                            <button className='justify-end text-white select-none bg-red-500 rounded-full w-8 h-8' onClick={handleClose}>x</button>
-                            <div className='md:block mx-auto px-1 lg:block hidden'>
+                    <div>
+                        <Box className='md:block lg:block hidden' sx={style1}>
+                            <div style={{ width: '800px', height: '600px' }} className='mx-auto bg-white dark:bg-gray-800 px-1'>
                                 <ProductView selectedProduct={selectedProduct} />
                             </div>
-                            <div className='md:hidden lg:hidden block'>
+
+                        </Box>
+                        <Box className='md:hidden lg:hidden block' sx={style2}>
+                            <div className='bg-white dark:bg-gray-800'>
                                 <ProductViewSm selectedProduct={selectedProduct} />
                             </div>
+
                         </Box>
-                    </Fade>
+                    </div>
                 </Modal>
             </div>
         </div>

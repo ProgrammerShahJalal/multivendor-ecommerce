@@ -11,7 +11,11 @@ import Mens from './../ListView/Men';
 import Womens from './../ListView/Women';
 import Kid from './../ListView/Kids';
 import Collection from './Collection'
+<<<<<<< HEAD
 import { Helmet } from 'react-helmet-async'
+=======
+import Electronics from '../CollectionGrid/Electronics/Electronics'
+>>>>>>> bff8368a062e7cf2c32183ee0b79e2af8aef9e1b
 
 const sortOptions = [
   { name: 'Most Popular', href: '#', current: true },
@@ -20,13 +24,13 @@ const sortOptions = [
   { name: 'Price: Low to High', href: '#', current: false },
   { name: 'Price: High to Low', href: '#', current: false },
 ]
-const subCategories = [
-  { name: 'Totes', href: '#' },
-  { name: 'Backpacks', href: '#' },
-  { name: 'Travel Bags', href: '#' },
-  { name: 'Hip Bags', href: '#' },
-  { name: 'Laptop Sleeves', href: '#' },
-]
+// const subCategories = [
+//   { name: 'Totes', href: '#' },
+//   { name: 'Backpacks', href: '#' },
+//   { name: 'Travel Bags', href: '#' },
+//   { name: 'Hip Bags', href: '#' },
+//   { name: 'Laptop Sleeves', href: '#' },
+// ]
 function classNames(...classes) {
   return classes.filter(Boolean).join(' ')
 }
@@ -37,6 +41,7 @@ export default function Shop() {
   const [menChecked, setMenChecked] = useState(true);
   const [womenChecked, setWomenChecked] = useState(true);
   const [kidChecked, setKidChecked] = useState(true);
+  const [electronicChecked, setElectronicChecked] = useState(true);
   const [categoryvalue, setCategoryValue] = useState("");
   console.log(categoryvalue);
 
@@ -52,6 +57,11 @@ export default function Shop() {
     setKidChecked(!kidChecked);
     return;
   };
+  const handleElectronicsChange = () => {
+    setElectronicChecked(!electronicChecked);
+    return;
+  };
+  
   return (
     <>
       <Helmet>
@@ -284,6 +294,15 @@ export default function Shop() {
                               />
                               <label htmlFor="cat-1 pl-1">Kid</label>
                             </div>
+                            <div className="flex items-center gap-2 text-black dark:text-white">
+                              <input
+                                type="checkbox"
+                                checked={electronicChecked}
+                                onChange={handleElectronicsChange}
+                                className="h-4 w-4 border-gray-300 rounded text-indigo-600 focus:ring-indigo-500"
+                              />
+                              <label htmlFor="cat-1 pl-1">Electronic</label>
+                            </div>
                           </div>
                         </Disclosure.Panel>
                       </>
@@ -301,6 +320,7 @@ export default function Shop() {
                               ) : (
                                 <PlusSmIcon className="h-5 w-5" aria-hidden="true" />
                               )}
+<<<<<<< HEAD
                             </span>
                           </Disclosure.Button>
                         </h3>
@@ -358,6 +378,99 @@ export default function Shop() {
                             <div className="color-selctor">
                               <button className='w-5 h-5 bg-blue-600 focus:ring-offset-2 focus:ring-1 focus:ring-indigo-500 focus:outline-none active:bg-blue-700'></button>
                             </div>
+=======
+                            >
+                              {option.name}
+                            </a>
+                          )}
+                        </Menu.Item>
+                      ))}
+                    </div>
+                  </Menu.Items>
+                </Transition>
+              </Menu>
+              <div className="mx-2 flex items-end justify-end content-end gap-2">
+                <button onClick={() => setGridShow(true)} className={gridShow === true ? 'bg-indigo-500 w-8 h-8 rounded-sm text-white p-2' : 'text-indigo-500 w-8 h-8 border-indigo-500 rounded-sm border p-2'} type="button">
+                  <i className="fa-thin fa-grid flex items-center justify-center object-contain"></i>
+                </button>
+                <button onClick={() => setGridShow(false)} className={gridShow === false ? 'bg-indigo-500 w-8 h-8 rounded-sm text-white' : 'text-indigo-500 border w-8 h-8 border-indigo-500 rounded-sm'} type="button">
+                  <i className="fa-thin fa-list flex items-center justify-center object-contain"></i>
+                </button>
+              </div>
+              <button
+                type="button"
+                className="p-2 -m-2 ml-4 sm:ml-6 text-gray-400 hover:text-gray-500 lg:hidden"
+                onClick={() => setMobileFiltersOpen(true)}
+              >
+                <span className="sr-only">Filters</span>
+                <FilterIcon className="w-5 h-5" aria-hidden="true" />
+              </button>
+            </div>
+          </div>
+
+          <section aria-labelledby="products-heading" className="pt-6 pb-24">
+            <h2 id="products-heading" className="sr-only">
+              Products
+            </h2>
+
+            <div className="grid grid-cols-1 lg:grid-cols-4 gap-x-8 gap-y-10">
+              {/* Filters */}
+              <form className="hidden lg:block">
+                <h3 className="sr-only">Categories</h3>
+
+                <Disclosure as="div" className="border-b border-gray-200 py-6">
+                  {({ open }) => (
+                    <>
+                      <h3 className="-my-3 flow-root">
+                        <Disclosure.Button className="py-3 bg-white dark:bg-slate-800 text-black dark:text-white w-full flex items-center justify-between text-sm">
+                          <span className="font-medium text-gray-900 dark:text-white">Categories</span>
+                          <span className="ml-6 flex items-center">
+                            {open ? (
+                              <MinusSmIcon className="h-5 w-5" aria-hidden="true" />
+                            ) : (
+                              <PlusSmIcon className="h-5 w-5" aria-hidden="true" />
+                            )}
+                          </span>
+                        </Disclosure.Button>
+                      </h3>
+                      <Disclosure.Panel className="pt-6">
+                        <div className="space-y-4">
+                          <div className="flex items-center gap-2 text-black dark:text-white">
+                            <input
+                              type="checkbox"
+                              checked={menChecked}
+                              onChange={handleMenChange}
+                              className="h-4 w-4 border-gray-300 rounded text-indigo-600 focus:ring-indigo-500"
+                            />
+                            <label htmlFor="cat-1 pl-1">Men</label>
+                          </div>
+                          <div className="flex items-center gap-2 text-black dark:text-white">
+                            <input
+                              type="checkbox"
+                              checked={womenChecked}
+                              onChange={handleWomenChange}
+                              className="h-4 w-4 border-gray-300 rounded text-indigo-600 focus:ring-indigo-500"
+                            />
+                            <label htmlFor="cat-1 pl-1">Women</label>
+                          </div>
+                          <div className="flex items-center gap-2 text-black dark:text-white">
+                            <input
+                              type="checkbox"
+                              checked={kidChecked}
+                              onChange={handleKidChange}
+                              className="h-4 w-4 border-gray-300 rounded text-indigo-600 focus:ring-indigo-500"
+                            />
+                            <label htmlFor="cat-1 pl-1">Kid</label>
+                          </div>
+                          <div className="flex items-center gap-2 text-black dark:text-white">
+                            <input
+                              type="checkbox"
+                              checked={electronicChecked}
+                              onChange={handleElectronicsChange}
+                              className="h-4 w-4 border-gray-300 rounded text-indigo-600 focus:ring-indigo-500"
+                            />
+                            <label htmlFor="cat-1 pl-1">Electronic</label>
+>>>>>>> bff8368a062e7cf2c32183ee0b79e2af8aef9e1b
                           </div>
                         </Disclosure.Panel>
                       </>
@@ -365,6 +478,7 @@ export default function Shop() {
                   </Disclosure>
                 </form>
 
+<<<<<<< HEAD
                 {/* Product grid */}
                 <ScrollToTop style={{ display: 'flex', alignItems: 'center', justifyContent: 'center', left: 15, backgroundColor: '#7209b7' }} smooth color='#ffffff' top={20} />
                 <div className='lg:col-span-3'>
@@ -402,6 +516,49 @@ export default function Shop() {
                         {
                           kidChecked && <Kid />
                         }
+=======
+              {/* Product grid */}
+              <ScrollToTop style={{ display: 'flex', alignItems: 'center', justifyContent: 'center', left: 15, backgroundColor: '#7209b7' }} smooth color='#ffffff' top={20} />
+              <div className='lg:col-span-3'>
+                {
+                  gridShow ?
+                    <div>
+                      {
+                        menChecked && <Men />
+                      }
+                      {
+                        womenChecked && <Women />
+                      }
+                      {
+                        kidChecked && <Kids />
+                      }
+                      {
+                        electronicChecked && <Electronics />
+                      }
+
+                      {
+                        kidChecked === false && menChecked === false && kidChecked === false && electronicChecked === false &&
+                        <div>
+                          <Men />
+                          <Women />
+                          <Kids />
+                          <Electronics />
+                        </div>
+                      }
+                    </div>
+                    // <GridView />
+                    :
+                    <div>
+                      {
+                        menChecked && <Mens />
+                      }
+                      {
+                        womenChecked && <Womens />
+                      }
+                      {
+                        kidChecked && <Kid />
+                      }
+>>>>>>> bff8368a062e7cf2c32183ee0b79e2af8aef9e1b
 
                         {
                           kidChecked === false && menChecked === false && kidChecked === false &&

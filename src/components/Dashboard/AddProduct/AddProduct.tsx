@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from 'react';
-import './AddProduct.css'
+import './AddProduct.css';
 import Select from 'react-select';
 import Modal from '../Media/Modal';
 import { Editor } from "react-draft-wysiwyg";
@@ -251,11 +251,11 @@ const AddProduct: React.FunctionComponent = () => {
 
 
                                     </div>
+ 
+                                    <div className='flex flex-row gap-6 z-40'>
 
-                                    <div className='flex flex-row gap-6'>
 
-
-                                        {attributeValues.map((attr: attributeValues) => {
+                                        {attributeValues.map((attr: attributeValues) =>  {
                                             const item = attributes.filter((list) => {
                                                 return list.label === attr.label;
                                             })[0];
@@ -277,7 +277,7 @@ const AddProduct: React.FunctionComponent = () => {
                                     </div>
 
                                     <div>
-                                        <label className="block text-sm font-medium text-gray-700 mb-3"> Description </label>
+                                        <label className="block text-sm font-medium text-gray-700 mb-3 z-0"> Description </label>
                                         <Editor
                                             editorState={onEditorStateChange}
                                             toolbarClassName="toolbarClassName"
@@ -311,7 +311,7 @@ const AddProduct: React.FunctionComponent = () => {
                                         <span>+ Add Images</span>
                                     </div>
                                 </label>
-                                <Modal eventBubbling={eventBubbling} selectedItems={selectedImages} showModal={showModal} setShowModal={setShowModal} />
+                                <Modal className='overflow-y-scroll w-full h-full' eventBubbling={eventBubbling} selectedItems={selectedImages} showModal={showModal} setShowModal={setShowModal} />
 
                                 <br />
 
