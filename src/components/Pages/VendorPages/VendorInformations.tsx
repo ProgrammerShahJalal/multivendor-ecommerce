@@ -20,6 +20,7 @@ import { useNavigate } from "react-router-dom";
 import { addUserToDB } from "../../../Services/AddUserToDB/AddUserToDB";
 import { GetUserDetails } from "../../../Services/UsersApi/GetUserDetails";
 import UseAuth from "../../../hooks/UseAuth";
+import { CircularProgress } from '@mui/material';
 
 const useStyles = makeStyles((theme) => ({
     button: {
@@ -32,9 +33,12 @@ function getSteps() {
 }
 const VendorStore = () => {
     const { control } = useFormContext();
+
+    const { isLoading } = UseAuth()
+    const userDetails = localStorage.getItem("userDetails") ? JSON.parse(localStorage.getItem('userDetails') || '{}') : { role: "", email: "" }
     return (
         <>
-            <Grid container spacing={3}>
+            {isLoading ? <span className='flex justify-center'><CircularProgress color="inherit" /></span> : <Grid container spacing={3}>
                 <Grid item xs={12} md={6}>
                     <Controller
                         control={control}
@@ -63,6 +67,7 @@ const VendorStore = () => {
                                 id="storeSlug"
                                 label="Store Slug"
                                 fullWidth
+
                                 autoComplete="given-name"
                                 variant="standard"
                                 {...field}
@@ -72,22 +77,18 @@ const VendorStore = () => {
 
                 </Grid>
                 <Grid item xs={12} md={6}>
-                    <Controller
-                        control={control}
-                        name="storeEmail"
-                        render={({ field }) => (
-                            <TextField
-                                required
-                                id="storeEmail"
-                                label="Store Email"
-                                type="email"
-                                fullWidth
-                                autoComplete="given-name"
-                                variant="standard"
-                                {...field}
-                            />
-                        )}
+                    <TextField
+                        required
+                        id="storeEmail"
+                        label="Store Email"
+                        type="email"
+                        value={userDetails.email}
+                        fullWidth
+                        disabled
+                        autoComplete="given-name"
+                        variant="standard"
                     />
+
                 </Grid>
                 <Grid item xs={12} md={6}>
                     <Controller
@@ -163,7 +164,7 @@ const VendorStore = () => {
                 </Grid>
 
 
-            </Grid>
+            </Grid>}
         </>
     );
 };
@@ -172,6 +173,7 @@ const StoreAddress = () => {
     return (
         <>
             <Grid container spacing={3}>
+
                 <Grid item xs={12} sm={6}>
                     <Controller
                         control={control}
@@ -209,9 +211,7 @@ const StoreAddress = () => {
                     />
 
                 </Grid>
-                <Grid item xs={12}>
 
-                </Grid>
                 <Grid item xs={12}>
                     <Controller
                         control={control}
@@ -372,7 +372,7 @@ const CustomerSupport = () => {
                                 label="Phone number"
                                 fullWidth
                                 type='number'
-                                autoComplete="Phone-number"
+                                autoComplete="number"
                                 variant="standard"
                                 {...field}
                             />
@@ -411,11 +411,12 @@ function getStepContent(step) {
 
 const VendorInformations = () => {
     const classes = useStyles();
+    const userDetails = localStorage.getItem("userDetails") ? JSON.parse(localStorage.getItem('userDetails') || '{}') : { role: "", email: "" }
     const methods = useForm({
         defaultValues: {
             storeName: "",
             storeSlug: "",
-            storeEmail: "",
+            storeEmail: userDetails.email,
             phoneNumber: "",
             storeLogo: "",
             storeBanner: "",

@@ -10,7 +10,7 @@ const UserProfileDetails = () => {
     const [isLoading, setIsLoading] = useState<boolean>(true)
     const navigate = useNavigate()
     useEffect(() => {
-        fetch(`http://localhost:5000/user?id=${id}`)
+        fetch(`https://young-springs-82149.herokuapp.com/user?id=${id}`)
             .then(res => res.json())
             .then(data => setVendors(data))
 
@@ -32,8 +32,10 @@ const UserProfileDetails = () => {
     const updateProfile = (email) => {
 
         if (fieldsValue.length !== 0) {
+
+
             setIsLoading(true)
-            fetch(`http://localhost:5000/user/update-profile?email=${email}`, {
+            fetch(`https://young-springs-82149.herokuapp.com/user/update-profile?email=${email}`, {
                 method: 'PUT',
                 headers: {
                     'content-type': 'application/json'
@@ -53,13 +55,15 @@ const UserProfileDetails = () => {
 
                 })
         } else {
-            // navigate('/dashboard/vendors')
+            setIsTrue(!isTrue)
+
+            navigate('/dashboard/vendors')
         }
 
     }
     const updateRole = (email, role) => {
         setIsLoading(true)
-        fetch(`http://localhost:5000/user/update-role?email=${email}`, {
+        fetch(`https://young-springs-82149.herokuapp.com/user/update-role?email=${email}`, {
             method: 'PUT',
             headers: {
                 'content-type': 'application/json'

@@ -1,3 +1,4 @@
+import { CircularProgress } from '@mui/material';
 import React, { useEffect, useState } from 'react';
 import { Link } from 'react-router-dom';
 interface UserState {
@@ -14,9 +15,11 @@ const Users = () => {
     const [notFound, setNotFound] = useState('')
     useEffect(() => {
         if (users.length === 0) {
+            setIsLoading(true)
             fetch('https://young-springs-82149.herokuapp.com/users')
                 .then(res => res.json())
                 .then(data => setUsers(data))
+                .finally(() => setIsLoading(false))
         }
     }, [users])
 
@@ -61,7 +64,7 @@ const Users = () => {
     }
     return (
         <div className='container mx-auto px-4 sm:px-8'>
-            <div className='py-4'>
+            {isLoading ? <span className='flex justify-center'><CircularProgress color="inherit" /></span> : <div className='py-4'>
                 <div>
                     <h2 className="text-2xl font-semibold leading-tight text-left">Users</h2>
                 </div>
@@ -180,7 +183,7 @@ const Users = () => {
 
                 </div>
 
-            </div>
+            </div>}
 
         </div>
 

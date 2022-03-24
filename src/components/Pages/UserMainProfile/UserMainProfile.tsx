@@ -14,11 +14,11 @@ const UserMainProfile = () => {
     const { userDetails } = UseAuth()
     useEffect(() => {
         if (isLoading) {
-            fetch(`http://localhost:5000/users/${userDetails.email}`)
+            fetch(`https://young-springs-82149.herokuapp.com/users/${userDetails.email}`)
                 .then(res => res.json())
                 .then(data => setVendors([data]))
         } else {
-            fetch(`http://localhost:5000/users/${userDetails.email}`)
+            fetch(`https://young-springs-82149.herokuapp.com/users/${userDetails.email}`)
                 .then(res => res.json())
                 .then(data => setVendors([data]))
         }
@@ -43,7 +43,7 @@ const UserMainProfile = () => {
 
         if (fieldsValue.length !== 0) {
             setIsLoading(true)
-            fetch(`http://localhost:5000/user/update-profile?email=${email}`, {
+            fetch(`https://young-springs-82149.herokuapp.com/user/update-profile?email=${email}`, {
                 method: 'PUT',
                 headers: {
                     'content-type': 'application/json'
@@ -63,6 +63,7 @@ const UserMainProfile = () => {
 
                 })
         } else {
+            setIsTrue(!isTrue)
             // navigate('/dashboard/vendors')
         }
 

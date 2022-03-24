@@ -1,3 +1,4 @@
+import { CircularProgress } from "@mui/material";
 import React, { useEffect, useState } from "react";
 import UseAuth from "../../../hooks/UseAuth";
 import "./media.css"
@@ -5,24 +6,23 @@ export default function Modal({ eventBubbling, showModal, setShowModal, selected
 
     const [data, setData] = useState<any>()
     const [images, setImages] = useState<any>()
-    const [isTrue, setIsTrue] = useState<boolean>(true)
+    const [isTrue, setIsTrue] = useState<boolean>(false)
+    const [isLoading, setIsLoading] = useState<boolean>(false)
     const { userDetails } = UseAuth()
 
     // function imgExists(id: string) {
     //     return selectedItems.some((img: any) => img.id === id);
     // }
 
-    const handleUploadImages = (event: React.SyntheticEvent) => {
-        console.log('form 2', images);
-
-        // event.preventDefault()
-        // event.stopPropagation()
+    const handleUploadImages = (e: any) => {
+        e.preventDefault()
+        setIsLoading(true)
         const formData = new FormData();
         const files = images
-
         for (let i = 0; i < files.length; i += 1) {
             formData.append('images[]', files[i]);
         }
+        formData.append("vendor", userDetails.email)
 
         fetch('https://young-springs-82149.herokuapp.com/media', {
             method: 'post',
@@ -37,8 +37,12 @@ export default function Modal({ eventBubbling, showModal, setShowModal, selected
             })
             .catch(error => {
                 console.error('Error:', error);
-            });
+            }).finally(() => setIsLoading(false));
+
+
     }
+    console.log(userDetails, 'sad userDetails');
+
 
     useEffect(() => {
         if (userDetails.role === "vendor") {
@@ -115,7 +119,10 @@ export default function Modal({ eventBubbling, showModal, setShowModal, selected
                                                 </div>
                                             </label>
                                             <div className=" py-3 text-right ">
-                                                <button onClick={(e) => handleUploadImages(e)} type="submit" className="inline-flex justify-center py-2 px-4 border border-transparent drop-shadow-md text-sm font-medium rounded-md text-white bg-indigo-600 hover:bg-indigo-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500" form="form2">Upload</button>
+                                                {isLoading ? <button type="button" className="inline-flex items-center justify-center py-2 px-4 border border-transparent drop-shadow-md text-sm font-medium rounded-md text-white bg-indigo-500 hover:bg-indigo-500 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500" disabled>
+                                                    <i className="fa-solid fa-spinner motion-reduce:hidden animate-spin text-white mr-2"></i>
+                                                    Processing...
+                                                </button> : <button onClick={(e) => handleUploadImages(e)} type="submit" className="inline-flex justify-center py-2 px-4 border border-transparent drop-shadow-md text-sm font-medium rounded-md text-white bg-indigo-600 hover:bg-indigo-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500" form="form2">Upload</button>}
                                             </div>
 
 
@@ -123,7 +130,7 @@ export default function Modal({ eventBubbling, showModal, setShowModal, selected
 
                                     </div>
                                     <div className=" grid grid-cols-5 gap-2 mx-auto gallery-images scroll-modal"  >
-                                        {
+                                        {isTrue ? <span className='flex justify-center'><CircularProgress color="inherit" /></span> :
                                             data?.map((order: any, idx: number) =>
                                                 Object.entries(order).map(
                                                     ([key, value]: any) => {

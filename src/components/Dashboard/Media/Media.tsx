@@ -9,7 +9,7 @@ export default function Media() {
     const [data, setData] = useState<any>()
     const [isTrue, setIsTrue] = useState<boolean>(true)
     const [selectedItems, setSelectedItems] = useState<any>([])
-    const { userDetails } = UseAuth()
+    const userDetails = localStorage.getItem("userDetails") ? JSON.parse(localStorage.getItem('userDetails') || '{}') : { role: "", email: "" }
 
     const handleUploadImages = (e: any) => {
         e.preventDefault()
@@ -37,6 +37,8 @@ export default function Media() {
 
 
     }
+    console.log(userDetails);
+
 
     useEffect(() => {
         if (userDetails.role === "vendor") {
