@@ -1,9 +1,18 @@
 import React from 'react';
 import Counter from './Counter';
+import { Helmet } from "react-helmet-async";
 
 const UnitTesting = () => {
     return (
         <>
+            <Helmet>
+                <title>Unit Testing :: Unity Mart</title>
+                <meta
+                    name="description"
+                    content="Unit testing."
+                />
+                <link rel="canonical" href="/unitTesting" />
+            </Helmet>
             <div className='w-96 px-5 mx-auto'>
                 <h2 className=" py-3 text-3xl text-center font-extrabold text-gray-900 dark:text-white sm:text-4xl">
                     <span className="lg:text-5xl md:text-3xl sm:text-lg pr-3" >Unit</span>

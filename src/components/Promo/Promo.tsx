@@ -1,3 +1,4 @@
+import { Helmet } from "react-helmet-async";
 import { Link } from "react-router-dom";
 import OfferDeal from "../OfferDeal/OfferDeal";
 
@@ -5,6 +6,14 @@ import OfferDeal from "../OfferDeal/OfferDeal";
 export default function Promo() {
     return (
         <>
+            <Helmet>
+                <title>Special Offer :: Unity Mart</title>
+                <meta
+                    name="description"
+                    content="Special Offer just for you."
+                />
+                <link rel="canonical" href="/offer" />
+            </Helmet>
             <div className="relative bg-white dark:bg-slate-800 overflow-hidden my-3">
                 <div className="pt-16 pb-80 sm:pt-24 sm:pb-40 lg:pt-40 lg:pb-48">
                     <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 sm:static">

@@ -17,9 +17,8 @@ import {
 import { Container, Grid, Paper } from "@mui/material";
 import { AddVendorToDB } from "../../../Services/VendorApi/AddVendorToDB";
 import { useNavigate } from "react-router-dom";
-import { addUserToDB } from "../../../Services/AddUserToDB/AddUserToDB";
-import { GetUserDetails } from "../../../Services/UsersApi/GetUserDetails";
 import UseAuth from "../../../hooks/UseAuth";
+import { Helmet } from "react-helmet-async";
 
 const useStyles = makeStyles((theme) => ({
     button: {
@@ -34,6 +33,14 @@ const VendorStore = () => {
     const { control } = useFormContext();
     return (
         <>
+            <Helmet>
+                <title>Vendor Information form :: Unity Mart</title>
+                <meta
+                    name="description"
+                    content="Vendor info."
+                />
+                <link rel="canonical" href="/vendorLogin" />
+            </Helmet>
             <Grid container spacing={3}>
                 <Grid item xs={12} md={6}>
                     <Controller

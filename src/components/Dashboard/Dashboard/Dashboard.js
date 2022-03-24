@@ -2,6 +2,7 @@ import { useState } from 'react';
 import { Link, Outlet } from 'react-router-dom';
 import UseAuth from '../../../hooks/UseAuth';
 import './Dashboard.css'
+import { Helmet } from 'react-helmet-async';
 
 
 function Dashboard() {
@@ -16,6 +17,14 @@ function Dashboard() {
     }
     return (
         <div>
+            <Helmet>
+                <title>Dashboard of Unity Mart</title>
+                <meta
+                    name="description"
+                    content="Shop from Unity Mart."
+                />
+                <link rel="canonical" href="/dashboard/dashboardGlance" />
+            </Helmet>
             <div className={`sidebar ${isTrue ? 'close' : ''}`}>
                 <div className="logo-details">
 
