@@ -37,19 +37,23 @@ const SpecialDeal: FC<SpecialDealProps> = ({ translate }) => {
 
 
     useEffect(() => {
-        fetch('https://morning-inlet-49130.herokuapp.com/features')
-            .then(res => res.json())
-            .then(data => setDeals(data))
+        if (deals.length === 0) {
+            fetch('https://morning-inlet-49130.herokuapp.com/features')
+                .then(res => res.json())
+                .then(data => setDeals(data))
+        }
 
-    }, [])
+    }, [deals])
 
     /* ----------special product fetch----------- */
     useEffect(() => {
-        fetch('https://morning-inlet-49130.herokuapp.com/specials')
-            .then(res => res.json())
-            .then(data => setSpecials(data))
+        if (specials.length === 0) {
+            fetch('https://morning-inlet-49130.herokuapp.com/specials')
+                .then(res => res.json())
+                .then(data => setSpecials(data))
+        }
 
-    }, [])
+    }, [specials])
 
     return (
         <div className="bg-gray-100 dark:bg-gray-800 mt-4">
