@@ -20,13 +20,7 @@ const sortOptions = [
   { name: 'Price: Low to High', href: '#', current: false },
   { name: 'Price: High to Low', href: '#', current: false },
 ]
-// const subCategories = [
-//   { name: 'Totes', href: '#' },
-//   { name: 'Backpacks', href: '#' },
-//   { name: 'Travel Bags', href: '#' },
-//   { name: 'Hip Bags', href: '#' },
-//   { name: 'Laptop Sleeves', href: '#' },
-// ]
+
 function classNames(...classes) {
   return classes.filter(Boolean).join(' ')
 }
