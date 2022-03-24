@@ -85,7 +85,7 @@ const Reviews = () => {
                                     <div className='my-4'><p className='text-sm'>{review.description}</p> </div>
                                     <div className="flex justify-center gap-4">
                                         <p>{review.ratings} </p>
-                                        <Rating name="half-rating-read" defaultValue={parseInt(review.ratings)} precision={0.5} readOnly />
+                                        <Rating name="half-rating-read" defaultValue={Number(review.ratings)} precision={0.5} readOnly />
                                     </div>
                                 </div>
                             </SwiperSlide>
