@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState, useLayoutEffect } from 'react';
 import { Backdrop, Rating } from "@mui/material";
 import Box from '@mui/material/Box';
 import Modal from '@mui/material/Modal';
@@ -34,14 +34,22 @@ const Kids = () => {
     };
     const handleClose = () => setOpen(false);
     const [selectedProduct, setSelectedProduct] = useState<any>()
-    useEffect(() => {
-        if (products) {
 
-            fetch('https://young-springs-82149.herokuapp.com/shop/products/category?category=Kids')
-                .then(res => res.json())
-                .then(data => setProducts(data))
+    useLayoutEffect(() => {
+        function updateScreen(time) {
+            // Make visual updates here.
+            if (products) {
+
+                fetch('https://young-springs-82149.herokuapp.com/shop/products/category?category=Kids')
+                    .then(res => res.json())
+                    .then(data => setProducts(data))
+            }
         }
+
+        requestAnimationFrame(updateScreen);
     }, [products])
+
+
     const style1 = {
         position: 'absolute',
         top: '50%',

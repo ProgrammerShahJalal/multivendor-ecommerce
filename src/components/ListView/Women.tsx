@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState, useLayoutEffect } from 'react';
 import Box from '@mui/material/Box';
 import Modal from '@mui/material/Modal';
 import ProductView from '../ProductView/ProductView';
@@ -39,14 +39,22 @@ const Women = () => {
         setOpen(false)
     };
     const [selectedProduct, setSelectedProduct] = useState<any>()
-    useEffect(() => {
-        if (products) {
 
-            fetch('https://young-springs-82149.herokuapp.com/shop/products/category?category=Womens')
-                .then(res => res.json())
-                .then(data => setProducts(data))
+    useLayoutEffect(() => {
+        function updateScreen(time) {
+            // Make visual updates here.
+            if (products) {
+
+                fetch('https://young-springs-82149.herokuapp.com/shop/products/category?category=Womens')
+                    .then(res => res.json())
+                    .then(data => setProducts(data))
+            }
         }
+
+        requestAnimationFrame(updateScreen);
     }, [products])
+
+
     const style1 = {
         position: 'absolute',
         top: '50%',
@@ -78,46 +86,46 @@ const Women = () => {
     return (
         <div className="container lg:px-12 md:px-10 px-0">
             {
-                    products.length === 0 ? <h2>No Products Found</h2> :
-                        products.map((product: any) => {
-                            const detailProduct = {
-                                _id: product._id,
-                                title: product.title,
-                                image: product.images[0]?.src,
-                                category: product.categories[0].label,
-                                price: parseInt(product.sale_price ? product.sale_price : product.reg_price),
-                                attributes: [],
-                                cartQuantity: 1,
-                                vendor: {
-                                    email: product?.publisherDetails?.publisher || null
-                                }
+                products.length === 0 ? <h2>No Products Found</h2> :
+                    products.map((product: any) => {
+                        const detailProduct = {
+                            _id: product._id,
+                            title: product.title,
+                            image: product.images[0]?.src,
+                            category: product.categories[0].label,
+                            price: parseInt(product.sale_price ? product.sale_price : product.reg_price),
+                            attributes: [],
+                            cartQuantity: 1,
+                            vendor: {
+                                email: product?.publisherDetails?.publisher || null
                             }
-                            return  <div key={product._id} className='justify-center items-center'>
+                        }
+                        return <div key={product._id} className='justify-center items-center'>
                             <div className='grid lg:grid-cols-2 md:grid-cols-2 grid-cols-2 gap-5 p-4 group border border-indigo-500 my-2 rounded'>
-            <div className='lg:h-52 lg:w-52 md:h-52 md:w-52 h-44 w-40'>
-                <img className='w-full h-full object-contain select-none group-hover:hidden block transition' src={product.images[0]?.src} alt="" />
-                <img className='w-full h-full object-contain select-none group-hover:block hidden transition' src={product.images[1]?.src} alt="" />
-            </div>
-            <div className='grid grid-cols-1'>
-                <div>
-                <h1 className='text-md'>{product.title}</h1>
-                <h1 className='text-md'>from: {product.brand}</h1>
-                <h1> Price: <span className='line-through text-red-500'> ${product.reg_price}</span> <span>${product.sale_price}</span></h1>
-                {/* <Rating name="half-rating-read" defaultValue={product.rating} precision={0.5} readOnly /> */}
-                </div>
-                <div className='mt-2'>
-                <button onClick={() => handleAddToCart(detailProduct)} className='w-40 text-center top-5 text-white  p-2 bg-indigo-500 border border-indigo-500 hover:bg-transparent hover:text-indigo-500 transition mr-2 md:mb-0 lg:mb-0 mb-2'>
-                <i className="fa-regular fa-bag-shopping"></i> Add to cart
-                </button>
-                <button onClick={() => handleOpen(product)} className='w-40 text-center top-5 hover:text-white p-2 hover:bg-indigo-500 border border-indigo-500 bg-transparent text-indigo-500 transition'>
-                <i className="fa-regular fa-search"> </i> Quick View
-                </button>
-                </div>
-            </div>
-            </div>
+                                <div className='lg:h-52 lg:w-52 md:h-52 md:w-52 h-44 w-40'>
+                                    <img className='w-full h-full object-contain select-none group-hover:hidden block transition' src={product.images[0]?.src} alt="" />
+                                    <img className='w-full h-full object-contain select-none group-hover:block hidden transition' src={product.images[1]?.src} alt="" />
+                                </div>
+                                <div className='grid grid-cols-1'>
+                                    <div>
+                                        <h1 className='text-md'>{product.title}</h1>
+                                        <h1 className='text-md'>from: {product.brand}</h1>
+                                        <h1> Price: <span className='line-through text-red-500'> ${product.reg_price}</span> <span>${product.sale_price}</span></h1>
+                                        {/* <Rating name="half-rating-read" defaultValue={product.rating} precision={0.5} readOnly /> */}
+                                    </div>
+                                    <div className='mt-2'>
+                                        <button onClick={() => handleAddToCart(detailProduct)} className='w-40 text-center top-5 text-white  p-2 bg-indigo-500 border border-indigo-500 hover:bg-transparent hover:text-indigo-500 transition mr-2 md:mb-0 lg:mb-0 mb-2'>
+                                            <i className="fa-regular fa-bag-shopping"></i> Add to cart
+                                        </button>
+                                        <button onClick={() => handleOpen(product)} className='w-40 text-center top-5 hover:text-white p-2 hover:bg-indigo-500 border border-indigo-500 bg-transparent text-indigo-500 transition'>
+                                            <i className="fa-regular fa-search"> </i> Quick View
+                                        </button>
+                                    </div>
+                                </div>
+                            </div>
                         </div>
-            })}
-            
+                    })}
+
             <div className='bg-white dark:bg-gray-800 text-center'>
                 <Modal
                     BackdropComponent={Backdrop}

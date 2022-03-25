@@ -1,20 +1,11 @@
 
-import { useEffect, useState } from "react";
+import { useLayoutEffect, useState } from "react";
 import { Link } from "react-router-dom";
 import CowndownTimer from "../CowntownTimer/CowndownTimer";
-import { HashLink } from 'react-router-hash-link';
 import PromoLottie1 from "../Lottie/PromoLottie1";
 import PromoLottie2 from "../Lottie/PromoLottie2";
+import PromoLottie3 from "../Lottie/PromoLottie3";
 
-
-interface DealState {
-    deals: {
-        img: string
-        title: string
-        price: string
-        rating: number
-    }[],
-}
 interface SpecialState {
     specials: {
         _id: string
@@ -32,28 +23,22 @@ interface SpecialState {
 
 export default function OfferDeal() {
 
-    const [deals, setDeals] = useState<DealState["deals"]>
-        ([]);
     const [specials, setSpecials] = useState<SpecialState["specials"]>
         ([]);
 
-
-    useEffect(() => {
-        if (deals) {
-            fetch('https://morning-inlet-49130.herokuapp.com/features')
-                .then(res => res.json())
-                .then(data => setDeals(data))
-        }
-    }, [deals])
-
     /* ----------special product fetch----------- */
-    useEffect(() => {
-        if (specials) {
-            fetch('https://morning-inlet-49130.herokuapp.com/specials')
-                .then(res => res.json())
-                .then(data => setSpecials(data))
+    useLayoutEffect(() => {
+        function updateScreen(time) {
+            // Make visual updates here.
+            if (specials.length === 0) {
+                fetch('https://morning-inlet-49130.herokuapp.com/specials')
+                    .then(res => res.json())
+                    .then(data => setSpecials(data))
+            }
         }
+        requestAnimationFrame(updateScreen);
     }, [specials])
+
 
     return (
         <div className="bg-gray-50 dark:bg-gray-800 dark:text-white">
@@ -75,6 +60,13 @@ export default function OfferDeal() {
                             className=" inline-flex items-center justify-center px-5 py-3 border border-transparent text-base font-medium rounded-md text-white"
                         >
                             <PromoLottie2 />
+                        </div>
+                    </div>
+                    <div>
+                        <div
+                            className=" inline-flex items-center justify-center px-5 py-3 border border-transparent text-base font-medium rounded-md text-white"
+                        >
+                            <PromoLottie3 />
                         </div>
                     </div>
 

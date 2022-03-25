@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState, useLayoutEffect } from 'react';
 import Box from '@mui/material/Box';
 import Modal from '@mui/material/Modal';
 import ProductView from '../ProductView/ProductView';
@@ -40,14 +40,20 @@ const Men = () => {
         setOpen(false)
     };
     const [selectedProduct, setSelectedProduct] = useState<any>()
-    useEffect(() => {
-        if (products) {
+    useLayoutEffect(() => {
+        function updateScreen(time) {
+            // Make visual updates here.
+            if (products) {
 
-            fetch('https://young-springs-82149.herokuapp.com/shop/products/category?category=Mens')
-                .then(res => res.json())
-                .then(data => setProducts(data))
+                fetch('https://young-springs-82149.herokuapp.com/shop/products/category?category=Mens')
+                    .then(res => res.json())
+                    .then(data => setProducts(data))
+            }
         }
+
+        requestAnimationFrame(updateScreen);
     }, [products])
+
     const style1 = {
         position: 'absolute',
         top: '50%',
