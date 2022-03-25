@@ -70,7 +70,6 @@ const UserMainProfile = () => {
     }
 
     return (
-
         <div className='container mx-auto  '>
             {/* vendor profile start  */}
             <div>
@@ -136,7 +135,7 @@ const UserMainProfile = () => {
                                             <span className="tracking-wide">About</span>
                                         </div>
                                         <div className="text-gray-700 dark:text-white text-left">
-                                            <div className="grid md:grid-cols-2 text-sm">
+                                            <div className="grid md:grid-cols-2 text-sm overflow-x-scroll">
                                                 <div className="grid grid-cols-2">
                                                     <div className="px-4 py-2 font-semibold">First Name</div>
                                                     {isTrue ? <div className="px-4 py-2">{vendor.firstName}</div> :
@@ -176,7 +175,7 @@ const UserMainProfile = () => {
                                                     {isTrue ? <div className="px-4 py-2">{vendor.address}</div> :
                                                         <input name="address" onBlur={handleGetFieldValues} type="text" defaultValue={`${vendor.address}`} className="my-2 bg-purple-white shadow rounded border-1 border-neutral-300 p-3" placeholder="Search by name..." />}
                                                 </div>
-                                                <div className="grid grid-cols-2">
+                                                <div className="grid grid-cols-2 w-28">
                                                     <div className="px-4 py-2 font-semibold">Email.</div>
                                                     <div className="px-4 py-2">
                                                         <p className="text-blue-800"> {vendor.email}</p>

@@ -4,6 +4,7 @@ import { Helmet } from 'react-helmet-async';
 import { useSelector } from 'react-redux';
 import { Link } from 'react-router-dom';
 import UseAuth from '../../../hooks/UseAuth';
+import UserDashboard from '../UserDashboard/UserDashboard';
 import './UserOrders.css';
 
 
@@ -29,10 +30,9 @@ const UserDashboardHome = () => {
                 <link rel="canonical" href="/profile/dashboard" />
             </Helmet>
             <div className='container mx-auto'>
-                <div className="min-h-screen  ">
-                    <div>
-                        {/*
-                <Sidebar /> */}
+                <div>
+                    <div className='text-center'>
+                        <Link className="lg:hidden md:hidden sm:block" to="/profile/profile"><button>Go to Profile</button></Link>
                     </div>
                     <div>
 
