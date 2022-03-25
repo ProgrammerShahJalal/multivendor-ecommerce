@@ -16,14 +16,16 @@ const AllProducts: FC<AllProductsProps> = ({ translate }) => {
     const [products, setProducts] = useState<IProduct[]>([]);
     const [selectedProduct, setSelectedProduct] = useState<IProduct>()
     useEffect(() => {
-        fetch('https://young-springs-82149.herokuapp.com/products')
-            .then(res => res.json())
-            .then(data => {
-                const filter2 = data.sort((a, b) => parseFloat(b.reg_price) - parseFloat(a.reg_price));
-                setProducts(filter2)
-            })
+        if (products.length === 0) {
+            fetch('https://young-springs-82149.herokuapp.com/products')
+                .then(res => res.json())
+                .then(data => {
+                    const filter2 = data.sort((a, b) => parseFloat(b.reg_price) - parseFloat(a.reg_price));
+                    setProducts(filter2)
+                })
+        }
 
-    }, [])
+    }, [products])
     console.log(products);
 
 
@@ -89,7 +91,7 @@ const AllProducts: FC<AllProductsProps> = ({ translate }) => {
                             }
 
 
-                            return <div key={product._id} className="bg-white shadow-inner overflow-hidden single-card">
+                            return <div key={product._id} className="bg-white shadow-inner overflow-hidden single-card lg:mx-6">
 
                                 <div className="relative group">
                                     <div style={{ height: '300px' }} className='z-100 overflow-hidden'>
@@ -110,7 +112,7 @@ const AllProducts: FC<AllProductsProps> = ({ translate }) => {
                                 </div>
                                 <div style={{ height: '200px' }} className="pt-4 gb-3 px-4">
                                     <Link to={`/product/${product._id}`}>
-                                        <h4 className="font-medium text-xl mb-2 text-grey-800  transition">{product.title}</h4>
+                                        <h4 className="font-medium lg:text-xl md:text-base sm:text-sm mb-2 text-grey-800  transition">{product.title}</h4>
                                         <h5 className="font-bold text-sm mb-2 text-grey-800 transition">Category: {product.categories[0]?.label}</h5>
                                     </Link>
                                     <div className="flex items-baseline mb-1 space-x-2">

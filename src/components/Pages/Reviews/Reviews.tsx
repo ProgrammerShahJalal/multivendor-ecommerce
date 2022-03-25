@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState, useLayoutEffect } from 'react';
 import { Swiper, SwiperSlide } from 'swiper/react';
 import "swiper/css";
 import "swiper/css/effect-coverflow";
@@ -19,16 +19,19 @@ interface ReviewState {
 const Reviews = () => {
     const [reviews, setReviews] = useState<ReviewState["reviews"]>([]);
 
-    useEffect(() => {
-        if (reviews.length === 0) {
-            fetch('https://morning-inlet-49130.herokuapp.com/reviews')
-                .then(res => res.json())
-                .then(data => { setReviews(data); }
-                )
+    useLayoutEffect(() => {
+        function updateScreen(time) {
+            // Make visual updates here.
+            if (reviews.length === 0) {
+                fetch('https://morning-inlet-49130.herokuapp.com/reviews')
+                    .then(res => res.json())
+                    .then(data => { setReviews(data); }
+                    )
+            }
         }
-    }, [reviews])
-    console.log(reviews, 'review.ratings');
 
+        requestAnimationFrame(updateScreen);
+    }, [reviews])
 
     return (
         <div className='my-7'>
