@@ -40,10 +40,10 @@ export default function Banners() {
                 </p>
                 <NavLink
                   style={{ borderRadius: '35px' }}
-                  to="/register"
+                  to="/contact"
                   className="bg-gray-700 hover:bg-gray-800 transition-all px-6 py-2 mt-3 text-white"
                 >
-                  Register
+                  Contact Us
                 </NavLink>
               </div>
               <div className="md:-mt-0 -mt-20 items-end justify-end flex">

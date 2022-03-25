@@ -58,16 +58,10 @@ export default function Home() {
                 <Brands />
                 <PaginatedBlogsHome />
                 <ScrollToTop style={{ display: 'flex', bottom: 180, alignItems: 'center', justifyContent: 'center', left: 15, backgroundColor: '#7209b7' }} smooth color='#ffffff' top={20} height="28" viewBox="0 0 256 256" />
-                <div style={{
-                    position: "absolute",
-                    left: "18pt !important"
-                }}>
-                    <MessengerCustomerChat
-                        pageId="104774475481224"
-                        appId=" 1107053396762800"
-                        theme_color="#5856d6"
-                    />
-                </div>
+                <MessengerCustomerChat
+                    pageId="104774475481224"
+                    appId=" 1107053396762800"
+                />
             </div>
         </>
     )
