@@ -63,7 +63,7 @@ const SpecialDeal: FC<SpecialDealProps> = ({ translate }) => {
             </h2>
             <div className="max-w-7xl mx-auto py-12 px-4 sm:px-6 lg:py-16 lg:px-8 lg:flex lg:items-center lg:justify-between">
                 <div className="mt-8 grid gap-4 lg:mt-0 grid-cols-1 justify-center items-center justify-self-center">
-                    <div className="hover:brightness-125 rounded-md shadow h-96 cursor-pointer bg-center bg-cover pt-3 pl-2" style={{
+                    <div className="hover:brightness-125 rounded-md shadow h-96 bg-center bg-cover pt-3 pl-2" style={{
                         backgroundImage: `url("https://i.ibb.co/dPjwmKP/electro-banner1-32.jpg")`
                     }}>
                         <div
@@ -88,7 +88,7 @@ const SpecialDeal: FC<SpecialDealProps> = ({ translate }) => {
                         <div className="grid grid-cols-1 gap-1">
                             {
                                 deals.map((deal) => (
-                                    <div className="w-64 flex justify-center items-center gap-2 cursor-pointer">
+                                    <div className="w-64 flex justify-center items-center gap-2 cursor-auto">
                                         <img className="w-20 bg-white" src={deal.img} alt="" />
                                         <h3 className="dark:text-white">{deal.title}</h3>
                                         <p className="dark:text-white">{deal.price}</p>
