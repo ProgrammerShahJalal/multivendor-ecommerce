@@ -135,7 +135,7 @@ const UserMainProfile = () => {
                                             </span>
                                             <span className="tracking-wide">About</span>
                                         </div>
-                                        <div className="text-gray-700 text-left">
+                                        <div className="text-gray-700 dark:text-white text-left">
                                             <div className="grid md:grid-cols-2 text-sm">
                                                 <div className="grid grid-cols-2">
                                                     <div className="px-4 py-2 font-semibold">First Name</div>
@@ -179,7 +179,7 @@ const UserMainProfile = () => {
                                                 <div className="grid grid-cols-2">
                                                     <div className="px-4 py-2 font-semibold">Email.</div>
                                                     <div className="px-4 py-2">
-                                                        <a className="text-blue-800" href='#'> {vendor.email}</a>
+                                                        <p className="text-blue-800"> {vendor.email}</p>
 
                                                     </div>
                                                 </div>
