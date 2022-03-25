@@ -37,6 +37,7 @@ export default function BlogRating() {
 
         <div className="container px-12 py-5">
             <div>
+                <h2 className='dark:text-white text-lg mb-3'>Give a review on this blog post</h2>
                 <div className="mt-5 md:mt-0 md:col-span-2">
                     <form onSubmit={handleSubmit(onSubmit)}>
                         <div className="shadow sm:rounded-md sm:overflow-hidden">
