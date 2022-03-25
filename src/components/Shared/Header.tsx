@@ -430,7 +430,7 @@ const Header: FC<HeaderProps> = ({ fixed, transparent }) => {
                                                 <Menu.Button className="bg-gray-800 flex text-sm rounded-full focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-offset-gray-800 focus:ring-white">
                                                     <span className="sr-only">Open user menu</span>
                                                     <img
-                                                        className="inline-block h-12 w-12 rounded-full ring-2 ring-white"
+                                                        className="inline-block lg:w-12 lg:h-12 md:h-12 md:w-12 sm:w-8 sm:h-8 rounded-full ring-2 ring-white"
                                                         src={user.photoURL}
                                                         alt=""
                                                     />
