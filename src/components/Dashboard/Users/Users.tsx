@@ -53,7 +53,7 @@ const Users = () => {
                 .then(data => {
 
                     if (data.deletedCount) {
-                        alert('Product Deleted')
+                        alert('The User is Deleted')
                         const remainingProducts = users.filter(user => user._id !== id)
                         setUsers(remainingProducts)
                     }
