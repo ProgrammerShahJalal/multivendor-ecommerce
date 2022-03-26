@@ -7,7 +7,7 @@ const TermsCondition = () => {
             <Helmet>
                 <title>Terms and Condition of Unity Mart</title>
                 <meta name="description" content="Shop from Unity Mart and enjoy our services." />
-                <meta name="keywords" content="Unity Mart, unity mart website" />
+                <meta name="keywords" content="Unity Mart, unitymart website" />
             </Helmet>
             <div className='container lg:px-36 md:px-24 px-5 text-black dark:text-white mt-5'>
                 <h1 className='text-3xl font-thick semi-bold mb-12'>Unity Mart terms of use</h1>
