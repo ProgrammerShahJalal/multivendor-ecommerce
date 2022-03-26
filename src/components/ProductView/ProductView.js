@@ -9,6 +9,10 @@ import "swiper/css/free-mode";
 import "swiper/css/navigation";
 import "swiper/css/thumbs";
 import { ShareButton } from "react-custom-share";
+import { useDispatch } from 'react-redux';
+import { addToCart } from '../../redux/cartSlice';
+import { addToWishlist } from '../../redux/wishlistSlice';
+
 const ProductView = ({ selectedProduct }) => {
     // console.log(selectedProduct, 'selectedProduct');
     const [thumbsSwiper, setThumbsSwiper] = useState(null);
@@ -22,7 +26,18 @@ const ProductView = ({ selectedProduct }) => {
             setCounter(counter - 1)
         )
     }
-
+    const detailProduct = {
+        _id: selectedProduct._id,
+        title: selectedProduct.title,
+        image: selectedProduct.images[0]?.src,
+        category: selectedProduct.categories[0].label,
+        price: parseInt(selectedProduct.sale_price ? selectedProduct.sale_price : selectedProduct.reg_price),
+        attributes: [],
+        cartQuantity: counter,
+        vendor: {
+            email: selectedProduct?.publisherDetails?.publisher || null
+        }
+    }
     const shareFBButtonProps = {
         url: "https://unitymart-c522a.web.app",
         network: "Facebook",
@@ -44,8 +59,12 @@ const ProductView = ({ selectedProduct }) => {
         longtext:
             " "
     };
+    const dispatch = useDispatch()
 
-
+    const handleAddToCart = (id) => {
+        dispatch(addToCart(id))
+        // navigate('/cart')
+    }
     return (
         <div className='mx-auto'>
             <div className='py-12 border border-white container bg-white place-content-center px-8 justify-center items-center mt-8 grid lg:grid-cols-2 md:grid-cols-2 grid-cols-1 gap-6'>
@@ -58,19 +77,19 @@ const ProductView = ({ selectedProduct }) => {
                         className="mySwiper2"
                     >
                         <SwiperSlide className='flex items-center justify-center' style={{ height: '300px', overflow: 'hidden', position: 'relative' }}>
-                            <Magnifier src={selectedProduct.img3 || selectedProduct.images[0]?.src} className='select-none object-contain h-full' alt="" ></Magnifier>
+                            <Magnifier src={selectedProduct.images[0]?.src} className='select-none object-contain h-full' alt="" ></Magnifier>
                         </SwiperSlide>
 
                         <SwiperSlide className='flex items-center justify-center' style={{ height: '300px', overflow: 'hidden', position: 'relative' }} >
-                            <Magnifier src={selectedProduct.img || selectedProduct.images[1]?.src} className='select-none object-contain h-full' alt='' />
+                            <Magnifier src={selectedProduct.images[1]?.src} className='select-none object-contain h-full' alt='' />
                         </SwiperSlide>
 
                         <SwiperSlide className='flex items-center justify-center' style={{ height: '300px', overflow: 'hidden', position: 'relative' }}>
-                            <Magnifier src={selectedProduct.hoverImg} className='select-none object-contain h-full' alt='' />
+                            <Magnifier src={selectedProduct.images[2]?.src || selectedProduct.images[0]?.src} className='select-none object-contain h-full' alt='' />
                         </SwiperSlide>
 
                         <SwiperSlide className='flex items-center justify-center' style={{ height: '300px', overflow: 'hidden', position: 'relative' }} >
-                            <Magnifier src={selectedProduct.img4} className='select-none object-contain h-full' alt='' />
+                            <Magnifier  src={selectedProduct.images[3]?.src || selectedProduct.images[1]?.src}  className='select-none object-contain h-full' alt='' />
                         </SwiperSlide>
                     </Swiper>
                     <div className='mt-5'>
@@ -84,16 +103,16 @@ const ProductView = ({ selectedProduct }) => {
                             className="mySwiper"
                         >
                             <SwiperSlide style={{ height: '100px', width: '100px' }}>
-                                <img alt="" src={selectedProduct.img3 || selectedProduct.images[0]?.src} className='select-none cursor-pointer' />
+                                <img alt="" src={selectedProduct.images[0]?.src} className='select-none cursor-pointer h-full w-full object-contain' />
                             </SwiperSlide>
                             <SwiperSlide style={{ height: '100px', width: '100px' }} >
-                                <img alt="" src={selectedProduct.img || selectedProduct.images[1]?.src} className=' select-none cursor-pointer' />
+                                <img alt="" src={selectedProduct.images[1]?.src} className=' select-none cursor-pointer h-full w-full object-contain' />
                             </SwiperSlide>
                             <SwiperSlide style={{ height: '100px', width: '100px' }}>
-                                <img alt="" src={selectedProduct.hoverImg} className=' select-none cursor-pointer' />
+                                <img alt="" src={selectedProduct.images[2]?.src || selectedProduct.images[0]?.src} className=' select-none cursor-pointer h-full w-full object-contain scale-100 -scale-x-1' />
                             </SwiperSlide>
                             <SwiperSlide style={{ height: '100px', width: '100px' }}>
-                                <img alt="" src={selectedProduct.img4} className=' select-none cursor-pointer' />
+                                <img alt="" src={selectedProduct.images[3]?.src || selectedProduct.images[1]?.src} className=' select-none cursor-pointer h-full w-full object-contain scale-100 -scale-x-1' />
                             </SwiperSlide>
                         </Swiper>
                     </div>
@@ -133,7 +152,7 @@ const ProductView = ({ selectedProduct }) => {
                         <p className="text-sm text-gray-400 line-through">{selectedProduct.price}</p>
                     </div>
                     <div className="grid grid-cols-2">
-                        <div className="">
+                        {/* <div className="">
                             <h3 className="text-xl text-gray-800 dark:text-white mb-3 uppercase font-medium ">Color</h3>
                             <div className="flex gap-2">
                                 <div className="color-selctor">
@@ -147,29 +166,7 @@ const ProductView = ({ selectedProduct }) => {
                                 </div>
                             </div>
                         </div>
-                        <div className="pt-4 -mt-32 block">
-                            <h3 className="text-xl text-gray-800 dark:text-white mb-3 uppercase font-medium">Size</h3>
-                            <div className="flex item-center gap-2">
-                                <div className="size-selector">
-                                    <input type="radio" name='size' className='hidden' id='xs' />
-                                    <label htmlFor="size-xs" className='text-xs border border-gray-200 rounded-sm h-6 w-6 flex items-center justify-center cursor-pointer shadow-sm text-gray-600'>
-                                        M
-                                    </label>
-                                </div>
-                                <div className="size-selector">
-                                    <input type="radio" name='size' className='hidden' id='xs' />
-                                    <label htmlFor="size-xs" className='text-xs border border-gray-200 rounded-sm h-6 w-6 flex items-center justify-center cursor-pointer shadow-sm text-gray-600'>
-                                        L
-                                    </label>
-                                </div>
-                                <div className="size-selector">
-                                    <input type="radio" name='size' className='hidden' id='xs' />
-                                    <label htmlFor="size-xs" className='text-xs border border-gray-200 rounded-sm h-6 w-6 flex items-center justify-center cursor-pointer shadow-sm text-gray-600'>
-                                        XS
-                                    </label>
-                                </div>
-                            </div>
-                        </div>
+                         */}
                         <div>
                             <h3 className='text-xl text-gray-800 dark:text-white mb-1'>Quantity</h3>
                             <div className="flex border border-gray-500 divide-gray-500 text-gray-600 divide-x w-max">
@@ -186,16 +183,12 @@ const ProductView = ({ selectedProduct }) => {
                         </div>
 
                         <div className="border-b -mt-20 border-gray-200 pb-5">
-                            <Link to="/">
-                                <button className='w-40 text-center top-5 text-white  p-2 bg-indigo-500 border border-indigo-500 hover:bg-transparent hover:text-indigo-500 transition'>
+                                <button onClick={() => handleAddToCart(detailProduct)} className='w-40 text-center top-5 text-white  p-2 bg-indigo-500 border border-indigo-500 hover:bg-transparent hover:text-indigo-500 transition'>
                                     <i className="fa-regular fa-bag-shopping"></i> Add to cart
                                 </button>
-                            </Link>
-                            <Link to="/">
-                                <button className='w-40 text-center top-5 hover:text-white my-2 p-2 hover:bg-indigo-500 border border-indigo-500 bg-transparent text-indigo-500 transition'>
+                                <button onClick={() => dispatch((addToWishlist(selectedProduct)))} className='w-40 text-center top-5 hover:text-white my-2 p-2 hover:bg-indigo-500 border border-indigo-500 bg-transparent text-indigo-500 transition'>
                                     <i className="fa-regular fa-heart"> </i> Add to wishlist
                                 </button>
-                            </Link>
                         </div>
                     </div>
                     <div className='mt-2 flex gap-2'>

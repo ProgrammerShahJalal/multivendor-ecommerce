@@ -2,7 +2,6 @@ import { useEffect, useState } from "react";
 import LottieBlog from "../Lottie/LottieBlog";
 import BlogDetails from "./BlogDetails/BlogDetails"
 import RelatedBlog from "./RelatedBlog";
-import AddBlogForm from "./AddBlogForm"
 
 /* This example requires Tailwind CSS v2.0+ */
 export default function DetailBlogPage() {
@@ -40,7 +39,6 @@ export default function DetailBlogPage() {
                     </div>
                 </div>
             </div>
-            <AddBlogForm />
         </div>
     )
 }

@@ -77,7 +77,7 @@ const KidsCollection = () => {
                     products.map((product) => (
                         <div className="bg-white dark:bg-slate-600 shadow-inner overflow-hidden single-card">
                             <div className="relative group">
-                            <div style={{ height: '300px' }} className='bg-white overflow-hidden'>
+                                <div style={{ height: '300px' }} className='bg-white overflow-hidden'>
                                     <img src={product.hoverImg} className='select-none w-full h-full object-contain img group-hover:hidden block transition' alt="" />
                                     <img src={product.img3} className='select-none img w-full h-full object-contain group-hover:block hidden transition' alt="" />
                                 </div>
@@ -108,7 +108,7 @@ const KidsCollection = () => {
                                 </div>
                             </div>
                             <Link to={`/productDetails/kid/${product._id}`}>
-                                <button className='block w-full py-1 text-center top-5 text-white bg-indigo-500 border border-indigo-500 rounded-b hover:bg-transparent hover:text-indigo-500 transition'>Add to Cart</button>
+                                <button className='block w-full py-1 text-center top-5 text-white bg-indigo-500 border border-indigo-500 rounded-b hover:bg-transparent hover:text-indigo-500 transition'>View Product</button>
                             </Link>
                         </div>
                     ))}
@@ -116,26 +116,26 @@ const KidsCollection = () => {
 
             <div className='bg-white dark:bg-gray-800 text-center'>
                 <Modal
-                BackdropComponent={Backdrop}
-                onClose={handleClose}
+                    BackdropComponent={Backdrop}
+                    onClose={handleClose}
                     open={open}
                 >
                     <div>
-                    <Box className='md:block lg:block hidden' sx={style1}>
-                            <div style={{width: '800px', height: '600px'}} className='mx-auto bg-white dark:bg-gray-800 px-1'>
+                        <Box className='md:block lg:block hidden' sx={style1}>
+                            <div style={{ width: '800px', height: '600px' }} className='mx-auto bg-white dark:bg-gray-800 px-1'>
                                 <ProductView selectedProduct={selectedProduct} />
                             </div>
-                            
+
                         </Box>
                         <Box className='md:hidden lg:hidden block' sx={style2}>
                             <div className='bg-white dark:bg-gray-800'>
                                 <ProductViewSm selectedProduct={selectedProduct} />
                             </div>
-                            
+
                         </Box>
                     </div>
                 </Modal>
-                        
+
             </div>
         </div>
     );

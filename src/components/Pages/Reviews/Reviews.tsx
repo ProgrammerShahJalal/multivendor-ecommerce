@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState, useLayoutEffect } from 'react';
 import { Swiper, SwiperSlide } from 'swiper/react';
 import "swiper/css";
 import "swiper/css/effect-coverflow";
@@ -12,20 +12,25 @@ interface ReviewState {
         img: string
         name: string
         description: string
-        ratings: number
+        ratings: string
     }[],
 }
 
 const Reviews = () => {
     const [reviews, setReviews] = useState<ReviewState["reviews"]>([]);
 
-    useEffect(() => {
-        if (reviews.length === 0) {
-            fetch('https://morning-inlet-49130.herokuapp.com/reviews')
-                .then(res => res.json())
-                .then(data => { setReviews(data); }
-                )
+    useLayoutEffect(() => {
+        function updateScreen(time) {
+            // Make visual updates here.
+            if (reviews.length === 0) {
+                fetch('https://morning-inlet-49130.herokuapp.com/reviews')
+                    .then(res => res.json())
+                    .then(data => { setReviews(data); }
+                    )
+            }
         }
+
+        requestAnimationFrame(updateScreen);
     }, [reviews])
 
     return (
@@ -83,7 +88,7 @@ const Reviews = () => {
                                     <div className='my-4'><p className='text-sm'>{review.description}</p> </div>
                                     <div className="flex justify-center gap-4">
                                         <p>{review.ratings} </p>
-                                        <Rating name="half-rating-read" defaultValue={review.ratings} precision={0.5} readOnly />
+                                        <Rating name="half-rating-read" defaultValue={Number(review.ratings)} precision={0.5} readOnly />
                                     </div>
                                 </div>
                             </SwiperSlide>
@@ -91,7 +96,7 @@ const Reviews = () => {
                 </Swiper>
                 <div className="text-center">
                     <Link to='/addReview'>
-                        <button type="button" className="text-white bg-gradient-to-r from-green-500 to-blue-500 hover:from-blue-500 hover:to-green-500 my-3 px-4 py-2 rounded-md">Give Your Review
+                        <button type="button" className="text-white bg-blue-800	hover:bg-blue-700 my-3 px-4 py-2 rounded-md">Give Your Review
                         </button>
                     </Link>
                 </div>

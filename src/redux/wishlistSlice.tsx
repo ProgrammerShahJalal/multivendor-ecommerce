@@ -79,7 +79,7 @@ export const wishList = createSlice({
             const newItems = state.wishlist.filter(item => item._id !== payload._id)
             state.wishlist = newItems
             localStorage.setItem("wishlistItems", JSON.stringify(state.wishlist));
-            toast.error(`${payload.title}  removed from cart`, {
+            toast.error(`${payload.title}  removed from wishlist`, {
                 position: 'bottom-left'
             })
         },

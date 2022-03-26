@@ -1,5 +1,6 @@
 import { CircularProgress } from '@mui/material'
 import React, { useEffect, useState } from 'react'
+import UseAuth from '../../../hooks/UseAuth'
 import './media.css'
 
 
@@ -8,18 +9,18 @@ export default function Media() {
     const [data, setData] = useState<any>()
     const [isTrue, setIsTrue] = useState<boolean>(true)
     const [selectedItems, setSelectedItems] = useState<any>([])
+    const userDetails = localStorage.getItem("userDetails") ? JSON.parse(localStorage.getItem('userDetails') || '{}') : { role: "", email: "" }
 
     const handleUploadImages = (e: any) => {
         e.preventDefault()
         const formData = new FormData();
         const files = images
-
-
         for (let i = 0; i < files.length; i += 1) {
             formData.append('images[]', files[i]);
         }
+        formData.append("vendor", userDetails.email)
 
-        fetch('https://guarded-ocean-73313.herokuapp.com/media', {
+        fetch('https://young-springs-82149.herokuapp.com/media', {
             method: 'post',
             body: formData
         })
@@ -36,10 +37,12 @@ export default function Media() {
 
 
     }
+    console.log(userDetails);
+
 
     useEffect(() => {
-        if (isTrue) {
-            fetch('https://guarded-ocean-73313.herokuapp.com/media')
+        if (userDetails.role === "vendor") {
+            fetch(`https://young-springs-82149.herokuapp.com/media/${userDetails.email}`)
                 .then(res => res.json())
                 .then(async data => {
                     // Show latest
@@ -49,8 +52,8 @@ export default function Media() {
                     setData(sort)
                     setIsTrue(false)
                 })
-        } else {
-            fetch('https://guarded-ocean-73313.herokuapp.com/media')
+        } else if (isTrue) {
+            fetch('https://young-springs-82149.herokuapp.com/media')
                 .then(res => res.json())
                 .then(data => {
                     // Show latest
@@ -58,11 +61,23 @@ export default function Media() {
                         return +new Date(b.uploadDate) - +new Date(a.uploadDate);
                     });
                     setData(sort)
+                    setIsTrue(false)
 
+                })
+        } else {
+            fetch('https://young-springs-82149.herokuapp.com/media')
+                .then(res => res.json())
+                .then(data => {
+                    // Show latest
+                    const sort = data.sort(function (a: any, b: any) {
+                        return +new Date(b.uploadDate) - +new Date(a.uploadDate);
+                    });
+                    setData(sort)
+                    setIsTrue(false)
                 })
         }
 
-    }, [isTrue])
+    }, [isTrue, userDetails.email, userDetails.role])
 
 
 
@@ -84,9 +99,9 @@ export default function Media() {
     }
 
     return (
-        <div className=''>
-            <div>
-                <h1 className='text-2xl	font-bold mb-2'>Media Gallery</h1>
+        <div>
+            <div className='px-5'>
+                <h1 className='lg:text-2xl md:text-lg sm:text-sm font-bold mb-2'>Media Gallery</h1>
                 <div className='image-upload mb-5'>
                     <form onSubmit={handleUploadImages}>
                         <label className='mt-1 flex justify-center px-6 pt-5 pb-6 border-2 border-gray-300 border-dashed rounded-md flex-col items-center bg-white dark:bg-slate-800'>
@@ -96,7 +111,7 @@ export default function Media() {
                                 </svg>
                             </div>
                             <br />
-                            <div>
+                            <div className='lg:text-lg md:text-base sm:text-xs lg:w-96 md:w-72 sm:w-32'>
                                 <span>+ Add Images up to 10 images</span>
                                 <input
                                     type="file"

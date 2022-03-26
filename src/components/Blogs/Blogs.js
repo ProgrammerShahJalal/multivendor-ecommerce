@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from 'react';
+import React, { useLayoutEffect, useState } from 'react';
 import Blog from './Blog';
 
 
@@ -6,15 +6,22 @@ const Blogs = () => {
     const [blogs, setBlogs] = useState([]);
     const [isLoading, setIsLoading] = useState(true);
 
-    useEffect(() => {
-        setIsLoading(true);
-        fetch("https://morning-inlet-49130.herokuapp.com/blogs")
-            .then(res => res.json())
-            .then(data => {
-                setIsLoading(false);
-                setBlogs(data);
-            })
-    }, [])
+    useLayoutEffect(() => {
+        function updateScreen(time) {
+            // Make visual updates here.
+            if (blogs.length === 0) {
+                fetch('https://morning-inlet-49130.herokuapp.com/blogs')
+                    .then(res => res.json())
+                    .then(data => {
+                        setIsLoading(false);
+                        setBlogs(data);
+                    }
+                    )
+            }
+        }
+        requestAnimationFrame(updateScreen);
+    }, [blogs])
+
     if (isLoading) {
         return <div className='my-5'>
             <h2 className='text-4xl font font-extrabold tracking-tight sm:text-6xl text-center my-5 text-black dark:text-white'>Our Blogs</h2>

@@ -3,7 +3,7 @@ import React, { useEffect, useState } from 'react';
 import { Link } from 'react-router-dom';
 import UseAuth from '../../../../../hooks/UseAuth';
 import { DeleteProductApi } from '../../../../../Services/DashboardProducts/DeleteProductApi';
-import Categories from '../Categories/Categories';
+import ProductImportModal from '../../ProductImportExportModal/ProductImportExportModal';
 type IProduct = {
     _id: string,
     title: string,
@@ -34,23 +34,34 @@ type IProduct = {
 const Products = () => {
     const [products, setProducts] = useState<any[]>([])
     const [isLoading, setIsLoading] = useState<boolean>(false)
+    const [loading, setLoading] = useState<boolean>(false)
+    const [showModal, setShowModal] = useState<boolean>(false);
     const { userDetails } = UseAuth()
     useEffect(() => {
         if (userDetails.email && userDetails.role === 'vendor') {
             setIsLoading(true)
-            fetch(`https://guarded-ocean-73313.herokuapp.com/products/${userDetails.email}`)
+            fetch(`https://young-springs-82149.herokuapp.com/products/${userDetails.email}`)
+                .then(res => res.json())
+                .then(data => setProducts(data))
+                .finally(() => setIsLoading(false))
+        } else if (loading) {
+            setIsLoading(true)
+            fetch('https://young-springs-82149.herokuapp.com/products')
                 .then(res => res.json())
                 .then(data => setProducts(data))
                 .finally(() => setIsLoading(false))
         } else {
             setIsLoading(true)
-            fetch('https://guarded-ocean-73313.herokuapp.com/products')
+            fetch('https://young-springs-82149.herokuapp.com/products')
                 .then(res => res.json())
                 .then(data => setProducts(data))
                 .finally(() => setIsLoading(false))
         }
 
-    }, [userDetails.email, userDetails.role])
+    }, [userDetails.email, userDetails.role, loading])
+    console.log(loading, 'loading');
+
+
     const deleteProduct = (id) => {
         DeleteProductApi(id, setIsLoading, products, setProducts)
     }
@@ -64,7 +75,7 @@ const Products = () => {
                 <div>
                     <h2 className="text-2xl font-semibold leading-tight text-left">Products</h2>
                 </div>
-                <div className="my-2 flex sm:flex-row flex-col">
+                <div className="my-2 flex sm:flex-row flex-col justify-between">
 
                     <div className="block relative">
                         <span className="h-full absolute inset-y-0 left-0 flex items-center pl-2">
@@ -76,6 +87,10 @@ const Products = () => {
                         </span>
                         <input placeholder="Search"
                             className="appearance-none rounded-r rounded-l sm:rounded-l-none border border-gray-400 border-b block pl-8 pr-6 py-2 w-full bg-white dark:bg-slate-800 text-sm placeholder-gray-400 text-gray-700 focus:bg-white dark:bg-slate-800 focus:placeholder-gray-600 focus:text-gray-700 focus:outline-none" />
+                    </div>
+                    <div>
+                        <button className='inline-flex justify-center py-2 px-4 border border-transparent drop-shadow-md text-sm font-medium rounded-md text-white bg-indigo-600 hover:bg-indigo-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500' onClick={() => setShowModal(!showModal)}>Import</button>
+                        {showModal ? <ProductImportModal setProducts={setProducts} products={products} showModal={showModal} setShowModal={setShowModal} setLoading={setLoading} /> : ""}
                     </div>
                 </div>
 
@@ -121,12 +136,14 @@ const Products = () => {
                                 {/* first order start */}
                                 {
                                     products.map(product => {
+                                        console.log(product, 'product');
+
                                         return <tr key={product._id}>
                                             <td className="px-5 py-5 border-b border-gray-200 bg-white dark:bg-slate-800 text-sm">
                                                 <div className="flex items-center">
                                                     <div className="flex-shrink-0 w-10 h-10">
 
-                                                        <img className="w-full h-full rounded-full" src={product.images[0]?.src ?? 'https://healthpointplus.com/wp-content/uploads/woocommerce-placeholder-300x300.png'} alt="" />
+                                                        <img className="w-full h-full rounded-full" src={product?.images[0]?.src ?? 'https://healthpointplus.com/wp-content/uploads/woocommerce-placeholder-300x300.png'} alt="" />
                                                     </div>
 
                                                 </div>
@@ -146,7 +163,7 @@ const Products = () => {
                                                 <span
                                                     className="relative inline-block px-3 py-1  font-semibold text-green-900 leading-tight">
                                                     {/* {product.categories.map(({ label }) => label)} */}
-                                                    {product.categories[0].label}
+                                                    {/* {product?.categories[0]?.label} */}
                                                     {/* <span aria-hidden
                                                         className="absolute inset-0 bg-green-200 opacity-50 rounded-full"></span>
                                                     <span className="relative text-left">Delivered</span> */}
@@ -172,7 +189,7 @@ const Products = () => {
 
                             </tbody>
                         </table>
-                        <div
+                        {/* <div
                             className="px-5 py-5 bg-white dark:bg-slate-800 border-t flex flex-col xs:flex-row items-center xs:justify-between          ">
                             <span className="text-xs xs:text-sm text-gray-900 dark:text-white">
                                 Showing 1 to 10 of 50 Entries
@@ -187,7 +204,7 @@ const Products = () => {
                                     Next
                                 </button>
                             </div>
-                        </div>
+                        </div> */}
                     </div>
                 </div>}
                 {/* order part end  */}

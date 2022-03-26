@@ -2,7 +2,7 @@
 export const DeleteProductApi = (id, setIsLoading, products, setProducts) => {
     if (window.confirm('Are you sure you want to delete?')) {
         setIsLoading(true)
-        fetch(`https://guarded-ocean-73313.herokuapp.com/dashboard/product/${id}`, {
+        fetch(`https://young-springs-82149.herokuapp.com/dashboard/product/${id}`, {
             method: 'DELETE'
         }).then(res => res.json())
             .then(data => {

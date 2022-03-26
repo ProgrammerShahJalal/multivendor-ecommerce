@@ -19,15 +19,11 @@ const PaginatedBlogsItems = ({ itemsPerPage }: any) => {
         fetch(`https://morning-inlet-49130.herokuapp.com/blogs`)
             .then(res => res.json())
             .then(data => {
-                console.log(data, 'blogs');
-
                 setBlogs(data)
-
             })
             .finally(() => setIsLoading(false))
     }, [])
 
-    // console.log(blogs, "blogs")
 
     useEffect(() => {
         // Fetch items from another resources.

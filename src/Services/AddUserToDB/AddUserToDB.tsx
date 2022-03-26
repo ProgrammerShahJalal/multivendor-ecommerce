@@ -1,17 +1,18 @@
 // ADD USER TO DATABASE
-export const addUserToDB = (details) => {
-    console.log(details, 'details');
+export const addUserToDB = (details, userRole) => {
+    console.log(details, 'details details details');
 
     const date = new Date()
-    const user = { name: details.displayName, email: details.email, photo: details.photoURL, phone: details.phoneNumber, role: 'user', date: date.toLocaleString() }
-
-    fetch('https://guarded-ocean-73313.herokuapp.com/addUser', {
+    const user = { name: details.displayName, email: details.email, photo: details.photoURL, phone: details.phoneNumber, role: userRole, date: date.toLocaleString(), status: "Active" }
+    // localStorage.setItem("userDetails", JSON.stringify(user))
+    fetch('https://young-springs-82149.herokuapp.com/addUser', {
         method: 'POST',
         headers: {
             'content-type': 'application/json'
         },
         body: JSON.stringify(user)
     })
-        .then()
+        .then(res => res.json())
+        .then(data => console.log(data, 'data asdasd'))
 
 }

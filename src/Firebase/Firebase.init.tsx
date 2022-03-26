@@ -2,15 +2,12 @@ import { initializeApp } from "firebase/app";
 
 const FirebaseInitialization = () => {
     const firebaseConfig = {
-
-
         apiKey: "AIzaSyAe5K0s2N844yB220-rnhbgFOsv8OgoNuM",
         authDomain: "unitymart-c522a.firebaseapp.com",
         projectId: "unitymart-c522a",
         storageBucket: "unitymart-c522a.appspot.com",
         messagingSenderId: "115333149166",
         appId: "1:115333149166:web:e82a96f86cd1350b4edeff"
-
 
         // apiKey: "AIzaSyDIOzENohxiYXJHnI6SFauseoUTI2Fu6eg",
         // authDomain: "multi-vendor-888c3.firebaseapp.com",

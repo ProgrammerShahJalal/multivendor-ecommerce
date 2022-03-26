@@ -23,3 +23,8 @@
     border: 1px solid #ccc;
     border-radius: 5px;
 }
+
+.grid.grid-cols-5.gap-2.mx-auto.gallery-images.scroll-modal {
+    height: 260px;
+    overflow-y: scroll;
+}

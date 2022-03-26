@@ -16,19 +16,22 @@ const PaginatedItems = ({ itemsPerPage }: any) => {
 
 
     useLayoutEffect(() => {
-        setIsLoading(true)
-        fetch(`https://morning-inlet-49130.herokuapp.com/products`)
-            .then(res => res.json())
-            .then(data => {
-                console.log(data, 'products');
-                // const approvedBlogs = data.filter(products => products.approval === 'Approved')
-                setproducts(data)
+        function updateScreen(time) {
+            // Make visual updates here.
+            setIsLoading(true)
+            if (products.length === 0) {
+                fetch('https://morning-inlet-49130.herokuapp.com/products')
+                    .then(res => res.json())
+                    .then(data => {
+                        setproducts(data)
+                    }
+                    )
+                    .finally(() => setIsLoading(false))
+            }
+        }
+        requestAnimationFrame(updateScreen);
+    }, [products])
 
-            })
-            .finally(() => setIsLoading(false))
-    }, [])
-
-    console.log(products, "products")
 
     useEffect(() => {
         // Fetch items from another resources.

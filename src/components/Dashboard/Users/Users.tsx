@@ -1,6 +1,9 @@
+import { CircularProgress } from '@mui/material';
 import React, { useEffect, useState } from 'react';
+import { Link } from 'react-router-dom';
 interface UserState {
     users: {
+        _id: string
         name: string
         email: string
         role: string
@@ -8,12 +11,15 @@ interface UserState {
 }
 const Users = () => {
     const [users, setUsers] = useState<UserState["users"]>([]);
+    const [isLoading, setIsLoading] = useState<boolean>(false);
     const [notFound, setNotFound] = useState('')
     useEffect(() => {
         if (users.length === 0) {
-            fetch('https://guarded-ocean-73313.herokuapp.com/users')
+            setIsLoading(true)
+            fetch('https://young-springs-82149.herokuapp.com/users')
                 .then(res => res.json())
                 .then(data => setUsers(data))
+                .finally(() => setIsLoading(false))
         }
     }, [users])
 
@@ -27,19 +33,38 @@ const Users = () => {
         }
         else if (findUser.length === 0) {
             setNotFound('Not found')
-            fetch('https://guarded-ocean-73313.herokuapp.com/users')
+            fetch('https://young-springs-82149.herokuapp.com/users')
                 .then(res => res.json())
                 .then(data => setUsers(data))
         }
-        if (searchText===''){
-            fetch('https://guarded-ocean-73313.herokuapp.com/users')
+        if (searchText === '') {
+            fetch('https://young-springs-82149.herokuapp.com/users')
                 .then(res => res.json())
                 .then(data => setUsers(data))
         }
     }
+
+    const deleteUser = (id) => {
+        if (window.confirm('Are you sure you want to delete?')) {
+            setIsLoading(true)
+            fetch(`https://young-springs-82149.herokuapp.com/dashboard/user-delete/${id}`, {
+                method: 'DELETE'
+            }).then(res => res.json())
+                .then(data => {
+
+                    if (data.deletedCount) {
+                        alert('The User is Deleted')
+                        const remainingProducts = users.filter(user => user._id !== id)
+                        setUsers(remainingProducts)
+                    }
+
+                })
+                .finally(() => setIsLoading(false))
+        }
+    }
     return (
         <div className='container mx-auto px-4 sm:px-8'>
-            <div className='py-4'>
+            {isLoading ? <span className='flex justify-center'><CircularProgress color="inherit" /></span> : <div className='py-4'>
                 <div>
                     <h2 className="text-2xl font-semibold leading-tight text-left">Users</h2>
                 </div>
@@ -101,7 +126,7 @@ const Users = () => {
                                         <div className="flex items-center">
                                             <div className="flex-shrink-0 w-10 h-10">
                                                 <img className="w-full h-full rounded-full"
-                                                    src="https://images.unsplash.com/photo-1540845511934-7721dd7adec3?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=facearea&facepad=2.2&w=160&h=160&q=80"
+                                                    src={user.photo || "https://i.ibb.co/dDS0Jq5/user.png"}
                                                     alt="" />
                                             </div>
                                             <div className="ml-3">
@@ -119,16 +144,16 @@ const Users = () => {
                                     </td>
                                     <td className="px-5 py-5 border-b border-gray-200 bg-white dark:bg-slate-800 text-sm">
                                         <p className="text-gray-900 dark:text-white whitespace-no-wrap text-left">
-                                            Jan 10, 2022
+                                            {user.date}
                                         </p>
                                     </td>
                                     <td className="px-5 py-5 border-b border-gray-200 bg-white dark:bg-slate-800 text-sm">
-                                        <p className="text-gray-900 dark:text-white rounded whitespace-no-wrap text-left bg-green-200 p-2 w-10">
+                                        <Link to={`/dashboard/users/${user._id}`}><p className="text-white rounded whitespace-no-wrap text-left bg-indigo-600 p-2 w-10">
                                             Edit
-                                        </p>
+                                        </p></Link>
                                     </td>
                                     <td className="px-5 py-5 border-b border-gray-200 bg-white dark:bg-slate-800 text-sm">
-                                        <p className="text-white rounded whitespace-no-wrap text-left bg-red-500 p-2 w-16">
+                                        <p onClick={() => deleteUser(user._id)} className="cursor-pointer text-white rounded whitespace-no-wrap text-left bg-red-500 p-2 w-16">
                                             Delete
                                         </p>
                                     </td>
@@ -138,7 +163,7 @@ const Users = () => {
 
                         </table>
 
-                        <div
+                        {/* <div
                             className="px-5 py-5 bg-white dark:bg-slate-800 border-t flex flex-col xs:flex-row items-center xs:justify-between          ">
                             <span className="text-xs xs:text-sm text-gray-900 dark:text-white">
                                 Showing 1 to 10 of 50 Entries
@@ -153,15 +178,15 @@ const Users = () => {
                                     Next
                                 </button>
                             </div>
-                        </div>
+                        </div> */}
                     </div>
 
                 </div>
 
-            </div>
+            </div>}
 
         </div>
-        
+
 
     );
 };

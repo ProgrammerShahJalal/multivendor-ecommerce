@@ -40,7 +40,7 @@ export default function Categories() {
 
         const newCategory = { vendor: 'admin', options: { label: category } }
 
-        fetch('https://guarded-ocean-73313.herokuapp.com/dashboard/addCategory', {
+        fetch('https://young-springs-82149.herokuapp.com/dashboard/addCategory', {
             headers: { "Content-Type": "application/json" },
             method: 'POST',
             body: JSON.stringify(newCategory)
@@ -72,7 +72,7 @@ export default function Categories() {
         }
 
         const update = { categoryValue, id }
-        fetch('https://guarded-ocean-73313.herokuapp.com/dashboard/categories', {
+        fetch('https://young-springs-82149.herokuapp.com/dashboard/categories', {
             method: 'PUT',
             headers: { 'content-type': 'application/json' },
             body: JSON.stringify(update)
@@ -84,7 +84,7 @@ export default function Categories() {
             })
 
     }
-    console.log(categoryValue, 'categoryValue');
+    // console.log(categoryValue, 'categoryValue');
 
 
 
@@ -92,7 +92,7 @@ export default function Categories() {
 
         if (window.confirm('Are you sure you want to delete?')) {
             setIsLoading(true)
-            fetch(`https://guarded-ocean-73313.herokuapp.com/dashboard/categories/${id}`, {
+            fetch(`https://young-springs-82149.herokuapp.com/dashboard/categories/${id}`, {
                 method: 'DELETE'
             }).then(res => res.json())
                 .then(data => {
@@ -109,7 +109,7 @@ export default function Categories() {
     //  LOAD CATEGORIES
     useEffect(() => {
         if (ifShouldUpdate) {
-            fetch('https://guarded-ocean-73313.herokuapp.com/dashboard/categories')
+            fetch('https://young-springs-82149.herokuapp.com/dashboard/categories')
                 .then(res => res.json())
                 .then(data => setCategories(data))
             setIfShouldUpdate(false)
@@ -118,7 +118,7 @@ export default function Categories() {
     }, [ifShouldUpdate])
 
     useEffect(() => {
-        fetch('https://guarded-ocean-73313.herokuapp.com/dashboard/categories')
+        fetch('https://young-springs-82149.herokuapp.com/dashboard/categories')
             .then(res => res.json())
             .then(data => setCategories(data))
     }, [])
@@ -129,7 +129,7 @@ export default function Categories() {
 
 
     return (
-        <div className='grid grid-cols-3 gap-4'>
+        <div className='grid grid-cols-1 lg:grid-cols-3 gap-4'>
             <div className=' px-4 py-5 bg-white dark:bg-slate-800 space-y-6 sm:p-6 shadow sm:rounded-md sm:overflow-hidden'>
                 <form onSubmit={handleAddCategory}>
                     <div>

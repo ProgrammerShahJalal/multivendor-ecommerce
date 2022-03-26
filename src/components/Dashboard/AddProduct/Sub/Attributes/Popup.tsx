@@ -32,7 +32,7 @@ export default function Popup({ attr, setIfShouldUpdate }: any) {
 
         let update = { options: { label, value }, id: attr._id }
 
-        fetch('https://guarded-ocean-73313.herokuapp.com/dashboard/attributes', {
+        fetch('https://young-springs-82149.herokuapp.com/dashboard/attributes', {
             method: 'PUT',
             headers: { 'content-type': 'application/json' },
             body: JSON.stringify(update)
@@ -49,7 +49,7 @@ export default function Popup({ attr, setIfShouldUpdate }: any) {
     //  LOAD CATEGORIES
     useEffect(() => {
         if (willValueUpdate) {
-            fetch('https://guarded-ocean-73313.herokuapp.com/dashboard/attributes')
+            fetch('https://young-springs-82149.herokuapp.com/dashboard/attributes')
                 .then(res => res.json())
                 .then(data => setAttributes(data))
             setWillValueUpdate(false)
@@ -58,14 +58,14 @@ export default function Popup({ attr, setIfShouldUpdate }: any) {
     }, [willValueUpdate])
 
     useEffect(() => {
-        fetch('https://guarded-ocean-73313.herokuapp.com/dashboard/attributes')
+        fetch('https://young-springs-82149.herokuapp.com/dashboard/attributes')
             .then(res => res.json())
             .then(data => setAttributes(data))
     }, [])
 
     const handleDeleteValue = (id, value) => {
 
-        fetch(`https://guarded-ocean-73313.herokuapp.com/dashboard/attribute/fieldDelete/${id}`, {
+        fetch(`https://young-springs-82149.herokuapp.com/dashboard/attribute/fieldDelete/${id}`, {
             method: 'PUT',
             headers: { 'content-type': 'application/json' },
             body: JSON.stringify({ value: value.value })

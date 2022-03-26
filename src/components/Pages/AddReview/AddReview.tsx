@@ -7,7 +7,6 @@ export default function AddReview() {
     const { register, handleSubmit, reset } = useForm();
 
     const onSubmit = (data: any) => {
-        console.log(data);
         axios.post('https://morning-inlet-49130.herokuapp.com/reviews', data)
             .then(res => {
                 if (res.data.insertedId) {
@@ -18,7 +17,7 @@ export default function AddReview() {
     }
     return (
 
-        <div className="container px-12 py-10">
+        <div className="container px-12 py-10 bg-white dark:bg-slate-700">
             <div className="md:grid md:grid-cols-3 md:gap-6">
                 <div className="md:col-span-1">
                     <div className="px-4 sm:px-0">
@@ -67,6 +66,7 @@ export default function AddReview() {
                                             <input
                                                 {...register("ratings", { required: true })}
                                                 type="number"
+                                                step="0.01"
                                                 id="ratings"
                                                 className="focus:ring-indigo-500 focus:border-indigo-500 flex-1 block w-full rounded-none rounded-r-md sm:text-sm border-gray-300"
                                             />

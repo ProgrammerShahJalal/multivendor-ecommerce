@@ -5,6 +5,10 @@ import Modal from '@mui/material/Modal';
 import ProductView from '../../ProductView/ProductView';
 import ProductViewSm from '../../ProductView/ProductViewSm';
 import Backdrop from '@mui/material/Backdrop';
+import { useDispatch } from 'react-redux';
+import { addToCart } from '../../../redux/cartSlice';
+import { Button } from '@material-ui/core';
+import { addToWishlist } from '../../../redux/wishlistSlice';
 
 
 interface ProductState {
@@ -63,7 +67,7 @@ const ProductSearchBar: React.FunctionComponent = () => {
     const handleClose = () => setOpen(false);
 
     useLayoutEffect(() => {
-        fetch('https://guarded-ocean-73313.herokuapp.com/products')
+        fetch('https://young-springs-82149.herokuapp.com/products')
             .then(res => res.json())
             .then(data => setProducts(data))
 
@@ -82,11 +86,17 @@ const ProductSearchBar: React.FunctionComponent = () => {
         }
     }
 
+    const dispatch = useDispatch()
+    const handleAddToCart = (id) => {
+        dispatch(addToCart(id))
+        // navigate('/cart')
+    }
+
     return (
         <div className="container mx-auto pt-2 pb-5 my-4">
             <div className="text-xl text-center p-4">
                 <input
-                    className='text-center border w-96 py-2 rounded-full'
+                    className='text-center border lg:w-96 md:w-80 sm:w-64 py-2 rounded-full'
                     type='text'
                     placeholder="Search Product"
                     onChange={handleOnChange}
@@ -101,42 +111,55 @@ const ProductSearchBar: React.FunctionComponent = () => {
                 }
 
                 <div className="grid place-content-center lg:grid-cols-4 md:grid-cols-3 grid-cols-1 gap-6">
-                    {productList && productList?.length > 0 && productList?.map((product: any) =>
+                    {productList && productList?.length > 0 && productList?.map((product: any) => {
+                        const detailProduct = {
+                            _id: product._id,
+                            title: product.title,
+                            image: product.images[0]?.src,
+                            category: product.categories[0].label,
+                            price: parseInt(product.sale_price ? product.sale_price : product.reg_price),
+                            attributes: [],
+                            cartQuantity: 1,
+                            vendor: {
+                                email: product?.publisherDetails?.publisher || null
+                            }
+                        }
 
-                    (<div className="bg-white dark:bg-slate-800 shadow-inner overflow-hidden single-card group" key={product._id}>
-                        <div className="relative">
-                            <div style={{ height: '250px' }} className='z-100 overflow-hidden'>
-                                <img src={product.images[0]?.src} className='w-full img z-0 transition object-cover' alt="" />
-                                {/* <img src={product.img} className='w-full hoverImg transition object-cover' alt="" /> */}
+                        return <div className="bg-white dark:bg-slate-800 shadow-inner overflow-hidden single-card group" key={product._id}>
+                            <div className="relative">
+                                <div style={{ height: '250px' }} className='z-100 overflow-hidden'>
+                                    <img src={product.images[0]?.src} className='w-full img z-0 transition object-cover' alt="" />
+                                    {/* <img src={product.img} className='w-full hoverImg transition object-cover' alt="" /> */}
+                                </div>
+                                <div className="absolute inset-0 bg-black bg-opacity-40 flex items-center justify-center gap-2 opacity-0 group-hover:opacity-100 transition">
+                                    <button onClick={() => handleOpen(product)} className='text-white text-lg w-9 h-8 rounded-full bg-indigo-500 flex items-center justify-center hover:bg-gray-800 transition'>
+                                        <i className="fa-regular fa-magnifying-glass"></i>
+                                    </button>
+                                    <button onClick={() => dispatch((addToWishlist(detailProduct)))} className='text-white text-lg w-9 h-8 rounded-full bg-indigo-500 flex items-center justify-center hover:bg-gray-800 transition'>
+                                        <i className="fa-regular fa-heart"></i>
+                                    </button>
+                                </div>
+
                             </div>
-                            <div className="absolute inset-0 bg-black bg-opacity-40 flex items-center justify-center gap-2 opacity-0 group-hover:opacity-100 transition">
-                                <button onClick={() => handleOpen(product)} className='text-white text-lg w-9 h-8 rounded-full bg-indigo-500 flex items-center justify-center hover:bg-gray-800 transition'>
-                                    <i className="fa-regular fa-magnifying-glass"></i>
-                                </button>
-                                <a className='text-white text-lg w-9 h-8 rounded-full bg-indigo-500 flex items-center justify-center hover:bg-gray-800 transition' href="/">
-                                    <i className="fa-regular fa-heart"></i>
+                            <div style={{ height: '200px' }} className="pt-4 gb-3 px-4">
+                                <a href="/">
+                                    <h4 className="font-medium text-xl mb-2 text-gray-800 dark:text-white  transition">{product.title}</h4>
+                                    <h5 className="font-bold text-sm mb-2 text-gray-800 dark:text-white transition">From: {product.brand}</h5>
                                 </a>
-                            </div>
-
-                        </div>
-                        <div style={{ height: '200px' }} className="pt-4 gb-3 px-4">
-                            <a href="/">
-                                <h4 className="font-medium text-xl mb-2 text-gray-800 dark:text-white  transition">{product.title}</h4>
-                                <h5 className="font-bold text-sm mb-2 text-gray-800 dark:text-white transition">From: {product.brand}</h5>
-                            </a>
-                            <div className="flex justify-center mb-1 space-x-2 text-center">
-                                <p className="text-xl text-indigo-500 font-semibold text-center">$ {product.reg_price}</p>
-                                <p className="text-sm text-gray-400 line-through text-center">$ {product.sale_price}</p>
-                            </div>
-                            <div className="text-center">
-                                {/* <Rating name="half-rating-read" defaultValue={product.rating} precision={0.5} readOnly />
+                                <div className="flex justify-center mb-1 space-x-2 text-center">
+                                    <p className="text-xl text-indigo-500 font-semibold text-center">$ {product.reg_price}</p>
+                                    <p className="text-sm text-gray-400 line-through text-center">$ {product.sale_price}</p>
+                                </div>
+                                <div className="text-center">
+                                    {/* <Rating name="half-rating-read" defaultValue={product.rating} precision={0.5} readOnly />
                                 <div className="text-xs text-gray-500 ml-3">(1)</div> */}
-                                <p className="font-medium text-xl mb-2 text-blue-800 dark:text-white px-2  transition">Stock: {product.stock}</p>
-                                <p className="font-bold text-sm mb-2 text-blue-800 dark:text-white transition"> Offer-Date: {product.offerDate}</p>
+                                    <p className="font-medium text-xl mb-2 text-blue-800 dark:text-white px-2  transition">Stock: {product.stock}</p>
+                                    {/* <p className="font-bold text-sm mb-2 text-blue-800 dark:text-white transition"> Offer-Date: {product.offerDate}</p> */}
+                                </div>
                             </div>
+                            <button onClick={() => handleAddToCart(detailProduct)} className='block w-full py-1 text-center top-5 text-white bg-indigo-500 border border-indigo-500 rounded-b hover:bg-transparent hover:text-indigo-500 transition'>Add to Cart</button>
                         </div>
-                        <button className='block w-full py-1 text-center top-5 text-white bg-indigo-500 border border-indigo-500 rounded-b hover:bg-transparent hover:text-indigo-500 transition'>Add to Cart</button>
-                    </div>)
+                    }
                     )}
                 </div>
 

@@ -6,6 +6,8 @@ import Fade from '@mui/material/Fade';
 import ProductView from '../ProductView/ProductView';
 import ProductViewSm from '../ProductView/ProductViewSm';
 import { Link } from 'react-router-dom';
+import { addToCart } from '../../redux/cartSlice';
+import { useDispatch } from 'react-redux';
 
 interface ProductState {
     products: {
@@ -27,7 +29,7 @@ const RelatedProducts = () => {
     useEffect(() => {
         // if (products) {
 
-        fetch('https://guarded-ocean-73313.herokuapp.com/products')
+        fetch('https://young-springs-82149.herokuapp.com/products')
             .then(res => res.json())
             .then(data => setProducts(data.slice(0, 4)))
         // }
@@ -39,7 +41,11 @@ const RelatedProducts = () => {
         setOpen(true)
 
     };
-    console.log(products, 'products');
+    const dispatch = useDispatch()
+    const handleAddToCart = (id) => {
+        dispatch(addToCart(id))
+        // navigate('/cart')
+    }
 
     const handleClose = () => setOpen(false);
     return (
@@ -47,6 +53,18 @@ const RelatedProducts = () => {
             <div className="grid place-content-center lg:grid-cols-4 md:grid-cols-3 grid-cols-1 gap-6">
                 {
                     products.map((product) => {
+                        const detailProduct = {
+                            _id: product._id,
+                            title: product.title,
+                            image: product.images[0]?.src,
+                            category: product.categories[0].label,
+                            price: parseInt(product.sale_price ? product.sale_price : product.reg_price),
+                            attributes: [],
+                            cartQuantity: 1,
+                            vendor: {
+                                email: product?.publisherDetails?.publisher || null
+                            }
+                        }
                         return <div className="bg-white dark:bg-slate-800 shadow-inner overflow-hidden single-card">
 
                             <div className="relative group">
@@ -80,7 +98,7 @@ const RelatedProducts = () => {
                                     <div className="text-xs text-gray-500 ml-3">(1)</div>
                                 </div>
                             </div>
-                            <button className='block w-full py-1 text-center top-5 text-white bg-indigo-500 border border-indigo-500 rounded-b hover:bg-transparent hover:text-indigo-500 transition'>Add to Cart</button>
+                            <button onClick={() => handleAddToCart(detailProduct)} className='block w-full py-1 text-center top-5 text-white bg-indigo-500 border border-indigo-500 rounded-b hover:bg-transparent hover:text-indigo-500 transition'>Add to Cart</button>
                         </div>
                     })}
 
@@ -94,7 +112,7 @@ const RelatedProducts = () => {
                         <Box>
                             {/* <button className='justify-end text-white select-none bg-red-500 rounded-full w-8 h-8' onClick={handleClose}>x</button> */}
                             <div className='md:block mx-auto px-1 lg:block hidden'>
-                                <ProductView   selectedProduct={selectedProduct} />
+                                <ProductView selectedProduct={selectedProduct} />
                             </div>
                             <div className='md:hidden lg:hidden block'>
                                 <ProductViewSm selectedProduct={selectedProduct} />

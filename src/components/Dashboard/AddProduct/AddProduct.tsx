@@ -1,17 +1,17 @@
 import React, { useEffect, useState } from 'react';
-import './AddProduct.css'
+import './AddProduct.css';
 import Select from 'react-select';
 import Modal from '../Media/Modal';
 import { Editor } from "react-draft-wysiwyg";
 import { convertToRaw } from 'draft-js';
 import draftToHtml from 'draftjs-to-html';
 import "react-draft-wysiwyg/dist/react-draft-wysiwyg.css";
-import UseAuth from '../../../hooks/UseAuth';
 import TextField from '@mui/material/TextField';
 import AdapterDateFns from '@mui/lab/AdapterDateFns';
 import LocalizationProvider from '@mui/lab/LocalizationProvider';
 import MobileDateTimePicker from '@mui/lab/MobileDateTimePicker';
 import Stack from '@mui/material/Stack';
+import { UseFirebase } from '../../../hooks/UseFirebase';
 
 type attributeValues = {
     label: string, options: [{ label: string, value: string }]
@@ -44,11 +44,11 @@ const AddProduct: React.FunctionComponent = () => {
     // SELECTED IMAGES FROM MODAL
     const [selectedImages, setSelectedImages] = useState<any[]>([])
 
-    const { userDetails } = UseAuth()
+    const { userDetails } = UseFirebase()
 
     // GET ATTRIBUTES LABELS AND VALUES
     useEffect(() => {
-        fetch('https://guarded-ocean-73313.herokuapp.com/dashboard/attributes')
+        fetch('https://young-springs-82149.herokuapp.com/dashboard/attributes')
             .then(res => res.json())
             .then(data => {
                 const newArray = data.map(({ label, slug }: any) => ({ label, value: slug }));
@@ -100,7 +100,7 @@ const AddProduct: React.FunctionComponent = () => {
     useEffect(() => {
         if (!newCat) {
             setIsLoading(true)
-            fetch('https://guarded-ocean-73313.herokuapp.com/dashboard/categories')
+            fetch('https://young-springs-82149.herokuapp.com/dashboard/categories')
                 .then(res => res.json())
                 .then(data => {
                     const options = data.map(({ options }: any) => options)
@@ -136,21 +136,22 @@ const AddProduct: React.FunctionComponent = () => {
         if (selectedImages.length === 0) {
             return alert('please add an image')
         }
-
+        const date = new Date()
         const newProduct = {
             ...productValue,
             images: selectedImages,
             categories,
+            date,
             product_des: content,
             newAttributes,
             vendor: userDetails.role,
-            store: userDetails.store,
+            store: userDetails.slug || "",
             publisher: userDetails.email
         }
         console.log(newProduct, 'newProduct');
 
         setIsLoading(true)
-        fetch('https://guarded-ocean-73313.herokuapp.com/dashboard/addProduct', {
+        fetch('https://young-springs-82149.herokuapp.com/dashboard/addProduct', {
             headers: { "Content-Type": "application/json" },
             method: 'POST',
             body: JSON.stringify(newProduct)
@@ -189,7 +190,7 @@ const AddProduct: React.FunctionComponent = () => {
         <div>
             <div className="mt-5 md:mt-0 md:col-span-2">
                 <form onSubmit={handleProductSubmit} id="form1">
-                    <div className="grid grid-cols-3 gap-4">
+                    <div className="grid grid-cols-1 lg:grid-cols-3 gap-4">
 
                         <div className="col-span-2">
                             <div className="shadow sm:rounded-md sm:overflow-hidden">
@@ -215,7 +216,7 @@ const AddProduct: React.FunctionComponent = () => {
                                         </div>
 
                                     </div>
-                                    <div className="flex flex-row gap-6">
+                                    <div className="grid grid-cols-1 lg:grid-cols-3 gap-6">
                                         <div className="basis-1/4">
                                             <label className="block text-sm font-medium text-gray-700 mb-3"> Regular Price </label>
                                             <input className="shadow appearance-none border-none rounded w-full py-3 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline" name="reg_price" onBlur={handleGetProductValues} type="text" placeholder="Regular Price " required />
@@ -251,7 +252,7 @@ const AddProduct: React.FunctionComponent = () => {
 
                                     </div>
 
-                                    <div className='flex flex-row gap-6'>
+                                    <div className='flex flex-row gap-6 z-40'>
 
 
                                         {attributeValues.map((attr: attributeValues) => {
@@ -276,7 +277,7 @@ const AddProduct: React.FunctionComponent = () => {
                                     </div>
 
                                     <div>
-                                        <label className="block text-sm font-medium text-gray-700 mb-3"> Description </label>
+                                        <label className="block text-sm font-medium text-gray-700 mb-3 z-0"> Description </label>
                                         <Editor
                                             editorState={onEditorStateChange}
                                             toolbarClassName="toolbarClassName"
@@ -310,7 +311,7 @@ const AddProduct: React.FunctionComponent = () => {
                                         <span>+ Add Images</span>
                                     </div>
                                 </label>
-                                <Modal eventBubbling={eventBubbling} selectedItems={selectedImages} showModal={showModal} setShowModal={setShowModal} />
+                                <Modal className='overflow-y-scroll w-full h-full' eventBubbling={eventBubbling} selectedItems={selectedImages} showModal={showModal} setShowModal={setShowModal} />
 
                                 <br />
 

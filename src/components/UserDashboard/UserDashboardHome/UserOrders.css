@@ -16,7 +16,9 @@
     object-fit: contain
 }
 
-
+div#headlessui-menu-items-23 {
+    z-index: 9999;
+}
 
 .order .order-summary {
     height: 100%

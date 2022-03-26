@@ -16,7 +16,7 @@
 }
 
 .per-service{
-	font-family: 'Roboto', sans-serif;
+	font-family: 'poppins', sans-serif;
 	padding-top: 15px;
 	padding: 5px;
 	margin: 10px;
@@ -86,9 +86,8 @@
 .small-banner{
 	overflow: hidden;
 	transition: transform .2s;
-	background-color: #f7f7f7;
-	margin-left: 20px;
-	margin-right: 20px;
+	background-color: #F3F4F6;
+	
 }
 
 .midium-banner .single-banner h4 {

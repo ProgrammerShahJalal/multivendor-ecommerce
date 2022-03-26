@@ -7,7 +7,9 @@ import "swiper/css/free-mode";
 import "swiper/css/navigation";
 import "swiper/css/pagination";
 import "swiper/css/thumbs";
-import { NavLink } from "react-router-dom";
+import BannerLottie1 from "../../Lottie/BannerLottie1";
+import BannerLottie2 from "../../Lottie/BannerLottie2";
+import { Link } from "react-router-dom";
 
 
 SwiperCore.use([Autoplay])
@@ -20,90 +22,28 @@ export default function Banners() {
           loop={true}
           slidesPerView={"auto"}
           autoplay={{
-            delay: 5000,
+            delay: 6000,
             disableOnInteraction: false
           }}
           modules={[Autoplay]}
-
           className="mySwiper">
           <SwiperSlide
             className="md:flex items-center justify-center"
-            style={{ height: "34rem" }}>
-            <div className="grid md:grid-cols-2 xs:grid-cols-1">
-              <div className="flex flex-col items-center md:items-start justify-center md:pl-15 lg:pl-32 p-12 text-center md:text-left">
-                <h1 className="text-4xl text-black dark:text-white">
-                  Monster Beats Headphone
-                </h1>
-                <p className="text-2xl text-black dark:text-white">
-                  Feel the beats 🎧
-                </p>
-                <div className="flex gap-2">
-                <p className="line-through text-xl text-blue-500">
-                  $<span className="text-blue-500">49</span>
-                </p>
-                <p className="text-2xl text-black dark:text-white">
-                  $<span className="text-red-600">35</span>
-                </p>
-                </div>
-                <NavLink
-                  style={{ borderRadius: '35px' }}
-                  to="/shop"
-                  className="bg-gray-700 hover:bg-gray-800 transition-all px-6 py-2 mt-3 text-white"
-                >
-                  Buy Now <i className="fa-light fa-cart-circle-plus"></i>
-                </NavLink>
-              </div>
-              <div className="md:-mt-0 lg:-mt-0 -mt-12 items-end justify-end flex">
-                <img src='https://i.ibb.co/880G2zr/headphone.png' alt="Image1" className="md:block" />
-              </div>
-            </div>
-
-          </SwiperSlide>
-          {/* <SwiperSlide style={{height:'30rem'}}
-            className="md:flex items-center justify-center">
-                <img src='https://i.ibb.co/c1FZSg3/mac-Book-Banner.png' alt="Image2" />
-          </SwiperSlide>
-          <SwiperSlide style={{height:'30rem'}}
-            className="md:flex items-center justify-center">
-                <img src='https://i.ibb.co/QdDNtBF/nike-Banner.png' alt="Image3" />
-          </SwiperSlide>
-          <SwiperSlide style={{height:'30rem'}}
-            className="md:flex items-center justify-center">
-                <img src='https://i.ibb.co/f135FKC/ps5-Banner.png' alt="Image4" />
-          </SwiperSlide>
-          <SwiperSlide style={{height:'30rem'}}
-            className="md:flex items-center justify-center">
-                <img src='https://i.ibb.co/C8YpBMD/rolex-Banner.png' alt="Image5" />
-          </SwiperSlide> */}
-          <SwiperSlide
-            className="md:flex items-center justify-center"
             style={{ height: "30rem" }}>
-            <div className="grid md:grid-cols-2 xs:grid-cols-1">
-              <div className="flex flex-col items-center md:items-start justify-center md:pl-15 lg:pl-32 p-10 text-center md:text-left">
-                <h1 className="text-4xl text-black dark:text-white">
-                  Apple macbook air 2022
-                </h1>
-                <p className="text-2xl text-black dark:text-white">
-                  Smart like you
-                </p>
-                <div className="flex gap-2">
-                <p className="line-through text-xl text-blue-500">
-                  $<span className="text-blue-500">1999</span>
-                </p>
-                <p className="text-2xl text-black dark:text-white">
-                  $<span className="text-red-600">1799</span>
-                </p>
+            <div className="grid md:grid-cols-2 xs:grid-cols-2">
+              <Link to="/contact">
+                <div className="flex flex-col items-center md:items-start justify-center md:pl-15 lg:pl-32 p-10 text-center md:text-left">
+                  <h1 className="md:text-3xl lg:text-6xl text-black font-bold dark:text-white text-sm">
+                    Earn money
+                  </h1>
+                  <p className="lg:w-80 md:w-64 sm:w-64 md:text-2xl py-5 text-black dark:text-white sm:text-sm">
+                    Register as a affiliate user and earn unlimited from us.
+                  </p>
+                  <button className="bg-gray-700 my-5 hover:bg-gray-800 transition-all px-6 py-2 mt-3 text-white rounded-lg"> Contact Us</button>
                 </div>
-                <NavLink
-                  style={{ borderRadius: '35px' }}
-                  to="/shop"
-                  className="bg-gray-700 hover:bg-gray-800 transition-all px-6 py-2 mt-3 text-white"
-                >
-                  Buy Now <i className="fa-light fa-cart-circle-plus"></i>
-                </NavLink>
-              </div>
+              </Link>
               <div className="md:-mt-0 -mt-20 items-end justify-end flex">
-                <img src='https://i.ibb.co/X23hLSd/macbook-air.png' alt="Image1" className="md:block" />
+                <BannerLottie1 />
               </div>
             </div>
 
@@ -111,32 +51,20 @@ export default function Banners() {
           <SwiperSlide
             className="md:flex items-center justify-center"
             style={{ height: "30rem" }}>
-            <div className="grid md:grid-cols-2 xs:grid-cols-1">
-              <div className="flex flex-col items-center md:items-start justify-center md:pl-15 lg:pl-32 p-10 text-center md:text-left">
-                <h1 className="text-3xl text-black dark:text-white">
-                Rolex Datejust
-                </h1>
-                <p className="text-2xl text-black dark:text-white">
-                  official rolex <span className="text-blue-600">X</span> unity mart discount
-                </p>
-                <div className="flex gap-2">
-                <p className="line-through text-xl text-blue-500">
-                  $<span className="text-blue-500">799</span>
-                </p>
-                <p className="text-2xl text-black dark:text-white">
-                  $<span className="text-red-600">699</span>
-                </p>
+            <div className="grid md:grid-cols-2 xs:grid-cols-2">
+              <Link to="/shop">
+                <div className="flex flex-col items-center md:items-start justify-center md:pl-15 lg:pl-32 p-10 text-center md:text-left">
+                  <h1 className="md:text-3xl lg:text-6xl text-black font-bold dark:text-white sm:text-sm">
+                    Flash Sale
+                  </h1>
+                  <p className="lg:w-80 md:w-64 sm:w-64 md:text-2xl py-5 text-black dark:text-white sm:text-sm">
+                    Special offers are on going. So buy now before offer ends
+                  </p>
+                  <button className="bg-gray-700 my-5 hover:bg-gray-800 rounded-lg transition-all px-6 py-2 mt-3 text-white">Shop</button>
                 </div>
-                <NavLink
-                  style={{ borderRadius: '35px' }}
-                  to="/shop"
-                  className="bg-gray-700 hover:bg-gray-800 transition-all px-6 py-2 mt-3 text-white"
-                >
-                  Buy Now <i className="fa-light fa-cart-circle-plus"></i>
-                </NavLink>
-              </div>
-              <div className="md:-mt-0 -mt-20 items-end justify-end flex">
-                <img src='https://i.ibb.co/BBfjnfk/rolex.webp' alt="Image1" className="md:block" />
+              </Link>
+              <div className="md:-mt-0 -mt-20 items-center justify-center flex py-4">
+                <img src='https://i.ibb.co/JvYkfgS/Untitled-2.png' alt="Image1" className="md:w-80 lg:w-11/12 sm:60 my-5" />
               </div>
             </div>
 
@@ -144,67 +72,25 @@ export default function Banners() {
           <SwiperSlide
             className="md:flex items-center justify-center"
             style={{ height: "30rem" }}>
-            <div className="grid md:grid-cols-2 xs:grid-cols-1">
-              <div className="flex flex-col items-center md:items-start justify-center md:pl-15 lg:pl-32 p-10 text-center md:text-left">
-                <h1 className="text-4xl text-black dark:text-white">
-                  Perfect fit for you
-                </h1>
-                <p className="text-2xl text-black dark:text-white">
-                  Nike sports shoes for all feet size. For you.
-                </p>
-                <div className="flex gap-2">
-                <p className="line-through text-xl text-blue-500">
-                  $<span className="text-blue-500">120</span>
-                </p>
-                <p className="text-2xl text-black dark:text-white">
-                  $<span className="text-red-600">113</span>
-                </p>
+            <div className="grid md:grid-cols-2 xs:grid-cols-2">
+              <Link to="/orderTrack">
+                <div className="flex flex-col items-center md:items-start justify-center md:pl-15 lg:pl-32 p-10 text-center md:text-left">
+                  <h1 className="md:text-3xl lg:text-6xl text-black font-bold dark:text-white sm:text-sm">
+                    Track Your Order
+                  </h1>
+                  <p className="lg:w-80 md:w-64 sm:w-64 md:text-2xl py-5 text-black dark:text-white sm:text-sm">
+                    Now you can track your orders also you can see the estimate delivery time
+                  </p>
+                  <button className="bg-gray-700 hover:bg-gray-800 my-5 rounded-lg transition-all px-6 py-2 mt-3 text-white">Track</button>
                 </div>
-                <NavLink
-                  style={{ borderRadius: '35px' }}
-                  to="/shop"
-                  className="bg-gray-700 hover:bg-gray-800 transition-all px-6 py-2 mt-3 text-white"
-                >
-                  Buy Now <i className="fa-light fa-cart-circle-plus"></i>
-                </NavLink>
-              </div>
-              <div className="md:-mt-0 -mt-36 items-end justify-end flex">
-                <img src='https://i.ibb.co/ZX9c3hS/nike.png' alt="Image1" className="md:block" />
+              </Link>
+              <div className="md:-mt-0 -mt-20 items-end justify-end flex py-4">
+                <BannerLottie2 />
               </div>
             </div>
 
           </SwiperSlide>
-          <SwiperSlide
-            className="md:flex items-center justify-center"
-            style={{ height: "30rem" }}>
-            <div className="grid md:grid-cols-2 xs:grid-cols-1">
-              <div className="flex flex-col items-center md:items-start justify-center md:pl-15 lg:pl-32 p-10 text-center md:text-left">
-                <h1 className="text-4xl text-black dark:text-white">Sony Ps5 <span className="text-red-500">+</span> <span className="text-blue-500">(controller)</span></h1>
-                <p className="text-2xl text-black dark:text-white">
-                  Sony playstation version 5 with controller
-                </p>
-                <div className="flex gap-2">
-                <p className="line-through text-xl text-blue-500">
-                  $<span className="text-blue-500">999</span>
-                </p>
-                <p className="text-2xl text-black dark:text-white">
-                  $<span className="text-red-600">985</span>
-                </p>
-                </div>
-                <NavLink
-                  style={{ borderRadius: '35px' }}
-                  to="/shop"
-                  className="bg-gray-700 hover:bg-gray-800 transition-all px-6 py-2 mt-3 text-white"
-                >
-                  Buy Now <i className="fa-light fa-cart-circle-plus"></i>
-                </NavLink>
-              </div>
-              <div className="md:-mt-0 -mt-10 items-end justify-end flex">
-                <img src='https://i.ibb.co/2d1cqfq/ps5.png' alt="Image1" className="md:block" />
-              </div>
-            </div>
 
-          </SwiperSlide>
         </Swiper>
       </div>
     </>

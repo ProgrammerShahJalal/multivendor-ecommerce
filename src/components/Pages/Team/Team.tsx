@@ -26,7 +26,7 @@ export default class App extends React.PureComponent<IAppProps> {
                 <span style={{ color: 'rgb(79, 70, 229)', fontWeight: 'bold' }}>
                   {/* Style will be inherited from the parent element */}
                   <Typewriter
-                    words={['Unite We stand!✊', 'Divide we fall!!']}
+                    words={['United We stand!✊', 'Divided we fall!!']}
                     loop={true}
                     cursor
                     typeSpeed={70}
@@ -180,7 +180,7 @@ export default class App extends React.PureComponent<IAppProps> {
                   </p>
                   <p className="mb-4 text-xs text-gray-100">Team Leader</p>
                   <p className="mb-4 text-xs tracking-wide text-gray-400">
-                    He is an absolute responsibility leader. He practices 3I: Inspiration, Influence, Impact. He focuses on the possibilities and takes responsibility to change the world.
+                    He is an absolute responsibility leader. He focuses on the possibilities and he is very sincere , coordinator, challenge taker, error handler, problem solver and innovative. He never gives up his hope. He always likes to try something new. He is really an impassioned person.
                   </p>
                   <div className="flex items-center justify-center space-x-3">
                     <a
@@ -212,7 +212,7 @@ export default class App extends React.PureComponent<IAppProps> {
                   </p>
                   <p className="mb-4 text-xs text-gray-100">Team Member</p>
                   <p className="mb-4 text-xs tracking-wide text-gray-400">
-                    He is a really good and honest and excellent coding person.
+                    He is a passionate person of the Remote Coder Unity Team. He loves to do something bigger because he is an enthusiastic person and a hard worker.
                   </p>
                   <div className="flex items-center justify-center space-x-3">
                     <a
@@ -244,7 +244,7 @@ export default class App extends React.PureComponent<IAppProps> {
                   </p>
                   <p className="mb-4 text-xs text-gray-100">Team Member</p>
                   <p className="mb-4 text-xs tracking-wide text-gray-400">
-                    He is a good and honest person and researcher.
+                    He is the research man of the Remote Coder Unity. He loves to search and explore more and more then he applies those. He also likes to work as an error handler.
                   </p>
                   <div className="flex items-center justify-center space-x-3">
                     <a
@@ -276,7 +276,7 @@ export default class App extends React.PureComponent<IAppProps> {
                   </p>
                   <p className="mb-4 text-xs text-gray-100">Team Member</p>
                   <p className="mb-4 text-xs tracking-wide text-gray-400">
-                    He is a really good, intelligent and honest person.
+                    He is the youngest member of Remote Coder Unity team. He is active, competitive and loves to work. He always likes to do something different and does.
                   </p>
                   <div className="flex items-center justify-center space-x-3">
                     <a
@@ -308,7 +308,7 @@ export default class App extends React.PureComponent<IAppProps> {
                   </p>
                   <p className="mb-4 text-xs text-gray-100">Team Member</p>
                   <p className="mb-4 text-xs tracking-wide text-gray-400">
-                    She is a giver of wisdom, honest, hard worker. Very calmly handles any kind of feature development or any challenge wisely. Very keen to work she is unique in eye-catching UI design.
+                    She is a giver of wisdom, honest, hard worker. Very calmly handles any kind of feature development or any challenge wisely. Very keen to work she is unique in eye-catching UI design and developing new feature.
                   </p>
                   <div className="flex items-center justify-center space-x-3">
                     <a
@@ -340,7 +340,7 @@ export default class App extends React.PureComponent<IAppProps> {
                   </p>
                   <p className="mb-4 text-xs text-gray-100">Team Member</p>
                   <p className="mb-4 text-xs tracking-wide text-gray-400">
-                    She is a really good and honest person.
+                    She is one of the Remote Coder Unity team members. She is hardworking, a fast learner, patentable, open hearted person. She is a dreamer, loves to dream and  fulfill that.
                   </p>
                   <div className="flex items-center justify-center space-x-3">
                     <a

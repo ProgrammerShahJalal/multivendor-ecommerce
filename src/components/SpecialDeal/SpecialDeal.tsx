@@ -37,19 +37,23 @@ const SpecialDeal: FC<SpecialDealProps> = ({ translate }) => {
 
 
     useEffect(() => {
-        fetch('https://morning-inlet-49130.herokuapp.com/features')
-            .then(res => res.json())
-            .then(data => setDeals(data))
+        if (deals.length === 0) {
+            fetch('https://morning-inlet-49130.herokuapp.com/features')
+                .then(res => res.json())
+                .then(data => setDeals(data))
+        }
 
-    }, [])
+    }, [deals])
 
     /* ----------special product fetch----------- */
     useEffect(() => {
-        fetch('https://morning-inlet-49130.herokuapp.com/specials')
-            .then(res => res.json())
-            .then(data => setSpecials(data))
+        if (specials.length === 0) {
+            fetch('https://morning-inlet-49130.herokuapp.com/specials')
+                .then(res => res.json())
+                .then(data => setSpecials(data))
+        }
 
-    }, [])
+    }, [specials])
 
     return (
         <div className="bg-gray-100 dark:bg-gray-800 mt-4">
@@ -59,21 +63,21 @@ const SpecialDeal: FC<SpecialDealProps> = ({ translate }) => {
             </h2>
             <div className="max-w-7xl mx-auto py-12 px-4 sm:px-6 lg:py-16 lg:px-8 lg:flex lg:items-center lg:justify-between">
                 <div className="mt-8 grid gap-4 lg:mt-0 grid-cols-1 justify-center items-center justify-self-center">
-                    <div className="hover:brightness-125 rounded-md shadow h-96 cursor-pointer bg-center bg-cover pt-3 pl-2" style={{
+                    <div className="hover:brightness-125 rounded-md shadow h-96 bg-center bg-cover pt-3 pl-2" style={{
                         backgroundImage: `url("https://i.ibb.co/dPjwmKP/electro-banner1-32.jpg")`
                     }}>
-                        <Link
-                            to="/"
+                        <div
+
                             className=" inline-flex items-center justify-center px-5 py-3 border border-transparent text-base font-medium rounded-md text-white"
                         >
                             <div className="w-60">
                                 <h2 className="text-md italic font-light">High Tech Products</h2>
                                 <h2 className="font-bold text-3xl tracking-wide leading-relaxed">Google Smart Home 2022</h2>
                                 <HashLink smooth to="/#blog">
-                                    <button className="text-gray-800 px-2 py-1 rounded-2xl bg-slate-100">Read More</button>
+                                    <button className="text-gray-800 px-2 py-1 rounded-2xl bg-slate-100 dark:bg-slate-600">Read More</button>
                                 </HashLink>
                             </div>
-                        </Link>
+                        </div>
                     </div>
                     <div className="rounded-md shadow">
                         <h2
@@ -84,10 +88,10 @@ const SpecialDeal: FC<SpecialDealProps> = ({ translate }) => {
                         <div className="grid grid-cols-1 gap-1">
                             {
                                 deals.map((deal) => (
-                                    <div className="w-64 flex justify-center items-center gap-2 cursor-pointer">
+                                    <div className="w-64 flex justify-center items-center gap-2 cursor-auto">
                                         <img className="w-20 bg-white" src={deal.img} alt="" />
-                                        <h3 className="text-black dark:text-white">{deal.title}</h3>
-                                        <p className="text-black dark:text-white">{deal.price}</p>
+                                        <h3 className="dark:text-white">{deal.title}</h3>
+                                        <p className="dark:text-white">{deal.price}</p>
                                     </div>
                                 ))
                             }
@@ -119,7 +123,6 @@ const SpecialDeal: FC<SpecialDealProps> = ({ translate }) => {
                         ))
                     }
                 </div>
-
             </div>
         </div>
     )

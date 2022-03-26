@@ -4,10 +4,10 @@ import { useDispatch } from 'react-redux';
 import { addToCart } from '../../redux/cartSlice';
 import Box from '@mui/material/Box';
 import Modal from '@mui/material/Modal';
-import Fade from '@mui/material/Fade';
 import ProductView from '../ProductView/ProductView';
 import ProductViewSm from '../ProductView/ProductViewSm';
-import { Rating } from '@mui/material';
+import { Backdrop, Rating } from '@mui/material';
+import { addToWishlist } from '../../redux/wishlistSlice';
 
 interface AllProductsProps {
     translate: (key: string) => string
@@ -16,11 +16,17 @@ const AllProducts: FC<AllProductsProps> = ({ translate }) => {
     const [products, setProducts] = useState<IProduct[]>([]);
     const [selectedProduct, setSelectedProduct] = useState<IProduct>()
     useEffect(() => {
-        fetch('https://guarded-ocean-73313.herokuapp.com/products')
-            .then(res => res.json())
-            .then(data => setProducts(data))
+        if (products.length === 0) {
+            fetch('https://young-springs-82149.herokuapp.com/products')
+                .then(res => res.json())
+                .then(data => {
+                    const filter2 = data.sort((a, b) => parseFloat(b.reg_price) - parseFloat(a.reg_price));
+                    setProducts(filter2)
+                })
+        }
 
-    }, [])
+    }, [products])
+    console.log(products);
 
 
     const dispatch = useDispatch()
@@ -35,15 +41,41 @@ const AllProducts: FC<AllProductsProps> = ({ translate }) => {
 
     };
     const handleClose = () => setOpen(false);
+    const style1 = {
+        position: 'absolute',
+        top: '50%',
+        left: '50%',
+        height: 500,
+        width: 800,
+        mx: "auto",
+        my: "auto",
+        transform: 'translate(-50%, -65%)',
+        bgcolor: '#ffffff',
+        boxShadow: 24,
+    };
+    const style2 = {
+        position: 'absolute',
+        top: '50%',
+        left: '50%',
+        width: 400,
+        mx: "auto",
+        my: "auto",
+        transform: 'translate(-50%, -50%)',
+        bgcolor: 'background.paper',
+        boxShadow: 24,
+    };
     return (
         <div className="container lg:px-0 md:px-10 px-10 pb-16 mx-auto">
-            <h2 className="text-3xl text-center font-extrabold text-gray-900 dark:text-white sm:text-4xl mb-10">
-                <span className="text-5xl pr-3" >{translate('latest')}</span>
-                <span className=" text-indigo-600 text-5xl">{translate('product')}</span>
-            </h2>
+            <div data-aos="fade-up"
+                data-aos-duration="3000">
+                <h2 className="text-3xl text-center font-extrabold text-gray-900 dark:text-white sm:text-4xl mb-10">
+                    <span className="text-5xl pr-3" >{translate('latest')}</span>
+                    <span className=" text-indigo-600 text-5xl">{translate('product')}</span>
+                </h2>
+            </div>
             <div className="grid place-content-center lg:grid-cols-4 md:grid-cols-3 grid-cols-1 gap-6">
                 {
-                    products.length === 0 ? <h2>No Products Found</h2> :
+                    products.length === 0 ? <h2 className='text-center'>No Products Found</h2> :
                         products.map((product: any) => {
                             const detailProduct = {
                                 _id: product._id,
@@ -57,9 +89,9 @@ const AllProducts: FC<AllProductsProps> = ({ translate }) => {
                                     email: product?.publisherDetails?.publisher || null
                                 }
                             }
-                            console.log(product);
 
-                            return <div className="bg-white shadow-inner overflow-hidden single-card">
+
+                            return <div key={product._id} className="bg-white shadow-inner overflow-hidden single-card lg:mx-6">
 
                                 <div className="relative group">
                                     <div style={{ height: '300px' }} className='z-100 overflow-hidden'>
@@ -72,47 +104,52 @@ const AllProducts: FC<AllProductsProps> = ({ translate }) => {
                                             <i className="fa-regular fa-magnifying-glass"></i>
                                         </button>
                                         {/* </Link> */}
-                                        <a className='text-white text-lg w-9 h-8 rounded-full bg-indigo-500 flex items-center justify-center hover:bg-gray-800 transition' href="/">
+                                        <button onClick={() => dispatch((addToWishlist(product)))} className='text-white text-lg w-9 h-8 rounded-full bg-indigo-500 flex items-center justify-center hover:bg-gray-800 transition'>
                                             <i className="fa-regular fa-heart"></i>
-                                        </a>
+                                        </button>
                                     </div>
 
                                 </div>
                                 <div style={{ height: '200px' }} className="pt-4 gb-3 px-4">
                                     <Link to={`/product/${product._id}`}>
-                                        <h4 className="font-medium text-xl mb-2 text-grey-800  transition">{product.title}</h4>
+                                        <h4 className="font-medium lg:text-xl md:text-base sm:text-sm mb-2 text-grey-800  transition">{product.title}</h4>
                                         <h5 className="font-bold text-sm mb-2 text-grey-800 transition">Category: {product.categories[0]?.label}</h5>
                                     </Link>
                                     <div className="flex items-baseline mb-1 space-x-2">
-                                        <p className="text-xl text-indigo-500 font-semibold">{product.sale_price}</p>
-                                        <p className="text-sm text-gray-400 line-through">{product.reg_price}</p>
+                                        <p className="text-xl text-indigo-500 font-semibold">${product.sale_price}</p>
+                                        <p className="text-sm text-gray-400 line-through">${product.reg_price}</p>
                                     </div>
                                     <div className="flex items-center">
                                         <Rating name="half-rating-read" defaultValue={5} precision={0.5} readOnly />
                                         {/* <div className="text-xs text-gray-500 ml-3">(1)</div> */}
                                     </div>
                                 </div>
-                                {product.attributes.length === 0 ? <button onClick={() => handleAddToCart(detailProduct)} className='block w-full py-1 text-center top-5 text-white bg-indigo-500 border border-indigo-500 rounded-b hover:bg-transparent hover:text-indigo-500 transition'>Add to Cart</button> : <Link to={`/product/${product._id}`}> <button className='block w-full py-1 text-center top-5 text-white bg-indigo-500 border border-indigo-500 rounded-b hover:bg-transparent hover:text-indigo-500 transition'>View Product</button></Link>}
+                                {product.attributes.length === 0 ? <button onClick={() => handleAddToCart(detailProduct)} className='block w-full py-1 text-center top-5 text-white bg-indigo-500 border border-indigo-500 hover:bg-transparent hover:text-indigo-500 transition'>Add to Cart</button> : <Link to={`/product/${product._id}`}> <button className='block w-full py-1 text-center top-5 text-white bg-indigo-500 border border-indigo-500 hover:bg-transparent hover:text-indigo-500 transition'>View Product</button></Link>}
                             </div>
                         })}
 
             </div>
 
-            <div className='px-3 mx-auto text-center'>
+            <div className='bg-white dark:bg-gray-800 text-center'>
                 <Modal
+                    BackdropComponent={Backdrop}
+                    onClose={handleClose}
                     open={open}
                 >
-                    <Fade in={open}>
-                        <Box>
-                            <button className='justify-end text-white select-none bg-red-500 rounded-full w-8 h-8' onClick={handleClose}>x</button>
-                            <div className='md:block mx-auto px-1 lg:block hidden'>
+                    <div>
+                        <Box className='md:block lg:block hidden' sx={style1}>
+                            <div style={{ width: '800px', height: '600px' }} className='mx-auto bg-white dark:bg-gray-800 px-1'>
                                 <ProductView selectedProduct={selectedProduct} />
                             </div>
-                            <div className='md:hidden lg:hidden block'>
+
+                        </Box>
+                        <Box className='md:hidden lg:hidden block' sx={style2}>
+                            <div className='bg-white dark:bg-gray-800'>
                                 <ProductViewSm selectedProduct={selectedProduct} />
                             </div>
+
                         </Box>
-                    </Fade>
+                    </div>
                 </Modal>
             </div>
         </div>
