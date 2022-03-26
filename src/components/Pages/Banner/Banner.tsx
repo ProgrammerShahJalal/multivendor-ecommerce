@@ -42,7 +42,7 @@ export default function Banners() {
                   <button className="bg-gray-700 hover:bg-gray-800 transition-all px-6 py-2 mt-3 text-white rounded-lg"> Contact Us</button>
                 </div>
               </Link>
-              <div className="md:-mt-0 -mt-20 items-end justify-end flex">
+              <div className="items-end justify-end flex">
                 <BannerLottie1 />
               </div>
             </div>
@@ -63,7 +63,7 @@ export default function Banners() {
                   <button className="bg-gray-700 hover:bg-gray-800 rounded-lg transition-all px-6 py-2 mt-3 text-white">Shop</button>
                 </div>
               </Link>
-              <div className="md:-mt-0 -mt-20 items-center justify-center flex py-4">
+              <div className="items-center justify-center flex py-4">
                 <img src='https://i.ibb.co/JvYkfgS/Untitled-2.png' alt="Image1" className="md:w-80 lg:w-11/12 sm:60 my-5" />
               </div>
             </div>
@@ -84,7 +84,7 @@ export default function Banners() {
                   <button className="bg-gray-700 hover:bg-gray-800 rounded-lg transition-all px-6 py-2 mt-3 text-white">Track</button>
                 </div>
               </Link>
-              <div className="md:-mt-0 -mt-20 items-end justify-end flex py-4">
+              <div className="items-end justify-end flex py-4">
                 <BannerLottie2 />
               </div>
             </div>
