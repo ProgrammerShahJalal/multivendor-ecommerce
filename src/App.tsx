@@ -95,7 +95,7 @@ function App() {
           <Helmet>
             <title>Unity Mart :: A Multi-Vendor E-commerce Website</title>
             <meta name="description" content="Shop from Unity Mart and enjoy our services." />
-            <meta name="keywords" content="Unity Mart, unity mart, Remote Coder Unity" />
+            <meta name="keywords" content="Unity Mart Multivendor" />
           </Helmet>
           <HeaderLanguage />
           <Routes>
