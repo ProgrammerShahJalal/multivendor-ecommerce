@@ -161,24 +161,6 @@ function App() {
             <Route path="/customer-service" element={<CustomersService />}></Route>
             <Route path="/privacy-policy" element={<PrivacyPolicy />}></Route>
 
-
-            {/* <Route path="/dashboard" element={<Suspense fallback={<div>Loading...</div>}><AdminRoute ><Dashboard /></AdminRoute></Suspense>} >
-              <Route path="media" element={<Suspense fallback={<div>Loading...</div>}><Media /></Suspense>}></Route>
-              <Route path="affiliate-dashboard" element={<Suspense fallback={<div>Loading...</div>}><Affiliate /></Suspense>}></Route>
-              <Route path="affiliate-links" element={<Suspense fallback={<div>Loading...</div>}><AffiliateLinks /></Suspense>}></Route>
-              <Route path="addProduct" element={<Suspense fallback={<div>Loading...</div>}><AddProduct /></Suspense>}></Route>
-              <Route path="orders" element={<Suspense fallback={<div>Loading...</div>}><AllOrders /></Suspense>}></Route>
-              <Route path='detailed-order/:id' element={<Suspense fallback={<div>Loading...</div>}><DetailedOrder /></Suspense>} />
-              <Route path="categories" element={<Suspense fallback={<div>Loading...</div>}><Categories /></Suspense>}></Route>
-              <Route path="attributes" element={<Suspense fallback={<div>Loading...</div>}><Attributes /></Suspense>}></Route>
-              <Route path="products" element={<Suspense fallback={<div>Loading...</div>}><Products /></Suspense>}></Route>
-              <Route path="users" element={<Suspense fallback={<div>Loading...</div>}><Users /></Suspense>}></Route>
-              <Route path="user/:id" element={<Suspense fallback={<div>Loading...</div>}><UsersProfileDetails /></Suspense>}></Route>
-              <Route path='edit-product/:id' element={<Suspense fallback={<div>Loading...</div>}><AdminRoute ><EditProduct /></AdminRoute></Suspense>} />
-              <Route path="vendors" element={<Suspense fallback={<div>Loading...</div>}><Vendors /></Suspense>}></Route>
-              <Route path="vendor-profile/:id" element={<Suspense fallback={<div>Loading...</div>}><VendorProfileDetails /></Suspense>}></Route>
-            </Route> */}
-
             <Route path='*' element={<NotFound />} />
           </Routes>
           <Footer />
