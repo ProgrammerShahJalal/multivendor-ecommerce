@@ -15,6 +15,7 @@ const About = () => {
           name="description"
           content="Learn more about Unity Mart."
         />
+        <meta name="keywords" content="Unity Mart, unity mart website" />
         <link rel="canonical" href="/about" />
       </Helmet>
       <div className='bg-gray-200 dark:bg-slate-800'>

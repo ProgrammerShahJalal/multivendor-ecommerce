@@ -62,6 +62,7 @@ const Contact = () => {
                     name="description"
                     content="Feel free to contact us."
                 />
+                <meta name="keywords" content="Unity Mart, unity mart website" />
                 <link rel="canonical" href="/contact" />
             </Helmet>
             <div>
