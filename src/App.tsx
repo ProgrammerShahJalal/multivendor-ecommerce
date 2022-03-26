@@ -51,6 +51,8 @@ import WishList from "./components/Pages/WishList/WishList";
 
 
 
+
+
 const Dashboard = lazy(() => import("./components/Dashboard/Dashboard/Dashboard"));
 const AllOrders = lazy(() => import("./components/Dashboard/Order/allOrder"));
 const Media = lazy(() => import("./components/Dashboard/Media/Media"));
@@ -143,7 +145,9 @@ function App() {
               <Route path="users/:id" element={<Suspense fallback={<div>Loading...</div>}><UserProfileDetails /></Suspense>}></Route>
               <Route path='edit-product/:id' element={<Suspense fallback={<div>Loading...</div>}><AdminRoute ><EditProduct /></AdminRoute></Suspense>} />
               <Route path="vendors" element={<Suspense fallback={<div>Loading...</div>}><Vendors /></Suspense>}></Route>
+              <Route path="profile" element={<Suspense fallback={<div>Loading...</div>}><VendorProfileDetails /></Suspense>}></Route>
               <Route path="user/vendor/:slug" element={<Suspense fallback={<div>Loading...</div>}><VendorProfileDetails /></Suspense>}></Route>
+              <Route path="notfound" element={<NotFound />}></Route>
             </Route>
 
             {/* footer route */}

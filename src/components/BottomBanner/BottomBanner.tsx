@@ -45,7 +45,7 @@ export default class BottomBanner extends PureComponent<Props> {
 									</div>
 									<div className="content">
 										<h5 className='text-gray-700 dark:text-white'>Xbox Microsoft Edition</h5>
-										<h3 className='text-gray-700 dark:text-white'>Color: <span className="span">White</span><br />Up to<span className='span'> 30%</span></h3>
+										<h3 className='text-gray-700 dark:text-white'>Color: <span className="text-indigo-600">White</span><br />Up to<span className='text-indigo-600'> 30%</span></h3>
 										<Link to="/shop">Shop Now</Link>
 									</div>
 								</div>
@@ -57,7 +57,7 @@ export default class BottomBanner extends PureComponent<Props> {
 									</div>
 									<div className="content">
 										<h5 className='text-gray-700 dark:text-white'>Sony Ps5</h5>
-										<h3 className='text-gray-700 dark:text-white'>Premium <span className='span'>edition</span> <br /> up to <span className='span'> 10%</span></h3>
+										<h3 className='text-gray-700 dark:text-white'>Premium <span className='text-indigo-600'>edition</span> <br /> up to <span className='text-indigo-600'> 10%</span></h3>
 										<Link to="/shop" className="btn">Shop Now</Link>
 									</div>
 								</div>

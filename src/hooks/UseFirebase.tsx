@@ -93,7 +93,10 @@ export const UseFirebase = (
                     addUserToDB(userCredential.user, userRole)
                     if (userRole === "vendor") {
                         GetUserDetails(email, setUserDetails, setIsLoading)
-                        navigate('/vendorLogin')
+                        if (localStorage.getItem("userDetails")) {
+                            navigate('/vendorLogin')
+                        }
+
                     } else {
                         navigate(location?.state?.from || '/')
                     }

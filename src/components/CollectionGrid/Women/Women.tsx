@@ -7,6 +7,7 @@ import ProductViewSm from '../../ProductView/ProductViewSm';
 import { Link } from 'react-router-dom';
 import { useDispatch } from 'react-redux';
 import { addToCart } from '../../../redux/cartSlice';
+import { addToWishlist } from '../../../redux/wishlistSlice';
 interface ProductState {
     products: {
         title: string
@@ -109,9 +110,9 @@ const Women = () => {
                                             <i className="fa-regular fa-magnifying-glass"></i>
                                         </button>
                                         {/* </Link> */}
-                                        <a className='text-white text-lg w-9 h-8 rounded-full bg-indigo-500 flex items-center justify-center hover:bg-gray-800 transition' href="/">
+                                        <button onClick={() => dispatch((addToWishlist(detailProduct)))} className='text-white text-lg w-9 h-8 rounded-full bg-indigo-500 flex items-center justify-center hover:bg-gray-800 transition'>
                                             <i className="fa-regular fa-heart"></i>
-                                        </a>
+                                        </button>
                                     </div>
 
                                 </div>

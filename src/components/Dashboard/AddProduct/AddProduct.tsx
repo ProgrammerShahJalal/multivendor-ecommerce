@@ -136,15 +136,16 @@ const AddProduct: React.FunctionComponent = () => {
         if (selectedImages.length === 0) {
             return alert('please add an image')
         }
-
+        const date = new Date()
         const newProduct = {
             ...productValue,
             images: selectedImages,
             categories,
+            date,
             product_des: content,
             newAttributes,
             vendor: userDetails.role,
-            store: userDetails.store,
+            // store: userDetails.slug || "",
             publisher: userDetails.email
         }
         console.log(newProduct, 'newProduct');

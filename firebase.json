@@ -1,6 +1,13 @@
 {
   "hosting": {
     "public": "build",
+    "redirects": [
+      {
+        "source": "/",
+        "destination": "https://unitymart-ecommerce.web.app",
+        "type": 301
+      }
+    ],
     "rewrites": [
       {
         "source": "**",

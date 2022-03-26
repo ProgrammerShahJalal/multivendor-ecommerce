@@ -41,9 +41,9 @@ const About = () => {
             </div>
           </div>
 
-          {/* <div className='container'>
+          <div className='container'>
             <div className='grid md:grid-cols-2 sm:grid-cols-1 gap-0 items-center justify-center'>
-              <div style={{height:'200px',width:'400px'}} className='w-50'>
+              <div className='w-50'>
                 <img src="https://template.annimexweb.com/diva/assets/images/about/about-us-image5.jpg" className="w-full" alt='' />
               </div>
               <div className='w-50 px-5 text-center'>
@@ -53,9 +53,9 @@ const About = () => {
                 <button className="mt-2 text-white bg-purple-600 justify-center px-3 py-2 rounded-md hover:bg-green-500 transition"><HomePopUp /></button>
               </div>
             </div>
-          </div> */}
+          </div>
 
-          {/* <div className='container mx-auto my-5'>
+          <div className='container mx-auto'>
             <div className='grid grid-cols-1 md:grid-cols-2 gap-0 items-center justify-center'>
               <div className='w-50  px-7 text-center py-3'>
                 <h2 className='text-2xl font-medium text-gray-800 dark:text-white uppercase mb-6'>Our Mission</h2>
@@ -63,11 +63,11 @@ const About = () => {
                 <Link to="/team">
                   <button className="mt-2 text-white bg-green-500 justify-center px-3 py-2 rounded-md hover:bg-purple-800 transition">Meet Our Team</button></Link>
               </div>
-              <div style={{height:'200px',width:'400px'}} className='w-50'>
+              <div className='w-50'>
                 <img src="https://images.pexels.com/photos/135620/pexels-photo-135620.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940" alt='' />
               </div>
             </div>
-          </div> */}
+          </div>
           <div>
             <TimeLine />
           </div>

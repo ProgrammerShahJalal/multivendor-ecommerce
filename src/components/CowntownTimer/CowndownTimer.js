@@ -11,6 +11,7 @@ const CowndownTimer = ({ offerTill }) => {
 
     let interval;
 
+    // eslint-disable-next-line react-hooks/exhaustive-deps
     const startTimer = () => {
         const countDownDate = new Date(date).getTime();
 

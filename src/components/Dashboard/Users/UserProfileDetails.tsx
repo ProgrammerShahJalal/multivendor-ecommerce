@@ -32,6 +32,8 @@ const UserProfileDetails = () => {
     const updateProfile = (email) => {
 
         if (fieldsValue.length !== 0) {
+
+
             setIsLoading(true)
             fetch(`https://young-springs-82149.herokuapp.com/user/update-profile?email=${email}`, {
                 method: 'PUT',
@@ -53,7 +55,9 @@ const UserProfileDetails = () => {
 
                 })
         } else {
-            // navigate('/dashboard/vendors')
+            setIsTrue(!isTrue)
+
+            navigate('/dashboard/vendors')
         }
 
     }

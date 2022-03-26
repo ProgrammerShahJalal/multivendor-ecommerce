@@ -7,9 +7,9 @@ import "swiper/css/free-mode";
 import "swiper/css/navigation";
 import "swiper/css/pagination";
 import "swiper/css/thumbs";
-import { NavLink } from "react-router-dom";
 import BannerLottie1 from "../../Lottie/BannerLottie1";
 import BannerLottie2 from "../../Lottie/BannerLottie2";
+import { Link } from "react-router-dom";
 
 
 SwiperCore.use([Autoplay])
@@ -38,13 +38,15 @@ export default function Banners() {
                 <p className="lg:w-80 md:w-64 sm:w-64 md:text-2xl py-5 text-black dark:text-white sm:text-sm">
                   Register as a affiliate user and earn unlimited from us.
                 </p>
-                <NavLink
+                <Link
                   style={{ borderRadius: '35px' }}
                   to="/register"
                   className="bg-gray-700 hover:bg-gray-800 transition-all px-6 py-2 mt-3 text-white"
                 >
+                  <button>
                   Register
-                </NavLink>
+                  </button>
+                </Link>
               </div>
               <div className="md:-mt-0 -mt-20 items-end justify-end flex">
                 <BannerLottie1 />
@@ -63,13 +65,15 @@ export default function Banners() {
                 <p className="lg:w-80 md:w-64 sm:w-64 md:text-2xl py-5 text-black dark:text-white sm:text-sm">
                   Special offers are on going. So buy now before offer ends
                 </p>
-                <NavLink
+                <Link
                   style={{ borderRadius: '35px' }}
                   to="/shop"
                   className="bg-gray-700 hover:bg-gray-800 transition-all px-6 py-2 mt-3 text-white"
                 >
+                  <button>
                   Shop
-                </NavLink>
+                  </button>
+                </Link>
               </div>
               <div className="md:-mt-0 -mt-20 items-center justify-center flex py-4">
                 <img src='https://i.ibb.co/JvYkfgS/Untitled-2.png' alt="Image1" className="md:w-80 lg:w-11/12 sm:60 my-5" />
@@ -88,13 +92,15 @@ export default function Banners() {
                 <p className="lg:w-80 md:w-64 sm:w-64 md:text-2xl py-5 text-black dark:text-white sm:text-sm">
                   Now you can track your orders also you can see the estimate delivery time
                 </p>
-                <NavLink
+                <Link
                   style={{ borderRadius: '35px' }}
                   to="/orderTrack"
                   className="bg-gray-700 hover:bg-gray-800 transition-all px-6 py-2 mt-3 text-white"
                 >
+                  <button>
                   Track
-                </NavLink>
+                  </button>
+                </Link>
               </div>
               <div className="md:-mt-0 -mt-20 items-end justify-end flex py-4">
                 <BannerLottie2 />
