@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from 'react';
+import React, { useLayoutEffect, useState } from 'react';
 import { useParams } from 'react-router-dom';
 
 import UseAuth from '../../hooks/UseAuth';
@@ -16,13 +16,18 @@ const OfferDetails = () => {
     const { user } = UseAuth();
 
     const [dealDetails, setDealDetails] = useState([])
-    useEffect(() => {
-        fetch('https://morning-inlet-49130.herokuapp.com/specials')
-            .then(res => res.json())
-            .then((data) => {
-                const onlyDeal = data.filter(detail => detail._id === id)
-                setDealDetails(onlyDeal);
-            })
+    useLayoutEffect(() => {
+        function updateScreen(time) {
+            // Make visual updates here.
+            fetch('https://morning-inlet-49130.herokuapp.com/specials')
+                .then(res => res.json())
+                .then((data) => {
+                    const onlyDeal = data.filter(detail => detail._id === id)
+                    setDealDetails(onlyDeal);
+                })
+        }
+
+        requestAnimationFrame(updateScreen);
     }, [id])
 
     const { title, hoverImg, img, details, salePrice, processor, vendorName, category, display, RAM, brands, rating } = dealDetails[0] || {};
@@ -53,14 +58,13 @@ const OfferDetails = () => {
     return (
         <div className="bg-gray-50 dark:bg-gray-800 py-5">
             <h2 className='text-xl font-bold text-center'>{title}</h2>
-            <div className="grid lg:grid-cols-2 md:grid-cols-2 sm:grid-cols-1 xm:grid-cols-1 gap-3 sm:gap-0 justify-center items-center">
+            <div className="grid lg:grid-cols-2 md:grid-cols-2 grid-cols-1 gap-3 sm:gap-0 justify-center items-center">
                 <div>
                     <Swiper
                         style={{
                             "--swiper-navigation-color": "#ff7b00",
                             "--swiper-navigation-size": "30px"
                         }}
-                        loop
                         spaceBetween={10}
                         navigation={true}
                         modules={[FreeMode, Navigation, Thumbs]}
@@ -76,14 +80,6 @@ const OfferDetails = () => {
                                 <Magnifier mgShape='circle' src={img} className='bg-cover select-none' />
                             </div>
                         </SwiperSlide>
-                        <div className='lg:hidden md:hidden sm:block mx-auto px-8 w-80 sm:py-0'>
-                            <p>Vendor Name: {vendorName}</p>
-                            <p>Brands: {brands}</p>
-                            <p>Category: {category}</p>
-                            <p>Display: {display}</p>
-                            <p>RAM: {RAM}</p>
-                            <p>Comments: {details}</p>
-                        </div>
                     </Swiper>
                 </div>
                 <div>
