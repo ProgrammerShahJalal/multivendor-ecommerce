@@ -48,6 +48,7 @@ import DashboardUI from "./components/Dashboard/Dashboard/DashboardUI.js";
 import UserMainProfile from "./components/Pages/UserMainProfile/UserMainProfile";
 import UserProfileDetails from "./components/Dashboard/Users/UserProfileDetails";
 import WishList from "./components/Pages/WishList/WishList";
+import { Helmet } from "react-helmet-async";
 
 
 
@@ -91,6 +92,11 @@ function App() {
     <div className="dark:bg-slate-800" >
       <AuthProvider>
         <Router>
+          <Helmet>
+            <title>Unity Mart :: A Multi-Vendor E-commerce Website</title>
+            <meta name="description" content="Shop from Unity Mart and enjoy our services." />
+            <meta name="keywords" content="Unity Mart, Multivendor, ecommerce" />
+          </Helmet>
           <HeaderLanguage />
           <Routes>
             <Route path='/' element={<Home />} />
@@ -118,8 +124,8 @@ function App() {
             <Route path='/specials/details/:id' element={<PrivateRoute><DealDetails /></PrivateRoute>} />
             <Route path='/product/:id' element={<SingleProduct />} />
             {/* USER DASHBOARD */}
-            <Route path="/profile" element={<PrivateRoute><UserProfile/></PrivateRoute>}>
-              <Route path="" element={<div className="mx-auto my-auto"><UserMainProfile/></div>}></Route>
+            <Route path="/profile" element={<PrivateRoute><UserProfile /></PrivateRoute>}>
+              <Route path="" element={<div className="mx-auto my-auto"><UserMainProfile /></div>}></Route>
               <Route path="dashboard" element={<UserDashboardHome />}></Route>
               <Route path="profile" element={<UserMainProfile />}></Route>
               <Route path="orders" element={<UserOrders />}></Route>
