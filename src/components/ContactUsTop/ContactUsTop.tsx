@@ -11,7 +11,7 @@ export default class App extends React.PureComponent<IAppProps> {
     return (
       <div className='relative bg-white dark:bg-slate-800 overflow-hidden '>
 
-        <div className='relative z-10 pb-8 sm:pb-16 md:pb-20 lg:max-w-2xl lg:w-full lg:pb-28 xl:pb-32'>
+        <div className='relative pb-8 sm:pb-16 md:pb-20 lg:max-w-2xl lg:w-full lg:pb-28 xl:pb-32'>
 
 
           <main className="mx-auto max-w-7xl px-8 pt-10 ">
