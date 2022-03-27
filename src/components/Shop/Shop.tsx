@@ -149,7 +149,7 @@ export default function Shop() {
             <div className="relative z-10 flex items-end justify-end pt-24 pb-6 border-b border-gray-200 ">
               {/* <ProductSearchBar /> */}
               <div className="flex items-center">
-                <Menu as="div" className="relative inline-block text-left">
+                {/* <Menu as="div" className="relative inline-block text-left">
                   <div>
                     <Menu.Button className="group inline-flex justify-center text-sm font-medium text-gray-700 hover:text-gray-900">
                       Sort
@@ -171,7 +171,7 @@ export default function Shop() {
                   >
 
                   </Transition>
-                </Menu>
+                </Menu> */}
                 <div className="mx-2 flex items-end justify-end content-end gap-2">
                   <button onClick={() => setGridShow(true)} className={gridShow === true ? 'bg-indigo-500 w-8 h-8 rounded-sm text-white p-2' : 'text-indigo-500 w-8 h-8 border-indigo-500 rounded-sm border p-2'} type="button">
                     <i className="fa-thin fa-grid flex items-center justify-center object-contain"></i>
