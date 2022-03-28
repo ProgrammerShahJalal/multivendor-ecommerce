@@ -210,7 +210,7 @@ const SingleProduct = () => {
 
                                             </div>
                                             <span className="title-font font-sm  text-gray-900">Category: <b>{product.categories[0].label}</b></span>
-                                            <div className="grid grid-cols-1 md:grid-cols-4 mt-4">
+                                            <div className="grid grid-cols-1 md:grid-cols-2 gap-5">
                                                 <div className="inline-block align-bottom mr-5">
                                                     <span className="text-2xl leading-none align-baseline">$</span>
                                                     <span className="font-bold text-5xl leading-none align-baseline">{product.sale_price ? product.sale_price : product.reg_price} </span>
@@ -223,7 +223,7 @@ const SingleProduct = () => {
                                                 </div>
                                                 {/* <span className="title-font font-medium text-2xl text-gray-900">${product.price | 0}        <span className='line-through text-gray-500'>{product?.sale_price}</span>
                                                 </span> */}
-                                                <button onClick={() => handleAddToCart(detailProduct)} className="flex ml-auto text-white bg-indigo-500 border-0 py-2 px-6  focus:outline-none hover:bg-indigo-600 rounded items-center">Add to cart</button>
+                                                <button onClick={() => handleAddToCart(detailProduct)} className="grid grid-cols-1 text-white bg-indigo-500 border-0 py-2 px-6  focus:outline-none hover:bg-indigo-600 rounded items-center">Add to cart</button>
 
                                                 <button onClick={() => dispatch((addToWishlist(detailProduct)))} className="rounded-full w-10 h-10 bg-gray-200 p-0 border-0 inline-flex items-center justify-center text-gray-500 ml-4">
                                                     <svg fill="currentColor" stroke-linecap="round" stroke-linejoin="round" strokeWidth="2" className="w-5 h-5" viewBox="0 0 24 24">
