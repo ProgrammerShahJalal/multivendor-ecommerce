@@ -245,9 +245,10 @@ const SingleProduct = () => {
                                 <div>
                                     <h2 className='text-lg font-bold'>Reviews of {product.title}</h2>
                                     <div className='grid grid-cols-1 md:grid-cols-2 justify-center items-center'>
-                                        <div>
+                                        <div className='grid grid-cols-1'>
                                             <h2 className='text-4xl font-bold'>4.8 <span className='text-gray-400 text-2xl'>/5</span></h2>
                                             <Rating name="half-rating-read" defaultValue={4.5} precision={0.5} readOnly />
+                                            <span>14 reviews</span>
                                         </div>
                                         <div className='grid grid-cols-1'>
                                             <div>
