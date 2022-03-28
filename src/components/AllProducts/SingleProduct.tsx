@@ -7,6 +7,7 @@ import { addToCart } from '../../redux/cartSlice';
 import RelatedProducts from '../RelatedProducts/RelatedProducts';
 import { addToWishlist } from '../../redux/wishlistSlice';
 import { ShareButton } from 'react-custom-share';
+import Rating from '@mui/material/Rating';
 
 const SingleProduct = () => {
     const { id } = useParams();
@@ -69,7 +70,7 @@ const SingleProduct = () => {
     }
     const shareFBButtonProps = {
 
-        url: 'https://unity-mart.netlify.app/',
+        url: 'https://unitymart-c522a.web.app/',
         network: "Facebook",
         text: 'See what I just bought from Unity Mart',
         longtext:
@@ -156,25 +157,11 @@ const SingleProduct = () => {
                                         <div>
                                             <h2 className="text-sm title-font text-gray-500 tracking-widest">Brand: <b>{product.brand}</b></h2>
                                             <h1 className="text-gray-900 text-3xl title-font font-medium mb-1">{product.title}</h1>
-                                            <div className="flex mb-4">
-                                                <span className="flex items-center">
-                                                    <svg fill="currentColor" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" strokeWidth="2" className="w-4 h-4 text-red-500" viewBox="0 0 24 24">
-                                                        <path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"></path>
-                                                    </svg>
-                                                    <svg fill="currentColor" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" strokeWidth="2" className="w-4 h-4 text-red-500" viewBox="0 0 24 24">
-                                                        <path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"></path>
-                                                    </svg>
-                                                    <svg fill="currentColor" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" strokeWidth="2" className="w-4 h-4 text-red-500" viewBox="0 0 24 24">
-                                                        <path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"></path>
-                                                    </svg>
-                                                    <svg fill="currentColor" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" strokeWidth="2" className="w-4 h-4 text-red-500" viewBox="0 0 24 24">
-                                                        <path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"></path>
-                                                    </svg>
-                                                    <svg fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" strokeWidth="2" className="w-4 h-4 text-orange-500" viewBox="0 0 24 24">
-                                                        <path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"></path>
-                                                    </svg>
-                                                    <span className="text-gray-600 ml-3">4 Reviews</span>
-                                                </span>
+                                            <div className="grid grid-cols-2 justify-center items-center mb-4">
+                                                <div className='grid grid-cols-2 justify-center items-center gap-4'>
+                                                    <Rating name="half-rating-read" defaultValue={4.5} precision={0.5} readOnly /> <span className='text-sm'>14 Reviews</span>
+                                                </div>
+
                                                 <div className='flex ml-3 pl-3 py-2 border-l-2 border-gray-200 gap-2'>
                                                     <ShareButton {...shareFBButtonProps}><i className="fa-brands fa-facebook-square text-xl text-blue-600"></i></ShareButton>
                                                     <ShareButton {...shareLNButtonProps}><i className="fa-brands fa-linkedin text-blue-600 text-xl"></i></ShareButton>
@@ -252,8 +239,38 @@ const SingleProduct = () => {
                         }
 
                     </div>
+                    {
+                        productsDetails.map(product => {
+                            return (
+                                <div>
+                                    <h2 className='text-lg font-bold'>Reviews of {product.title}</h2>
+                                    <div className='grid grid-cols-1 md:grid-cols-2 justify-center items-center'>
+                                        <div>
+                                            <h2 className='text-4xl font-bold'>4.8 <span className='text-gray-400 text-2xl'>/5</span></h2>
+                                            <Rating name="half-rating-read" defaultValue={4.5} precision={0.5} readOnly />
+                                        </div>
+                                        <div className='grid grid-cols-1'>
+                                            <div>
+                                                <Rating name="read-only" value={5} readOnly /> <span>(13)</span>
+                                            </div>
+                                            <div>
+                                                <Rating name="read-only" value={4} readOnly /> <span>(1)</span>
+                                            </div>
+                                            <div>
+                                                <Rating name="read-only" value={3} readOnly /> <span>(0)</span>
+                                            </div>
+                                            <div>
+                                                <Rating name="read-only" value={2} readOnly /> <span>(0)</span>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
 
-                    <h2>Reviews</h2>
+
+                            )
+                        })
+                    }
+
                 </div>
                 <div className='bg-slate-300 mb-10 mt-10 shadow'>
                     <h2 className='text-2xl text-center py-3'>Related Products</h2>
