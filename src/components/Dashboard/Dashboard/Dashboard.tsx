@@ -26,7 +26,7 @@ function Dashboard() {
                 <title>Dashboard :: Unity Mart</title>
                 <meta
                     name="description"
-                    content="Shop from Unity Mart."
+                    content="Unity Mart Dashboard."
                 />
                 <link rel="canonical" href="/dashboard/dashboardGlance" />
             </Helmet>

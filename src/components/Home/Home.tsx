@@ -35,10 +35,10 @@ export default function Home() {
     return (
         <>
             <Helmet>
-                <title>Unity Mart :: A Multi-Vendor e-commerce Website</title>
+                <title>Home - Unity Mart :: A Multi-Vendor e-commerce Website</title>
                 <meta
                     name="description"
-                    content="Shop from Unity Mart."
+                    content="Shop from Unity Mart. Big dream and big sale."
                 />
                 <link rel="canonical" href="/home" />
             </Helmet>

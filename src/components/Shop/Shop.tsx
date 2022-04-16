@@ -45,7 +45,7 @@ export default function Shop() {
         <title>Shop :: Unity Mart</title>
         <meta
           name="description"
-          content="Shop from Unity Mart."
+          content="Shop from Unity Mart because this is your first priority shop."
         />
         <link rel="canonical" href="/shop" />
       </Helmet>

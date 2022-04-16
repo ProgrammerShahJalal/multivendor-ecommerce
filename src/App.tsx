@@ -94,6 +94,8 @@ function App() {
         <Router>
           <Helmet>
             <title>Unity Mart :: A Multi-Vendor E-commerce Website</title>
+            <meta name="description"
+              content="Unity Mart is a multi vendor E-commerce website powered by Remote Coder Unity Team." data-rh="true" />
             <meta name="keywords" content="unity mart website" />
           </Helmet>
           <HeaderLanguage />
