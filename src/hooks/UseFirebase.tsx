@@ -101,12 +101,11 @@ export const UseFirebase = (
                     } else {
                         navigate(location?.state?.from || '/')
                     }
-                }).catch((error) => { setError(error) });
+                }).catch((error) => { setError(error.code.split('auth/',)[1]) });
             })
             .catch((error) => {
 
-                const errorMessage = error.message;
-                setError(errorMessage)
+                setError(error.code.split('auth/',)[1])
             }).finally(() => setIsLoading(false));
     }
 
@@ -155,8 +154,8 @@ export const UseFirebase = (
                 setError('')
             })
             .catch((error) => {
-                const errorMessage = error.message;
-                setError(errorMessage)
+
+                setError(error.code.split('auth/',)[1])
             }).finally(() => setIsLoading(false));
     }
     // GOOGLE SIGN
@@ -174,8 +173,7 @@ export const UseFirebase = (
                     navigate(location?.state?.from || '/')
                 }
             }).catch((error: any) => {
-                const errorMessage = error.message;
-                setError(errorMessage)
+                setError(error.code.split('auth/',)[1])
             });
     }
     // Facebook sign in
@@ -187,8 +185,8 @@ export const UseFirebase = (
                 setUser(user)
             })
             .catch((error: any) => {
-                const errorMessage = error.message;
-                setError(errorMessage)
+
+                setError(error.code.split('auth/',)[1])
             });
     }
     // CHECK ADMIN 
@@ -223,7 +221,7 @@ export const UseFirebase = (
             })
             localStorage.removeItem("userDetails");
         }).catch((error) => {
-            setError(error.message)
+            setError(error.code.split('auth/',)[1])
         });
     }
 

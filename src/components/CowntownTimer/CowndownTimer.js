@@ -57,4 +57,4 @@ const CowndownTimer = ({ offerTill }) => {
     );
 }
 
-export default CowndownTimer
+export default CowndownTimer;
