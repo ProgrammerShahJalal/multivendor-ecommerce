@@ -8,7 +8,7 @@ export default function AddBlogForm() {
 
     const onSubmit = (data: any) => {
         console.log(data);
-        axios.post('https://morning-inlet-49130.herokuapp.com/blogs', data)
+        axios.post('https://unitymart-server.onrender.com/blogs', data)
             .then(res => {
                 if (res.data.insertedId) {
                     alert('Added a New Blog Successfully!');

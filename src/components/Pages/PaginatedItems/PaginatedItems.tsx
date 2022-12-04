@@ -20,7 +20,7 @@ const PaginatedItems = ({ itemsPerPage }: any) => {
             // Make visual updates here.
             setIsLoading(true)
             if (products.length === 0) {
-                fetch('https://morning-inlet-49130.herokuapp.com/products')
+                fetch('https://unitymart-server.onrender.com/products')
                     .then(res => res.json())
                     .then(data => {
                         setproducts(data)

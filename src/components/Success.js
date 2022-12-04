@@ -14,7 +14,7 @@ const Success = () => {
     const [orders, setOrders] = useState([]);
 
     useEffect(() => {
-        fetch(`https://morning-inlet-49130.herokuapp.com/orders/${id}`)
+        fetch(`https://unitymart-server.onrender.com/orders/${id}`)
             .then(res => res.json())
             .then(data => {
                 // console.log(data, 'fetch');
@@ -29,7 +29,7 @@ const Success = () => {
             val_id: orders?.val_id
         }
 
-        axios.post(`https://morning-inlet-49130.herokuapp.com/validate`, data)
+        axios.post(`https://unitymart-server.onrender.com/validate`, data)
             .then(res => {
                 if (res.data) {
                     console.log(res.data, 'data', '-', data, 'orders');

@@ -31,7 +31,7 @@ export default function OfferDeal() {
         function updateScreen(time) {
             // Make visual updates here.
             if (specials.length === 0) {
-                fetch('https://morning-inlet-49130.herokuapp.com/specials')
+                fetch('https://unitymart-server.onrender.com/specials')
                     .then(res => res.json())
                     .then(data => setSpecials(data))
             }

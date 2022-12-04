@@ -16,7 +16,7 @@ const KidsProductDetails = () => {
 
   const [productDetail, setProductDetail] = useState([])
   useEffect(() => {
-    fetch('https://morning-inlet-49130.herokuapp.com/kids')
+    fetch('https://unitymart-server.onrender.com/kids')
       .then(res => res.json())
       .then((data) => {
         const foundData = data.filter(detail => detail._id === id)

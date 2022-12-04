@@ -9,7 +9,7 @@ const MakeAdmin = () => {
 
     const handleAdminSubmit = e => {
         const user = { email }
-        fetch('https://morning-inlet-49130.herokuapp.com/users/admin', {
+        fetch('https://unitymart-server.onrender.com/users/admin', {
             method: 'PUT',
             headers: {
                 'content-type': 'application/json'

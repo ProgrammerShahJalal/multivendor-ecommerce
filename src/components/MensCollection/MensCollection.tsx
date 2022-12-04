@@ -49,7 +49,7 @@ const MensCollection = () => {
         boxShadow: 24,
     };
     useEffect(() => {
-        fetch('https://morning-inlet-49130.herokuapp.com/mens')
+        fetch('https://unitymart-server.onrender.com/mens')
             .then(res => res.json())
             .then(data => setProducts(data))
     }, [])

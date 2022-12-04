@@ -17,7 +17,7 @@ const OfferDetails = () => {
 
     const [dealDetails, setDealDetails] = useState([])
     useEffect(() => {
-        fetch('https://morning-inlet-49130.herokuapp.com/specials')
+        fetch('https://unitymart-server.onrender.com/specials')
             .then(res => res.json())
             .then((data) => {
                 const onlyDeal = data.filter(detail => detail._id === id)
@@ -37,7 +37,7 @@ const OfferDetails = () => {
             product_image2: hoverImg,
             total_amount: salePrice
         }
-        fetch(`https://morning-inlet-49130.herokuapp.com/init`, {
+        fetch(`https://unitymart-server.onrender.com/init`, {
             method: 'POST',
             headers: {
                 "content-type": "application/json"

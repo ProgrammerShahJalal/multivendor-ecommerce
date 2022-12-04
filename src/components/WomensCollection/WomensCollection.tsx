@@ -61,7 +61,7 @@ const WomensCollection = () => {
     useEffect(() => {
         // if (products) {
 
-        fetch('https://morning-inlet-49130.herokuapp.com/womens')
+        fetch('https://unitymart-server.onrender.com/womens')
             .then(res => res.json())
             .then(data => setProducts(data))
         // }
