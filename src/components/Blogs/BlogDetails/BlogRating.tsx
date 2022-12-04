@@ -11,7 +11,7 @@ export default function BlogRating() {
     const { register, handleSubmit, reset } = useForm();
 
     const onSubmit = (data: any) => {
-        axios.post('https://morning-inlet-49130.herokuapp.com/blogReviews', data)
+        axios.post('https://unitymart-server.onrender.com/blogReviews', data)
             .then(res => {
                 if (res.data.insertedId) {
                     alert('Added a New Blog Review Successfully!');
@@ -24,7 +24,7 @@ export default function BlogRating() {
     // console.log(id)
     const [blogDetails, setBlogDetails] = useState([])
     useEffect(() => {
-        fetch('https://morning-inlet-49130.herokuapp.com/blogs')
+        fetch('https://unitymart-server.onrender.com/blogs')
             .then(res => res.json())
             .then((data) => {
                 const foundBlog = data.filter(detail => detail._id === id)

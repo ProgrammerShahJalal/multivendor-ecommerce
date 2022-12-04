@@ -16,7 +16,7 @@ const ProductView = () => {
 
   const [productDetail, setProductDetail] = useState([])
   useEffect(() => {
-    fetch('https://morning-inlet-49130.herokuapp.com/mens')
+    fetch('https://unitymart-server.onrender.com/mens')
       .then(res => res.json())
       .then((data) => {
         const foundData = data.filter(detail => detail._id === id)

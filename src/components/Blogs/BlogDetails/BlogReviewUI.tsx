@@ -21,7 +21,7 @@ const BlogReviewUI = () => {
 
     useEffect(() => {
         if (reviews.length === 0) {
-            fetch('https://morning-inlet-49130.herokuapp.com/blogReviews')
+            fetch('https://unitymart-server.onrender.com/blogReviews')
                 .then(res => res.json())
                 .then(data => { setReviews(data); }
                 )

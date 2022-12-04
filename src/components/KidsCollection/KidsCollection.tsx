@@ -29,7 +29,7 @@ const KidsCollection = () => {
     useEffect(() => {
         // if (products) {
 
-        fetch('https://morning-inlet-49130.herokuapp.com/kids')
+        fetch('https://unitymart-server.onrender.com/kids')
             .then(res => res.json())
             .then(data => setProducts(data))
         // }

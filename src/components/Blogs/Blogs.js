@@ -10,7 +10,7 @@ const Blogs = () => {
         function updateScreen(time) {
             // Make visual updates here.
             if (blogs.length === 0) {
-                fetch('https://morning-inlet-49130.herokuapp.com/blogs')
+                fetch('https://unitymart-server.onrender.com/blogs')
                     .then(res => res.json())
                     .then(data => {
                         setIsLoading(false);

@@ -7,7 +7,7 @@ export default function AddReview() {
     const { register, handleSubmit, reset } = useForm();
 
     const onSubmit = (data: any) => {
-        axios.post('https://morning-inlet-49130.herokuapp.com/reviews', data)
+        axios.post('https://unitymart-server.onrender.com/reviews', data)
             .then(res => {
                 if (res.data.insertedId) {
                     alert('Added a New Review Successfully!');

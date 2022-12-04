@@ -38,7 +38,7 @@ const SpecialDeal: FC<SpecialDealProps> = ({ translate }) => {
 
     useEffect(() => {
         if (deals.length === 0) {
-            fetch('https://morning-inlet-49130.herokuapp.com/features')
+            fetch('https://unitymart-server.onrender.com/features')
                 .then(res => res.json())
                 .then(data => setDeals(data))
         }
@@ -48,7 +48,7 @@ const SpecialDeal: FC<SpecialDealProps> = ({ translate }) => {
     /* ----------special product fetch----------- */
     useEffect(() => {
         if (specials.length === 0) {
-            fetch('https://morning-inlet-49130.herokuapp.com/specials')
+            fetch('https://unitymart-server.onrender.com/specials')
                 .then(res => res.json())
                 .then(data => setSpecials(data))
         }

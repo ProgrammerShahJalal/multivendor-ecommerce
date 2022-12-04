@@ -8,7 +8,7 @@ const BlogDetails = () => {
     // console.log(id)
     const [blogDetails, setBlogDetails] = useState([])
     useEffect(() => {
-        fetch('https://morning-inlet-49130.herokuapp.com/blogs')
+        fetch('https://unitymart-server.onrender.com/blogs')
             .then(res => res.json())
             .then((data) => {
                 const foundBlog = data.filter(detail => detail._id === id)

@@ -23,7 +23,7 @@ const Reviews = () => {
         function updateScreen(time) {
             // Make visual updates here.
             if (reviews.length === 0) {
-                fetch('https://morning-inlet-49130.herokuapp.com/reviews')
+                fetch('https://unitymart-server.onrender.com/reviews')
                     .then(res => res.json())
                     .then(data => { setReviews(data); }
                     )
