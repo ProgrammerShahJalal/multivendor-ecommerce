@@ -5,6 +5,7 @@ import BlogReviewUI from './BlogReviewUI';
 
 const BlogDetails = () => {
     let { id } = useParams();
+    
     // console.log(id)
     const [blogDetails, setBlogDetails] = useState([])
     useEffect(() => {
