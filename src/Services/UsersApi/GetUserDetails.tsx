@@ -1,6 +1,6 @@
 export const GetUserDetails = (email, setData, setIsLoading) => {
     setIsLoading(true)
-    fetch(`https://young-springs-82149.herokuapp.com/users/${email}`)
+    fetch(`https://unitymart-admin.onrender.com/users/${email}`)
         .then(res => res.json())
         .then(data => {
             localStorage.setItem("userDetails", JSON.stringify(data));

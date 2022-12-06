@@ -40,7 +40,7 @@ const CheckoutForm = () => {
     const [clientSecret, setClientSecret] = React.useState('');
 
     React.useEffect(() => {
-        fetch('https://young-springs-82149.herokuapp.com/create-payment-intent', {
+        fetch('https://unitymart-admin.onrender.com/create-payment-intent', {
             method: 'POST',
             headers: {
                 'content-type': 'application/json'
@@ -119,7 +119,7 @@ const CheckoutForm = () => {
             //     transaction: paymentIntent?.client_secret.slice('_secret')[0]
             // }
 
-            await fetch('https://young-springs-82149.herokuapp.com/dashboard/orders', {
+            await fetch('https://unitymart-admin.onrender.com/dashboard/orders', {
                 method: 'POST',
                 headers: {
                     'content-type': 'application/json'

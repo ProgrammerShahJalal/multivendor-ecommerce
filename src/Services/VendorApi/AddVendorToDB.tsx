@@ -31,7 +31,7 @@ export const AddVendorToDB = (data, navigate) => {
 
     console.log(vendorDetails, 'vendorDetails 2');
 
-    fetch('https://young-springs-82149.herokuapp.com/add-vendor', {
+    fetch('https://unitymart-admin.onrender.com/add-vendor', {
         method: 'POST',
         headers: {
             'content-type': 'application/json'

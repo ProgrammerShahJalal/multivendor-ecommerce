@@ -5,7 +5,7 @@ export const GetOrderDetails = (id, data, setData, setIsLoading) => {
     // const [isLoading, setIsLoading] = useState<boolean>(false)//
     useEffect(() => {
         setIsLoading(true)
-        fetch(`https://young-springs-82149.herokuapp.com/dashboard/orders?id=${id}`)
+        fetch(`https://unitymart-admin.onrender.com/dashboard/orders?id=${id}`)
             .then(res => res.json())
             .then(data => setData(data))
             .finally(() => setIsLoading(false))

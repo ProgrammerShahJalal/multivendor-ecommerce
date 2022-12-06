@@ -6,7 +6,7 @@ export const addAttributesValue = (id: number, attributeValue: string, setIfShou
     }
 
     const update = { attributeValue, id }
-    fetch('https://young-springs-82149.herokuapp.com/dashboard/attributes', {
+    fetch('https://unitymart-admin.onrender.com/dashboard/attributes', {
         method: 'PUT',
         headers: { 'content-type': 'application/json' },
         body: JSON.stringify(update)

@@ -2,7 +2,7 @@
 export const DeleteOrder = (id, setIsLoading, navigate) => {
     if (window.confirm('Are you sure you want to delete?')) {
         setIsLoading(true)
-        fetch(`https://young-springs-82149.herokuapp.com/dashboard/orders/${id}`, {
+        fetch(`https://unitymart-admin.onrender.com/dashboard/orders/${id}`, {
             method: 'DELETE'
         }).then(res => res.json())
             .then(data => {

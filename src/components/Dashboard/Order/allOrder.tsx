@@ -12,7 +12,7 @@ const AllOrders = () => {
     useEffect(() => {
         setIsLoading(true)
         if (userDetails.role === 'vendor') {
-            fetch(`https://young-springs-82149.herokuapp.com/dashboard/vendor-orders?email=${userDetails.email}`)
+            fetch(`https://unitymart-admin.onrender.com/dashboard/vendor-orders?email=${userDetails.email}`)
                 .then(res => res.json())
                 .then(data => {
 
@@ -23,7 +23,7 @@ const AllOrders = () => {
                 })
                 .finally(() => setIsLoading(false))
         } else if (userDetails.role === 'admin') {
-            fetch(`https://young-springs-82149.herokuapp.com/dashboard/orders`)
+            fetch(`https://unitymart-admin.onrender.com/dashboard/orders`)
                 .then(res => res.json())
                 .then(data => {
                     console.log(data);
@@ -44,7 +44,7 @@ const AllOrders = () => {
 
         if (window.confirm('Are you sure you want to delete?')) {
             setIsLoading(true)
-            fetch(`https://young-springs-82149.herokuapp.com/dashboard/orders/${id}`, {
+            fetch(`https://unitymart-admin.onrender.com/dashboard/orders/${id}`, {
                 method: 'DELETE'
             }).then(res => res.json())
                 .then(data => {
@@ -69,12 +69,12 @@ const AllOrders = () => {
         }
         else if (findOrder.length === 0) {
             setNotFound('Not found')
-            fetch('https://young-springs-82149.herokuapp.com/dashboard/orders')
+            fetch('https://unitymart-admin.onrender.com/dashboard/orders')
                 .then(res => res.json())
                 .then(data => setOrders(data))
         }
         if (searchText===''){
-            fetch('https://young-springs-82149.herokuapp.com/dashboard/orders')
+            fetch('https://unitymart-admin.onrender.com/dashboard/orders')
                 .then(res => res.json())
                 .then(data => setOrders(data))
         }
@@ -96,7 +96,7 @@ const AllOrders = () => {
         setValue('Shipped')
         }
         else {
-            fetch('https://young-springs-82149.herokuapp.com/dashboard/orders')
+            fetch('https://unitymart-admin.onrender.com/dashboard/orders')
                 .then(res => res.json())
                 .then(data => setOrders(data))
                 setValue('All')

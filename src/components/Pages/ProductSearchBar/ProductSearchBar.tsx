@@ -67,7 +67,7 @@ const ProductSearchBar: React.FunctionComponent = () => {
     const handleClose = () => setOpen(false);
 
     useLayoutEffect(() => {
-        fetch('https://young-springs-82149.herokuapp.com/products')
+        fetch('https://unitymart-admin.onrender.com/products')
             .then(res => res.json())
             .then(data => setProducts(data))
 

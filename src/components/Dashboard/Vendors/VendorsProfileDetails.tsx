@@ -14,13 +14,13 @@ const VendorProfileDetails = () => {
     useEffect(() => {
         if (slug) {
             setIsLoading(true)
-            fetch(`https://young-springs-82149.herokuapp.com/user/vendor/${slug}`)
+            fetch(`https://unitymart-admin.onrender.com/user/vendor/${slug}`)
                 .then(res => res.json())
                 .then(data => setVendors(data))
                 .finally(() => setIsLoading(false))
         } else if (vendors.length === 0) {
             setIsLoading(true)
-            fetch(`https://young-springs-82149.herokuapp.com/user/vendors/${userDetails.email}`)
+            fetch(`https://unitymart-admin.onrender.com/user/vendors/${userDetails.email}`)
                 .then(res => res.json())
                 .then(data => setVendors(data))
                 .finally(() => setIsLoading(false))
@@ -46,7 +46,7 @@ const VendorProfileDetails = () => {
 
         if (fieldsValue.length !== 0) {
             setIsLoading(true)
-            fetch(`https://young-springs-82149.herokuapp.com/user/vendors/update-profile/${email}`, {
+            fetch(`https://unitymart-admin.onrender.com/user/vendors/update-profile/${email}`, {
                 method: 'PUT',
                 headers: {
                     'content-type': 'application/json'
@@ -80,7 +80,7 @@ const VendorProfileDetails = () => {
 
     const updateStatus = (email, status) => {
         setIsLoading(true)
-        fetch(`https://young-springs-82149.herokuapp.com/user/vendors/update-status/${email}`, {
+        fetch(`https://unitymart-admin.onrender.com/user/vendors/update-status/${email}`, {
             method: 'PUT',
             headers: {
                 'content-type': 'application/json'

@@ -74,7 +74,7 @@ function App() {
   const affiliateLink = window.location.search.split('=')[1]
   useLayoutEffect(() => {
     if (affiliateLink) {
-      fetch(`https://young-springs-82149.herokuapp.com/findUrl/${affiliateLink}`)
+      fetch(`https://unitymart-admin.onrender.com/findUrl/${affiliateLink}`)
         .then(res => res.json())
         .then(data => {
           if (data.isUrlTrue) {

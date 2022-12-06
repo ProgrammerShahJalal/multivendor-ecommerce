@@ -15,7 +15,7 @@ const UserDashboardHome = () => {
     const { cart } = useSelector((state: any) => state.cart)
     const { wishlist } = useSelector((state: any) => state.wishlist);
     useEffect(() => {
-        axios.get(`https://young-springs-82149.herokuapp.com/dashboard/orders?userEmail=${userDetails.email}`)
+        axios.get(`https://unitymart-admin.onrender.com/dashboard/orders?userEmail=${userDetails.email}`)
             .then(res => setMyOrders(res.data?.slice(0, 6)))
     }, [userDetails.email])
     console.log(myOrders);

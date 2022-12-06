@@ -37,7 +37,7 @@ const Electronics = () => {
     useEffect(() => {
         if (products) {
 
-            fetch('https://young-springs-82149.herokuapp.com/shop/products/category?category=Electronics')
+            fetch('https://unitymart-admin.onrender.com/shop/products/category?category=Electronics')
                 .then(res => res.json())
                 .then(data => setProducts(data))
         }

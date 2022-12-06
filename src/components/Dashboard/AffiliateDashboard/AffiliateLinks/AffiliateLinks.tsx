@@ -11,7 +11,7 @@ export default function AffiliateLinks() {
 
     useEffect(() => {
 
-        fetch(`https://young-springs-82149.herokuapp.com/shortUrls`)
+        fetch(`https://unitymart-admin.onrender.com/shortUrls`)
             .then(res => res.json())
             .then(data => {
                 const userAffiliate = data.filter(link => link.affiliateUser === user.email)
@@ -24,7 +24,7 @@ export default function AffiliateLinks() {
     useEffect(() => {
         if (loadings) {
             setLoadings(true)
-            fetch(`https://young-springs-82149.herokuapp.com/shortUrls`)
+            fetch(`https://unitymart-admin.onrender.com/shortUrls`)
                 .then(res => res.json())
                 .then(data => {
                     const userAffiliate = data.filter(link => link.affiliateUser === user.email)
@@ -44,7 +44,7 @@ export default function AffiliateLinks() {
         formData.append('date', date);
         formData.append('affiliateUser', user.email);
 
-        fetch('https://young-springs-82149.herokuapp.com/shortUrls', {
+        fetch('https://unitymart-admin.onrender.com/shortUrls', {
             method: 'post',
             body: formData
         })
@@ -61,7 +61,7 @@ export default function AffiliateLinks() {
     }
     // DELETE 
     const deleteUrl = (shortUrl) => {
-        fetch(`https://young-springs-82149.herokuapp.com/delete/shortUrl/${shortUrl}`, {
+        fetch(`https://unitymart-admin.onrender.com/delete/shortUrl/${shortUrl}`, {
             method: 'DELETE'
         }).then(res => res.json())
             .then(data => {
@@ -139,8 +139,8 @@ export default function AffiliateLinks() {
                                                             <div className="text-left">{link.full}</div>
                                                         </td>
                                                         <td className="p-2 whitespace-nowrap">
-                                                            <div className="text-left"><a href={`https://young-springs-82149.herokuapp.com/${link.short}`}>{link.short}</a> <i className="fa-solid fa-copy cursor-pointer"
-                                                                onClick={() => copyText(`https://young-springs-82149.herokuapp.com/${link.short}`)} title="Copy"></i></div>
+                                                            <div className="text-left"><a href={`https://unitymart-admin.onrender.com/${link.short}`}>{link.short}</a> <i className="fa-solid fa-copy cursor-pointer"
+                                                                onClick={() => copyText(`https://unitymart-admin.onrender.com/${link.short}`)} title="Copy"></i></div>
                                                         </td>
                                                         <td className="p-2 whitespace-nowrap">
                                                             <div className="text-left">{link.clicks}</div>

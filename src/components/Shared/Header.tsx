@@ -76,7 +76,7 @@ const Header: FC<HeaderProps> = ({ fixed, transparent }) => {
     useEffect(() => {
         if (user.email) {
             setIsLoading(true)
-            fetch(`https://young-springs-82149.herokuapp.com/users/${user.email}`)
+            fetch(`https://unitymart-admin.onrender.com/users/${user.email}`)
                 .then(res => res.json())
                 .then(data => {
                     localStorage.setItem("userDetails", JSON.stringify(data))

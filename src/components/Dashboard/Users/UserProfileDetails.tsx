@@ -10,7 +10,7 @@ const UserProfileDetails = () => {
     const [isLoading, setIsLoading] = useState<boolean>(true)
     const navigate = useNavigate()
     useEffect(() => {
-        fetch(`https://young-springs-82149.herokuapp.com/user?id=${id}`)
+        fetch(`https://unitymart-admin.onrender.com/user?id=${id}`)
             .then(res => res.json())
             .then(data => setVendors(data))
 
@@ -35,7 +35,7 @@ const UserProfileDetails = () => {
 
 
             setIsLoading(true)
-            fetch(`https://young-springs-82149.herokuapp.com/user/update-profile?email=${email}`, {
+            fetch(`https://unitymart-admin.onrender.com/user/update-profile?email=${email}`, {
                 method: 'PUT',
                 headers: {
                     'content-type': 'application/json'
@@ -63,7 +63,7 @@ const UserProfileDetails = () => {
     }
     const updateRole = (email, role) => {
         setIsLoading(true)
-        fetch(`https://young-springs-82149.herokuapp.com/user/update-role?email=${email}`, {
+        fetch(`https://unitymart-admin.onrender.com/user/update-role?email=${email}`, {
             method: 'PUT',
             headers: {
                 'content-type': 'application/json'

@@ -5,7 +5,7 @@ export const addUserToDB = (details, userRole) => {
     const date = new Date()
     const user = { name: details.displayName, email: details.email, photo: details.photoURL, phone: details.phoneNumber, role: userRole, date: date.toLocaleString(), status: "Active" }
     // localStorage.setItem("userDetails", JSON.stringify(user))
-    fetch('https://young-springs-82149.herokuapp.com/addUser', {
+    fetch('https://unitymart-admin.onrender.com/addUser', {
         method: 'POST',
         headers: {
             'content-type': 'application/json'

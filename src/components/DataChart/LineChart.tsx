@@ -26,7 +26,7 @@ const LineCharts = () => {
     const [data, setData] = useState()
 
     useEffect(() => {
-        fetch('https://young-springs-82149.herokuapp.com/ref/updates')
+        fetch('https://unitymart-admin.onrender.com/ref/updates')
             .then(res => res.json())
             .then(data => {
                 const filter = data.filter(link => link.affiliateUser === 'shah.jalal.ju.bd@gmail.com')
@@ -40,7 +40,7 @@ const LineCharts = () => {
 
     useEffect(() => {
 
-        fetch(`https://young-springs-82149.herokuapp.com/shortUrls`)
+        fetch(`https://unitymart-admin.onrender.com/shortUrls`)
             .then(res => res.json())
             .then(data => {
                 const userAffiliate = data.filter(link => link.affiliateUser === user.email)
@@ -54,7 +54,7 @@ const LineCharts = () => {
     useEffect(() => {
         if (loadings) {
             setLoadings(true)
-            fetch(`https://young-springs-82149.herokuapp.com/shortUrls`)
+            fetch(`https://unitymart-admin.onrender.com/shortUrls`)
                 .then(res => res.json())
                 .then(data => {
                     const userAffiliate = data.filter(link => link.affiliateUser === user.email)

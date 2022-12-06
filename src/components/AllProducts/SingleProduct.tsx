@@ -18,7 +18,7 @@ const SingleProduct = () => {
 
     useEffect(() => {
         setIsLoading(true)
-        fetch(`https://young-springs-82149.herokuapp.com/products`)
+        fetch(`https://unitymart-admin.onrender.com/products`)
             .then(res => res.json())
             .then((data) => {
                 console.log(data, 'data')

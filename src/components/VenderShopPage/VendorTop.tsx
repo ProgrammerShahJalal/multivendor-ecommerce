@@ -6,7 +6,7 @@ const VendorTop = () => {
     const { storeSlug } = useParams();
     const [productsDetails, setProductsDetails] = useState<any>([])
     useEffect(() => {
-        fetch(`https://young-springs-82149.herokuapp.com/user/vendor/${storeSlug}`)
+        fetch(`https://unitymart-admin.onrender.com/user/vendor/${storeSlug}`)
             .then(res => res.json())
             .then((data) => {
                 setProductsDetails(data);

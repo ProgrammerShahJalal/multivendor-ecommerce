@@ -40,19 +40,19 @@ const Products = () => {
     useEffect(() => {
         if (userDetails.email && userDetails.role === 'vendor') {
             setIsLoading(true)
-            fetch(`https://young-springs-82149.herokuapp.com/products/${userDetails.email}`)
+            fetch(`https://unitymart-admin.onrender.com/products/${userDetails.email}`)
                 .then(res => res.json())
                 .then(data => setProducts(data))
                 .finally(() => setIsLoading(false))
         } else if (loading) {
             setIsLoading(true)
-            fetch('https://young-springs-82149.herokuapp.com/products')
+            fetch('https://unitymart-admin.onrender.com/products')
                 .then(res => res.json())
                 .then(data => setProducts(data))
                 .finally(() => setIsLoading(false))
         } else {
             setIsLoading(true)
-            fetch('https://young-springs-82149.herokuapp.com/products')
+            fetch('https://unitymart-admin.onrender.com/products')
                 .then(res => res.json())
                 .then(data => setProducts(data))
                 .finally(() => setIsLoading(false))

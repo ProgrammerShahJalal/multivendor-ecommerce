@@ -16,7 +16,7 @@ const Users = () => {
     useEffect(() => {
         if (users.length === 0) {
             setIsLoading(true)
-            fetch('https://young-springs-82149.herokuapp.com/users')
+            fetch('https://unitymart-admin.onrender.com/users')
                 .then(res => res.json())
                 .then(data => setUsers(data))
                 .finally(() => setIsLoading(false))
@@ -33,12 +33,12 @@ const Users = () => {
         }
         else if (findUser.length === 0) {
             setNotFound('Not found')
-            fetch('https://young-springs-82149.herokuapp.com/users')
+            fetch('https://unitymart-admin.onrender.com/users')
                 .then(res => res.json())
                 .then(data => setUsers(data))
         }
         if (searchText === '') {
-            fetch('https://young-springs-82149.herokuapp.com/users')
+            fetch('https://unitymart-admin.onrender.com/users')
                 .then(res => res.json())
                 .then(data => setUsers(data))
         }
@@ -47,7 +47,7 @@ const Users = () => {
     const deleteUser = (id) => {
         if (window.confirm('Are you sure you want to delete?')) {
             setIsLoading(true)
-            fetch(`https://young-springs-82149.herokuapp.com/dashboard/user-delete/${id}`, {
+            fetch(`https://unitymart-admin.onrender.com/dashboard/user-delete/${id}`, {
                 method: 'DELETE'
             }).then(res => res.json())
                 .then(data => {

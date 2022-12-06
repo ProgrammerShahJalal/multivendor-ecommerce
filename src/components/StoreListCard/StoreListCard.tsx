@@ -9,7 +9,7 @@ const StoreListCards = () => {
 
     useEffect(() => {
 
-        fetch('https://young-springs-82149.herokuapp.com/user/vendors')
+        fetch('https://unitymart-admin.onrender.com/user/vendors')
             .then(res => res.json())
             .then(data => {
                 console.log(data)

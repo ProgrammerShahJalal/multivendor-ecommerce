@@ -45,7 +45,7 @@ const Women = () => {
             // Make visual updates here.
             if (products) {
 
-                fetch('https://young-springs-82149.herokuapp.com/shop/products/category?category=Womens')
+                fetch('https://unitymart-admin.onrender.com/shop/products/category?category=Womens')
                     .then(res => res.json())
                     .then(data => setProducts(data))
             }

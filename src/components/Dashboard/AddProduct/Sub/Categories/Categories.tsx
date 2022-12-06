@@ -40,7 +40,7 @@ export default function Categories() {
 
         const newCategory = { vendor: 'admin', options: { label: category } }
 
-        fetch('https://young-springs-82149.herokuapp.com/dashboard/addCategory', {
+        fetch('https://unitymart-admin.onrender.com/dashboard/addCategory', {
             headers: { "Content-Type": "application/json" },
             method: 'POST',
             body: JSON.stringify(newCategory)
@@ -72,7 +72,7 @@ export default function Categories() {
         }
 
         const update = { categoryValue, id }
-        fetch('https://young-springs-82149.herokuapp.com/dashboard/categories', {
+        fetch('https://unitymart-admin.onrender.com/dashboard/categories', {
             method: 'PUT',
             headers: { 'content-type': 'application/json' },
             body: JSON.stringify(update)
@@ -92,7 +92,7 @@ export default function Categories() {
 
         if (window.confirm('Are you sure you want to delete?')) {
             setIsLoading(true)
-            fetch(`https://young-springs-82149.herokuapp.com/dashboard/categories/${id}`, {
+            fetch(`https://unitymart-admin.onrender.com/dashboard/categories/${id}`, {
                 method: 'DELETE'
             }).then(res => res.json())
                 .then(data => {
@@ -109,7 +109,7 @@ export default function Categories() {
     //  LOAD CATEGORIES
     useEffect(() => {
         if (ifShouldUpdate) {
-            fetch('https://young-springs-82149.herokuapp.com/dashboard/categories')
+            fetch('https://unitymart-admin.onrender.com/dashboard/categories')
                 .then(res => res.json())
                 .then(data => setCategories(data))
             setIfShouldUpdate(false)
@@ -118,7 +118,7 @@ export default function Categories() {
     }, [ifShouldUpdate])
 
     useEffect(() => {
-        fetch('https://young-springs-82149.herokuapp.com/dashboard/categories')
+        fetch('https://unitymart-admin.onrender.com/dashboard/categories')
             .then(res => res.json())
             .then(data => setCategories(data))
     }, [])

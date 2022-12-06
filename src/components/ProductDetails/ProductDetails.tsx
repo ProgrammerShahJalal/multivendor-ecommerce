@@ -7,7 +7,7 @@ const ProductDetails = () => {
     //    product 
     const [productsDetails, setProductsDetails] = useState<any>([])
     useEffect(() => {
-        fetch(`https://young-springs-82149.herokuapp.com/product/${id}`)
+        fetch(`https://unitymart-admin.onrender.com/product/${id}`)
             .then(res => res.json())
             .then((data) => {
                 console.log(data)

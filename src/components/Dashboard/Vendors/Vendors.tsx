@@ -9,7 +9,7 @@ const Vendors = () => {
 
     useEffect(() => {
         setIsLoading(true)
-        fetch('https://young-springs-82149.herokuapp.com/user/vendors')
+        fetch('https://unitymart-admin.onrender.com/user/vendors')
             .then(res => res.json())
             .then(data => setVendors(data))
             .finally(() => setIsLoading(false))
@@ -18,7 +18,7 @@ const Vendors = () => {
     const deleteVendor = (id) => {
         if (window.confirm('Are you sure you want to delete?')) {
             setIsLoading(true)
-            fetch(`https://young-springs-82149.herokuapp.com/dashboard/vendor-delete/${id}`, {
+            fetch(`https://unitymart-admin.onrender.com/dashboard/vendor-delete/${id}`, {
                 method: 'DELETE'
             }).then(res => res.json())
                 .then(data => {

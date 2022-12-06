@@ -48,7 +48,7 @@ const AddProduct: React.FunctionComponent = () => {
 
     // GET ATTRIBUTES LABELS AND VALUES
     useEffect(() => {
-        fetch('https://young-springs-82149.herokuapp.com/dashboard/attributes')
+        fetch('https://unitymart-admin.onrender.com/dashboard/attributes')
             .then(res => res.json())
             .then(data => {
                 const newArray = data.map(({ label, slug }: any) => ({ label, value: slug }));
@@ -100,7 +100,7 @@ const AddProduct: React.FunctionComponent = () => {
     useEffect(() => {
         if (!newCat) {
             setIsLoading(true)
-            fetch('https://young-springs-82149.herokuapp.com/dashboard/categories')
+            fetch('https://unitymart-admin.onrender.com/dashboard/categories')
                 .then(res => res.json())
                 .then(data => {
                     const options = data.map(({ options }: any) => options)
@@ -151,7 +151,7 @@ const AddProduct: React.FunctionComponent = () => {
         console.log(newProduct, 'newProduct');
 
         setIsLoading(true)
-        fetch('https://young-springs-82149.herokuapp.com/dashboard/addProduct', {
+        fetch('https://unitymart-admin.onrender.com/dashboard/addProduct', {
             headers: { "Content-Type": "application/json" },
             method: 'POST',
             body: JSON.stringify(newProduct)
